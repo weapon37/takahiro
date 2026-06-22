@@ -43,3 +43,34 @@ export async function publishToThreads(
 
   return { threadsPostId: publishData.id };
 }
+
+export async function getThreadsInsights(threadsPostId: string): Promise<{
+  impressions: number;
+  likes: number;
+  comments: number;
+  shares: number;
+}> {
+  const { accessToken } = getThreadsCredentials();
+
+  const insightsUrl = new URL(`${THREADS_API_BASE}/${threadsPostId}/insights`);
+  insightsUrl.searchParams.set("metric", "views,likes,replies,reposts,quotes");
+  insightsUrl.searchParams.set("access_token", accessToken);
+
+  const response = await fetch(insightsUrl);
+  const data = await response.json();
+  if (!response.ok || !Array.isArray(data.data)) {
+    throw new Error(`Threadsの分析データ取得に失敗しました: ${JSON.stringify(data)}`);
+  }
+
+  function metricValue(name: string): number {
+    const metric = data.data.find((m: { name: string }) => m.name === name);
+    return metric?.values?.[0]?.value ?? metric?.total_value?.value ?? 0;
+  }
+
+  return {
+    impressions: metricValue("views"),
+    likes: metricValue("likes"),
+    comments: metricValue("replies"),
+    shares: metricValue("reposts") + metricValue("quotes"),
+  };
+}

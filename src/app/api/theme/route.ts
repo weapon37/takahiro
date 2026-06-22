@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { buildAnthropicClient, getModel } from "@/lib/anthropic-client";
 import { POST_TYPES, POST_TYPE_IDS, getPostTypeById } from "@/lib/post-types";
-import { listAffiliateLinks } from "@/lib/store";
+import { getPerformanceSummary, listAffiliateLinks } from "@/lib/store";
 import type { Theme } from "@/lib/pipeline-types";
 
 export const runtime = "nodejs";
@@ -43,6 +43,7 @@ export async function POST(request: Request) {
   }
 
   const affiliateLinks = useAffiliate ? await listAffiliateLinks() : [];
+  const performanceSummary = await getPerformanceSummary();
 
   let client: Anthropic;
   try {
@@ -79,6 +80,20 @@ export async function POST(request: Request) {
           )}\n\nテーマの切り口にこれらの商品を自然に紹介できそうな場合は affiliate_link_id にそのIDを入れてください。無理にこじつける必要はなく、合わなければ \"${NO_AFFILIATE_LINK_ID}\" にしてください。`
       : "";
 
+  // ⑧分析・改善ループ: 過去投稿のエンゲージメント率が高い型を参考情報として渡す。
+  // データがまだ無い間は空になり、通常の選定基準のみで判断される。
+  const topPostTypePerformance = performanceSummary.byPostType
+    .filter((row) => row.postCount > 0)
+    .slice(0, 3)
+    .map((row) => {
+      const label = getPostTypeById(row.key)?.label ?? row.key;
+      return `- ${label}: 平均エンゲージメント率 ${(row.avgEngagementRate * 100).toFixed(1)}%(${row.postCount}件の実績)`;
+    });
+  const performanceSection =
+    topPostTypePerformance.length > 0
+      ? `\n\n# 過去の投稿で反応が良かった型(参考情報、最優先はネタとの適合性)\n${topPostTypePerformance.join("\n")}`
+      : "";
+
   try {
     const message = await client.messages.create({
       model: getModel(),
@@ -88,7 +103,7 @@ export async function POST(request: Request) {
       messages: [
         {
           role: "user",
-          content: `# ネタ候補\n${notesList}\n\n# 直近の投稿\n${recentList}\n\n# 投稿の型リスト\n${typeList}${affiliateSection}\n\n上記のネタ候補から本日のテーマを1つ選んでください。直近の投稿と内容が被る場合は、被らない切り口を選ぶか duplicate_check_note で被りをどう避けたかを説明してください。`,
+          content: `# ネタ候補\n${notesList}\n\n# 直近の投稿\n${recentList}\n\n# 投稿の型リスト\n${typeList}${performanceSection}${affiliateSection}\n\n上記のネタ候補から本日のテーマを1つ選んでください。直近の投稿と内容が被る場合は、被らない切り口を選ぶか duplicate_check_note で被りをどう避けたかを説明してください。`,
         },
       ],
       tools: [

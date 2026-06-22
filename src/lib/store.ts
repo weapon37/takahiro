@@ -1,6 +1,11 @@
 import { readFile, writeFile, mkdir } from "fs/promises";
 import path from "path";
-import type { AffiliateLink, Post, ScheduledPost } from "./pipeline-types";
+import type {
+  AffiliateLink,
+  AnalyticsSnapshot,
+  Post,
+  ScheduledPost,
+} from "./pipeline-types";
 
 // MVP用のファイルベース永続化。単一インスタンス・低頻度アクセスを前提とした
 // 簡易実装で、本番でサーバーレスや複数インスタンス運用に移る際はDBに置き換える。
@@ -11,6 +16,7 @@ interface StoreData {
   posts: Post[];
   scheduledPosts: ScheduledPost[];
   affiliateLinks: AffiliateLink[];
+  analyticsSnapshots: AnalyticsSnapshot[];
 }
 
 async function readStore(): Promise<StoreData> {
@@ -21,9 +27,10 @@ async function readStore(): Promise<StoreData> {
       posts: data.posts ?? [],
       scheduledPosts: data.scheduledPosts ?? [],
       affiliateLinks: data.affiliateLinks ?? [],
+      analyticsSnapshots: data.analyticsSnapshots ?? [],
     };
   } catch {
-    return { posts: [], scheduledPosts: [], affiliateLinks: [] };
+    return { posts: [], scheduledPosts: [], affiliateLinks: [], analyticsSnapshots: [] };
   }
 }
 
@@ -96,11 +103,13 @@ export async function getDueScheduledPosts(
 export async function markScheduledPostResult(
   id: string,
   result: "posted" | "failed",
+  platformPostId?: string,
 ): Promise<void> {
   const data = await readStore();
   const scheduledPost = data.scheduledPosts.find((sp) => sp.id === id);
   if (!scheduledPost) return;
   scheduledPost.status = result;
+  if (platformPostId) scheduledPost.platformPostId = platformPostId;
   await writeStore(data);
 }
 
@@ -124,4 +133,115 @@ export async function getAffiliateLink(
 ): Promise<AffiliateLink | undefined> {
   const data = await readStore();
   return data.affiliateLinks.find((link) => link.id === id);
+}
+
+// ⑧ 分析・改善: 投稿済みで分析取得対象になるもの一覧
+export async function listPostedScheduledPosts(): Promise<
+  (ScheduledPost & { post?: Post })[]
+> {
+  const data = await readStore();
+  return data.scheduledPosts
+    .filter((sp) => sp.status === "posted" && sp.platformPostId)
+    .map((sp) => ({ ...sp, post: data.posts.find((p) => p.id === sp.postId) }));
+}
+
+export async function addAnalyticsSnapshot(
+  input: Omit<AnalyticsSnapshot, "id" | "collectedAt">,
+): Promise<AnalyticsSnapshot> {
+  const data = await readStore();
+  const snapshot: AnalyticsSnapshot = {
+    id: crypto.randomUUID(),
+    collectedAt: new Date().toISOString(),
+    ...input,
+  };
+  data.analyticsSnapshots.push(snapshot);
+  await writeStore(data);
+  return snapshot;
+}
+
+export async function listAnalyticsSnapshots(): Promise<AnalyticsSnapshot[]> {
+  const data = await readStore();
+  return data.analyticsSnapshots;
+}
+
+export async function listPostedScheduledPostsWithLatestSnapshot(): Promise<
+  (ScheduledPost & { post?: Post; latestSnapshot?: AnalyticsSnapshot })[]
+> {
+  const data = await readStore();
+  const latestByScheduledPostId = new Map<string, AnalyticsSnapshot>();
+  for (const snapshot of data.analyticsSnapshots) {
+    const existing = latestByScheduledPostId.get(snapshot.scheduledPostId);
+    if (!existing || existing.collectedAt < snapshot.collectedAt) {
+      latestByScheduledPostId.set(snapshot.scheduledPostId, snapshot);
+    }
+  }
+  return data.scheduledPosts
+    .filter((sp) => sp.status === "posted")
+    .map((sp) => ({
+      ...sp,
+      post: data.posts.find((p) => p.id === sp.postId),
+      latestSnapshot: latestByScheduledPostId.get(sp.id),
+    }))
+    .sort((a, b) => b.scheduledAt.localeCompare(a.scheduledAt));
+}
+
+interface PerformanceBreakdownRow {
+  key: string;
+  postCount: number;
+  avgEngagementRate: number;
+}
+
+export interface PerformanceSummary {
+  byPostType: PerformanceBreakdownRow[];
+  byHookType: PerformanceBreakdownRow[];
+  byStructure: PerformanceBreakdownRow[];
+}
+
+// 投稿ごとの最新スナップショットを使い、型(postType/hookType/structure)別の
+// 平均エンゲージメント率(likes+comments+shares ÷ impressions)を集計する。
+// ②③のテーマ・フック選定プロンプトに「過去データで伸びている型」を渡すための
+// 簡易な改善ループ用ロジック。
+export async function getPerformanceSummary(): Promise<PerformanceSummary> {
+  const data = await readStore();
+
+  const latestSnapshotByScheduledPostId = new Map<string, AnalyticsSnapshot>();
+  for (const snapshot of data.analyticsSnapshots) {
+    const existing = latestSnapshotByScheduledPostId.get(snapshot.scheduledPostId);
+    if (!existing || existing.collectedAt < snapshot.collectedAt) {
+      latestSnapshotByScheduledPostId.set(snapshot.scheduledPostId, snapshot);
+    }
+  }
+
+  function aggregateBy(
+    keyOf: (post: Post) => string | undefined,
+  ): PerformanceBreakdownRow[] {
+    const totals = new Map<string, { sum: number; count: number }>();
+    for (const scheduledPost of data.scheduledPosts) {
+      const snapshot = latestSnapshotByScheduledPostId.get(scheduledPost.id);
+      if (!snapshot || snapshot.impressions <= 0) continue;
+      const post = data.posts.find((p) => p.id === scheduledPost.postId);
+      const key = post && keyOf(post);
+      if (!key) continue;
+      const engagementRate =
+        (snapshot.likes + snapshot.comments + snapshot.shares) /
+        snapshot.impressions;
+      const current = totals.get(key) ?? { sum: 0, count: 0 };
+      current.sum += engagementRate;
+      current.count += 1;
+      totals.set(key, current);
+    }
+    return Array.from(totals.entries())
+      .map(([key, { sum, count }]) => ({
+        key,
+        postCount: count,
+        avgEngagementRate: sum / count,
+      }))
+      .sort((a, b) => b.avgEngagementRate - a.avgEngagementRate);
+  }
+
+  return {
+    byPostType: aggregateBy((post) => post.postTypeId),
+    byHookType: aggregateBy((post) => post.hookTypeId),
+    byStructure: aggregateBy((post) => post.structureId),
+  };
 }

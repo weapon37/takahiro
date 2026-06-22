@@ -3,9 +3,13 @@ import Anthropic from "@anthropic-ai/sdk";
 import { buildAnthropicClient, getModel } from "@/lib/anthropic-client";
 import { getPostTypeById } from "@/lib/post-types";
 import { HOOK_TYPES, HOOK_TYPE_IDS, getHookTypeById } from "@/lib/hook-types";
-import { POST_STRUCTURES, POST_STRUCTURE_IDS } from "@/lib/post-structures";
+import {
+  POST_STRUCTURES,
+  POST_STRUCTURE_IDS,
+  getPostStructureById,
+} from "@/lib/post-structures";
 import { getAccountProfileById } from "@/lib/account-profiles";
-import { getAffiliateLink } from "@/lib/store";
+import { getAffiliateLink, getPerformanceSummary } from "@/lib/store";
 import type { Theme, Post } from "@/lib/pipeline-types";
 
 export const runtime = "nodejs";
@@ -56,6 +60,7 @@ export async function POST(request: Request) {
   const affiliateLink = theme.affiliateLinkId
     ? await getAffiliateLink(theme.affiliateLinkId)
     : undefined;
+  const performanceSummary = await getPerformanceSummary();
 
   let client: Anthropic;
   try {
@@ -76,6 +81,19 @@ export async function POST(request: Request) {
       (h) => `- ${h.id}: ${h.label} — ${h.description}`,
     ).join("\n");
 
+    // ⑧分析・改善ループ: 過去投稿で反応が良かったフックの型を参考情報として渡す。
+    const topHookPerformance = performanceSummary.byHookType
+      .filter((row) => row.postCount > 0)
+      .slice(0, 3)
+      .map((row) => {
+        const label = getHookTypeById(row.key)?.label ?? row.key;
+        return `- ${label}: 平均エンゲージメント率 ${(row.avgEngagementRate * 100).toFixed(1)}%(${row.postCount}件の実績)`;
+      });
+    const hookPerformanceNote =
+      topHookPerformance.length > 0
+        ? `\n\n# 過去の投稿で反応が良かったフックの型(参考情報、最優先はテーマとの適合性)\n${topHookPerformance.join("\n")}`
+        : "";
+
     const hookMessage = await client.messages.create({
       model: getModel(),
       max_tokens: 600,
@@ -84,7 +102,7 @@ export async function POST(request: Request) {
       messages: [
         {
           role: "user",
-          content: `# アカウントの口調\n${accountProfile.toneDescription}\n\n# 口調のサンプル\n${accountProfile.sampleHooks.map((s) => `- ${s}`).join("\n")}\n\n# テーマ\nタイトル: ${theme.title}\n切り口: ${theme.angle}\n投稿の型: ${postType.label} — ${postType.description}\n\n# フックの型リスト\n${hookList}${feedbackNote}\n\n上記を踏まえて、このテーマに最も合うフックの型を1つ選び、口調に沿った1〜2文のフックを作ってください。`,
+          content: `# アカウントの口調\n${accountProfile.toneDescription}\n\n# 口調のサンプル\n${accountProfile.sampleHooks.map((s) => `- ${s}`).join("\n")}\n\n# テーマ\nタイトル: ${theme.title}\n切り口: ${theme.angle}\n投稿の型: ${postType.label} — ${postType.description}\n\n# フックの型リスト\n${hookList}${hookPerformanceNote}${feedbackNote}\n\n上記を踏まえて、このテーマに最も合うフックの型を1つ選び、口調に沿った1〜2文のフックを作ってください。`,
         },
       ],
       tools: [
@@ -129,6 +147,19 @@ export async function POST(request: Request) {
         }`
       : "";
 
+    // ⑧分析・改善ループ: 過去投稿で反応が良かった構成の型を参考情報として渡す。
+    const topStructurePerformance = performanceSummary.byStructure
+      .filter((row) => row.postCount > 0)
+      .slice(0, 3)
+      .map((row) => {
+        const label = getPostStructureById(row.key)?.label ?? row.key;
+        return `- ${label}: 平均エンゲージメント率 ${(row.avgEngagementRate * 100).toFixed(1)}%(${row.postCount}件の実績)`;
+      });
+    const structurePerformanceNote =
+      topStructurePerformance.length > 0
+        ? `\n\n# 過去の投稿で反応が良かった構成の型(参考情報、最優先はテーマ・フックとの適合性)\n${topStructurePerformance.join("\n")}`
+        : "";
+
     const bodyMessage = await client.messages.create({
       model: getModel(),
       max_tokens: 1200,
@@ -137,7 +168,7 @@ export async function POST(request: Request) {
       messages: [
         {
           role: "user",
-          content: `# アカウントの口調\n${accountProfile.toneDescription}\n\n# テーマ\nタイトル: ${theme.title}\n切り口: ${theme.angle}\n投稿の型: ${postType.label} — ${postType.description}\n\n# フック(この続きを書く)\n${hookInput.hook}\n\n# ポスト構成の型リスト\n${structureList}${affiliateNote}${feedbackNote}\n\nフックに続く本文を、最も合う構成の型を1つ選んで書いてください。フック自体は繰り返さず、フックの直後から続く文章にしてください。`,
+          content: `# アカウントの口調\n${accountProfile.toneDescription}\n\n# テーマ\nタイトル: ${theme.title}\n切り口: ${theme.angle}\n投稿の型: ${postType.label} — ${postType.description}\n\n# フック(この続きを書く)\n${hookInput.hook}\n\n# ポスト構成の型リスト\n${structureList}${structurePerformanceNote}${affiliateNote}${feedbackNote}\n\nフックに続く本文を、最も合う構成の型を1つ選んで書いてください。フック自体は繰り返さず、フックの直後から続く文章にしてください。`,
         },
       ],
       tools: [
@@ -184,6 +215,8 @@ export async function POST(request: Request) {
       hook: hookInput.hook,
       body: finalBody,
       postTypeId: postType.id,
+      hookTypeId: hookType?.id,
+      structureId: bodyInput.structure_id,
       affiliateLinkId: affiliateLink?.id,
       revision: body.revision !== undefined ? body.revision + 1 : 0,
       status: "draft",

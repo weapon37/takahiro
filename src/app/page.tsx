@@ -21,6 +21,9 @@ export default function Home() {
         <Link href="/affiliate-links" className="text-sm font-medium text-blue-600 hover:underline">
           アフィリエイトリンク管理(⑦)を見る →
         </Link>
+        <Link href="/analytics" className="text-sm font-medium text-blue-600 hover:underline">
+          分析・改善(⑧)を見る →
+        </Link>
       </div>
       <AnalyzerForm />
     </main>

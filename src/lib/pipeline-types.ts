@@ -57,6 +57,8 @@ export type Post = {
   hook: string;
   body: string;
   postTypeId: PostTypeId;
+  hookTypeId?: string;
+  structureId?: string;
   affiliateLinkId?: string;
   revision: number;
   status: PostStatus;
@@ -94,6 +96,8 @@ export type ScheduledPost = {
   approvedBy?: string;
   approvedAt?: string;
   status: "pending_approval" | "scheduled" | "posted" | "failed";
+  // 投稿後にプラットフォーム側で発行されるID。⑧の分析取得時に使用する。
+  platformPostId?: string;
 };
 
 // ⑦ 自動で販売: テーマに紐づけるアフィリエイトリンク

@@ -25,8 +25,8 @@ async function publishDuePosts() {
     try {
       if (scheduled.platform === "threads") {
         const text = `${scheduled.post.hook}\n\n${scheduled.post.body}`;
-        await publishToThreads(text);
-        await markScheduledPostResult(scheduled.id, "posted");
+        const { threadsPostId } = await publishToThreads(text);
+        await markScheduledPostResult(scheduled.id, "posted", threadsPostId);
         posted.push(scheduled.id);
       } else {
         throw new Error(
