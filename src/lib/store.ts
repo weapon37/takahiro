@@ -4,6 +4,7 @@ import type {
   AffiliateLink,
   AnalyticsSnapshot,
   Post,
+  ResearchItem,
   ScheduledPost,
 } from "./pipeline-types";
 
@@ -17,6 +18,7 @@ interface StoreData {
   scheduledPosts: ScheduledPost[];
   affiliateLinks: AffiliateLink[];
   analyticsSnapshots: AnalyticsSnapshot[];
+  researchItems: ResearchItem[];
 }
 
 async function readStore(): Promise<StoreData> {
@@ -28,9 +30,16 @@ async function readStore(): Promise<StoreData> {
       scheduledPosts: data.scheduledPosts ?? [],
       affiliateLinks: data.affiliateLinks ?? [],
       analyticsSnapshots: data.analyticsSnapshots ?? [],
+      researchItems: data.researchItems ?? [],
     };
   } catch {
-    return { posts: [], scheduledPosts: [], affiliateLinks: [], analyticsSnapshots: [] };
+    return {
+      posts: [],
+      scheduledPosts: [],
+      affiliateLinks: [],
+      analyticsSnapshots: [],
+      researchItems: [],
+    };
   }
 }
 
@@ -133,6 +142,49 @@ export async function getAffiliateLink(
 ): Promise<AffiliateLink | undefined> {
   const data = await readStore();
   return data.affiliateLinks.find((link) => link.id === id);
+}
+
+// ① リサーチ: 競合・伸びてる投稿から収集したネタの永続化
+export async function addResearchItem(
+  input: Omit<ResearchItem, "id" | "capturedAt" | "status">,
+): Promise<ResearchItem> {
+  const data = await readStore();
+  const researchItem: ResearchItem = {
+    id: crypto.randomUUID(),
+    capturedAt: new Date().toISOString(),
+    status: "new",
+    ...input,
+  };
+  data.researchItems.push(researchItem);
+  await writeStore(data);
+  return researchItem;
+}
+
+export async function listResearchItems(
+  status?: ResearchItem["status"],
+): Promise<ResearchItem[]> {
+  const data = await readStore();
+  return data.researchItems
+    .filter((item) => !status || item.status === status)
+    .sort((a, b) => b.capturedAt.localeCompare(a.capturedAt));
+}
+
+export async function getResearchItemsByIds(
+  ids: string[],
+): Promise<ResearchItem[]> {
+  const data = await readStore();
+  return data.researchItems.filter((item) => ids.includes(item.id));
+}
+
+export async function markResearchItemStatus(
+  id: string,
+  status: ResearchItem["status"],
+): Promise<void> {
+  const data = await readStore();
+  const researchItem = data.researchItems.find((item) => item.id === id);
+  if (!researchItem) return;
+  researchItem.status = status;
+  await writeStore(data);
 }
 
 // ⑧ 分析・改善: 投稿済みで分析取得対象になるもの一覧

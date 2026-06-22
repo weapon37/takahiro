@@ -2,7 +2,12 @@ import { NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { buildAnthropicClient, getModel } from "@/lib/anthropic-client";
 import { POST_TYPES, POST_TYPE_IDS, getPostTypeById } from "@/lib/post-types";
-import { getPerformanceSummary, listAffiliateLinks } from "@/lib/store";
+import {
+  getPerformanceSummary,
+  getResearchItemsByIds,
+  listAffiliateLinks,
+  markResearchItemStatus,
+} from "@/lib/store";
 import type { Theme } from "@/lib/pipeline-types";
 
 export const runtime = "nodejs";
@@ -13,6 +18,7 @@ const NO_AFFILIATE_LINK_ID = "none";
 export async function POST(request: Request) {
   let body: {
     researchNotes?: unknown;
+    researchItemIds?: unknown;
     recentPostSummaries?: unknown;
     useAffiliate?: unknown;
   };
@@ -28,6 +34,9 @@ export async function POST(request: Request) {
   const researchNotes = Array.isArray(body.researchNotes)
     ? body.researchNotes.filter((n): n is string => typeof n === "string" && n.trim() !== "")
     : [];
+  const researchItemIds = Array.isArray(body.researchItemIds)
+    ? body.researchItemIds.filter((id): id is string => typeof id === "string")
+    : [];
   const recentPostSummaries = Array.isArray(body.recentPostSummaries)
     ? body.recentPostSummaries.filter(
         (n): n is string => typeof n === "string" && n.trim() !== "",
@@ -35,9 +44,23 @@ export async function POST(request: Request) {
     : [];
   const useAffiliate = body.useAffiliate === true;
 
-  if (researchNotes.length === 0) {
+  // ① リサーチ: 選択された保存済みネタ(researchItemIds)と、手入力のネタ
+  // (researchNotes)を1つの候補リストにまとめる。保存済みネタには
+  // researchItemId が紐づき、選定後に⑤②の循環で使用済みとしてマークできる。
+  const selectedResearchItems = await getResearchItemsByIds(researchItemIds);
+  const candidateNotes: { text: string; researchItemId?: string }[] = [
+    ...selectedResearchItems.map((item) => ({
+      text: `[${item.platform}] ${item.summary}${
+        item.sourceAuthor ? `(出典: ${item.sourceAuthor})` : ""
+      }`,
+      researchItemId: item.id,
+    })),
+    ...researchNotes.map((text) => ({ text })),
+  ];
+
+  if (candidateNotes.length === 0) {
     return NextResponse.json(
-      { error: "ネタ候補を1件以上入力してください。" },
+      { error: "ネタ候補を1件以上入力または選択してください。" },
       { status: 400 },
     );
   }
@@ -58,8 +81,8 @@ export async function POST(request: Request) {
   const typeList = POST_TYPES.map(
     (t) => `- ${t.id}: ${t.label} — ${t.description}`,
   ).join("\n");
-  const notesList = researchNotes
-    .map((n, i) => `${i}: ${n}`)
+  const notesList = candidateNotes
+    .map((n, i) => `${i}: ${n.text}`)
     .join("\n");
   const recentList =
     recentPostSummaries.length > 0
@@ -191,13 +214,15 @@ export async function POST(request: Request) {
         ? input.affiliate_link_id
         : undefined;
 
+    const selectedNote =
+      input.selected_note_index >= 0 &&
+      input.selected_note_index < candidateNotes.length
+        ? candidateNotes[input.selected_note_index]
+        : undefined;
+
     const theme: Theme = {
       id: crypto.randomUUID(),
-      researchItemId:
-        input.selected_note_index >= 0 &&
-        input.selected_note_index < researchNotes.length
-          ? `note-${input.selected_note_index}`
-          : undefined,
+      researchItemId: selectedNote?.researchItemId,
       title: input.title,
       angle: input.angle,
       postTypeId: postType.id,
@@ -205,6 +230,10 @@ export async function POST(request: Request) {
       selectedAt: new Date().toISOString(),
       duplicateCheckNote: input.duplicate_check_note,
     };
+
+    if (selectedNote?.researchItemId) {
+      await markResearchItemStatus(selectedNote.researchItemId, "used");
+    }
 
     const affiliateLink = affiliateLinkId
       ? affiliateLinks.find((link) => link.id === affiliateLinkId)

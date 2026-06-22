@@ -11,12 +11,24 @@ import type {
   QualityCheckResult,
   ScheduledPost,
   AffiliateLink,
+  ResearchItem,
 } from "@/lib/pipeline-types";
+
+const PLATFORM_LABEL: Record<ResearchItem["platform"], string> = {
+  x: "X(旧Twitter)",
+  threads: "Threads",
+  instagram: "Instagram",
+  youtube: "YouTube",
+};
 
 interface ThemeResponse {
   theme: Theme;
   postType: PostTypeDefinition;
   affiliateLink?: AffiliateLink;
+}
+
+interface ResearchResponse {
+  researchItems: ResearchItem[];
 }
 
 interface PostResponse {
@@ -34,7 +46,14 @@ interface QualityResponse {
   qualityCheckResult: QualityCheckResult;
 }
 
-type Stage = "theme" | "post" | "fact-check" | "quality-check" | "schedule" | null;
+type Stage =
+  | "research"
+  | "theme"
+  | "post"
+  | "fact-check"
+  | "quality-check"
+  | "schedule"
+  | null;
 
 async function postJson<T>(url: string, body: unknown): Promise<T> {
   const response = await fetch(url, {
@@ -57,6 +76,11 @@ function linesToArray(text: string): string[] {
 }
 
 export default function PipelineForm() {
+  const [researchTopic, setResearchTopic] = useState("");
+  const [researchItems, setResearchItems] = useState<ResearchItem[]>([]);
+  const [selectedResearchItemIds, setSelectedResearchItemIds] = useState<
+    Set<string>
+  >(new Set());
   const [researchNotesText, setResearchNotesText] = useState("");
   const [recentPostsText, setRecentPostsText] = useState("");
   const [useAffiliate, setUseAffiliate] = useState(false);
@@ -73,6 +97,38 @@ export default function PipelineForm() {
   const [scheduledAt, setScheduledAt] = useState("");
   const [scheduledPost, setScheduledPost] = useState<ScheduledPost | null>(null);
 
+  function toggleResearchItem(id: string) {
+    setSelectedResearchItemIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  }
+
+  async function handleResearch() {
+    setError(null);
+    if (!researchTopic.trim()) {
+      setError("リサーチするテーマ・ジャンルを入力してください。");
+      return;
+    }
+
+    setLoadingStage("research");
+    try {
+      const data = await postJson<ResearchResponse>("/api/research", {
+        topic: researchTopic,
+      });
+      setResearchItems((prev) => [...data.researchItems, ...prev]);
+      setSelectedResearchItemIds(
+        (prev) => new Set([...prev, ...data.researchItems.map((item) => item.id)]),
+      );
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "リサーチに失敗しました。");
+    } finally {
+      setLoadingStage(null);
+    }
+  }
+
   async function handleSelectTheme() {
     setError(null);
     setThemeResult(null);
@@ -81,8 +137,9 @@ export default function PipelineForm() {
     setQualityResult(null);
 
     const researchNotes = linesToArray(researchNotesText);
-    if (researchNotes.length === 0) {
-      setError("ネタ候補を1件以上入力してください。");
+    const researchItemIds = [...selectedResearchItemIds];
+    if (researchNotes.length === 0 && researchItemIds.length === 0) {
+      setError("ネタ候補を1件以上入力または選択してください。");
       return;
     }
 
@@ -90,6 +147,7 @@ export default function PipelineForm() {
     try {
       const data = await postJson<ThemeResponse>("/api/theme", {
         researchNotes,
+        researchItemIds,
         recentPostSummaries: linesToArray(recentPostsText),
         useAffiliate,
       });
@@ -185,9 +243,60 @@ export default function PipelineForm() {
   return (
     <div className="flex w-full max-w-3xl flex-col gap-8">
       <section className="flex flex-col gap-4 rounded-xl border border-gray-200 p-6 shadow-sm">
-        <h2 className="font-semibold text-gray-800">① ネタ候補 → ② テーマ選定</h2>
+        <h2 className="font-semibold text-gray-800">① リサーチ(自動収集)</h2>
         <label className="flex flex-col gap-1 text-sm text-gray-700">
-          ネタ候補(1行に1件)
+          リサーチするテーマ・ジャンル
+          <input
+            value={researchTopic}
+            onChange={(e) => setResearchTopic(e.target.value)}
+            placeholder="例: 育児・時短家電"
+            className="rounded-lg border border-gray-300 p-2 text-sm"
+          />
+        </label>
+        <button
+          type="button"
+          onClick={handleResearch}
+          disabled={isLoading}
+          className="self-start rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white transition-colors hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-gray-300"
+        >
+          {loadingStage === "research" ? "リサーチ中..." : "リサーチを実行する"}
+        </button>
+
+        {researchItems.length > 0 && (
+          <div className="flex flex-col gap-2">
+            <p className="text-sm text-gray-600">
+              ネタとして使うものを選択してください(チェックを外すと使用されません)。
+            </p>
+            {researchItems.map((item) => (
+              <label
+                key={item.id}
+                className="flex items-start gap-2 rounded-lg border border-gray-200 p-3 text-sm text-gray-700"
+              >
+                <input
+                  type="checkbox"
+                  checked={selectedResearchItemIds.has(item.id)}
+                  onChange={() => toggleResearchItem(item.id)}
+                  className="mt-1"
+                />
+                <span>
+                  <span className="rounded-full bg-gray-100 px-2 py-0.5 text-xs font-semibold text-gray-700">
+                    {PLATFORM_LABEL[item.platform]}
+                  </span>
+                  <span className="ml-2">{item.summary}</span>
+                  {item.sourceAuthor && (
+                    <span className="ml-1 text-gray-400">(出典: {item.sourceAuthor})</span>
+                  )}
+                </span>
+              </label>
+            ))}
+          </div>
+        )}
+      </section>
+
+      <section className="flex flex-col gap-4 rounded-xl border border-gray-200 p-6 shadow-sm">
+        <h2 className="font-semibold text-gray-800">② テーマ選定</h2>
+        <label className="flex flex-col gap-1 text-sm text-gray-700">
+          手入力のネタ候補(任意、1行に1件)
           <textarea
             value={researchNotesText}
             onChange={(e) => setResearchNotesText(e.target.value)}
