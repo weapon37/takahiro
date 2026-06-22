@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "threads:token": "node scripts/threads-get-long-lived-token.mjs",
+    "threads:refresh": "node scripts/threads-refresh-token.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.105.0",
