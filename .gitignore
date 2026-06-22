@@ -37,6 +37,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# local pipeline data store (MVP用、本番ではDBに置き換える)
+/data/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

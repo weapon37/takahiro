@@ -3,11 +3,13 @@
 import { useState } from "react";
 import type { PostTypeDefinition } from "@/lib/post-types";
 import type { HookTypeDefinition } from "@/lib/hook-types";
+import Link from "next/link";
 import type {
   Theme,
   Post,
   FactCheckResult,
   QualityCheckResult,
+  ScheduledPost,
 } from "@/lib/pipeline-types";
 
 interface ThemeResponse {
@@ -30,7 +32,7 @@ interface QualityResponse {
   qualityCheckResult: QualityCheckResult;
 }
 
-type Stage = "theme" | "post" | "fact-check" | "quality-check" | null;
+type Stage = "theme" | "post" | "fact-check" | "quality-check" | "schedule" | null;
 
 async function postJson<T>(url: string, body: unknown): Promise<T> {
   const response = await fetch(url, {
@@ -65,6 +67,8 @@ export default function PipelineForm() {
   const [qualityResult, setQualityResult] = useState<QualityResponse | null>(
     null,
   );
+  const [scheduledAt, setScheduledAt] = useState("");
+  const [scheduledPost, setScheduledPost] = useState<ScheduledPost | null>(null);
 
   async function handleSelectTheme() {
     setError(null);
@@ -146,6 +150,27 @@ export default function PipelineForm() {
       setQualityResult(data);
     } catch (err) {
       setError(err instanceof Error ? err.message : "品質チェックに失敗しました。");
+    } finally {
+      setLoadingStage(null);
+    }
+  }
+
+  async function handleSchedule() {
+    if (!postResult || !scheduledAt) return;
+    setError(null);
+    setLoadingStage("schedule");
+    try {
+      const data = await postJson<{ scheduledPost: ScheduledPost }>(
+        "/api/scheduled-posts",
+        {
+          post: postResult.post,
+          platform: "threads",
+          scheduledAt: new Date(scheduledAt).toISOString(),
+        },
+      );
+      setScheduledPost(data.scheduledPost);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "予約登録に失敗しました。");
     } finally {
       setLoadingStage(null);
     }
@@ -307,9 +332,35 @@ export default function PipelineForm() {
               )}
 
               {qualityResult.qualityCheckResult.passed && (
-                <p className="text-sm text-gray-500">
-                  品質チェック合格(承認・予約投稿は今後の工程⑥で実装します)
-                </p>
+                <div className="flex flex-col gap-2 border-t border-gray-200 pt-3">
+                  <p className="font-semibold text-gray-800">⑥ 承認待ちに登録</p>
+                  <label className="flex flex-col gap-1 text-sm text-gray-700">
+                    予約投稿日時(Threads)
+                    <input
+                      type="datetime-local"
+                      value={scheduledAt}
+                      onChange={(e) => setScheduledAt(e.target.value)}
+                      className="rounded-lg border border-gray-300 p-2 text-sm"
+                    />
+                  </label>
+                  <button
+                    type="button"
+                    onClick={handleSchedule}
+                    disabled={isLoading || !scheduledAt}
+                    className="self-start rounded-lg bg-green-600 px-4 py-2 font-semibold text-white transition-colors hover:bg-green-700 disabled:cursor-not-allowed disabled:bg-gray-300"
+                  >
+                    {loadingStage === "schedule" ? "登録中..." : "承認待ちに登録する"}
+                  </button>
+
+                  {scheduledPost && (
+                    <p className="text-sm text-gray-600">
+                      承認待ちに登録しました。
+                      <Link href="/approvals" className="ml-1 text-blue-600 hover:underline">
+                        承認ページで確認する →
+                      </Link>
+                    </p>
+                  )}
+                </div>
               )}
             </div>
           )}

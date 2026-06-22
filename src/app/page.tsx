@@ -15,6 +15,9 @@ export default function Home() {
         <Link href="/pipeline" className="text-sm font-medium text-blue-600 hover:underline">
           投稿生成パイプライン(②〜⑤)を試す →
         </Link>
+        <Link href="/approvals" className="text-sm font-medium text-blue-600 hover:underline">
+          承認・予約投稿(⑥)を見る →
+        </Link>
       </div>
       <AnalyzerForm />
     </main>
