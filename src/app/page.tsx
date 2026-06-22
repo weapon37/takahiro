@@ -1,4 +1,5 @@
 import AnalyzerForm from "@/components/AnalyzerForm";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -11,6 +12,9 @@ export default function Home() {
           バズったX(旧Twitter)投稿のスクリーンショットをアップロードすると、
           投稿の「型」をAIが分析します。
         </p>
+        <Link href="/pipeline" className="text-sm font-medium text-blue-600 hover:underline">
+          投稿生成パイプライン(②〜⑤)を試す →
+        </Link>
       </div>
       <AnalyzerForm />
     </main>

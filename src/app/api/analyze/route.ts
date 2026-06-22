@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { POST_TYPES, POST_TYPE_IDS, getPostTypeById } from "@/lib/post-types";
+import { buildAnthropicClient, getModel } from "@/lib/anthropic-client";
 
 export const runtime = "nodejs";
 
@@ -13,14 +14,6 @@ const ALLOWED_MIME_TYPES = new Set([
 ]);
 
 const ANALYSIS_TOOL_NAME = "submit_analysis";
-
-function buildAnthropicClient(): Anthropic {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) {
-    throw new Error("ANTHROPIC_API_KEY が設定されていません。");
-  }
-  return new Anthropic({ apiKey });
-}
 
 export async function POST(request: Request) {
   let formData: FormData;
@@ -74,7 +67,7 @@ export async function POST(request: Request) {
 
   try {
     const message = await client.messages.create({
-      model: process.env.ANTHROPIC_MODEL || "claude-sonnet-4-6",
+      model: getModel(),
       max_tokens: 1500,
       system:
         "あなたはSNSマーケティングとバイラルコンテンツ分析の専門家です。X(旧Twitter)のバズった投稿のスクリーンショットを見て、投稿の「型」を分析します。必ず submit_analysis ツールを呼び出して結果を返してください。",
