@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "X投稿スクショ型分析ツール",
-  description: "バズったX投稿のスクリーンショットから投稿の型を分析します。",
+  title: "バズったX投稿 量産ツール",
+  description:
+    "バズったX投稿のテキストやスクリーンショットから型を分析し、同じ型で新しい投稿を量産します。",
 };
 
 export default function RootLayout({
