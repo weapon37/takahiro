@@ -2,14 +2,20 @@ import { NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { buildAnthropicClient, getModel } from "@/lib/anthropic-client";
 import { POST_TYPES, POST_TYPE_IDS, getPostTypeById } from "@/lib/post-types";
+import { listAffiliateLinks } from "@/lib/store";
 import type { Theme } from "@/lib/pipeline-types";
 
 export const runtime = "nodejs";
 
 const THEME_TOOL_NAME = "submit_theme";
+const NO_AFFILIATE_LINK_ID = "none";
 
 export async function POST(request: Request) {
-  let body: { researchNotes?: unknown; recentPostSummaries?: unknown };
+  let body: {
+    researchNotes?: unknown;
+    recentPostSummaries?: unknown;
+    useAffiliate?: unknown;
+  };
   try {
     body = await request.json();
   } catch {
@@ -27,6 +33,7 @@ export async function POST(request: Request) {
         (n): n is string => typeof n === "string" && n.trim() !== "",
       )
     : [];
+  const useAffiliate = body.useAffiliate === true;
 
   if (researchNotes.length === 0) {
     return NextResponse.json(
@@ -34,6 +41,8 @@ export async function POST(request: Request) {
       { status: 400 },
     );
   }
+
+  const affiliateLinks = useAffiliate ? await listAffiliateLinks() : [];
 
   let client: Anthropic;
   try {
@@ -55,6 +64,20 @@ export async function POST(request: Request) {
     recentPostSummaries.length > 0
       ? recentPostSummaries.map((n, i) => `${i}: ${n}`).join("\n")
       : "(直近の投稿情報なし)";
+  const affiliateLinkIds = affiliateLinks.map((link) => link.id);
+  const affiliateSection =
+    affiliateLinks.length > 0
+      ? `\n\n# 紹介可能なアフィリエイト商品\n${affiliateLinks
+          .map(
+            (link) =>
+              `- ${link.id}: [${link.platform}] ${link.productName}${
+                link.description ? ` — ${link.description}` : ""
+              }`,
+          )
+          .join(
+            "\n",
+          )}\n\nテーマの切り口にこれらの商品を自然に紹介できそうな場合は affiliate_link_id にそのIDを入れてください。無理にこじつける必要はなく、合わなければ \"${NO_AFFILIATE_LINK_ID}\" にしてください。`
+      : "";
 
   try {
     const message = await client.messages.create({
@@ -65,7 +88,7 @@ export async function POST(request: Request) {
       messages: [
         {
           role: "user",
-          content: `# ネタ候補\n${notesList}\n\n# 直近の投稿\n${recentList}\n\n# 投稿の型リスト\n${typeList}\n\n上記のネタ候補から本日のテーマを1つ選んでください。直近の投稿と内容が被る場合は、被らない切り口を選ぶか duplicate_check_note で被りをどう避けたかを説明してください。`,
+          content: `# ネタ候補\n${notesList}\n\n# 直近の投稿\n${recentList}\n\n# 投稿の型リスト\n${typeList}${affiliateSection}\n\n上記のネタ候補から本日のテーマを1つ選んでください。直近の投稿と内容が被る場合は、被らない切り口を選ぶか duplicate_check_note で被りをどう避けたかを説明してください。`,
         },
       ],
       tools: [
@@ -96,6 +119,16 @@ export async function POST(request: Request) {
                 type: "string",
                 description: "直近の投稿と被っていないかの確認結果と理由",
               },
+              ...(affiliateLinkIds.length > 0
+                ? {
+                    affiliate_link_id: {
+                      type: "string",
+                      enum: [...affiliateLinkIds, NO_AFFILIATE_LINK_ID],
+                      description:
+                        "このテーマで自然に紹介できるアフィリエイト商品のID。合わなければ none。",
+                    },
+                  }
+                : {}),
             },
             required: [
               "selected_note_index",
@@ -127,6 +160,7 @@ export async function POST(request: Request) {
       angle: string;
       post_type_id: string;
       duplicate_check_note: string;
+      affiliate_link_id?: string;
     };
 
     const postType = getPostTypeById(input.post_type_id);
@@ -136,6 +170,11 @@ export async function POST(request: Request) {
         { status: 502 },
       );
     }
+
+    const affiliateLinkId =
+      input.affiliate_link_id && input.affiliate_link_id !== NO_AFFILIATE_LINK_ID
+        ? input.affiliate_link_id
+        : undefined;
 
     const theme: Theme = {
       id: crypto.randomUUID(),
@@ -147,11 +186,16 @@ export async function POST(request: Request) {
       title: input.title,
       angle: input.angle,
       postTypeId: postType.id,
+      affiliateLinkId,
       selectedAt: new Date().toISOString(),
       duplicateCheckNote: input.duplicate_check_note,
     };
 
-    return NextResponse.json({ theme, postType });
+    const affiliateLink = affiliateLinkId
+      ? affiliateLinks.find((link) => link.id === affiliateLinkId)
+      : undefined;
+
+    return NextResponse.json({ theme, postType, affiliateLink });
   } catch (error) {
     console.error("Theme selection failed", error);
     const message =

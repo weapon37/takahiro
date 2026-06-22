@@ -1,6 +1,6 @@
 import { readFile, writeFile, mkdir } from "fs/promises";
 import path from "path";
-import type { Post, ScheduledPost } from "./pipeline-types";
+import type { AffiliateLink, Post, ScheduledPost } from "./pipeline-types";
 
 // MVP用のファイルベース永続化。単一インスタンス・低頻度アクセスを前提とした
 // 簡易実装で、本番でサーバーレスや複数インスタンス運用に移る際はDBに置き換える。
@@ -10,14 +10,20 @@ const DATA_FILE = path.join(DATA_DIR, "pipeline-store.json");
 interface StoreData {
   posts: Post[];
   scheduledPosts: ScheduledPost[];
+  affiliateLinks: AffiliateLink[];
 }
 
 async function readStore(): Promise<StoreData> {
   try {
     const raw = await readFile(DATA_FILE, "utf-8");
-    return JSON.parse(raw) as StoreData;
+    const data = JSON.parse(raw) as Partial<StoreData>;
+    return {
+      posts: data.posts ?? [],
+      scheduledPosts: data.scheduledPosts ?? [],
+      affiliateLinks: data.affiliateLinks ?? [],
+    };
   } catch {
-    return { posts: [], scheduledPosts: [] };
+    return { posts: [], scheduledPosts: [], affiliateLinks: [] };
   }
 }
 
@@ -96,4 +102,26 @@ export async function markScheduledPostResult(
   if (!scheduledPost) return;
   scheduledPost.status = result;
   await writeStore(data);
+}
+
+export async function addAffiliateLink(
+  input: Omit<AffiliateLink, "id">,
+): Promise<AffiliateLink> {
+  const data = await readStore();
+  const affiliateLink: AffiliateLink = { id: crypto.randomUUID(), ...input };
+  data.affiliateLinks.push(affiliateLink);
+  await writeStore(data);
+  return affiliateLink;
+}
+
+export async function listAffiliateLinks(): Promise<AffiliateLink[]> {
+  const data = await readStore();
+  return data.affiliateLinks;
+}
+
+export async function getAffiliateLink(
+  id: string,
+): Promise<AffiliateLink | undefined> {
+  const data = await readStore();
+  return data.affiliateLinks.find((link) => link.id === id);
 }

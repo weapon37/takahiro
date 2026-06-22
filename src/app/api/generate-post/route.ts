@@ -5,6 +5,7 @@ import { getPostTypeById } from "@/lib/post-types";
 import { HOOK_TYPES, HOOK_TYPE_IDS, getHookTypeById } from "@/lib/hook-types";
 import { POST_STRUCTURES, POST_STRUCTURE_IDS } from "@/lib/post-structures";
 import { getAccountProfileById } from "@/lib/account-profiles";
+import { getAffiliateLink } from "@/lib/store";
 import type { Theme, Post } from "@/lib/pipeline-types";
 
 export const runtime = "nodejs";
@@ -51,6 +52,10 @@ export async function POST(request: Request) {
       { status: 400 },
     );
   }
+
+  const affiliateLink = theme.affiliateLinkId
+    ? await getAffiliateLink(theme.affiliateLinkId)
+    : undefined;
 
   let client: Anthropic;
   try {
@@ -118,6 +123,12 @@ export async function POST(request: Request) {
       (s) => `- ${s.id}: ${s.label} — ${s.description}`,
     ).join("\n");
 
+    const affiliateNote = affiliateLink
+      ? `\n\n# 紹介する商品(自然な文脈で触れること。商品URLや「#PR」は本文に書かなくてよい。後でシステムが自動付与する)\n${affiliateLink.productName}${
+          affiliateLink.description ? ` — ${affiliateLink.description}` : ""
+        }`
+      : "";
+
     const bodyMessage = await client.messages.create({
       model: getModel(),
       max_tokens: 1200,
@@ -126,7 +137,7 @@ export async function POST(request: Request) {
       messages: [
         {
           role: "user",
-          content: `# アカウントの口調\n${accountProfile.toneDescription}\n\n# テーマ\nタイトル: ${theme.title}\n切り口: ${theme.angle}\n投稿の型: ${postType.label} — ${postType.description}\n\n# フック(この続きを書く)\n${hookInput.hook}\n\n# ポスト構成の型リスト\n${structureList}${feedbackNote}\n\nフックに続く本文を、最も合う構成の型を1つ選んで書いてください。フック自体は繰り返さず、フックの直後から続く文章にしてください。`,
+          content: `# アカウントの口調\n${accountProfile.toneDescription}\n\n# テーマ\nタイトル: ${theme.title}\n切り口: ${theme.angle}\n投稿の型: ${postType.label} — ${postType.description}\n\n# フック(この続きを書く)\n${hookInput.hook}\n\n# ポスト構成の型リスト\n${structureList}${affiliateNote}${feedbackNote}\n\nフックに続く本文を、最も合う構成の型を1つ選んで書いてください。フック自体は繰り返さず、フックの直後から続く文章にしてください。`,
         },
       ],
       tools: [
@@ -160,13 +171,20 @@ export async function POST(request: Request) {
       body: string;
     };
 
+    // ステマ規制対応: アフィリエイトリンクを含む投稿には広告である旨と
+    // リンクを必ず本文末尾に機械的に付与し、AIの生成揺れに依存しない。
+    const finalBody = affiliateLink
+      ? `${bodyInput.body}\n\n${affiliateLink.url}\n#PR`
+      : bodyInput.body;
+
     const post: Post = {
       id: crypto.randomUUID(),
       themeId: theme.id,
       accountId: accountProfile.id,
       hook: hookInput.hook,
-      body: bodyInput.body,
+      body: finalBody,
       postTypeId: postType.id,
+      affiliateLinkId: affiliateLink?.id,
       revision: body.revision !== undefined ? body.revision + 1 : 0,
       status: "draft",
     };

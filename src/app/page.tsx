@@ -18,6 +18,9 @@ export default function Home() {
         <Link href="/approvals" className="text-sm font-medium text-blue-600 hover:underline">
           承認・予約投稿(⑥)を見る →
         </Link>
+        <Link href="/affiliate-links" className="text-sm font-medium text-blue-600 hover:underline">
+          アフィリエイトリンク管理(⑦)を見る →
+        </Link>
       </div>
       <AnalyzerForm />
     </main>

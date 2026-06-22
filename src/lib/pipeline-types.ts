@@ -57,6 +57,7 @@ export type Post = {
   hook: string;
   body: string;
   postTypeId: PostTypeId;
+  affiliateLinkId?: string;
   revision: number;
   status: PostStatus;
 };
@@ -96,12 +97,15 @@ export type ScheduledPost = {
 };
 
 // ⑦ 自動で販売: テーマに紐づけるアフィリエイトリンク
+export type AffiliateNetwork = "rakuten" | "a8net" | "afb";
+
 export type AffiliateLink = {
   id: string;
   productName: string;
-  platform: "rakuten";
+  platform: AffiliateNetwork;
   url: string;
   tags: string[];
+  description?: string;
 };
 
 // ⑧ 分析・改善: 投稿ごとのエンゲージメント結果

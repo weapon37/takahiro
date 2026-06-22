@@ -10,11 +10,13 @@ import type {
   FactCheckResult,
   QualityCheckResult,
   ScheduledPost,
+  AffiliateLink,
 } from "@/lib/pipeline-types";
 
 interface ThemeResponse {
   theme: Theme;
   postType: PostTypeDefinition;
+  affiliateLink?: AffiliateLink;
 }
 
 interface PostResponse {
@@ -57,6 +59,7 @@ function linesToArray(text: string): string[] {
 export default function PipelineForm() {
   const [researchNotesText, setResearchNotesText] = useState("");
   const [recentPostsText, setRecentPostsText] = useState("");
+  const [useAffiliate, setUseAffiliate] = useState(false);
   const [loadingStage, setLoadingStage] = useState<Stage>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -88,6 +91,7 @@ export default function PipelineForm() {
       const data = await postJson<ThemeResponse>("/api/theme", {
         researchNotes,
         recentPostSummaries: linesToArray(recentPostsText),
+        useAffiliate,
       });
       setThemeResult(data);
     } catch (err) {
@@ -201,6 +205,17 @@ export default function PipelineForm() {
             className="rounded-lg border border-gray-300 p-3 text-sm"
           />
         </label>
+        <label className="flex items-center gap-2 text-sm text-gray-700">
+          <input
+            type="checkbox"
+            checked={useAffiliate}
+            onChange={(e) => setUseAffiliate(e.target.checked)}
+          />
+          ⑦ アフィリエイト商品を紐づける(合う商品があれば自動で選定)
+          <Link href="/affiliate-links" className="text-blue-600 hover:underline">
+            リンクを管理する →
+          </Link>
+        </label>
         <button
           type="button"
           onClick={handleSelectTheme}
@@ -220,6 +235,12 @@ export default function PipelineForm() {
             <p className="mt-1 text-gray-500">
               重複チェック: {themeResult.theme.duplicateCheckNote}
             </p>
+            {themeResult.affiliateLink && (
+              <p className="mt-1 text-amber-700">
+                紐づけ商品: {themeResult.affiliateLink.productName}(
+                {themeResult.affiliateLink.platform})
+              </p>
+            )}
           </div>
         )}
       </section>
