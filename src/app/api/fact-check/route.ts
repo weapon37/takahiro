@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { buildAnthropicClient, getModel } from "@/lib/anthropic-client";
 import { getAffiliateLink } from "@/lib/store";
+import { buildAffiliateFooter, stripAffiliateFooter } from "@/lib/affiliate-disclosure";
 import type { Post, FactCheckResult } from "@/lib/pipeline-types";
 
 export const runtime = "nodejs";
@@ -42,13 +43,8 @@ export async function POST(request: Request) {
   const affiliateLink = post.affiliateLinkId
     ? await getAffiliateLink(post.affiliateLinkId)
     : undefined;
-  const affiliateFooter = affiliateLink
-    ? `\n\n${affiliateLink.url}\n#PR`
-    : "";
-  const bodyForCheck =
-    affiliateFooter && post.body.endsWith(affiliateFooter)
-      ? post.body.slice(0, -affiliateFooter.length)
-      : post.body;
+  const affiliateFooter = buildAffiliateFooter(affiliateLink);
+  const bodyForCheck = stripAffiliateFooter(post.body, affiliateFooter);
 
   try {
     const message = await client.messages.create({

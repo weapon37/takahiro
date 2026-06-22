@@ -49,6 +49,15 @@ export async function POST(request: Request) {
     );
   }
 
+  try {
+    new URL(url);
+  } catch {
+    return NextResponse.json(
+      { error: "URLの形式が不正です。" },
+      { status: 400 },
+    );
+  }
+
   const affiliateLink = await addAffiliateLink({
     productName,
     platform,

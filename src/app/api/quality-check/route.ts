@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { buildAnthropicClient, getModel } from "@/lib/anthropic-client";
+import { getAffiliateLink } from "@/lib/store";
+import { buildAffiliateFooter, stripAffiliateFooter } from "@/lib/affiliate-disclosure";
 import type { Post, QualityCheckResult } from "@/lib/pipeline-types";
 
 export const runtime = "nodejs";
@@ -37,6 +39,14 @@ export async function POST(request: Request) {
     );
   }
 
+  // アフィリエイトURL・#PR表記は品質採点の対象外とする(広告表示自体の
+  // 有無でフックの強さ・内容の深さが不当に下がらないようにするため)。
+  const affiliateLink = post.affiliateLinkId
+    ? await getAffiliateLink(post.affiliateLinkId)
+    : undefined;
+  const affiliateFooter = buildAffiliateFooter(affiliateLink);
+  const bodyForCheck = stripAffiliateFooter(post.body, affiliateFooter);
+
   try {
     const message = await client.messages.create({
       model: getModel(),
@@ -46,7 +56,7 @@ export async function POST(request: Request) {
       messages: [
         {
           role: "user",
-          content: `# フック\n${post.hook}\n\n# 本文\n${post.body}\n\n上記の投稿を採点してください。`,
+          content: `# フック\n${post.hook}\n\n# 本文\n${bodyForCheck}\n\n上記の投稿を採点してください。`,
         },
       ],
       tools: [

@@ -93,6 +93,7 @@ export default function AffiliateLinksManager({
         <label className="flex flex-col gap-1 text-sm text-gray-700">
           アフィリエイトURL(発行された計測用リンク)
           <input
+            type="url"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             required

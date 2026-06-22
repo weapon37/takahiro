@@ -10,6 +10,7 @@ import {
 } from "@/lib/post-structures";
 import { getAccountProfileById } from "@/lib/account-profiles";
 import { getAffiliateLink, getPerformanceSummary } from "@/lib/store";
+import { buildAffiliateFooter } from "@/lib/affiliate-disclosure";
 import type { Theme, Post } from "@/lib/pipeline-types";
 
 export const runtime = "nodejs";
@@ -204,9 +205,7 @@ export async function POST(request: Request) {
 
     // ステマ規制対応: アフィリエイトリンクを含む投稿には広告である旨と
     // リンクを必ず本文末尾に機械的に付与し、AIの生成揺れに依存しない。
-    const finalBody = affiliateLink
-      ? `${bodyInput.body}\n\n${affiliateLink.url}\n#PR`
-      : bodyInput.body;
+    const finalBody = `${bodyInput.body}${buildAffiliateFooter(affiliateLink)}`;
 
     const post: Post = {
       id: crypto.randomUUID(),
