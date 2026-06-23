@@ -1,3 +1,4 @@
+import Link from "next/link";
 import AnalyzerForm from "@/components/AnalyzerForm";
 
 export default function Home() {
@@ -11,6 +12,9 @@ export default function Home() {
           バズったX(旧Twitter)投稿のスクリーンショットをアップロードすると、
           投稿の「型」をAIが分析します。
         </p>
+        <Link href="/style-analysis" className="text-sm text-blue-600 hover:underline">
+          文体プロファイルを分析するツールはこちら
+        </Link>
       </div>
       <AnalyzerForm />
     </main>
