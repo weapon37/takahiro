@@ -1,0 +1,13 @@
+{
+  "name": "a8-scraper",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A8.net の案件(プログラム)を検索してCSVにまとめるローカル実行用スクリプト",
+  "main": "scrape.js",
+  "scripts": {
+    "scrape": "node scrape.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.56.1"
+  }
+}

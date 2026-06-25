@@ -40,3 +40,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# a8-scraper local outputs
+/scripts/a8-scraper/node_modules
+/scripts/a8-scraper/output/*
+!/scripts/a8-scraper/output/.gitkeep
