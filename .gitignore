@@ -45,3 +45,5 @@ next-env.d.ts
 /scripts/a8-scraper/node_modules
 /scripts/a8-scraper/output/*
 !/scripts/a8-scraper/output/.gitkeep
+# a8-scraper saved login state (cookies) — must never be committed
+/scripts/a8-scraper/.auth-state.json

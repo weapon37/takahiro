@@ -56,6 +56,13 @@ const OUT_DIR = path.join(__dirname, 'output');
 const EMAIL_TO = process.env.A8_EMAIL_TO || '';
 const EMAIL_FROM = process.env.A8_EMAIL_FROM || '';
 const EMAIL_APP_PASSWORD = process.env.A8_EMAIL_APP_PASSWORD || '';
+// 予約実行（launchd等、人が画面を見ていない状態での自動実行）かどうか。
+// trueの場合、手動操作待ち(Enterキー)では永久に止まってしまうため、
+// 人手が必要になった時点で処理を中断してアラートメールを送る。
+const SCHEDULED = process.env.A8_SCHEDULED === 'true';
+// ログイン状態(Cookie等)の保存先。次回実行時にここから復元することで、
+// 予約実行時は毎回ログイン操作をせずに済む（A8.net側のセッションが切れたら再度手動ログインが必要）。
+const STATE_FILE = process.env.A8_STATE_FILE || path.join(__dirname, '.auth-state.json');
 
 function ts() {
   return new Date().toISOString().replace(/[:.]/g, '-');
@@ -236,20 +243,25 @@ async function isReauthPage(page) {
   }
 }
 
-async function handleReauthIfNeeded(page, originalUrl) {
+async function handleReauthIfNeeded(page, originalUrl, browser) {
   if (!(await isReauthPage(page))) return false;
   console.log('\nA8.net から再認証(パスワードの再入力)を求められました。');
-  await waitForEnter('開いているブラウザで再認証を完了したら Enter キーを押してください... ');
+  await pauseOrAbort(
+    browser,
+    '開いているブラウザで再認証を完了したら Enter キーを押してください... ',
+    'A8scraper: 再認証が必要です',
+    'A8.netから再認証（パスワードの再入力）を求められたため、予約実行を中断しました。\nMacで `npm run scrape` を手動実行し、再認証を完了してください。'
+  );
   await page.goto(originalUrl, { waitUntil: 'domcontentloaded', timeout: 20000 });
   await page.waitForTimeout(1500);
   return true;
 }
 
 // SPAのページ遷移が落ち着くまで何度か確認し、その都度 再認証ページなら対処する。
-async function settleDetailPage(page, originalUrl) {
+async function settleDetailPage(page, originalUrl, browser) {
   for (let i = 0; i < 5; i++) {
     await page.waitForTimeout(800);
-    await handleReauthIfNeeded(page, originalUrl);
+    await handleReauthIfNeeded(page, originalUrl, browser);
   }
 }
 
@@ -308,24 +320,56 @@ function extractRemarksFromHtml(html) {
     .slice(0, 300);
 }
 
-// A8_EMAIL_TO / A8_EMAIL_FROM / A8_EMAIL_APP_PASSWORD が設定されている場合のみ、
-// 完成したCSVをGmail経由で自分宛に送信する（未設定なら何もしない＝従来動作のまま）。
-// パスワードはGmailの「アプリパスワード」を使うこと（通常のログインパスワードは使えない）。
-async function sendCsvByEmail(csvPath, keyword, rowCount) {
+// A8_EMAIL_TO / A8_EMAIL_FROM / A8_EMAIL_APP_PASSWORD が設定されている場合のみ送信する
+// （未設定なら何もしない＝従来動作のまま）。パスワードはGmailの「アプリパスワード」を使うこと
+// （通常のログインパスワードは使えない）。
+async function sendEmail({ subject, text, attachments }) {
   if (!EMAIL_TO || !EMAIL_FROM || !EMAIL_APP_PASSWORD) return false;
   const nodemailer = require('nodemailer');
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: { user: EMAIL_FROM, pass: EMAIL_APP_PASSWORD },
   });
-  await transporter.sendMail({
-    from: EMAIL_FROM,
-    to: EMAIL_TO,
+  await transporter.sendMail({ from: EMAIL_FROM, to: EMAIL_TO, subject, text, attachments });
+  return true;
+}
+
+async function sendCsvByEmail(csvPath, keyword, rowCount) {
+  return sendEmail({
     subject: `A8.net案件調査結果「${keyword}」（${rowCount}件）`,
     text: '添付のCSVファイルをご確認ください。',
     attachments: [{ filename: path.basename(csvPath), path: csvPath }],
   });
-  return true;
+}
+
+// 予約実行中に人手の操作（ログイン・再認証・手動操作待ちなど）が必要になった場合の処理。
+// 通常実行(SCHEDULED=false)ならEnterキー待ちでそのまま続行。
+// 予約実行(SCHEDULED=true)では誰も画面を見ていないため待ち続けても無意味なので、
+// アラートメールを送ってブラウザを閉じ、処理を中断する。
+async function pauseOrAbort(browser, promptText, alertSubject, alertBody) {
+  if (!SCHEDULED) {
+    await waitForEnter(promptText);
+    return;
+  }
+  console.error(`予約実行中に人手の操作が必要になったため中断します: ${alertSubject}`);
+  try {
+    const sent = await sendEmail({ subject: alertSubject, text: alertBody });
+    if (sent) console.log(`アラートメールを送信しました: ${EMAIL_TO}`);
+  } catch (e) {
+    console.warn(`アラートメールの送信に失敗しました: ${e.message}`);
+  }
+  await browser.close();
+  process.exit(1);
+}
+
+// 保存済みのCookie等を復元した直後にログイン済みかどうかを判定する。
+// A8.netのログインフォームには input[type="password"] があるという前提（AUTO_LOGINと同じ前提）。
+async function isLoggedIn(page) {
+  try {
+    return (await page.locator('input[type="password"]').count()) === 0;
+  } catch (e) {
+    return false;
+  }
 }
 
 (async () => {
@@ -334,30 +378,51 @@ async function sendCsvByEmail(csvPath, keyword, rowCount) {
   // browser.newPage() が作る暗黙のコンテキストは1ページ専用で、そこから
   // 2つ目のページを開こうとすると "Please use browser.newContext()" で失敗する。
   // 詳細ページをログイン状態を共有した別タブで開けるよう、明示的にコンテキストを作る。
-  const context = await browser.newContext();
+  // 前回保存したログイン状態(Cookie等)があれば復元し、予約実行でもログイン操作なしで進められるようにする。
+  const hasSavedState = fs.existsSync(STATE_FILE);
+  const context = await browser.newContext(hasSavedState ? { storageState: STATE_FILE } : {});
   const page = await context.newPage();
 
   await page.goto('https://www.a8.net/', { waitUntil: 'domcontentloaded' });
 
-  if (AUTO_LOGIN && A8_ID && A8_PASS) {
-    console.log('自動ログインを試みます（マークアップ未検証のため失敗する可能性があります）。');
-    try {
-      const idInput = page.locator('input[type="text"], input[name*="id" i], input[name*="login" i]').first();
-      const passInput = page.locator('input[type="password"]').first();
-      await idInput.fill(A8_ID);
-      await passInput.fill(A8_PASS);
-      await Promise.all([
-        page.waitForLoadState('domcontentloaded'),
-        passInput.press('Enter'),
-      ]);
-    } catch (e) {
-      console.warn('自動ログインに失敗しました。手動でログインしてください。', e.message);
+  if (hasSavedState && (await isLoggedIn(page))) {
+    console.log('保存済みのログイン状態を利用しました（ログイン操作をスキップしました）。');
+  } else {
+    if (SCHEDULED) {
+      await pauseOrAbort(
+        browser,
+        '',
+        'A8scraper: 再ログインが必要です',
+        'A8.netの保存済みログイン情報が無効（期限切れ等）のため、予約実行を中断しました。\n' +
+          'Macで以下を実行し、ブラウザで再ログインしてください。完了すると次回以降の予約実行で再利用されます。\n\n' +
+          'cd scripts/a8-scraper\nnpm run scrape'
+      );
     }
-  }
 
-  if (!AUTO_LOGIN || !A8_ID || !A8_PASS) {
-    console.log('開いたブラウザで A8.net にログインしてください。');
-    await waitForEnter('ログインが完了したら Enter キーを押してください... ');
+    if (AUTO_LOGIN && A8_ID && A8_PASS) {
+      console.log('自動ログインを試みます（マークアップ未検証のため失敗する可能性があります）。');
+      try {
+        const idInput = page.locator('input[type="text"], input[name*="id" i], input[name*="login" i]').first();
+        const passInput = page.locator('input[type="password"]').first();
+        await idInput.fill(A8_ID);
+        await passInput.fill(A8_PASS);
+        await Promise.all([
+          page.waitForLoadState('domcontentloaded'),
+          passInput.press('Enter'),
+        ]);
+      } catch (e) {
+        console.warn('自動ログインに失敗しました。手動でログインしてください。', e.message);
+      }
+    }
+
+    if (!AUTO_LOGIN || !A8_ID || !A8_PASS) {
+      console.log('開いたブラウザで A8.net にログインしてください。');
+      await waitForEnter('ログインが完了したら Enter キーを押してください... ');
+    }
+
+    // 次回以降の実行（特に予約実行）で再ログイン操作を省けるよう、ログイン状態を保存する。
+    await context.storageState({ path: STATE_FILE });
+    console.log(`ログイン状態を保存しました: ${STATE_FILE}`);
   }
 
   // プログラム検索への遷移（テキストリンクをクリック。見つからない場合は手動操作を促す）
@@ -367,7 +432,12 @@ async function sendCsvByEmail(csvPath, keyword, rowCount) {
     await page.waitForLoadState('domcontentloaded');
   } catch (e) {
     console.log('「プログラム検索」リンクを自動で見つけられませんでした。');
-    await waitForEnter('プログラム検索のページまで自分で移動したら Enter キーを押してください... ');
+    await pauseOrAbort(
+      browser,
+      'プログラム検索のページまで自分で移動したら Enter キーを押してください... ',
+      'A8scraper: 自動操作に失敗しました',
+      '「プログラム検索」リンクが見つからず、予約実行を中断しました。A8.net側のページ構成が変わった可能性があります。'
+    );
   }
 
   // キーワード検索
@@ -380,7 +450,12 @@ async function sendCsvByEmail(csvPath, keyword, rowCount) {
     await page.waitForLoadState('domcontentloaded');
   } catch (e) {
     console.log('検索キーワード入力欄を自動で見つけられませんでした。');
-    await waitForEnter(`「${KEYWORD}」で検索した状態にしてから Enter キーを押してください... `);
+    await pauseOrAbort(
+      browser,
+      `「${KEYWORD}」で検索した状態にしてから Enter キーを押してください... `,
+      'A8scraper: 自動操作に失敗しました',
+      `検索キーワード入力欄が見つからず、予約実行を中断しました（キーワード: ${KEYWORD}）。A8.net側のページ構成が変わった可能性があります。`
+    );
   }
 
   const allCards = [];
@@ -430,7 +505,7 @@ async function sendCsvByEmail(csvPath, keyword, rowCount) {
         // 作ってしまうため、ログイン済みの page と同じコンテキストから新規タブを開く。
         const detail = await page.context().newPage();
         await detail.goto(card.url, { waitUntil: 'domcontentloaded', timeout: 20000 });
-        await settleDetailPage(detail, card.url);
+        await settleDetailPage(detail, card.url, browser);
         const detailHtml = await detail.content();
         // 承認条件の抽出ロジックが詳細ページの実際の構造と合っているか確認するため、
         // 最初の2件だけ詳細ページのHTMLを保存する（デバッグ用）。
