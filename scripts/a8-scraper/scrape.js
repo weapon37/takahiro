@@ -203,6 +203,18 @@ async function extractListCards(page) {
 
 // 詳細ページでも一覧と同様の「ラベル→直後の値」という並びを仮定して取り出す。
 // （詳細ページの構造は未確認のためヒューリスティック。取れない場合は空文字を返す）
+// 案件詳細ページを開く際、A8.net側のセキュリティ仕様で「ログイン再認証」(パスワード再入力)
+// を求められることがある。自動化できないため、いったん止めて手動で再認証してもらう。
+async function handleReauthIfNeeded(page, originalUrl) {
+  const title = await page.title();
+  if (!title.includes('再認証')) return false;
+  console.log('\nA8.net から再認証(パスワードの再入力)を求められました。');
+  await waitForEnter('開いているブラウザで再認証を完了したら Enter キーを押してください... ');
+  await page.goto(originalUrl, { waitUntil: 'domcontentloaded', timeout: 20000 });
+  await page.waitForTimeout(1000);
+  return true;
+}
+
 async function extractLabelValue(page, label) {
   return page.evaluate((label) => {
     // まずテーブル行 (tr > th/td) を探す。一覧ページの確定率と同様に、ラベル側の
@@ -341,6 +353,7 @@ async function extractLabelValue(page, label) {
         const detail = await page.context().newPage();
         await detail.goto(card.url, { waitUntil: 'domcontentloaded', timeout: 20000 });
         await detail.waitForTimeout(1000);
+        await handleReauthIfNeeded(detail, card.url);
         // 承認条件の抽出ロジックが詳細ページの実際の構造と合っているか確認するため、
         // 最初の2件だけ詳細ページのHTMLを保存する（デバッグ用）。
         if (rows.length < 2) {
