@@ -87,6 +87,22 @@ async function extractListCards(page) {
     const leaves = Array.from(document.querySelectorAll('body *')).filter(isLeaf);
     const items = leaves.map((el) => ({ text: el.textContent.trim(), el }));
 
+    // ラベルの直後に「ⓘ」等のツールチップアイコンが独立した要素として挟まることがある
+    // （例: 「確定率」の次の leaf がアイコンで、本当の値はその次にある）。
+    // 数字を含まない短いトークンはアイコン/区切りとみなして読み飛ばす。
+    function isIconOrNoise(t) {
+      return t.length <= 2 && !/[0-9]/.test(t);
+    }
+    function findValueAfter(i) {
+      for (let j = i + 1; j < items.length && j <= i + 4; j++) {
+        const t = items[j].text;
+        if (LABELS.includes(t)) break;
+        if (isIconOrNoise(t)) continue;
+        return j;
+      }
+      return i + 1 < items.length ? i + 1 : -1;
+    }
+
     function finalizeTitle(card, recentTexts) {
       const filtered = recentTexts.filter(
         (t) => !TITLE_BLACKLIST.has(t) && !LABELS.includes(t) && t.length >= 4
@@ -105,7 +121,9 @@ async function extractListCards(page) {
     for (let i = 0; i < items.length; i++) {
       if (LABELS.includes(items[i].text)) {
         consumed[i] = true;
-        if (i + 1 < items.length) consumed[i + 1] = true;
+        const valueIdx = findValueAfter(i);
+        const end = valueIdx === -1 ? i + 1 : valueIdx;
+        for (let k = i + 1; k <= end && k < items.length; k++) consumed[k] = true;
       }
     }
 
@@ -125,7 +143,8 @@ async function extractListCards(page) {
 
       if (current) {
         if (LABELS.includes(text)) {
-          const value = items[i + 1] ? items[i + 1].text : '';
+          const valueIdx = findValueAfter(i);
+          const value = valueIdx !== -1 && items[valueIdx] ? items[valueIdx].text : '';
           if (text === 'カテゴリ') current.category = value;
           if (text === '成果報酬') current.reward = value;
           if (text === '確定率') current.confirmRate = value;
@@ -166,11 +185,21 @@ async function extractLabelValue(page, label) {
     function isLeaf(el) {
       return el.children.length === 0 && (el.textContent || '').trim().length > 0;
     }
+    function isIconOrNoise(t) {
+      return t.length <= 2 && !/[0-9]/.test(t);
+    }
     const leaves = Array.from(document.querySelectorAll('body *')).filter(isLeaf);
     for (let i = 0; i < leaves.length; i++) {
       const t = leaves[i].textContent.trim();
       if (t === label || (t.startsWith(label) && t.length <= label.length + 6)) {
-        return leaves[i + 1] ? leaves[i + 1].textContent.trim().slice(0, 300) : '';
+        // ラベル直後に「ⓘ」等のアイコンが挟まる場合に備えて、数字や文字を含む
+        // 実質的な値が見つかるまで数要素先まで読み飛ばす。
+        for (let j = i + 1; j < leaves.length && j <= i + 4; j++) {
+          const v = leaves[j].textContent.trim();
+          if (isIconOrNoise(v)) continue;
+          return v.slice(0, 300);
+        }
+        return '';
       }
     }
     return '';
