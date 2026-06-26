@@ -338,6 +338,12 @@ async function extractLabelValue(page, label) {
       try {
         const detail = await browser.newPage();
         await detail.goto(card.url, { waitUntil: 'domcontentloaded', timeout: 20000 });
+        await detail.waitForTimeout(1000);
+        // 承認条件の抽出ロジックが詳細ページの実際の構造と合っているか確認するため、
+        // 最初の2件だけ詳細ページのHTMLを保存する（デバッグ用）。
+        if (rows.length < 2) {
+          fs.writeFileSync(path.join(OUT_DIR, `detail-sample-${rows.length}.html`), await detail.content());
+        }
         row['承認条件'] = (await extractLabelValue(detail, '承認条件')) || '';
         await detail.close();
       } catch (e) {
