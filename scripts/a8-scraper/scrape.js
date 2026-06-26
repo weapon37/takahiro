@@ -336,7 +336,9 @@ async function extractLabelValue(page, label) {
 
     if (card.url) {
       try {
-        const detail = await browser.newPage();
+        // browser.newPage() は新しい(ログインCookieを持たない)ブラウザコンテキストを
+        // 作ってしまうため、ログイン済みの page と同じコンテキストから新規タブを開く。
+        const detail = await page.context().newPage();
         await detail.goto(card.url, { waitUntil: 'domcontentloaded', timeout: 20000 });
         await detail.waitForTimeout(1000);
         // 承認条件の抽出ロジックが詳細ページの実際の構造と合っているか確認するため、
