@@ -12,7 +12,7 @@
  * 使い方:
  *   cd scripts/a8-scraper
  *   npm install
- *   A8_KEYWORD="転職エージェント" npm run scrape
+ *   A8_KEYWORD="AI" npm run scrape
  *
  * ログインは既定で「手動」(ブラウザが開くのでその場でログインし、Enterキーで続行)。
  * captcha や二段階認証があってもこの方式なら対応できる。
@@ -31,7 +31,7 @@ const readline = require('readline');
 const A8_ID = process.env.A8_ID || '';
 const A8_PASS = process.env.A8_PASS || '';
 const AUTO_LOGIN = process.env.A8_AUTO_LOGIN === 'true'; // 既定は手動ログイン
-const KEYWORD = process.env.A8_KEYWORD || '転職エージェント';
+const KEYWORD = process.env.A8_KEYWORD || 'AI';
 const MAX_PAGES = Number(process.env.A8_MAX_PAGES || 10);
 const HEADLESS = process.env.A8_HEADLESS === 'true'; // 既定はブラウザ表示(false)
 const OUT_DIR = path.join(__dirname, 'output');
@@ -248,7 +248,7 @@ async function extractConfirmRate(fullText) {
 
   const headers = ['案件名', 'ジャンル', '報酬額（単価）', '提携形態', '承認条件', '確定率', 'URL', '備考（一覧テキスト）'];
   const csv = toCsv(rows, headers);
-  const outPath = path.join(OUT_DIR, `a8-recruitment-${ts()}.csv`);
+  const outPath = path.join(OUT_DIR, `a8-${KEYWORD}-${ts()}.csv`);
   fs.writeFileSync(outPath, csv);
 
   console.log(`\n完了: ${rows.length} 件を ${outPath} に出力しました。`);
