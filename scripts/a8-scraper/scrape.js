@@ -99,6 +99,16 @@ async function extractListCards(page) {
       card.company = others.length ? others[others.length - 1] : '';
     }
 
+    // ラベル自身とその直後の値（ラベルに紐づくテキスト）は、次カードのタイトル推測を
+    // 汚染しないよう recentTexts には積まない。
+    const consumed = new Array(items.length).fill(false);
+    for (let i = 0; i < items.length; i++) {
+      if (LABELS.includes(items[i].text)) {
+        consumed[i] = true;
+        if (i + 1 < items.length) consumed[i + 1] = true;
+      }
+    }
+
     const cards = [];
     let current = null;
     let recentTexts = [];
@@ -110,6 +120,7 @@ async function extractListCards(page) {
         if (current) cards.push(current);
         current = { name: '', company: '', category: '', reward: '', confirmRate: '', detailUrl: '', hasReview: false };
         finalizeTitle(current, recentTexts);
+        recentTexts = [];
       }
 
       if (current) {
@@ -123,12 +134,16 @@ async function extractListCards(page) {
           const a = el.closest('a');
           if (a && a.textContent.trim() === 'プログラム詳細を見る' && a.href) {
             current.detailUrl = a.href;
+            // この案件のまとまりはここで終わり。以降は次カードのタイトル候補とみなす。
+            recentTexts = [];
           }
         }
       }
 
-      recentTexts.push(text);
-      if (recentTexts.length > 20) recentTexts.shift();
+      if (!consumed[i]) {
+        recentTexts.push(text);
+        if (recentTexts.length > 20) recentTexts.shift();
+      }
     }
     if (current) cards.push(current);
 
