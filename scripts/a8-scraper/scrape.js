@@ -274,7 +274,11 @@ async function extractLabelValue(page, label) {
 (async () => {
   fs.mkdirSync(OUT_DIR, { recursive: true });
   const browser = await chromium.launch({ headless: HEADLESS, slowMo: HEADLESS ? 0 : 50 });
-  const page = await browser.newPage();
+  // browser.newPage() が作る暗黙のコンテキストは1ページ専用で、そこから
+  // 2つ目のページを開こうとすると "Please use browser.newContext()" で失敗する。
+  // 詳細ページをログイン状態を共有した別タブで開けるよう、明示的にコンテキストを作る。
+  const context = await browser.newContext();
+  const page = await context.newPage();
 
   await page.goto('https://www.a8.net/', { waitUntil: 'domcontentloaded' });
 
