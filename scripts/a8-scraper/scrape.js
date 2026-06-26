@@ -67,68 +67,99 @@ function toCsv(rows, headers) {
   return '﻿' + lines.join('\n') + '\n';
 }
 
-// 一覧ページから「即時」「審査」バッジを起点にカードらしき要素を抽出する。
-// A8.net のマークアップは未確認のためヒューリスティック実装。
+// 一覧ページの各カードは「プログラムID／プログラム開始日／カテゴリ／成果報酬／EPC／確定率／関連キーワード」
+// という決まったラベルの並びを持つ。プログラムIDの出現位置でカード区切りとし、
+// 各ラベルの直後（DOM上の次のテキスト要素）を値として取り出す。
+// （実機のスクリーンショットで確認した構造に基づく）
 async function extractListCards(page) {
   return page.evaluate(() => {
-    const badgeTexts = ['即時', '即時提携', '審査', '要審査', '審査制'];
-    const all = Array.from(document.querySelectorAll('body *'));
-    const badgeEls = all.filter((el) => {
-      if (el.children.length > 0) return false;
-      const t = (el.textContent || '').trim();
-      return badgeTexts.includes(t);
-    });
+    const LABELS = ['プログラムID', 'プログラム開始日', 'カテゴリ', '成果報酬', 'EPC', '確定率', '関連キーワード'];
+    const TITLE_BLACKLIST = new Set([
+      '未提携', '提携中', '提携申請中', '本人NG', 'ポイントNG', 'リスティング一部OK', '商品リンク',
+      '審査あり', 'セルフバック', 'スマホ最適化', 'ITP対応', '7days', 'マネー', 'マネタイズ',
+      'アイコンについて', '広告主サイト', '広告サンプル', 'プログラム詳細を見る', '一括提携する',
+      'プログラムの一括提携', '検索条件の変更', 'プログラム情報の見方', '★', '☆',
+    ]);
 
-    const seen = new Set();
-    const cards = [];
-    for (const badge of badgeEls) {
-      let container = badge;
-      for (let i = 0; i < 8 && container.parentElement; i++) {
-        container = container.parentElement;
-        if ((container.textContent || '').trim().length > 80) break;
-      }
-      if (seen.has(container)) continue;
-      seen.add(container);
-
-      const link = container.querySelector('a[href]');
-      cards.push({
-        typeText: badge.textContent.trim(),
-        name: link ? link.textContent.trim().replace(/\s+/g, ' ') : '',
-        url: link ? link.href : '',
-        fullText: (container.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 2000),
-      });
+    function isLeaf(el) {
+      return el.children.length === 0 && (el.textContent || '').trim().length > 0;
     }
-    return cards;
+    const leaves = Array.from(document.querySelectorAll('body *')).filter(isLeaf);
+    const items = leaves.map((el) => ({ text: el.textContent.trim(), el }));
+
+    function finalizeTitle(card, recentTexts) {
+      const filtered = recentTexts.filter(
+        (t) => !TITLE_BLACKLIST.has(t) && !LABELS.includes(t) && t.length >= 4
+      );
+      if (filtered.length === 0) return;
+      let best = filtered[0];
+      for (const t of filtered) if (t.length > best.length) best = t;
+      card.name = best;
+      const others = filtered.filter((t) => t !== best);
+      card.company = others.length ? others[others.length - 1] : '';
+    }
+
+    const cards = [];
+    let current = null;
+    let recentTexts = [];
+
+    for (let i = 0; i < items.length; i++) {
+      const { text, el } = items[i];
+
+      if (text === 'プログラムID') {
+        if (current) cards.push(current);
+        current = { name: '', company: '', category: '', reward: '', confirmRate: '', detailUrl: '', hasReview: false };
+        finalizeTitle(current, recentTexts);
+      }
+
+      if (current) {
+        if (LABELS.includes(text)) {
+          const value = items[i + 1] ? items[i + 1].text : '';
+          if (text === 'カテゴリ') current.category = value;
+          if (text === '成果報酬') current.reward = value;
+          if (text === '確定率') current.confirmRate = value;
+        } else {
+          if (text.includes('審査')) current.hasReview = true;
+          const a = el.closest('a');
+          if (a && a.textContent.trim() === 'プログラム詳細を見る' && a.href) {
+            current.detailUrl = a.href;
+          }
+        }
+      }
+
+      recentTexts.push(text);
+      if (recentTexts.length > 20) recentTexts.shift();
+    }
+    if (current) cards.push(current);
+
+    return cards.map((c) => ({
+      name: c.name,
+      company: c.company,
+      category: c.category,
+      reward: c.reward,
+      confirmRate: c.confirmRate,
+      type: c.hasReview ? '審査' : '即時',
+      url: c.detailUrl,
+    }));
   });
 }
 
-// 詳細ページ本文テキストから「ラベルの直後の値」を取り出すヒューリスティック。
+// 詳細ページでも一覧と同様の「ラベル→直後の値」という並びを仮定して取り出す。
+// （詳細ページの構造は未確認のためヒューリスティック。取れない場合は空文字を返す）
 async function extractLabelValue(page, label) {
   return page.evaluate((label) => {
-    const all = Array.from(document.querySelectorAll('body *'));
-    for (const el of all) {
-      const t = (el.textContent || '').trim();
+    function isLeaf(el) {
+      return el.children.length === 0 && (el.textContent || '').trim().length > 0;
+    }
+    const leaves = Array.from(document.querySelectorAll('body *')).filter(isLeaf);
+    for (let i = 0; i < leaves.length; i++) {
+      const t = leaves[i].textContent.trim();
       if (t === label || (t.startsWith(label) && t.length <= label.length + 6)) {
-        const candidates = [el.nextElementSibling, el.parentElement && el.parentElement.nextElementSibling];
-        for (const c of candidates) {
-          if (c && c.textContent && c.textContent.trim()) {
-            return c.textContent.replace(/\s+/g, ' ').trim().slice(0, 300);
-          }
-        }
+        return leaves[i + 1] ? leaves[i + 1].textContent.trim().slice(0, 300) : '';
       }
     }
     return '';
   }, label);
-}
-
-async function extractRewardText(fullText) {
-  const m = fullText.match(/[¥￥]\s?[\d,]+(?:円)?|\d[\d,]*\s?円/);
-  return m ? m[0] : '';
-}
-
-async function extractConfirmRate(fullText) {
-  const m = fullText.match(/確定率[^\d%]{0,10}([\d.]+%\s?[~〜\-]\s?[\d.]+%|[\d.]+%)/);
-  return m ? m[1] : '';
 }
 
 (async () => {
@@ -214,29 +245,20 @@ async function extractConfirmRate(fullText) {
   for (const card of uniqueByUrl.values()) {
     const row = {
       '案件名': card.name,
-      'ジャンル': KEYWORD,
-      '報酬額（単価）': await extractRewardText(card.fullText),
-      '提携形態': card.typeText.includes('即時') ? '即時' : '審査',
+      'ジャンル': card.category || KEYWORD,
+      '広告主': card.company,
+      '報酬額（単価）': card.reward,
+      '提携形態': card.type,
       '承認条件': '',
-      '確定率': await extractConfirmRate(card.fullText),
+      '確定率': card.confirmRate,
       'URL': card.url,
-      '備考（一覧テキスト）': card.fullText,
     };
 
     if (card.url) {
       try {
         const detail = await browser.newPage();
         await detail.goto(card.url, { waitUntil: 'domcontentloaded', timeout: 20000 });
-        const bodyText = await detail.evaluate(() => document.body.innerText.replace(/\s+/g, ' '));
-        if (!row['承認条件']) {
-          row['承認条件'] = (await extractLabelValue(detail, '承認条件')) || '';
-        }
-        if (!row['確定率']) {
-          row['確定率'] = (await extractConfirmRate(bodyText)) || '';
-        }
-        if (!row['報酬額（単価）']) {
-          row['報酬額（単価）'] = (await extractRewardText(bodyText)) || '';
-        }
+        row['承認条件'] = (await extractLabelValue(detail, '承認条件')) || '';
         await detail.close();
       } catch (e) {
         console.warn(`詳細ページの取得に失敗: ${card.url} (${e.message})`);
@@ -246,7 +268,7 @@ async function extractConfirmRate(fullText) {
     rows.push(row);
   }
 
-  const headers = ['案件名', 'ジャンル', '報酬額（単価）', '提携形態', '承認条件', '確定率', 'URL', '備考（一覧テキスト）'];
+  const headers = ['案件名', 'ジャンル', '広告主', '報酬額（単価）', '提携形態', '承認条件', '確定率', 'URL'];
   const csv = toCsv(rows, headers);
   const outPath = path.join(OUT_DIR, `a8-${KEYWORD}-${ts()}.csv`);
   fs.writeFileSync(outPath, csv);
