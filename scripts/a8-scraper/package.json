@@ -7,6 +7,9 @@
   "scripts": {
     "scrape": "node scrape.js"
   },
+  "dependencies": {
+    "nodemailer": "^6.9.16"
+  },
   "devDependencies": {
     "playwright": "^1.56.1"
   }

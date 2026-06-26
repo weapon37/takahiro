@@ -55,6 +55,9 @@ npm run scrape
 | `A8_HEADLESS` | `true` にするとブラウザを表示しない（ヘッドレス） | `false` |
 | `A8_AUTO_LOGIN` | `true` にすると `A8_ID`/`A8_PASS` を使って自動ログインを試みる（未検証・失敗しやすい） | `false` |
 | `A8_ID` / `A8_PASS` | 自動ログイン用（`A8_AUTO_LOGIN=true` のときのみ使用） | - |
+| `A8_EMAIL_TO` | 完成したCSVの送り先メールアドレス（指定すると実行完了時に自動送信） | - |
+| `A8_EMAIL_FROM` | 送信に使うGmailアドレス | - |
+| `A8_EMAIL_APP_PASSWORD` | 上記Gmailの「アプリパスワード」（後述） | - |
 
 **ログイン情報はコード中に書き込まないでください。** 自動ログインを使う場合も環境変数経由で渡し、
 `.env` 等に保存する場合は Git にコミットしないよう `.gitignore` を確認してください。
@@ -63,3 +66,47 @@ npm run scrape
 
 `output/a8-<キーワード>-<timestamp>.csv` に結果が出力されます。Excel や Google スプレッドシートで
 直接開けます（UTF-8 BOM 付きなので日本語もそのまま表示されます）。
+
+## 完成したCSVを自動でメール送信する（任意・スマホで結果を見たい場合など）
+
+`A8_EMAIL_TO` / `A8_EMAIL_FROM` / `A8_EMAIL_APP_PASSWORD` の3つを設定すると、
+実行完了時に自動でGmail経由でCSVを添付メール送信します。設定しなければ何も送信されず、
+従来どおりCSVが `output/` に保存されるだけです。
+
+### 1. Gmailのアプリパスワードを発行する
+
+通常のログインパスワードはこの用途には使えません。以下の手順でアプリ専用パスワードを発行してください。
+
+1. 送信に使うGmailアカウントで [2段階認証を有効化](https://myaccount.google.com/signinoptions/two-step-verification)（未設定の場合）
+2. https://myaccount.google.com/apppasswords にアクセス
+3. 名前（例: `a8-scraper`）を入力して「作成」
+4. 表示された16桁のパスワード（スペース入りでOK）をコピー
+
+### 2. `.env` ファイルを作成する
+
+`scripts/a8-scraper/.env` というファイルを作成し、以下のように記入します
+（このファイルは `.gitignore` で除外されるため Git にはコミットされません）。
+
+```
+A8_EMAIL_TO=自分のメールアドレス@gmail.com
+A8_EMAIL_FROM=送信に使うGmailアドレス@gmail.com
+A8_EMAIL_APP_PASSWORD=発行したアプリパスワード
+```
+
+`A8_EMAIL_TO` と `A8_EMAIL_FROM` は同じアドレス（自分宛）でも問題ありません。
+
+### 3. 初回のみ依存パッケージを取得し直す
+
+```bash
+cd scripts/a8-scraper
+npm install
+```
+
+### 4. いつものように実行する
+
+```bash
+npm run scrape
+```
+
+完了時にターミナルに `メールを送信しました: ...` と表示されれば送信成功です。
+スマホのGmailアプリで確認できます。

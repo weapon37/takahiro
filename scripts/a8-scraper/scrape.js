@@ -28,6 +28,24 @@ const fs = require('fs');
 const path = require('path');
 const readline = require('readline');
 
+// ターミナルで毎回 環境変数 を打たなくても済むよう、scripts/a8-scraper/.env が
+// あれば読み込む（メール送信用パスワード等を保存する場所。Git管理対象外）。
+// すでに環境変数で指定済みの値は上書きしない。
+function loadEnvFile() {
+  const envPath = path.join(__dirname, '.env');
+  if (!fs.existsSync(envPath)) return;
+  for (const line of fs.readFileSync(envPath, 'utf8').split('\n')) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith('#')) continue;
+    const idx = trimmed.indexOf('=');
+    if (idx === -1) continue;
+    const key = trimmed.slice(0, idx).trim();
+    const value = trimmed.slice(idx + 1).trim().replace(/^['"]|['"]$/g, '');
+    if (!(key in process.env)) process.env[key] = value;
+  }
+}
+loadEnvFile();
+
 const A8_ID = process.env.A8_ID || '';
 const A8_PASS = process.env.A8_PASS || '';
 const AUTO_LOGIN = process.env.A8_AUTO_LOGIN === 'true'; // 既定は手動ログイン
@@ -35,6 +53,9 @@ const KEYWORD = process.env.A8_KEYWORD || 'AI';
 const MAX_PAGES = Number(process.env.A8_MAX_PAGES || 10);
 const HEADLESS = process.env.A8_HEADLESS === 'true'; // 既定はブラウザ表示(false)
 const OUT_DIR = path.join(__dirname, 'output');
+const EMAIL_TO = process.env.A8_EMAIL_TO || '';
+const EMAIL_FROM = process.env.A8_EMAIL_FROM || '';
+const EMAIL_APP_PASSWORD = process.env.A8_EMAIL_APP_PASSWORD || '';
 
 function ts() {
   return new Date().toISOString().replace(/[:.]/g, '-');
@@ -287,6 +308,26 @@ function extractRemarksFromHtml(html) {
     .slice(0, 300);
 }
 
+// A8_EMAIL_TO / A8_EMAIL_FROM / A8_EMAIL_APP_PASSWORD が設定されている場合のみ、
+// 完成したCSVをGmail経由で自分宛に送信する（未設定なら何もしない＝従来動作のまま）。
+// パスワードはGmailの「アプリパスワード」を使うこと（通常のログインパスワードは使えない）。
+async function sendCsvByEmail(csvPath, keyword, rowCount) {
+  if (!EMAIL_TO || !EMAIL_FROM || !EMAIL_APP_PASSWORD) return false;
+  const nodemailer = require('nodemailer');
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: { user: EMAIL_FROM, pass: EMAIL_APP_PASSWORD },
+  });
+  await transporter.sendMail({
+    from: EMAIL_FROM,
+    to: EMAIL_TO,
+    subject: `A8.net案件調査結果「${keyword}」（${rowCount}件）`,
+    text: '添付のCSVファイルをご確認ください。',
+    attachments: [{ filename: path.basename(csvPath), path: csvPath }],
+  });
+  return true;
+}
+
 (async () => {
   fs.mkdirSync(OUT_DIR, { recursive: true });
   const browser = await chromium.launch({ headless: HEADLESS, slowMo: HEADLESS ? 0 : 50 });
@@ -414,6 +455,13 @@ function extractRemarksFromHtml(html) {
   console.log(`\n完了: ${rows.length} 件を ${outPath} に出力しました。`);
   console.log('「承認条件」「確定率」が空欄の行は、抽出ロジックが現在のページ構造に合っていない可能性があります。');
   console.log(`output/ 内の list-page*.html / list-page*.png を見ながら scrape.js の抽出ロジックを調整してください。`);
+
+  try {
+    const sent = await sendCsvByEmail(outPath, KEYWORD, rows.length);
+    if (sent) console.log(`メールを送信しました: ${EMAIL_TO}`);
+  } catch (e) {
+    console.warn(`メール送信に失敗しました（CSV自体は output/ に保存済みです）: ${e.message}`);
+  }
 
   await browser.close();
 })().catch((e) => {
