@@ -271,6 +271,22 @@ async function extractLabelValue(page, label) {
   }, label);
 }
 
+// 詳細ページには見出し付きの「承認条件」セクションは存在しないが、ページに埋め込まれた
+// JSONデータ（&quot;remarks&quot;:&quot;...&quot;）の中に、承認条件に近い説明文が
+// 入っている（実機HTMLで確認: 「・このプログラムは◯◯でサービスを初購入するユーザーを
+// 獲得していただくプログラムです。」等）。これをDOM経由ではなく生HTMLから直接取り出す。
+function extractRemarksFromHtml(html) {
+  const m = html.match(/&quot;remarks&quot;:&quot;(.*?)&quot;,&quot;/);
+  if (!m) return '';
+  return m[1]
+    .replace(/\\r\\n/g, ' / ')
+    .replace(/\\"/g, '"')
+    .replace(/&quot;/g, '"')
+    .replace(/&amp;/g, '&')
+    .trim()
+    .slice(0, 300);
+}
+
 (async () => {
   fs.mkdirSync(OUT_DIR, { recursive: true });
   const browser = await chromium.launch({ headless: HEADLESS, slowMo: HEADLESS ? 0 : 50 });
@@ -374,12 +390,13 @@ async function extractLabelValue(page, label) {
         const detail = await page.context().newPage();
         await detail.goto(card.url, { waitUntil: 'domcontentloaded', timeout: 20000 });
         await settleDetailPage(detail, card.url);
+        const detailHtml = await detail.content();
         // 承認条件の抽出ロジックが詳細ページの実際の構造と合っているか確認するため、
         // 最初の2件だけ詳細ページのHTMLを保存する（デバッグ用）。
         if (rows.length < 2) {
-          fs.writeFileSync(path.join(OUT_DIR, `detail-sample-${rows.length}.html`), await detail.content());
+          fs.writeFileSync(path.join(OUT_DIR, `detail-sample-${rows.length}.html`), detailHtml);
         }
-        row['承認条件'] = (await extractLabelValue(detail, '承認条件')) || '';
+        row['承認条件'] = extractRemarksFromHtml(detailHtml) || (await extractLabelValue(detail, '承認条件')) || '';
         await detail.close();
       } catch (e) {
         console.warn(`詳細ページの取得に失敗: ${card.url} (${e.message})`);
