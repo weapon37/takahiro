@@ -166,12 +166,35 @@ async function extractListCards(page) {
     }
     if (current) cards.push(current);
 
-    return cards.map((c) => ({
+    // 「確定率」の th には ⓘ ツールチップ用の <a> 等の子要素が混在しており、
+    // 単独の leaf としては出現しない（実機HTMLで確認: <tr><th>確定率<span><a>...
+    // </a></span></th><td>98.63%</td></tr>）。th.textContent は子要素のテキストも
+    // 連結されるため、テーブル行 (tr > th/td) から直接読み取る方が確実。
+    // 各カードの情報テーブルは先頭行が「プログラムID」になっているテーブルとして識別し、
+    // カードの出現順とテーブルの出現順が一致することを前提に対応付ける。
+    const tableConfirmRates = [];
+    document.querySelectorAll('table').forEach((table) => {
+      const rows = Array.from(table.querySelectorAll('tr'));
+      const firstLabel = rows[0] && rows[0].querySelector('th');
+      if (!firstLabel || firstLabel.textContent.trim() !== 'プログラムID') return;
+      let rate = '';
+      for (const tr of rows) {
+        const th = tr.querySelector('th');
+        const td = tr.querySelector('td');
+        if (th && td && th.textContent.trim() === '確定率') {
+          rate = td.textContent.trim();
+          break;
+        }
+      }
+      tableConfirmRates.push(rate);
+    });
+
+    return cards.map((c, idx) => ({
       name: c.name,
       company: c.company,
       category: c.category,
       reward: c.reward,
-      confirmRate: c.confirmRate,
+      confirmRate: tableConfirmRates[idx] || c.confirmRate,
       type: c.hasReview ? '審査' : '即時',
       url: c.detailUrl,
     }));
@@ -182,6 +205,21 @@ async function extractListCards(page) {
 // （詳細ページの構造は未確認のためヒューリスティック。取れない場合は空文字を返す）
 async function extractLabelValue(page, label) {
   return page.evaluate((label) => {
+    // まずテーブル行 (tr > th/td) を探す。一覧ページの確定率と同様に、ラベル側の
+    // th にツールチップアイコン等が混在していても th.textContent なら拾える。
+    const rows = Array.from(document.querySelectorAll('tr'));
+    for (const tr of rows) {
+      const th = tr.querySelector('th');
+      const td = tr.querySelector('td');
+      if (th && td) {
+        const t = th.textContent.trim();
+        if (t === label || (t.startsWith(label) && t.length <= label.length + 6)) {
+          return td.textContent.trim().slice(0, 300);
+        }
+      }
+    }
+
+    // テーブル構造でない場合のフォールバック: テキストのみの leaf 要素を直後の値とみなす。
     function isLeaf(el) {
       return el.children.length === 0 && (el.textContent || '').trim().length > 0;
     }
@@ -192,8 +230,6 @@ async function extractLabelValue(page, label) {
     for (let i = 0; i < leaves.length; i++) {
       const t = leaves[i].textContent.trim();
       if (t === label || (t.startsWith(label) && t.length <= label.length + 6)) {
-        // ラベル直後に「ⓘ」等のアイコンが挟まる場合に備えて、数字や文字を含む
-        // 実質的な値が見つかるまで数要素先まで読み飛ばす。
         for (let j = i + 1; j < leaves.length && j <= i + 4; j++) {
           const v = leaves[j].textContent.trim();
           if (isIconOrNoise(v)) continue;
