@@ -107,14 +107,15 @@ export default function PostGeneratorForm() {
 
   return (
     <div className="flex w-full max-w-2xl flex-col gap-6">
-      <div className="flex gap-2 rounded-lg bg-gray-100 p-1">
+      {/* モード切替タブ */}
+      <div className="flex gap-2 rounded-lg bg-gray-100 dark:bg-gray-800 p-1">
         <button
           type="button"
           onClick={() => switchMode("text")}
           className={`flex-1 rounded-md px-3 py-2 text-sm font-medium transition-colors ${
             mode === "text"
-              ? "bg-white text-gray-900 shadow-sm"
-              : "text-gray-500 hover:text-gray-700"
+              ? "bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm"
+              : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
           }`}
         >
           テキストを貼り付け
@@ -124,8 +125,8 @@ export default function PostGeneratorForm() {
           onClick={() => switchMode("image")}
           className={`flex-1 rounded-md px-3 py-2 text-sm font-medium transition-colors ${
             mode === "image"
-              ? "bg-white text-gray-900 shadow-sm"
-              : "text-gray-500 hover:text-gray-700"
+              ? "bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm"
+              : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
           }`}
         >
           スクショをアップロード
@@ -138,7 +139,7 @@ export default function PostGeneratorForm() {
           onChange={(e) => setPastedText(e.target.value)}
           placeholder="バズった投稿の本文をここに貼り付けてください"
           rows={6}
-          className="w-full resize-none rounded-xl border border-gray-300 p-4 text-sm text-gray-900 outline-none focus:border-blue-500"
+          className="w-full resize-none rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 p-4 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 outline-none focus:border-blue-500 dark:focus:border-blue-400"
         />
       ) : (
         <div
@@ -151,8 +152,8 @@ export default function PostGeneratorForm() {
           onClick={() => fileInputRef.current?.click()}
           className={`flex cursor-pointer flex-col items-center justify-center gap-3 rounded-xl border-2 border-dashed p-10 text-center transition-colors ${
             isDragging
-              ? "border-blue-500 bg-blue-50"
-              : "border-gray-300 hover:border-gray-400"
+              ? "border-blue-500 bg-blue-50 dark:bg-blue-950"
+              : "border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 bg-white dark:bg-gray-900"
           }`}
         >
           <input
@@ -171,10 +172,10 @@ export default function PostGeneratorForm() {
             />
           ) : (
             <>
-              <p className="font-medium text-gray-700">
+              <p className="font-medium text-gray-700 dark:text-gray-200">
                 X投稿のスクリーンショットをドラッグ&ドロップ
               </p>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-gray-500 dark:text-gray-400">
                 またはクリックして選択 (PNG / JPEG / WebP / GIF, 10MBまで)
               </p>
             </>
@@ -182,12 +183,15 @@ export default function PostGeneratorForm() {
         </div>
       )}
 
+      {/* 生成数セレクト */}
       <div className="flex items-center justify-between gap-4">
-        <label className="text-sm font-medium text-gray-700">生成する数</label>
+        <label className="text-sm font-medium text-gray-700 dark:text-gray-200">
+          生成する数
+        </label>
         <select
           value={count}
           onChange={(e) => setCount(Number(e.target.value))}
-          className="rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 outline-none focus:border-blue-500"
+          className="rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-blue-500 dark:focus:border-blue-400"
         >
           {COUNT_OPTIONS.map((n) => (
             <option key={n} value={n}>
@@ -197,42 +201,44 @@ export default function PostGeneratorForm() {
         </select>
       </div>
 
+      {/* 量産ボタン */}
       <button
         type="button"
         onClick={handleGenerate}
         disabled={!canSubmit}
-        className="rounded-lg bg-blue-600 px-4 py-3 font-semibold text-white transition-colors hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-gray-300"
+        className="rounded-lg bg-blue-600 px-4 py-3 font-semibold text-white transition-colors hover:bg-blue-500 disabled:cursor-not-allowed disabled:bg-gray-300 dark:disabled:bg-gray-700 dark:disabled:text-gray-500"
       >
         {isLoading ? "量産中..." : "投稿を量産する"}
       </button>
 
       {error && (
-        <p className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">
+        <p className="rounded-lg bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-800 px-4 py-3 text-sm text-red-700 dark:text-red-400">
           {error}
         </p>
       )}
 
       {result && (
         <div className="flex flex-col gap-6">
-          <div className="flex flex-col gap-4 rounded-xl border border-gray-200 p-6 shadow-sm">
+          {/* 型分析カード */}
+          <div className="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-6 shadow-sm">
             <div>
-              <span className="text-sm text-gray-500">判定された型</span>
+              <span className="text-sm text-gray-500 dark:text-gray-400">判定された型</span>
               <div className="flex items-baseline gap-3">
-                <h2 className="text-xl font-bold text-gray-900">
+                <h2 className="text-xl font-bold text-gray-900 dark:text-white">
                   {result.detectedType.label}
                 </h2>
-                <span className="text-sm font-medium text-blue-600">
+                <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
                   確信度 {result.confidence}%
                 </span>
               </div>
-              <p className="mt-1 text-sm text-gray-600">
+              <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
                 {result.detectedType.description}
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold text-gray-800">バズった要因</h3>
-              <ul className="mt-1 list-disc pl-5 text-sm text-gray-700">
+              <h3 className="font-semibold text-gray-800 dark:text-gray-100">バズった要因</h3>
+              <ul className="mt-1 list-disc pl-5 text-sm text-gray-700 dark:text-gray-200">
                 {result.viralFactors.map((factor, i) => (
                   <li key={i}>{factor}</li>
                 ))}
@@ -240,32 +246,34 @@ export default function PostGeneratorForm() {
             </div>
           </div>
 
+          {/* 量産結果ヘッダー */}
           <div className="flex items-center justify-between">
-            <h3 className="font-semibold text-gray-800">
+            <h3 className="font-semibold text-gray-800 dark:text-gray-100">
               量産された投稿 ({result.posts.length}個)
             </h3>
             <button
               type="button"
               onClick={copyAll}
-              className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50"
+              className="rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-1.5 text-sm font-medium text-gray-700 dark:text-gray-200 transition-colors hover:bg-gray-50 dark:hover:bg-gray-700"
             >
               {copiedAll ? "コピーしました!" : "全てコピー"}
             </button>
           </div>
 
+          {/* 投稿カード一覧 */}
           <div className="flex flex-col gap-3">
             {result.posts.map((post, i) => (
               <div
                 key={i}
-                className="flex flex-col gap-3 rounded-xl border border-gray-200 p-4 shadow-sm"
+                className="flex flex-col gap-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-4 shadow-sm"
               >
-                <p className="whitespace-pre-wrap text-sm text-gray-800">
+                <p className="whitespace-pre-wrap text-sm text-gray-800 dark:text-gray-100">
                   {post}
                 </p>
                 <button
                   type="button"
                   onClick={() => copyPost(post, i)}
-                  className="self-end rounded-lg bg-gray-100 px-3 py-1.5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200"
+                  className="self-end rounded-lg bg-gray-100 dark:bg-gray-800 px-3 py-1.5 text-sm font-medium text-gray-700 dark:text-gray-200 transition-colors hover:bg-gray-200 dark:hover:bg-gray-700"
                 >
                   {copiedIndex === i ? "コピーしました!" : "コピー"}
                 </button>
