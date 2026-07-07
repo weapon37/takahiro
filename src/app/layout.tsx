@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "X投稿スクショ型分析ツール",
-  description: "バズったX投稿のスクリーンショットから投稿の型を分析します。",
+  title: "バズったX投稿 量産ツール",
+  description:
+    "バズったX投稿のテキストやスクリーンショットから型を分析し、同じ型で新しい投稿を量産します。",
 };
 
 export default function RootLayout({
@@ -27,7 +28,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100">{children}</body>
     </html>
   );
 }
