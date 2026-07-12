@@ -1,31 +1,23 @@
 import {Composition} from 'remotion';
-import {AbsoluteFill} from 'remotion';
+import {ShortVideo, ShortVideoProps} from './ShortVideo';
+import defaultProps from './props.json';
 
-const Placeholder: React.FC = () => {
-  return (
-    <AbsoluteFill
-      style={{
-        backgroundColor: '#111',
-        justifyContent: 'center',
-        alignItems: 'center',
-        color: 'white',
-        fontSize: 60,
-      }}
-    >
-      準備完了(ここに動画が入ります)
-    </AbsoluteFill>
-  );
-};
+const FPS = 30;
 
 export const RemotionRoot: React.FC = () => {
   return (
     <Composition
       id="ShortVideo"
-      component={Placeholder}
-      durationInFrames={90}
-      fps={30}
+      component={ShortVideo}
+      fps={FPS}
       width={1080}
       height={1920}
+      durationInFrames={300}
+      defaultProps={defaultProps as ShortVideoProps}
+      calculateMetadata={({props}) => {
+        const total = props.scenes.reduce((a, s) => a + s.durationInFrames, 0);
+        return {durationInFrames: Math.max(total, 30)};
+      }}
     />
   );
 };

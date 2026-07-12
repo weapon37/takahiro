@@ -1,0 +1,125 @@
+{
+  "account": "@fushigi_ch",
+  "bgm": "bgm/bgm.wav",
+  "bgmVolume": 0.12,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "audio": "audio/01.wav",
+      "telop": "これ、偶然だと思う?",
+      "telopStyle": "normal",
+      "role": "title",
+      "bg": "fog",
+      "playWhoosh": false,
+      "durationInFrames": 79
+    },
+    {
+      "audio": "audio/02.wav",
+      "telop": "実話・不思議体験ベスト3",
+      "telopStyle": "normal",
+      "role": "intro",
+      "bg": "fog",
+      "playWhoosh": false,
+      "durationInFrames": 157
+    },
+    {
+      "audio": "audio/03.wav",
+      "telop": "第3位 夢で見た数字",
+      "telopStyle": "normal",
+      "role": "rank",
+      "bg": "stars",
+      "playWhoosh": true,
+      "durationInFrames": 76
+    },
+    {
+      "audio": "audio/04.wav",
+      "telop": "祖母が夢で告げた4桁",
+      "telopStyle": "normal",
+      "role": "body",
+      "bg": "stars",
+      "playWhoosh": false,
+      "durationInFrames": 125
+    },
+    {
+      "audio": "audio/05.wav",
+      "telop": "金庫の暗証番号と一致",
+      "telopStyle": "normal",
+      "role": "body",
+      "bg": "stars",
+      "playWhoosh": false,
+      "durationInFrames": 136
+    },
+    {
+      "audio": "audio/06.wav",
+      "telop": "第2位 鳴らない電話",
+      "telopStyle": "normal",
+      "role": "rank",
+      "bg": "phone",
+      "playWhoosh": true,
+      "durationInFrames": 78
+    },
+    {
+      "audio": "audio/07.wav",
+      "telop": "命日に鳴った母の携帯",
+      "telopStyle": "normal",
+      "role": "body",
+      "bg": "phone",
+      "playWhoosh": false,
+      "durationInFrames": 132
+    },
+    {
+      "audio": "audio/08.wav",
+      "telop": "(折り返しは「使われていません」)",
+      "telopStyle": "paren",
+      "role": "body",
+      "bg": "phone",
+      "playWhoosh": false,
+      "durationInFrames": 124
+    },
+    {
+      "audio": "audio/09.wav",
+      "telop": "第1位 もう一人の自分",
+      "telopStyle": "normal",
+      "role": "rank",
+      "bg": "mirror",
+      "playWhoosh": true,
+      "durationInFrames": 76
+    },
+    {
+      "audio": "audio/10.wav",
+      "telop": "写真に写る\"自分\"",
+      "telopStyle": "normal",
+      "role": "body",
+      "bg": "mirror",
+      "playWhoosh": false,
+      "durationInFrames": 118
+    },
+    {
+      "audio": "audio/11.wav",
+      "telop": "(家族は家で\"私\"を見ていた)",
+      "telopStyle": "paren",
+      "role": "body",
+      "bg": "mirror",
+      "playWhoosh": false,
+      "durationInFrames": 123
+    },
+    {
+      "audio": "audio/12.wav",
+      "telop": "体験談はコメントへ",
+      "telopStyle": "normal",
+      "role": "cta",
+      "bg": "candle",
+      "playWhoosh": false,
+      "durationInFrames": 113
+    },
+    {
+      "audio": "audio/13.wav",
+      "telop": "公式LINEで無料鑑定→プロフへ",
+      "telopStyle": "normal",
+      "role": "cta",
+      "bg": "candle",
+      "playWhoosh": false,
+      "durationInFrames": 150
+    }
+  ]
+}

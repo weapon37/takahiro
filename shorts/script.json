@@ -1,0 +1,85 @@
+{
+  "title": "【実話】本当にあった不思議な体験談ベスト3|占い師が語るゾクッとする話",
+  "caption": "占い師のもとに寄せられた\"本当にあった\"不思議な体験談を3つ紹介します。最後まで見ると鳥肌が立つかも…。あなたの不思議な体験もコメントで教えてください。公式LINEでは無料鑑定を配信中です。\n#不思議な体験 #実話 #怖い話 #占い #スピリチュアル #都市伝説 #ゾクッとする話\n音声合成:Open JTalk/MMDAgent「メイ」(名古屋工業大学・CC BY 3.0)",
+  "account": "@fushigi_ch",
+  "sentences": [
+    {
+      "role": "title",
+      "narration": "これ、ぐうぜんだと思いますか。",
+      "telop": "これ、偶然だと思う?",
+      "telop_style": "normal"
+    },
+    {
+      "role": "intro",
+      "narration": "占い師のわたしに寄せられた、本当にあった不思議な話を三つ紹介する。",
+      "telop": "実話・不思議体験ベスト3",
+      "telop_style": "normal"
+    },
+    {
+      "role": "rank",
+      "narration": "第三位。夢で見た数字。",
+      "telop": "第3位 夢で見た数字",
+      "telop_style": "normal"
+    },
+    {
+      "role": "body",
+      "narration": "亡くなったそぼが夢に現れ、四桁の数字だけを告げた。",
+      "telop": "祖母が夢で告げた4桁",
+      "telop_style": "normal"
+    },
+    {
+      "role": "body",
+      "narration": "翌朝しらべると、それはそぼの金庫の、あんしょう番号だった。",
+      "telop": "金庫の暗証番号と一致",
+      "telop_style": "normal"
+    },
+    {
+      "role": "rank",
+      "narration": "第二位。鳴らないはずの電話。",
+      "telop": "第2位 鳴らない電話",
+      "telop_style": "normal"
+    },
+    {
+      "role": "body",
+      "narration": "解約したはずの母の携帯から、めいにちに着信があった。",
+      "telop": "命日に鳴った母の携帯",
+      "telop_style": "normal"
+    },
+    {
+      "role": "body",
+      "narration": "折り返すと、現在つかわれておりません、とだけ流れた。",
+      "telop": "(折り返しは「使われていません」)",
+      "telop_style": "paren"
+    },
+    {
+      "role": "rank",
+      "narration": "第一位。もうひとりの自分。",
+      "telop": "第1位 もう一人の自分",
+      "telop_style": "normal"
+    },
+    {
+      "role": "body",
+      "narration": "旅先の写真に、家にいるはずの自分がうつっていた。",
+      "telop": "写真に写る\"自分\"",
+      "telop_style": "normal"
+    },
+    {
+      "role": "body",
+      "narration": "その日、家族は、ずっと家でわたしを見ていたという。",
+      "telop": "(家族は家で\"私\"を見ていた)",
+      "telop_style": "paren"
+    },
+    {
+      "role": "cta",
+      "narration": "あなたの不思議な体験も、コメントで教えてほしい。",
+      "telop": "体験談はコメントへ",
+      "telop_style": "normal"
+    },
+    {
+      "role": "cta",
+      "narration": "公式ラインでは、無料かんていを配信中。プロフィールのリンクからどうぞ。",
+      "telop": "公式LINEで無料鑑定→プロフへ",
+      "telop_style": "normal"
+    }
+  ]
+}
