@@ -19,7 +19,7 @@ export type Scene = {
   telop: string;
   telopStyle: 'normal' | 'paren';
   role: string;
-  bg: 'fog' | 'stars' | 'phone' | 'mirror' | 'candle';
+  bg: 'bokeh' | 'neon' | 'sale' | 'rise' | 'calm';
   playWhoosh: boolean;
   durationInFrames: number;
 };
@@ -32,59 +32,102 @@ export type ShortVideoProps = {
   scenes: Scene[];
 };
 
-// ---------- 動く背景(5種類) ----------
+// ---------- 動く背景(5種類・お金/自己啓発テーマ) ----------
 
-const FogBg: React.FC = () => {
+// ふわっと漂う光の玉(ボケ)を敷く共通部品
+const Bokeh: React.FC<{
+  count: number;
+  color: string;
+  seed: string;
+  size?: number;
+}> = ({count, color, seed, size = 500}) => {
   const frame = useCurrentFrame();
   return (
-    <AbsoluteFill style={{background: 'linear-gradient(180deg,#1a1033 0%,#0a0618 100%)'}}>
-      {Array.from({length: 6}).map((_, i) => {
-        const x = random(`fx${i}`) * 1080;
-        const y = random(`fy${i}`) * 1920;
-        const drift = Math.sin(frame / 90 + i * 2) * 120;
+    <>
+      {Array.from({length: count}).map((_, i) => {
+        const x = random(`${seed}x${i}`) * 1080;
+        const y = random(`${seed}y${i}`) * 1920;
+        const s = size * (0.4 + random(`${seed}s${i}`));
         return (
           <div
             key={i}
             style={{
               position: 'absolute',
-              left: x - 400 + drift,
-              top: y - 400 + Math.cos(frame / 110 + i) * 60,
-              width: 800,
-              height: 800,
+              left: x - s / 2 + Math.sin(frame / 80 + i * 2.1) * 90,
+              top: y - s / 2 + Math.cos(frame / 100 + i * 1.3) * 50,
+              width: s,
+              height: s,
               borderRadius: '50%',
-              background:
-                'radial-gradient(circle, rgba(120,80,200,0.16) 0%, rgba(120,80,200,0) 70%)',
-              filter: 'blur(40px)',
+              background: `radial-gradient(circle, ${color} 0%, transparent 70%)`,
+              filter: 'blur(30px)',
             }}
           />
         );
       })}
+    </>
+  );
+};
+
+// フック・導入:夜の街のイメージ(紺+金のボケ)
+const BokehBg: React.FC = () => (
+  <AbsoluteFill style={{background: 'linear-gradient(180deg,#0c1430 0%,#060a1a 100%)'}}>
+    <Bokeh count={7} color="rgba(255,200,90,0.14)" seed="g" />
+    <Bokeh count={5} color="rgba(90,140,255,0.12)" seed="b" />
+  </AbsoluteFill>
+);
+
+// ①コンビニ:深夜の青白いネオンのイメージ
+const NeonBg: React.FC = () => (
+  <AbsoluteFill style={{background: 'linear-gradient(180deg,#041a24 0%,#020c12 100%)'}}>
+    <Bokeh count={8} color="rgba(80,220,255,0.14)" seed="n" size={420} />
+  </AbsoluteFill>
+);
+
+// ②セール:赤札の警戒色をほんのり
+const SaleBg: React.FC = () => {
+  const frame = useCurrentFrame();
+  const pulse = 0.8 + 0.2 * Math.sin(frame / 25);
+  return (
+    <AbsoluteFill style={{background: 'linear-gradient(180deg,#2a0c10 0%,#12050a 100%)'}}>
+      <div
+        style={{
+          position: 'absolute',
+          left: 40,
+          top: 560,
+          width: 1000,
+          height: 800,
+          borderRadius: '50%',
+          background: `radial-gradient(circle, rgba(255,90,80,${0.14 * pulse}) 0%, transparent 70%)`,
+          filter: 'blur(40px)',
+        }}
+      />
+      <Bokeh count={6} color="rgba(255,150,60,0.12)" seed="w" size={380} />
     </AbsoluteFill>
   );
 };
 
-const StarsBg: React.FC = () => {
+// ③収入・貯金:上へ昇る金色の粒(貯まっていくイメージ)
+const RiseBg: React.FC = () => {
   const frame = useCurrentFrame();
   return (
-    <AbsoluteFill style={{background: 'linear-gradient(180deg,#060c22 0%,#101a40 100%)'}}>
-      {Array.from({length: 45}).map((_, i) => {
-        const x = random(`sx${i}`) * 1080;
-        const y = (random(`sy${i}`) * 1920 - frame * (0.2 + random(`sv${i}`) * 0.5) + 1920) % 1920;
-        const size = 3 + random(`ss${i}`) * 6;
-        const tw = 0.35 + 0.65 * Math.abs(Math.sin(frame / 20 + i * 1.7));
+    <AbsoluteFill style={{background: 'linear-gradient(180deg,#06201a 0%,#03100d 100%)'}}>
+      {Array.from({length: 26}).map((_, i) => {
+        const speed = 1.2 + random(`rv${i}`) * 2.2;
+        const y = 1980 - ((frame * speed + random(`ry${i}`) * 1900) % 2100);
+        const size = 5 + random(`rs${i}`) * 9;
         return (
           <div
             key={i}
             style={{
               position: 'absolute',
-              left: x,
+              left: random(`rx${i}`) * 1040 + Math.sin(frame / 40 + i) * 24,
               top: y,
               width: size,
               height: size,
               borderRadius: '50%',
-              backgroundColor: 'white',
-              opacity: tw,
-              boxShadow: `0 0 ${size * 3}px rgba(180,200,255,${tw})`,
+              backgroundColor: 'rgba(255,210,100,0.85)',
+              boxShadow: `0 0 ${size * 2.5}px rgba(255,210,100,0.6)`,
+              opacity: interpolate(y, [-100, 300, 1500, 2000], [0, 0.9, 0.9, 0]),
             }}
           />
         );
@@ -93,115 +136,35 @@ const StarsBg: React.FC = () => {
   );
 };
 
-const PhoneBg: React.FC = () => {
+// CTA:あたたかい琥珀色の落ち着いた光
+const CalmBg: React.FC = () => {
   const frame = useCurrentFrame();
+  const glow = 0.85 + 0.15 * Math.sin(frame / 18);
   return (
-    <AbsoluteFill style={{background: 'linear-gradient(180deg,#03161c 0%,#020a0e 100%)'}}>
-      {Array.from({length: 5}).map((_, i) => {
-        const r = ((frame * 3 + i * 130) % 700) + 40;
-        const opacity = interpolate(r, [40, 740], [0.35, 0]);
-        return (
-          <div
-            key={i}
-            style={{
-              position: 'absolute',
-              left: 540 - r,
-              top: 960 - r,
-              width: r * 2,
-              height: r * 2,
-              borderRadius: '50%',
-              border: '3px solid rgba(90,220,220,0.8)',
-              opacity,
-            }}
-          />
-        );
-      })}
-    </AbsoluteFill>
-  );
-};
-
-const MirrorBg: React.FC = () => {
-  const frame = useCurrentFrame();
-  const sway = Math.sin(frame / 70) * 160;
-  return (
-    <AbsoluteFill style={{background: 'linear-gradient(180deg,#180b28 0%,#070310 100%)'}}>
-      {[-1, 1].map((side) => (
-        <div
-          key={side}
-          style={{
-            position: 'absolute',
-            left: 540 + side * (260 + sway) - 300,
-            top: 660,
-            width: 600,
-            height: 600,
-            borderRadius: '50%',
-            background:
-              'radial-gradient(circle, rgba(150,110,255,0.18) 0%, rgba(150,110,255,0) 70%)',
-            filter: 'blur(30px)',
-          }}
-        />
-      ))}
+    <AbsoluteFill style={{background: 'linear-gradient(180deg,#1c1206 0%,#0a0502 100%)'}}>
       <div
         style={{
           position: 'absolute',
-          left: 538,
-          top: 0,
-          width: 4,
-          height: 1920,
-          background:
-            'linear-gradient(180deg, transparent, rgba(200,170,255,0.35), transparent)',
-        }}
-      />
-    </AbsoluteFill>
-  );
-};
-
-const CandleBg: React.FC = () => {
-  const frame = useCurrentFrame();
-  const flicker =
-    0.75 + 0.25 * Math.abs(Math.sin(frame / 4) * 0.5 + Math.sin(frame / 9) * 0.5);
-  return (
-    <AbsoluteFill style={{background: 'linear-gradient(180deg,#140b04 0%,#060201 100%)'}}>
-      <div
-        style={{
-          position: 'absolute',
-          left: 540 - 500,
-          top: 1250,
-          width: 1000,
-          height: 1000,
+          left: 540 - 550,
+          top: 1150,
+          width: 1100,
+          height: 1100,
           borderRadius: '50%',
-          background: `radial-gradient(circle, rgba(255,170,60,${0.35 * flicker}) 0%, rgba(255,120,30,0) 65%)`,
-          filter: 'blur(20px)',
+          background: `radial-gradient(circle, rgba(255,180,80,${0.28 * glow}) 0%, transparent 65%)`,
+          filter: 'blur(24px)',
         }}
       />
-      {Array.from({length: 10}).map((_, i) => {
-        const y = 1750 - ((frame * (1.5 + random(`ev${i}`) * 2) + random(`ey${i}`) * 900) % 900);
-        return (
-          <div
-            key={i}
-            style={{
-              position: 'absolute',
-              left: 340 + random(`ex${i}`) * 400 + Math.sin(frame / 30 + i) * 30,
-              top: y,
-              width: 6,
-              height: 6,
-              borderRadius: '50%',
-              backgroundColor: 'rgba(255,190,90,0.8)',
-              opacity: interpolate(y, [850, 1750], [0, 0.9]),
-            }}
-          />
-        );
-      })}
+      <Bokeh count={5} color="rgba(255,210,120,0.12)" seed="c" size={360} />
     </AbsoluteFill>
   );
 };
 
 const BACKGROUNDS: Record<Scene['bg'], React.FC> = {
-  fog: FogBg,
-  stars: StarsBg,
-  phone: PhoneBg,
-  mirror: MirrorBg,
-  candle: CandleBg,
+  bokeh: BokehBg,
+  neon: NeonBg,
+  sale: SaleBg,
+  rise: RiseBg,
+  calm: CalmBg,
 };
 
 // ---------- テロップ(黒フチ+フワッとフェードイン) ----------
@@ -316,24 +279,26 @@ export const ShortVideo: React.FC<ShortVideoProps> = ({
         from += scene.durationInFrames;
         return seq;
       })}
-      {/* アカウント名(常時・薄め) */}
-      <div
-        style={{
-          position: 'absolute',
-          top: 110,
-          left: 0,
-          right: 0,
-          textAlign: 'center',
-          fontFamily,
-          fontWeight: 700,
-          fontSize: 38,
-          letterSpacing: '0.12em',
-          color: 'rgba(255,255,255,0.5)',
-          textShadow: '0 2px 12px rgba(0,0,0,0.6)',
-        }}
-      >
-        {account}
-      </div>
+      {/* アカウント名(常時・薄め。空文字なら非表示) */}
+      {account ? (
+        <div
+          style={{
+            position: 'absolute',
+            top: 110,
+            left: 0,
+            right: 0,
+            textAlign: 'center',
+            fontFamily,
+            fontWeight: 700,
+            fontSize: 38,
+            letterSpacing: '0.12em',
+            color: 'rgba(255,255,255,0.5)',
+            textShadow: '0 2px 12px rgba(0,0,0,0.6)',
+          }}
+        >
+          {account}
+        </div>
+      ) : null}
       {/* BGM(ループ+フェードイン/アウト) */}
       <Audio
         loop

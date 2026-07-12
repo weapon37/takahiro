@@ -28,11 +28,11 @@ const script = JSON.parse(fs.readFileSync(path.join(HERE, 'script.json'), 'utf8'
 
 // 話題ごとに背景の雰囲気を割り当てる(同じ話題は同じ背景で統一感を出す)
 const bgByRole = (i, role) => {
-  if (i <= 2) return 'fog';      // フック・導入
-  if (i <= 5) return 'stars';    // 第3位(夢の話)
-  if (i <= 8) return 'phone';    // 第2位(電話の話)
-  if (i <= 11) return 'mirror';  // 第1位(もう一人の自分)
-  return 'candle';               // CTA(占い師の部屋)
+  if (i <= 2) return 'bokeh';  // フック・導入(夜の街)
+  if (i <= 5) return 'neon';   // 特徴①(コンビニ)
+  if (i <= 8) return 'sale';   // 特徴②(セール)
+  if (i <= 11) return 'rise';  // 特徴③(貯金が増える)
+  return 'calm';               // CTA
 };
 
 const scenes = script.sentences.map((s, idx) => {

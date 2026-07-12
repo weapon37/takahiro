@@ -1,84 +1,84 @@
 {
-  "title": "【実話】本当にあった不思議な体験談ベスト3|占い師が語るゾクッとする話",
-  "caption": "占い師のもとに寄せられた\"本当にあった\"不思議な体験談を3つ紹介します。最後まで見ると鳥肌が立つかも…。あなたの不思議な体験もコメントで教えてください。公式LINEでは無料鑑定を配信中です。\n#不思議な体験 #実話 #怖い話 #占い #スピリチュアル #都市伝説 #ゾクッとする話\n音声合成:Open JTalk/MMDAgent「メイ」(名古屋工業大学・CC BY 3.0)",
-  "account": "@fushigi_ch",
+  "title": "【元ニートが断言】貯金できない人の特徴3選|1つでも当てはまったら危険",
+  "caption": "貯金ゼロの元ニートだった俺が、ようやく気づいた「お金が貯まらない人の共通点」を3つ話す。1つでも当てはまったら今日から直そう。あなたがやめられない出費もコメントで教えてくれ。公式LINEでは貯金テクを無料配信中。\n#貯金 #節約 #お金の勉強 #家計管理 #資産形成 #マネーリテラシー #お金",
+  "account": "",
   "sentences": [
     {
       "role": "title",
-      "narration": "これ、ぐうぜんだと思いますか。",
-      "telop": "これ、偶然だと思う?",
+      "narration": "なぜ、あなたの財布には、お金が残らないのか。",
+      "telop": "なぜお金が残らない?",
       "telop_style": "normal"
     },
     {
       "role": "intro",
-      "narration": "占い師のわたしに寄せられた、本当にあった不思議な話を三つ紹介する。",
-      "telop": "実話・不思議体験ベスト3",
+      "narration": "貯金ゼロの元ニートだった俺が、ようやく気づいた特徴を三つ話す。",
+      "telop": "貯金できない人の特徴3選",
       "telop_style": "normal"
     },
     {
       "role": "rank",
-      "narration": "第三位。夢で見た数字。",
-      "telop": "第3位 夢で見た数字",
+      "narration": "その一。コンビニに毎日寄る。",
+      "telop": "① 毎日コンビニ",
       "telop_style": "normal"
     },
     {
       "role": "body",
-      "narration": "亡くなったそぼが夢に現れ、四桁の数字だけを告げた。",
-      "telop": "祖母が夢で告げた4桁",
+      "narration": "一回五百円でも、毎日なら月に一万五千円が消えていく。",
+      "telop": "月1.5万円が消える",
       "telop_style": "normal"
     },
     {
       "role": "body",
-      "narration": "翌朝しらべると、それはそぼの金庫の、あんしょう番号だった。",
-      "telop": "金庫の暗証番号と一致",
-      "telop_style": "normal"
-    },
-    {
-      "role": "rank",
-      "narration": "第二位。鳴らないはずの電話。",
-      "telop": "第2位 鳴らない電話",
-      "telop_style": "normal"
-    },
-    {
-      "role": "body",
-      "narration": "解約したはずの母の携帯から、めいにちに着信があった。",
-      "telop": "命日に鳴った母の携帯",
-      "telop_style": "normal"
-    },
-    {
-      "role": "body",
-      "narration": "折り返すと、現在つかわれておりません、とだけ流れた。",
-      "telop": "(折り返しは「使われていません」)",
+      "narration": "俺はこれをやめただけで、初めて通帳の数字が増えた。",
+      "telop": "(やめたら通帳が増えた)",
       "telop_style": "paren"
     },
     {
       "role": "rank",
-      "narration": "第一位。もうひとりの自分。",
-      "telop": "第1位 もう一人の自分",
+      "narration": "その二。セールだと買ってしまう。",
+      "telop": "② セールで買う",
       "telop_style": "normal"
     },
     {
       "role": "body",
-      "narration": "旅先の写真に、家にいるはずの自分がうつっていた。",
-      "telop": "写真に写る\"自分\"",
+      "narration": "安いから買うのは、必要だから買うのとはちがう。",
+      "telop": "「安いから」は罠",
       "telop_style": "normal"
     },
     {
       "role": "body",
-      "narration": "その日、家族は、ずっと家でわたしを見ていたという。",
-      "telop": "(家族は家で\"私\"を見ていた)",
+      "narration": "割引された額じゃなく、払った額だけが財布から消える。",
+      "telop": "(払った額だけが現実)",
       "telop_style": "paren"
     },
     {
-      "role": "cta",
-      "narration": "あなたの不思議な体験も、コメントで教えてほしい。",
-      "telop": "体験談はコメントへ",
+      "role": "rank",
+      "narration": "その三。収入が増えると、生活も上げる。",
+      "telop": "③ 収入UPで生活もUP",
+      "telop_style": "normal"
+    },
+    {
+      "role": "body",
+      "narration": "稼いだぶんだけ使えば、いくら稼いでも貯金はゼロのままだ。",
+      "telop": "いくら稼いでもゼロ",
+      "telop_style": "normal"
+    },
+    {
+      "role": "body",
+      "narration": "先に貯金を引いて、残りで暮らす。直すのは順番だけでいい。",
+      "telop": "\"先取り貯金\"が最強",
       "telop_style": "normal"
     },
     {
       "role": "cta",
-      "narration": "公式ラインでは、無料かんていを配信中。プロフィールのリンクからどうぞ。",
-      "telop": "公式LINEで無料鑑定\n→プロフィールへ",
+      "narration": "あなたがやめられない出費、コメントで教えてくれ。",
+      "telop": "やめられない出費は?",
+      "telop_style": "normal"
+    },
+    {
+      "role": "cta",
+      "narration": "公式ラインでは、貯金テクを無料配信中。プロフィールのリンクからどうぞ。",
+      "telop": "公式LINEで無料配信中\n→プロフィールへ",
       "telop_style": "normal"
     }
   ]
