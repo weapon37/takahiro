@@ -78,7 +78,7 @@
     {
       "role": "cta",
       "narration": "公式ラインでは、無料かんていを配信中。プロフィールのリンクからどうぞ。",
-      "telop": "公式LINEで無料鑑定→プロフへ",
+      "telop": "公式LINEで無料鑑定\n→プロフィールへ",
       "telop_style": "normal"
     }
   ]
