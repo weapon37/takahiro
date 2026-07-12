@@ -10,22 +10,9 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
-import {loadFont} from '@remotion/fonts';
-import {ZEN_MARU_BLACK, ZEN_MARU_BOLD} from './fonts';
-
-const fontFamily = 'Zen Maru Gothic';
-loadFont({
-  family: fontFamily,
-  url: ZEN_MARU_BLACK,
-  format: 'truetype',
-  weight: '900',
-});
-loadFont({
-  family: fontFamily,
-  url: ZEN_MARU_BOLD,
-  format: 'truetype',
-  weight: '700',
-});
+// フォントはOSにインストール済みのものを使う(README参照)。
+// レンダリング前に public/fonts/ のTTFをシステムに入れておくこと。
+const fontFamily = "'Zen Maru Gothic', 'Zen Maru Gothic Black', 'IPAPGothic', sans-serif";
 
 export type Scene = {
   audio: string;

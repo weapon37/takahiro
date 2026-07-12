@@ -17,7 +17,11 @@ cd shorts
 npm install                      # 動画エンジン(Remotion)を入れる
 python3 -m venv .venv            # 音声合成用のPython環境を作る
 .venv/bin/pip install pyopenjtalk-plus numpy soundfile
-node tools/embed_fonts.mjs       # フォントをコードに埋め込む(初回のみ)
+
+# フォントをパソコンにインストールする(初回のみ)
+# Mac/Windowsなら public/fonts/ の2つのttfをダブルクリックして「インストール」。
+# Linuxなら:
+mkdir -p ~/.fonts && cp public/fonts/*.ttf ~/.fonts/ && fc-cache -f
 ```
 
 ## 動画を作る手順(4コマンド)

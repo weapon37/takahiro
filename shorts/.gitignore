@@ -2,4 +2,3 @@ node_modules
 out
 .env
 .venv
-src/fonts.ts
