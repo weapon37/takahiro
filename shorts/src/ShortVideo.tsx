@@ -11,16 +11,19 @@ import {
   useVideoConfig,
 } from 'remotion';
 import {loadFont} from '@remotion/fonts';
+import {ZEN_MARU_BLACK, ZEN_MARU_BOLD} from './fonts';
 
 const fontFamily = 'Zen Maru Gothic';
 loadFont({
   family: fontFamily,
-  url: staticFile('fonts/ZenMaruGothic-Black.ttf'),
+  url: ZEN_MARU_BLACK,
+  format: 'truetype',
   weight: '900',
 });
 loadFont({
   family: fontFamily,
-  url: staticFile('fonts/ZenMaruGothic-Bold.ttf'),
+  url: ZEN_MARU_BOLD,
+  format: 'truetype',
   weight: '700',
 });
 
