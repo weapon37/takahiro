@@ -11,7 +11,7 @@
       "role": "title",
       "bg": "bokeh",
       "playWhoosh": false,
-      "durationInFrames": 123
+      "durationInFrames": 92
     },
     {
       "audio": "audio/02.wav",
@@ -20,7 +20,7 @@
       "role": "intro",
       "bg": "bokeh",
       "playWhoosh": false,
-      "durationInFrames": 148
+      "durationInFrames": 130
     },
     {
       "audio": "audio/03.wav",
@@ -29,7 +29,7 @@
       "role": "rank",
       "bg": "neon",
       "playWhoosh": true,
-      "durationInFrames": 91
+      "durationInFrames": 79
     },
     {
       "audio": "audio/04.wav",
@@ -38,7 +38,7 @@
       "role": "body",
       "bg": "neon",
       "playWhoosh": false,
-      "durationInFrames": 142
+      "durationInFrames": 118
     },
     {
       "audio": "audio/05.wav",
@@ -47,7 +47,7 @@
       "role": "body",
       "bg": "neon",
       "playWhoosh": false,
-      "durationInFrames": 130
+      "durationInFrames": 105
     },
     {
       "audio": "audio/06.wav",
@@ -56,7 +56,7 @@
       "role": "rank",
       "bg": "sale",
       "playWhoosh": true,
-      "durationInFrames": 89
+      "durationInFrames": 77
     },
     {
       "audio": "audio/07.wav",
@@ -65,7 +65,7 @@
       "role": "body",
       "bg": "sale",
       "playWhoosh": false,
-      "durationInFrames": 115
+      "durationInFrames": 94
     },
     {
       "audio": "audio/08.wav",
@@ -74,7 +74,7 @@
       "role": "body",
       "bg": "sale",
       "playWhoosh": false,
-      "durationInFrames": 132
+      "durationInFrames": 100
     },
     {
       "audio": "audio/09.wav",
@@ -83,7 +83,7 @@
       "role": "rank",
       "bg": "rise",
       "playWhoosh": true,
-      "durationInFrames": 115
+      "durationInFrames": 101
     },
     {
       "audio": "audio/10.wav",
@@ -92,7 +92,7 @@
       "role": "body",
       "bg": "rise",
       "playWhoosh": false,
-      "durationInFrames": 136
+      "durationInFrames": 107
     },
     {
       "audio": "audio/11.wav",
@@ -101,7 +101,7 @@
       "role": "body",
       "bg": "rise",
       "playWhoosh": false,
-      "durationInFrames": 149
+      "durationInFrames": 137
     },
     {
       "audio": "audio/12.wav",
@@ -110,7 +110,7 @@
       "role": "cta",
       "bg": "calm",
       "playWhoosh": false,
-      "durationInFrames": 117
+      "durationInFrames": 92
     },
     {
       "audio": "audio/13.wav",
@@ -119,7 +119,7 @@
       "role": "cta",
       "bg": "calm",
       "playWhoosh": false,
-      "durationInFrames": 163
+      "durationInFrames": 159
     }
   ]
 }
