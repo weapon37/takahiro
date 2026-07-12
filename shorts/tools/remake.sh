@@ -33,6 +33,12 @@ if ! fc-list 2>/dev/null | grep -qi "Zen Maru"; then
   mkdir -p ~/.fonts && cp public/fonts/*.ttf ~/.fonts/ && fc-cache -f >/dev/null
 fi
 
+# --- 背景動画(Pexelsキーがあれば実写をダウンロード) ---
+if [ -n "$PEXELS_API_KEY" ]; then
+  echo "[3.5/5] Pexelsから実写背景をダウンロード ..."
+  .venv/bin/python tools/fetch_bg_pexels.py || echo "(Pexels取得に失敗。自前背景のまま続行)"
+fi
+
 # --- 音声生成 → シーン割り → 書き出し ---
 echo "[4/5] Google TTS (ja-JP-Chirp3-HD-Orus) で音声を生成 ..."
 .venv/bin/python tools/make_voice_google.py

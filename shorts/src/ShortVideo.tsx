@@ -3,6 +3,7 @@ import {
   AbsoluteFill,
   Audio,
   Sequence,
+  Video,
   interpolate,
   random,
   spring,
@@ -20,6 +21,7 @@ export type Scene = {
   telopStyle: 'normal' | 'paren';
   role: string;
   bg: 'bokeh' | 'neon' | 'sale' | 'rise' | 'calm';
+  bgVideo?: string | null; // public/ 内の実写背景動画(あれば自前背景より優先)
   playWhoosh: boolean;
   durationInFrames: number;
 };
@@ -241,7 +243,16 @@ const SceneView: React.FC<{scene: Scene; index: number; whoosh: string}> = ({
   return (
     <AbsoluteFill style={{backgroundColor: 'black'}}>
       <AbsoluteFill style={{transform: `scale(${scale})`}}>
-        <Bg />
+        {scene.bgVideo ? (
+          <Video
+            src={staticFile(scene.bgVideo)}
+            muted
+            loop
+            style={{width: '100%', height: '100%', objectFit: 'cover'}}
+          />
+        ) : (
+          <Bg />
+        )}
       </AbsoluteFill>
       {/* 上下の暗転グラデーションで文字を読みやすく */}
       <AbsoluteFill

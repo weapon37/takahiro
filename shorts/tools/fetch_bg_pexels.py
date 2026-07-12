@@ -15,12 +15,14 @@ HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUTDIR = os.path.join(HERE, "public", "bg")
 
 # 各検索ワードにつき縦動画を1本ダウンロードする(シーンの雰囲気に対応)
+# bg_01=フック・導入 / bg_02=特徴①コンビニ / bg_03=特徴②セール /
+# bg_04=特徴③貯金 / bg_05=CTA
 QUERIES = [
-    "dark fog mystery",        # フック・導入
-    "night sky stars",         # 第3位(夢)
-    "old telephone dark",      # 第2位(電話)
-    "mirror silhouette dark",  # 第1位(もう一人の自分)
-    "candle flame dark",       # CTA(占い師の雰囲気)
+    "night city lights walking",   # フック・導入(夜の街)
+    "convenience store night",     # 特徴①(コンビニ)
+    "shopping mall people",        # 特徴②(セール・買い物)
+    "counting money savings",      # 特徴③(貯金・お金)
+    "cozy desk lamp night",        # CTA(落ち着いた締め)
 ]
 
 

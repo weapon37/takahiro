@@ -35,6 +35,13 @@ const bgByRole = (i, role) => {
   return 'calm';               // CTA
 };
 
+// 実写背景(public/bg/bg_01.mp4〜bg_05.mp4)があれば話題グループごとに使う
+const bgGroup = (i) => (i <= 2 ? 1 : i <= 5 ? 2 : i <= 8 ? 3 : i <= 11 ? 4 : 5);
+const bgVideoFor = (i) => {
+  const rel = `bg/bg_${String(bgGroup(i)).padStart(2, '0')}.mp4`;
+  return fs.existsSync(path.join(HERE, 'public', rel)) ? rel : null;
+};
+
 const scenes = script.sentences.map((s, idx) => {
   const i = idx + 1;
   const audio = `audio/${String(i).padStart(2, '0')}.wav`;
@@ -45,6 +52,7 @@ const scenes = script.sentences.map((s, idx) => {
     telopStyle: s.telop_style ?? 'normal',
     role: s.role,
     bg: bgByRole(i, s.role),
+    bgVideo: bgVideoFor(i),
     playWhoosh: s.role === 'rank',
     durationInFrames: Math.ceil(sec * FPS) + PAD_FRAMES,
   };
