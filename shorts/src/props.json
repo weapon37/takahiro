@@ -22,7 +22,7 @@
       "bg": "bokeh",
       "bgVideo": null,
       "playWhoosh": false,
-      "durationInFrames": 130
+      "durationInFrames": 123
     },
     {
       "audio": "audio/03.wav",
@@ -32,7 +32,7 @@
       "bg": "neon",
       "bgVideo": null,
       "playWhoosh": true,
-      "durationInFrames": 79
+      "durationInFrames": 111
     },
     {
       "audio": "audio/04.wav",
@@ -42,7 +42,7 @@
       "bg": "neon",
       "bgVideo": null,
       "playWhoosh": false,
-      "durationInFrames": 118
+      "durationInFrames": 127
     },
     {
       "audio": "audio/05.wav",
@@ -62,7 +62,7 @@
       "bg": "sale",
       "bgVideo": null,
       "playWhoosh": true,
-      "durationInFrames": 77
+      "durationInFrames": 66
     },
     {
       "audio": "audio/07.wav",
@@ -82,7 +82,7 @@
       "bg": "sale",
       "bgVideo": null,
       "playWhoosh": false,
-      "durationInFrames": 100
+      "durationInFrames": 107
     },
     {
       "audio": "audio/09.wav",
@@ -102,7 +102,7 @@
       "bg": "rise",
       "bgVideo": null,
       "playWhoosh": false,
-      "durationInFrames": 107
+      "durationInFrames": 117
     },
     {
       "audio": "audio/11.wav",
@@ -112,7 +112,7 @@
       "bg": "rise",
       "bgVideo": null,
       "playWhoosh": false,
-      "durationInFrames": 137
+      "durationInFrames": 126
     },
     {
       "audio": "audio/12.wav",
@@ -122,7 +122,7 @@
       "bg": "calm",
       "bgVideo": null,
       "playWhoosh": false,
-      "durationInFrames": 92
+      "durationInFrames": 107
     },
     {
       "audio": "audio/13.wav",
@@ -132,7 +132,7 @@
       "bg": "calm",
       "bgVideo": null,
       "playWhoosh": false,
-      "durationInFrames": 159
+      "durationInFrames": 144
     }
   ]
 }
