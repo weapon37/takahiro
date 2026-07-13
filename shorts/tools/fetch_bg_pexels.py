@@ -14,6 +14,9 @@ import urllib.request
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUTDIR = os.path.join(HERE, "public", "bg")
 
+# Pexels(Cloudflare)はデフォルトの Python-urllib UA を403で弾くため、ブラウザ風UAを名乗る
+USER_AGENT = "Mozilla/5.0 (compatible; shorts-bg-fetcher/1.0)"
+
 # 各検索ワードにつき縦動画を1本ダウンロードする(シーンの雰囲気に対応)
 # bg_01=フック・導入 / bg_02=特徴①コンビニ / bg_03=特徴②セール /
 # bg_04=特徴③貯金 / bg_05=CTA
@@ -31,7 +34,9 @@ def search_portrait_video(query: str, api_key: str):
         "https://api.pexels.com/videos/search?"
         f"query={urllib.parse.quote(query)}&orientation=portrait&size=medium&per_page=3"
     )
-    req = urllib.request.Request(url, headers={"Authorization": api_key})
+    req = urllib.request.Request(
+        url, headers={"Authorization": api_key, "User-Agent": USER_AGENT}
+    )
     with urllib.request.urlopen(req) as res:
         data = json.load(res)
     for video in data.get("videos", []):
@@ -58,7 +63,10 @@ def main():
             print(f"bg_{i:02d}: 「{q}」で縦動画が見つかりませんでした")
             continue
         path = os.path.join(OUTDIR, f"bg_{i:02d}.mp4")
-        urllib.request.urlretrieve(link, path)
+        # urlretrieve もデフォルトUAで403になるため、UA付きで手動ダウンロード
+        dl = urllib.request.Request(link, headers={"User-Agent": USER_AGENT})
+        with urllib.request.urlopen(dl) as res, open(path, "wb") as fp:
+            fp.write(res.read())
         print(f"bg_{i:02d}.mp4  OK  ({q})")
     print("完了。props.json の bg をファイル名に書き換えてください。")
 

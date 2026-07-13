@@ -10,7 +10,7 @@
       "telopStyle": "normal",
       "role": "title",
       "bg": "bokeh",
-      "bgVideo": null,
+      "bgVideo": "bg/bg_01.mp4",
       "playWhoosh": false,
       "durationInFrames": 92
     },
@@ -20,7 +20,7 @@
       "telopStyle": "normal",
       "role": "intro",
       "bg": "bokeh",
-      "bgVideo": null,
+      "bgVideo": "bg/bg_01.mp4",
       "playWhoosh": false,
       "durationInFrames": 123
     },
@@ -30,7 +30,7 @@
       "telopStyle": "normal",
       "role": "rank",
       "bg": "neon",
-      "bgVideo": null,
+      "bgVideo": "bg/bg_02.mp4",
       "playWhoosh": true,
       "durationInFrames": 111
     },
@@ -40,7 +40,7 @@
       "telopStyle": "normal",
       "role": "body",
       "bg": "neon",
-      "bgVideo": null,
+      "bgVideo": "bg/bg_02.mp4",
       "playWhoosh": false,
       "durationInFrames": 127
     },
@@ -50,7 +50,7 @@
       "telopStyle": "paren",
       "role": "body",
       "bg": "neon",
-      "bgVideo": null,
+      "bgVideo": "bg/bg_02.mp4",
       "playWhoosh": false,
       "durationInFrames": 105
     },
@@ -60,7 +60,7 @@
       "telopStyle": "normal",
       "role": "rank",
       "bg": "sale",
-      "bgVideo": null,
+      "bgVideo": "bg/bg_03.mp4",
       "playWhoosh": true,
       "durationInFrames": 66
     },
@@ -70,7 +70,7 @@
       "telopStyle": "normal",
       "role": "body",
       "bg": "sale",
-      "bgVideo": null,
+      "bgVideo": "bg/bg_03.mp4",
       "playWhoosh": false,
       "durationInFrames": 94
     },
@@ -80,7 +80,7 @@
       "telopStyle": "paren",
       "role": "body",
       "bg": "sale",
-      "bgVideo": null,
+      "bgVideo": "bg/bg_03.mp4",
       "playWhoosh": false,
       "durationInFrames": 107
     },
@@ -90,7 +90,7 @@
       "telopStyle": "normal",
       "role": "rank",
       "bg": "rise",
-      "bgVideo": null,
+      "bgVideo": "bg/bg_04.mp4",
       "playWhoosh": true,
       "durationInFrames": 101
     },
@@ -100,7 +100,7 @@
       "telopStyle": "normal",
       "role": "body",
       "bg": "rise",
-      "bgVideo": null,
+      "bgVideo": "bg/bg_04.mp4",
       "playWhoosh": false,
       "durationInFrames": 117
     },
@@ -110,7 +110,7 @@
       "telopStyle": "normal",
       "role": "body",
       "bg": "rise",
-      "bgVideo": null,
+      "bgVideo": "bg/bg_04.mp4",
       "playWhoosh": false,
       "durationInFrames": 126
     },
@@ -120,7 +120,7 @@
       "telopStyle": "normal",
       "role": "cta",
       "bg": "calm",
-      "bgVideo": null,
+      "bgVideo": "bg/bg_05.mp4",
       "playWhoosh": false,
       "durationInFrames": 107
     },
@@ -130,7 +130,7 @@
       "telopStyle": "normal",
       "role": "cta",
       "bg": "calm",
-      "bgVideo": null,
+      "bgVideo": "bg/bg_05.mp4",
       "playWhoosh": false,
       "durationInFrames": 144
     }

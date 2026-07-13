@@ -2,8 +2,8 @@ import React from 'react';
 import {
   AbsoluteFill,
   Audio,
+  OffthreadVideo,
   Sequence,
-  Video,
   interpolate,
   random,
   spring,
@@ -243,11 +243,12 @@ const SceneView: React.FC<{scene: Scene; index: number; whoosh: string}> = ({
   return (
     <AbsoluteFill style={{backgroundColor: 'black'}}>
       <AbsoluteFill style={{transform: `scale(${scale})`}}>
+        {/* OffthreadVideoはffmpegでフレーム抽出するため、ブラウザのH.264対応に依存しない。
+            各シーンはクリップ先頭から数秒しか使わない(最短クリップ>最長シーン)のでloopは不要 */}
         {scene.bgVideo ? (
-          <Video
+          <OffthreadVideo
             src={staticFile(scene.bgVideo)}
             muted
-            loop
             style={{width: '100%', height: '100%', objectFit: 'cover'}}
           />
         ) : (
