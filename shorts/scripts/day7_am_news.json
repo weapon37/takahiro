@@ -56,5 +56,15 @@
       "narration": "気になる1本があったら、コメントで。深掘り版を作ります。来週日曜も、この枠で。",
       "telop": "深掘りリクエストは↓\n**毎週日曜7時**"
     }
+  ],
+  "bgm": "bgm/paradise.mp3",
+  "bgClips": [
+    "bg/sumaho6.mp4",
+    "bg/keiri7.mp4",
+    "bg/sumaho2.mp4",
+    "bg/keiri5.mp4",
+    "bg/sumaho7.mp4",
+    "bg/keiri4.mp4",
+    "bg/note7.mp4"
   ]
 }

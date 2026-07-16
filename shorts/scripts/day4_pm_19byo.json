@@ -20,7 +20,10 @@
       "role": "big",
       "narration": "まず手入力。私は、◯分◯秒かかりました。",
       "telop": "まずは**手入力**で計測",
-      "big": {"value": "◯分◯秒", "label": "手入力の実測"}
+      "big": {
+        "value": "◯分◯秒",
+        "label": "手入力の実測"
+      }
     },
     {
       "role": "story",
@@ -31,7 +34,10 @@
       "role": "big",
       "narration": "結果、◯秒でした。",
       "telop": "結果は…",
-      "big": {"value": "◯秒", "label": "AI処理の実測"}
+      "big": {
+        "value": "◯秒",
+        "label": "AI処理の実測"
+      }
     },
     {
       "role": "story",
@@ -44,5 +50,15 @@
       "telop": "手順書を**そのまま**渡します",
       "keyword": "経理"
     }
+  ],
+  "bgm": "bgm/tomorrows_light.mp3",
+  "bgClips": [
+    "bg/keiri.mp4",
+    "bg/keiri2.mp4",
+    "bg/keiri3.mp4",
+    "bg/note4.mp4",
+    "bg/keiri6.mp4",
+    "bg/note6.mp4",
+    "bg/keiri5.mp4"
   ]
 }

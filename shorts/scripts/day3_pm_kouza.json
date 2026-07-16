@@ -51,7 +51,20 @@
       "role": "vs",
       "narration": "講座にお金を払うのは、アリ？ナシ？あなたの経験も、コメントで。",
       "telop": "経験談も**コメント**で",
-      "vs": {"left": "アリ派", "right": "ナシ派"}
+      "vs": {
+        "left": "アリ派",
+        "right": "ナシ派"
+      }
     }
+  ],
+  "bgm": "bgm/pawn.mp3",
+  "bgClips": [
+    "bg/note5.mp4",
+    "bg/keiri4.mp4",
+    "bg/sumaho2.mp4",
+    "bg/note2.mp4",
+    "bg/keiri3.mp4",
+    "bg/sumaho5.mp4",
+    "bg/note6.mp4"
   ]
 }

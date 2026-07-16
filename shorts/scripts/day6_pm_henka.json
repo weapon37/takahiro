@@ -15,7 +15,10 @@
       "role": "big",
       "narration": "収支は、まだ0円。",
       "telop": "はい、まだ**0円**です",
-      "big": {"value": "¥0", "label": "収支(4日目)"}
+      "big": {
+        "value": "¥0",
+        "label": "収支(4日目)"
+      }
     },
     {
       "role": "story",
@@ -43,5 +46,15 @@
       "telop": "30日目まで**一緒に**",
       "keyword": "メモ"
     }
+  ],
+  "bgm": "bgm/tomorrows_light.mp3",
+  "bgClips": [
+    "bg/note.mp4",
+    "bg/note2.mp4",
+    "bg/note3.mp4",
+    "bg/note4.mp4",
+    "bg/note5.mp4",
+    "bg/note6.mp4",
+    "bg/note7.mp4"
   ]
 }

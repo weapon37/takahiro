@@ -25,7 +25,11 @@
       "role": "body",
       "narration": "実測、毎日の返信業務が、40分から15分。",
       "telop": "返信業務が**半分以下**",
-      "time": {"before": "40分", "after": "15分", "label": "毎日の返信業務"}
+      "time": {
+        "before": "40分",
+        "after": "15分",
+        "label": "毎日の返信業務"
+      }
     },
     {
       "role": "rank",
@@ -60,12 +64,26 @@
       "role": "body",
       "narration": "実測、1日の文書作成が、60分から20分。",
       "telop": "文書作成が**3分の1**",
-      "time": {"before": "60分", "after": "20分", "label": "1日の文書作成"}
+      "time": {
+        "before": "60分",
+        "after": "20分",
+        "label": "1日の文書作成"
+      }
     },
     {
       "role": "cta",
       "narration": "経理編は、固定コメントから。次の職種リクエストも、コメントで。",
       "telop": "経理編は固定コメ↓\n**職種リクエスト**受付中"
     }
+  ],
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgClips": [
+    "bg/keiri.mp4",
+    "bg/keiri3.mp4",
+    "bg/keiri4.mp4",
+    "bg/keiri5.mp4",
+    "bg/keiri6.mp4",
+    "bg/note5.mp4",
+    "bg/keiri2.mp4"
   ]
 }

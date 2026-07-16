@@ -25,7 +25,11 @@
       "role": "body",
       "narration": "実測、商談後の報告書づくりが、30分から5分。",
       "telop": "報告書が**すぐ終わる**",
-      "time": {"before": "30分", "after": "5分", "label": "商談後の報告書"}
+      "time": {
+        "before": "30分",
+        "after": "5分",
+        "label": "商談後の報告書"
+      }
     },
     {
       "role": "rank",
@@ -60,12 +64,26 @@
       "role": "body",
       "narration": "実測、1日の書き物ぜんぶで、90分が20分。",
       "telop": "書き物が**3分の1**以下に",
-      "time": {"before": "90分", "after": "20分", "label": "1日の書き物ぜんぶ"}
+      "time": {
+        "before": "90分",
+        "after": "20分",
+        "label": "1日の書き物ぜんぶ"
+      }
     },
     {
       "role": "cta",
       "narration": "明日は事務編。あなたの職種も、コメントで。順番に作ります。",
       "telop": "次回**事務編**\n職種リクエストは↓"
     }
+  ],
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgClips": [
+    "bg/keiri7.mp4",
+    "bg/sumaho6.mp4",
+    "bg/keiri4.mp4",
+    "bg/keiri6.mp4",
+    "bg/sumaho4.mp4",
+    "bg/keiri3.mp4",
+    "bg/sumaho.mp4"
   ]
 }

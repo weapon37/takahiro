@@ -79,5 +79,15 @@
       "narration": "どれから使うか迷ったら、職種をコメントで。答えます。",
       "telop": "職種を**コメント**で\n→ おすすめ返します"
     }
+  ],
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgClips": [
+    "bg/sumaho2.mp4",
+    "bg/keiri3.mp4",
+    "bg/note5.mp4",
+    "bg/sumaho4.mp4",
+    "bg/keiri4.mp4",
+    "bg/sumaho7.mp4",
+    "bg/note2.mp4"
   ]
 }
