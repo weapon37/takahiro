@@ -173,7 +173,9 @@ const EraserChar: React.FC<{size?: number; tilt?: number}> = ({
 
 const ERASE_FRAMES = 14;
 
-const EraseWipe: React.FC = () => {
+// linger=true: ワイプ後、キャラが画面右側に留まる(rankシーン用)
+// linger=false: 従来どおり右へ通り抜ける(saveシーンは中央に別キャラが出るため)
+const EraseWipe: React.FC<{linger?: boolean}> = ({linger = false}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const progress = spring({
@@ -182,41 +184,55 @@ const EraseWipe: React.FC = () => {
     config: {damping: 22, mass: 0.7},
     durationInFrames: ERASE_FRAMES,
   });
-  if (frame > ERASE_FRAMES + 4) return null;
-  const x = interpolate(progress, [0, 1], [-350, 1250]);
+  // 紙色カバーは常に画面外まで抜けきる(消し残しゼロ)
+  const wipeX = interpolate(progress, [0, 1], [-350, 1250]);
+  // キャラはlinger時のみ右端で停止し、そのまま留まる
+  const REST_X = 810;
+  const charX = linger ? Math.min(wipeX, REST_X) : wipeX;
+  const settled = linger && wipeX >= REST_X;
+  const bob = settled ? Math.sin(frame / 14) * 10 : 0;
+  const wiping = frame <= ERASE_FRAMES + 4;
+  if (!wiping && !linger) return null;
   return (
     <AbsoluteFill style={{pointerEvents: 'none'}}>
-      {/* まだ消えていない部分を紙色で覆う(消しゴムの右側) */}
-      <div
-        style={{
-          position: 'absolute',
-          left: x + 60,
-          top: 0,
-          width: 1400,
-          height: '100%',
-          backgroundColor: BRAND.base,
-        }}
-      />
-      {/* 消しカス */}
-      {Array.from({length: 10}).map((_, i) => (
-        <div
-          key={i}
-          style={{
-            position: 'absolute',
-            left: x - 40 - random(`cx${i}`) * 220,
-            top: 860 + (random(`cy${i}`) - 0.5) * 700,
-            width: 14 + random(`cs${i}`) * 18,
-            height: 10 + random(`cs${i}`) * 12,
-            borderRadius: 8,
-            backgroundColor: BRAND.erase,
-            opacity: interpolate(frame, [0, ERASE_FRAMES + 4], [0.9, 0]),
-            transform: `rotate(${random(`cr${i}`) * 360}deg)`,
-          }}
+      {wiping ? (
+        <>
+          {/* まだ消えていない部分を紙色で覆う(消しゴムの右側) */}
+          <div
+            style={{
+              position: 'absolute',
+              left: wipeX + 60,
+              top: 0,
+              width: 1400,
+              height: '100%',
+              backgroundColor: BRAND.base,
+            }}
+          />
+          {/* 消しカス */}
+          {Array.from({length: 10}).map((_, i) => (
+            <div
+              key={i}
+              style={{
+                position: 'absolute',
+                left: wipeX - 40 - random(`cx${i}`) * 220,
+                top: 860 + (random(`cy${i}`) - 0.5) * 700,
+                width: 14 + random(`cs${i}`) * 18,
+                height: 10 + random(`cs${i}`) * 12,
+                borderRadius: 8,
+                backgroundColor: BRAND.erase,
+                opacity: interpolate(frame, [0, ERASE_FRAMES + 4], [0.9, 0]),
+                transform: `rotate(${random(`cr${i}`) * 360}deg)`,
+              }}
+            />
+          ))}
+        </>
+      ) : null}
+      {/* キャラ本体 */}
+      <div style={{position: 'absolute', left: charX - 130, top: 900 + bob}}>
+        <EraserChar
+          size={settled ? 200 : 260}
+          tilt={interpolate(progress, [0, 1], [-24, settled ? 4 : 8])}
         />
-      ))}
-      {/* キャラ本体が横切る */}
-      <div style={{position: 'absolute', left: x - 130, top: 760}}>
-        <EraserChar size={260} tilt={interpolate(progress, [0, 1], [-24, 8])} />
       </div>
     </AbsoluteFill>
   );
@@ -488,7 +504,7 @@ const SceneView: React.FC<{scene: RankScene; whoosh: string}> = ({scene, whoosh}
       {scene.time ? <TimeGap time={scene.time} /> : null}
       {scene.role === 'save' ? <SaveCue /> : null}
       <Telop text={scene.telop} big={scene.role === 'hook' && !scene.time} />
-      {scene.eraseIn ? <EraseWipe /> : null}
+      {scene.eraseIn ? <EraseWipe linger={scene.role === 'rank'} /> : null}
       <Audio src={staticFile(scene.audio)} />
       {scene.playWhoosh ? <Audio src={staticFile(whoosh)} volume={0.3} /> : null}
     </AbsoluteFill>

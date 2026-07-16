@@ -6,7 +6,7 @@ import {fileURLToPath} from 'node:url';
 
 const HERE = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const FPS = 30;
-const PAD_FRAMES = 10; // 各シーン末尾の余白
+const PAD_FRAMES = 6; // 各シーン末尾の余白
 
 function wavDuration(file) {
   const buf = fs.readFileSync(file);

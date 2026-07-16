@@ -10,7 +10,7 @@
       "telop": "経理を消すAI\n**実測**BEST3",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 133
+      "durationInFrames": 106
     },
     {
       "audio": "audio_ranking/02.wav",
@@ -20,7 +20,7 @@
       "headline": "Notta",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 73
+      "durationInFrames": 47
     },
     {
       "audio": "audio_ranking/03.wav",
@@ -28,7 +28,7 @@
       "telop": "手書きメモ、**今日で卒業**",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 158
+      "durationInFrames": 83
     },
     {
       "audio": "audio_ranking/04.wav",
@@ -41,7 +41,7 @@
       },
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 141
+      "durationInFrames": 119
     },
     {
       "audio": "audio_ranking/05.wav",
@@ -51,7 +51,7 @@
       "headline": "マネーフォワード",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 88
+      "durationInFrames": 75
     },
     {
       "audio": "audio_ranking/06.wav",
@@ -59,7 +59,7 @@
       "telop": "撮るだけで**仕訳まで自動**",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 118
+      "durationInFrames": 87
     },
     {
       "audio": "audio_ranking/07.wav",
@@ -72,7 +72,7 @@
       },
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 129
+      "durationInFrames": 95
     },
     {
       "audio": "audio_ranking/08.wav",
@@ -80,7 +80,7 @@
       "telop": "月末の自分のために**保存**",
       "eraseIn": true,
       "playWhoosh": false,
-      "durationInFrames": 137
+      "durationInFrames": 64
     },
     {
       "audio": "audio_ranking/09.wav",
@@ -90,7 +90,7 @@
       "headline": "freee AI-OCR",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 106
+      "durationInFrames": 87
     },
     {
       "audio": "audio_ranking/10.wav",
@@ -98,7 +98,7 @@
       "telop": "**放り込むだけ**で全部入る",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 186
+      "durationInFrames": 179
     },
     {
       "audio": "audio_ranking/11.wav",
@@ -111,7 +111,7 @@
       },
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 123
+      "durationInFrames": 116
     },
     {
       "audio": "audio_ranking/12.wav",
@@ -119,7 +119,7 @@
       "telop": "消したい作業を\n**コメント**で教えて",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 230
+      "durationInFrames": 169
     }
   ]
 }
