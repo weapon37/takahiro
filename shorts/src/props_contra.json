@@ -11,7 +11,11 @@
       "bgClips": [
         "bg/sumaho.mp4",
         "bg/sumaho2.mp4",
-        "bg/sumaho3.mp4"
+        "bg/sumaho3.mp4",
+        "bg/sumaho4.mp4",
+        "bg/sumaho5.mp4",
+        "bg/sumaho6.mp4",
+        "bg/sumaho7.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_contra/01.wav",
@@ -26,7 +30,11 @@
       "bgClips": [
         "bg/sumaho.mp4",
         "bg/sumaho2.mp4",
-        "bg/sumaho3.mp4"
+        "bg/sumaho3.mp4",
+        "bg/sumaho4.mp4",
+        "bg/sumaho5.mp4",
+        "bg/sumaho6.mp4",
+        "bg/sumaho7.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_contra/02.wav",
@@ -42,7 +50,11 @@
       "bgClips": [
         "bg/sumaho.mp4",
         "bg/sumaho2.mp4",
-        "bg/sumaho3.mp4"
+        "bg/sumaho3.mp4",
+        "bg/sumaho4.mp4",
+        "bg/sumaho5.mp4",
+        "bg/sumaho6.mp4",
+        "bg/sumaho7.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_contra/03.wav",
@@ -58,7 +70,11 @@
       "bgClips": [
         "bg/sumaho.mp4",
         "bg/sumaho2.mp4",
-        "bg/sumaho3.mp4"
+        "bg/sumaho3.mp4",
+        "bg/sumaho4.mp4",
+        "bg/sumaho5.mp4",
+        "bg/sumaho6.mp4",
+        "bg/sumaho7.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_contra/04.wav",
@@ -74,7 +90,11 @@
       "bgClips": [
         "bg/sumaho.mp4",
         "bg/sumaho2.mp4",
-        "bg/sumaho3.mp4"
+        "bg/sumaho3.mp4",
+        "bg/sumaho4.mp4",
+        "bg/sumaho5.mp4",
+        "bg/sumaho6.mp4",
+        "bg/sumaho7.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_contra/05.wav",
@@ -89,7 +109,11 @@
       "bgClips": [
         "bg/sumaho.mp4",
         "bg/sumaho2.mp4",
-        "bg/sumaho3.mp4"
+        "bg/sumaho3.mp4",
+        "bg/sumaho4.mp4",
+        "bg/sumaho5.mp4",
+        "bg/sumaho6.mp4",
+        "bg/sumaho7.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_contra/06.wav",
@@ -104,7 +128,11 @@
       "bgClips": [
         "bg/sumaho.mp4",
         "bg/sumaho2.mp4",
-        "bg/sumaho3.mp4"
+        "bg/sumaho3.mp4",
+        "bg/sumaho4.mp4",
+        "bg/sumaho5.mp4",
+        "bg/sumaho6.mp4",
+        "bg/sumaho7.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_contra/07.wav",
@@ -123,7 +151,11 @@
       "bgClips": [
         "bg/sumaho.mp4",
         "bg/sumaho2.mp4",
-        "bg/sumaho3.mp4"
+        "bg/sumaho3.mp4",
+        "bg/sumaho4.mp4",
+        "bg/sumaho5.mp4",
+        "bg/sumaho6.mp4",
+        "bg/sumaho7.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_contra/08.wav",
