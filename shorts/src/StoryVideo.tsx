@@ -3,6 +3,7 @@ import {
   AbsoluteFill,
   Audio,
   Sequence,
+  OffthreadVideo,
   interpolate,
   spring,
   staticFile,
@@ -24,6 +25,7 @@ export type StoryScene = {
   big?: {value: string; label: string}; // role='big' の数字(例 ¥0)
   items?: string[]; // role='rule' の箇条書き
   keyword?: string; // role='line' の合言葉
+  bgVideo?: string | null; // public/内の実写背景動画(紙色ウォッシュ越しに敷く)
   durationInFrames: number;
 };
 
@@ -35,9 +37,9 @@ export type StoryVideoProps = {
 };
 
 // ノート風背景(横罫線+温かい紙色)
-const NoteBg: React.FC = () => {
+const NoteBg: React.FC<{transparent?: boolean}> = ({transparent}) => {
   return (
-    <AbsoluteFill style={{backgroundColor: BRAND.base}}>
+    <AbsoluteFill style={{backgroundColor: transparent ? 'transparent' : BRAND.base}}>
       <DotGrid dotColor={`${BRAND.ink}10`} />
       {/* 横罫線(大学ノート風) */}
       {Array.from({length: 12}).map((_, i) => (
@@ -312,7 +314,19 @@ const SceneView: React.FC<{scene: StoryScene}> = ({scene}) => {
   const bob = Math.sin(frame / 16) * 8;
   return (
     <AbsoluteFill style={{backgroundColor: BRAND.base}}>
-      <NoteBg />
+      {scene.bgVideo ? (
+        <>
+          <AbsoluteFill>
+            <OffthreadVideo
+              src={staticFile(scene.bgVideo)}
+              muted
+              style={{width: '100%', height: '100%', objectFit: 'cover'}}
+            />
+          </AbsoluteFill>
+          <AbsoluteFill style={{backgroundColor: BRAND.base, opacity: 0.86}} />
+        </>
+      ) : null}
+      <NoteBg transparent={Boolean(scene.bgVideo)} />
       {scene.role === 'day' && scene.day !== undefined ? <DayStamp day={scene.day} /> : null}
       {scene.role === 'big' && scene.big ? <BigValue big={scene.big} /> : null}
       {scene.role === 'rule' && scene.items ? <RuleList items={scene.items} /> : null}

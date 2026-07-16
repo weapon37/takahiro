@@ -2,50 +2,72 @@
   "account": "仕事が消えるAI帳",
   "bgm": "",
   "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
   "scenes": [
     {
       "role": "hook",
       "telop": "課金、**要らない**かも",
+      "bgVideo": "bg/sumaho.mp4",
       "audio": "audio_contra/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
       "durationInFrames": 117
     },
     {
       "role": "body",
       "telop": "ライト利用は**無料で十分**",
+      "bgVideo": "bg/sumaho.mp4",
       "audio": "audio_contra/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
       "durationInFrames": 136
     },
     {
       "role": "point",
       "num": 1,
       "telop": "毎日1時間以上使う",
+      "bgVideo": "bg/sumaho.mp4",
       "audio": "audio_contra/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
       "durationInFrames": 159
     },
     {
       "role": "point",
       "num": 2,
       "telop": "画像・資料を読ませる",
+      "bgVideo": "bg/sumaho.mp4",
       "audio": "audio_contra/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
       "durationInFrames": 83
     },
     {
       "role": "point",
       "num": 3,
       "telop": "精度が仕事に直結",
+      "bgVideo": "bg/sumaho.mp4",
       "audio": "audio_contra/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
       "durationInFrames": 97
     },
     {
       "role": "body",
       "telop": "年間**36,000円**の無駄かも",
+      "bgVideo": "bg/sumaho.mp4",
       "audio": "audio_contra/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
       "durationInFrames": 172
     },
     {
       "role": "flip",
       "telop": "物足りない瞬間が\n**課金どき**",
+      "bgVideo": "bg/sumaho.mp4",
       "audio": "audio_contra/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
       "durationInFrames": 196
     },
     {
@@ -55,7 +77,10 @@
         "left": "課金派",
         "right": "無料派"
       },
+      "bgVideo": "bg/sumaho.mp4",
       "audio": "audio_contra/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
       "durationInFrames": 157
     }
   ]

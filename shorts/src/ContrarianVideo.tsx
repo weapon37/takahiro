@@ -3,6 +3,7 @@ import {
   AbsoluteFill,
   Audio,
   Sequence,
+  OffthreadVideo,
   interpolate,
   spring,
   staticFile,
@@ -22,6 +23,7 @@ export type ContraScene = {
   telop: string;
   num?: number; // role='point' の番号(①②③)
   vs?: {left: string; right: string}; // role='vs' の対決ラベル
+  bgVideo?: string | null; // public/内の実写背景動画(ネイビーウォッシュ越しに敷く)
   durationInFrames: number;
 };
 
@@ -33,8 +35,8 @@ export type ContrarianVideoProps = {
 };
 
 // ネイビー紙背景(ダークトーン+役割で差し色)
-const NavyBg: React.FC<{role: ContraScene['role']}> = ({role}) => (
-  <AbsoluteFill style={{backgroundColor: BRAND.ink}}>
+const NavyBg: React.FC<{role: ContraScene['role']; transparent?: boolean}> = ({role, transparent}) => (
+  <AbsoluteFill style={{backgroundColor: transparent ? 'transparent' : BRAND.ink}}>
     <DotGrid dotColor="rgba(247,244,238,0.09)" />
     {role === 'hook' && (
       <div
@@ -237,7 +239,19 @@ const HookStrike: React.FC = () => {
 const SceneView: React.FC<{scene: ContraScene}> = ({scene}) => {
   return (
     <AbsoluteFill style={{backgroundColor: BRAND.ink}}>
-      <NavyBg role={scene.role} />
+      {scene.bgVideo ? (
+        <>
+          <AbsoluteFill>
+            <OffthreadVideo
+              src={staticFile(scene.bgVideo)}
+              muted
+              style={{width: '100%', height: '100%', objectFit: 'cover'}}
+            />
+          </AbsoluteFill>
+          <AbsoluteFill style={{backgroundColor: BRAND.ink, opacity: 0.84}} />
+        </>
+      ) : null}
+      <NavyBg role={scene.role} transparent={Boolean(scene.bgVideo)} />
       {scene.role === 'point' && scene.num ? <NumBadge num={scene.num} /> : null}
       {scene.role === 'vs' && scene.vs ? <VsPanel vs={scene.vs} /> : null}
       <Telop text={scene.telop} big={scene.role === 'hook' || scene.role === 'flip'} />

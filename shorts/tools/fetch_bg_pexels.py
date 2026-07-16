@@ -2,9 +2,13 @@
 #
 # 使い方:
 #   1. https://www.pexels.com/api/ で無料APIキーを発行
-#   2. PEXELS_API_KEY=あなたのキー .venv/bin/python tools/fetch_bg_pexels.py
-#   3. public/bg/ に bg_01.mp4 ... が保存される
-#      → src/props.json の各シーンの "bg" をファイル名に書き換えて render し直す
+#   2a. 一括モード(旧ShortVideo用):
+#       PEXELS_API_KEY=xxxx .venv/bin/python tools/fetch_bg_pexels.py
+#       → public/bg/ に bg_01.mp4 ... bg_05.mp4
+#   2b. 単発モード(検索ワードとファイル名を指定):
+#       PEXELS_API_KEY=xxxx .venv/bin/python tools/fetch_bg_pexels.py "office desk" keiri.mp4
+#       → public/bg/keiri.mp4
+#   3. 台本JSONの "bgVideo": "bg/keiri.mp4" で背景に使われる
 import json
 import os
 import sys
@@ -26,12 +30,23 @@ QUERIES = [
 ]
 
 
+# 既定のPython UAはCDNに弾かれることがあるためブラウザ風UAを付ける
+UA = "Mozilla/5.0 (X11; Linux x86_64) shorts-bg-fetcher/1.0"
+
+
+def download(url: str, path: str):
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req) as res, open(path, "wb") as f:
+        while chunk := res.read(1 << 20):
+            f.write(chunk)
+
+
 def search_portrait_video(query: str, api_key: str):
     url = (
         "https://api.pexels.com/videos/search?"
         f"query={urllib.parse.quote(query)}&orientation=portrait&size=medium&per_page=3"
     )
-    req = urllib.request.Request(url, headers={"Authorization": api_key})
+    req = urllib.request.Request(url, headers={"Authorization": api_key, "User-Agent": UA})
     with urllib.request.urlopen(req) as res:
         data = json.load(res)
     for video in data.get("videos", []):
@@ -52,13 +67,27 @@ def main():
         print("例: PEXELS_API_KEY=xxxx .venv/bin/python tools/fetch_bg_pexels.py")
         return 1
     os.makedirs(OUTDIR, exist_ok=True)
+
+    # 単発モード: 検索ワードと保存ファイル名を引数で指定
+    if len(sys.argv) >= 3:
+        query, outfile = sys.argv[1], sys.argv[2]
+        link = search_portrait_video(query, api_key)
+        if not link:
+            print(f"「{query}」で縦動画が見つかりませんでした")
+            return 1
+        path = os.path.join(OUTDIR, outfile)
+        download(link, path)
+        size_mb = os.path.getsize(path) / 1e6
+        print(f"{outfile}  OK  ({query}, {size_mb:.1f}MB)")
+        return 0
+
     for i, q in enumerate(QUERIES, start=1):
         link = search_portrait_video(q, api_key)
         if not link:
             print(f"bg_{i:02d}: 「{q}」で縦動画が見つかりませんでした")
             continue
         path = os.path.join(OUTDIR, f"bg_{i:02d}.mp4")
-        urllib.request.urlretrieve(link, path)
+        download(link, path)
         print(f"bg_{i:02d}.mp4  OK  ({q})")
     print("完了。props.json の bg をファイル名に書き換えてください。")
 

@@ -40,6 +40,8 @@ const scenes = script.sentences.map((s, idx) => {
   const {narration, telop_style, ...fields} = s;
   return {
     ...fields,
+    // 背景動画: シーン個別指定 > 台本全体指定 > なし
+    bgVideo: s.bgVideo ?? script.bgVideo ?? null,
     audio,
     // ランキング型(RankingVideo)用: rank/saveシーンは消しゴムワイプ+SE。他テンプレでは無視される
     eraseIn: s.role === 'rank' || s.role === 'save',

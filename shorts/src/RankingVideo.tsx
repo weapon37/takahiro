@@ -3,6 +3,7 @@ import {
   AbsoluteFill,
   Audio,
   Sequence,
+  OffthreadVideo,
   interpolate,
   random,
   spring,
@@ -23,6 +24,7 @@ export type RankScene = {
   rank?: number; // role='rank' のとき順位札に出す数字
   headline?: string; // role='rank' のときのツール名(大きく表示)
   time?: {before: string; after: string; label?: string}; // 実測タイム(オレンジ特大)
+  bgVideo?: string | null; // public/内の実写背景動画(あれば紙色ウォッシュ越しに敷く)
   eraseIn: boolean; // シーン頭で消しゴムワイプ遷移
   playWhoosh: boolean;
   durationInFrames: number;
@@ -38,11 +40,11 @@ export type RankingVideoProps = {
 
 // ---------- 紙背景(オフホワイト+ドット方眼+役割ごとの差し色) ----------
 
-const PaperBg: React.FC<{role: RankScene['role']}> = ({role}) => {
+const PaperBg: React.FC<{role: RankScene['role']; transparent?: boolean}> = ({role, transparent}) => {
   const frame = useCurrentFrame();
   const drift = Math.sin(frame / 90) * 12;
   return (
-    <AbsoluteFill style={{backgroundColor: BRAND.base}}>
+    <AbsoluteFill style={{backgroundColor: transparent ? 'transparent' : BRAND.base}}>
       {/* ドット方眼(文具ノート感) */}
       <AbsoluteFill
         style={{
@@ -418,7 +420,20 @@ const SaveCue: React.FC = () => {
 const SceneView: React.FC<{scene: RankScene; whoosh: string}> = ({scene, whoosh}) => {
   return (
     <AbsoluteFill style={{backgroundColor: BRAND.base}}>
-      <PaperBg role={scene.role} />
+      {scene.bgVideo ? (
+        <>
+          <AbsoluteFill>
+            <OffthreadVideo
+              src={staticFile(scene.bgVideo)}
+              muted
+              style={{width: '100%', height: '100%', objectFit: 'cover'}}
+            />
+          </AbsoluteFill>
+          {/* 紙色ウォッシュ(テロップの可読性とブランド感を守る) */}
+          <AbsoluteFill style={{backgroundColor: BRAND.base, opacity: 0.82}} />
+        </>
+      ) : null}
+      <PaperBg role={scene.role} transparent={Boolean(scene.bgVideo)} />
       {scene.role === 'rank' && scene.rank ? <RankBadge rank={scene.rank} /> : null}
       {scene.role === 'rank' && scene.headline ? <Headline text={scene.headline} /> : null}
       {scene.time ? <TimeGap time={scene.time} /> : null}
