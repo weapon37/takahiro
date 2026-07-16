@@ -10,7 +10,7 @@ import {
   useVideoConfig,
 } from 'remotion';
 import {BRAND, fontFamily} from './brand';
-import {AccountLabel, CutBg, DotGrid, EraserChar, parseTelop} from './common';
+import {AccountLabel, CutBg, DotGrid, EraserChar, outline, parseTelop} from './common';
 
 // ---------- ⚡逆張り型テンプレ(ネイビー基調・議論を誘発する構成) ----------
 // 構成: hook(言い切り) → body(根拠) → point(①②③) → flip(条件付きの例外) → vs(どっち派?)
@@ -89,10 +89,11 @@ const Telop: React.FC<{text: string; big?: boolean}> = ({text, big}) => {
         style={{
           fontFamily,
           fontWeight: 900,
-          fontSize: big ? 96 : 76,
+          fontSize: big ? 116 : 94,
           lineHeight: 1.5,
           color: '#ffffff',
           whiteSpace: 'pre-wrap',
+          textShadow: outline(BRAND.ink),
         }}
       >
         {parseTelop(text).map((seg, i) =>

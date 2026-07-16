@@ -10,7 +10,7 @@ import {
   useVideoConfig,
 } from 'remotion';
 import {BRAND, fontFamily} from './brand';
-import {AccountLabel, CutBg, DotGrid, EraserChar, parseTelop} from './common';
+import {AccountLabel, CutBg, DotGrid, EraserChar, outline, parseTelop} from './common';
 
 // ---------- 💬体験談型テンプレ(検証ノート風・進行形ドキュメンタリー) ----------
 // 構成: day(Day表示) → story(語り) → big(数字ドン) → rule(3か条) → line(LINE誘導)
@@ -118,9 +118,10 @@ const BigValue: React.FC<{big: {value: string; label: string}}> = ({big}) => {
         style={{
           fontFamily,
           fontWeight: 900,
-          fontSize: 60,
+          fontSize: 72,
           color: BRAND.ink,
           opacity: appear,
+          textShadow: outline('#ffffff'),
         }}
       >
         {big.label}
@@ -129,10 +130,10 @@ const BigValue: React.FC<{big: {value: string; label: string}}> = ({big}) => {
         style={{
           fontFamily,
           fontWeight: 900,
-          fontSize: 230,
+          fontSize: 250,
           color: BRAND.spark,
           transform: `scale(${0.6 + pop * 0.4})`,
-          textShadow: `8px 8px 0 ${BRAND.ink}22`,
+          textShadow: outline('#ffffff'),
           marginTop: 10,
         }}
       >
@@ -197,9 +198,10 @@ const RuleList: React.FC<{items: string[]}> = ({items}) => {
               style={{
                 fontFamily,
                 fontWeight: 900,
-                fontSize: 58,
+                fontSize: 70,
                 color: BRAND.ink,
                 lineHeight: 1.3,
+                textShadow: outline('#ffffff'),
               }}
             >
               {item}
@@ -284,10 +286,11 @@ const Telop: React.FC<{text: string; calm?: boolean}> = ({text, calm}) => {
         style={{
           fontFamily,
           fontWeight: 900,
-          fontSize: calm ? 84 : 72,
+          fontSize: calm ? 102 : 90,
           lineHeight: 1.65,
           color: BRAND.ink,
           whiteSpace: 'pre-wrap',
+          textShadow: outline('#ffffff'),
         }}
       >
         {parseTelop(text).map((seg, i) =>

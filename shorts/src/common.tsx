@@ -77,6 +77,19 @@ export const EraserChar: React.FC<{size?: number; tilt?: number}> = ({
   );
 };
 
+// 太い輪郭線をtext-shadowの多方向重ねで作る(-webkit-text-strokeは塗りを侵食するため不使用)
+export const outline = (color: string, w = 9): string => {
+  const shadows: string[] = [];
+  for (let r = w; r >= 2; r -= 2) {
+    for (let a = 0; a < 360; a += 30) {
+      const x = (Math.cos((a * Math.PI) / 180) * r).toFixed(1);
+      const y = (Math.sin((a * Math.PI) / 180) * r).toFixed(1);
+      shadows.push(`${x}px ${y}px 0 ${color}`);
+    }
+  }
+  return shadows.join(',');
+};
+
 // テロップ記法 **単語** をマーカー強調に分解
 export const parseTelop = (text: string): {t: string; hl: boolean}[] =>
   text

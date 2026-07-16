@@ -11,7 +11,7 @@ import {
   useVideoConfig,
 } from 'remotion';
 import {BRAND, fontFamily} from './brand';
-import {CutBg, EraserChar, parseTelop} from './common';
+import {CutBg, EraserChar, outline, parseTelop} from './common';
 
 // ---------- 🏆ランキング型テンプレ(明るい文具系・ブランド4色) ----------
 // テロップ記法: **単語** → 黄色マーカー強調
@@ -230,7 +230,7 @@ const TimeGap: React.FC<{time: NonNullable<RankScene['time']>}> = ({time}) => {
   return (
     <div style={{position: 'absolute', top: 480, left: 0, right: 0, textAlign: 'center'}}>
       {time.label ? (
-        <div style={{...numStyle, fontSize: 54, color: BRAND.ink, opacity: before}}>
+        <div style={{...numStyle, fontSize: 66, color: BRAND.ink, opacity: before, textShadow: outline('#ffffff')}}>
           {time.label}
         </div>
       ) : null}
@@ -243,7 +243,7 @@ const TimeGap: React.FC<{time: NonNullable<RankScene['time']>}> = ({time}) => {
           marginTop: 20,
         }}
       >
-        <div style={{...numStyle, fontSize: 100, color: BRAND.erase, opacity: before, position: 'relative'}}>
+        <div style={{...numStyle, fontSize: 118, color: BRAND.erase, opacity: before, position: 'relative', textShadow: outline('#ffffff')}}>
           {time.before}
           {/* 打ち消し線(消された感) */}
           <div
@@ -260,15 +260,15 @@ const TimeGap: React.FC<{time: NonNullable<RankScene['time']>}> = ({time}) => {
             }}
           />
         </div>
-        <div style={{...numStyle, fontSize: 90, color: BRAND.ink, opacity: after}}>→</div>
+        <div style={{...numStyle, fontSize: 104, color: BRAND.ink, opacity: after, textShadow: outline('#ffffff')}}>→</div>
         <div
           style={{
             ...numStyle,
-            fontSize: 170,
+            fontSize: 196,
             color: BRAND.spark,
             opacity: after,
             transform: `scale(${0.6 + after * 0.4})`,
-            textShadow: `6px 6px 0 ${BRAND.ink}22`,
+            textShadow: outline('#ffffff'),
           }}
         >
           {time.after}
@@ -289,7 +289,7 @@ const Telop: React.FC<{text: string; big?: boolean}> = ({text, big}) => {
     config: {damping: 200},
     durationInFrames: 12,
   });
-  const fontSize = big ? 92 : 76;
+  const fontSize = big ? 112 : 94;
   return (
     <div
       style={{
@@ -310,6 +310,7 @@ const Telop: React.FC<{text: string; big?: boolean}> = ({text, big}) => {
           lineHeight: 1.5,
           color: BRAND.ink,
           whiteSpace: 'pre-wrap',
+          textShadow: outline('#ffffff'),
         }}
       >
         {parseTelop(text).map((seg, i) =>
