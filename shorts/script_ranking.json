@@ -85,5 +85,6 @@
       "telop": "消したい作業を\n**コメント**で教えて"
     }
   ],
-  "bgVideo": "bg/keiri.mp4"
+  "bgVideo": "bg/keiri.mp4",
+  "bgm": "bgm/for_our_friends.mp3"
 }

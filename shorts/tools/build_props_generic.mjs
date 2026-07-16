@@ -53,9 +53,12 @@ const scenes = script.sentences.map((s, idx) => {
 
 const props = {
   account: script.account ?? '',
-  bgm: fs.existsSync(path.join(HERE, 'public', 'bgm', 'bgm_bright.wav'))
-    ? 'bgm/bgm_bright.wav'
-    : '',
+  // BGM: 台本の "bgm" 指定 > bgm_bright.wav(あれば) > 無音
+  bgm:
+    script.bgm ??
+    (fs.existsSync(path.join(HERE, 'public', 'bgm', 'bgm_bright.wav'))
+      ? 'bgm/bgm_bright.wav'
+      : ''),
   bgmVolume: 0.1,
   whoosh: 'se/whoosh.wav',
   scenes,

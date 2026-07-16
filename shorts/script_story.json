@@ -51,5 +51,6 @@
       "keyword": "メモ"
     }
   ],
-  "bgVideo": "bg/note.mp4"
+  "bgVideo": "bg/note.mp4",
+  "bgm": "bgm/tomorrows_light.mp3"
 }
