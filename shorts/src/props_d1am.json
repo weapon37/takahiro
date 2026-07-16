@@ -1,0 +1,122 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "副業AI **BEST5**",
+      "audio": "audio_d1am/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 159
+    },
+    {
+      "role": "rank",
+      "rank": 5,
+      "headline": "CapCut",
+      "telop": "動画編集が無料",
+      "audio": "audio_d1am/02.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 63
+    },
+    {
+      "role": "body",
+      "telop": "字幕は**自動**で付く",
+      "audio": "audio_d1am/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 117
+    },
+    {
+      "role": "rank",
+      "rank": 4,
+      "headline": "Canva",
+      "telop": "デザイン知識ゼロでOK",
+      "audio": "audio_d1am/04.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 49
+    },
+    {
+      "role": "body",
+      "telop": "サムネも資料も**10分**",
+      "audio": "audio_d1am/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 82
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "Notion AI",
+      "telop": "副業の頭脳倉庫",
+      "audio": "audio_d1am/06.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 58
+    },
+    {
+      "role": "body",
+      "telop": "メモが**勝手に整理**される",
+      "audio": "audio_d1am/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 90
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "Claude",
+      "telop": "長文と資料に強い",
+      "audio": "audio_d1am/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 56
+    },
+    {
+      "role": "body",
+      "telop": "長文は**こっち**",
+      "audio": "audio_d1am/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 119
+    },
+    {
+      "role": "save",
+      "telop": "見返す用に**保存**",
+      "audio": "audio_d1am/10.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 126
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "ChatGPT",
+      "telop": "結局これが起点",
+      "audio": "audio_d1am/11.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 78
+    },
+    {
+      "role": "body",
+      "telop": "無料でも**8割回る**",
+      "audio": "audio_d1am/12.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 90
+    },
+    {
+      "role": "cta",
+      "telop": "検証リクエストは\n**コメント**で",
+      "audio": "audio_d1am/13.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 159
+    }
+  ]
+}

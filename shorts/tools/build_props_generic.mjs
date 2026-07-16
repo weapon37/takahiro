@@ -41,6 +41,9 @@ const scenes = script.sentences.map((s, idx) => {
   return {
     ...fields,
     audio,
+    // ランキング型(RankingVideo)用: rank/saveシーンは消しゴムワイプ+SE。他テンプレでは無視される
+    eraseIn: s.role === 'rank' || s.role === 'save',
+    playWhoosh: s.role === 'rank',
     durationInFrames: Math.ceil(sec * FPS) + PAD_FRAMES,
   };
 });
@@ -49,6 +52,7 @@ const props = {
   account: script.account ?? '',
   bgm: '',
   bgmVolume: 0.1,
+  whoosh: 'se/whoosh.wav',
   scenes,
 };
 
