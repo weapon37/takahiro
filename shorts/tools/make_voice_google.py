@@ -25,6 +25,17 @@ LANG = "ja-JP"
 SPEAKING_RATE = 1.25  # 温かさと尺のバランス。詰めたいときは1.4まで
 
 
+# 読み間違い対策辞書(tools/reading_dict.json)をナレーションへ適用する
+# 長い語から先に置換して部分一致の誤爆を防ぐ(例: 相応しい→ふさわしい を 相応→そうおう より先に)
+def apply_reading_dict(text: str) -> str:
+    dict_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "reading_dict.json")
+    with open(dict_path, encoding="utf-8") as f:
+        readings = json.load(f)["readings"]
+    for kanji in sorted(readings, key=len, reverse=True):
+        text = text.replace(kanji, readings[kanji])
+    return text
+
+
 def synthesize(text: str, api_key: str) -> bytes:
     url = f"https://texttospeech.googleapis.com/v1/text:synthesize?key={api_key}"
     body = {
@@ -56,11 +67,12 @@ def main():
         data = json.load(f)
     os.makedirs(OUTDIR, exist_ok=True)
     for i, s in enumerate(data["sentences"], start=1):
-        wav = synthesize(s["narration"], api_key)
+        text = apply_reading_dict(s["narration"])
+        wav = synthesize(text, api_key)
         path = os.path.join(OUTDIR, f"{i:02d}.wav")
         with open(path, "wb") as f:
             f.write(wav)
-        print(f"{i:02d}.wav  OK  {s['narration']}")
+        print(f"{i:02d}.wav  OK  {text}")
     print("完了。次は動画の書き出し(render)をやり直してください。")
 
 

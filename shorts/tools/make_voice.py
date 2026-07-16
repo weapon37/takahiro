@@ -26,6 +26,17 @@ MALE_VOICE_PATH = os.path.join(
 SPEED = 1.3  # 1.0が標準。1.3=やや速め(視聴維持率対策)
 
 
+# 読み間違い対策辞書(tools/reading_dict.json)をナレーションへ適用する
+# 長い語から先に置換して部分一致の誤爆を防ぐ(例: 相応しい→ふさわしい を 相応→そうおう より先に)
+def apply_reading_dict(text: str) -> str:
+    dict_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "reading_dict.json")
+    with open(dict_path, encoding="utf-8") as f:
+        readings = json.load(f)["readings"]
+    for kanji in sorted(readings, key=len, reverse=True):
+        text = text.replace(kanji, readings[kanji])
+    return text
+
+
 def synth_male(engine: HTSEngine, text: str):
     labels = pyopenjtalk.extract_fullcontext(text)
     audio = engine.synthesize(labels)
@@ -44,7 +55,7 @@ def main():
 
     total = 0.0
     for i, s in enumerate(data["sentences"], start=1):
-        text = s["narration"]
+        text = apply_reading_dict(s["narration"])
         if engine is not None:
             audio, sr = synth_male(engine, text)
         else:

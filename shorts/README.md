@@ -142,6 +142,12 @@ npx remotion render src/index.ts RankingVideo out/day1_am_best5.mp4 --props=src/
 英略語は読み間違えることがあるためカタカナで書く:
 AI→エーアイ、OCR→オーシーアール、freee→フリー。
 数字(60分・19秒など)はそのままでOK。
+
+**読み間違い対策辞書(tools/reading_dict.json)が音声生成時に自動適用される**
+(進捗→しんちょく、相殺→そうさい、一人→ひとり等の40語超)。
+台本のnarrationは漢字のまま書いてよい。テロップには影響しない。
+辞書に語を足すときはreading_dict.jsonに1行追加するだけ。
+「一日」はついたち/いちにちが文脈依存のため自動置換されない——台本側でひらがな指定を。
 声の変更は `tools/make_voice_google.py` の `VOICE` を編集
 (現在: ja-JP-Chirp3-HD-Aoede=温かみのある女性声)。
 
