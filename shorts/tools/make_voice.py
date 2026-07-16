@@ -1,5 +1,7 @@
 # ナレーション一括生成スクリプト(無料・ローカル動作の Open JTalk 使用)
-# 使い方:  .venv/bin/python tools/make_voice.py
+# 使い方:  .venv/bin/python tools/make_voice.py [台本.json] [出力ディレクトリ]
+#   例:    .venv/bin/python tools/make_voice.py script_ranking.json public/audio_ranking
+#   省略時は script.json → public/audio
 #
 # 声の切り替え:
 #   VOICE = "male"  … 男性声 nitech m001(voices/ に要ダウンロード)
@@ -14,8 +16,8 @@ import pyopenjtalk
 from pyopenjtalk.htsengine import HTSEngine
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SCRIPT = os.path.join(HERE, "script.json")
-OUTDIR = os.path.join(HERE, "public", "audio")
+SCRIPT = os.path.join(HERE, sys.argv[1] if len(sys.argv) > 1 else "script.json")
+OUTDIR = os.path.join(HERE, sys.argv[2] if len(sys.argv) > 2 else os.path.join("public", "audio"))
 
 VOICE = "male"
 MALE_VOICE_PATH = os.path.join(

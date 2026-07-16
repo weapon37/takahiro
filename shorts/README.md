@@ -35,6 +35,31 @@ npx remotion render src/index.ts ShortVideo out/short.mp4 --props=src/props.json
 
 プレビューしたいときは `npm run studio` でブラウザ画面が開きます。
 
+## 🏆ランキング型テンプレ(「仕事が消えるAI帳」ブランド仕様)
+
+明るい文具系デザインの縦型ランキング動画(カウントダウン構成)を生成します。
+ブランド4色(`src/brand.ts`)・順位札・実測タイム演出・消しゴムキャラのワイプ遷移入り。
+
+```bash
+.venv/bin/python tools/make_voice.py script_ranking.json public/audio_ranking  # 1. 音声生成
+node tools/build_props_ranking.mjs                                             # 2. シーン割り
+npx remotion render src/index.ts RankingVideo out/ranking.mp4 --props=src/props_ranking.json --codec=h264
+```
+
+台本は `script_ranking.json`。各シーンの `role` で演出が切り替わります:
+
+| role | 演出 |
+|------|------|
+| `hook` | 冒頭フック(大テロップ+黄ブロブ) |
+| `rank` | 順位札(`rank`)+ツール名(`headline`)+消しゴムワイプ+SE |
+| `body` | 本文。`time: {before, after, label}` を付けると実測タイム演出(グレー打ち消し→オレンジ特大) |
+| `save` | 保存誘導(消しゴムキャラ登場・黄背景) |
+| `cta` | 締め(コメント誘導) |
+
+テロップ内の `**単語**` は黄色マーカー強調になります。
+1位の順位札だけ自動でオレンジ(`rank: 1`)。ナレーションの数字・英語は
+ひらがな/カタカナ読みで書くこと(例: freee→フリー、PDF→ピーディーエフ)。
+
 ## 台本を変えたいとき
 
 `script.json` を書き換えて、上の4コマンドをもう一度実行するだけです。
