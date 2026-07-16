@@ -3,8 +3,10 @@
 # 使い方:
 #   1. Google Cloud コンソールで「Text-to-Speech API」を有効化し、APIキーを発行
 #   2. 環境変数にセットして実行:
-#        GOOGLE_TTS_API_KEY=あなたのキー .venv/bin/python tools/make_voice_google.py
-#   3. public/audio/ の 01.wav〜 が高音質版で上書きされる → 動画を書き出し直すだけ
+#        GOOGLE_TTS_API_KEY=あなたのキー .venv/bin/python tools/make_voice_google.py [台本.json] [出力ディレクトリ]
+#      例: GOOGLE_TTS_API_KEY=xxxx .venv/bin/python tools/make_voice_google.py script_ranking.json public/audio_ranking
+#      省略時は script.json → public/audio
+#   3. 01.wav〜 が高音質版で上書きされる → 動画を書き出し直すだけ
 #
 # 注意: Chirp3-HD 系の声は SSML 非対応のため、速さは audioConfig.speakingRate で指定する。
 import base64
@@ -14,12 +16,13 @@ import sys
 import urllib.request
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SCRIPT = os.path.join(HERE, "script.json")
-OUTDIR = os.path.join(HERE, "public", "audio")
+SCRIPT = os.path.join(HERE, sys.argv[1] if len(sys.argv) > 1 else "script.json")
+OUTDIR = os.path.join(HERE, sys.argv[2] if len(sys.argv) > 2 else os.path.join("public", "audio"))
 
-VOICE = "ja-JP-Chirp3-HD-Orus"
+# Aoede = 温かみのある女性声。他候補: Leda(若め)・Charon(落ち着いた男性)・Orus(低め男性)
+VOICE = "ja-JP-Chirp3-HD-Aoede"
 LANG = "ja-JP"
-SPEAKING_RATE = 1.4  # 1.3〜1.5 が推奨(視聴維持率対策)
+SPEAKING_RATE = 1.25  # 温かさと尺のバランス。詰めたいときは1.4まで
 
 
 def synthesize(text: str, api_key: str) -> bytes:
