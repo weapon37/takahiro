@@ -78,12 +78,11 @@
   ],
   "bgm": "bgm/for_our_friends.mp3",
   "bgClips": [
-    "bg/keiri7.mp4",
-    "bg/sumaho6.mp4",
-    "bg/keiri4.mp4",
-    "bg/keiri6.mp4",
-    "bg/sumaho4.mp4",
-    "bg/keiri3.mp4",
-    "bg/sumaho.mp4"
+    "bg/handshake.mp4",
+    "bg/business_walking.mp4",
+    "bg/subway_commute.mp4",
+    "bg/office_window.mp4",
+    "bg/typing_laptop.mp4",
+    "bg/portrait.mp4"
   ]
 }

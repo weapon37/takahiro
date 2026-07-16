@@ -9,13 +9,12 @@
       "telop": "時短効果**だけ**で採点",
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri.mp4",
-        "bg/keiri2.mp4",
-        "bg/keiri3.mp4",
-        "bg/keiri4.mp4",
-        "bg/keiri5.mp4",
-        "bg/keiri6.mp4",
-        "bg/keiri7.mp4"
+        "bg/calendar.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/office_window.mp4",
+        "bg/subway_commute.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day4_am_jitan/01.wav",
@@ -30,13 +29,12 @@
       "telop": "まさかの最下位",
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri.mp4",
-        "bg/keiri2.mp4",
-        "bg/keiri3.mp4",
-        "bg/keiri4.mp4",
-        "bg/keiri5.mp4",
-        "bg/keiri6.mp4",
-        "bg/keiri7.mp4"
+        "bg/calendar.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/office_window.mp4",
+        "bg/subway_commute.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day4_am_jitan/02.wav",
@@ -54,13 +52,12 @@
       },
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri.mp4",
-        "bg/keiri2.mp4",
-        "bg/keiri3.mp4",
-        "bg/keiri4.mp4",
-        "bg/keiri5.mp4",
-        "bg/keiri6.mp4",
-        "bg/keiri7.mp4"
+        "bg/calendar.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/office_window.mp4",
+        "bg/subway_commute.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day4_am_jitan/03.wav",
@@ -75,13 +72,12 @@
       "telop": "地味に効くやつ",
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri.mp4",
-        "bg/keiri2.mp4",
-        "bg/keiri3.mp4",
-        "bg/keiri4.mp4",
-        "bg/keiri5.mp4",
-        "bg/keiri6.mp4",
-        "bg/keiri7.mp4"
+        "bg/calendar.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/office_window.mp4",
+        "bg/subway_commute.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day4_am_jitan/04.wav",
@@ -99,13 +95,12 @@
       },
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri.mp4",
-        "bg/keiri2.mp4",
-        "bg/keiri3.mp4",
-        "bg/keiri4.mp4",
-        "bg/keiri5.mp4",
-        "bg/keiri6.mp4",
-        "bg/keiri7.mp4"
+        "bg/calendar.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/office_window.mp4",
+        "bg/subway_commute.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day4_am_jitan/05.wav",
@@ -120,13 +115,12 @@
       "telop": "会議後の憂鬱が消える",
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri.mp4",
-        "bg/keiri2.mp4",
-        "bg/keiri3.mp4",
-        "bg/keiri4.mp4",
-        "bg/keiri5.mp4",
-        "bg/keiri6.mp4",
-        "bg/keiri7.mp4"
+        "bg/calendar.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/office_window.mp4",
+        "bg/subway_commute.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day4_am_jitan/06.wav",
@@ -144,13 +138,12 @@
       },
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri.mp4",
-        "bg/keiri2.mp4",
-        "bg/keiri3.mp4",
-        "bg/keiri4.mp4",
-        "bg/keiri5.mp4",
-        "bg/keiri6.mp4",
-        "bg/keiri7.mp4"
+        "bg/calendar.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/office_window.mp4",
+        "bg/subway_commute.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day4_am_jitan/07.wav",
@@ -163,13 +156,12 @@
       "telop": "1位は**桁違い**。保存を",
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri.mp4",
-        "bg/keiri2.mp4",
-        "bg/keiri3.mp4",
-        "bg/keiri4.mp4",
-        "bg/keiri5.mp4",
-        "bg/keiri6.mp4",
-        "bg/keiri7.mp4"
+        "bg/calendar.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/office_window.mp4",
+        "bg/subway_commute.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day4_am_jitan/08.wav",
@@ -184,13 +176,12 @@
       "telop": "時短の王様",
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri.mp4",
-        "bg/keiri2.mp4",
-        "bg/keiri3.mp4",
-        "bg/keiri4.mp4",
-        "bg/keiri5.mp4",
-        "bg/keiri6.mp4",
-        "bg/keiri7.mp4"
+        "bg/calendar.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/office_window.mp4",
+        "bg/subway_commute.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day4_am_jitan/09.wav",
@@ -208,13 +199,12 @@
       },
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri.mp4",
-        "bg/keiri2.mp4",
-        "bg/keiri3.mp4",
-        "bg/keiri4.mp4",
-        "bg/keiri5.mp4",
-        "bg/keiri6.mp4",
-        "bg/keiri7.mp4"
+        "bg/calendar.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/office_window.mp4",
+        "bg/subway_commute.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day4_am_jitan/10.wav",
@@ -232,13 +222,12 @@
       },
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri.mp4",
-        "bg/keiri2.mp4",
-        "bg/keiri3.mp4",
-        "bg/keiri4.mp4",
-        "bg/keiri5.mp4",
-        "bg/keiri6.mp4",
-        "bg/keiri7.mp4"
+        "bg/calendar.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/office_window.mp4",
+        "bg/subway_commute.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day4_am_jitan/11.wav",
@@ -251,13 +240,12 @@
       "telop": "時間泥棒な作業を\n**コメント**で",
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri.mp4",
-        "bg/keiri2.mp4",
-        "bg/keiri3.mp4",
-        "bg/keiri4.mp4",
-        "bg/keiri5.mp4",
-        "bg/keiri6.mp4",
-        "bg/keiri7.mp4"
+        "bg/calendar.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/office_window.mp4",
+        "bg/subway_commute.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day4_am_jitan/12.wav",

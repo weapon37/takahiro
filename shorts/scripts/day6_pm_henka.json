@@ -49,12 +49,11 @@
   ],
   "bgm": "bgm/tomorrows_light.mp3",
   "bgClips": [
-    "bg/note.mp4",
-    "bg/note2.mp4",
-    "bg/note3.mp4",
-    "bg/note4.mp4",
-    "bg/note5.mp4",
-    "bg/note6.mp4",
-    "bg/note7.mp4"
+    "bg/sunrise_city.mp4",
+    "bg/coffee_desk.mp4",
+    "bg/calendar.mp4",
+    "bg/typing_laptop.mp4",
+    "bg/portrait.mp4",
+    "bg/office_window.mp4"
   ]
 }

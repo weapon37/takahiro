@@ -50,6 +50,9 @@ def search_portrait_video(query: str, api_key: str):
     with urllib.request.urlopen(req) as res:
         data = json.load(res)
     for video in data.get("videos", []):
+        # カットエンジンの要件: トリム3秒+カット1.7秒に耐える長さ(6秒以上)
+        if video.get("duration", 0) < 6:
+            continue
         files = [
             f for f in video.get("video_files", [])
             if f.get("height", 0) >= 1280 and f.get("width", 0) < f.get("height", 0)

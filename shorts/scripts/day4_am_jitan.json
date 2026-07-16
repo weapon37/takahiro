@@ -100,12 +100,11 @@
   ],
   "bgm": "bgm/for_our_friends.mp3",
   "bgClips": [
-    "bg/keiri.mp4",
-    "bg/keiri2.mp4",
-    "bg/keiri3.mp4",
-    "bg/keiri4.mp4",
-    "bg/keiri5.mp4",
-    "bg/keiri6.mp4",
-    "bg/keiri7.mp4"
+    "bg/calendar.mp4",
+    "bg/typing_laptop.mp4",
+    "bg/office_window.mp4",
+    "bg/subway_commute.mp4",
+    "bg/coffee_desk.mp4",
+    "bg/graph_screen.mp4"
   ]
 }

@@ -113,6 +113,30 @@ npx remotion render src/index.ts RankingVideo out/day1_am_best5.mp4 --props=src/
 - `_note` と `◯◯` がある台本は、**必ず実データに差し替えてから**音声生成すること
 - 公開前チェック: 実測値は本物か / PR表記 / AI開示フラグ / 「個人の結果です」注記
 
+## 背景クリップの標準プール(12ワード)
+
+今後の背景は**この12ワードから各シーンの内容に合うものを選ぶ**(勝手に別ワードを増やさない):
+
+| ファイル | 検索ワード | 合う場面 |
+|------|------|------|
+| bg/city_night.mp4 | city night | 夜・都会・⚡の緊張感 |
+| bg/typing_laptop.mp4 | typing laptop | 作業・ツール操作全般 |
+| bg/business_walking.mp4 | business people walking | 仕事・通勤・ニュース |
+| bg/office_window.mp4 | office window | オフィス・落ち着いた説明 |
+| bg/coins_stack.mp4 | coins stack | お金・課金・収支 |
+| bg/sunrise_city.mp4 | sunrise city | 始まり・💬の宣言 |
+| bg/subway_commute.mp4 | subway commute | 通勤・忙しさ |
+| bg/handshake.mp4 | handshake | 営業・商談・信頼 |
+| bg/calendar.mp4 | calendar | 予定・時間・時短 |
+| bg/coffee_desk.mp4 | coffee desk | デスク・日常・💬 |
+| bg/graph_screen.mp4 | graph screen | データ・実測・分析 |
+| bg/portrait.mp4 | portrait | 人物・当事者感 |
+
+- 台本には `"bgClips": ["bg/typing_laptop.mp4", ...]` で5〜6本選んで指定
+- 差し替え(取り直し)は `.venv/bin/python tools/fetch_bg_pexels.py "ワード" ファイル名.mp4`
+  (6秒未満のクリップは自動で除外される)
+- 旧クリップ(keiri*/sumaho*/note*)は後方互換のため残置。新規台本では使わない
+
 ## ナレーションの読み方の注意(Google TTS)
 
 英略語は読み間違えることがあるためカタカナで書く:

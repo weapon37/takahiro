@@ -59,12 +59,11 @@
   ],
   "bgm": "bgm/pawn.mp3",
   "bgClips": [
-    "bg/sumaho.mp4",
-    "bg/sumaho2.mp4",
-    "bg/sumaho3.mp4",
-    "bg/sumaho4.mp4",
-    "bg/sumaho5.mp4",
-    "bg/sumaho6.mp4",
-    "bg/sumaho7.mp4"
+    "bg/coins_stack.mp4",
+    "bg/city_night.mp4",
+    "bg/portrait.mp4",
+    "bg/graph_screen.mp4",
+    "bg/subway_commute.mp4",
+    "bg/business_walking.mp4"
   ]
 }

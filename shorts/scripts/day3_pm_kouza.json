@@ -59,12 +59,11 @@
   ],
   "bgm": "bgm/pawn.mp3",
   "bgClips": [
-    "bg/note5.mp4",
-    "bg/keiri4.mp4",
-    "bg/sumaho2.mp4",
-    "bg/note2.mp4",
-    "bg/keiri3.mp4",
-    "bg/sumaho5.mp4",
-    "bg/note6.mp4"
+    "bg/coins_stack.mp4",
+    "bg/portrait.mp4",
+    "bg/typing_laptop.mp4",
+    "bg/city_night.mp4",
+    "bg/calendar.mp4",
+    "bg/coffee_desk.mp4"
   ]
 }
