@@ -3,7 +3,6 @@ import {
   AbsoluteFill,
   Audio,
   Sequence,
-  OffthreadVideo,
   interpolate,
   spring,
   staticFile,
@@ -11,7 +10,7 @@ import {
   useVideoConfig,
 } from 'remotion';
 import {BRAND, fontFamily} from './brand';
-import {AccountLabel, DotGrid, EraserChar, parseTelop} from './common';
+import {AccountLabel, CutBg, DotGrid, EraserChar, parseTelop} from './common';
 
 // ---------- 💬体験談型テンプレ(検証ノート風・進行形ドキュメンタリー) ----------
 // 構成: day(Day表示) → story(語り) → big(数字ドン) → rule(3か条) → line(LINE誘導)
@@ -25,7 +24,8 @@ export type StoryScene = {
   big?: {value: string; label: string}; // role='big' の数字(例 ¥0)
   items?: string[]; // role='rule' の箇条書き
   keyword?: string; // role='line' の合言葉
-  bgVideo?: string | null; // public/内の実写背景動画(紙色ウォッシュ越しに敷く)
+  bgVideo?: string | null; // 単一の実写背景動画(bgClips未指定時のフォールバック)
+  bgClips?: string[]; // 実写背景クリップ群(カット割りで巡回)
   bgWash?: number; // 背景動画に被せるブランド色ウォッシュ(0=無し〜1)。既定0
   durationInFrames: number;
 };
@@ -310,26 +310,14 @@ const Telop: React.FC<{text: string; calm?: boolean}> = ({text, calm}) => {
   );
 };
 
-const SceneView: React.FC<{scene: StoryScene}> = ({scene}) => {
+const SceneView: React.FC<{scene: StoryScene; index: number}> = ({scene, index}) => {
   const frame = useCurrentFrame();
   const bob = Math.sin(frame / 16) * 8;
+  const clips = scene.bgClips ?? (scene.bgVideo ? [scene.bgVideo] : []);
   return (
     <AbsoluteFill style={{backgroundColor: BRAND.base}}>
-      {scene.bgVideo ? (
-        <>
-          <AbsoluteFill>
-            <OffthreadVideo
-              src={staticFile(scene.bgVideo)}
-              muted
-              style={{width: '100%', height: '100%', objectFit: 'cover'}}
-            />
-          </AbsoluteFill>
-          {scene.bgWash ? (
-            <AbsoluteFill style={{backgroundColor: BRAND.base, opacity: scene.bgWash}} />
-          ) : null}
-        </>
-      ) : null}
-      <NoteBg transparent={Boolean(scene.bgVideo)} />
+      <CutBg clips={clips} seed={index} washColor={BRAND.base} wash={scene.bgWash} />
+      <NoteBg transparent={clips.length > 0} />
       {scene.role === 'day' && scene.day !== undefined ? <DayStamp day={scene.day} /> : null}
       {scene.role === 'big' && scene.big ? <BigValue big={scene.big} /> : null}
       {scene.role === 'rule' && scene.items ? <RuleList items={scene.items} /> : null}
@@ -352,7 +340,7 @@ export const StoryVideo: React.FC<StoryVideoProps> = ({account, bgm, bgmVolume, 
       {scenes.map((scene, i) => {
         const seq = (
           <Sequence key={i} from={from} durationInFrames={scene.durationInFrames}>
-            <SceneView scene={scene} />
+            <SceneView scene={scene} index={i} />
           </Sequence>
         );
         from += scene.durationInFrames;

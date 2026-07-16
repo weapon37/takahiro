@@ -11,7 +11,12 @@
         "value": "¥0",
         "label": "AI副業の収支(今日時点)"
       },
-      "bgVideo": "bg/note.mp4",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/note.mp4",
+        "bg/note2.mp4",
+        "bg/note3.mp4"
+      ],
       "bgWash": 0,
       "audio": "audio_story/01.wav",
       "eraseIn": false,
@@ -22,7 +27,12 @@
       "role": "day",
       "telop": "今日から**検証開始**",
       "day": 0,
-      "bgVideo": "bg/note.mp4",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/note.mp4",
+        "bg/note2.mp4",
+        "bg/note3.mp4"
+      ],
       "bgWash": 0,
       "audio": "audio_story/02.wav",
       "eraseIn": false,
@@ -32,7 +42,12 @@
     {
       "role": "story",
       "telop": "専門家じゃない。\n**普通の会社員**です",
-      "bgVideo": "bg/note.mp4",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/note.mp4",
+        "bg/note2.mp4",
+        "bg/note3.mp4"
+      ],
       "bgWash": 0,
       "audio": "audio_story/03.wav",
       "eraseIn": false,
@@ -42,7 +57,12 @@
     {
       "role": "story",
       "telop": "ちゃんとやれば、**変わる**",
-      "bgVideo": "bg/note.mp4",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/note.mp4",
+        "bg/note2.mp4",
+        "bg/note3.mp4"
+      ],
       "bgWash": 0,
       "audio": "audio_story/04.wav",
       "eraseIn": false,
@@ -57,7 +77,12 @@
         "買ってないものは勧めない",
         "数字は実測だけ"
       ],
-      "bgVideo": "bg/note.mp4",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/note.mp4",
+        "bg/note2.mp4",
+        "bg/note3.mp4"
+      ],
       "bgWash": 0,
       "audio": "audio_story/05.wav",
       "eraseIn": false,
@@ -67,7 +92,12 @@
     {
       "role": "story",
       "telop": "30日後、**どうなってるか**",
-      "bgVideo": "bg/note.mp4",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/note.mp4",
+        "bg/note2.mp4",
+        "bg/note3.mp4"
+      ],
       "bgWash": 0,
       "audio": "audio_story/06.wav",
       "eraseIn": false,
@@ -78,7 +108,12 @@
       "role": "line",
       "telop": "手順メモを**無料で**渡します",
       "keyword": "メモ",
-      "bgVideo": "bg/note.mp4",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/note.mp4",
+        "bg/note2.mp4",
+        "bg/note3.mp4"
+      ],
       "bgWash": 0,
       "audio": "audio_story/07.wav",
       "eraseIn": false,

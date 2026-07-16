@@ -51,6 +51,10 @@
       }
     }
   ],
-  "bgVideo": "bg/sumaho.mp4",
-  "bgm": "bgm/pawn.mp3"
+  "bgm": "bgm/pawn.mp3",
+  "bgClips": [
+    "bg/sumaho.mp4",
+    "bg/sumaho2.mp4",
+    "bg/sumaho3.mp4"
+  ]
 }

@@ -1,5 +1,11 @@
 import React from 'react';
-import {useCurrentFrame} from 'remotion';
+import {
+  AbsoluteFill,
+  OffthreadVideo,
+  interpolate,
+  staticFile,
+  useCurrentFrame,
+} from 'remotion';
 import {BRAND} from './brand';
 
 // ---------- 3テンプレ共通の部品 ----------
@@ -96,6 +102,43 @@ export const DotGrid: React.FC<{dotColor: string}> = ({dotColor}) => {
         backgroundPosition: `${drift}px 0px`,
       }}
     />
+  );
+};
+
+// 背景のカットエンジン: 約1.7秒ごとにクリップ・開始位置・寄り/引きを切り替えて
+// 「編集されたカット割り」の密度を出す。クリップは最短7秒を想定(トリム最大90F+カット50F)。
+const CUT_FRAMES = 50;
+
+export const CutBg: React.FC<{
+  clips: string[];
+  seed: number; // シーン番号。シーンごとにカットの並びを変える
+  washColor: string;
+  wash?: number; // 0=素の映像
+}> = ({clips, seed, washColor, wash = 0}) => {
+  const frame = useCurrentFrame();
+  if (clips.length === 0) return null;
+  const cut = Math.floor(frame / CUT_FRAMES);
+  const local = frame - cut * CUT_FRAMES;
+  // シーンとカットで異なるクリップを選ぶ(連続カットで同じクリップにならないよう素数でずらす)
+  const idx = (seed * 2 + cut) % clips.length;
+  // 開始位置も散らす(0/45/90フレーム)
+  const trim = ((seed * 37 + cut * 53) % 3) * 45;
+  // 寄り/引きを交互に(カット感の主成分)
+  const zoomIn = (seed + cut) % 2 === 0;
+  const scale = interpolate(local, [0, CUT_FRAMES], zoomIn ? [1, 1.1] : [1.1, 1]);
+  return (
+    <>
+      <AbsoluteFill style={{transform: `scale(${scale})`}}>
+        <OffthreadVideo
+          key={`${idx}-${cut}`}
+          src={staticFile(clips[idx])}
+          muted
+          trimBefore={trim}
+          style={{width: '100%', height: '100%', objectFit: 'cover'}}
+        />
+      </AbsoluteFill>
+      {wash ? <AbsoluteFill style={{backgroundColor: washColor, opacity: wash}} /> : null}
+    </>
   );
 };
 

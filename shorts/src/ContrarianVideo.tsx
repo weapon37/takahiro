@@ -3,7 +3,6 @@ import {
   AbsoluteFill,
   Audio,
   Sequence,
-  OffthreadVideo,
   interpolate,
   spring,
   staticFile,
@@ -11,7 +10,7 @@ import {
   useVideoConfig,
 } from 'remotion';
 import {BRAND, fontFamily} from './brand';
-import {AccountLabel, DotGrid, EraserChar, parseTelop} from './common';
+import {AccountLabel, CutBg, DotGrid, EraserChar, parseTelop} from './common';
 
 // ---------- ⚡逆張り型テンプレ(ネイビー基調・議論を誘発する構成) ----------
 // 構成: hook(言い切り) → body(根拠) → point(①②③) → flip(条件付きの例外) → vs(どっち派?)
@@ -23,7 +22,8 @@ export type ContraScene = {
   telop: string;
   num?: number; // role='point' の番号(①②③)
   vs?: {left: string; right: string}; // role='vs' の対決ラベル
-  bgVideo?: string | null; // public/内の実写背景動画(ネイビーウォッシュ越しに敷く)
+  bgVideo?: string | null; // 単一の実写背景動画(bgClips未指定時のフォールバック)
+  bgClips?: string[]; // 実写背景クリップ群(カット割りで巡回)
   bgWash?: number; // 背景動画に被せるブランド色ウォッシュ(0=無し〜1)。既定0
   durationInFrames: number;
 };
@@ -237,24 +237,12 @@ const HookStrike: React.FC = () => {
   );
 };
 
-const SceneView: React.FC<{scene: ContraScene}> = ({scene}) => {
+const SceneView: React.FC<{scene: ContraScene; index: number}> = ({scene, index}) => {
+  const clips = scene.bgClips ?? (scene.bgVideo ? [scene.bgVideo] : []);
   return (
     <AbsoluteFill style={{backgroundColor: BRAND.ink}}>
-      {scene.bgVideo ? (
-        <>
-          <AbsoluteFill>
-            <OffthreadVideo
-              src={staticFile(scene.bgVideo)}
-              muted
-              style={{width: '100%', height: '100%', objectFit: 'cover'}}
-            />
-          </AbsoluteFill>
-          {scene.bgWash ? (
-            <AbsoluteFill style={{backgroundColor: BRAND.ink, opacity: scene.bgWash}} />
-          ) : null}
-        </>
-      ) : null}
-      <NavyBg role={scene.role} transparent={Boolean(scene.bgVideo)} />
+      <CutBg clips={clips} seed={index} washColor={BRAND.ink} wash={scene.bgWash} />
+      <NavyBg role={scene.role} transparent={clips.length > 0} />
       {scene.role === 'point' && scene.num ? <NumBadge num={scene.num} /> : null}
       {scene.role === 'vs' && scene.vs ? <VsPanel vs={scene.vs} /> : null}
       <Telop text={scene.telop} big={scene.role === 'hook' || scene.role === 'flip'} />
@@ -277,7 +265,7 @@ export const ContrarianVideo: React.FC<ContrarianVideoProps> = ({
       {scenes.map((scene, i) => {
         const seq = (
           <Sequence key={i} from={from} durationInFrames={scene.durationInFrames}>
-            <SceneView scene={scene} />
+            <SceneView scene={scene} index={i} />
           </Sequence>
         );
         from += scene.durationInFrames;

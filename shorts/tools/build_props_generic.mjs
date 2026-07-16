@@ -42,6 +42,7 @@ const scenes = script.sentences.map((s, idx) => {
     ...fields,
     // 背景動画: シーン個別指定 > 台本全体指定 > なし
     bgVideo: s.bgVideo ?? script.bgVideo ?? null,
+    bgClips: s.bgClips ?? script.bgClips ?? undefined,
     bgWash: s.bgWash ?? script.bgWash ?? 0,
     audio,
     // ランキング型(RankingVideo)用: rank/saveシーンは消しゴムワイプ+SE。他テンプレでは無視される
