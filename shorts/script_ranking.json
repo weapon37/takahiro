@@ -5,7 +5,7 @@
   "sentences": [
     {
       "role": "hook",
-      "narration": "経理の手作業を消すAI、実測ベスト3です。",
+      "narration": "経理の手作業を消すエーアイ、実測ベスト3です。",
       "telop": "経理を消すAI\n**実測**BEST3"
     },
     {
@@ -61,7 +61,7 @@
       "role": "rank",
       "rank": 1,
       "headline": "freee AI-OCR",
-      "narration": "第1位、freeeのAI-OCR。",
+      "narration": "第1位、freeeの、エーアイ オーシーアール。",
       "telop": "請求書の自動読み取り"
     },
     {

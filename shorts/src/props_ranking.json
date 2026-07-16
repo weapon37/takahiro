@@ -10,7 +10,7 @@
       "telop": "経理を消すAI\n**実測**BEST3",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 106
+      "durationInFrames": 112
     },
     {
       "audio": "audio_ranking/02.wav",
@@ -28,7 +28,7 @@
       "telop": "手書きメモ、**今日で卒業**",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 83
+      "durationInFrames": 97
     },
     {
       "audio": "audio_ranking/04.wav",
@@ -59,7 +59,7 @@
       "telop": "撮るだけで**仕訳まで自動**",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 87
+      "durationInFrames": 90
     },
     {
       "audio": "audio_ranking/07.wav",
@@ -72,7 +72,7 @@
       },
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 95
+      "durationInFrames": 97
     },
     {
       "audio": "audio_ranking/08.wav",
@@ -80,7 +80,7 @@
       "telop": "月末の自分のために**保存**",
       "eraseIn": true,
       "playWhoosh": false,
-      "durationInFrames": 64
+      "durationInFrames": 66
     },
     {
       "audio": "audio_ranking/09.wav",
@@ -90,7 +90,7 @@
       "headline": "freee AI-OCR",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 87
+      "durationInFrames": 100
     },
     {
       "audio": "audio_ranking/10.wav",
@@ -98,7 +98,7 @@
       "telop": "**放り込むだけ**で全部入る",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 179
+      "durationInFrames": 177
     },
     {
       "audio": "audio_ranking/11.wav",
@@ -119,7 +119,7 @@
       "telop": "消したい作業を\n**コメント**で教えて",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 169
+      "durationInFrames": 170
     }
   ]
 }

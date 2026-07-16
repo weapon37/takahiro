@@ -11,6 +11,7 @@ import {
   useVideoConfig,
 } from 'remotion';
 import {BRAND, fontFamily} from './brand';
+import {EraserChar, parseTelop} from './common';
 
 // ---------- 🏆ランキング型テンプレ(明るい文具系・ブランド4色) ----------
 // テロップ記法: **単語** → 黄色マーカー強調
@@ -95,77 +96,6 @@ const PaperBg: React.FC<{role: RankScene['role']}> = ({role}) => {
         />
       )}
     </AbsoluteFill>
-  );
-};
-
-// ---------- 消しゴムキャラ(CSS描画・アイコン8番と同デザイン) ----------
-
-const EraserChar: React.FC<{size?: number; tilt?: number}> = ({
-  size = 260,
-  tilt = -12,
-}) => {
-  const w = size;
-  const h = size * 1.45;
-  return (
-    <div style={{width: w, height: h, position: 'relative', transform: `rotate(${tilt}deg)`}}>
-      {/* 本体(白+ネイビー縁) */}
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          backgroundColor: '#ffffff',
-          border: `${size * 0.045}px solid ${BRAND.ink}`,
-          borderRadius: size * 0.16,
-          overflow: 'hidden',
-        }}
-      >
-        {/* 青い帯(下部) */}
-        <div
-          style={{
-            position: 'absolute',
-            left: 0,
-            right: 0,
-            bottom: h * 0.14,
-            height: h * 0.2,
-            backgroundColor: BRAND.primary,
-          }}
-        />
-      </div>
-      {/* 顔(点目+微笑み) */}
-      <div
-        style={{
-          position: 'absolute',
-          left: w * 0.24,
-          top: h * 0.34,
-          width: w * 0.09,
-          height: w * 0.09,
-          borderRadius: '50%',
-          backgroundColor: BRAND.ink,
-        }}
-      />
-      <div
-        style={{
-          position: 'absolute',
-          right: w * 0.24,
-          top: h * 0.34,
-          width: w * 0.09,
-          height: w * 0.09,
-          borderRadius: '50%',
-          backgroundColor: BRAND.ink,
-        }}
-      />
-      <div
-        style={{
-          position: 'absolute',
-          left: w * 0.41,
-          top: h * 0.41,
-          width: w * 0.18,
-          height: w * 0.09,
-          borderBottom: `${size * 0.035}px solid ${BRAND.ink}`,
-          borderRadius: '0 0 50% 50%',
-        }}
-      />
-    </div>
   );
 };
 
@@ -346,16 +276,6 @@ const TimeGap: React.FC<{time: NonNullable<RankScene['time']>}> = ({time}) => {
 };
 
 // ---------- テロップ(**強調**=黄色マーカー) ----------
-
-const parseTelop = (text: string): {t: string; hl: boolean}[] =>
-  text
-    .split(/(\*\*[^*]+\*\*)/)
-    .filter(Boolean)
-    .map((part) =>
-      part.startsWith('**')
-        ? {t: part.slice(2, -2), hl: true}
-        : {t: part, hl: false}
-    );
 
 const Telop: React.FC<{text: string; big?: boolean}> = ({text, big}) => {
   const frame = useCurrentFrame();

@@ -57,8 +57,35 @@ npx remotion render src/index.ts RankingVideo out/ranking.mp4 --props=src/props_
 | `cta` | 締め(コメント誘導) |
 
 テロップ内の `**単語**` は黄色マーカー強調になります。
-1位の順位札だけ自動でオレンジ(`rank: 1`)。ナレーションの数字・英語は
-ひらがな/カタカナ読みで書くこと(例: freee→フリー、PDF→ピーディーエフ)。
+1位の順位札だけ自動でオレンジ(`rank: 1`)。
+
+## ⚡逆張り型・💬体験談型テンプレ
+
+同ブランドの派生テンプレ。汎用ビルダー(`tools/build_props_generic.mjs`)を使います。
+
+```bash
+# ⚡逆張り型(ネイビー基調・議論誘発): hook / body / point(①②③) / flip / vs(対決画面)
+.venv/bin/python tools/make_voice_google.py script_contra.json public/audio_contra
+node tools/build_props_generic.mjs script_contra.json audio_contra src/props_contra.json
+npx remotion render src/index.ts ContrarianVideo out/contra.mp4 --props=src/props_contra.json --codec=h264
+
+# 💬体験談型(検証ノート風): day(Dayスタンプ) / story / big(数字ドン) / rule(3か条) / line(LINE誘導)
+.venv/bin/python tools/make_voice_google.py script_story.json public/audio_story
+node tools/build_props_generic.mjs script_story.json audio_story src/props_story.json
+npx remotion render src/index.ts StoryVideo out/story.mp4 --props=src/props_story.json --codec=h264
+```
+
+- ⚡のvsシーンは `"vs": {"left": "課金派", "right": "無料派"}` で対決ラベル指定
+- 💬のlineシーンは `"keyword": "メモ"` で合言葉指定
+- 💬体験談は実体験ベースで書くこと(盛らない)。ナレーションは肉声推奨
+
+## ナレーションの読み方の注意(Google TTS)
+
+英略語は読み間違えることがあるためカタカナで書く:
+AI→エーアイ、OCR→オーシーアール、freee→フリー。
+数字(60分・19秒など)はそのままでOK。
+声の変更は `tools/make_voice_google.py` の `VOICE` を編集
+(現在: ja-JP-Chirp3-HD-Aoede=温かみのある女性声)。
 
 ## 台本を変えたいとき
 

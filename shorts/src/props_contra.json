@@ -1,0 +1,62 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "",
+  "bgmVolume": 0.1,
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "課金、**要らない**かも",
+      "audio": "audio_contra/01.wav",
+      "durationInFrames": 117
+    },
+    {
+      "role": "body",
+      "telop": "ライト利用は**無料で十分**",
+      "audio": "audio_contra/02.wav",
+      "durationInFrames": 136
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "毎日1時間以上使う",
+      "audio": "audio_contra/03.wav",
+      "durationInFrames": 159
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "画像・資料を読ませる",
+      "audio": "audio_contra/04.wav",
+      "durationInFrames": 83
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "精度が仕事に直結",
+      "audio": "audio_contra/05.wav",
+      "durationInFrames": 97
+    },
+    {
+      "role": "body",
+      "telop": "年間**36,000円**の無駄かも",
+      "audio": "audio_contra/06.wav",
+      "durationInFrames": 172
+    },
+    {
+      "role": "flip",
+      "telop": "物足りない瞬間が\n**課金どき**",
+      "audio": "audio_contra/07.wav",
+      "durationInFrames": 196
+    },
+    {
+      "role": "vs",
+      "telop": "理由もセットで**コメント**へ",
+      "vs": {
+        "left": "課金派",
+        "right": "無料派"
+      },
+      "audio": "audio_contra/08.wav",
+      "durationInFrames": 157
+    }
+  ]
+}
