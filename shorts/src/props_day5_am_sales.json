@@ -1,0 +1,233 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**営業のあなた**へ",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri7.mp4",
+        "bg/sumaho6.mp4",
+        "bg/keiri4.mp4",
+        "bg/keiri6.mp4",
+        "bg/sumaho4.mp4",
+        "bg/keiri3.mp4",
+        "bg/sumaho.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day5_am_sales/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 138
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "Notta",
+      "telop": "商談を自動で議事録",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri7.mp4",
+        "bg/sumaho6.mp4",
+        "bg/keiri4.mp4",
+        "bg/keiri6.mp4",
+        "bg/sumaho4.mp4",
+        "bg/keiri3.mp4",
+        "bg/sumaho.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day5_am_sales/02.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 63
+    },
+    {
+      "role": "body",
+      "telop": "「あの件何だっけ」が**消える**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri7.mp4",
+        "bg/sumaho6.mp4",
+        "bg/keiri4.mp4",
+        "bg/keiri6.mp4",
+        "bg/sumaho4.mp4",
+        "bg/keiri3.mp4",
+        "bg/sumaho.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day5_am_sales/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 157
+    },
+    {
+      "role": "body",
+      "telop": "報告書が**すぐ終わる**",
+      "time": {
+        "before": "30分",
+        "after": "5分",
+        "label": "商談後の報告書"
+      },
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri7.mp4",
+        "bg/sumaho6.mp4",
+        "bg/keiri4.mp4",
+        "bg/keiri6.mp4",
+        "bg/sumaho4.mp4",
+        "bg/keiri3.mp4",
+        "bg/sumaho.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day5_am_sales/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 133
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "NotebookLM",
+      "telop": "商談前の予習AI",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri7.mp4",
+        "bg/sumaho6.mp4",
+        "bg/keiri4.mp4",
+        "bg/keiri6.mp4",
+        "bg/sumaho4.mp4",
+        "bg/keiri3.mp4",
+        "bg/sumaho.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day5_am_sales/05.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 70
+    },
+    {
+      "role": "body",
+      "telop": "「**よく調べてますね**」\nと言われるやつ",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri7.mp4",
+        "bg/sumaho6.mp4",
+        "bg/keiri4.mp4",
+        "bg/keiri6.mp4",
+        "bg/sumaho4.mp4",
+        "bg/keiri3.mp4",
+        "bg/sumaho.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day5_am_sales/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 201
+    },
+    {
+      "role": "save",
+      "telop": "チーム共有用に**保存**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri7.mp4",
+        "bg/sumaho6.mp4",
+        "bg/keiri4.mp4",
+        "bg/keiri6.mp4",
+        "bg/sumaho4.mp4",
+        "bg/keiri3.mp4",
+        "bg/sumaho.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day5_am_sales/07.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 111
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "ChatGPT",
+      "telop": "書き物ぜんぶの相棒",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri7.mp4",
+        "bg/sumaho6.mp4",
+        "bg/keiri4.mp4",
+        "bg/keiri6.mp4",
+        "bg/sumaho4.mp4",
+        "bg/keiri3.mp4",
+        "bg/sumaho.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day5_am_sales/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 78
+    },
+    {
+      "role": "body",
+      "telop": "提案書も**壁打ち**もメールも",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri7.mp4",
+        "bg/sumaho6.mp4",
+        "bg/keiri4.mp4",
+        "bg/keiri6.mp4",
+        "bg/sumaho4.mp4",
+        "bg/keiri3.mp4",
+        "bg/sumaho.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day5_am_sales/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 126
+    },
+    {
+      "role": "body",
+      "telop": "書き物が**3分の1**以下に",
+      "time": {
+        "before": "90分",
+        "after": "20分",
+        "label": "1日の書き物ぜんぶ"
+      },
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri7.mp4",
+        "bg/sumaho6.mp4",
+        "bg/keiri4.mp4",
+        "bg/keiri6.mp4",
+        "bg/sumaho4.mp4",
+        "bg/keiri3.mp4",
+        "bg/sumaho.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day5_am_sales/10.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 126
+    },
+    {
+      "role": "cta",
+      "telop": "次回**事務編**\n職種リクエストは↓",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri7.mp4",
+        "bg/sumaho6.mp4",
+        "bg/keiri4.mp4",
+        "bg/keiri6.mp4",
+        "bg/sumaho4.mp4",
+        "bg/keiri3.mp4",
+        "bg/sumaho.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day5_am_sales/11.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 135
+    }
+  ]
+}

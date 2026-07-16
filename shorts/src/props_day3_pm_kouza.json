@@ -1,0 +1,186 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/pawn.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "ポチる前に\n**60秒**ください",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/note5.mp4",
+        "bg/keiri4.mp4",
+        "bg/sumaho2.mp4",
+        "bg/note2.mp4",
+        "bg/keiri3.mp4",
+        "bg/sumaho5.mp4",
+        "bg/note6.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day3_pm_kouza/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 133
+    },
+    {
+      "role": "body",
+      "telop": "中身は**この3つ**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/note5.mp4",
+        "bg/keiri4.mp4",
+        "bg/sumaho2.mp4",
+        "bg/note2.mp4",
+        "bg/keiri3.mp4",
+        "bg/sumaho5.mp4",
+        "bg/note6.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day3_pm_kouza/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 95
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "ツールの基本操作",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/note5.mp4",
+        "bg/keiri4.mp4",
+        "bg/sumaho2.mp4",
+        "bg/note2.mp4",
+        "bg/keiri3.mp4",
+        "bg/sumaho5.mp4",
+        "bg/note6.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day3_pm_kouza/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 68
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "プロンプト集",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/note5.mp4",
+        "bg/keiri4.mp4",
+        "bg/sumaho2.mp4",
+        "bg/note2.mp4",
+        "bg/keiri3.mp4",
+        "bg/sumaho5.mp4",
+        "bg/note6.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day3_pm_kouza/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 59
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "稼げるマインド",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/note5.mp4",
+        "bg/keiri4.mp4",
+        "bg/sumaho2.mp4",
+        "bg/note2.mp4",
+        "bg/keiri3.mp4",
+        "bg/sumaho5.mp4",
+        "bg/note6.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day3_pm_kouza/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 51
+    },
+    {
+      "role": "body",
+      "telop": "①②は**無料**で手に入る",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/note5.mp4",
+        "bg/keiri4.mp4",
+        "bg/sumaho2.mp4",
+        "bg/note2.mp4",
+        "bg/keiri3.mp4",
+        "bg/sumaho5.mp4",
+        "bg/note6.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day3_pm_kouza/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 150
+    },
+    {
+      "role": "flip",
+      "telop": "**強制力を買う**のはアリ",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/note5.mp4",
+        "bg/keiri4.mp4",
+        "bg/sumaho2.mp4",
+        "bg/note2.mp4",
+        "bg/keiri3.mp4",
+        "bg/sumaho5.mp4",
+        "bg/note6.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day3_pm_kouza/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 254
+    },
+    {
+      "role": "body",
+      "telop": "無料で1ヶ月→**返金条件**→判断",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/note5.mp4",
+        "bg/keiri4.mp4",
+        "bg/sumaho2.mp4",
+        "bg/note2.mp4",
+        "bg/keiri3.mp4",
+        "bg/sumaho5.mp4",
+        "bg/note6.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day3_pm_kouza/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 205
+    },
+    {
+      "role": "vs",
+      "telop": "経験談も**コメント**で",
+      "vs": {
+        "left": "アリ派",
+        "right": "ナシ派"
+      },
+      "bgVideo": null,
+      "bgClips": [
+        "bg/note5.mp4",
+        "bg/keiri4.mp4",
+        "bg/sumaho2.mp4",
+        "bg/note2.mp4",
+        "bg/keiri3.mp4",
+        "bg/sumaho5.mp4",
+        "bg/note6.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day3_pm_kouza/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 160
+    }
+  ]
+}

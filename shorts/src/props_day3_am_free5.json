@@ -1,0 +1,265 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**全部0円**の最強AI",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sumaho2.mp4",
+        "bg/keiri3.mp4",
+        "bg/note5.mp4",
+        "bg/sumaho4.mp4",
+        "bg/keiri4.mp4",
+        "bg/sumaho7.mp4",
+        "bg/note2.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day3_am_free5/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 143
+    },
+    {
+      "role": "rank",
+      "rank": 5,
+      "headline": "CapCut",
+      "telop": "動画は無料で作る時代",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sumaho2.mp4",
+        "bg/keiri3.mp4",
+        "bg/note5.mp4",
+        "bg/sumaho4.mp4",
+        "bg/keiri4.mp4",
+        "bg/sumaho7.mp4",
+        "bg/note2.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day3_am_free5/02.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 61
+    },
+    {
+      "role": "body",
+      "telop": "編集も字幕も**これ1つ**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sumaho2.mp4",
+        "bg/keiri3.mp4",
+        "bg/note5.mp4",
+        "bg/sumaho4.mp4",
+        "bg/keiri4.mp4",
+        "bg/sumaho7.mp4",
+        "bg/note2.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day3_am_free5/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 88
+    },
+    {
+      "role": "rank",
+      "rank": 4,
+      "headline": "Canva",
+      "telop": "デザインはテンプレ",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sumaho2.mp4",
+        "bg/keiri3.mp4",
+        "bg/note5.mp4",
+        "bg/sumaho4.mp4",
+        "bg/keiri4.mp4",
+        "bg/sumaho7.mp4",
+        "bg/note2.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day3_am_free5/04.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 56
+    },
+    {
+      "role": "body",
+      "telop": "**選ぶだけ**で完成",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sumaho2.mp4",
+        "bg/keiri3.mp4",
+        "bg/note5.mp4",
+        "bg/sumaho4.mp4",
+        "bg/keiri4.mp4",
+        "bg/sumaho7.mp4",
+        "bg/note2.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day3_am_free5/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 90
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "Perplexity",
+      "telop": "出典つき検索AI",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sumaho2.mp4",
+        "bg/keiri3.mp4",
+        "bg/note5.mp4",
+        "bg/sumaho4.mp4",
+        "bg/keiri4.mp4",
+        "bg/sumaho7.mp4",
+        "bg/note2.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day3_am_free5/06.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 56
+    },
+    {
+      "role": "body",
+      "telop": "裏取りが**一瞬**で終わる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sumaho2.mp4",
+        "bg/keiri3.mp4",
+        "bg/note5.mp4",
+        "bg/sumaho4.mp4",
+        "bg/keiri4.mp4",
+        "bg/sumaho7.mp4",
+        "bg/note2.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day3_am_free5/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 116
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "NotebookLM",
+      "telop": "資料専属のAI",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sumaho2.mp4",
+        "bg/keiri3.mp4",
+        "bg/note5.mp4",
+        "bg/sumaho4.mp4",
+        "bg/keiri4.mp4",
+        "bg/sumaho7.mp4",
+        "bg/note2.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day3_am_free5/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 66
+    },
+    {
+      "role": "body",
+      "telop": "**その資料だけ**から答える",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sumaho2.mp4",
+        "bg/keiri3.mp4",
+        "bg/note5.mp4",
+        "bg/sumaho4.mp4",
+        "bg/keiri4.mp4",
+        "bg/sumaho7.mp4",
+        "bg/note2.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day3_am_free5/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 99
+    },
+    {
+      "role": "save",
+      "telop": "無料は正義。**保存**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sumaho2.mp4",
+        "bg/keiri3.mp4",
+        "bg/note5.mp4",
+        "bg/sumaho4.mp4",
+        "bg/keiri4.mp4",
+        "bg/sumaho7.mp4",
+        "bg/note2.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day3_am_free5/10.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 102
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "Gemini",
+      "telop": "無料枠が壊れてる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sumaho2.mp4",
+        "bg/keiri3.mp4",
+        "bg/note5.mp4",
+        "bg/sumaho4.mp4",
+        "bg/keiri4.mp4",
+        "bg/sumaho7.mp4",
+        "bg/note2.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day3_am_free5/11.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 44
+    },
+    {
+      "role": "body",
+      "telop": "日常業務は**これで足りる**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sumaho2.mp4",
+        "bg/keiri3.mp4",
+        "bg/note5.mp4",
+        "bg/sumaho4.mp4",
+        "bg/keiri4.mp4",
+        "bg/sumaho7.mp4",
+        "bg/note2.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day3_am_free5/12.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 162
+    },
+    {
+      "role": "cta",
+      "telop": "職種を**コメント**で\n→ おすすめ返します",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sumaho2.mp4",
+        "bg/keiri3.mp4",
+        "bg/note5.mp4",
+        "bg/sumaho4.mp4",
+        "bg/keiri4.mp4",
+        "bg/sumaho7.mp4",
+        "bg/note2.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day3_am_free5/13.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 133
+    }
+  ]
+}

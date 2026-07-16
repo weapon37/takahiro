@@ -1,0 +1,233 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**事務職のあなた**へ",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri.mp4",
+        "bg/keiri3.mp4",
+        "bg/keiri4.mp4",
+        "bg/keiri5.mp4",
+        "bg/keiri6.mp4",
+        "bg/note5.mp4",
+        "bg/keiri2.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day6_am_jimu/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 136
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "Gemini",
+      "telop": "Google仕事の相棒",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri.mp4",
+        "bg/keiri3.mp4",
+        "bg/keiri4.mp4",
+        "bg/keiri5.mp4",
+        "bg/keiri6.mp4",
+        "bg/note5.mp4",
+        "bg/keiri2.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day6_am_jimu/02.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 49
+    },
+    {
+      "role": "body",
+      "telop": "返信も関数も**これ1つ**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri.mp4",
+        "bg/keiri3.mp4",
+        "bg/keiri4.mp4",
+        "bg/keiri5.mp4",
+        "bg/keiri6.mp4",
+        "bg/note5.mp4",
+        "bg/keiri2.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day6_am_jimu/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 136
+    },
+    {
+      "role": "body",
+      "telop": "返信業務が**半分以下**",
+      "time": {
+        "before": "40分",
+        "after": "15分",
+        "label": "毎日の返信業務"
+      },
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri.mp4",
+        "bg/keiri3.mp4",
+        "bg/keiri4.mp4",
+        "bg/keiri5.mp4",
+        "bg/keiri6.mp4",
+        "bg/note5.mp4",
+        "bg/keiri2.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day6_am_jimu/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 128
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "Notta",
+      "telop": "電話メモが自動で文字に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri.mp4",
+        "bg/keiri3.mp4",
+        "bg/keiri4.mp4",
+        "bg/keiri5.mp4",
+        "bg/keiri6.mp4",
+        "bg/note5.mp4",
+        "bg/keiri2.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day6_am_jimu/05.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 44
+    },
+    {
+      "role": "body",
+      "telop": "「言った言わない」が\n**ログで解決**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri.mp4",
+        "bg/keiri3.mp4",
+        "bg/keiri4.mp4",
+        "bg/keiri5.mp4",
+        "bg/keiri6.mp4",
+        "bg/note5.mp4",
+        "bg/keiri2.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day6_am_jimu/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 152
+    },
+    {
+      "role": "save",
+      "telop": "後輩に送る用に**保存**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri.mp4",
+        "bg/keiri3.mp4",
+        "bg/keiri4.mp4",
+        "bg/keiri5.mp4",
+        "bg/keiri6.mp4",
+        "bg/note5.mp4",
+        "bg/keiri2.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day6_am_jimu/07.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 97
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "ChatGPT",
+      "telop": "手が止まる時間がゼロに",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri.mp4",
+        "bg/keiri3.mp4",
+        "bg/keiri4.mp4",
+        "bg/keiri5.mp4",
+        "bg/keiri6.mp4",
+        "bg/note5.mp4",
+        "bg/keiri2.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day6_am_jimu/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 66
+    },
+    {
+      "role": "body",
+      "telop": "「どう書けば…」が**消える**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri.mp4",
+        "bg/keiri3.mp4",
+        "bg/keiri4.mp4",
+        "bg/keiri5.mp4",
+        "bg/keiri6.mp4",
+        "bg/note5.mp4",
+        "bg/keiri2.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day6_am_jimu/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 198
+    },
+    {
+      "role": "body",
+      "telop": "文書作成が**3分の1**",
+      "time": {
+        "before": "60分",
+        "after": "20分",
+        "label": "1日の文書作成"
+      },
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri.mp4",
+        "bg/keiri3.mp4",
+        "bg/keiri4.mp4",
+        "bg/keiri5.mp4",
+        "bg/keiri6.mp4",
+        "bg/note5.mp4",
+        "bg/keiri2.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day6_am_jimu/10.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 128
+    },
+    {
+      "role": "cta",
+      "telop": "経理編は固定コメ↓\n**職種リクエスト**受付中",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri.mp4",
+        "bg/keiri3.mp4",
+        "bg/keiri4.mp4",
+        "bg/keiri5.mp4",
+        "bg/keiri6.mp4",
+        "bg/note5.mp4",
+        "bg/keiri2.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day6_am_jimu/11.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 145
+    }
+  ]
+}

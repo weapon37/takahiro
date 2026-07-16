@@ -1,0 +1,186 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/pawn.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "あれ、**嘘**です",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sumaho.mp4",
+        "bg/sumaho2.mp4",
+        "bg/sumaho3.mp4",
+        "bg/sumaho4.mp4",
+        "bg/sumaho5.mp4",
+        "bg/sumaho6.mp4",
+        "bg/sumaho7.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day7_pm_uso/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 119
+    },
+    {
+      "role": "body",
+      "telop": "収益源は**あなた**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sumaho.mp4",
+        "bg/sumaho2.mp4",
+        "bg/sumaho3.mp4",
+        "bg/sumaho4.mp4",
+        "bg/sumaho5.mp4",
+        "bg/sumaho6.mp4",
+        "bg/sumaho7.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day7_pm_uso/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 145
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "高額講座",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sumaho.mp4",
+        "bg/sumaho2.mp4",
+        "bg/sumaho3.mp4",
+        "bg/sumaho4.mp4",
+        "bg/sumaho5.mp4",
+        "bg/sumaho6.mp4",
+        "bg/sumaho7.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day7_pm_uso/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 66
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "ツールの紹介料",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sumaho.mp4",
+        "bg/sumaho2.mp4",
+        "bg/sumaho3.mp4",
+        "bg/sumaho4.mp4",
+        "bg/sumaho5.mp4",
+        "bg/sumaho6.mp4",
+        "bg/sumaho7.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day7_pm_uso/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 58
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "コンサル契約",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sumaho.mp4",
+        "bg/sumaho2.mp4",
+        "bg/sumaho3.mp4",
+        "bg/sumaho4.mp4",
+        "bg/sumaho5.mp4",
+        "bg/sumaho6.mp4",
+        "bg/sumaho7.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day7_pm_uso/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 135
+    },
+    {
+      "role": "body",
+      "telop": "楽じゃない。でも\n**手作業は減る**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sumaho.mp4",
+        "bg/sumaho2.mp4",
+        "bg/sumaho3.mp4",
+        "bg/sumaho4.mp4",
+        "bg/sumaho5.mp4",
+        "bg/sumaho6.mp4",
+        "bg/sumaho7.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day7_pm_uso/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 174
+    },
+    {
+      "role": "flip",
+      "telop": "時間→実践→**収益は最後**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sumaho.mp4",
+        "bg/sumaho2.mp4",
+        "bg/sumaho3.mp4",
+        "bg/sumaho4.mp4",
+        "bg/sumaho5.mp4",
+        "bg/sumaho6.mp4",
+        "bg/sumaho7.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day7_pm_uso/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 229
+    },
+    {
+      "role": "body",
+      "telop": "ここは**後者だけ**やります",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sumaho.mp4",
+        "bg/sumaho2.mp4",
+        "bg/sumaho3.mp4",
+        "bg/sumaho4.mp4",
+        "bg/sumaho5.mp4",
+        "bg/sumaho6.mp4",
+        "bg/sumaho7.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day7_pm_uso/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 179
+    },
+    {
+      "role": "vs",
+      "telop": "匿名で**供養**しましょう",
+      "vs": {
+        "left": "ある派",
+        "right": "ない派"
+      },
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sumaho.mp4",
+        "bg/sumaho2.mp4",
+        "bg/sumaho3.mp4",
+        "bg/sumaho4.mp4",
+        "bg/sumaho5.mp4",
+        "bg/sumaho6.mp4",
+        "bg/sumaho7.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day7_pm_uso/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 170
+    }
+  ]
+}
