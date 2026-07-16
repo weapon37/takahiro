@@ -26,6 +26,7 @@ export type StoryScene = {
   items?: string[]; // role='rule' の箇条書き
   keyword?: string; // role='line' の合言葉
   bgVideo?: string | null; // public/内の実写背景動画(紙色ウォッシュ越しに敷く)
+  bgWash?: number; // 背景動画に被せるブランド色ウォッシュ(0=無し〜1)。既定0
   durationInFrames: number;
 };
 
@@ -323,7 +324,9 @@ const SceneView: React.FC<{scene: StoryScene}> = ({scene}) => {
               style={{width: '100%', height: '100%', objectFit: 'cover'}}
             />
           </AbsoluteFill>
-          <AbsoluteFill style={{backgroundColor: BRAND.base, opacity: 0.86}} />
+          {scene.bgWash ? (
+            <AbsoluteFill style={{backgroundColor: BRAND.base, opacity: scene.bgWash}} />
+          ) : null}
         </>
       ) : null}
       <NoteBg transparent={Boolean(scene.bgVideo)} />

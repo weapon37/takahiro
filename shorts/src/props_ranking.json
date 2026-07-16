@@ -9,6 +9,7 @@
       "role": "hook",
       "telop": "経理を消すAI\n**実測**BEST3",
       "bgVideo": "bg/keiri.mp4",
+      "bgWash": 0,
       "eraseIn": false,
       "playWhoosh": false,
       "durationInFrames": 112
@@ -20,6 +21,7 @@
       "rank": 3,
       "headline": "Notta",
       "bgVideo": "bg/keiri.mp4",
+      "bgWash": 0,
       "eraseIn": true,
       "playWhoosh": true,
       "durationInFrames": 47
@@ -29,6 +31,7 @@
       "role": "body",
       "telop": "手書きメモ、**今日で卒業**",
       "bgVideo": "bg/keiri.mp4",
+      "bgWash": 0,
       "eraseIn": false,
       "playWhoosh": false,
       "durationInFrames": 97
@@ -43,6 +46,7 @@
         "label": "会議の議事録づくり"
       },
       "bgVideo": "bg/keiri.mp4",
+      "bgWash": 0,
       "eraseIn": false,
       "playWhoosh": false,
       "durationInFrames": 119
@@ -54,6 +58,7 @@
       "rank": 2,
       "headline": "マネーフォワード",
       "bgVideo": "bg/keiri.mp4",
+      "bgWash": 0,
       "eraseIn": true,
       "playWhoosh": true,
       "durationInFrames": 75
@@ -63,6 +68,7 @@
       "role": "body",
       "telop": "撮るだけで**仕訳まで自動**",
       "bgVideo": "bg/keiri.mp4",
+      "bgWash": 0,
       "eraseIn": false,
       "playWhoosh": false,
       "durationInFrames": 90
@@ -77,6 +83,7 @@
         "label": "レシート20枚の入力"
       },
       "bgVideo": "bg/keiri.mp4",
+      "bgWash": 0,
       "eraseIn": false,
       "playWhoosh": false,
       "durationInFrames": 97
@@ -86,6 +93,7 @@
       "role": "save",
       "telop": "月末の自分のために**保存**",
       "bgVideo": "bg/keiri.mp4",
+      "bgWash": 0,
       "eraseIn": true,
       "playWhoosh": false,
       "durationInFrames": 66
@@ -97,6 +105,7 @@
       "rank": 1,
       "headline": "freee AI-OCR",
       "bgVideo": "bg/keiri.mp4",
+      "bgWash": 0,
       "eraseIn": true,
       "playWhoosh": true,
       "durationInFrames": 100
@@ -106,6 +115,7 @@
       "role": "body",
       "telop": "**放り込むだけ**で全部入る",
       "bgVideo": "bg/keiri.mp4",
+      "bgWash": 0,
       "eraseIn": false,
       "playWhoosh": false,
       "durationInFrames": 177
@@ -120,6 +130,7 @@
         "label": "請求書1枚の処理"
       },
       "bgVideo": "bg/keiri.mp4",
+      "bgWash": 0,
       "eraseIn": false,
       "playWhoosh": false,
       "durationInFrames": 116
@@ -129,6 +140,7 @@
       "role": "cta",
       "telop": "消したい作業を\n**コメント**で教えて",
       "bgVideo": "bg/keiri.mp4",
+      "bgWash": 0,
       "eraseIn": false,
       "playWhoosh": false,
       "durationInFrames": 170

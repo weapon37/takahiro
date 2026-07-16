@@ -24,6 +24,7 @@ export type ContraScene = {
   num?: number; // role='point' の番号(①②③)
   vs?: {left: string; right: string}; // role='vs' の対決ラベル
   bgVideo?: string | null; // public/内の実写背景動画(ネイビーウォッシュ越しに敷く)
+  bgWash?: number; // 背景動画に被せるブランド色ウォッシュ(0=無し〜1)。既定0
   durationInFrames: number;
 };
 
@@ -248,7 +249,9 @@ const SceneView: React.FC<{scene: ContraScene}> = ({scene}) => {
               style={{width: '100%', height: '100%', objectFit: 'cover'}}
             />
           </AbsoluteFill>
-          <AbsoluteFill style={{backgroundColor: BRAND.ink, opacity: 0.84}} />
+          {scene.bgWash ? (
+            <AbsoluteFill style={{backgroundColor: BRAND.ink, opacity: scene.bgWash}} />
+          ) : null}
         </>
       ) : null}
       <NavyBg role={scene.role} transparent={Boolean(scene.bgVideo)} />

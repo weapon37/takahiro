@@ -25,6 +25,7 @@ export type RankScene = {
   headline?: string; // role='rank' のときのツール名(大きく表示)
   time?: {before: string; after: string; label?: string}; // 実測タイム(オレンジ特大)
   bgVideo?: string | null; // public/内の実写背景動画(あれば紙色ウォッシュ越しに敷く)
+  bgWash?: number; // 背景動画に被せるブランド色ウォッシュ(0=無し〜1)。既定0
   eraseIn: boolean; // シーン頭で消しゴムワイプ遷移
   playWhoosh: boolean;
   durationInFrames: number;
@@ -429,8 +430,9 @@ const SceneView: React.FC<{scene: RankScene; whoosh: string}> = ({scene, whoosh}
               style={{width: '100%', height: '100%', objectFit: 'cover'}}
             />
           </AbsoluteFill>
-          {/* 紙色ウォッシュ(テロップの可読性とブランド感を守る) */}
-          <AbsoluteFill style={{backgroundColor: BRAND.base, opacity: 0.82}} />
+          {scene.bgWash ? (
+            <AbsoluteFill style={{backgroundColor: BRAND.base, opacity: scene.bgWash}} />
+          ) : null}
         </>
       ) : null}
       <PaperBg role={scene.role} transparent={Boolean(scene.bgVideo)} />

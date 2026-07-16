@@ -40,6 +40,7 @@ const scenes = script.sentences.map((s, idx) => {
     time: s.time,
     // 背景動画: シーン個別指定 > 台本全体指定 > なし
     bgVideo: s.bgVideo ?? script.bgVideo ?? null,
+    bgWash: s.bgWash ?? script.bgWash ?? 0,
     // 順位発表と保存誘導は消しゴムワイプで場面転換(チャンネル固有演出)
     eraseIn: s.role === 'rank' || s.role === 'save',
     playWhoosh: s.role === 'rank',
