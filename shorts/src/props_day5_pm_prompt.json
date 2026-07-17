@@ -9,13 +9,12 @@
       "telop": "**買わなくていい**です",
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri3.mp4",
-        "bg/sumaho4.mp4",
-        "bg/note4.mp4",
-        "bg/keiri4.mp4",
-        "bg/sumaho7.mp4",
-        "bg/note5.mp4",
-        "bg/keiri.mp4"
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4",
+        "bg/office_window.mp4",
+        "bg/city_night.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day5_pm_prompt/01.wav",
@@ -28,13 +27,12 @@
       "telop": "買った瞬間から**古くなる**",
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri3.mp4",
-        "bg/sumaho4.mp4",
-        "bg/note4.mp4",
-        "bg/keiri4.mp4",
-        "bg/sumaho7.mp4",
-        "bg/note5.mp4",
-        "bg/keiri.mp4"
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4",
+        "bg/office_window.mp4",
+        "bg/city_night.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day5_pm_prompt/02.wav",
@@ -47,13 +45,12 @@
       "telop": "呪文は**もう要らない**",
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri3.mp4",
-        "bg/sumaho4.mp4",
-        "bg/note4.mp4",
-        "bg/keiri4.mp4",
-        "bg/sumaho7.mp4",
-        "bg/note5.mp4",
-        "bg/keiri.mp4"
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4",
+        "bg/office_window.mp4",
+        "bg/city_night.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day5_pm_prompt/03.wav",
@@ -66,13 +63,12 @@
       "telop": "他人の1000個より\n**自分の10個**",
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri3.mp4",
-        "bg/sumaho4.mp4",
-        "bg/note4.mp4",
-        "bg/keiri4.mp4",
-        "bg/sumaho7.mp4",
-        "bg/note5.mp4",
-        "bg/keiri.mp4"
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4",
+        "bg/office_window.mp4",
+        "bg/city_night.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day5_pm_prompt/04.wav",
@@ -86,13 +82,12 @@
       "telop": "役割を書く",
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri3.mp4",
-        "bg/sumaho4.mp4",
-        "bg/note4.mp4",
-        "bg/keiri4.mp4",
-        "bg/sumaho7.mp4",
-        "bg/note5.mp4",
-        "bg/keiri.mp4"
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4",
+        "bg/office_window.mp4",
+        "bg/city_night.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day5_pm_prompt/05.wav",
@@ -106,13 +101,12 @@
       "telop": "目的と条件を書く",
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri3.mp4",
-        "bg/sumaho4.mp4",
-        "bg/note4.mp4",
-        "bg/keiri4.mp4",
-        "bg/sumaho7.mp4",
-        "bg/note5.mp4",
-        "bg/keiri.mp4"
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4",
+        "bg/office_window.mp4",
+        "bg/city_night.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day5_pm_prompt/06.wav",
@@ -126,13 +120,12 @@
       "telop": "出力形式を指定する",
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri3.mp4",
-        "bg/sumaho4.mp4",
-        "bg/note4.mp4",
-        "bg/keiri4.mp4",
-        "bg/sumaho7.mp4",
-        "bg/note5.mp4",
-        "bg/keiri.mp4"
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4",
+        "bg/office_window.mp4",
+        "bg/city_night.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day5_pm_prompt/07.wav",
@@ -145,13 +138,12 @@
       "telop": "呪文を買うな\n**事例を買え**",
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri3.mp4",
-        "bg/sumaho4.mp4",
-        "bg/note4.mp4",
-        "bg/keiri4.mp4",
-        "bg/sumaho7.mp4",
-        "bg/note5.mp4",
-        "bg/keiri.mp4"
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4",
+        "bg/office_window.mp4",
+        "bg/city_night.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day5_pm_prompt/08.wav",
@@ -168,13 +160,12 @@
       },
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri3.mp4",
-        "bg/sumaho4.mp4",
-        "bg/note4.mp4",
-        "bg/keiri4.mp4",
-        "bg/sumaho7.mp4",
-        "bg/note5.mp4",
-        "bg/keiri.mp4"
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4",
+        "bg/office_window.mp4",
+        "bg/city_night.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day5_pm_prompt/09.wav",

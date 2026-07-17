@@ -9,13 +9,12 @@
       "telop": "ポチる前に\n**60秒**ください",
       "bgVideo": null,
       "bgClips": [
-        "bg/note5.mp4",
-        "bg/keiri4.mp4",
-        "bg/sumaho2.mp4",
-        "bg/note2.mp4",
-        "bg/keiri3.mp4",
-        "bg/sumaho5.mp4",
-        "bg/note6.mp4"
+        "bg/coins_stack.mp4",
+        "bg/portrait.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/city_night.mp4",
+        "bg/calendar.mp4",
+        "bg/coffee_desk.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day3_pm_kouza/01.wav",
@@ -28,13 +27,12 @@
       "telop": "中身は**この3つ**",
       "bgVideo": null,
       "bgClips": [
-        "bg/note5.mp4",
-        "bg/keiri4.mp4",
-        "bg/sumaho2.mp4",
-        "bg/note2.mp4",
-        "bg/keiri3.mp4",
-        "bg/sumaho5.mp4",
-        "bg/note6.mp4"
+        "bg/coins_stack.mp4",
+        "bg/portrait.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/city_night.mp4",
+        "bg/calendar.mp4",
+        "bg/coffee_desk.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day3_pm_kouza/02.wav",
@@ -48,13 +46,12 @@
       "telop": "ツールの基本操作",
       "bgVideo": null,
       "bgClips": [
-        "bg/note5.mp4",
-        "bg/keiri4.mp4",
-        "bg/sumaho2.mp4",
-        "bg/note2.mp4",
-        "bg/keiri3.mp4",
-        "bg/sumaho5.mp4",
-        "bg/note6.mp4"
+        "bg/coins_stack.mp4",
+        "bg/portrait.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/city_night.mp4",
+        "bg/calendar.mp4",
+        "bg/coffee_desk.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day3_pm_kouza/03.wav",
@@ -68,13 +65,12 @@
       "telop": "プロンプト集",
       "bgVideo": null,
       "bgClips": [
-        "bg/note5.mp4",
-        "bg/keiri4.mp4",
-        "bg/sumaho2.mp4",
-        "bg/note2.mp4",
-        "bg/keiri3.mp4",
-        "bg/sumaho5.mp4",
-        "bg/note6.mp4"
+        "bg/coins_stack.mp4",
+        "bg/portrait.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/city_night.mp4",
+        "bg/calendar.mp4",
+        "bg/coffee_desk.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day3_pm_kouza/04.wav",
@@ -88,13 +84,12 @@
       "telop": "稼げるマインド",
       "bgVideo": null,
       "bgClips": [
-        "bg/note5.mp4",
-        "bg/keiri4.mp4",
-        "bg/sumaho2.mp4",
-        "bg/note2.mp4",
-        "bg/keiri3.mp4",
-        "bg/sumaho5.mp4",
-        "bg/note6.mp4"
+        "bg/coins_stack.mp4",
+        "bg/portrait.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/city_night.mp4",
+        "bg/calendar.mp4",
+        "bg/coffee_desk.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day3_pm_kouza/05.wav",
@@ -107,13 +102,12 @@
       "telop": "①②は**無料**で手に入る",
       "bgVideo": null,
       "bgClips": [
-        "bg/note5.mp4",
-        "bg/keiri4.mp4",
-        "bg/sumaho2.mp4",
-        "bg/note2.mp4",
-        "bg/keiri3.mp4",
-        "bg/sumaho5.mp4",
-        "bg/note6.mp4"
+        "bg/coins_stack.mp4",
+        "bg/portrait.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/city_night.mp4",
+        "bg/calendar.mp4",
+        "bg/coffee_desk.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day3_pm_kouza/06.wav",
@@ -126,13 +120,12 @@
       "telop": "**強制力を買う**のはアリ",
       "bgVideo": null,
       "bgClips": [
-        "bg/note5.mp4",
-        "bg/keiri4.mp4",
-        "bg/sumaho2.mp4",
-        "bg/note2.mp4",
-        "bg/keiri3.mp4",
-        "bg/sumaho5.mp4",
-        "bg/note6.mp4"
+        "bg/coins_stack.mp4",
+        "bg/portrait.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/city_night.mp4",
+        "bg/calendar.mp4",
+        "bg/coffee_desk.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day3_pm_kouza/07.wav",
@@ -145,13 +138,12 @@
       "telop": "無料で1ヶ月→**返金条件**→判断",
       "bgVideo": null,
       "bgClips": [
-        "bg/note5.mp4",
-        "bg/keiri4.mp4",
-        "bg/sumaho2.mp4",
-        "bg/note2.mp4",
-        "bg/keiri3.mp4",
-        "bg/sumaho5.mp4",
-        "bg/note6.mp4"
+        "bg/coins_stack.mp4",
+        "bg/portrait.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/city_night.mp4",
+        "bg/calendar.mp4",
+        "bg/coffee_desk.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day3_pm_kouza/08.wav",
@@ -168,13 +160,12 @@
       },
       "bgVideo": null,
       "bgClips": [
-        "bg/note5.mp4",
-        "bg/keiri4.mp4",
-        "bg/sumaho2.mp4",
-        "bg/note2.mp4",
-        "bg/keiri3.mp4",
-        "bg/sumaho5.mp4",
-        "bg/note6.mp4"
+        "bg/coins_stack.mp4",
+        "bg/portrait.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/city_night.mp4",
+        "bg/calendar.mp4",
+        "bg/coffee_desk.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_day3_pm_kouza/09.wav",
