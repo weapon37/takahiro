@@ -10,13 +10,12 @@
       "telop": "経理を消すAI\n**実測**BEST3",
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri.mp4",
-        "bg/keiri2.mp4",
-        "bg/keiri3.mp4",
-        "bg/keiri4.mp4",
-        "bg/keiri5.mp4",
-        "bg/keiri6.mp4",
-        "bg/keiri7.mp4"
+        "bg/typing_laptop.mp4",
+        "bg/office_window.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4",
+        "bg/calendar.mp4",
+        "bg/coins_stack.mp4"
       ],
       "bgWash": 0,
       "eraseIn": false,
@@ -31,13 +30,12 @@
       "headline": "Notta",
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri.mp4",
-        "bg/keiri2.mp4",
-        "bg/keiri3.mp4",
-        "bg/keiri4.mp4",
-        "bg/keiri5.mp4",
-        "bg/keiri6.mp4",
-        "bg/keiri7.mp4"
+        "bg/typing_laptop.mp4",
+        "bg/office_window.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4",
+        "bg/calendar.mp4",
+        "bg/coins_stack.mp4"
       ],
       "bgWash": 0,
       "eraseIn": true,
@@ -50,13 +48,12 @@
       "telop": "手書きメモ、**今日で卒業**",
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri.mp4",
-        "bg/keiri2.mp4",
-        "bg/keiri3.mp4",
-        "bg/keiri4.mp4",
-        "bg/keiri5.mp4",
-        "bg/keiri6.mp4",
-        "bg/keiri7.mp4"
+        "bg/typing_laptop.mp4",
+        "bg/office_window.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4",
+        "bg/calendar.mp4",
+        "bg/coins_stack.mp4"
       ],
       "bgWash": 0,
       "eraseIn": false,
@@ -74,13 +71,12 @@
       },
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri.mp4",
-        "bg/keiri2.mp4",
-        "bg/keiri3.mp4",
-        "bg/keiri4.mp4",
-        "bg/keiri5.mp4",
-        "bg/keiri6.mp4",
-        "bg/keiri7.mp4"
+        "bg/typing_laptop.mp4",
+        "bg/office_window.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4",
+        "bg/calendar.mp4",
+        "bg/coins_stack.mp4"
       ],
       "bgWash": 0,
       "eraseIn": false,
@@ -95,13 +91,12 @@
       "headline": "マネーフォワード",
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri.mp4",
-        "bg/keiri2.mp4",
-        "bg/keiri3.mp4",
-        "bg/keiri4.mp4",
-        "bg/keiri5.mp4",
-        "bg/keiri6.mp4",
-        "bg/keiri7.mp4"
+        "bg/typing_laptop.mp4",
+        "bg/office_window.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4",
+        "bg/calendar.mp4",
+        "bg/coins_stack.mp4"
       ],
       "bgWash": 0,
       "eraseIn": true,
@@ -114,13 +109,12 @@
       "telop": "撮るだけで**仕訳まで自動**",
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri.mp4",
-        "bg/keiri2.mp4",
-        "bg/keiri3.mp4",
-        "bg/keiri4.mp4",
-        "bg/keiri5.mp4",
-        "bg/keiri6.mp4",
-        "bg/keiri7.mp4"
+        "bg/typing_laptop.mp4",
+        "bg/office_window.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4",
+        "bg/calendar.mp4",
+        "bg/coins_stack.mp4"
       ],
       "bgWash": 0,
       "eraseIn": false,
@@ -138,13 +132,12 @@
       },
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri.mp4",
-        "bg/keiri2.mp4",
-        "bg/keiri3.mp4",
-        "bg/keiri4.mp4",
-        "bg/keiri5.mp4",
-        "bg/keiri6.mp4",
-        "bg/keiri7.mp4"
+        "bg/typing_laptop.mp4",
+        "bg/office_window.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4",
+        "bg/calendar.mp4",
+        "bg/coins_stack.mp4"
       ],
       "bgWash": 0,
       "eraseIn": false,
@@ -157,13 +150,12 @@
       "telop": "月末の自分のために**保存**",
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri.mp4",
-        "bg/keiri2.mp4",
-        "bg/keiri3.mp4",
-        "bg/keiri4.mp4",
-        "bg/keiri5.mp4",
-        "bg/keiri6.mp4",
-        "bg/keiri7.mp4"
+        "bg/typing_laptop.mp4",
+        "bg/office_window.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4",
+        "bg/calendar.mp4",
+        "bg/coins_stack.mp4"
       ],
       "bgWash": 0,
       "eraseIn": true,
@@ -178,13 +170,12 @@
       "headline": "freee AI-OCR",
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri.mp4",
-        "bg/keiri2.mp4",
-        "bg/keiri3.mp4",
-        "bg/keiri4.mp4",
-        "bg/keiri5.mp4",
-        "bg/keiri6.mp4",
-        "bg/keiri7.mp4"
+        "bg/typing_laptop.mp4",
+        "bg/office_window.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4",
+        "bg/calendar.mp4",
+        "bg/coins_stack.mp4"
       ],
       "bgWash": 0,
       "eraseIn": true,
@@ -197,13 +188,12 @@
       "telop": "**放り込むだけ**で全部入る",
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri.mp4",
-        "bg/keiri2.mp4",
-        "bg/keiri3.mp4",
-        "bg/keiri4.mp4",
-        "bg/keiri5.mp4",
-        "bg/keiri6.mp4",
-        "bg/keiri7.mp4"
+        "bg/typing_laptop.mp4",
+        "bg/office_window.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4",
+        "bg/calendar.mp4",
+        "bg/coins_stack.mp4"
       ],
       "bgWash": 0,
       "eraseIn": false,
@@ -221,13 +211,12 @@
       },
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri.mp4",
-        "bg/keiri2.mp4",
-        "bg/keiri3.mp4",
-        "bg/keiri4.mp4",
-        "bg/keiri5.mp4",
-        "bg/keiri6.mp4",
-        "bg/keiri7.mp4"
+        "bg/typing_laptop.mp4",
+        "bg/office_window.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4",
+        "bg/calendar.mp4",
+        "bg/coins_stack.mp4"
       ],
       "bgWash": 0,
       "eraseIn": false,
@@ -240,13 +229,12 @@
       "telop": "消したい作業を\n**コメント**で教えて",
       "bgVideo": null,
       "bgClips": [
-        "bg/keiri.mp4",
-        "bg/keiri2.mp4",
-        "bg/keiri3.mp4",
-        "bg/keiri4.mp4",
-        "bg/keiri5.mp4",
-        "bg/keiri6.mp4",
-        "bg/keiri7.mp4"
+        "bg/typing_laptop.mp4",
+        "bg/office_window.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4",
+        "bg/calendar.mp4",
+        "bg/coins_stack.mp4"
       ],
       "bgWash": 0,
       "eraseIn": false,

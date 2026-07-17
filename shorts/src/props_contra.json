@@ -9,13 +9,12 @@
       "telop": "課金、**要らない**かも",
       "bgVideo": null,
       "bgClips": [
-        "bg/sumaho.mp4",
-        "bg/sumaho2.mp4",
-        "bg/sumaho3.mp4",
-        "bg/sumaho4.mp4",
-        "bg/sumaho5.mp4",
-        "bg/sumaho6.mp4",
-        "bg/sumaho7.mp4"
+        "bg/city_night.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coins_stack.mp4",
+        "bg/subway_commute.mp4",
+        "bg/portrait.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_contra/01.wav",
@@ -28,13 +27,12 @@
       "telop": "ライト利用は**無料で十分**",
       "bgVideo": null,
       "bgClips": [
-        "bg/sumaho.mp4",
-        "bg/sumaho2.mp4",
-        "bg/sumaho3.mp4",
-        "bg/sumaho4.mp4",
-        "bg/sumaho5.mp4",
-        "bg/sumaho6.mp4",
-        "bg/sumaho7.mp4"
+        "bg/city_night.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coins_stack.mp4",
+        "bg/subway_commute.mp4",
+        "bg/portrait.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_contra/02.wav",
@@ -48,13 +46,12 @@
       "telop": "毎日1時間以上使う",
       "bgVideo": null,
       "bgClips": [
-        "bg/sumaho.mp4",
-        "bg/sumaho2.mp4",
-        "bg/sumaho3.mp4",
-        "bg/sumaho4.mp4",
-        "bg/sumaho5.mp4",
-        "bg/sumaho6.mp4",
-        "bg/sumaho7.mp4"
+        "bg/city_night.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coins_stack.mp4",
+        "bg/subway_commute.mp4",
+        "bg/portrait.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_contra/03.wav",
@@ -68,13 +65,12 @@
       "telop": "画像・資料を読ませる",
       "bgVideo": null,
       "bgClips": [
-        "bg/sumaho.mp4",
-        "bg/sumaho2.mp4",
-        "bg/sumaho3.mp4",
-        "bg/sumaho4.mp4",
-        "bg/sumaho5.mp4",
-        "bg/sumaho6.mp4",
-        "bg/sumaho7.mp4"
+        "bg/city_night.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coins_stack.mp4",
+        "bg/subway_commute.mp4",
+        "bg/portrait.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_contra/04.wav",
@@ -88,13 +84,12 @@
       "telop": "精度が仕事に直結",
       "bgVideo": null,
       "bgClips": [
-        "bg/sumaho.mp4",
-        "bg/sumaho2.mp4",
-        "bg/sumaho3.mp4",
-        "bg/sumaho4.mp4",
-        "bg/sumaho5.mp4",
-        "bg/sumaho6.mp4",
-        "bg/sumaho7.mp4"
+        "bg/city_night.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coins_stack.mp4",
+        "bg/subway_commute.mp4",
+        "bg/portrait.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_contra/05.wav",
@@ -107,13 +102,12 @@
       "telop": "年間**36,000円**の無駄かも",
       "bgVideo": null,
       "bgClips": [
-        "bg/sumaho.mp4",
-        "bg/sumaho2.mp4",
-        "bg/sumaho3.mp4",
-        "bg/sumaho4.mp4",
-        "bg/sumaho5.mp4",
-        "bg/sumaho6.mp4",
-        "bg/sumaho7.mp4"
+        "bg/city_night.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coins_stack.mp4",
+        "bg/subway_commute.mp4",
+        "bg/portrait.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_contra/06.wav",
@@ -126,13 +120,12 @@
       "telop": "物足りない瞬間が\n**課金どき**",
       "bgVideo": null,
       "bgClips": [
-        "bg/sumaho.mp4",
-        "bg/sumaho2.mp4",
-        "bg/sumaho3.mp4",
-        "bg/sumaho4.mp4",
-        "bg/sumaho5.mp4",
-        "bg/sumaho6.mp4",
-        "bg/sumaho7.mp4"
+        "bg/city_night.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coins_stack.mp4",
+        "bg/subway_commute.mp4",
+        "bg/portrait.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_contra/07.wav",
@@ -149,13 +142,12 @@
       },
       "bgVideo": null,
       "bgClips": [
-        "bg/sumaho.mp4",
-        "bg/sumaho2.mp4",
-        "bg/sumaho3.mp4",
-        "bg/sumaho4.mp4",
-        "bg/sumaho5.mp4",
-        "bg/sumaho6.mp4",
-        "bg/sumaho7.mp4"
+        "bg/city_night.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coins_stack.mp4",
+        "bg/subway_commute.mp4",
+        "bg/portrait.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_contra/08.wav",

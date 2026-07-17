@@ -13,13 +13,12 @@
       },
       "bgVideo": null,
       "bgClips": [
-        "bg/note.mp4",
-        "bg/note2.mp4",
-        "bg/note3.mp4",
-        "bg/note4.mp4",
-        "bg/note5.mp4",
-        "bg/note6.mp4",
-        "bg/note7.mp4"
+        "bg/sunrise_city.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/calendar.mp4",
+        "bg/office_window.mp4",
+        "bg/portrait.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_story/01.wav",
@@ -33,13 +32,12 @@
       "day": 0,
       "bgVideo": null,
       "bgClips": [
-        "bg/note.mp4",
-        "bg/note2.mp4",
-        "bg/note3.mp4",
-        "bg/note4.mp4",
-        "bg/note5.mp4",
-        "bg/note6.mp4",
-        "bg/note7.mp4"
+        "bg/sunrise_city.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/calendar.mp4",
+        "bg/office_window.mp4",
+        "bg/portrait.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_story/02.wav",
@@ -52,13 +50,12 @@
       "telop": "専門家じゃない。\n**普通の会社員**です",
       "bgVideo": null,
       "bgClips": [
-        "bg/note.mp4",
-        "bg/note2.mp4",
-        "bg/note3.mp4",
-        "bg/note4.mp4",
-        "bg/note5.mp4",
-        "bg/note6.mp4",
-        "bg/note7.mp4"
+        "bg/sunrise_city.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/calendar.mp4",
+        "bg/office_window.mp4",
+        "bg/portrait.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_story/03.wav",
@@ -71,13 +68,12 @@
       "telop": "ちゃんとやれば、**変わる**",
       "bgVideo": null,
       "bgClips": [
-        "bg/note.mp4",
-        "bg/note2.mp4",
-        "bg/note3.mp4",
-        "bg/note4.mp4",
-        "bg/note5.mp4",
-        "bg/note6.mp4",
-        "bg/note7.mp4"
+        "bg/sunrise_city.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/calendar.mp4",
+        "bg/office_window.mp4",
+        "bg/portrait.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_story/04.wav",
@@ -95,13 +91,12 @@
       ],
       "bgVideo": null,
       "bgClips": [
-        "bg/note.mp4",
-        "bg/note2.mp4",
-        "bg/note3.mp4",
-        "bg/note4.mp4",
-        "bg/note5.mp4",
-        "bg/note6.mp4",
-        "bg/note7.mp4"
+        "bg/sunrise_city.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/calendar.mp4",
+        "bg/office_window.mp4",
+        "bg/portrait.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_story/05.wav",
@@ -114,13 +109,12 @@
       "telop": "30日後、**どうなってるか**",
       "bgVideo": null,
       "bgClips": [
-        "bg/note.mp4",
-        "bg/note2.mp4",
-        "bg/note3.mp4",
-        "bg/note4.mp4",
-        "bg/note5.mp4",
-        "bg/note6.mp4",
-        "bg/note7.mp4"
+        "bg/sunrise_city.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/calendar.mp4",
+        "bg/office_window.mp4",
+        "bg/portrait.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_story/06.wav",
@@ -134,13 +128,12 @@
       "keyword": "メモ",
       "bgVideo": null,
       "bgClips": [
-        "bg/note.mp4",
-        "bg/note2.mp4",
-        "bg/note3.mp4",
-        "bg/note4.mp4",
-        "bg/note5.mp4",
-        "bg/note6.mp4",
-        "bg/note7.mp4"
+        "bg/sunrise_city.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/calendar.mp4",
+        "bg/office_window.mp4",
+        "bg/portrait.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_story/07.wav",
