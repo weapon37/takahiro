@@ -89,7 +89,7 @@ const Telop: React.FC<{text: string; big?: boolean}> = ({text, big}) => {
         style={{
           fontFamily,
           fontWeight: 900,
-          fontSize: big ? 116 : 94,
+          fontSize: big ? 104 : 94,
           lineHeight: 1.5,
           color: '#ffffff',
           whiteSpace: 'pre-wrap',
