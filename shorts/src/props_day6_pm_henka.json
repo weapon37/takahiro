@@ -1,0 +1,140 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/tomorrows_light.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "day",
+      "telop": "検証**4日目**",
+      "day": 4,
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sunrise_city.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/calendar.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/portrait.mp4",
+        "bg/office_window.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day6_pm_henka/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 64
+    },
+    {
+      "role": "big",
+      "telop": "はい、まだ**0円**です",
+      "big": {
+        "value": "¥0",
+        "label": "収支(4日目)"
+      },
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sunrise_city.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/calendar.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/portrait.mp4",
+        "bg/office_window.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day6_pm_henka/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 61
+    },
+    {
+      "role": "story",
+      "telop": "でも**ひとつだけ**変わった",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sunrise_city.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/calendar.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/portrait.mp4",
+        "bg/office_window.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day6_pm_henka/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 107
+    },
+    {
+      "role": "story",
+      "telop": "**画像1枚が10分**で作れる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sunrise_city.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/calendar.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/portrait.mp4",
+        "bg/office_window.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day6_pm_henka/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 157
+    },
+    {
+      "role": "story",
+      "telop": "歯車が**回りはじめた**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sunrise_city.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/calendar.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/portrait.mp4",
+        "bg/office_window.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day6_pm_henka/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 290
+    },
+    {
+      "role": "story",
+      "telop": "**全記録**を残してます",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sunrise_city.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/calendar.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/portrait.mp4",
+        "bg/office_window.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day6_pm_henka/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 186
+    },
+    {
+      "role": "line",
+      "telop": "30日目まで**一緒に**",
+      "keyword": "メモ",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sunrise_city.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/calendar.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/portrait.mp4",
+        "bg/office_window.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day6_pm_henka/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 242
+    }
+  ]
+}
