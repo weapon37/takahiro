@@ -54,11 +54,11 @@
   ],
   "bgm": "bgm/pawn.mp3",
   "bgClips": [
-    "bg/sunrise_city.mp4",
-    "bg/city_night.mp4",
-    "bg/business_walking.mp4",
-    "bg/typing_laptop.mp4",
-    "bg/coins_stack.mp4",
-    "bg/portrait.mp4"
+    "bg/nb_sky.mp4",
+    "bg/nb_cafe.mp4",
+    "bg/nb_desk.mp4",
+    "bg/nb_phone.mp4",
+    "bg/nb_savings.mp4",
+    "bg/nb_notes.mp4"
   ]
 }

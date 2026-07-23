@@ -63,11 +63,11 @@
   ],
   "bgm": "bgm/for_our_friends.mp3",
   "bgClips": [
-    "bg/typing_laptop.mp4",
-    "bg/coffee_desk.mp4",
-    "bg/office_window.mp4",
-    "bg/graph_screen.mp4",
-    "bg/portrait.mp4",
-    "bg/city_night.mp4"
+    "bg/nb_desk.mp4",
+    "bg/nb_camera.mp4",
+    "bg/nb_keys.mp4",
+    "bg/nb_digital.mp4",
+    "bg/nb_cafe.mp4",
+    "bg/nb_notes.mp4"
   ]
 }
