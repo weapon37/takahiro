@@ -1,0 +1,176 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "デザイナーの**BEST3**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4",
+        "bg/office_window.mp4",
+        "bg/portrait.mp4",
+        "bg/city_night.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d5_am_designer/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 126
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "ChatGPT",
+      "telop": "アイデアの壁打ち",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4",
+        "bg/office_window.mp4",
+        "bg/portrait.mp4",
+        "bg/city_night.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d5_am_designer/02.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 99
+    },
+    {
+      "role": "body",
+      "telop": "**案出し**の時間がゼロに",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4",
+        "bg/office_window.mp4",
+        "bg/portrait.mp4",
+        "bg/city_night.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d5_am_designer/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 169
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "Midjourney",
+      "telop": "高品質なビジュアル",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4",
+        "bg/office_window.mp4",
+        "bg/portrait.mp4",
+        "bg/city_night.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d5_am_designer/04.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 111
+    },
+    {
+      "role": "body",
+      "telop": "**世界観**で提案が通る",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4",
+        "bg/office_window.mp4",
+        "bg/portrait.mp4",
+        "bg/city_night.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d5_am_designer/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 162
+    },
+    {
+      "role": "save",
+      "telop": "毎日使う1位を**保存**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4",
+        "bg/office_window.mp4",
+        "bg/portrait.mp4",
+        "bg/city_night.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d5_am_designer/06.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 117
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "Adobe Firefly",
+      "telop": "商用安心＋Photoshop連携",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4",
+        "bg/office_window.mp4",
+        "bg/portrait.mp4",
+        "bg/city_night.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d5_am_designer/07.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 76
+    },
+    {
+      "role": "body",
+      "telop": "**商用安心**で現場に馴染む",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4",
+        "bg/office_window.mp4",
+        "bg/portrait.mp4",
+        "bg/city_night.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d5_am_designer/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 186
+    },
+    {
+      "role": "cta",
+      "telop": "時間泥棒の工程を↓\n**コメント**で",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/graph_screen.mp4",
+        "bg/office_window.mp4",
+        "bg/portrait.mp4",
+        "bg/city_night.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d5_am_designer/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 162
+    }
+  ]
+}

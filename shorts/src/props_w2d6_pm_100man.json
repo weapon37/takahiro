@@ -1,0 +1,159 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/pawn.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "「即月収100万」の**裏側**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/coins_stack.mp4",
+        "bg/city_night.mp4",
+        "bg/graph_screen.mp4",
+        "bg/subway_commute.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d6_pm_100man/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 141
+    },
+    {
+      "role": "body",
+      "telop": "稼いでるのは**売る側**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/coins_stack.mp4",
+        "bg/city_night.mp4",
+        "bg/graph_screen.mp4",
+        "bg/subway_commute.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d6_pm_100man/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 119
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "再現性のない成功例",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/coins_stack.mp4",
+        "bg/city_night.mp4",
+        "bg/graph_screen.mp4",
+        "bg/subway_commute.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d6_pm_100man/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 126
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "「簡単・今すぐ」は要注意",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/coins_stack.mp4",
+        "bg/city_night.mp4",
+        "bg/graph_screen.mp4",
+        "bg/subway_commute.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d6_pm_100man/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 123
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "あなたが商品にされる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/coins_stack.mp4",
+        "bg/city_night.mp4",
+        "bg/graph_screen.mp4",
+        "bg/subway_commute.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d6_pm_100man/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 116
+    },
+    {
+      "role": "body",
+      "telop": "本物は**地味**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/coins_stack.mp4",
+        "bg/city_night.mp4",
+        "bg/graph_screen.mp4",
+        "bg/subway_commute.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d6_pm_100man/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 114
+    },
+    {
+      "role": "flip",
+      "telop": "まず**時間**が返る、から",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/coins_stack.mp4",
+        "bg/city_night.mp4",
+        "bg/graph_screen.mp4",
+        "bg/subway_commute.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d6_pm_100man/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 165
+    },
+    {
+      "role": "vs",
+      "telop": "課金した経験を**供養**",
+      "vs": {
+        "left": "課金アリ",
+        "right": "課金ナシ"
+      },
+      "bgVideo": null,
+      "bgClips": [
+        "bg/coins_stack.mp4",
+        "bg/city_night.mp4",
+        "bg/graph_screen.mp4",
+        "bg/subway_commute.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d6_pm_100man/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 152
+    }
+  ]
+}

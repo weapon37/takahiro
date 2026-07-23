@@ -1,0 +1,159 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/pawn.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "「奪われる」は**半分ウソ**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/business_walking.mp4",
+        "bg/subway_commute.mp4",
+        "bg/city_night.mp4",
+        "bg/office_window.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d1_pm_ubawareru/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 119
+    },
+    {
+      "role": "body",
+      "telop": "消えるのは**作業**だけ",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/business_walking.mp4",
+        "bg/subway_commute.mp4",
+        "bg/city_night.mp4",
+        "bg/office_window.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d1_pm_ubawareru/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 138
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "型のある書き物",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/business_walking.mp4",
+        "bg/subway_commute.mp4",
+        "bg/city_night.mp4",
+        "bg/office_window.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d1_pm_ubawareru/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 106
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "集めてまとめる調べ物",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/business_walking.mp4",
+        "bg/subway_commute.mp4",
+        "bg/city_night.mp4",
+        "bg/office_window.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d1_pm_ubawareru/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 94
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "転記・計算のくり返し",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/business_walking.mp4",
+        "bg/subway_commute.mp4",
+        "bg/city_night.mp4",
+        "bg/office_window.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d1_pm_ubawareru/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 83
+    },
+    {
+      "role": "body",
+      "telop": "**判断と責任**は残る",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/business_walking.mp4",
+        "bg/subway_commute.mp4",
+        "bg/city_night.mp4",
+        "bg/office_window.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d1_pm_ubawareru/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 186
+    },
+    {
+      "role": "flip",
+      "telop": "作業を手放し**判断に使う**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/business_walking.mp4",
+        "bg/subway_commute.mp4",
+        "bg/city_night.mp4",
+        "bg/office_window.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d1_pm_ubawareru/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 206
+    },
+    {
+      "role": "vs",
+      "telop": "あなたは**どっち側**？",
+      "vs": {
+        "left": "奪われる",
+        "right": "使いこなす"
+      },
+      "bgVideo": null,
+      "bgClips": [
+        "bg/business_walking.mp4",
+        "bg/subway_commute.mp4",
+        "bg/city_night.mp4",
+        "bg/office_window.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d1_pm_ubawareru/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 138
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/pawn.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "丸投げNG、**3つ**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/city_night.mp4",
+        "bg/graph_screen.mp4",
+        "bg/office_window.mp4",
+        "bg/business_walking.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d4_pm_marunage/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 112
+    },
+    {
+      "role": "body",
+      "telop": "任せる所を**分ける**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/city_night.mp4",
+        "bg/graph_screen.mp4",
+        "bg/office_window.mp4",
+        "bg/business_walking.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d4_pm_marunage/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 136
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "数字・事実の最終確認",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/city_night.mp4",
+        "bg/graph_screen.mp4",
+        "bg/office_window.mp4",
+        "bg/business_walking.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d4_pm_marunage/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 177
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "心が動く文章の判断",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/city_night.mp4",
+        "bg/graph_screen.mp4",
+        "bg/office_window.mp4",
+        "bg/business_walking.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d4_pm_marunage/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 169
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "機密をそのまま入れる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/city_night.mp4",
+        "bg/graph_screen.mp4",
+        "bg/office_window.mp4",
+        "bg/business_walking.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d4_pm_marunage/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 162
+    },
+    {
+      "role": "body",
+      "telop": "信頼を**一発**で失う",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/city_night.mp4",
+        "bg/graph_screen.mp4",
+        "bg/office_window.mp4",
+        "bg/business_walking.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d4_pm_marunage/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 126
+    },
+    {
+      "role": "flip",
+      "telop": "下書きAI、**仕上げは自分**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/city_night.mp4",
+        "bg/graph_screen.mp4",
+        "bg/office_window.mp4",
+        "bg/business_walking.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d4_pm_marunage/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 164
+    },
+    {
+      "role": "vs",
+      "telop": "あなたは**どっち派**？",
+      "vs": {
+        "left": "丸投げ派",
+        "right": "仕上げ派"
+      },
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/city_night.mp4",
+        "bg/graph_screen.mp4",
+        "bg/office_window.mp4",
+        "bg/business_walking.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d4_pm_marunage/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 165
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "文字起こしAI **BEST3**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/office_window.mp4",
+        "bg/business_walking.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d2_am_gijiroku/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 141
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "NotebookLM",
+      "telop": "資料もまとめて要約",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/office_window.mp4",
+        "bg/business_walking.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d2_am_gijiroku/02.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 73
+    },
+    {
+      "role": "body",
+      "telop": "会議＋資料を**まとめて要約**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/office_window.mp4",
+        "bg/business_walking.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d2_am_gijiroku/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 177
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "tl;dv",
+      "telop": "オンライン会議に自動参加",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/office_window.mp4",
+        "bg/business_walking.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d2_am_gijiroku/04.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 68
+    },
+    {
+      "role": "body",
+      "telop": "会議に**自動参加**して記録",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/office_window.mp4",
+        "bg/business_walking.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d2_am_gijiroku/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 182
+    },
+    {
+      "role": "save",
+      "telop": "日本語会議なら1位を**保存**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/office_window.mp4",
+        "bg/business_walking.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d2_am_gijiroku/06.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 141
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "Notta",
+      "telop": "日本語がとにかく強い",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/office_window.mp4",
+        "bg/business_walking.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d2_am_gijiroku/07.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 61
+    },
+    {
+      "role": "body",
+      "telop": "話者分け＋**やること**まで自動",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/office_window.mp4",
+        "bg/business_walking.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d2_am_gijiroku/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 191
+    },
+    {
+      "role": "body",
+      "telop": "議事録が**すぐ終わる**",
+      "time": {
+        "before": "30分",
+        "after": "5分",
+        "label": "会議後の議事録(目安)"
+      },
+      "bgVideo": null,
+      "bgClips": [
+        "bg/office_window.mp4",
+        "bg/business_walking.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d2_am_gijiroku/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 121
+    },
+    {
+      "role": "cta",
+      "telop": "週の会議数を↓\n**コメント**で",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/office_window.mp4",
+        "bg/business_walking.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d2_am_gijiroku/10.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 148
+    }
+  ]
+}

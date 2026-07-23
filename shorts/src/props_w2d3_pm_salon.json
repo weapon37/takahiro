@@ -1,0 +1,159 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/pawn.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "入る前に**60秒**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/coins_stack.mp4",
+        "bg/city_night.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/subway_commute.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d3_pm_salon/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 116
+    },
+    {
+      "role": "body",
+      "telop": "中身の大半は**無料**で追える",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/coins_stack.mp4",
+        "bg/city_night.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/subway_commute.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d3_pm_salon/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 133
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "最新情報は無料が速い時も",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/coins_stack.mp4",
+        "bg/city_night.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/subway_commute.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d3_pm_salon/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 182
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "手を動かすのは自分",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/coins_stack.mp4",
+        "bg/city_night.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/subway_commute.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d3_pm_salon/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 124
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "更新が止まる所もある",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/coins_stack.mp4",
+        "bg/city_night.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/subway_commute.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d3_pm_salon/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 109
+    },
+    {
+      "role": "body",
+      "telop": "でも**アリな人**もいる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/coins_stack.mp4",
+        "bg/city_night.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/subway_commute.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d3_pm_salon/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 83
+    },
+    {
+      "role": "flip",
+      "telop": "買うのは**強制力と人脈**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/coins_stack.mp4",
+        "bg/city_night.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/subway_commute.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d3_pm_salon/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 200
+    },
+    {
+      "role": "vs",
+      "telop": "あなたは**どっち**？",
+      "vs": {
+        "left": "入る派",
+        "right": "入らない派"
+      },
+      "bgVideo": null,
+      "bgClips": [
+        "bg/coins_stack.mp4",
+        "bg/city_night.mp4",
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/subway_commute.mp4",
+        "bg/portrait.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d3_pm_salon/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 198
+    }
+  ]
+}

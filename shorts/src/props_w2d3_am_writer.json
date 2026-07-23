@@ -1,0 +1,176 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "ライターの**BEST3**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/office_window.mp4",
+        "bg/graph_screen.mp4",
+        "bg/portrait.mp4",
+        "bg/sunrise_city.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d3_am_writer/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 140
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "Perplexity",
+      "telop": "出典つきで調べる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/office_window.mp4",
+        "bg/graph_screen.mp4",
+        "bg/portrait.mp4",
+        "bg/sunrise_city.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d3_am_writer/02.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 112
+    },
+    {
+      "role": "body",
+      "telop": "**裏取り**が一気に速く",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/office_window.mp4",
+        "bg/graph_screen.mp4",
+        "bg/portrait.mp4",
+        "bg/sunrise_city.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d3_am_writer/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 157
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "ChatGPT",
+      "telop": "構成と下書き",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/office_window.mp4",
+        "bg/graph_screen.mp4",
+        "bg/portrait.mp4",
+        "bg/sunrise_city.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d3_am_writer/04.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 112
+    },
+    {
+      "role": "body",
+      "telop": "**白紙の時間**が消える",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/office_window.mp4",
+        "bg/graph_screen.mp4",
+        "bg/portrait.mp4",
+        "bg/sunrise_city.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d3_am_writer/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 147
+    },
+    {
+      "role": "save",
+      "telop": "質を決める1位を**保存**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/office_window.mp4",
+        "bg/graph_screen.mp4",
+        "bg/portrait.mp4",
+        "bg/sunrise_city.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d3_am_writer/06.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 129
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "Claude",
+      "telop": "文章のトーンを整える",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/office_window.mp4",
+        "bg/graph_screen.mp4",
+        "bg/portrait.mp4",
+        "bg/sunrise_city.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d3_am_writer/07.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 99
+    },
+    {
+      "role": "body",
+      "telop": "**推敲**と読みやすさが段違い",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/office_window.mp4",
+        "bg/graph_screen.mp4",
+        "bg/portrait.mp4",
+        "bg/sunrise_city.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d3_am_writer/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 210
+    },
+    {
+      "role": "cta",
+      "telop": "一番遅い工程を↓\n**コメント**で",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/office_window.mp4",
+        "bg/graph_screen.mp4",
+        "bg/portrait.mp4",
+        "bg/sunrise_city.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_w2d3_am_writer/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 179
+    }
+  ]
+}
