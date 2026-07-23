@@ -183,7 +183,7 @@ const Telop: React.FC<{text: string; style: Scene['telopStyle']}> = ({text, styl
     fontSize,
     lineHeight: 1.35,
     textAlign: 'center',
-    whiteSpace: 'pre-wrap',
+    whiteSpace: 'pre-wrap', textWrap: 'balance',
   };
   return (
     <div

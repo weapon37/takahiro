@@ -92,7 +92,7 @@ const Telop: React.FC<{text: string; big?: boolean}> = ({text, big}) => {
           fontSize: big ? 104 : 94,
           lineHeight: 1.5,
           color: '#ffffff',
-          whiteSpace: 'pre-wrap',
+          whiteSpace: 'pre-wrap', textWrap: 'balance',
           textShadow: outline(BRAND.ink),
         }}
       >
@@ -180,7 +180,7 @@ const VsPanel: React.FC<{vs: {left: string; right: string}}> = ({vs}) => {
     color: '#ffffff',
     textAlign: 'center',
     lineHeight: 1.3,
-    whiteSpace: 'pre-wrap',
+    whiteSpace: 'pre-wrap', textWrap: 'balance',
   };
   return (
     <>

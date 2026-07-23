@@ -290,6 +290,7 @@ const Telop: React.FC<{text: string; calm?: boolean}> = ({text, calm}) => {
           lineHeight: 1.65,
           color: BRAND.ink,
           whiteSpace: 'pre-wrap',
+          textWrap: 'balance',
           textShadow: outline('#ffffff'),
         }}
       >
