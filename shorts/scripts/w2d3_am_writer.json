@@ -1,0 +1,68 @@
+{
+  "template": "RankingVideo",
+  "title": "職業別・入れるべきAI BEST3【ライター編】",
+  "caption": "書く仕事の人だけ見てください。リサーチ・下書き・推敲、それぞれ最強が違います。1位は文章のトーンまで整えてくれるやつ。あなたの一番時間を食う工程は？コメントで。\n※ツールリンクは概要欄に記載 ※効果には個人差があります\n#ライター #AI活用 #文章術 #副業 #職業別AI",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "書く仕事の人だけ、見てください。工程ごとに、最強が違います。",
+      "telop": "ライターの**BEST3**"
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "Perplexity",
+      "narration": "第3位、パープレキシティ。リサーチ担当です。",
+      "telop": "出典つきで調べる"
+    },
+    {
+      "role": "body",
+      "narration": "出典リンク付きで調べてくれる。裏取りが速くなって、事実の間違いが減ります。",
+      "telop": "**裏取り**が一気に速く"
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "ChatGPT",
+      "narration": "第2位、チャットジーピーティー。構成と下書き担当。",
+      "telop": "構成と下書き"
+    },
+    {
+      "role": "body",
+      "narration": "見出しの骨組みと、たたき台を一気に。白紙から書き始める時間が消えます。",
+      "telop": "**白紙の時間**が消える"
+    },
+    {
+      "role": "save",
+      "narration": "1位は、納品の質を左右します。保存推奨です。",
+      "telop": "質を決める1位を**保存**"
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "Claude",
+      "narration": "第1位、クロード。推敲とトーン担当。",
+      "telop": "文章のトーンを整える"
+    },
+    {
+      "role": "body",
+      "narration": "長い文章の推敲に強い。堅い、やわらかい、のトーン調整も自然。読みやすさが変わります。",
+      "telop": "**推敲**と読みやすさが段違い"
+    },
+    {
+      "role": "cta",
+      "narration": "リサーチ、下書き、推敲。あなたが一番時間を食う工程は。コメントで。",
+      "telop": "一番遅い工程を↓\n**コメント**で"
+    }
+  ],
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgClips": [
+    "bg/typing_laptop.mp4",
+    "bg/coffee_desk.mp4",
+    "bg/office_window.mp4",
+    "bg/graph_screen.mp4",
+    "bg/portrait.mp4",
+    "bg/sunrise_city.mp4"
+  ]
+}

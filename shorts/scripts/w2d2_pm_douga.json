@@ -1,0 +1,68 @@
+{
+  "template": "RankingVideo",
+  "title": "動画編集AI BEST3【元カメラマンが選ぶ】",
+  "caption": "元カメラマンの私が、今いちばんラクだと思う動画編集AI TOP3。字幕もカットも、もう手作業じゃない。ショート量産はこれで回してます。あなたの詰まってる工程は？コメントで。\n※ツールリンクは概要欄に記載 ※効果には個人差があります\n#動画編集 #AI活用 #ショート動画 #副業 #CapCut",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "元カメラマンの私が選ぶ、動画編集エーアイ、ベスト3です。",
+      "telop": "動画編集AI **BEST3**"
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "Vrew",
+      "narration": "第3位、ブリュー。",
+      "telop": "音声で自動カット"
+    },
+    {
+      "role": "body",
+      "narration": "しゃべりを認識して、無言の間を自動でカット。テンポの悪い動画が、勝手に締まります。",
+      "telop": "**間**を自動で詰める"
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "CapCut",
+      "narration": "第2位、キャップカット。",
+      "telop": "字幕もテロップも自動"
+    },
+    {
+      "role": "body",
+      "narration": "字幕は自動、テンプレも豊富。スマホだけでも、ショートが一本仕上がります。",
+      "telop": "スマホだけで**1本**完成"
+    },
+    {
+      "role": "save",
+      "narration": "1位は、量産する人ほど効きます。保存しておいてください。",
+      "telop": "量産派は1位を**保存**"
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "台本×AI",
+      "narration": "第1位、台本エーアイ。チャットジーピーティーやクロード。",
+      "telop": "編集より先に「台本」"
+    },
+    {
+      "role": "body",
+      "narration": "実は、編集より台本です。フックと構成をエーアイで作れば、撮影も編集も一気に速くなる。",
+      "telop": "台本が決まれば**全部速い**"
+    },
+    {
+      "role": "cta",
+      "narration": "あなたが今、詰まってる工程はどこですか。撮影、編集、台本。コメントで。",
+      "telop": "詰まる工程を↓\n**コメント**で"
+    }
+  ],
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgClips": [
+    "bg/typing_laptop.mp4",
+    "bg/coffee_desk.mp4",
+    "bg/portrait.mp4",
+    "bg/city_night.mp4",
+    "bg/office_window.mp4",
+    "bg/graph_screen.mp4"
+  ]
+}

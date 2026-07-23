@@ -1,0 +1,68 @@
+{
+  "template": "RankingVideo",
+  "title": "職業別・入れるべきAI BEST3【デザイナー編】",
+  "caption": "デザイナーの人だけ見てください。案出し・素材・仕上げで最強が違います。1位は商用利用が安心で、Photoshopとも繋がるやつ。あなたの一番の時間泥棒は？コメントで。\n※ツールリンクは概要欄に記載 ※効果には個人差があります\n#デザイナー #AI活用 #デザイン #Photoshop #職業別AI",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "デザイナーの人だけ、見てください。工程ごとに、最強が違います。",
+      "telop": "デザイナーの**BEST3**"
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "ChatGPT",
+      "narration": "第3位、チャットジーピーティー。案出し担当。",
+      "telop": "アイデアの壁打ち"
+    },
+    {
+      "role": "body",
+      "narration": "コンセプトや配色の案を、何十個も一瞬で。ゼロから悩む時間が消えます。",
+      "telop": "**案出し**の時間がゼロに"
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "Midjourney",
+      "narration": "第2位、ミッドジャーニー。ビジュアル担当。",
+      "telop": "高品質なビジュアル"
+    },
+    {
+      "role": "body",
+      "narration": "ムードボードや、世界観のビジュアルづくりが強い。提案の説得力が上がります。",
+      "telop": "**世界観**で提案が通る"
+    },
+    {
+      "role": "save",
+      "narration": "1位は、仕事で毎日触るやつ。保存推奨です。",
+      "telop": "毎日使う1位を**保存**"
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "Adobe Firefly",
+      "narration": "第1位、アドビ ファイアフライ。",
+      "telop": "商用安心＋Photoshop連携"
+    },
+    {
+      "role": "body",
+      "narration": "商用利用が安心で、フォトショップの中でそのまま使える。仕事のワークフローに一番なじみます。",
+      "telop": "**商用安心**で現場に馴染む"
+    },
+    {
+      "role": "cta",
+      "narration": "案出し、素材、仕上げ。あなたの一番の時間泥棒は。コメントで。",
+      "telop": "時間泥棒の工程を↓\n**コメント**で"
+    }
+  ],
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgClips": [
+    "bg/typing_laptop.mp4",
+    "bg/coffee_desk.mp4",
+    "bg/graph_screen.mp4",
+    "bg/office_window.mp4",
+    "bg/portrait.mp4",
+    "bg/city_night.mp4"
+  ]
+}

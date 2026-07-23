@@ -1,0 +1,73 @@
+{
+  "template": "RankingVideo",
+  "title": "画像生成AI BEST3【サムネ・素材が10分】",
+  "caption": "サムネも資料の画像も、もう外注しなくていい。仕事で使える画像生成AI TOP3。1位は会話で細かく直せるやつ。商用利用の注意も本文で。あなたの用途もコメントで。\n※ツールリンクは概要欄に記載 ※効果には個人差があります\n#画像生成AI #AI活用 #副業 #デザイン #仕事術",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "仕事で使える、画像生成エーアイ、ベスト3です。",
+      "telop": "画像生成AI **BEST3**"
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "Canva",
+      "narration": "第3位、キャンバ。",
+      "telop": "デザイン知識ゼロでOK"
+    },
+    {
+      "role": "body",
+      "narration": "テンプレートに、エーアイ画像を組み合わせるだけ。バナーもサムネも、その場で完成します。",
+      "telop": "テンプレ＋AI画像で**即完成**"
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "Adobe Firefly",
+      "narration": "第2位、アドビ ファイアフライ。",
+      "telop": "商用利用が安心"
+    },
+    {
+      "role": "body",
+      "narration": "学習データがクリアで、仕事で使いやすい。権利まわりが不安な人は、まずここから。",
+      "telop": "権利が不安なら**まずコレ**"
+    },
+    {
+      "role": "save",
+      "narration": "1位は、案件でも毎日使うやつ。保存推奨です。",
+      "telop": "毎日使う1位を**保存**"
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "ChatGPT",
+      "narration": "第1位、チャットジーピーティー。",
+      "telop": "会話で細かく直せる"
+    },
+    {
+      "role": "body",
+      "narration": "ここをもう少し明るく、文字を入れて、と会話で修正できる。イメージにたどり着くのが一番速い。",
+      "telop": "会話で**思い通り**に近づく"
+    },
+    {
+      "role": "body",
+      "narration": "正直、最初は一晩溶かしました。でも今は、コツをつかんで、1枚10分です。",
+      "telop": "一晩溶かした画像が**10分**に"
+    },
+    {
+      "role": "cta",
+      "narration": "あなたは何の画像で困ってますか。コメントで教えてください。作り方も解説します。",
+      "telop": "困ってる画像を↓\n**コメント**で"
+    }
+  ],
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgClips": [
+    "bg/typing_laptop.mp4",
+    "bg/coffee_desk.mp4",
+    "bg/office_window.mp4",
+    "bg/graph_screen.mp4",
+    "bg/portrait.mp4",
+    "bg/city_night.mp4"
+  ]
+}

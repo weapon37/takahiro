@@ -1,0 +1,73 @@
+{
+  "template": "RankingVideo",
+  "title": "資料・スライド作成AI BEST3【1時間→10分】",
+  "caption": "提案資料づくりで残業してる人へ。文章を放り込むだけでスライドになるAI TOP3。1位は構成ごと一発。見た目も整います。あなたは何の資料で消耗してる？コメントで。\n※ツールリンクは概要欄に記載 ※効果には個人差があります\n#資料作成 #スライド #AI活用 #業務効率化 #仕事術",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "資料づくりで残業してる人へ。スライド作成エーアイ、ベスト3です。",
+      "telop": "スライドAI **BEST3**"
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "Canva",
+      "narration": "第3位、キャンバ。",
+      "telop": "テンプレで見た目が整う"
+    },
+    {
+      "role": "body",
+      "narration": "デザインの型が豊富。中身が決まってるなら、見た目はここで一気に整います。",
+      "telop": "**見た目**はここで即完成"
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "ChatGPT",
+      "narration": "第2位、チャットジーピーティー。",
+      "telop": "構成と話す内容を作る"
+    },
+    {
+      "role": "body",
+      "narration": "スライドの構成と、各ページで話す内容を先に固める。中身が空っぽの資料が、なくなります。",
+      "telop": "**構成**から先に固める"
+    },
+    {
+      "role": "save",
+      "narration": "1位は、資料が多い人ほど効きます。保存を。",
+      "telop": "資料多い人は1位を**保存**"
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "Gamma",
+      "narration": "第1位、ガンマ。",
+      "telop": "文章から一発でスライド"
+    },
+    {
+      "role": "body",
+      "narration": "箇条書きを放り込むだけで、構成もデザインも一発。1時間の資料が、10分の目安に。",
+      "telop": "資料が**一発**で形になる",
+      "time": {
+        "before": "60分",
+        "after": "10分",
+        "label": "提案資料1本(目安)"
+      }
+    },
+    {
+      "role": "cta",
+      "narration": "あなたは何の資料で消耗してますか。コメントで教えてください。",
+      "telop": "消耗する資料を↓\n**コメント**で"
+    }
+  ],
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgClips": [
+    "bg/office_window.mp4",
+    "bg/typing_laptop.mp4",
+    "bg/graph_screen.mp4",
+    "bg/business_walking.mp4",
+    "bg/coffee_desk.mp4",
+    "bg/portrait.mp4"
+  ]
+}

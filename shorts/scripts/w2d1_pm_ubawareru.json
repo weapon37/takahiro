@@ -1,0 +1,64 @@
+{
+  "template": "ContrarianVideo",
+  "title": "「AIに仕事を奪われる」は半分ウソ",
+  "caption": "AIに仕事を奪われる、って怖がる前に。消えるのは「作業」で、残るのは「判断」。奪われる側と使う側を分けるのは1つだけ。あなたの仕事、どっち側？理由もコメントで。\n※個人の見解です\n#AI活用 #仕事術 #AIに仕事を奪われる #キャリア #働き方",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "エーアイに仕事を奪われる。これ、半分はウソです。",
+      "telop": "「奪われる」は**半分ウソ**"
+    },
+    {
+      "role": "body",
+      "narration": "消えるのは、仕事まるごとじゃない。中の、単純作業だけです。",
+      "telop": "消えるのは**作業**だけ"
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "narration": "消える作業。1、決まった型のある書き物。",
+      "telop": "型のある書き物"
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "narration": "2、集めて、まとめるだけの調べ物。",
+      "telop": "集めてまとめる調べ物"
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "narration": "3、転記や、計算のくり返し。",
+      "telop": "転記・計算のくり返し"
+    },
+    {
+      "role": "body",
+      "narration": "でも、どれをやるか決める、最後に責任を持つ。ここは残ります。むしろ価値が上がる。",
+      "telop": "**判断と責任**は残る"
+    },
+    {
+      "role": "flip",
+      "narration": "奪われる側と、使う側を分けるのは1つ。作業を手放して、判断に時間を使えるかどうかです。",
+      "telop": "作業を手放し**判断に使う**"
+    },
+    {
+      "role": "vs",
+      "narration": "あなたの仕事は、どっち側ですか。理由もセットで、コメントで。",
+      "telop": "あなたは**どっち側**？",
+      "vs": {
+        "left": "奪われる",
+        "right": "使いこなす"
+      }
+    }
+  ],
+  "bgm": "bgm/pawn.mp3",
+  "bgClips": [
+    "bg/business_walking.mp4",
+    "bg/subway_commute.mp4",
+    "bg/city_night.mp4",
+    "bg/office_window.mp4",
+    "bg/typing_laptop.mp4",
+    "bg/portrait.mp4"
+  ]
+}

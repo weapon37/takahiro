@@ -1,0 +1,68 @@
+{
+  "template": "RankingVideo",
+  "title": "全部0円！無料AIランキング【画像・動画編】",
+  "caption": "1円も払わずに、画像も動画も作れる無料AI TOP3。第2弾は素材づくり特化。1位の無料枠は正直おかしいレベル。どれから使うか迷ったら用途をコメントで。\n※ツールリンクは概要欄に記載 ※無料枠は変わることがあります\n#無料AI #画像生成 #動画編集 #AI活用 #副業",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "全部0円。画像と動画が作れる、無料エーアイ、ベスト3です。",
+      "telop": "無料AI **BEST3**\n【画像・動画編】"
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "CapCut",
+      "narration": "第3位、キャップカット。",
+      "telop": "動画編集が無料"
+    },
+    {
+      "role": "body",
+      "narration": "字幕もカットも自動で、基本は無料。スマホだけでショートが作れます。",
+      "telop": "スマホだけ・**無料**で編集"
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "Canva",
+      "narration": "第2位、キャンバ。",
+      "telop": "画像もテンプレも無料枠"
+    },
+    {
+      "role": "body",
+      "narration": "無料枠でも、バナーやサムネが十分作れる。素材とテンプレの量が正義です。",
+      "telop": "無料枠でも**素材が豊富**"
+    },
+    {
+      "role": "save",
+      "narration": "1位の無料枠は、正直おかしいレベル。保存推奨です。",
+      "telop": "1位の無料枠を**保存**"
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "Google Gemini",
+      "narration": "第1位、グーグル ジェミニ。",
+      "telop": "画像生成まで無料枠で"
+    },
+    {
+      "role": "body",
+      "narration": "会話しながら、画像生成まで無料枠で試せる。まず0円で、どこまでいけるか試すのに最適です。",
+      "telop": "**0円**でどこまでいけるか"
+    },
+    {
+      "role": "cta",
+      "narration": "画像、動画、どっちから使いますか。用途をコメントで教えてください。",
+      "telop": "用途を↓\n**コメント**で"
+    }
+  ],
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgClips": [
+    "bg/typing_laptop.mp4",
+    "bg/coffee_desk.mp4",
+    "bg/graph_screen.mp4",
+    "bg/portrait.mp4",
+    "bg/city_night.mp4",
+    "bg/sunrise_city.mp4"
+  ]
+}

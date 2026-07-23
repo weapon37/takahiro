@@ -1,0 +1,64 @@
+{
+  "template": "ContrarianVideo",
+  "title": "「AI副業は稼げない」と言う人へ",
+  "caption": "「AI副業は稼げない」よく聞きます。でも、稼げないんじゃなくて、続けてないだけ。いきなり収益を狙って挫折してる人が多い。正しい順番は、時短→発信→収益。焦らないでいきましょう。あなたは今どの段階？\n※個人の見解です\n#AI副業 #副業 #継続 #お金の勉強 #AI活用",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "エーアイ副業は稼げない。よく言われます。でも、それ、違います。",
+      "telop": "「稼げない」は**違う**"
+    },
+    {
+      "role": "body",
+      "narration": "稼げないんじゃなくて、多くの人が、続けてないだけなんです。",
+      "telop": "稼げないより**続けてない**"
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "narration": "つまずく理由、1。いきなり収益を狙って、挫折する。",
+      "telop": "いきなり収益を狙う"
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "narration": "2、成果が出る前に、比べて、やめる。",
+      "telop": "人と比べてやめる"
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "narration": "3、時間が増える、という最初の成果を、飛ばしてる。",
+      "telop": "最初の成果を飛ばす"
+    },
+    {
+      "role": "body",
+      "narration": "本当は、お金より先に、時間が返ってくる。ここが最初の一歩です。",
+      "telop": "まず**時間**が返ってくる"
+    },
+    {
+      "role": "flip",
+      "narration": "正しい順番は、時短、発信、収益。この順で、焦らずいきましょう。",
+      "telop": "順番は**時短→発信→収益**"
+    },
+    {
+      "role": "vs",
+      "narration": "あなたは今、どの段階ですか。時短、発信、収益。コメントで教えてください。",
+      "telop": "今どの段階？**コメント**へ",
+      "vs": {
+        "left": "時短・発信",
+        "right": "もう収益"
+      }
+    }
+  ],
+  "bgm": "bgm/pawn.mp3",
+  "bgClips": [
+    "bg/sunrise_city.mp4",
+    "bg/city_night.mp4",
+    "bg/business_walking.mp4",
+    "bg/typing_laptop.mp4",
+    "bg/coins_stack.mp4",
+    "bg/portrait.mp4"
+  ]
+}
