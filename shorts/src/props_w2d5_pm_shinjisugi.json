@@ -9,36 +9,36 @@
       "telop": "信じすぎは**事故**る",
       "bgVideo": null,
       "bgClips": [
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/city_night.mp4",
-        "bg/office_window.mp4",
-        "bg/subway_commute.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_keys.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_sky.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d5_pm_shinjisugi/01.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 99
+      "durationInFrames": 87
     },
     {
       "role": "body",
       "telop": "AIは平気で**嘘をつく**",
       "bgVideo": null,
       "bgClips": [
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/city_night.mp4",
-        "bg/office_window.mp4",
-        "bg/subway_commute.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_keys.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_sky.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d5_pm_shinjisugi/02.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 114
+      "durationInFrames": 116
     },
     {
       "role": "point",
@@ -46,18 +46,18 @@
       "telop": "ありもしない事実を作る",
       "bgVideo": null,
       "bgClips": [
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/city_night.mp4",
-        "bg/office_window.mp4",
-        "bg/subway_commute.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_keys.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_sky.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d5_pm_shinjisugi/03.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 145
+      "durationInFrames": 141
     },
     {
       "role": "point",
@@ -65,18 +65,18 @@
       "telop": "古い情報を今のように",
       "bgVideo": null,
       "bgClips": [
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/city_night.mp4",
-        "bg/office_window.mp4",
-        "bg/subway_commute.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_keys.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_sky.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d5_pm_shinjisugi/04.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 100
+      "durationInFrames": 106
     },
     {
       "role": "point",
@@ -84,54 +84,54 @@
       "telop": "それっぽいが的外れ",
       "bgVideo": null,
       "bgClips": [
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/city_night.mp4",
-        "bg/office_window.mp4",
-        "bg/subway_commute.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_keys.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_sky.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d5_pm_shinjisugi/05.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 95
+      "durationInFrames": 99
     },
     {
       "role": "body",
       "telop": "気づかず出すと**信頼を失う**",
       "bgVideo": null,
       "bgClips": [
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/city_night.mp4",
-        "bg/office_window.mp4",
-        "bg/subway_commute.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_keys.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_sky.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d5_pm_shinjisugi/06.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 100
+      "durationInFrames": 107
     },
     {
       "role": "flip",
       "telop": "AIは**たたき台**、裏取りは自分",
       "bgVideo": null,
       "bgClips": [
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/city_night.mp4",
-        "bg/office_window.mp4",
-        "bg/subway_commute.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_keys.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_sky.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d5_pm_shinjisugi/07.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 184
+      "durationInFrames": 196
     },
     {
       "role": "vs",
@@ -142,18 +142,18 @@
       },
       "bgVideo": null,
       "bgClips": [
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/city_night.mp4",
-        "bg/office_window.mp4",
-        "bg/subway_commute.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_keys.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_sky.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d5_pm_shinjisugi/08.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 157
+      "durationInFrames": 160
     }
   ]
 }

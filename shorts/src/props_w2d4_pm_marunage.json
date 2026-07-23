@@ -9,30 +9,30 @@
       "telop": "丸投げNG、**3つ**",
       "bgVideo": null,
       "bgClips": [
-        "bg/typing_laptop.mp4",
-        "bg/city_night.mp4",
-        "bg/graph_screen.mp4",
-        "bg/office_window.mp4",
-        "bg/business_walking.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_keys.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_notes.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_pm_marunage/01.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 112
+      "durationInFrames": 116
     },
     {
       "role": "body",
       "telop": "任せる所を**分ける**",
       "bgVideo": null,
       "bgClips": [
-        "bg/typing_laptop.mp4",
-        "bg/city_night.mp4",
-        "bg/graph_screen.mp4",
-        "bg/office_window.mp4",
-        "bg/business_walking.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_keys.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_notes.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_pm_marunage/02.wav",
@@ -46,18 +46,18 @@
       "telop": "数字・事実の最終確認",
       "bgVideo": null,
       "bgClips": [
-        "bg/typing_laptop.mp4",
-        "bg/city_night.mp4",
-        "bg/graph_screen.mp4",
-        "bg/office_window.mp4",
-        "bg/business_walking.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_keys.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_notes.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_pm_marunage/03.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 177
+      "durationInFrames": 174
     },
     {
       "role": "point",
@@ -65,18 +65,18 @@
       "telop": "心が動く文章の判断",
       "bgVideo": null,
       "bgClips": [
-        "bg/typing_laptop.mp4",
-        "bg/city_night.mp4",
-        "bg/graph_screen.mp4",
-        "bg/office_window.mp4",
-        "bg/business_walking.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_keys.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_notes.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_pm_marunage/04.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 169
+      "durationInFrames": 160
     },
     {
       "role": "point",
@@ -84,54 +84,54 @@
       "telop": "機密をそのまま入れる",
       "bgVideo": null,
       "bgClips": [
-        "bg/typing_laptop.mp4",
-        "bg/city_night.mp4",
-        "bg/graph_screen.mp4",
-        "bg/office_window.mp4",
-        "bg/business_walking.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_keys.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_notes.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_pm_marunage/05.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 162
+      "durationInFrames": 147
     },
     {
       "role": "body",
       "telop": "信頼を**一発**で失う",
       "bgVideo": null,
       "bgClips": [
-        "bg/typing_laptop.mp4",
-        "bg/city_night.mp4",
-        "bg/graph_screen.mp4",
-        "bg/office_window.mp4",
-        "bg/business_walking.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_keys.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_notes.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_pm_marunage/06.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 126
+      "durationInFrames": 121
     },
     {
       "role": "flip",
       "telop": "下書きAI、**仕上げは自分**",
       "bgVideo": null,
       "bgClips": [
-        "bg/typing_laptop.mp4",
-        "bg/city_night.mp4",
-        "bg/graph_screen.mp4",
-        "bg/office_window.mp4",
-        "bg/business_walking.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_keys.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_notes.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_pm_marunage/07.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 164
+      "durationInFrames": 162
     },
     {
       "role": "vs",
@@ -142,18 +142,18 @@
       },
       "bgVideo": null,
       "bgClips": [
-        "bg/typing_laptop.mp4",
-        "bg/city_night.mp4",
-        "bg/graph_screen.mp4",
-        "bg/office_window.mp4",
-        "bg/business_walking.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_keys.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_notes.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_pm_marunage/08.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 165
+      "durationInFrames": 174
     }
   ]
 }

@@ -9,18 +9,18 @@
       "telop": "スライドAI **BEST3**",
       "bgVideo": null,
       "bgClips": [
-        "bg/office_window.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/business_walking.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_am_shiryo/01.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 140
+      "durationInFrames": 148
     },
     {
       "role": "rank",
@@ -29,36 +29,36 @@
       "telop": "テンプレで見た目が整う",
       "bgVideo": null,
       "bgClips": [
-        "bg/office_window.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/business_walking.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_am_shiryo/02.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 42
+      "durationInFrames": 51
     },
     {
       "role": "body",
       "telop": "**見た目**はここで即完成",
       "bgVideo": null,
       "bgClips": [
-        "bg/office_window.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/business_walking.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_am_shiryo/03.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 176
+      "durationInFrames": 177
     },
     {
       "role": "rank",
@@ -67,54 +67,54 @@
       "telop": "構成と話す内容を作る",
       "bgVideo": null,
       "bgClips": [
-        "bg/office_window.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/business_walking.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_am_shiryo/04.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 63
+      "durationInFrames": 59
     },
     {
       "role": "body",
       "telop": "**構成**から先に固める",
       "bgVideo": null,
       "bgClips": [
-        "bg/office_window.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/business_walking.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_am_shiryo/05.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 205
+      "durationInFrames": 212
     },
     {
       "role": "save",
       "telop": "資料多い人は1位を**保存**",
       "bgVideo": null,
       "bgClips": [
-        "bg/office_window.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/business_walking.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_am_shiryo/06.wav",
       "eraseIn": true,
       "playWhoosh": false,
-      "durationInFrames": 119
+      "durationInFrames": 121
     },
     {
       "role": "rank",
@@ -123,18 +123,18 @@
       "telop": "文章から一発でスライド",
       "bgVideo": null,
       "bgClips": [
-        "bg/office_window.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/business_walking.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_am_shiryo/07.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 63
+      "durationInFrames": 52
     },
     {
       "role": "body",
@@ -146,36 +146,36 @@
       },
       "bgVideo": null,
       "bgClips": [
-        "bg/office_window.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/business_walking.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_am_shiryo/08.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 208
+      "durationInFrames": 181
     },
     {
       "role": "cta",
       "telop": "消耗する資料を↓\n**コメント**で",
       "bgVideo": null,
       "bgClips": [
-        "bg/office_window.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/business_walking.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_am_shiryo/09.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 135
+      "durationInFrames": 129
     }
   ]
 }

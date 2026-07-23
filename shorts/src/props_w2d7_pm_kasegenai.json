@@ -9,12 +9,12 @@
       "telop": "「稼げない」は**違う**",
       "bgVideo": null,
       "bgClips": [
-        "bg/sunrise_city.mp4",
-        "bg/city_night.mp4",
-        "bg/business_walking.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/coins_stack.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_sky.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_notes.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d7_pm_kasegenai/01.wav",
@@ -27,18 +27,18 @@
       "telop": "稼げないより**続けてない**",
       "bgVideo": null,
       "bgClips": [
-        "bg/sunrise_city.mp4",
-        "bg/city_night.mp4",
-        "bg/business_walking.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/coins_stack.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_sky.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_notes.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d7_pm_kasegenai/02.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 111
+      "durationInFrames": 104
     },
     {
       "role": "point",
@@ -46,12 +46,12 @@
       "telop": "いきなり収益を狙う",
       "bgVideo": null,
       "bgClips": [
-        "bg/sunrise_city.mp4",
-        "bg/city_night.mp4",
-        "bg/business_walking.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/coins_stack.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_sky.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_notes.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d7_pm_kasegenai/03.wav",
@@ -65,18 +65,18 @@
       "telop": "人と比べてやめる",
       "bgVideo": null,
       "bgClips": [
-        "bg/sunrise_city.mp4",
-        "bg/city_night.mp4",
-        "bg/business_walking.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/coins_stack.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_sky.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_notes.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d7_pm_kasegenai/04.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 107
+      "durationInFrames": 102
     },
     {
       "role": "point",
@@ -84,48 +84,48 @@
       "telop": "最初の成果を飛ばす",
       "bgVideo": null,
       "bgClips": [
-        "bg/sunrise_city.mp4",
-        "bg/city_night.mp4",
-        "bg/business_walking.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/coins_stack.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_sky.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_notes.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d7_pm_kasegenai/05.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 119
+      "durationInFrames": 121
     },
     {
       "role": "body",
       "telop": "まず**時間**が返ってくる",
       "bgVideo": null,
       "bgClips": [
-        "bg/sunrise_city.mp4",
-        "bg/city_night.mp4",
-        "bg/business_walking.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/coins_stack.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_sky.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_notes.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d7_pm_kasegenai/06.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 157
+      "durationInFrames": 145
     },
     {
       "role": "flip",
       "telop": "順番は**時短→発信→収益**",
       "bgVideo": null,
       "bgClips": [
-        "bg/sunrise_city.mp4",
-        "bg/city_night.mp4",
-        "bg/business_walking.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/coins_stack.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_sky.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_notes.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d7_pm_kasegenai/07.wav",
@@ -142,18 +142,18 @@
       },
       "bgVideo": null,
       "bgClips": [
-        "bg/sunrise_city.mp4",
-        "bg/city_night.mp4",
-        "bg/business_walking.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/coins_stack.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_sky.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_notes.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d7_pm_kasegenai/08.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 191
+      "durationInFrames": 200
     }
   ]
 }

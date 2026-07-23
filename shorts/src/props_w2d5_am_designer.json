@@ -9,18 +9,18 @@
       "telop": "デザイナーの**BEST3**",
       "bgVideo": null,
       "bgClips": [
-        "bg/typing_laptop.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/graph_screen.mp4",
-        "bg/office_window.mp4",
-        "bg/portrait.mp4",
-        "bg/city_night.mp4"
+        "bg/nb_camera.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_keys.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d5_am_designer/01.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 126
+      "durationInFrames": 136
     },
     {
       "role": "rank",
@@ -29,12 +29,12 @@
       "telop": "アイデアの壁打ち",
       "bgVideo": null,
       "bgClips": [
-        "bg/typing_laptop.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/graph_screen.mp4",
-        "bg/office_window.mp4",
-        "bg/portrait.mp4",
-        "bg/city_night.mp4"
+        "bg/nb_camera.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_keys.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d5_am_designer/02.wav",
@@ -47,18 +47,18 @@
       "telop": "**案出し**の時間がゼロに",
       "bgVideo": null,
       "bgClips": [
-        "bg/typing_laptop.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/graph_screen.mp4",
-        "bg/office_window.mp4",
-        "bg/portrait.mp4",
-        "bg/city_night.mp4"
+        "bg/nb_camera.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_keys.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d5_am_designer/03.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 169
+      "durationInFrames": 153
     },
     {
       "role": "rank",
@@ -67,30 +67,30 @@
       "telop": "高品質なビジュアル",
       "bgVideo": null,
       "bgClips": [
-        "bg/typing_laptop.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/graph_screen.mp4",
-        "bg/office_window.mp4",
-        "bg/portrait.mp4",
-        "bg/city_night.mp4"
+        "bg/nb_camera.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_keys.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d5_am_designer/04.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 111
+      "durationInFrames": 119
     },
     {
       "role": "body",
       "telop": "**世界観**で提案が通る",
       "bgVideo": null,
       "bgClips": [
-        "bg/typing_laptop.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/graph_screen.mp4",
-        "bg/office_window.mp4",
-        "bg/portrait.mp4",
-        "bg/city_night.mp4"
+        "bg/nb_camera.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_keys.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d5_am_designer/05.wav",
@@ -103,18 +103,18 @@
       "telop": "毎日使う1位を**保存**",
       "bgVideo": null,
       "bgClips": [
-        "bg/typing_laptop.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/graph_screen.mp4",
-        "bg/office_window.mp4",
-        "bg/portrait.mp4",
-        "bg/city_night.mp4"
+        "bg/nb_camera.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_keys.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d5_am_designer/06.wav",
       "eraseIn": true,
       "playWhoosh": false,
-      "durationInFrames": 117
+      "durationInFrames": 126
     },
     {
       "role": "rank",
@@ -123,54 +123,54 @@
       "telop": "商用安心＋Photoshop連携",
       "bgVideo": null,
       "bgClips": [
-        "bg/typing_laptop.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/graph_screen.mp4",
-        "bg/office_window.mp4",
-        "bg/portrait.mp4",
-        "bg/city_night.mp4"
+        "bg/nb_camera.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_keys.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d5_am_designer/07.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 76
+      "durationInFrames": 82
     },
     {
       "role": "body",
       "telop": "**商用安心**で現場に馴染む",
       "bgVideo": null,
       "bgClips": [
-        "bg/typing_laptop.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/graph_screen.mp4",
-        "bg/office_window.mp4",
-        "bg/portrait.mp4",
-        "bg/city_night.mp4"
+        "bg/nb_camera.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_keys.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d5_am_designer/08.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 186
+      "durationInFrames": 182
     },
     {
       "role": "cta",
       "telop": "時間泥棒の工程を↓\n**コメント**で",
       "bgVideo": null,
       "bgClips": [
-        "bg/typing_laptop.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/graph_screen.mp4",
-        "bg/office_window.mp4",
-        "bg/portrait.mp4",
-        "bg/city_night.mp4"
+        "bg/nb_camera.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_keys.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d5_am_designer/09.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 162
+      "durationInFrames": 172
     }
   ]
 }

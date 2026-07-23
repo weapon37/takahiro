@@ -9,12 +9,12 @@
       "telop": "文字起こしAI **BEST3**",
       "bgVideo": null,
       "bgClips": [
-        "bg/office_window.mp4",
-        "bg/business_walking.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_team.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_phone.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_am_gijiroku/01.wav",
@@ -29,12 +29,12 @@
       "telop": "資料もまとめて要約",
       "bgVideo": null,
       "bgClips": [
-        "bg/office_window.mp4",
-        "bg/business_walking.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_team.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_phone.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_am_gijiroku/02.wav",
@@ -47,18 +47,18 @@
       "telop": "会議＋資料を**まとめて要約**",
       "bgVideo": null,
       "bgClips": [
-        "bg/office_window.mp4",
-        "bg/business_walking.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_team.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_phone.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_am_gijiroku/03.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 177
+      "durationInFrames": 184
     },
     {
       "role": "rank",
@@ -67,54 +67,54 @@
       "telop": "オンライン会議に自動参加",
       "bgVideo": null,
       "bgClips": [
-        "bg/office_window.mp4",
-        "bg/business_walking.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_team.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_phone.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_am_gijiroku/04.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 68
+      "durationInFrames": 52
     },
     {
       "role": "body",
       "telop": "会議に**自動参加**して記録",
       "bgVideo": null,
       "bgClips": [
-        "bg/office_window.mp4",
-        "bg/business_walking.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_team.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_phone.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_am_gijiroku/05.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 182
+      "durationInFrames": 193
     },
     {
       "role": "save",
       "telop": "日本語会議なら1位を**保存**",
       "bgVideo": null,
       "bgClips": [
-        "bg/office_window.mp4",
-        "bg/business_walking.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_team.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_phone.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_am_gijiroku/06.wav",
       "eraseIn": true,
       "playWhoosh": false,
-      "durationInFrames": 141
+      "durationInFrames": 145
     },
     {
       "role": "rank",
@@ -123,30 +123,30 @@
       "telop": "日本語がとにかく強い",
       "bgVideo": null,
       "bgClips": [
-        "bg/office_window.mp4",
-        "bg/business_walking.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_team.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_phone.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_am_gijiroku/07.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 61
+      "durationInFrames": 47
     },
     {
       "role": "body",
       "telop": "話者分け＋**やること**まで自動",
       "bgVideo": null,
       "bgClips": [
-        "bg/office_window.mp4",
-        "bg/business_walking.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_team.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_phone.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_am_gijiroku/08.wav",
@@ -164,36 +164,36 @@
       },
       "bgVideo": null,
       "bgClips": [
-        "bg/office_window.mp4",
-        "bg/business_walking.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_team.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_phone.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_am_gijiroku/09.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 121
+      "durationInFrames": 119
     },
     {
       "role": "cta",
       "telop": "週の会議数を↓\n**コメント**で",
       "bgVideo": null,
       "bgClips": [
-        "bg/office_window.mp4",
-        "bg/business_walking.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/graph_screen.mp4",
-        "bg/coffee_desk.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_team.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_cafe.mp4",
+        "bg/nb_phone.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_am_gijiroku/10.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 148
+      "durationInFrames": 145
     }
   ]
 }

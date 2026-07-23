@@ -9,18 +9,18 @@
       "telop": "今週は**この3本**だけでOK",
       "bgVideo": null,
       "bgClips": [
-        "bg/city_night.mp4",
-        "bg/sunrise_city.mp4",
-        "bg/business_walking.mp4",
-        "bg/graph_screen.mp4",
-        "bg/subway_commute.mp4",
-        "bg/office_window.mp4"
+        "bg/nb_digital.mp4",
+        "bg/nb_sky.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_cafe.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d7_am_news2/01.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 123
+      "durationInFrames": 121
     },
     {
       "role": "rank",
@@ -29,12 +29,12 @@
       "telop": "AIエージェント**本格化**",
       "bgVideo": null,
       "bgClips": [
-        "bg/city_night.mp4",
-        "bg/sunrise_city.mp4",
-        "bg/business_walking.mp4",
-        "bg/graph_screen.mp4",
-        "bg/subway_commute.mp4",
-        "bg/office_window.mp4"
+        "bg/nb_digital.mp4",
+        "bg/nb_sky.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_cafe.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d7_am_news2/02.wav",
@@ -47,18 +47,18 @@
       "telop": "作業は任せ**人は判断**へ",
       "bgVideo": null,
       "bgClips": [
-        "bg/city_night.mp4",
-        "bg/sunrise_city.mp4",
-        "bg/business_walking.mp4",
-        "bg/graph_screen.mp4",
-        "bg/subway_commute.mp4",
-        "bg/office_window.mp4"
+        "bg/nb_digital.mp4",
+        "bg/nb_sky.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_cafe.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d7_am_news2/03.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 294
+      "durationInFrames": 292
     },
     {
       "role": "rank",
@@ -67,54 +67,54 @@
       "telop": "業務用AIが**一般公開**",
       "bgVideo": null,
       "bgClips": [
-        "bg/city_night.mp4",
-        "bg/sunrise_city.mp4",
-        "bg/business_walking.mp4",
-        "bg/graph_screen.mp4",
-        "bg/subway_commute.mp4",
-        "bg/office_window.mp4"
+        "bg/nb_digital.mp4",
+        "bg/nb_sky.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_cafe.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d7_am_news2/04.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 150
+      "durationInFrames": 138
     },
     {
       "role": "body",
       "telop": "定型業務を**1つ任せる**",
       "bgVideo": null,
       "bgClips": [
-        "bg/city_night.mp4",
-        "bg/sunrise_city.mp4",
-        "bg/business_walking.mp4",
-        "bg/graph_screen.mp4",
-        "bg/subway_commute.mp4",
-        "bg/office_window.mp4"
+        "bg/nb_digital.mp4",
+        "bg/nb_sky.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_cafe.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d7_am_news2/05.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 290
+      "durationInFrames": 287
     },
     {
       "role": "save",
       "telop": "1位は**働き方に直結**",
       "bgVideo": null,
       "bgClips": [
-        "bg/city_night.mp4",
-        "bg/sunrise_city.mp4",
-        "bg/business_walking.mp4",
-        "bg/graph_screen.mp4",
-        "bg/subway_commute.mp4",
-        "bg/office_window.mp4"
+        "bg/nb_digital.mp4",
+        "bg/nb_sky.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_cafe.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d7_am_news2/06.wav",
       "eraseIn": true,
       "playWhoosh": false,
-      "durationInFrames": 136
+      "durationInFrames": 126
     },
     {
       "role": "rank",
@@ -123,54 +123,54 @@
       "telop": "新モデルで**性能が一段**上",
       "bgVideo": null,
       "bgClips": [
-        "bg/city_night.mp4",
-        "bg/sunrise_city.mp4",
-        "bg/business_walking.mp4",
-        "bg/graph_screen.mp4",
-        "bg/subway_commute.mp4",
-        "bg/office_window.mp4"
+        "bg/nb_digital.mp4",
+        "bg/nb_sky.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_cafe.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d7_am_news2/07.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 184
+      "durationInFrames": 189
     },
     {
       "role": "body",
       "telop": "来週**実測検証**します",
       "bgVideo": null,
       "bgClips": [
-        "bg/city_night.mp4",
-        "bg/sunrise_city.mp4",
-        "bg/business_walking.mp4",
-        "bg/graph_screen.mp4",
-        "bg/subway_commute.mp4",
-        "bg/office_window.mp4"
+        "bg/nb_digital.mp4",
+        "bg/nb_sky.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_cafe.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d7_am_news2/08.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 232
+      "durationInFrames": 237
     },
     {
       "role": "cta",
       "telop": "深掘りリクエストは↓\n**毎週日曜7時**",
       "bgVideo": null,
       "bgClips": [
-        "bg/city_night.mp4",
-        "bg/sunrise_city.mp4",
-        "bg/business_walking.mp4",
-        "bg/graph_screen.mp4",
-        "bg/subway_commute.mp4",
-        "bg/office_window.mp4"
+        "bg/nb_digital.mp4",
+        "bg/nb_sky.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_cafe.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d7_am_news2/09.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 177
+      "durationInFrames": 189
     }
   ]
 }

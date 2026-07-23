@@ -9,12 +9,12 @@
       "telop": "「即月収100万」の**裏側**",
       "bgVideo": null,
       "bgClips": [
-        "bg/coins_stack.mp4",
-        "bg/city_night.mp4",
-        "bg/graph_screen.mp4",
-        "bg/subway_commute.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_savings.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_sky.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d6_pm_100man/01.wav",
@@ -27,18 +27,18 @@
       "telop": "稼いでるのは**売る側**",
       "bgVideo": null,
       "bgClips": [
-        "bg/coins_stack.mp4",
-        "bg/city_night.mp4",
-        "bg/graph_screen.mp4",
-        "bg/subway_commute.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_savings.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_sky.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d6_pm_100man/02.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 119
+      "durationInFrames": 117
     },
     {
       "role": "point",
@@ -46,12 +46,12 @@
       "telop": "再現性のない成功例",
       "bgVideo": null,
       "bgClips": [
-        "bg/coins_stack.mp4",
-        "bg/city_night.mp4",
-        "bg/graph_screen.mp4",
-        "bg/subway_commute.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_savings.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_sky.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d6_pm_100man/03.wav",
@@ -65,18 +65,18 @@
       "telop": "「簡単・今すぐ」は要注意",
       "bgVideo": null,
       "bgClips": [
-        "bg/coins_stack.mp4",
-        "bg/city_night.mp4",
-        "bg/graph_screen.mp4",
-        "bg/subway_commute.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_savings.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_sky.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d6_pm_100man/04.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 123
+      "durationInFrames": 148
     },
     {
       "role": "point",
@@ -84,48 +84,48 @@
       "telop": "あなたが商品にされる",
       "bgVideo": null,
       "bgClips": [
-        "bg/coins_stack.mp4",
-        "bg/city_night.mp4",
-        "bg/graph_screen.mp4",
-        "bg/subway_commute.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_savings.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_sky.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d6_pm_100man/05.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 116
+      "durationInFrames": 147
     },
     {
       "role": "body",
       "telop": "本物は**地味**",
       "bgVideo": null,
       "bgClips": [
-        "bg/coins_stack.mp4",
-        "bg/city_night.mp4",
-        "bg/graph_screen.mp4",
-        "bg/subway_commute.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_savings.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_sky.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d6_pm_100man/06.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 114
+      "durationInFrames": 117
     },
     {
       "role": "flip",
       "telop": "まず**時間**が返る、から",
       "bgVideo": null,
       "bgClips": [
-        "bg/coins_stack.mp4",
-        "bg/city_night.mp4",
-        "bg/graph_screen.mp4",
-        "bg/subway_commute.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_savings.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_sky.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d6_pm_100man/07.wav",
@@ -142,18 +142,18 @@
       },
       "bgVideo": null,
       "bgClips": [
-        "bg/coins_stack.mp4",
-        "bg/city_night.mp4",
-        "bg/graph_screen.mp4",
-        "bg/subway_commute.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_savings.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_sky.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d6_pm_100man/08.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 152
+      "durationInFrames": 159
     }
   ]
 }

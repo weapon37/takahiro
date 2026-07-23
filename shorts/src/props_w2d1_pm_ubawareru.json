@@ -9,12 +9,12 @@
       "telop": "「奪われる」は**半分ウソ**",
       "bgVideo": null,
       "bgClips": [
-        "bg/business_walking.mp4",
-        "bg/subway_commute.mp4",
-        "bg/city_night.mp4",
-        "bg/office_window.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_sky.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d1_pm_ubawareru/01.wav",
@@ -27,18 +27,18 @@
       "telop": "消えるのは**作業**だけ",
       "bgVideo": null,
       "bgClips": [
-        "bg/business_walking.mp4",
-        "bg/subway_commute.mp4",
-        "bg/city_night.mp4",
-        "bg/office_window.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_sky.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d1_pm_ubawareru/02.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 138
+      "durationInFrames": 135
     },
     {
       "role": "point",
@@ -46,12 +46,12 @@
       "telop": "型のある書き物",
       "bgVideo": null,
       "bgClips": [
-        "bg/business_walking.mp4",
-        "bg/subway_commute.mp4",
-        "bg/city_night.mp4",
-        "bg/office_window.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_sky.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d1_pm_ubawareru/03.wav",
@@ -65,12 +65,12 @@
       "telop": "集めてまとめる調べ物",
       "bgVideo": null,
       "bgClips": [
-        "bg/business_walking.mp4",
-        "bg/subway_commute.mp4",
-        "bg/city_night.mp4",
-        "bg/office_window.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_sky.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d1_pm_ubawareru/04.wav",
@@ -84,54 +84,54 @@
       "telop": "転記・計算のくり返し",
       "bgVideo": null,
       "bgClips": [
-        "bg/business_walking.mp4",
-        "bg/subway_commute.mp4",
-        "bg/city_night.mp4",
-        "bg/office_window.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_sky.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d1_pm_ubawareru/05.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 83
+      "durationInFrames": 76
     },
     {
       "role": "body",
       "telop": "**判断と責任**は残る",
       "bgVideo": null,
       "bgClips": [
-        "bg/business_walking.mp4",
-        "bg/subway_commute.mp4",
-        "bg/city_night.mp4",
-        "bg/office_window.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_sky.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d1_pm_ubawareru/06.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 186
+      "durationInFrames": 213
     },
     {
       "role": "flip",
       "telop": "作業を手放し**判断に使う**",
       "bgVideo": null,
       "bgClips": [
-        "bg/business_walking.mp4",
-        "bg/subway_commute.mp4",
-        "bg/city_night.mp4",
-        "bg/office_window.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_sky.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d1_pm_ubawareru/07.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 206
+      "durationInFrames": 212
     },
     {
       "role": "vs",
@@ -142,18 +142,18 @@
       },
       "bgVideo": null,
       "bgClips": [
-        "bg/business_walking.mp4",
-        "bg/subway_commute.mp4",
-        "bg/city_night.mp4",
-        "bg/office_window.mp4",
-        "bg/typing_laptop.mp4",
-        "bg/portrait.mp4"
+        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_desk.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_keys.mp4",
+        "bg/nb_sky.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d1_pm_ubawareru/08.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 138
+      "durationInFrames": 136
     }
   ]
 }
