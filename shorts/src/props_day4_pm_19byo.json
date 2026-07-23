@@ -1,0 +1,144 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/tomorrows_light.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "day",
+      "telop": "検証**2日目**の夜",
+      "day": 2,
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/calendar.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/office_window.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coins_stack.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day4_pm_19byo/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 63
+    },
+    {
+      "role": "story",
+      "telop": "本当に**19秒**になるのか",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/calendar.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/office_window.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coins_stack.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day4_pm_19byo/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 176
+    },
+    {
+      "role": "big",
+      "telop": "まずは**手入力**で計測",
+      "big": {
+        "value": "36分10秒",
+        "label": "手入力の実測"
+      },
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/calendar.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/office_window.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coins_stack.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day4_pm_19byo/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 138
+    },
+    {
+      "role": "story",
+      "telop": "次はAI。**放り込むだけ**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/calendar.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/office_window.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coins_stack.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day4_pm_19byo/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 152
+    },
+    {
+      "role": "big",
+      "telop": "結果は…",
+      "big": {
+        "value": "3分10秒",
+        "label": "AI処理の実測"
+      },
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/calendar.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/office_window.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coins_stack.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day4_pm_19byo/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 200
+    },
+    {
+      "role": "story",
+      "telop": "つまずきも**隠さない**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/calendar.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/office_window.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coins_stack.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day4_pm_19byo/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 235
+    },
+    {
+      "role": "line",
+      "telop": "手順書を**そのまま**渡します",
+      "keyword": "経理",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/calendar.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/office_window.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coins_stack.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day4_pm_19byo/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 152
+    }
+  ]
+}
