@@ -1,0 +1,176 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/paradise.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "今週は**この3本**だけでOK",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/city_night.mp4",
+        "bg/sunrise_city.mp4",
+        "bg/business_walking.mp4",
+        "bg/graph_screen.mp4",
+        "bg/subway_commute.mp4",
+        "bg/office_window.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day7_am_news/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 114
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "若手ほど直撃",
+      "telop": "若手ほど**採用が減る**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/city_night.mp4",
+        "bg/sunrise_city.mp4",
+        "bg/business_walking.mp4",
+        "bg/graph_screen.mp4",
+        "bg/subway_commute.mp4",
+        "bg/office_window.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day7_am_news/02.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 136
+    },
+    {
+      "role": "body",
+      "telop": "生き残るのは**文脈を握る人**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/city_night.mp4",
+        "bg/sunrise_city.mp4",
+        "bg/business_walking.mp4",
+        "bg/graph_screen.mp4",
+        "bg/subway_commute.mp4",
+        "bg/office_window.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day7_am_news/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 330
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "AI文章はバレる",
+      "telop": "AI文章は**バレる**時代へ",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/city_night.mp4",
+        "bg/sunrise_city.mp4",
+        "bg/business_walking.mp4",
+        "bg/graph_screen.mp4",
+        "bg/subway_commute.mp4",
+        "bg/office_window.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day7_am_news/04.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 152
+    },
+    {
+      "role": "body",
+      "telop": "下書きに**自分の数字**を足す",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/city_night.mp4",
+        "bg/sunrise_city.mp4",
+        "bg/business_walking.mp4",
+        "bg/graph_screen.mp4",
+        "bg/subway_commute.mp4",
+        "bg/office_window.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day7_am_news/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 405
+    },
+    {
+      "role": "save",
+      "telop": "1位は**働き方に直結**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/city_night.mp4",
+        "bg/sunrise_city.mp4",
+        "bg/business_walking.mp4",
+        "bg/graph_screen.mp4",
+        "bg/subway_commute.mp4",
+        "bg/office_window.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day7_am_news/06.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 133
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "コード8割はAI",
+      "telop": "コードの**8割はAI**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/city_night.mp4",
+        "bg/sunrise_city.mp4",
+        "bg/business_walking.mp4",
+        "bg/graph_screen.mp4",
+        "bg/subway_commute.mp4",
+        "bg/office_window.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day7_am_news/07.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 206
+    },
+    {
+      "role": "body",
+      "telop": "来週**実測検証**します",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/city_night.mp4",
+        "bg/sunrise_city.mp4",
+        "bg/business_walking.mp4",
+        "bg/graph_screen.mp4",
+        "bg/subway_commute.mp4",
+        "bg/office_window.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day7_am_news/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 295
+    },
+    {
+      "role": "cta",
+      "telop": "深掘りリクエストは↓\n**毎週日曜7時**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/city_night.mp4",
+        "bg/sunrise_city.mp4",
+        "bg/business_walking.mp4",
+        "bg/graph_screen.mp4",
+        "bg/subway_commute.mp4",
+        "bg/office_window.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day7_am_news/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 196
+    }
+  ]
+}
