@@ -20,7 +20,7 @@
       "audio": "audio_w2d1_am_gazou/01.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 121
+      "durationInFrames": 114
     },
     {
       "role": "rank",
@@ -40,7 +40,7 @@
       "audio": "audio_w2d1_am_gazou/02.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 42
+      "durationInFrames": 49
     },
     {
       "role": "body",
@@ -58,7 +58,7 @@
       "audio": "audio_w2d1_am_gazou/03.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 179
+      "durationInFrames": 172
     },
     {
       "role": "rank",
@@ -78,7 +78,7 @@
       "audio": "audio_w2d1_am_gazou/04.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 66
+      "durationInFrames": 58
     },
     {
       "role": "body",
@@ -96,7 +96,7 @@
       "audio": "audio_w2d1_am_gazou/05.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 170
+      "durationInFrames": 167
     },
     {
       "role": "save",
@@ -114,7 +114,7 @@
       "audio": "audio_w2d1_am_gazou/06.wav",
       "eraseIn": true,
       "playWhoosh": false,
-      "durationInFrames": 128
+      "durationInFrames": 123
     },
     {
       "role": "rank",
@@ -134,7 +134,7 @@
       "audio": "audio_w2d1_am_gazou/07.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 82
+      "durationInFrames": 64
     },
     {
       "role": "body",
@@ -152,7 +152,7 @@
       "audio": "audio_w2d1_am_gazou/08.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 206
+      "durationInFrames": 212
     },
     {
       "role": "body",
@@ -170,7 +170,7 @@
       "audio": "audio_w2d1_am_gazou/09.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 194
+      "durationInFrames": 189
     },
     {
       "role": "cta",
