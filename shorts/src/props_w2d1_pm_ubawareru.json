@@ -9,12 +9,16 @@
       "telop": "「奪われる」は**半分ウソ**",
       "bgVideo": null,
       "bgClips": [
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
         "bg/nb_team.mp4",
         "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
-        "bg/nb_phone.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_sky.mp4"
+        "bg/nb_cafe.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d1_pm_ubawareru/01.wav",
@@ -27,12 +31,16 @@
       "telop": "消えるのは**作業**だけ",
       "bgVideo": null,
       "bgClips": [
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
         "bg/nb_team.mp4",
         "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
-        "bg/nb_phone.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_sky.mp4"
+        "bg/nb_cafe.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d1_pm_ubawareru/02.wav",
@@ -46,12 +54,16 @@
       "telop": "型のある書き物",
       "bgVideo": null,
       "bgClips": [
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
         "bg/nb_team.mp4",
         "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
-        "bg/nb_phone.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_sky.mp4"
+        "bg/nb_cafe.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d1_pm_ubawareru/03.wav",
@@ -65,12 +77,16 @@
       "telop": "集めてまとめる調べ物",
       "bgVideo": null,
       "bgClips": [
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
         "bg/nb_team.mp4",
         "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
-        "bg/nb_phone.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_sky.mp4"
+        "bg/nb_cafe.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d1_pm_ubawareru/04.wav",
@@ -84,12 +100,16 @@
       "telop": "転記・計算のくり返し",
       "bgVideo": null,
       "bgClips": [
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
         "bg/nb_team.mp4",
         "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
-        "bg/nb_phone.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_sky.mp4"
+        "bg/nb_cafe.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d1_pm_ubawareru/05.wav",
@@ -102,12 +122,16 @@
       "telop": "**判断と責任**は残る",
       "bgVideo": null,
       "bgClips": [
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
         "bg/nb_team.mp4",
         "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
-        "bg/nb_phone.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_sky.mp4"
+        "bg/nb_cafe.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d1_pm_ubawareru/06.wav",
@@ -120,12 +144,16 @@
       "telop": "作業を手放し**判断に使う**",
       "bgVideo": null,
       "bgClips": [
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
         "bg/nb_team.mp4",
         "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
-        "bg/nb_phone.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_sky.mp4"
+        "bg/nb_cafe.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d1_pm_ubawareru/07.wav",
@@ -142,12 +170,16 @@
       },
       "bgVideo": null,
       "bgClips": [
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
         "bg/nb_team.mp4",
         "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
-        "bg/nb_phone.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_sky.mp4"
+        "bg/nb_cafe.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d1_pm_ubawareru/08.wav",
