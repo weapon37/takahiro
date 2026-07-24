@@ -372,6 +372,7 @@ const Headline: React.FC<{text: string}> = ({text}) => {
           padding: '20px 60px',
           boxShadow: `0 12px 0 ${BRAND.ink}33`,
           lineHeight: 1.2,
+          wordBreak: 'keep-all',
         }}
       >
         {text}

@@ -118,10 +118,10 @@ export const DotGrid: React.FC<{dotColor: string}> = ({dotColor}) => {
   );
 };
 
-// 背景カット: 動画全体を約2.5秒ごとに切り替え(1本40秒で約16カット)。
+// 背景カット: 動画全体を約2秒ごとに切り替え(1本40秒で約20カット)。
 // カット番号は動画通し(startFrame=シーン開始位置)で数えるので、クリップ本数 ≥ 総カット数 なら
 // 動画内で同じ映像が2回出ない。ズームはカットごとにリセットして"編集感"を出す。
-const CUT_FRAMES = 75;
+const CUT_FRAMES = 60;
 
 export const CutBg: React.FC<{
   clips: string[];

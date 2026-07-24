@@ -183,7 +183,7 @@ const VsPanel: React.FC<{vs: {left: string; right: string}}> = ({vs}) => {
     lineHeight: 1.25,
     padding: '0 18px',
     boxSizing: 'border-box',
-    whiteSpace: 'pre-wrap', textWrap: 'balance',
+    whiteSpace: 'pre-wrap', wordBreak: 'keep-all', textWrap: 'balance',
   };
   return (
     <>
