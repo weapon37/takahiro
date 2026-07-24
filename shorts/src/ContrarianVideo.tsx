@@ -167,8 +167,8 @@ const VsPanel: React.FC<{vs: {left: string; right: string}}> = ({vs}) => {
   const panel: React.CSSProperties = {
     position: 'absolute',
     top: 560,
-    width: 470,
-    height: 560,
+    width: 400,
+    height: 540,
     borderRadius: 44,
     border: `12px solid #ffffff`,
     display: 'flex',
@@ -176,10 +176,12 @@ const VsPanel: React.FC<{vs: {left: string; right: string}}> = ({vs}) => {
     justifyContent: 'center',
     fontFamily,
     fontWeight: 900,
-    fontSize: 84,
+    fontSize: 72,
     color: '#ffffff',
     textAlign: 'center',
-    lineHeight: 1.3,
+    lineHeight: 1.25,
+    padding: '0 18px',
+    boxSizing: 'border-box',
     whiteSpace: 'pre-wrap', textWrap: 'balance',
   };
   return (
@@ -207,16 +209,16 @@ const VsPanel: React.FC<{vs: {left: string; right: string}}> = ({vs}) => {
       <div
         style={{
           position: 'absolute',
-          top: 740,
+          top: 768,
           left: 0,
           right: 0,
           textAlign: 'center',
           fontFamily,
           fontWeight: 900,
-          fontSize: 150,
+          fontSize: 110,
           color: BRAND.accent,
           transform: `scale(${vsPop}) rotate(-6deg)`,
-          textShadow: '0 8px 0 rgba(0,0,0,0.35)',
+          textShadow: outline(BRAND.ink, 7),
         }}
       >
         VS
@@ -272,7 +274,7 @@ export const ContrarianVideo: React.FC<ContrarianVideoProps> = ({
         from += scene.durationInFrames;
         return seq;
       })}
-      <AccountLabel name={account} color="rgba(247,244,238,0.6)" />
+      <AccountLabel name={account} />
       {bgm ? (
         <Audio
           loop

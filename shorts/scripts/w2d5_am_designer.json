@@ -58,11 +58,15 @@
   ],
   "bgm": "bgm/for_our_friends.mp3",
   "bgClips": [
-    "bg/nb_camera.mp4",
-    "bg/nb_desk.mp4",
+    "bg/nb_phone.mp4",
+    "bg/nb_team.mp4",
     "bg/nb_digital.mp4",
-    "bg/nb_notes.mp4",
+    "bg/nb_camera.mp4",
+    "bg/nb_savings.mp4",
+    "bg/nb_sky.mp4",
+    "bg/nb_desk.mp4",
+    "bg/nb_keys.mp4",
     "bg/nb_cafe.mp4",
-    "bg/nb_keys.mp4"
+    "bg/nb_notes.mp4"
   ]
 }

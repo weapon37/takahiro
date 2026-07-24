@@ -118,32 +118,29 @@ export const DotGrid: React.FC<{dotColor: string}> = ({dotColor}) => {
   );
 };
 
-// 背景のカットエンジン: 約1.7秒ごとにクリップ・開始位置・寄り/引きを切り替えて
-// 「編集されたカット割り」の密度を出す。クリップは最短7秒を想定(トリム最大90F+カット50F)。
-const CUT_FRAMES = 50;
-
+// 背景: 1シーンにつき1クリップだけ表示する(同じ画が2回出ないよう、シーン番号で固定)。
+// ゆっくりズームで動きを付ける。クリップ本数 ≥ シーン数 なら動画内で背景が重複しない。
 export const CutBg: React.FC<{
   clips: string[];
-  seed: number; // シーン番号。シーンごとにカットの並びを変える
+  seed: number; // シーン番号。シーンごとに別クリップを割り当てる
   washColor: string;
   wash?: number; // 0=素の映像
 }> = ({clips, seed, washColor, wash = 0}) => {
   const frame = useCurrentFrame();
   if (clips.length === 0) return null;
-  const cut = Math.floor(frame / CUT_FRAMES);
-  const local = frame - cut * CUT_FRAMES;
-  // シーンとカットで異なるクリップを選ぶ(連続カットで同じクリップにならないよう素数でずらす)
-  const idx = (seed * 2 + cut) % clips.length;
-  // 開始位置も散らす(0/45/90フレーム)
-  const trim = ((seed * 37 + cut * 53) % 3) * 45;
-  // 寄り/引きを交互に(カット感の主成分)
-  const zoomIn = (seed + cut) % 2 === 0;
-  const scale = interpolate(local, [0, CUT_FRAMES], zoomIn ? [1, 1.1] : [1.1, 1]);
+  // シーン番号でクリップを固定(巡回)。本数が足りて回り込んでも、trimで別の瞬間を映す
+  const idx = seed % clips.length;
+  const trim = (seed % 5) * 24;
+  const zoomIn = seed % 2 === 0;
+  const scale = interpolate(frame, [0, 150], zoomIn ? [1, 1.08] : [1.08, 1], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
   return (
     <>
       <AbsoluteFill style={{transform: `scale(${scale})`}}>
         <OffthreadVideo
-          key={`${idx}-${cut}`}
+          key={idx}
           src={staticFile(clips[idx])}
           muted
           trimBefore={trim}
@@ -155,21 +152,22 @@ export const CutBg: React.FC<{
   );
 };
 
-// アカウント名(上部常時表示)
-export const AccountLabel: React.FC<{name: string; color: string}> = ({name, color}) =>
+// アカウント名(上部常時表示・青文字＋白フチ。背景カットが変わっても読める)
+export const AccountLabel: React.FC<{name: string}> = ({name}) =>
   name ? (
     <div
       style={{
         position: 'absolute',
-        top: 120,
+        top: 118,
         left: 0,
         right: 0,
         textAlign: 'center',
         fontFamily: "'Zen Maru Gothic', sans-serif",
-        fontWeight: 700,
-        fontSize: 40,
-        letterSpacing: '0.14em',
-        color,
+        fontWeight: 900,
+        fontSize: 46,
+        letterSpacing: '0.10em',
+        color: BRAND.primary,
+        textShadow: outline('#ffffff', 8),
       }}
     >
       {name}

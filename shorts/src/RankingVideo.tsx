@@ -11,7 +11,7 @@ import {
   useVideoConfig,
 } from 'remotion';
 import {BRAND, fontFamily} from './brand';
-import {CutBg, EraserChar, outline, parseTelop} from './common';
+import {AccountLabel, CutBg, EraserChar, outline, parseTelop} from './common';
 
 // ---------- 🏆ランキング型テンプレ(明るい文具系・ブランド4色) ----------
 // テロップ記法: **単語** → 黄色マーカー強調
@@ -460,25 +460,8 @@ export const RankingVideo: React.FC<RankingVideoProps> = ({
         from += scene.durationInFrames;
         return seq;
       })}
-      {/* アカウント名(常時・ネイビー) */}
-      {account ? (
-        <div
-          style={{
-            position: 'absolute',
-            top: 120,
-            left: 0,
-            right: 0,
-            textAlign: 'center',
-            fontFamily,
-            fontWeight: 700,
-            fontSize: 40,
-            letterSpacing: '0.14em',
-            color: `${BRAND.ink}99`,
-          }}
-        >
-          {account}
-        </div>
-      ) : null}
+      {/* アカウント名(常時・青文字＋白フチ) */}
+      <AccountLabel name={account} />
       {bgm ? (
         <Audio
           loop
