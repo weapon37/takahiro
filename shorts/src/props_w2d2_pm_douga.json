@@ -9,12 +9,16 @@
       "telop": "動画編集AI **BEST3**",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_camera.mp4",
-        "bg/nb_keys.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
         "bg/nb_cafe.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4",
         "bg/nb_digital.mp4",
-        "bg/nb_notes.mp4"
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_pm_douga/01.wav",
@@ -29,12 +33,16 @@
       "telop": "音声で自動カット",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_camera.mp4",
-        "bg/nb_keys.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
         "bg/nb_cafe.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4",
         "bg/nb_digital.mp4",
-        "bg/nb_notes.mp4"
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_pm_douga/02.wav",
@@ -47,12 +55,16 @@
       "telop": "**間**を自動で詰める",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_camera.mp4",
-        "bg/nb_keys.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
         "bg/nb_cafe.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4",
         "bg/nb_digital.mp4",
-        "bg/nb_notes.mp4"
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_pm_douga/03.wav",
@@ -67,12 +79,16 @@
       "telop": "字幕もテロップも自動",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_camera.mp4",
-        "bg/nb_keys.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
         "bg/nb_cafe.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4",
         "bg/nb_digital.mp4",
-        "bg/nb_notes.mp4"
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_pm_douga/04.wav",
@@ -85,12 +101,16 @@
       "telop": "スマホだけで**1本**完成",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_camera.mp4",
-        "bg/nb_keys.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
         "bg/nb_cafe.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4",
         "bg/nb_digital.mp4",
-        "bg/nb_notes.mp4"
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_pm_douga/05.wav",
@@ -103,12 +123,16 @@
       "telop": "量産派は1位を**保存**",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_camera.mp4",
-        "bg/nb_keys.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
         "bg/nb_cafe.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4",
         "bg/nb_digital.mp4",
-        "bg/nb_notes.mp4"
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_pm_douga/06.wav",
@@ -123,12 +147,16 @@
       "telop": "編集より先に「台本」",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_camera.mp4",
-        "bg/nb_keys.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
         "bg/nb_cafe.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4",
         "bg/nb_digital.mp4",
-        "bg/nb_notes.mp4"
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_pm_douga/07.wav",
@@ -141,12 +169,16 @@
       "telop": "台本が決まれば**全部速い**",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_camera.mp4",
-        "bg/nb_keys.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
         "bg/nb_cafe.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4",
         "bg/nb_digital.mp4",
-        "bg/nb_notes.mp4"
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_pm_douga/08.wav",
@@ -159,12 +191,16 @@
       "telop": "詰まる工程を↓\n**コメント**で",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_camera.mp4",
-        "bg/nb_keys.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
+        "bg/nb_keys.mp4",
         "bg/nb_cafe.mp4",
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4",
         "bg/nb_digital.mp4",
-        "bg/nb_notes.mp4"
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_pm_douga/09.wav",

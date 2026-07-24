@@ -9,12 +9,16 @@
       "telop": "文字起こしAI **BEST3**",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_notes.mp4",
         "bg/nb_cafe.mp4",
-        "bg/nb_phone.mp4"
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_am_gijiroku/01.wav",
@@ -29,12 +33,16 @@
       "telop": "資料もまとめて要約",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_notes.mp4",
         "bg/nb_cafe.mp4",
-        "bg/nb_phone.mp4"
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_am_gijiroku/02.wav",
@@ -47,12 +55,16 @@
       "telop": "会議＋資料を**まとめて要約**",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_notes.mp4",
         "bg/nb_cafe.mp4",
-        "bg/nb_phone.mp4"
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_am_gijiroku/03.wav",
@@ -67,12 +79,16 @@
       "telop": "オンライン会議に自動参加",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_notes.mp4",
         "bg/nb_cafe.mp4",
-        "bg/nb_phone.mp4"
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_am_gijiroku/04.wav",
@@ -85,12 +101,16 @@
       "telop": "会議に**自動参加**して記録",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_notes.mp4",
         "bg/nb_cafe.mp4",
-        "bg/nb_phone.mp4"
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_am_gijiroku/05.wav",
@@ -103,12 +123,16 @@
       "telop": "日本語会議なら1位を**保存**",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_notes.mp4",
         "bg/nb_cafe.mp4",
-        "bg/nb_phone.mp4"
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_am_gijiroku/06.wav",
@@ -123,12 +147,16 @@
       "telop": "日本語がとにかく強い",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_notes.mp4",
         "bg/nb_cafe.mp4",
-        "bg/nb_phone.mp4"
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_am_gijiroku/07.wav",
@@ -141,12 +169,16 @@
       "telop": "話者分け＋**やること**まで自動",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_notes.mp4",
         "bg/nb_cafe.mp4",
-        "bg/nb_phone.mp4"
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_am_gijiroku/08.wav",
@@ -164,12 +196,16 @@
       },
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_notes.mp4",
         "bg/nb_cafe.mp4",
-        "bg/nb_phone.mp4"
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_am_gijiroku/09.wav",
@@ -182,12 +218,16 @@
       "telop": "週の会議数を↓\n**コメント**で",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4",
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_notes.mp4",
         "bg/nb_cafe.mp4",
-        "bg/nb_phone.mp4"
+        "bg/nb_notes.mp4",
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d2_am_gijiroku/10.wav",

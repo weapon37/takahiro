@@ -9,12 +9,16 @@
       "telop": "スライドAI **BEST3**",
       "bgVideo": null,
       "bgClips": [
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_team.mp4",
         "bg/nb_cafe.mp4",
         "bg/nb_notes.mp4",
-        "bg/nb_phone.mp4"
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_am_shiryo/01.wav",
@@ -29,12 +33,16 @@
       "telop": "テンプレで見た目が整う",
       "bgVideo": null,
       "bgClips": [
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_team.mp4",
         "bg/nb_cafe.mp4",
         "bg/nb_notes.mp4",
-        "bg/nb_phone.mp4"
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_am_shiryo/02.wav",
@@ -47,12 +55,16 @@
       "telop": "**見た目**はここで即完成",
       "bgVideo": null,
       "bgClips": [
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_team.mp4",
         "bg/nb_cafe.mp4",
         "bg/nb_notes.mp4",
-        "bg/nb_phone.mp4"
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_am_shiryo/03.wav",
@@ -67,12 +79,16 @@
       "telop": "構成と話す内容を作る",
       "bgVideo": null,
       "bgClips": [
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_team.mp4",
         "bg/nb_cafe.mp4",
         "bg/nb_notes.mp4",
-        "bg/nb_phone.mp4"
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_am_shiryo/04.wav",
@@ -85,12 +101,16 @@
       "telop": "**構成**から先に固める",
       "bgVideo": null,
       "bgClips": [
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_team.mp4",
         "bg/nb_cafe.mp4",
         "bg/nb_notes.mp4",
-        "bg/nb_phone.mp4"
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_am_shiryo/05.wav",
@@ -103,12 +123,16 @@
       "telop": "資料多い人は1位を**保存**",
       "bgVideo": null,
       "bgClips": [
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_team.mp4",
         "bg/nb_cafe.mp4",
         "bg/nb_notes.mp4",
-        "bg/nb_phone.mp4"
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_am_shiryo/06.wav",
@@ -123,12 +147,16 @@
       "telop": "文章から一発でスライド",
       "bgVideo": null,
       "bgClips": [
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_team.mp4",
         "bg/nb_cafe.mp4",
         "bg/nb_notes.mp4",
-        "bg/nb_phone.mp4"
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_am_shiryo/07.wav",
@@ -146,12 +174,16 @@
       },
       "bgVideo": null,
       "bgClips": [
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_team.mp4",
         "bg/nb_cafe.mp4",
         "bg/nb_notes.mp4",
-        "bg/nb_phone.mp4"
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_am_shiryo/08.wav",
@@ -164,12 +196,16 @@
       "telop": "消耗する資料を↓\n**コメント**で",
       "bgVideo": null,
       "bgClips": [
+        "bg/nb_savings.mp4",
+        "bg/nb_sky.mp4",
         "bg/nb_desk.mp4",
         "bg/nb_keys.mp4",
-        "bg/nb_team.mp4",
         "bg/nb_cafe.mp4",
         "bg/nb_notes.mp4",
-        "bg/nb_phone.mp4"
+        "bg/nb_phone.mp4",
+        "bg/nb_team.mp4",
+        "bg/nb_digital.mp4",
+        "bg/nb_camera.mp4"
       ],
       "bgWash": 0,
       "audio": "audio_w2d4_am_shiryo/09.wav",
