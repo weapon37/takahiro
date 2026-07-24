@@ -118,21 +118,26 @@ export const DotGrid: React.FC<{dotColor: string}> = ({dotColor}) => {
   );
 };
 
-// 背景: 1シーンにつき1クリップだけ表示する(同じ画が2回出ないよう、シーン番号で固定)。
-// ゆっくりズームで動きを付ける。クリップ本数 ≥ シーン数 なら動画内で背景が重複しない。
+// 背景カット: 動画全体を約2.5秒ごとに切り替え(1本40秒で約16カット)。
+// カット番号は動画通し(startFrame=シーン開始位置)で数えるので、クリップ本数 ≥ 総カット数 なら
+// 動画内で同じ映像が2回出ない。ズームはカットごとにリセットして"編集感"を出す。
+const CUT_FRAMES = 75;
+
 export const CutBg: React.FC<{
   clips: string[];
-  seed: number; // シーン番号。シーンごとに別クリップを割り当てる
+  seed?: number; // 後方互換(未使用)
+  startFrame?: number; // このシーンの動画内での開始フレーム
   washColor: string;
   wash?: number; // 0=素の映像
-}> = ({clips, seed, washColor, wash = 0}) => {
+}> = ({clips, startFrame = 0, washColor, wash = 0}) => {
   const frame = useCurrentFrame();
   if (clips.length === 0) return null;
-  // シーン番号でクリップを固定(巡回)。本数が足りて回り込んでも、trimで別の瞬間を映す
-  const idx = seed % clips.length;
-  const trim = (seed % 5) * 24;
-  const zoomIn = seed % 2 === 0;
-  const scale = interpolate(frame, [0, 150], zoomIn ? [1, 1.08] : [1.08, 1], {
+  const g = startFrame + frame; // 動画通しフレーム
+  const cut = Math.floor(g / CUT_FRAMES);
+  const local = g - cut * CUT_FRAMES;
+  const idx = cut % clips.length; // 通しカット番号で巡回 → 本数が足りれば重複なし
+  const zoomIn = cut % 2 === 0;
+  const scale = interpolate(local, [0, CUT_FRAMES], zoomIn ? [1, 1.09] : [1.09, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
@@ -140,10 +145,9 @@ export const CutBg: React.FC<{
     <>
       <AbsoluteFill style={{transform: `scale(${scale})`}}>
         <OffthreadVideo
-          key={idx}
+          key={cut}
           src={staticFile(clips[idx])}
           muted
-          trimBefore={trim}
           style={{width: '100%', height: '100%', objectFit: 'cover'}}
         />
       </AbsoluteFill>
@@ -151,6 +155,11 @@ export const CutBg: React.FC<{
     </>
   );
 };
+
+// 日本語テロップの改行位置調整: 助詞・記号の直後にだけ改行候補(ゼロ幅スペース)を挿入。
+// これと word-break:keep-all を併用すると、単語の途中では改行されなくなる。
+export const softBreaks = (t: string): string =>
+  t.replace(/([をはがにへとでもやかねよ、。・！？＋／」』）】〜ー])/g, '$1​');
 
 // アカウント名(上部常時表示・青文字＋白フチ。背景カットが変わっても読める)
 export const AccountLabel: React.FC<{name: string}> = ({name}) =>

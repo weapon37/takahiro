@@ -11,7 +11,7 @@ import {
   useVideoConfig,
 } from 'remotion';
 import {BRAND, fontFamily} from './brand';
-import {AccountLabel, CutBg, EraserChar, outline, parseTelop} from './common';
+import {AccountLabel, CutBg, EraserChar, outline, parseTelop, softBreaks} from './common';
 
 // ---------- 🏆ランキング型テンプレ(明るい文具系・ブランド4色) ----------
 // テロップ記法: **単語** → 黄色マーカー強調
@@ -310,6 +310,7 @@ const Telop: React.FC<{text: string; big?: boolean}> = ({text, big}) => {
           lineHeight: 1.5,
           color: BRAND.ink,
           whiteSpace: 'pre-wrap',
+          wordBreak: 'keep-all',
           textWrap: 'balance',
           textShadow: outline('#ffffff'),
         }}
@@ -321,12 +322,13 @@ const Telop: React.FC<{text: string; big?: boolean}> = ({text, big}) => {
               style={{
                 background: `linear-gradient(transparent 42%, ${BRAND.accent} 42%, ${BRAND.accent} 96%, transparent 96%)`,
                 padding: '0 6px',
+                whiteSpace: 'nowrap',
               }}
             >
               {seg.t}
             </span>
           ) : (
-            <span key={i}>{seg.t}</span>
+            <span key={i}>{softBreaks(seg.t)}</span>
           )
         )}
       </div>
@@ -420,11 +422,11 @@ const SaveCue: React.FC = () => {
 
 // ---------- 1シーン ----------
 
-const SceneView: React.FC<{scene: RankScene; index: number; whoosh: string}> = ({scene, index, whoosh}) => {
+const SceneView: React.FC<{scene: RankScene; index: number; startFrame: number; whoosh: string}> = ({scene, index, startFrame, whoosh}) => {
   const clips = scene.bgClips ?? (scene.bgVideo ? [scene.bgVideo] : []);
   return (
     <AbsoluteFill style={{backgroundColor: BRAND.base}}>
-      <CutBg clips={clips} seed={index} washColor={BRAND.base} wash={scene.bgWash} />
+      <CutBg clips={clips} startFrame={startFrame} washColor={BRAND.base} wash={scene.bgWash} />
       <PaperBg role={scene.role} transparent={clips.length > 0} />
       {scene.role === 'rank' && scene.rank ? <RankBadge rank={scene.rank} /> : null}
       {scene.role === 'rank' && scene.headline ? <Headline text={scene.headline} /> : null}
@@ -454,7 +456,7 @@ export const RankingVideo: React.FC<RankingVideoProps> = ({
       {scenes.map((scene, i) => {
         const seq = (
           <Sequence key={i} from={from} durationInFrames={scene.durationInFrames}>
-            <SceneView scene={scene} index={i} whoosh={whoosh} />
+            <SceneView scene={scene} index={i} startFrame={from} whoosh={whoosh} />
           </Sequence>
         );
         from += scene.durationInFrames;
