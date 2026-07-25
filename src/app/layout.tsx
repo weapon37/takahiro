@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "バズったX投稿 量産ツール",
+  title: "領収書 → freee 自動入力ツール",
   description:
-    "バズったX投稿のテキストやスクリーンショットから型を分析し、同じ型で新しい投稿を量産します。",
+    "領収書・レシートの画像から日付・金額・勘定科目・税区分をAIが読み取り、freee取込用のCSVを作成します。",
 };
 
 export default function RootLayout({
