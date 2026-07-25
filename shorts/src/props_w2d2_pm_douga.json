@@ -44,7 +44,7 @@
       "audio": "audio_w2d2_pm_douga/01.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 124
+      "durationInFrames": 131
     },
     {
       "role": "rank",
@@ -88,7 +88,7 @@
       "audio": "audio_w2d2_pm_douga/02.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 58
+      "durationInFrames": 44
     },
     {
       "role": "body",
@@ -130,7 +130,7 @@
       "audio": "audio_w2d2_pm_douga/03.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 198
+      "durationInFrames": 188
     },
     {
       "role": "rank",
@@ -174,7 +174,7 @@
       "audio": "audio_w2d2_pm_douga/04.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 49
+      "durationInFrames": 61
     },
     {
       "role": "body",
@@ -216,7 +216,7 @@
       "audio": "audio_w2d2_pm_douga/05.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 172
+      "durationInFrames": 159
     },
     {
       "role": "save",
@@ -258,7 +258,7 @@
       "audio": "audio_w2d2_pm_douga/06.wav",
       "eraseIn": true,
       "playWhoosh": false,
-      "durationInFrames": 135
+      "durationInFrames": 131
     },
     {
       "role": "rank",
@@ -302,7 +302,7 @@
       "audio": "audio_w2d2_pm_douga/07.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 112
+      "durationInFrames": 141
     },
     {
       "role": "body",
@@ -344,7 +344,7 @@
       "audio": "audio_w2d2_pm_douga/08.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 218
+      "durationInFrames": 230
     },
     {
       "role": "cta",

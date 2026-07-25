@@ -44,7 +44,7 @@
       "audio": "audio_w2d5_am_designer/01.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 136
+      "durationInFrames": 128
     },
     {
       "role": "rank",
@@ -88,7 +88,7 @@
       "audio": "audio_w2d5_am_designer/02.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 99
+      "durationInFrames": 112
     },
     {
       "role": "body",
@@ -130,7 +130,7 @@
       "audio": "audio_w2d5_am_designer/03.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 153
+      "durationInFrames": 169
     },
     {
       "role": "rank",
@@ -174,7 +174,7 @@
       "audio": "audio_w2d5_am_designer/04.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 119
+      "durationInFrames": 92
     },
     {
       "role": "body",
@@ -216,7 +216,7 @@
       "audio": "audio_w2d5_am_designer/05.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 162
+      "durationInFrames": 160
     },
     {
       "role": "save",
@@ -258,7 +258,7 @@
       "audio": "audio_w2d5_am_designer/06.wav",
       "eraseIn": true,
       "playWhoosh": false,
-      "durationInFrames": 126
+      "durationInFrames": 117
     },
     {
       "role": "rank",
@@ -302,7 +302,7 @@
       "audio": "audio_w2d5_am_designer/07.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 82
+      "durationInFrames": 76
     },
     {
       "role": "body",
@@ -344,7 +344,7 @@
       "audio": "audio_w2d5_am_designer/08.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 182
+      "durationInFrames": 181
     },
     {
       "role": "cta",
@@ -386,7 +386,7 @@
       "audio": "audio_w2d5_am_designer/09.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 172
+      "durationInFrames": 177
     }
   ]
 }
