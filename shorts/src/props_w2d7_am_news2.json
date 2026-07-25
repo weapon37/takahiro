@@ -49,8 +49,8 @@
     {
       "role": "rank",
       "rank": 3,
-      "headline": "AIは「任せる」へ",
-      "telop": "AIエージェント**本格化**",
+      "headline": "新モデルが続々",
+      "telop": "新モデルが**続々公開**",
       "bgVideo": null,
       "bgClips": [
         "bg/nb_sky.mp4",
@@ -88,11 +88,11 @@
       "audio": "audio_w2d7_am_news2/02.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 107
+      "durationInFrames": 230
     },
     {
       "role": "body",
-      "telop": "作業は任せ**人は判断**へ",
+      "telop": "任せられる仕事が**増えた**",
       "bgVideo": null,
       "bgClips": [
         "bg/nb_sky.mp4",
@@ -130,13 +130,13 @@
       "audio": "audio_w2d7_am_news2/03.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 292
+      "durationInFrames": 220
     },
     {
       "role": "rank",
       "rank": 2,
-      "headline": "ChatGPT Work公開",
-      "telop": "業務用AIが**一般公開**",
+      "headline": "業務AIが一般へ",
+      "telop": "業務用AIが**スマホ対応**",
       "bgVideo": null,
       "bgClips": [
         "bg/nb_sky.mp4",
@@ -174,7 +174,7 @@
       "audio": "audio_w2d7_am_news2/04.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 138
+      "durationInFrames": 176
     },
     {
       "role": "body",
@@ -216,7 +216,7 @@
       "audio": "audio_w2d7_am_news2/05.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 287
+      "durationInFrames": 299
     },
     {
       "role": "save",
@@ -258,13 +258,13 @@
       "audio": "audio_w2d7_am_news2/06.wav",
       "eraseIn": true,
       "playWhoosh": false,
-      "durationInFrames": 126
+      "durationInFrames": 129
     },
     {
       "role": "rank",
       "rank": 1,
-      "headline": "新モデル公開",
-      "telop": "新モデルで**性能が一段**上",
+      "headline": "AIは「任せる」へ",
+      "telop": "AIエージェント**本格化**",
       "bgVideo": null,
       "bgClips": [
         "bg/nb_sky.mp4",
@@ -302,11 +302,11 @@
       "audio": "audio_w2d7_am_news2/07.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 189
+      "durationInFrames": 292
     },
     {
       "role": "body",
-      "telop": "来週**実測検証**します",
+      "telop": "任せる。でも**丸投げはNG**",
       "bgVideo": null,
       "bgClips": [
         "bg/nb_sky.mp4",
@@ -344,7 +344,7 @@
       "audio": "audio_w2d7_am_news2/08.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 237
+      "durationInFrames": 307
     },
     {
       "role": "cta",
@@ -386,7 +386,7 @@
       "audio": "audio_w2d7_am_news2/09.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 189
+      "durationInFrames": 194
     }
   ]
 }
