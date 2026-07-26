@@ -1,5 +1,25 @@
 # 背景シンクロ 標準ルール & 素材語彙
 
+## 自作素材(own_*)の取り込み設定 ※重要
+
+iPhoneの縦動画はHDR(HLG/bt2020)。SDRへ変換する際、**npl(想定ピーク輝度)を誤ると退色する**。
+`npl=100` だと彩度がほぼ半分に落ち、ひまわりが白っぽくなる等の失敗が起きた。**`npl=1000` を使う。**
+色は加工せずナチュラルな発色のまま取り込むこと（意図的な色調整はしない）。
+
+```bash
+VF="zscale=t=linear:npl=1000,format=gbrpf32le,zscale=p=bt709,tonemap=hable,\
+zscale=t=bt709:m=bt709:r=tv,format=yuv420p,\
+scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280"
+
+npx remotion ffmpeg -nostdin -y -t 6 -i <元動画> -vf "$VF" \
+  -r 60 -an -c:v libx264 -crf 20 -pix_fmt yuv420p -movflags +faststart public/bg/own_xxx.mp4
+```
+
+- 元がSDR(bt709)の場合はtonemap不要。`scale`＋`crop`だけでよい。
+- HDR判定: `ffprobe` の出力に `bt2020` / `arib-std-b67` / `smpte2084` が含まれるか。
+- 既存プールは 720x1280 / 60fps / SDR に統一。
+
+
 **原則(標準):** 全ての新規動画は、背景を「プール順送り」ではなく **文ごとに内容と一致させる**。
 台本の各 sentence に `"bg"` を付ける。話している言葉を1つずつ映像にリンクさせること。
 
