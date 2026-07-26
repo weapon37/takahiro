@@ -8,46 +8,67 @@
       "role": "hook",
       "narration": "エーアイ副業は稼げない。よく言われます。でも、それ、違います。",
       "telop": "「稼げない」は**違う**",
-      "bg": "nb_cash"
+      "bg": [
+        "nb_cash",
+        "nb_chart"
+      ]
     },
     {
       "role": "body",
       "narration": "稼げないんじゃなくて、多くの人が、続けてないだけなんです。",
       "telop": "稼げないより**続けてない**",
-      "bg": "own_street"
+      "bg": [
+        "own_street",
+        "jp_dusk_road"
+      ]
     },
     {
       "role": "point",
       "num": 1,
       "narration": "つまずく理由、1。いきなり収益を狙って、挫折する。",
       "telop": "いきなり収益を狙う",
-      "bg": "nb_savings"
+      "bg": [
+        "nb_savings",
+        "nb_think"
+      ]
     },
     {
       "role": "point",
       "num": 2,
       "narration": "2、成果が出る前に、比べて、やめる。",
       "telop": "人と比べてやめる",
-      "bg": "nb_phone"
+      "bg": [
+        "nb_phone",
+        "nb_social"
+      ]
     },
     {
       "role": "point",
       "num": 3,
       "narration": "3、時間が増える、という最初の成果を、飛ばしてる。",
       "telop": "最初の成果を飛ばす",
-      "bg": "nb_clock"
+      "bg": [
+        "nb_clock",
+        "nb_morning"
+      ]
     },
     {
       "role": "body",
       "narration": "本当は、お金より先に、時間が返ってくる。ここが最初の一歩です。",
       "telop": "まず**時間**が返ってくる",
-      "bg": "own_meal"
+      "bg": [
+        "own_meal",
+        "jp_home_read"
+      ]
     },
     {
       "role": "flip",
       "narration": "正しい順番は、時短、発信、収益。この順で、焦らずいきましょう。",
       "telop": "順番は**時短→発信→収益**",
-      "bg": "jp_desk_m1"
+      "bg": [
+        "jp_desk_m1",
+        "nb_social"
+      ]
     },
     {
       "role": "vs",
@@ -57,7 +78,10 @@
         "left": "時短・発信",
         "right": "収益"
       },
-      "bg": "jp_skyline"
+      "bg": [
+        "jp_skyline",
+        "jp_shibuya_air"
+      ]
     }
   ],
   "bgm": "bgm/pawn.mp3",

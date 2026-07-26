@@ -9,7 +9,8 @@
       "telop": "「稼げない」は**違う**",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_cash.mp4"
+        "bg/nb_cash.mp4",
+        "bg/nb_chart.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
@@ -23,7 +24,8 @@
       "telop": "稼げないより**続けてない**",
       "bgVideo": null,
       "bgClips": [
-        "bg/own_street.mp4"
+        "bg/own_street.mp4",
+        "bg/jp_dusk_road.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
@@ -38,7 +40,8 @@
       "telop": "いきなり収益を狙う",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_savings.mp4"
+        "bg/nb_savings.mp4",
+        "bg/nb_think.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
@@ -53,7 +56,8 @@
       "telop": "人と比べてやめる",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_phone.mp4"
+        "bg/nb_phone.mp4",
+        "bg/nb_social.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
@@ -68,7 +72,8 @@
       "telop": "最初の成果を飛ばす",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_clock.mp4"
+        "bg/nb_clock.mp4",
+        "bg/nb_morning.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
@@ -82,7 +87,8 @@
       "telop": "まず**時間**が返ってくる",
       "bgVideo": null,
       "bgClips": [
-        "bg/own_meal.mp4"
+        "bg/own_meal.mp4",
+        "bg/jp_home_read.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
@@ -96,7 +102,8 @@
       "telop": "順番は**時短→発信→収益**",
       "bgVideo": null,
       "bgClips": [
-        "bg/jp_desk_m1.mp4"
+        "bg/jp_desk_m1.mp4",
+        "bg/nb_social.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
@@ -114,7 +121,8 @@
       },
       "bgVideo": null,
       "bgClips": [
-        "bg/jp_skyline.mp4"
+        "bg/jp_skyline.mp4",
+        "bg/jp_shibuya_air.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
