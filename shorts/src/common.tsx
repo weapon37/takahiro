@@ -129,23 +129,47 @@ export const CutBg: React.FC<{
   startFrame?: number; // このシーンの動画内での開始フレーム
   washColor: string;
   wash?: number; // 0=素の映像
-}> = ({clips, startFrame = 0, washColor, wash = 0}) => {
+  local?: boolean; // true=内容シンクロ(このシーンの clips をシーン内で順に表示)
+  sceneDuration?: number; // local時: シーン尺(フレーム)を clips 本数で均等割り
+}> = ({clips, startFrame = 0, washColor, wash = 0, local = false, sceneDuration}) => {
   const frame = useCurrentFrame();
   if (clips.length === 0) return null;
-  const g = startFrame + frame; // 動画通しフレーム
-  const cut = Math.floor(g / CUT_FRAMES);
-  const local = g - cut * CUT_FRAMES;
-  const idx = cut % clips.length; // 通しカット番号で巡回 → 本数が足りれば重複なし
-  const zoomIn = cut % 2 === 0;
-  const scale = interpolate(local, [0, CUT_FRAMES], zoomIn ? [1, 1.09] : [1.09, 1], {
-    extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
-  });
+
+  let idx: number;
+  let cutKey: number;
+  let scale: number;
+
+  if (local) {
+    // 内容シンクロ背景: このシーンの尺を clips 本数で均等割りし、割り当てた映像を順に表示。
+    // 1本なら丸ごと1カット、複数なら区間で切替。プール巡回(通しカット)ではないので
+    // 「話している内容に合う映像」を文ごとに固定できる。ズームは区間内で滑らかに継続。
+    const dur =
+      sceneDuration && sceneDuration > 0 ? sceneDuration : CUT_FRAMES * clips.length;
+    const seg = dur / clips.length;
+    const i = Math.min(clips.length - 1, Math.floor(frame / seg));
+    const t = seg > 0 ? (frame - i * seg) / seg : 0; // 区間内進行度 0..1
+    idx = i;
+    cutKey = i;
+    scale = i % 2 === 0 ? 1 + 0.08 * t : 1.08 - 0.08 * t;
+  } else {
+    // 従来: 動画通しで約2秒ごとにプールを巡回(本数 ≥ 総カット数なら重複なし)
+    const g = startFrame + frame;
+    const cut = Math.floor(g / CUT_FRAMES);
+    const localF = g - cut * CUT_FRAMES;
+    idx = cut % clips.length;
+    cutKey = cut;
+    const zoomIn = cut % 2 === 0;
+    scale = interpolate(localF, [0, CUT_FRAMES], zoomIn ? [1, 1.09] : [1.09, 1], {
+      extrapolateLeft: 'clamp',
+      extrapolateRight: 'clamp',
+    });
+  }
+
   return (
     <>
       <AbsoluteFill style={{transform: `scale(${scale})`}}>
         <OffthreadVideo
-          key={cut}
+          key={cutKey}
           src={staticFile(clips[idx])}
           muted
           style={{width: '100%', height: '100%', objectFit: 'cover'}}

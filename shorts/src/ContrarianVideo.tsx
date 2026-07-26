@@ -24,6 +24,7 @@ export type ContraScene = {
   vs?: {left: string; right: string}; // role='vs' の対決ラベル
   bgVideo?: string | null; // 単一の実写背景動画(bgClips未指定時のフォールバック)
   bgClips?: string[]; // 実写背景クリップ群(カット割りで巡回)
+  bgSync?: boolean; // true=内容シンクロ(このシーン専用の映像をシーン内で表示)
   bgWash?: number; // 背景動画に被せるブランド色ウォッシュ(0=無し〜1)。既定0
   durationInFrames: number;
 };
@@ -245,7 +246,14 @@ const SceneView: React.FC<{scene: ContraScene; index: number; startFrame: number
   const clips = scene.bgClips ?? (scene.bgVideo ? [scene.bgVideo] : []);
   return (
     <AbsoluteFill style={{backgroundColor: BRAND.ink}}>
-      <CutBg clips={clips} startFrame={startFrame} washColor={BRAND.ink} wash={scene.bgWash} />
+      <CutBg
+        clips={clips}
+        startFrame={startFrame}
+        washColor={BRAND.ink}
+        wash={scene.bgWash}
+        local={scene.bgSync}
+        sceneDuration={scene.durationInFrames}
+      />
       <NavyBg role={scene.role} transparent={clips.length > 0} />
       {scene.role === 'point' && scene.num ? <NumBadge num={scene.num} /> : null}
       {scene.role === 'vs' && scene.vs ? <VsPanel vs={scene.vs} /> : null}

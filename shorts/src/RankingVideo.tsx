@@ -25,6 +25,7 @@ export type RankScene = {
   time?: {before: string; after: string; label?: string}; // 実測タイム(オレンジ特大)
   bgVideo?: string | null; // 単一の実写背景動画(bgClips未指定時のフォールバック)
   bgClips?: string[]; // 実写背景クリップ群(カット割りで巡回)
+  bgSync?: boolean; // true=内容シンクロ(このシーン専用の映像をシーン内で表示)
   bgWash?: number; // 背景動画に被せるブランド色ウォッシュ(0=無し〜1)。既定0
   eraseIn: boolean; // シーン頭で消しゴムワイプ遷移
   playWhoosh: boolean;
@@ -427,7 +428,14 @@ const SceneView: React.FC<{scene: RankScene; index: number; startFrame: number; 
   const clips = scene.bgClips ?? (scene.bgVideo ? [scene.bgVideo] : []);
   return (
     <AbsoluteFill style={{backgroundColor: BRAND.base}}>
-      <CutBg clips={clips} startFrame={startFrame} washColor={BRAND.base} wash={scene.bgWash} />
+      <CutBg
+        clips={clips}
+        startFrame={startFrame}
+        washColor={BRAND.base}
+        wash={scene.bgWash}
+        local={scene.bgSync}
+        sceneDuration={scene.durationInFrames}
+      />
       <PaperBg role={scene.role} transparent={clips.length > 0} />
       {scene.role === 'rank' && scene.rank ? <RankBadge rank={scene.rank} /> : null}
       {scene.role === 'rank' && scene.headline ? <Headline text={scene.headline} /> : null}

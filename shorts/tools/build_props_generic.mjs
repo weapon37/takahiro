@@ -33,16 +33,35 @@ function wavDuration(file) {
 
 const script = JSON.parse(fs.readFileSync(path.join(HERE, scriptRel), 'utf8'));
 
+// "bg" 指定を bgClips 形式(["bg/xxx.mp4", ...])へ正規化。
+// 受け付け: 文字列 or 配列。"bg/.." や ".mp4" を含めばそのまま、素の名前なら bg/<name>.mp4 に補完。
+function normalizeBg(bg) {
+  if (bg == null) return undefined;
+  const arr = Array.isArray(bg) ? bg : [bg];
+  return arr
+    .filter((x) => typeof x === 'string' && x.trim())
+    .map((x) => {
+      let v = x.trim();
+      if (!v.includes('/')) v = `bg/${v}`;
+      if (!/\.\w+$/.test(v)) v = `${v}.mp4`;
+      return v;
+    });
+}
+
 const scenes = script.sentences.map((s, idx) => {
   const i = idx + 1;
   const audio = `${audioDir}/${String(i).padStart(2, '0')}.wav`;
   const sec = wavDuration(path.join(HERE, 'public', audio));
-  const {narration, telop_style, ...fields} = s;
+  const {narration, telop_style, bg, ...fields} = s;
+  // 内容シンクロ背景: 文ごとの "bg"(短縮名可)or "bgClips" を優先。
+  // 指定があれば bgSync=true(シーン内でその映像を順に表示=プール巡回しない)。
+  const sceneBg = normalizeBg(bg) ?? s.bgClips;
   return {
     ...fields,
     // 背景動画: シーン個別指定 > 台本全体指定 > なし
     bgVideo: s.bgVideo ?? script.bgVideo ?? null,
-    bgClips: s.bgClips ?? script.bgClips ?? undefined,
+    bgClips: sceneBg ?? script.bgClips ?? undefined,
+    bgSync: sceneBg ? true : false, // true=内容シンクロ(CutBg local モード)
     bgWash: s.bgWash ?? script.bgWash ?? 0,
     audio,
     // ランキング型(RankingVideo)用: rank/saveシーンは消しゴムワイプ+SE。他テンプレでは無視される
