@@ -22,7 +22,7 @@ OUTDIR = os.path.join(HERE, sys.argv[2] if len(sys.argv) > 2 else os.path.join("
 # Aoede = 温かみのある女性声。他候補: Leda(若め)・Charon(落ち着いた男性)・Orus(低め男性)
 VOICE = "ja-JP-Chirp3-HD-Aoede"
 LANG = "ja-JP"
-SPEAKING_RATE = 1.25  # 温かさと尺のバランス。詰めたいときは1.4まで
+SPEAKING_RATE = 1.10  # 自然さ優先(1.25は詰まって機械っぽいので緩めた)。テンポを上げたい回だけ台本側で調整
 
 
 # 読み間違い対策辞書(tools/reading_dict.json)をナレーションへ適用する
