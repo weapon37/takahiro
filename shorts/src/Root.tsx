@@ -3,6 +3,7 @@ import {ShortVideo, ShortVideoProps} from './ShortVideo';
 import {RankingVideo, RankingVideoProps} from './RankingVideo';
 import {ContrarianVideo, ContrarianVideoProps} from './ContrarianVideo';
 import {StoryVideo, StoryVideoProps} from './StoryVideo';
+import {MinimalVideo, MinimalVideoProps} from './MinimalVideo';
 import defaultProps from './props.json';
 import rankingProps from './props_ranking.json';
 import contraProps from './props_contra.json';
@@ -44,6 +45,17 @@ export const RemotionRoot: React.FC = () => {
         height={1920}
         durationInFrames={300}
         defaultProps={contraProps as ContrarianVideoProps}
+        calculateMetadata={({props}) => ({durationInFrames: byTotal(props.scenes)})}
+      />
+      {/* 実写ミニマル型: RankingVideo と同じpropsを流用できる */}
+      <Composition
+        id="MinimalVideo"
+        component={MinimalVideo}
+        fps={FPS}
+        width={1080}
+        height={1920}
+        durationInFrames={300}
+        defaultProps={rankingProps as unknown as MinimalVideoProps}
         calculateMetadata={({props}) => ({durationInFrames: byTotal(props.scenes)})}
       />
       <Composition
