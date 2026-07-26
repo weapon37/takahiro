@@ -29,13 +29,14 @@
 | ノートPCで作業（人物） | jp_laptop_m1, jp_laptop_f1, jp_laptop_f2, jp_cafe_f |
 | スマホ・SNS・比較 | sumaho2, sumaho3, nb_phone, nb_social |
 | 街・都市・現実 | jp_shibuya, jp_shibuya_air, jp_skyline, jp_dusk_road, jp_neon_rain, city_night, nb_building, nb_night, own_street |
-| 歩く・通勤・移動 | business_walking, nb_walk, jp_train, subway_commute, nb_train |
+| 歩く・通勤・移動 | business_walking, nb_walk, jp_train, subway_commute, nb_train, own_train_field |
 | カフェ・コーヒー | jp_cafe_f, nb_cafe, nb_coffee, coffee_desk |
 | 暮らし・ゆとり・食事 | own_meal, jp_sushi, jp_home_read, own_sparrow, nb_plant |
 | 悩み・思考・停滞 | nb_think, nb_rain |
 | チーム・発信・信頼 | nb_team, handshake, nb_social |
 | カメラ（元カメラマンの署名） | own_camera, nb_camera |
-| 自然・情景（間・締め） | own_golf, own_heron, nb_sky, nb_bokeh, nb_art, nb_particles |
+| 自然・情景（間・締め） | own_golf, own_heron, nb_sky, nb_bokeh, nb_art, nb_particles, own_sunflower, own_sunflower2, own_canal |
+| 郊外・日常の現実（空の余白＝テロップ向き） | own_suburb_sky, own_street |
 
 ## 割り当ての考え方
 
