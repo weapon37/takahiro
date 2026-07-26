@@ -22,11 +22,11 @@ OUTDIR = os.path.join(HERE, "public", "bg")
 # bg_01=フック・導入 / bg_02=特徴①コンビニ / bg_03=特徴②セール /
 # bg_04=特徴③貯金 / bg_05=CTA
 QUERIES = [
-    "night city lights walking",   # フック・導入(夜の街)
-    "convenience store night",     # 特徴①(コンビニ)
-    "shopping mall people",        # 特徴②(セール・買い物)
-    "counting money savings",      # 特徴③(貯金・お金)
-    "cozy desk lamp night",        # CTA(落ち着いた締め)
+    "Tokyo street night",          # フック・導入(夜の街=渋谷/新宿)
+    "Tokyo train commute",         # 通勤・電車
+    "Japanese cafe laptop",        # 作業・カフェ
+    "asian businessman office",    # 仕事・オフィス
+    "japanese food meal",          # 暮らし・食事
 ]
 
 
@@ -41,10 +41,16 @@ def download(url: str, path: str):
             f.write(chunk)
 
 
-def search_portrait_video(query: str, api_key: str):
+# Pexelsは欧米コントリビューターが多く、無指定だと外国の映像ばかりになる。
+# locale=ja-JP を付け、日本/アジア文脈のワードを添えると日本の映像が出やすい。
+# 例) "Tokyo street" / "Japan office worker" / "asian woman laptop cafe" /
+#     "Tokyo train commute" / "shibuya crossing" / "japanese food"
+# それでもヒットは限定的なので、確実に日本の絵が欲しいときは自作素材(own_*)が最良。
+def search_portrait_video(query: str, api_key: str, locale: str = "ja-JP"):
     url = (
         "https://api.pexels.com/videos/search?"
-        f"query={urllib.parse.quote(query)}&orientation=portrait&size=medium&per_page=3"
+        f"query={urllib.parse.quote(query)}&orientation=portrait&size=medium"
+        f"&per_page=3&locale={locale}"
     )
     req = urllib.request.Request(url, headers={"Authorization": api_key, "User-Agent": UA})
     with urllib.request.urlopen(req) as res:
