@@ -50,7 +50,8 @@ npx remotion ffmpeg -nostdin -y -t 6 -i <元動画> -vf "$VF" \
 | スマホ・SNS・比較 | sumaho2, sumaho3, nb_phone, nb_social |
 | 街・都市・現実 | jp_shibuya, jp_shibuya_air, jp_skyline, jp_dusk_road, jp_neon_rain, city_night, nb_building, nb_night, own_street |
 | 歩く・通勤・移動 | business_walking, nb_walk, jp_train, subway_commute, nb_train, own_train_field |
-| カフェ・コーヒー | jp_cafe_f, nb_cafe, nb_coffee, coffee_desk |
+| カフェ・コーヒー | own_coffee_pour（注ぐ＝動きあり）, own_coffee_cup, jp_cafe_f, nb_cafe, nb_coffee, coffee_desk |
+| 一息つく・ゆとり・朝のはじまり | own_coffee_pour, own_coffee_cup, own_meal, nb_morning |
 | 暮らし・ゆとり・食事 | own_meal, jp_sushi, jp_home_read, own_sparrow, nb_plant |
 | 悩み・思考・停滞 | nb_think, nb_rain, own_rain_road |
 | 育てる・手をかける・収穫（継続の比喩） | own_field_pumpkin, own_eggplant, own_flowers_garden |
