@@ -339,6 +339,13 @@ const Telop: React.FC<{text: string; big?: boolean}> = ({text, big}) => {
 
 // ---------- ツール名見出し(rankシーン) ----------
 
+// 見出しの文字サイズ: 全角1文字≒1em として、内枠に収まる最大サイズを返す。
+// 半角(英数)は約0.6文字分として数える(例: "Google Gemini" は見た目ほど幅を取らない)。
+const headlineFontSize = (text: string): number => {
+  const width = [...text].reduce((a, c) => a + (/[\x20-\x7e]/.test(c) ? 0.6 : 1), 0);
+  return Math.min(110, Math.floor(820 / Math.max(1, width)));
+};
+
 const Headline: React.FC<{text: string}> = ({text}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
@@ -363,17 +370,22 @@ const Headline: React.FC<{text: string}> = ({text}) => {
       <div
         style={{
           display: 'inline-block',
+          maxWidth: '100%',
+          boxSizing: 'border-box',
           fontFamily,
           fontWeight: 900,
-          fontSize: 110,
+          // 長い見出しは自動で縮小する(固定110pxだと9文字以上で画面からはみ出す)。
+          // 内枠の実効幅は 1080 - 左右余白80 - パディング - 枠線20 ≒ 820px。
+          fontSize: headlineFontSize(text),
           color: BRAND.ink,
           backgroundColor: '#ffffff',
           border: `10px solid ${BRAND.ink}`,
           borderRadius: 34,
-          padding: '20px 60px',
+          padding: text.length >= 8 ? '20px 36px' : '20px 60px',
           boxShadow: `0 12px 0 ${BRAND.ink}33`,
           lineHeight: 1.2,
           wordBreak: 'keep-all',
+          whiteSpace: 'nowrap',
         }}
       >
         {text}
