@@ -1,0 +1,64 @@
+{
+  "template": "RankingVideo",
+  "_note": "維持率テスト版。3本の実データを反映: (1)ランキング型の4〜8秒の谷を埋める=第3位から入らず、フック直後に1位を予告 (2)尺35秒前後でループを狙う (3)否定・断定フック (4)背景は文ごとに内容シンクロ・1文2カット。次のデータで谷が消えたか検証する。",
+  "title": "AIに任せると逆に遅くなる仕事BEST3【任せる前に見て】",
+  "caption": "AIに任せたのに逆に遅くなる仕事、3つ。1位は多くの人がやってます。AIは「長い作業」ほど効きます。任せて失敗したものがあれば、コメントで教えてください。\n※個人の見解です\n#AI活用 #仕事術 #時短 #ChatGPT #生産性",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "エーアイに任せたのに、逆に遅くなる。そんな仕事があります。1位は、たぶんあなたもやってます。",
+      "telop": "AIで**逆に遅くなる**仕事",
+      "bg": ["own_clock", "own_clock_zoom"]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "短いメール",
+      "narration": "第3位、短いメール。",
+      "telop": "3行のメールを頼む",
+      "bg": ["nb_phone"]
+    },
+    {
+      "role": "body",
+      "narration": "指示を書く時間のほうが長い。自分で打つほうが速いです。",
+      "telop": "**指示を書く時間**の方が長い",
+      "bg": ["typing_laptop", "nb_keys"]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "社内だけのルール",
+      "narration": "第2位、社内だけのルールが絡む作業。",
+      "telop": "自分しか知らない前提",
+      "bg": ["jp_desk_m1"]
+    },
+    {
+      "role": "save",
+      "narration": "前提を全部説明する手間が、作業より重い。1位は保存推奨です。",
+      "telop": "1位は**保存**推奨",
+      "bg": ["nb_notes"]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "5分で終わる作業",
+      "narration": "第1位、5分で終わる作業。",
+      "telop": "すぐ終わるのに任せる",
+      "bg": ["nb_desk"]
+    },
+    {
+      "role": "body",
+      "narration": "頼む、確認する、直す。それで10分です。エーアイは、長い作業ほど効きます。",
+      "telop": "AIは**長い作業**ほど効く",
+      "bg": ["jp_laptop_m1", "own_coffee_pour"]
+    },
+    {
+      "role": "cta",
+      "narration": "任せて失敗したもの、コメントで教えてください。",
+      "telop": "失敗したもの↓\n**コメント**で",
+      "bg": ["own_suburb_sky"]
+    }
+  ],
+  "bgm": "bgm/for_our_friends.mp3"
+}

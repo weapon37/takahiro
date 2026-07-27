@@ -1,0 +1,129 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "AIで**逆に遅くなる**仕事",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_clock.mp4",
+        "bg/own_clock_zoom.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_test_hybrid/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 219
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "短いメール",
+      "telop": "3行のメールを頼む",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_phone.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_test_hybrid/02.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 70
+    },
+    {
+      "role": "body",
+      "telop": "**指示を書く時間**の方が長い",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/nb_keys.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_test_hybrid/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 133
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "社内だけのルール",
+      "telop": "自分しか知らない前提",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_desk_m1.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_test_hybrid/04.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 106
+    },
+    {
+      "role": "save",
+      "telop": "1位は**保存**推奨",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_notes.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_test_hybrid/05.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 202
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "5分で終わる作業",
+      "telop": "すぐ終わるのに任せる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_desk.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_test_hybrid/06.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 79
+    },
+    {
+      "role": "body",
+      "telop": "AIは**長い作業**ほど効く",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_laptop_m1.mp4",
+        "bg/own_coffee_pour.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_test_hybrid/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 202
+    },
+    {
+      "role": "cta",
+      "telop": "失敗したもの↓\n**コメント**で",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_test_hybrid/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 100
+    }
+  ]
+}
