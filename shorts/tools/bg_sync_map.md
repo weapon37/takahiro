@@ -52,7 +52,8 @@ npx remotion ffmpeg -nostdin -y -t 6 -i <元動画> -vf "$VF" \
 | 歩く・通勤・移動 | business_walking, nb_walk, jp_train, subway_commute, nb_train, own_train_field |
 | カフェ・コーヒー | jp_cafe_f, nb_cafe, nb_coffee, coffee_desk |
 | 暮らし・ゆとり・食事 | own_meal, jp_sushi, jp_home_read, own_sparrow, nb_plant |
-| 悩み・思考・停滞 | nb_think, nb_rain |
+| 悩み・思考・停滞 | nb_think, nb_rain, own_rain_road |
+| 育てる・手をかける・収穫（継続の比喩） | own_field_pumpkin, own_eggplant, own_flowers_garden |
 | チーム・発信・信頼 | nb_team, handshake, nb_social |
 | カメラ（元カメラマンの署名） | own_camera, nb_camera |
 | 自然・情景（間・締め） | own_golf, own_heron, nb_sky, nb_bokeh, nb_art, nb_particles, own_sunflower, own_sunflower2, own_canal |
