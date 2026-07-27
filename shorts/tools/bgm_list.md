@@ -21,18 +21,16 @@
 | `bgm/for_our_friends.mp3` | **29.8** | — | 最も安全。Week1/2で最多使用 |
 | `bgm/dova_ensolarado.mp3` | **27.9** | 2:16 | DOVA。候補中で最良。長さがありループが自然 |
 | `bgm/pawn.mp3` | 26.7 | 3:05 | 持論(⚡)回で多用 |
-| `bgm/dova_track2.mp3` | 25.0 | 1:17 | DOVA |
-| `bgm/dova_track5.mp3` | 24.7 | 1:04 | DOVA |
-| `bgm/dova_chocomint.mp3` | 22.8 | 0:38 | DOVA(artist: チョコミント)。Shortsの尺に近く1周で収まる |
+| `bgm/dova_beach_cocktail.mp3` | 25.0 | 1:17 | DOVA「ビーチアンドカクテル」 |
+| `bgm/dova_asahi_lab.mp3` | 24.7 | 1:04 | DOVA「朝日ラボ」。朝枠(7:00)と名前も雰囲気も合う |
+| `bgm/dova_chocomint.mp3` | 22.8 | 0:38 | DOVA「チョコミント」。Shortsの尺に近く1周で収まる |
 | `bgm/farm_country.mp3` | — | — | 声帯域12%。未使用だが良好の見込み |
-| `bgm/dova_track3.mp3` | 17.7 | 2:11 | DOVA。使えるが余裕少なめ。`bgmVolume` を 0.08 推奨 |
+| `bgm/dova_cafe_rain.mp3` | 17.7 | 2:11 | DOVA「カフェの雨音」。使えるが余裕少なめ。`bgmVolume` を 0.08 推奨 |
 | `bgm/tomorrows_light.mp3` | **18.5** | — | ⚠️ 主旋律が声帯域(62%)。差し替え推奨 |
 | `bgm/calm_instrumental.mp3` | — | — | 音量ムラが大きい(24)。ニュース回で使用中 |
 | `bgm/paradise.mp3` | — | — | 声帯域42%。未使用 |
 
 ## 注意
 
-- `dova_track2/3/5` は元のファイル名が日本語でアップロード時に失われたため仮名。
-  正式タイトルが分かれば改名する。
 - DOVA-SYNDROMEは商用利用可・クレジット表記は原則不要（作曲者が指定している場合は必要）。
   楽曲ごとの規約は配布ページで確認すること。
