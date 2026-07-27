@@ -43,7 +43,7 @@ npx remotion ffmpeg -nostdin -y -t 6 -i <元動画> -vf "$VF" \
 |---|---|
 | お金・収益・稼ぐ | nb_cash, coins_stack, nb_savings, keiri2, keiri3 |
 | 伸び悩み・数字・グラフ | nb_chart, graph_screen |
-| 時間・時計・朝 | nb_clock, calendar, nb_morning, sunrise_city |
+| 時間・時計・朝 | own_clock（自作・秒針が動く／実測回の主役）, nb_clock, calendar, nb_morning, sunrise_city |
 | 仕事・PC・デスク | typing_laptop, nb_desk, coffee_desk, office_window, jp_desk_m1, nb_code, nb_gadgets, nb_keys |
 | ノートに書く・メモ | nb_notes, note2, note3 |
 | ノートPCで作業（人物） | jp_laptop_m1, jp_laptop_f1, jp_laptop_f2, jp_cafe_f |
