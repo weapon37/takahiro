@@ -30,6 +30,24 @@
 | `bgm/calm_instrumental.mp3` | — | — | 音量ムラが大きい(24)。ニュース回で使用中 |
 | `bgm/paradise.mp3` | — | — | 声帯域42%。未使用 |
 
+## 選定ルール（台本作成時に適用）
+
+BGMは**内容に合わせて選ぶ**。同じ曲が続かないよう、週内で散らす。
+※オーナーの好み: **ビーチアンドカクテル**。合う回では優先的に採用する。
+
+| 動画の役割・トーン | 第一候補 | 予備 |
+|---|---|---|
+| 🏆 ランキング（朝・前向き・軽快） | `dova_beach_cocktail` | `dova_asahi_lab`, `for_our_friends` |
+| 朝いちばんの回（7:00・一日の始まり） | `dova_asahi_lab` | `dova_beach_cocktail` |
+| ⚡ 持論・否定・警告（夜・落ち着いた説得） | `pawn` | `dova_ensolarado` |
+| 実測・検証（数字を見せる回） | `for_our_friends` | `dova_ensolarado` |
+| ニュース（毎週日曜の定番枠） | `dova_ensolarado` | `for_our_friends` |
+| しっとり・振り返り・暮らし寄り | `dova_cafe_rain`（`bgmVolume` 0.08） | `farm_country` |
+| 短尺（35秒前後で1周させたいとき） | `dova_chocomint` | — |
+
+- `tomorrows_light` は原則使わない（声帯域と競合）。
+- 迷ったら **S/Nが高い曲**を選ぶ（`for_our_friends` / `dova_ensolarado`）。
+
 ## 注意
 
 - DOVA-SYNDROMEは商用利用可・クレジット表記は原則不要（作曲者が指定している場合は必要）。
