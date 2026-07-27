@@ -40,6 +40,7 @@
         "bg/nb_rain.mp4",
         "bg/nb_savings.mp4"
       ],
+      "bgSync": false,
       "bgWash": 0,
       "audio": "audio_w2d7_am_news2/01.wav",
       "eraseIn": false,
@@ -84,6 +85,7 @@
         "bg/nb_rain.mp4",
         "bg/nb_savings.mp4"
       ],
+      "bgSync": false,
       "bgWash": 0,
       "audio": "audio_w2d7_am_news2/02.wav",
       "eraseIn": true,
@@ -126,6 +128,7 @@
         "bg/nb_rain.mp4",
         "bg/nb_savings.mp4"
       ],
+      "bgSync": false,
       "bgWash": 0,
       "audio": "audio_w2d7_am_news2/03.wav",
       "eraseIn": false,
@@ -170,6 +173,7 @@
         "bg/nb_rain.mp4",
         "bg/nb_savings.mp4"
       ],
+      "bgSync": false,
       "bgWash": 0,
       "audio": "audio_w2d7_am_news2/04.wav",
       "eraseIn": true,
@@ -212,6 +216,7 @@
         "bg/nb_rain.mp4",
         "bg/nb_savings.mp4"
       ],
+      "bgSync": false,
       "bgWash": 0,
       "audio": "audio_w2d7_am_news2/05.wav",
       "eraseIn": false,
@@ -254,6 +259,7 @@
         "bg/nb_rain.mp4",
         "bg/nb_savings.mp4"
       ],
+      "bgSync": false,
       "bgWash": 0,
       "audio": "audio_w2d7_am_news2/06.wav",
       "eraseIn": true,
@@ -298,6 +304,7 @@
         "bg/nb_rain.mp4",
         "bg/nb_savings.mp4"
       ],
+      "bgSync": false,
       "bgWash": 0,
       "audio": "audio_w2d7_am_news2/07.wav",
       "eraseIn": true,
@@ -340,6 +347,7 @@
         "bg/nb_rain.mp4",
         "bg/nb_savings.mp4"
       ],
+      "bgSync": false,
       "bgWash": 0,
       "audio": "audio_w2d7_am_news2/08.wav",
       "eraseIn": false,
@@ -382,6 +390,7 @@
         "bg/nb_rain.mp4",
         "bg/nb_savings.mp4"
       ],
+      "bgSync": false,
       "bgWash": 0,
       "audio": "audio_w2d7_am_news2/09.wav",
       "eraseIn": false,

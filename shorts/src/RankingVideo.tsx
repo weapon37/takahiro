@@ -341,10 +341,11 @@ const Telop: React.FC<{text: string; big?: boolean}> = ({text, big}) => {
 
 // 見出しの文字サイズ: 全角1文字≒1em として、内枠に収まる最大サイズを返す。
 // 半角(英数)は約0.6文字分として数える(例: "Google Gemini" は見た目ほど幅を取らない)。
-const headlineFontSize = (text: string): number => {
-  const width = [...text].reduce((a, c) => a + (/[\x20-\x7e]/.test(c) ? 0.6 : 1), 0);
-  return Math.min(110, Math.floor(820 / Math.max(1, width)));
-};
+const headlineWidth = (text: string): number =>
+  [...text].reduce((a, c) => a + (/[\x20-\x7e]/.test(c) ? 0.55 : 1), 0);
+
+const headlineFontSize = (text: string): number =>
+  Math.min(110, Math.floor(880 / Math.max(1, headlineWidth(text))));
 
 const Headline: React.FC<{text: string}> = ({text}) => {
   const frame = useCurrentFrame();
@@ -381,7 +382,7 @@ const Headline: React.FC<{text: string}> = ({text}) => {
           backgroundColor: '#ffffff',
           border: `10px solid ${BRAND.ink}`,
           borderRadius: 34,
-          padding: text.length >= 8 ? '20px 36px' : '20px 60px',
+          padding: headlineWidth(text) >= 8 ? '20px 36px' : '20px 60px',
           boxShadow: `0 12px 0 ${BRAND.ink}33`,
           lineHeight: 1.2,
           wordBreak: 'keep-all',
