@@ -56,7 +56,8 @@ npx remotion ffmpeg -nostdin -y -t 6 -i <元動画> -vf "$VF" \
 | 悩み・思考・停滞 | nb_think, nb_rain, own_rain_road |
 | 育てる・手をかける・収穫（継続の比喩） | own_field_pumpkin, own_eggplant, own_flowers_garden |
 | チーム・発信・信頼 | nb_team, handshake, nb_social |
-| カメラ（元カメラマンの署名） | own_camera, nb_camera |
+| カメラ（元カメラマンの署名） | own_tripod（三脚を操作する手・寄り／動きあり）, own_camera（富士山＋三脚・遠景）, nb_camera |
+| 昔は手作業だった／段取り・準備 | own_tripod, own_camera |
 | 自然・情景（間・締め） | own_golf, own_heron, nb_sky, nb_bokeh, nb_art, nb_particles, own_sunflower, own_sunflower2, own_canal |
 | 郊外・日常の現実（空の余白＝テロップ向き） | own_suburb_sky, own_street |
 
