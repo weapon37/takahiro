@@ -37,7 +37,14 @@ npx remotion ffmpeg -nostdin -y -t 6 -i <元動画> -vf "$VF" \
 
 ## 素材語彙（テーマ → 使えるクリップ）
 
-日本素材=`jp_*` / 自作=`own_*` を優先的に。合うものが無ければ `nb_*` や説明名クリップ。
+**使い分けの原則:** `own_*`(自作) と `jp_*`(日本のストック) を両輪で使う。`nb_*` は補助。
+
+- **`own_*` が得意**: 手元の作業、机まわり、暮らし、カメラ機材、時計、ビフォーアフター。
+  「自分で撮れるもの」＝チャンネルの署名になる絵。
+- **`jp_*` が得意**: **渋谷スクランブル・都会の街並み・ネオン・電車・スカイライン**など、
+  自作では撮れないスケールの大きい日本の風景。**引きの絵・都市の説得力が要る場面では積極的に使う。**
+  「日本の視聴者に馴染む画」という点で外国素材(`nb_*`)より優先。
+- **理想の組み合わせ**: 引き(`jp_*`の街)→ 寄り(`own_*`の手元)。スケールと当事者感が両立する。
 
 | テーマ | クリップ |
 |---|---|
@@ -52,8 +59,11 @@ npx remotion ffmpeg -nostdin -y -t 6 -i <元動画> -vf "$VF" \
 | 書類・事務作業・経理 | own_docs_stack, keiri2, keiri3, nb_notes |
 | ノートPCで作業（人物） | jp_laptop_m1, jp_laptop_f1, jp_laptop_f2, jp_cafe_f |
 | スマホ・SNS・比較 | own_phone_tap（自作・スマホを操作する指）, sumaho2, sumaho3, nb_phone, nb_social |
-| 街・都市・現実 | jp_shibuya, jp_shibuya_air, jp_skyline, jp_dusk_road, jp_neon_rain, city_night, nb_building, nb_night, own_street |
-| 歩く・通勤・移動 | business_walking, nb_walk, jp_train, subway_commute, nb_train, own_train_field |
+| 街・都市（夜・ネオン） | jp_shinjuku_neon, jp_kabukicho, jp_neon_rain, jp_takeshita, jp_shibuya, city_night, nb_night |
+| 街・都市（昼・スケール） | jp_scramble_day, jp_crosswalk_top, jp_shibuya_air, jp_skyline_day, jp_skyline, jp_office_tower, jp_city_dusk, jp_dusk_road, nb_building |
+| 人の流れ・世の中・大勢 | jp_commuters, jp_crosswalk_top, jp_scramble_day, jp_station_escalator, jp_mall_escalator |
+| 郊外・生活圏の街 | own_street, own_suburb_sky |
+| 歩く・通勤・移動 | jp_commuters, jp_train, jp_train_window, jp_station_escalator, business_walking, nb_walk, subway_commute, nb_train, own_train_field |
 | カフェ・コーヒー | own_coffee_pour（注ぐ＝動きあり）, own_coffee_cup, jp_cafe_f, nb_cafe, nb_coffee, coffee_desk |
 | 一息つく・ゆとり・朝のはじまり | own_coffee_pour, own_coffee_cup, own_meal, nb_morning |
 | 暮らし・ゆとり・食事 | own_meal, jp_sushi, jp_home_read, own_sparrow, nb_plant |
