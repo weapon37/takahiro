@@ -48,7 +48,8 @@ npx remotion ffmpeg -nostdin -y -t 6 -i <元動画> -vf "$VF" \
 | ノートに書く・メモ | own_pen_write（自作・ペンで書く手／「人が考える」象徴）, nb_notes, note2, note3 |
 | 手を動かす・作業する（自作の手元カット） | own_typing, own_phone_tap, own_pen_write, own_lens_hands, own_tripod |
 | ビフォーアフター・片付く・スッキリ | own_desk_timelapse（3.5秒で散らかった机→空の机。1カットで完結）, own_desk_messy（前）, own_desk_clean（後） |
-| 散らかる・タスク過多・混乱 | own_desk_messy, nb_think |
+| 散らかる・タスク過多・混乱 | own_desk_messy, own_docs_stack（書類が積み上がる＝仕事が溜まる）, nb_think |
+| 書類・事務作業・経理 | own_docs_stack, keiri2, keiri3, nb_notes |
 | ノートPCで作業（人物） | jp_laptop_m1, jp_laptop_f1, jp_laptop_f2, jp_cafe_f |
 | スマホ・SNS・比較 | own_phone_tap（自作・スマホを操作する指）, sumaho2, sumaho3, nb_phone, nb_social |
 | 街・都市・現実 | jp_shibuya, jp_shibuya_air, jp_skyline, jp_dusk_road, jp_neon_rain, city_night, nb_building, nb_night, own_street |
