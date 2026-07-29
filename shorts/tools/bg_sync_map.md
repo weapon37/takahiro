@@ -59,9 +59,9 @@ npx remotion ffmpeg -nostdin -y -t 6 -i <元動画> -vf "$VF" \
 | 書類・事務作業・経理 | own_docs_stack, keiri2, keiri3, nb_notes |
 | ノートPCで作業（人物） | jp_laptop_m1, jp_laptop_f1, jp_laptop_f2, jp_cafe_f |
 | スマホ・SNS・比較 | own_phone_tap（自作・スマホを操作する指）, sumaho2, sumaho3, nb_phone, nb_social |
-| 街・都市（夜・ネオン） | jp_shinjuku_neon, jp_kabukicho, jp_neon_rain, jp_takeshita, jp_shibuya, city_night, nb_night |
+| 街・都市（夜・ネオン） | own_neon_street（自作）, own_crossing_night（自作・交差点）, own_city_night（自作・高層ビル）, jp_shinjuku_neon, jp_kabukicho, jp_neon_rain, jp_takeshita, jp_shibuya, city_night, nb_night |
 | 街・都市（昼・スケール） | jp_scramble_day, jp_crosswalk_top, jp_shibuya_air, jp_skyline_day, jp_skyline, jp_office_tower, jp_city_dusk, jp_dusk_road, nb_building |
-| 人の流れ・世の中・大勢 | jp_commuters, jp_crosswalk_top, jp_scramble_day, jp_station_escalator, jp_mall_escalator |
+| 人の流れ・世の中・大勢 | own_crossing_night（自作）, jp_commuters, jp_crosswalk_top, jp_scramble_day, jp_station_escalator, jp_mall_escalator |
 | 郊外・生活圏の街 | own_street, own_suburb_sky |
 | 歩く・通勤・移動 | jp_commuters, jp_train, jp_train_window, jp_station_escalator, business_walking, nb_walk, subway_commute, nb_train, own_train_field |
 | カフェ・コーヒー | own_coffee_pour（注ぐ＝動きあり）, own_coffee_cup, jp_cafe_f, nb_cafe, nb_coffee, coffee_desk |
