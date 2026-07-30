@@ -63,10 +63,12 @@ npx remotion ffmpeg -nostdin -y -t 6 -i <元動画> -vf "$VF" \
 | 街・都市（昼・スケール） | jp_scramble_day, jp_crosswalk_top, jp_shibuya_air, jp_skyline_day, jp_skyline, jp_office_tower, jp_city_dusk, jp_dusk_road, nb_building |
 | 人の流れ・世の中・大勢 | own_crossing_night（自作）, jp_commuters, jp_crosswalk_top, jp_scramble_day, jp_station_escalator, jp_mall_escalator |
 | 郊外・生活圏の街 | own_street, own_suburb_sky |
+| 田舎・移動中の車窓・のどか | own_countryside, own_train_field, jp_train_window |
+| 静けさ・余白・整う（時間の使い方の回） | own_lotus（蓮の花）, own_golf, nb_sky, own_sunflower |
 | 歩く・通勤・移動 | jp_commuters, jp_train, jp_train_window, jp_station_escalator, business_walking, nb_walk, subway_commute, nb_train, own_train_field |
 | カフェ・コーヒー | own_coffee_pour（注ぐ＝動きあり）, own_coffee_cup, jp_cafe_f, nb_cafe, nb_coffee, coffee_desk |
 | 一息つく・ゆとり・朝のはじまり | own_coffee_pour, own_coffee_cup, own_meal, nb_morning |
-| 暮らし・ゆとり・食事 | own_meal, jp_sushi, jp_home_read, own_sparrow, nb_plant |
+| 暮らし・ゆとり・食事 | own_unaju（自作・うな重＝ご褒美/贅沢）, own_meal, jp_sushi, jp_home_read, own_sparrow, nb_plant |
 | 悩み・思考・停滞 | nb_think, nb_rain, own_rain_road |
 | 育てる・手をかける・収穫（継続の比喩） | own_field_pumpkin, own_eggplant, own_flowers_garden |
 | チーム・発信・信頼 | nb_team, handshake, nb_social |
