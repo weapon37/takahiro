@@ -1,0 +1,129 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_beach_cocktail.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "AIでも**仕事が減らない**理由",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4",
+        "bg/own_desk_messy.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3a_heranai/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 219
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "ツールを増やす",
+      "telop": "新しいAIを試し続ける",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_gadgets.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3a_heranai/02.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 77
+    },
+    {
+      "role": "body",
+      "telop": "**1つ**を使い込む方が速い",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/nb_keys.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3a_heranai/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 121
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "毎回ゼロから頼む",
+      "telop": "同じ指示を毎回打ち直す",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_phone_tap.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3a_heranai/04.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 89
+    },
+    {
+      "role": "save",
+      "telop": "1位は**保存**推奨",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_pen_write.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3a_heranai/05.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 156
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "空いた時間を埋める",
+      "telop": "浮いた時間をすぐ埋める",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_clock.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3a_heranai/06.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 131
+    },
+    {
+      "role": "body",
+      "telop": "空けた時間は**空けておく**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_timelapse.mp4",
+        "bg/own_coffee_pour.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3a_heranai/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 202
+    },
+    {
+      "role": "cta",
+      "telop": "当てはまったのは↓\n**コメント**で",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3a_heranai/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 120
+    }
+  ]
+}
