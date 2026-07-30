@@ -9,7 +9,10 @@
       "role": "hook",
       "narration": "エーアイに課金する前に。無料版で十分な人の特徴、3つです。1位に当てはまるなら、まだ払わなくていい。",
       "telop": "**無料版で十分**な人の特徴",
-      "bg": ["nb_cash", "own_phone_tap"]
+      "bg": [
+        "nb_cash",
+        "own_phone_tap"
+      ]
     },
     {
       "role": "rank",
@@ -17,27 +20,35 @@
       "headline": "使うのは週に数回",
       "narration": "第3位、使うのは、週に数回。",
       "telop": "毎日は使っていない",
-      "bg": ["own_clock_zoom"]
+      "bg": [
+        "own_clock_zoom"
+      ]
     },
     {
       "role": "body",
       "narration": "上限に当たらないなら、有料の意味は薄いです。",
       "telop": "上限に当たらないなら**不要**",
-      "bg": ["own_typing"]
+      "bg": [
+        "own_typing"
+      ]
     },
     {
       "role": "rank",
       "rank": 2,
       "headline": "使い道が決まってない",
       "narration": "第2位、何に使うか、決まっていない。",
-      "telop": "とりあえず課金しようとしてる",
-      "bg": ["nb_think"]
+      "telop": "とりあえず課金しがち",
+      "bg": [
+        "nb_think"
+      ]
     },
     {
       "role": "save",
       "narration": "先に使い道を決める。順番が逆です。1位は保存推奨。",
       "telop": "1位は**保存**推奨",
-      "bg": ["own_pen_write"]
+      "bg": [
+        "own_pen_write"
+      ]
     },
     {
       "role": "rank",
@@ -45,20 +56,27 @@
       "headline": "無料枠を使い切ってない",
       "narration": "第1位、無料の枠を、まだ使い切っていない。",
       "telop": "無料枠を**使い切ってない**",
-      "bg": ["own_docs_stack"]
+      "bg": [
+        "own_docs_stack"
+      ]
     },
     {
       "role": "body",
       "narration": "限界まで使ってから、足りない部分に払う。それが一番、損しません。",
       "telop": "足りない所にだけ**払う**",
-      "bg": ["nb_savings", "own_coffee_cup"]
+      "bg": [
+        "nb_savings",
+        "own_coffee_cup"
+      ]
     },
     {
       "role": "cta",
       "narration": "あなたは無料派ですか、課金派ですか。コメントで教えてください。",
       "telop": "無料派？課金派？↓\n**コメント**で",
-      "bg": ["own_crossing_night"]
+      "bg": [
+        "own_crossing_night"
+      ]
     }
   ],
-  "bgm": "bgm/dova_asahi_lab.mp3"
+  "bgm": "bgm/dova_ensolarado.mp3"
 }

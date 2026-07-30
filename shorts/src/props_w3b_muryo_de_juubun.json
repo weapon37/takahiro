@@ -1,6 +1,6 @@
 {
   "account": "仕事が消えるAI帳",
-  "bgm": "bgm/dova_asahi_lab.mp3",
+  "bgm": "bgm/dova_ensolarado.mp3",
   "bgmVolume": 0.1,
   "whoosh": "se/whoosh.wav",
   "scenes": [
@@ -53,7 +53,7 @@
       "role": "rank",
       "rank": 2,
       "headline": "使い道が決まってない",
-      "telop": "とりあえず課金しようとしてる",
+      "telop": "とりあえず課金しがち",
       "bgVideo": null,
       "bgClips": [
         "bg/nb_think.mp4"

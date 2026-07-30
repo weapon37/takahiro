@@ -201,6 +201,31 @@ export const softBreaks = (t: string): string => {
   return s;
 };
 
+// テロップの折り返し安全策。
+// ハイライト(whiteSpace:nowrap)と地の文の境目には改行候補が無く、日本語は keep-all のため
+// 「**無料版で十分**な人の特徴」が一続きの塊になり画面外へはみ出す。
+// → 描画側で区切りにゼロ幅スペースを挟む(TELOP_SEP)ことで、ハイライトの直後で改行できる。
+export const TELOP_SEP = '​';
+
+const runWidth = (s: string): number =>
+  [...s].reduce((a, c) => a + (/[\x20-\x7e]/.test(c) ? 0.55 : 1), 0);
+
+// 「これ以上分割できない最長の並び」を全角換算で返す。
+// ハイライトはnowrapなので丸ごと、地の文は softBreaks の改行候補で分割した最長片。
+export const telopLongestRun = (text: string): number =>
+  Math.max(
+    0,
+    ...parseTelop(text).map((seg) =>
+      seg.hl
+        ? runWidth(seg.t)
+        : Math.max(0, ...softBreaks(seg.t).split(TELOP_SEP).map(runWidth))
+    )
+  );
+
+// 分割できない並びが枠に収まるまで文字サイズを落とす(通常は基準サイズのまま)
+export const telopFontSize = (text: string, base: number, boxWidth: number): number =>
+  Math.min(base, Math.floor(boxWidth / Math.max(1, telopLongestRun(text))));
+
 // アカウント名(上部常時表示・青文字＋白フチ。背景カットが変わっても読める)
 export const AccountLabel: React.FC<{name: string}> = ({name}) =>
   name ? (

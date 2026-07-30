@@ -10,7 +10,17 @@ import {
   useVideoConfig,
 } from 'remotion';
 import {BRAND, fontFamily} from './brand';
-import {AccountLabel, CutBg, DotGrid, EraserChar, outline, parseTelop, softBreaks} from './common';
+import {
+  AccountLabel,
+  CutBg,
+  DotGrid,
+  EraserChar,
+  outline,
+  parseTelop,
+  softBreaks,
+  telopFontSize,
+  TELOP_SEP,
+} from './common';
 
 // ---------- ⚡逆張り型テンプレ(ネイビー基調・議論を誘発する構成) ----------
 // 構成: hook(言い切り) → body(根拠) → point(①②③) → flip(条件付きの例外) → vs(どっち派?)
@@ -90,30 +100,33 @@ const Telop: React.FC<{text: string; big?: boolean}> = ({text, big}) => {
         style={{
           fontFamily,
           fontWeight: 900,
-          fontSize: big ? 104 : 94,
+          fontSize: telopFontSize(text, big ? 104 : 94, 980),
           lineHeight: 1.5,
           color: '#ffffff',
           whiteSpace: 'pre-wrap', wordBreak: 'keep-all', textWrap: 'balance',
           textShadow: outline(BRAND.ink),
         }}
       >
-        {parseTelop(text).map((seg, i) =>
-          seg.hl ? (
-            <span
-              key={i}
-              style={{
-                background: `linear-gradient(transparent 8%, ${BRAND.spark} 8%, ${BRAND.spark} 96%, transparent 96%)`,
-                padding: '0 10px',
-                borderRadius: 12,
-                whiteSpace: 'nowrap',
-              }}
-            >
-              {seg.t}
-            </span>
-          ) : (
-            <span key={i}>{softBreaks(seg.t)}</span>
-          )
-        )}
+        {parseTelop(text).map((seg, i, arr) => (
+          <React.Fragment key={i}>
+            {seg.hl ? (
+              <span
+                style={{
+                  background: `linear-gradient(transparent 8%, ${BRAND.spark} 8%, ${BRAND.spark} 96%, transparent 96%)`,
+                  padding: '0 10px',
+                  borderRadius: 12,
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                {seg.t}
+              </span>
+            ) : (
+              <span>{softBreaks(seg.t)}</span>
+            )}
+            {/* ハイライトと地の文の境目に改行候補を置く */}
+            {i < arr.length - 1 ? TELOP_SEP : null}
+          </React.Fragment>
+        ))}
       </div>
     </div>
   );

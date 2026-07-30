@@ -22,7 +22,7 @@
 | `bgm/dova_ensolarado.mp3` | **27.9** | 2:16 | DOVA。候補中で最良。長さがありループが自然 |
 | `bgm/pawn.mp3` | 26.7 | 3:05 | 持論(⚡)回で多用 |
 | `bgm/dova_beach_cocktail.mp3` | 25.0 | 1:17 | DOVA「ビーチアンドカクテル」 |
-| `bgm/dova_asahi_lab.mp3` | 24.7 | 1:04 | DOVA「朝日ラボ」。朝枠(7:00)と名前も雰囲気も合う |
+| `bgm/dova_asahi_lab.mp3` | 24.7 | 1:04 | DOVA「朝日ラボ」。⚠️ オーナー評: **不穏な感じで明るい回に合わない**。前向きな内容には使わない |
 | `bgm/dova_chocomint.mp3` | 22.8 | 0:38 | DOVA「チョコミント」。Shortsの尺に近く1周で収まる |
 | `bgm/farm_country.mp3` | — | — | 声帯域12%。未使用だが良好の見込み |
 | `bgm/dova_cafe_rain.mp3` | 17.7 | 2:11 | DOVA「カフェの雨音」。使えるが余裕少なめ。`bgmVolume` を 0.08 推奨 |
@@ -38,7 +38,7 @@ BGMは**内容に合わせて選ぶ**。同じ曲が続かないよう、週内�
 | 動画の役割・トーン | 第一候補 | 予備 |
 |---|---|---|
 | 🏆 ランキング（朝・前向き・軽快） | `dova_beach_cocktail` | `dova_asahi_lab`, `for_our_friends` |
-| 朝いちばんの回（7:00・一日の始まり） | `dova_asahi_lab` | `dova_beach_cocktail` |
+| 朝いちばんの回（7:00・一日の始まり） | `dova_beach_cocktail` | `dova_ensolarado`, `for_our_friends` |
 | ⚡ 持論・否定・警告（夜・落ち着いた説得） | `pawn` | `dova_ensolarado` |
 | 実測・検証（数字を見せる回） | `for_our_friends` | `dova_ensolarado` |
 | ニュース（毎週日曜の定番枠） | `dova_ensolarado` | `for_our_friends` |

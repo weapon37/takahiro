@@ -11,7 +11,16 @@ import {
   useVideoConfig,
 } from 'remotion';
 import {BRAND, fontFamily} from './brand';
-import {AccountLabel, CutBg, EraserChar, outline, parseTelop, softBreaks} from './common';
+import {
+  AccountLabel,
+  CutBg,
+  EraserChar,
+  outline,
+  parseTelop,
+  softBreaks,
+  telopFontSize,
+  TELOP_SEP,
+} from './common';
 
 // ---------- 🏆ランキング型テンプレ(明るい文具系・ブランド4色) ----------
 // テロップ記法: **単語** → 黄色マーカー強調
@@ -290,7 +299,8 @@ const Telop: React.FC<{text: string; big?: boolean}> = ({text, big}) => {
     config: {damping: 200},
     durationInFrames: 12,
   });
-  const fontSize = big ? 112 : 94;
+  // 枠幅は left/right 50 を引いた 980px。分割できない並びが収まるまで自動で縮小する。
+  const fontSize = telopFontSize(text, big ? 112 : 94, 980);
   return (
     <div
       style={{
@@ -316,22 +326,25 @@ const Telop: React.FC<{text: string; big?: boolean}> = ({text, big}) => {
           textShadow: outline('#ffffff'),
         }}
       >
-        {parseTelop(text).map((seg, i) =>
-          seg.hl ? (
-            <span
-              key={i}
-              style={{
-                background: `linear-gradient(transparent 42%, ${BRAND.accent} 42%, ${BRAND.accent} 96%, transparent 96%)`,
-                padding: '0 6px',
-                whiteSpace: 'nowrap',
-              }}
-            >
-              {seg.t}
-            </span>
-          ) : (
-            <span key={i}>{softBreaks(seg.t)}</span>
-          )
-        )}
+        {parseTelop(text).map((seg, i, arr) => (
+          <React.Fragment key={i}>
+            {seg.hl ? (
+              <span
+                style={{
+                  background: `linear-gradient(transparent 42%, ${BRAND.accent} 42%, ${BRAND.accent} 96%, transparent 96%)`,
+                  padding: '0 6px',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                {seg.t}
+              </span>
+            ) : (
+              <span>{softBreaks(seg.t)}</span>
+            )}
+            {/* ハイライトと地の文の境目に改行候補を置く(ここが無いと一続きではみ出す) */}
+            {i < arr.length - 1 ? TELOP_SEP : null}
+          </React.Fragment>
+        ))}
       </div>
     </div>
   );
