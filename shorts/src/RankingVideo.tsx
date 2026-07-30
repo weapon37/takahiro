@@ -18,7 +18,7 @@ import {
   outline,
   parseTelop,
   softBreaks,
-  telopFontSize,
+  telopLayout,
   TELOP_SEP,
 } from './common';
 
@@ -300,7 +300,7 @@ const Telop: React.FC<{text: string; big?: boolean}> = ({text, big}) => {
     durationInFrames: 12,
   });
   // 枠幅は left/right 50 を引いた 980px。分割できない並びが収まるまで自動で縮小する。
-  const fontSize = telopFontSize(text, big ? 112 : 94, 980);
+  const {sep, fontSize} = telopLayout(text, big ? 112 : 94, 980);
   return (
     <div
       style={{
@@ -342,7 +342,7 @@ const Telop: React.FC<{text: string; big?: boolean}> = ({text, big}) => {
               <span>{softBreaks(seg.t)}</span>
             )}
             {/* ハイライトと地の文の境目に改行候補を置く(ここが無いと一続きではみ出す) */}
-            {i < arr.length - 1 ? TELOP_SEP : null}
+            {sep && i < arr.length - 1 ? TELOP_SEP : null}
           </React.Fragment>
         ))}
       </div>

@@ -207,24 +207,37 @@ export const softBreaks = (t: string): string => {
 // → 描画側で区切りにゼロ幅スペースを挟む(TELOP_SEP)ことで、ハイライトの直後で改行できる。
 export const TELOP_SEP = '​';
 
+// 全角1文字あたりの実測幅は約0.97em(9文字×112px が 980px にちょうど収まる)
 const runWidth = (s: string): number =>
-  [...s].reduce((a, c) => a + (/[\x20-\x7e]/.test(c) ? 0.55 : 1), 0);
+  [...s].reduce((a, c) => a + (/[\x20-\x7e]/.test(c) ? 0.55 : 0.97), 0);
 
-// 「これ以上分割できない最長の並び」を全角換算で返す。
-// ハイライトはnowrapなので丸ごと、地の文は softBreaks の改行候補で分割した最長片。
-export const telopLongestRun = (text: string): number =>
-  Math.max(
-    0,
-    ...parseTelop(text).map((seg) =>
-      seg.hl
-        ? runWidth(seg.t)
-        : Math.max(0, ...softBreaks(seg.t).split(TELOP_SEP).map(runWidth))
-    )
-  );
+const maxRun = (runs: string[]): number => Math.max(0, ...runs.map(runWidth));
 
-// 分割できない並びが枠に収まるまで文字サイズを落とす(通常は基準サイズのまま)
-export const telopFontSize = (text: string, base: number, boxWidth: number): number =>
-  Math.min(base, Math.floor(boxWidth / Math.max(1, telopLongestRun(text))));
+// 境目を繋いだままの改行候補(=区切りを入れない場合の折り返し挙動)
+const runsJoined = (text: string): string[] =>
+  parseTelop(text)
+    .map((seg) => (seg.hl ? seg.t : softBreaks(seg.t)))
+    .join('')
+    .split(TELOP_SEP);
+
+// 境目でも切れる場合の改行候補
+const runsSplit = (text: string): string[] =>
+  parseTelop(text).flatMap((seg) => (seg.hl ? [seg.t] : softBreaks(seg.t).split(TELOP_SEP)));
+
+// テロップの折り返し方針を決める。
+// (1) そのままで収まるなら何もしない(既存の見た目を変えない)
+// (2) 収まらないなら境目に改行候補を入れて折り返す
+// (3) それでも収まらないなら文字サイズを落とす
+export const telopLayout = (
+  text: string,
+  base: number,
+  boxWidth: number
+): {sep: boolean; fontSize: number} => {
+  if (maxRun(runsJoined(text)) * base <= boxWidth) return {sep: false, fontSize: base};
+  const split = maxRun(runsSplit(text));
+  if (split * base <= boxWidth) return {sep: true, fontSize: base};
+  return {sep: true, fontSize: Math.floor(boxWidth / Math.max(0.1, split))};
+};
 
 // アカウント名(上部常時表示・青文字＋白フチ。背景カットが変わっても読める)
 export const AccountLabel: React.FC<{name: string}> = ({name}) =>

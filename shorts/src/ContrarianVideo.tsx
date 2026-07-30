@@ -18,7 +18,7 @@ import {
   outline,
   parseTelop,
   softBreaks,
-  telopFontSize,
+  telopLayout,
   TELOP_SEP,
 } from './common';
 
@@ -84,6 +84,7 @@ const Telop: React.FC<{text: string; big?: boolean}> = ({text, big}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const appear = spring({frame: frame - 3, fps, config: {damping: 200}, durationInFrames: 12});
+  const {sep, fontSize} = telopLayout(text, big ? 104 : 94, 980);
   return (
     <div
       style={{
@@ -100,7 +101,7 @@ const Telop: React.FC<{text: string; big?: boolean}> = ({text, big}) => {
         style={{
           fontFamily,
           fontWeight: 900,
-          fontSize: telopFontSize(text, big ? 104 : 94, 980),
+          fontSize,
           lineHeight: 1.5,
           color: '#ffffff',
           whiteSpace: 'pre-wrap', wordBreak: 'keep-all', textWrap: 'balance',
@@ -124,7 +125,7 @@ const Telop: React.FC<{text: string; big?: boolean}> = ({text, big}) => {
               <span>{softBreaks(seg.t)}</span>
             )}
             {/* ハイライトと地の文の境目に改行候補を置く */}
-            {i < arr.length - 1 ? TELOP_SEP : null}
+            {sep && i < arr.length - 1 ? TELOP_SEP : null}
           </React.Fragment>
         ))}
       </div>
