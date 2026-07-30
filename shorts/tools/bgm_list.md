@@ -37,7 +37,7 @@ BGMは**内容に合わせて選ぶ**。同じ曲が続かないよう、週内�
 
 | 動画の役割・トーン | 第一候補 | 予備 |
 |---|---|---|
-| 🏆 ランキング（朝・前向き・軽快） | `dova_beach_cocktail` | `dova_asahi_lab`, `for_our_friends` |
+| 🏆 ランキング（朝・前向き・軽快） | `dova_beach_cocktail` | `dova_ensolarado`, `for_our_friends` |
 | 朝いちばんの回（7:00・一日の始まり） | `dova_beach_cocktail` | `dova_ensolarado`, `for_our_friends` |
 | ⚡ 持論・否定・警告（夜・落ち着いた説得） | `pawn` | `dova_ensolarado` |
 | 実測・検証（数字を見せる回） | `for_our_friends` | `dova_ensolarado` |
