@@ -71,6 +71,7 @@ npx remotion ffmpeg -nostdin -y -t 6 -i <元動画> -vf "$VF" \
 | 一息つく・ゆとり・朝のはじまり | own_coffee_pour, own_coffee_cup, own_meal, nb_morning |
 | 暮らし・ゆとり・食事 | own_unaju（自作・うな重＝ご褒美/贅沢）, own_meal, jp_sushi, jp_home_read, own_sparrow, nb_plant |
 | 悩み・思考・停滞 | nb_think, nb_rain, own_rain_road |
+| 一歩ずつ積み上げる・道のり・継続 | own_stone_steps（長い石段を見上げる。「先が見えない道のり」「順番に進む」の決定打）, own_street, jp_dusk_road |
 | 育てる・手をかける・収穫（継続の比喩） | own_field_pumpkin, own_eggplant, own_flowers_garden |
 | チーム・発信・信頼 | nb_team, handshake, nb_social |
 | 富士山（元カメラマンの署名と揃う） | own_fuji_road, own_camera |
