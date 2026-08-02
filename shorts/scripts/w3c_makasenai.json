@@ -1,0 +1,64 @@
+{
+  "template": "RankingVideo",
+  "_note": "Week3-1。確定フォーマット(否定断定フック/フック直後に1位予告/全員対象/37秒前後/内容シンクロ1文2カット)。元カメラマンの署名回。自作のカメラ素材が主役。",
+  "title": "元カメラマンが、AIに任せない仕事BEST3",
+  "caption": "AIに何でも任せてるように見えて、任せない仕事が3つあります。1位はたぶん一生任せません。作るのはAIでもできる。でも削るのは人の仕事です。あなたが任せない仕事は？\n※個人の見解です\n#AI活用 #仕事術 #カメラマン #生産性 #ChatGPT",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "元カメラマンの私が、エーアイに任せない仕事が3つあります。1位は、たぶん一生任せません。",
+      "telop": "AIに**任せない**仕事3つ",
+      "bg": ["own_camera_rig", "own_tripod"]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "現場での判断",
+      "narration": "第3位、現場での判断。",
+      "telop": "その場で決めること",
+      "bg": ["own_tripod"]
+    },
+    {
+      "role": "body",
+      "narration": "天気も光も、機材の調子も、その場でしか分かりません。",
+      "telop": "**その場**でしか分からない",
+      "bg": ["own_lens_adjust", "own_camera_rig"]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "相手の温度感",
+      "narration": "第2位、相手の温度感を読むこと。",
+      "telop": "言葉になっていない部分",
+      "bg": ["handshake"]
+    },
+    {
+      "role": "save",
+      "narration": "言葉になっていない部分は、エーアイには渡せません。1位は保存推奨です。",
+      "telop": "1位は**保存**推奨",
+      "bg": ["own_pen_write"]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "何を捨てるか",
+      "narration": "第1位、何を捨てるか、決めること。",
+      "telop": "**捨てる**判断",
+      "bg": ["own_lens_hands"]
+    },
+    {
+      "role": "body",
+      "narration": "作るのはエーアイでもできる。でも、削るのは人の仕事です。",
+      "telop": "作るはAI、**削るは人**",
+      "bg": ["own_desk_timelapse", "own_desk_clean"]
+    },
+    {
+      "role": "cta",
+      "narration": "あなたが任せない仕事は何ですか。コメントで教えてください。",
+      "telop": "任せない仕事は↓\n**コメント**で",
+      "bg": ["own_fuji_road"]
+    }
+  ],
+  "bgm": "bgm/for_our_friends.mp3"
+}
