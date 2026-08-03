@@ -118,7 +118,10 @@ const ERASE_FRAMES = 14;
 
 // linger=true: ワイプ後、キャラが画面右側に留まる(rankシーン用)
 // linger=false: 従来どおり右へ通り抜ける(saveシーンは中央に別キャラが出るため)
-const EraseWipe: React.FC<{linger?: boolean}> = ({linger = false}) => {
+const EraseWipe: React.FC<{linger?: boolean; charTop?: number}> = ({
+  linger = false,
+  charTop = 900,
+}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const progress = spring({
@@ -171,7 +174,7 @@ const EraseWipe: React.FC<{linger?: boolean}> = ({linger = false}) => {
         </>
       ) : null}
       {/* キャラ本体 */}
-      <div style={{position: 'absolute', left: charX - 130, top: 900 + bob}}>
+      <div style={{position: 'absolute', left: charX - 130, top: charTop + bob}}>
         <EraserChar
           size={settled ? 200 : 260}
           tilt={interpolate(progress, [0, 1], [-24, settled ? 4 : 8])}
@@ -183,7 +186,7 @@ const EraseWipe: React.FC<{linger?: boolean}> = ({linger = false}) => {
 
 // ---------- 順位札(青地×白文字・スプリング登場) ----------
 
-const RankBadge: React.FC<{rank: number}> = ({rank}) => {
+const RankBadge: React.FC<{rank: number; compact?: boolean}> = ({rank, compact}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const pop = spring({
@@ -196,7 +199,9 @@ const RankBadge: React.FC<{rank: number}> = ({rank}) => {
     <div
       style={{
         position: 'absolute',
-        top: 400,
+        // compact: headline+time(実測タイム表示)と同じシーンで使う場合、下のHeadline/TimeGapと
+        // 縦に衝突しないよう上部へ詰める(通常400)
+        top: compact ? 170 : 400,
         left: 0,
         right: 0,
         display: 'flex',
@@ -226,7 +231,10 @@ const RankBadge: React.FC<{rank: number}> = ({rank}) => {
 
 // ---------- 実測タイム(グレー打ち消し → オレンジ特大) ----------
 
-const TimeGap: React.FC<{time: NonNullable<RankScene['time']>}> = ({time}) => {
+const TimeGap: React.FC<{time: NonNullable<RankScene['time']>; compact?: boolean}> = ({
+  time,
+  compact,
+}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const before = spring({frame: frame - 4, fps, config: {damping: 200}, durationInFrames: 10});
@@ -238,7 +246,17 @@ const TimeGap: React.FC<{time: NonNullable<RankScene['time']>}> = ({time}) => {
     textAlign: 'center',
   };
   return (
-    <div style={{position: 'absolute', top: 480, left: 0, right: 0, textAlign: 'center'}}>
+    <div
+      style={{
+        position: 'absolute',
+        // compact: RankBadge+Headlineがrank/headline付きシーンで上に詰まっている場合、
+        // その下(Headline終端≒560)に十分な余白を空けて配置する(通常480)
+        top: compact ? 660 : 480,
+        left: 0,
+        right: 0,
+        textAlign: 'center',
+      }}
+    >
       {time.label ? (
         <div style={{...numStyle, fontSize: 66, color: BRAND.ink, opacity: before, textShadow: outline('#ffffff')}}>
           {time.label}
@@ -360,7 +378,7 @@ const headlineWidth = (text: string): number =>
 const headlineFontSize = (text: string): number =>
   Math.min(110, Math.floor(880 / Math.max(1, headlineWidth(text))));
 
-const Headline: React.FC<{text: string}> = ({text}) => {
+const Headline: React.FC<{text: string; compact?: boolean}> = ({text, compact}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const appear = spring({
@@ -373,7 +391,8 @@ const Headline: React.FC<{text: string}> = ({text}) => {
     <div
       style={{
         position: 'absolute',
-        top: 640,
+        // compact: RankBadgeを上に詰めた分、Headlineもすぐ下に詰める(通常640)
+        top: compact ? 360 : 640,
         left: 40,
         right: 40,
         textAlign: 'center',
@@ -463,12 +482,27 @@ const SceneView: React.FC<{scene: RankScene; index: number; startFrame: number; 
         sceneDuration={scene.durationInFrames}
       />
       <PaperBg role={scene.role} transparent={clips.length > 0} />
-      {scene.role === 'rank' && scene.rank ? <RankBadge rank={scene.rank} /> : null}
-      {scene.role === 'rank' && scene.headline ? <Headline text={scene.headline} /> : null}
-      {scene.time ? <TimeGap time={scene.time} /> : null}
+      {/* rank+headline+time が同じシーンで揃うと縦に衝突するため、その組み合わせの時だけ
+          compact レイアウト(RankBadge/Headlineを上に詰め、TimeGapをその下へ)を使う */}
+      {scene.role === 'rank' && scene.rank ? (
+        <RankBadge rank={scene.rank} compact={Boolean(scene.headline && scene.time)} />
+      ) : null}
+      {scene.role === 'rank' && scene.headline ? (
+        <Headline text={scene.headline} compact={Boolean(scene.time)} />
+      ) : null}
+      {scene.time ? (
+        <TimeGap time={scene.time} compact={Boolean(scene.role === 'rank' && scene.headline)} />
+      ) : null}
       {scene.role === 'save' ? <SaveCue /> : null}
       <Telop text={scene.telop} big={scene.role === 'hook' && !scene.time} />
-      {scene.eraseIn ? <EraseWipe linger={scene.role === 'rank'} /> : null}
+      {scene.eraseIn ? (
+        <EraseWipe
+          linger={scene.role === 'rank'}
+          // compactレイアウト(headline+time)ではTimeGapの数字が伸びてくるため、
+          // キャラを下へ逃がして衝突を避ける
+          charTop={scene.role === 'rank' && scene.headline && scene.time ? 1220 : 900}
+        />
+      ) : null}
       <Audio src={staticFile(scene.audio)} />
       {scene.playWhoosh ? <Audio src={staticFile(whoosh)} volume={0.3} /> : null}
     </AbsoluteFill>
