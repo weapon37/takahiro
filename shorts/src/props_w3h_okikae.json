@@ -1,0 +1,131 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_ensolarado.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "奪われるのは**仕事じゃない**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_commuters.mp4",
+        "bg/own_crossing_night.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3h_okikae/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 156
+    },
+    {
+      "role": "body",
+      "telop": "置き換わるのは**作業**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/own_docs_stack.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3h_okikae/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 98
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "仕事は作業の束",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3h_okikae/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 118
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "持っていくのは一部だけ",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_timelapse.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3h_okikae/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 121
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "残るのは**決めること**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_pen_write.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3h_okikae/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 133
+    },
+    {
+      "role": "body",
+      "telop": "何割**渡せるか**で考える",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_chart.mp4",
+        "bg/own_clock.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3h_okikae/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 148
+    },
+    {
+      "role": "flip",
+      "telop": "減るのは作業、増えるのは**時間**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_clean.mp4",
+        "bg/own_coffee_cup.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3h_okikae/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 169
+    },
+    {
+      "role": "vs",
+      "telop": "作業は何割？↓\n**コメント**で",
+      "vs": {
+        "left": "半分以上",
+        "right": "半分未満"
+      },
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_skyline.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3h_okikae/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 173
+    }
+  ]
+}
