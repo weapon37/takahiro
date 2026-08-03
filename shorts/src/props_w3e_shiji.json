@@ -17,7 +17,7 @@
       "audio": "audio_w3e_shiji/01.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 235
+      "durationInFrames": 233
     },
     {
       "role": "rank",
@@ -33,7 +33,7 @@
       "audio": "audio_w3e_shiji/02.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 114
+      "durationInFrames": 112
     },
     {
       "role": "body",
@@ -64,7 +64,7 @@
       "audio": "audio_w3e_shiji/04.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 93
+      "durationInFrames": 97
     },
     {
       "role": "save",
@@ -94,7 +94,7 @@
       "audio": "audio_w3e_shiji/06.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 121
+      "durationInFrames": 123
     },
     {
       "role": "body",
@@ -109,7 +109,7 @@
       "audio": "audio_w3e_shiji/07.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 127
+      "durationInFrames": 123
     },
     {
       "role": "cta",
@@ -123,7 +123,7 @@
       "audio": "audio_w3e_shiji/08.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 141
+      "durationInFrames": 145
     }
   ]
 }

@@ -17,7 +17,7 @@
       "audio": "audio_w3f_juppun/01.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 233
+      "durationInFrames": 227
     },
     {
       "role": "rank",
@@ -33,7 +33,7 @@
       "audio": "audio_w3f_juppun/02.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 77
+      "durationInFrames": 93
     },
     {
       "role": "body",
@@ -48,7 +48,7 @@
       "audio": "audio_w3f_juppun/03.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 81
+      "durationInFrames": 75
     },
     {
       "role": "rank",
@@ -64,7 +64,7 @@
       "audio": "audio_w3f_juppun/04.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 112
+      "durationInFrames": 104
     },
     {
       "role": "save",
@@ -78,7 +78,7 @@
       "audio": "audio_w3f_juppun/05.wav",
       "eraseIn": true,
       "playWhoosh": false,
-      "durationInFrames": 141
+      "durationInFrames": 133
     },
     {
       "role": "rank",
@@ -94,7 +94,7 @@
       "audio": "audio_w3f_juppun/06.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 108
+      "durationInFrames": 110
     },
     {
       "role": "body",
@@ -109,7 +109,7 @@
       "audio": "audio_w3f_juppun/07.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 152
+      "durationInFrames": 166
     },
     {
       "role": "cta",
@@ -123,7 +123,7 @@
       "audio": "audio_w3f_juppun/08.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 121
+      "durationInFrames": 125
     }
   ]
 }
