@@ -1,0 +1,65 @@
+{
+  "template": "RankingVideo",
+  "_note": "Week3-7。職業別シリーズ第7弾。8/3ライター編が3時間で1,980再生・登録+1と好調だったため追加。確定フォーマット(否定フック/フック直後に1位予告/全員対象/35〜40秒)。1位はfreee請求書の実測データ(一から36分10秒→3分10秒)を使用。数字は既に実測済みのもの。",
+  "title": "経理職が知らないと損してるAI BEST3【実測あり】",
+  "caption": "経理の仕事、AIでここまで減ります。1位は実際に測りました。36分かかってた請求書が、3分で終わります。あなたの経理業務、何が一番時間かかってますか？\n※ツールの無料枠・仕様は変わることがあります\n#AI活用 #経理 #仕事術 #時短 #freee",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "経理の仕事、エーアイでここまで減ります。1位は、実際に測りました。",
+      "telop": "経理が**知らないと損**するAI",
+      "bg": ["own_docs_stack", "own_desk_messy"]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "Notta",
+      "narration": "第3位、ノッタ。",
+      "telop": "打ち合わせを自動で文字に",
+      "bg": ["jp_laptop_m1"]
+    },
+    {
+      "role": "body",
+      "narration": "経費の説明も、承認のやり取りも、言った言わないがログで残ります。",
+      "telop": "**言った言わない**がログで解決",
+      "bg": ["own_typing", "own_docs_stack"]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "ChatGPT",
+      "narration": "第2位、チャットジーピーティー。",
+      "telop": "科目の相談相手",
+      "bg": ["own_typing"]
+    },
+    {
+      "role": "save",
+      "narration": "この勘定科目で合ってるか、すぐ相談できます。1位は保存推奨です。",
+      "telop": "1位は**保存**推奨",
+      "bg": ["own_pen_write"]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "freee請求書",
+      "narration": "第1位、フリーの請求書作成。",
+      "telop": "**36分**が**3分**に",
+      "time": {"before": "36分10秒", "after": "3分10秒", "label": "請求書1枚・実測"},
+      "bg": ["own_desk_timelapse"]
+    },
+    {
+      "role": "body",
+      "narration": "一から作ると、36分10秒。テンプレートに入れると、3分10秒でした。",
+      "telop": "テンプレ化で**1/10**以下に",
+      "bg": ["own_docs_stack", "own_desk_clean"]
+    },
+    {
+      "role": "cta",
+      "narration": "あなたの経理業務、何が一番時間かかってますか。コメントで教えてください。",
+      "telop": "一番時間かかるのは↓\n**コメント**で",
+      "bg": ["own_coffee_cup"]
+    }
+  ],
+  "bgm": "bgm/for_our_friends.mp3"
+}
