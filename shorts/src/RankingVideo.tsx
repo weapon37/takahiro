@@ -32,6 +32,7 @@ export type RankScene = {
   rank?: number; // role='rank' のとき順位札に出す数字
   headline?: string; // role='rank' のときのツール名(大きく表示)
   time?: {before: string; after: string; label?: string}; // 実測タイム(オレンジ特大)
+  saved?: string; // 短縮時間(例:"-33分")。実測値の差分をtelopの上に大きく表示
   bgVideo?: string | null; // 単一の実写背景動画(bgClips未指定時のフォールバック)
   bgClips?: string[]; // 実写背景クリップ群(カット割りで巡回)
   bgSync?: boolean; // true=内容シンクロ(このシーン専用の映像をシーン内で表示)
@@ -317,6 +318,41 @@ const TimeGap: React.FC<{time: NonNullable<RankScene['time']>; compact?: boolean
   );
 };
 
+// ---------- 短縮時間バッジ(実測値の差分をtelopの上に大きく表示) ----------
+
+const SavedBadge: React.FC<{text: string}> = ({text}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const appear = spring({frame: frame - 6, fps, config: {damping: 200}, durationInFrames: 12});
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        top: 860,
+        left: 0,
+        right: 0,
+        textAlign: 'center',
+        opacity: appear,
+        transform: `translateY(${(1 - appear) * 30}px) scale(${0.8 + appear * 0.2})`,
+      }}
+    >
+      <span
+        style={{
+          fontFamily,
+          fontWeight: 900,
+          fontSize: 130,
+          color: BRAND.spark,
+          textShadow: outline('#ffffff'),
+          background: `linear-gradient(transparent 42%, ${BRAND.accent} 42%, ${BRAND.accent} 96%, transparent 96%)`,
+          padding: '0 20px',
+        }}
+      >
+        {text}
+      </span>
+    </div>
+  );
+};
+
 // ---------- テロップ(**強調**=黄色マーカー) ----------
 
 const Telop: React.FC<{text: string; big?: boolean}> = ({text, big}) => {
@@ -505,6 +541,7 @@ const SceneView: React.FC<{scene: RankScene; index: number; startFrame: number; 
         <TimeGap time={scene.time} compact={Boolean(scene.role === 'rank' && scene.headline)} />
       ) : null}
       {scene.role === 'save' ? <SaveCue /> : null}
+      {scene.saved ? <SavedBadge text={scene.saved} /> : null}
       <Telop text={scene.telop} big={scene.role === 'hook' && !scene.time} />
       {scene.eraseIn ? <EraseWipe linger={scene.role === 'rank'} /> : null}
       <Audio src={staticFile(scene.audio)} />
