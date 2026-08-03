@@ -118,10 +118,7 @@ const ERASE_FRAMES = 14;
 
 // linger=true: ワイプ後、キャラが画面右側に留まる(rankシーン用)
 // linger=false: 従来どおり右へ通り抜ける(saveシーンは中央に別キャラが出るため)
-const EraseWipe: React.FC<{linger?: boolean; charTop?: number}> = ({
-  linger = false,
-  charTop = 900,
-}) => {
+const EraseWipe: React.FC<{linger?: boolean}> = ({linger = false}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const progress = spring({
@@ -174,7 +171,7 @@ const EraseWipe: React.FC<{linger?: boolean; charTop?: number}> = ({
         </>
       ) : null}
       {/* キャラ本体 */}
-      <div style={{position: 'absolute', left: charX - 130, top: charTop + bob}}>
+      <div style={{position: 'absolute', left: charX - 130, top: 900 + bob}}>
         <EraserChar
           size={settled ? 200 : 260}
           tilt={interpolate(progress, [0, 1], [-24, settled ? 4 : 8])}
@@ -231,6 +228,18 @@ const RankBadge: React.FC<{rank: number; compact?: boolean}> = ({rank, compact})
 
 // ---------- 実測タイム(グレー打ち消し → オレンジ特大) ----------
 
+// 全角1文字≒1em、半角(数字含む)は0.55em として横幅を概算する(headlineWidthと同じ考え方)
+const timeUnits = (text: string): number =>
+  [...text].reduce((a, c) => a + (/[\x20-\x7e]/.test(c) ? 0.55 : 1), 0);
+
+// before/afterの文字数(桁数)によっては元のフォントサイズ(118/104/196)のままだと
+// 1行に収まらず折り返してしまい、下のtelopやEraseWipeのキャラと衝突する。
+// 3項目合計の概算幅が枠(950px)を超える場合だけ、比率を保ったまま縮小する。
+const timeFontScale = (before: string, after: string): number => {
+  const rawWidth = 118 * timeUnits(before) + 104 * timeUnits('→') + 196 * timeUnits(after) + 80;
+  return Math.min(1, 950 / rawWidth);
+};
+
 const TimeGap: React.FC<{time: NonNullable<RankScene['time']>; compact?: boolean}> = ({
   time,
   compact,
@@ -239,11 +248,13 @@ const TimeGap: React.FC<{time: NonNullable<RankScene['time']>; compact?: boolean
   const {fps} = useVideoConfig();
   const before = spring({frame: frame - 4, fps, config: {damping: 200}, durationInFrames: 10});
   const after = spring({frame: frame - 16, fps, config: {damping: 10, mass: 0.5}, durationInFrames: 16});
+  const scale = timeFontScale(time.before, time.after);
   const numStyle: React.CSSProperties = {
     fontFamily,
     fontWeight: 900,
     lineHeight: 1.1,
     textAlign: 'center',
+    whiteSpace: 'nowrap',
   };
   return (
     <div
@@ -267,11 +278,11 @@ const TimeGap: React.FC<{time: NonNullable<RankScene['time']>; compact?: boolean
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          gap: 40,
+          gap: 40 * scale,
           marginTop: 20,
         }}
       >
-        <div style={{...numStyle, fontSize: 118, color: BRAND.erase, opacity: before, position: 'relative', textShadow: outline('#ffffff')}}>
+        <div style={{...numStyle, fontSize: 118 * scale, color: BRAND.erase, opacity: before, position: 'relative', textShadow: outline('#ffffff')}}>
           {time.before}
           {/* 打ち消し線(消された感) */}
           <div
@@ -288,11 +299,11 @@ const TimeGap: React.FC<{time: NonNullable<RankScene['time']>; compact?: boolean
             }}
           />
         </div>
-        <div style={{...numStyle, fontSize: 104, color: BRAND.ink, opacity: after, textShadow: outline('#ffffff')}}>→</div>
+        <div style={{...numStyle, fontSize: 104 * scale, color: BRAND.ink, opacity: after, textShadow: outline('#ffffff')}}>→</div>
         <div
           style={{
             ...numStyle,
-            fontSize: 196,
+            fontSize: 196 * scale,
             color: BRAND.spark,
             opacity: after,
             transform: `scale(${0.6 + after * 0.4})`,
@@ -495,14 +506,7 @@ const SceneView: React.FC<{scene: RankScene; index: number; startFrame: number; 
       ) : null}
       {scene.role === 'save' ? <SaveCue /> : null}
       <Telop text={scene.telop} big={scene.role === 'hook' && !scene.time} />
-      {scene.eraseIn ? (
-        <EraseWipe
-          linger={scene.role === 'rank'}
-          // compactレイアウト(headline+time)ではTimeGapの数字が伸びてくるため、
-          // キャラを下へ逃がして衝突を避ける
-          charTop={scene.role === 'rank' && scene.headline && scene.time ? 1220 : 900}
-        />
-      ) : null}
+      {scene.eraseIn ? <EraseWipe linger={scene.role === 'rank'} /> : null}
       <Audio src={staticFile(scene.audio)} />
       {scene.playWhoosh ? <Audio src={staticFile(whoosh)} volume={0.3} /> : null}
     </AbsoluteFill>
