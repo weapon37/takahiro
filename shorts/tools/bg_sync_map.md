@@ -71,7 +71,7 @@ npx remotion ffmpeg -nostdin -y -t 6 -i <元動画> -vf "$VF" \
 | 一息つく・ゆとり・朝のはじまり | own_coffee_pour, own_coffee_cup, own_meal, nb_morning |
 | 暮らし・ゆとり・食事 | own_unaju（自作・うな重＝ご褒美/贅沢）, own_meal, jp_sushi, jp_home_read, own_sparrow, nb_plant |
 | 悩み・思考・停滞 | nb_think, nb_rain, own_rain_road |
-| 一歩ずつ積み上げる・道のり・継続 | **own_stone_steps**（足元→階段へパン。単独で使うならこれ）, own_stone_steps_wide（引き・階段全体）, own_stone_steps_close（寄り・踏面の質感）, own_steps_climbing（登りながら＝一段ずつ進む動き）, own_street, jp_dusk_road |
+| 一歩ずつ積み上げる・道のり・継続 | **own_stone_steps**（足元→階段へパン。単独で使うならこれ）, own_stone_steps_wide（引き・階段全体）, own_stone_steps_close（寄り・踏面の質感）, own_steps_climbing（登りながら＝一段ずつ進む動き）, own_forest_trail（自作・山道の岩混じりの地面。足元アングル。荒れた道のり感）, own_street, jp_dusk_road |
   ↑ 1文2カットなら **wide（引き）→ climbing（登る）** が最も動きが出る。
   「先が見えない道のり」→「それでも一段ずつ」。closeは静かに質感を見せたいときに。
 | 育てる・手をかける・収穫（継続の比喩） | own_field_pumpkin, own_eggplant, own_flowers_garden |
@@ -80,7 +80,7 @@ npx remotion ffmpeg -nostdin -y -t 6 -i <元動画> -vf "$VF" \
 | カメラ（元カメラマンの署名） | own_lens_hands（レンズを構える手・最も寄り）, own_lens_adjust（レンズを操作する手）, own_camera_rig（マイク付き機材の全体）, own_tripod（三脚を操作する手）, own_camera（富士山＋三脚・遠景）, nb_camera |
 | 昔は手作業だった／段取り・準備 | own_tripod, own_camera_rig, own_camera |
 | 手先の技・人にしかできない仕事 | own_lens_hands, own_lens_adjust |
-| 自然・情景（間・締め） | own_golf, own_heron, nb_sky, nb_bokeh, nb_art, nb_particles, own_sunflower, own_sunflower2, own_canal |
+| 自然・情景（間・締め） | own_golf, own_heron, own_deer_shrine（自作・神社境内の鹿・苔むした石垣。癒し/静寂の一枚に強い）, nb_sky, nb_bokeh, nb_art, nb_particles, own_sunflower, own_sunflower2, own_canal |
 | 郊外・日常の現実（空の余白＝テロップ向き） | own_suburb_sky, own_street |
 
 ## 割り当ての考え方
