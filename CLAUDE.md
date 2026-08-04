@@ -116,16 +116,15 @@ Node ランタイム(`export const runtime = "nodejs"`)で動作し、`multipart
 - プレビューの `<img>` は素のタグで、`// eslint-disable-next-line @next/next/no-img-element`
   をインラインで付けています。ここでは blob URL を `next/image` に渡せないためです。
 
+## ドキュメント
+
+`README.md` は利用者向けの説明(機能・セットアップ・環境変数・入力制限)を扱い、
+このファイルは実装上の規約と設計判断を扱います。API のフィールドや入力の上限値を
+変更したときは、`README.md` の該当箇所も更新してください。
+
 ## シークレット
 
 `ANTHROPIC_API_KEY` はルートハンドラの内部でのみ読み込まれ、クライアントには一切
 公開されません。`.env*` は `.env.example` を除いて gitignore されています。この値を
 `NEXT_PUBLIC_*` の変数に入れたり、クライアントコンポーネントから Anthropic SDK を
 呼び出したりしないでください。
-
-## 実態とのズレ
-
-`README.md` は、このアプリの以前の姿(スクリーンショット専用の*分析*ツール)のまま
-です。`src/app/api/analyze/route.ts` と `src/components/AnalyzerForm.tsx` を参照して
-いますが、どちらも存在しません。README よりも、このファイルとソースコードを信頼して
-ください。
