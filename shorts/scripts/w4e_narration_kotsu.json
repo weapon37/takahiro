@@ -1,0 +1,62 @@
+{
+  "template": "ContrarianVideo",
+  "_note": "テスト版・新テーマB(動画制作×AIの実践ノウハウ)1本目。汎用的な実践アドバイス形式。narrationは辞書自動置換で意味が壊れないよう対象語を直接引用しない。",
+  "title": "AIナレーションを自然にする実践ノウハウ",
+  "caption": "AIナレーション、棒読みで悩んでいませんか。読み方を辞書登録する、話す速さを調整する。動画制作で実際に効いた3つのコツをまとめました。\n#AI活用 #動画制作 #AIナレーション #TTS #仕事術",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "AIナレーション、棒読みっぽくて損してませんか。",
+      "telop": "**棒読み**で損してませんか",
+      "bg": ["own_typing", "own_desk_messy"]
+    },
+    {
+      "role": "body",
+      "narration": "動画制作で実際に効果があった、自然にするコツを3つ紹介します。",
+      "telop": "効果があった**3つのコツ**",
+      "bg": ["own_desk_timelapse"]
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "narration": "1つ目、読み間違える言葉は個別に辞書登録する。",
+      "telop": "①**辞書登録**する",
+      "bg": ["own_pen_write"]
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "narration": "2つ目、話す速さは少し落とす。速すぎると不自然に聞こえます。",
+      "telop": "②話す速さを**少し落とす**",
+      "bg": ["own_docs_stack"]
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "narration": "3つ目、書き出したあとは必ず自分の耳で聞き直す。",
+      "telop": "③**自分の耳**で聞き直す",
+      "bg": ["own_coffee_cup"]
+    },
+    {
+      "role": "body",
+      "narration": "この3つだけで、AIナレーションの違和感はかなり減ります。",
+      "telop": "違和感は**かなり減る**",
+      "bg": ["own_typing"]
+    },
+    {
+      "role": "flip",
+      "narration": "AIに任せきりにしない。最後は人の耳で仕上げる。",
+      "telop": "最後は**人の耳**で仕上げる",
+      "bg": ["own_camera"]
+    },
+    {
+      "role": "vs",
+      "narration": "あなたはAIナレーション、そのまま使う派ですか。聞き直す派ですか。",
+      "telop": "あなたはどっち？↓\n**コメント**で",
+      "vs": {"left": "そのまま", "right": "聞き直す"},
+      "bg": ["jp_skyline", "own_street"]
+    }
+  ],
+  "bgm": "bgm/dova_cafe_rain.mp3"
+}

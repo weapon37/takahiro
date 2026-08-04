@@ -1,0 +1,62 @@
+{
+  "template": "ContrarianVideo",
+  "_note": "テスト版・新テーマB 2本目。common.tsxのsoftBreaks/telopLayoutで実装済みのルール(NO_SPLIT・長音除外・自動縮小)をそのまま解説。",
+  "title": "テロップを読みやすくする実践ノウハウ",
+  "caption": "短い動画ほどテロップの改行1つで読みやすさが変わります。単語の途中で切らない、伸ばす音の後では切らない。動画制作で実際に効いたコツをまとめました。\n#AI活用 #動画制作 #テロップ #字幕 #仕事術",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "テロップ、変なところで改行されて読みにくくなっていませんか。",
+      "telop": "**変な改行**で読みにくい",
+      "bg": ["own_typing"]
+    },
+    {
+      "role": "body",
+      "narration": "短い動画ほど、改行1つで読みやすさが大きく変わります。",
+      "telop": "改行1つで**読みやすさ**が変わる",
+      "bg": ["own_desk_messy"]
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "narration": "1つ目、短い助詞や接続の言葉の途中では改行しない。",
+      "telop": "①**助詞の途中**で切らない",
+      "bg": ["own_docs_stack"]
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "narration": "2つ目、伸ばす音の後でも改行しない。カタカナの言葉が分断されます。",
+      "telop": "②**伸ばす音**の後で切らない",
+      "bg": ["own_pen_write"]
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "narration": "3つ目、それでも収まらない時だけ、文字サイズを縮める。",
+      "telop": "③最後の手段は**文字サイズ**",
+      "bg": ["own_desk_timelapse"]
+    },
+    {
+      "role": "body",
+      "narration": "この順番で直すと、無理な改行も文字の縮みすぎも防げます。",
+      "telop": "**無理な改行**を防げる",
+      "bg": ["own_coffee_cup"]
+    },
+    {
+      "role": "flip",
+      "narration": "改行のルールは、映像より先に決めておくと後がラクです。",
+      "telop": "**先に決めておく**とラク",
+      "bg": ["own_camera"]
+    },
+    {
+      "role": "vs",
+      "narration": "あなたはテロップの改行、感覚派ですか。ルールを決める派ですか。",
+      "telop": "あなたはどっち？↓\n**コメント**で",
+      "vs": {"left": "感覚", "right": "ルール"},
+      "bg": ["jp_skyline", "own_street"]
+    }
+  ],
+  "bgm": "bgm/dova_chocomint.mp3"
+}

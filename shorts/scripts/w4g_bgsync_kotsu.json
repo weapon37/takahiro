@@ -1,0 +1,62 @@
+{
+  "template": "ContrarianVideo",
+  "_note": "テスト版・新テーマB 3本目。CutBgのlocal/bgSyncモードと1文2カットの運用ルール(bg_sync_map.md)をそのまま解説。",
+  "title": "背景動画とナレーションを同期させる実践ノウハウ",
+  "caption": "背景映像、ただループさせているだけになっていませんか。話している言葉と映像を1つずつ合わせるだけで、動画の説得力が変わります。\n#AI活用 #動画制作 #背景動画 #編集 #仕事術",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "背景の映像、ただループしているだけになっていませんか。",
+      "telop": "**ただループ**しているだけ？",
+      "bg": ["own_typing"]
+    },
+    {
+      "role": "body",
+      "narration": "話している言葉と映像がズレていると、内容が伝わりにくくなります。",
+      "telop": "言葉と映像が**ズレる**と伝わらない",
+      "bg": ["own_desk_messy"]
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "narration": "1つ目、話している名詞をそのまま映像に翻訳する。",
+      "telop": "①**名詞をそのまま**映像に",
+      "bg": ["own_docs_stack"]
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "narration": "2つ目、1つの文には2カット。前半と後半で意味をつなげる。",
+      "telop": "②1文に**2カット**",
+      "bg": ["own_camera_rig"]
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "narration": "3つ目、ぴったりの素材が無ければ無理に使わず、質感が近い映像で代用する。",
+      "telop": "③無ければ**質感が近い映像**で",
+      "bg": ["own_lens_hands"]
+    },
+    {
+      "role": "body",
+      "narration": "この積み重ねで、同じ映像でも内容が伝わりやすくなりました。",
+      "telop": "**同じ映像**でも伝わりやすく",
+      "bg": ["own_coffee_cup"]
+    },
+    {
+      "role": "flip",
+      "narration": "映像は雰囲気じゃなく、言葉の翻訳として選ぶ。",
+      "telop": "映像は**言葉の翻訳**として選ぶ",
+      "bg": ["own_camera"]
+    },
+    {
+      "role": "vs",
+      "narration": "あなたは背景動画、雰囲気で選ぶ派ですか。言葉に合わせる派ですか。",
+      "telop": "あなたはどっち？↓\n**コメント**で",
+      "vs": {"left": "雰囲気", "right": "言葉に合わせる"},
+      "bg": ["jp_skyline", "own_street"]
+    }
+  ],
+  "bgm": "bgm/for_our_friends.mp3"
+}

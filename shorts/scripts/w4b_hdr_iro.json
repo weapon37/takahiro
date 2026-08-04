@@ -1,0 +1,62 @@
+{
+  "template": "ContrarianVideo",
+  "_note": "テスト版・新テーマA 2本目。HDR→SDR変換のnpl設定ミスで彩度が半減した実話(bg_sync_map.mdに記録済みの実際の失敗)。",
+  "title": "自作素材の色が消えた日",
+  "caption": "元カメラマンとして、今も自分で撮影した映像を動画に使っています。ある日から変換した映像だけ色が薄いことに気づきました。原因はHDR変換の設定1つでした。\n※実際の制作過程の記録です\n#AI活用 #動画制作 #カメラマン #HDR #仕事術",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "自分で撮った映像を動画に使っていたら、ある日から色が薄いことに気づきました。",
+      "telop": "ある日から**色が薄い**",
+      "bg": ["own_camera", "own_lens_hands"]
+    },
+    {
+      "role": "body",
+      "narration": "スマホの映像はHDRなので、動画用にSDRへ変換する工程が必要になります。",
+      "telop": "HDRを**SDRへ変換**する必要",
+      "bg": ["own_tripod"]
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "narration": "その変換設定を1つ間違えただけで、彩度がほぼ半分に落ちていました。",
+      "telop": "彩度が**ほぼ半分**に",
+      "bg": ["own_sunflower"]
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "narration": "ひまわりの黄色が白っぽくなって、初めて設定ミスに気づきました。",
+      "telop": "**黄色が白っぽく**なって気づいた",
+      "bg": ["own_sunflower2"]
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "narration": "設定を1つ変えるだけで、元の自然な色に戻りました。",
+      "telop": "設定**1つ**で元の色に",
+      "bg": ["own_flowers_garden"]
+    },
+    {
+      "role": "body",
+      "narration": "自動でやってくれる工程ほど、途中の設定は見落としやすいと感じました。",
+      "telop": "**自動**ほど見落としやすい",
+      "bg": ["own_desk_timelapse"]
+    },
+    {
+      "role": "flip",
+      "narration": "便利な工程ほど、1回は自分の目で確認する。今もそこは変えていません。",
+      "telop": "**自分の目**で確認する",
+      "bg": ["own_lens_adjust"]
+    },
+    {
+      "role": "vs",
+      "narration": "あなたは自動変換、信じる派ですか。毎回チェックする派ですか。",
+      "telop": "あなたはどっち？↓\n**コメント**で",
+      "vs": {"left": "信じる", "right": "毎回チェック"},
+      "bg": ["jp_skyline", "own_street"]
+    }
+  ],
+  "bgm": "bgm/dova_ensolarado.mp3"
+}
