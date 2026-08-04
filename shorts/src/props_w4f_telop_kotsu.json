@@ -1,0 +1,128 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_chocomint.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**変な改行**で読みにくい",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4f_telop_kotsu/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 131
+    },
+    {
+      "role": "body",
+      "telop": "改行1つで**読みやすさ**が変わる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_messy.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4f_telop_kotsu/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 145
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "①**助詞の途中**で切らない",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4f_telop_kotsu/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 139
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "②**伸ばす音**の後で切らない",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_pen_write.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4f_telop_kotsu/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 181
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "③最後の手段は**文字サイズ**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_timelapse.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4f_telop_kotsu/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 133
+    },
+    {
+      "role": "body",
+      "telop": "**無理な改行**を防げる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_coffee_cup.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4f_telop_kotsu/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 154
+    },
+    {
+      "role": "flip",
+      "telop": "**先に決めておく**とラク",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_camera.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4f_telop_kotsu/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 145
+    },
+    {
+      "role": "vs",
+      "telop": "あなたはどっち？↓\n**コメント**で",
+      "vs": {
+        "left": "感覚",
+        "right": "ルール"
+      },
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_skyline.mp4",
+        "bg/own_street.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4f_telop_kotsu/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 158
+    }
+  ]
+}

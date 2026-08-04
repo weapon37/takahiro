@@ -1,0 +1,128 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**ただループ**しているだけ？",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4g_bgsync_kotsu/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 116
+    },
+    {
+      "role": "body",
+      "telop": "言葉と映像が**ズレる**と伝わらない",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_messy.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4g_bgsync_kotsu/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 150
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "①**名詞をそのまま**映像に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4g_bgsync_kotsu/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 139
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "②1文に**2カット**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_camera_rig.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4g_bgsync_kotsu/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 166
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "③無ければ**質感が近い映像**で",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_lens_hands.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4g_bgsync_kotsu/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 202
+    },
+    {
+      "role": "body",
+      "telop": "**同じ映像**でも伝わりやすく",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_coffee_cup.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4g_bgsync_kotsu/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 162
+    },
+    {
+      "role": "flip",
+      "telop": "映像は**言葉の翻訳**として選ぶ",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_camera.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4g_bgsync_kotsu/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 123
+    },
+    {
+      "role": "vs",
+      "telop": "あなたはどっち？↓\n**コメント**で",
+      "vs": {
+        "left": "雰囲気",
+        "right": "言葉に合わせる"
+      },
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_skyline.mp4",
+        "bg/own_street.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4g_bgsync_kotsu/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 173
+    }
+  ]
+}
