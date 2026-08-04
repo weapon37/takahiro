@@ -1,0 +1,129 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_ensolarado.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "ある日から**色が薄い**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_camera.mp4",
+        "bg/own_lens_hands.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4b_hdr_iro/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 166
+    },
+    {
+      "role": "body",
+      "telop": "HDRを**SDRへ変換**する必要",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_tripod.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4b_hdr_iro/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 227
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "彩度が**ほぼ半分**に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_sunflower.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4b_hdr_iro/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 179
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "**黄色が白っぽく**なって気づいた",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_sunflower2.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4b_hdr_iro/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 154
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "設定**1つ**で元の色に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_flowers_garden.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4b_hdr_iro/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 129
+    },
+    {
+      "role": "body",
+      "telop": "**自動**ほど見落としやすい",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_timelapse.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4b_hdr_iro/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 158
+    },
+    {
+      "role": "flip",
+      "telop": "**自分の目**で確認する",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_lens_adjust.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4b_hdr_iro/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 187
+    },
+    {
+      "role": "vs",
+      "telop": "あなたはどっち？↓\n**コメント**で",
+      "vs": {
+        "left": "信じる",
+        "right": "毎回チェック"
+      },
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_skyline.mp4",
+        "bg/own_street.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4b_hdr_iro/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 154
+    }
+  ]
+}
