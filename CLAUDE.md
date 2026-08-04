@@ -2,125 +2,130 @@
 
 # takahiro — バズったX投稿 量産ツール
 
-A single-purpose Next.js app. The user pastes the text of a viral X (Twitter)
-post — or uploads a screenshot of one — and Claude classifies it into one of 12
-predefined "types" (型), explains why it went viral, then generates N brand-new
-posts that reuse the same structure/hook but are retargeted to a fixed audience
-and genre (AI-powered side hustles for busy 30–40s in field/sales jobs).
+用途が1つに絞られた Next.js アプリです。バズったX(旧Twitter)投稿の本文を貼り
+付けるか、スクリーンショットをアップロードすると、Claude がその投稿をあらかじめ
+定義された12種類の「型」に分類し、バズった要因を説明したうえで、同じ構成・フック
+を踏襲した新しい投稿を指定個数だけ生成します。生成される投稿は、元の投稿のテーマ
+にかかわらず、固定のターゲット・ジャンル(外に出て働く30〜40代向けの、AIを活用
+した副業)に必ず寄せられます。
 
-The entire product surface is in Japanese: UI copy, API error messages, model
-prompts, and commit messages. Keep it that way — write new user-facing strings
-and commit subjects in Japanese, code identifiers and comments in English.
+プロダクトの表面はすべて日本語です(UI文言、APIのエラーメッセージ、モデルへの
+プロンプト、コミットメッセージ)。この方針を維持してください。ユーザーに見える
+文字列とコミットの件名は日本語で、コード上の識別子とコメントは英語で書きます。
 
-## Stack
+## 技術スタック
 
-| Piece | Version / note |
+| 要素 | バージョン / 補足 |
 | --- | --- |
-| Next.js | 16.2.9, App Router, TypeScript |
+| Next.js | 16.2.9、App Router、TypeScript |
 | React | 19.2.4 |
-| Tailwind CSS | v4 — CSS-first (`@import "tailwindcss"`), configured via `@theme inline` in `src/app/globals.css`. There is no `tailwind.config.js` and you should not add one. |
-| Anthropic SDK | `@anthropic-ai/sdk` ^0.105.0, called server-side only |
-| ESLint | v9 flat config (`eslint.config.mjs`) composing `eslint-config-next/core-web-vitals` + `/typescript` |
+| Tailwind CSS | v4 — CSSファースト(`@import "tailwindcss"`)。設定は `src/app/globals.css` の `@theme inline` で行う。`tailwind.config.js` は存在せず、追加もしないこと。 |
+| Anthropic SDK | `@anthropic-ai/sdk` ^0.105.0。呼び出しはサーバー側のみ。 |
+| ESLint | v9 のフラット設定(`eslint.config.mjs`)。`eslint-config-next/core-web-vitals` と `/typescript` を合成。 |
 
-**Read the Next.js docs before writing code.** Per `AGENTS.md`, this Next.js
-version diverges from what you may remember; the authoritative guides ship in
-`node_modules/next/dist/docs/`. They only exist after `npm install`, so install
-first if you need them.
+**コードを書く前に Next.js のドキュメントを読んでください。** `AGENTS.md` にある
+とおり、このバージョンの Next.js は記憶している内容と異なります。正となるガイドは
+`node_modules/next/dist/docs/` に同梱されています。`npm install` の後にしか存在
+しないため、参照が必要な場合は先にインストールしてください。
 
-## Commands
+## コマンド
 
 ```bash
 npm install
-cp .env.example .env.local   # then set ANTHROPIC_API_KEY
+cp .env.example .env.local   # その後 ANTHROPIC_API_KEY を設定
 npm run dev                  # http://localhost:3000
 npm run build
-npm run lint                 # bare `eslint` — flat config, no args needed
+npm run lint                 # 素の `eslint`。フラット設定なので引数は不要
 ```
 
-There is no test suite, no CI workflow, and no `.github/` directory. Verify
-changes with `npm run lint`, `npm run build`, and by exercising the app.
+テストスイート、CIワークフロー、`.github/` ディレクトリはいずれもありません。変更
+の確認は `npm run lint`、`npm run build`、および実際にアプリを動かして行ってくだ
+さい。
 
-## Layout
+## ディレクトリ構成
 
 ```
 src/
   app/
-    layout.tsx              # root layout: Geist fonts, metadata, dark-mode body classes
-    page.tsx                # server component; header copy + <PostGeneratorForm />
-    globals.css             # Tailwind v4 entry + CSS variable theme
-    api/generate/route.ts   # the only API route — all Claude logic lives here
+    layout.tsx              # ルートレイアウト: Geistフォント、メタデータ、ダークモード用のbodyクラス
+    page.tsx                # サーバーコンポーネント。見出し文言と <PostGeneratorForm />
+    globals.css             # Tailwind v4 のエントリ + CSS変数によるテーマ
+    api/generate/route.ts   # 唯一のAPIルート。Claude関連のロジックはすべてここ
   components/
-    PostGeneratorForm.tsx   # "use client" — the whole interactive UI
+    PostGeneratorForm.tsx   # "use client" — インタラクティブUIの全体
   lib/
-    post-types.ts           # the 12 型 definitions + id lookup
+    post-types.ts           # 12種類の型の定義とID検索
 ```
 
-Import with the `@/*` alias (`@/lib/post-types`), which maps to `src/*` via
-`tsconfig.json`. TypeScript runs in `strict` mode.
+インポートには `@/*` エイリアス(`@/lib/post-types` など)を使います。`tsconfig.json`
+で `src/*` にマッピングされています。TypeScript は `strict` モードです。
 
-## How `src/app/api/generate/route.ts` works
+## `src/app/api/generate/route.ts` の仕組み
 
-Node runtime (`export const runtime = "nodejs"`), accepts `multipart/form-data`
-POST with fields:
+Node ランタイム(`export const runtime = "nodejs"`)で動作し、`multipart/form-data`
+の POST を受け取ります。フィールドは以下のとおりです。
 
-- `mode` — `"text"` or `"image"` (required, rejected otherwise)
-- `text` — required when `mode=text`, trimmed, max 5000 chars
-- `image` — required when `mode=image`; PNG/JPEG/WebP/GIF only, max 10MB,
-  base64-encoded into an Anthropic image block
-- `count` — clamped to 3–20, default 10
+- `mode` — `"text"` または `"image"`(必須。それ以外は拒否)
+- `text` — `mode=text` のとき必須。trim され、最大5000文字
+- `image` — `mode=image` のとき必須。PNG / JPEG / WebP / GIF のみ、最大10MB。
+  base64 に変換して Anthropic の画像ブロックに載せる
+- `count` — 3〜20 にクランプされ、既定値は10
 
-Key design decisions to preserve when editing:
+編集時に維持すべき設計上の判断は次のとおりです。
 
-1. **Forced tool use, not free-form JSON.** The route defines a single
-   `submit_generation` tool and pins `tool_choice: { type: "tool", name: ... }`.
-   The response is read out of the `tool_use` block. Add new output fields by
-   extending `input_schema` (and its `required` list) plus the local response
-   type — don't switch to parsing prose.
-2. **`detected_type_id` is constrained** by `enum: POST_TYPE_IDS`, and the
-   result is re-validated server-side with `getPostTypeById`; an unknown id
-   returns 502. Adding a type means only editing `src/lib/post-types.ts` — the
-   union type, prompt list, and enum all derive from `POST_TYPES`.
-3. **`count` is enforced twice** — in the prompt text and as
-   `minItems`/`maxItems` on `generated_posts`. Keep both in sync.
-4. **Target audience and genre are hardcoded** as `TARGET_AUDIENCE` and `GENRE`
-   constants in the route. Generated posts are always retargeted to them
-   regardless of the source post's topic — this is intentional product
-   behavior, not a bug. Make it configurable only if asked.
-5. **Model comes from `ANTHROPIC_MODEL`**, falling back to `"claude-sonnet-4-6"`.
-6. **Errors are Japanese strings** in `{ error }` JSON with meaningful status
-   codes: 400 validation, 500 missing key / unexpected failure, 502 malformed
-   model output. `Anthropic.APIError` is unwrapped into a readable message.
+1. **自由形式のJSONではなく、ツール利用を強制している。** ルートは
+   `submit_generation` というツールを1つだけ定義し、
+   `tool_choice: { type: "tool", name: ... }` で固定しています。応答は `tool_use`
+   ブロックから読み出します。出力項目を追加する場合は `input_schema`(および
+   `required` の一覧)とローカルのレスポンス型を拡張してください。文章をパースする
+   方式に変えないこと。
+2. **`detected_type_id` は `enum: POST_TYPE_IDS` で制約され**、さらにサーバー側で
+   `getPostTypeById` により再検証されます。未知のIDは502を返します。型を追加する
+   場合は `src/lib/post-types.ts` だけを編集すれば済みます。union型・プロンプトの
+   一覧・enum はすべて `POST_TYPES` から導出されます。
+3. **`count` は二重に強制されます** — プロンプトの文面と、`generated_posts` の
+   `minItems` / `maxItems` の両方です。片方だけ変えないでください。
+4. **ターゲットとジャンルはルート内に定数としてハードコードされています**
+   (`TARGET_AUDIENCE` と `GENRE`)。生成される投稿は元投稿のテーマに関係なく必ず
+   これらに寄せられます。これはバグではなく意図された仕様です。設定可能にするのは
+   依頼があったときだけにしてください。
+5. **モデルは `ANTHROPIC_MODEL` から取得**し、未設定なら `"claude-sonnet-4-6"` に
+   フォールバックします。
+6. **エラーは日本語の文字列**で `{ error }` のJSONとして返し、ステータスコードを
+   使い分けます(400: バリデーション、500: APIキー未設定や想定外の失敗、502: モデル
+   出力の不正)。`Anthropic.APIError` は読みやすいメッセージに変換されます。
 
-The response shape consumed by the client is camelCase (`detectedType`,
-`viralFactors`, `sourceText`, `posts`) — it deliberately differs from the
-snake_case tool schema, so update both sides together.
+クライアントが受け取るレスポンスはキャメルケース(`detectedType`、`viralFactors`、
+`sourceText`、`posts`)で、ツールスキーマのスネークケースとは意図的に異なります。
+変更するときは両方を同時に更新してください。
 
-## Client conventions (`PostGeneratorForm.tsx`)
+## クライアント側の規約(`PostGeneratorForm.tsx`)
 
-- Everything is local `useState`; no state library, no server actions. The form
-  posts `FormData` to `/api/generate` and renders the JSON.
-- Object URLs for the image preview are revoked in `selectFile` before being
-  replaced.
-- Copy-to-clipboard uses a shared `copyTimeoutRef` to flash "コピーしました!"
-  for 1.5s; a single timer is reused, so per-item and copy-all states cancel
-  each other by design.
-- **Every color utility needs a `dark:` counterpart.** Two commits in the
-  history exist solely to fix unreadable dark mode. Dark mode is
-  `prefers-color-scheme`-driven (no toggle, no `class` strategy), and the body
-  already sets `bg-white dark:bg-gray-950`.
-- The preview `<img>` is a raw tag with an inline
-  `// eslint-disable-next-line @next/next/no-img-element` — `next/image` can't
-  take a blob URL here.
+- 状態はすべてローカルの `useState` です。状態管理ライブラリも Server Actions も
+  使っていません。フォームは `FormData` を `/api/generate` に POST し、返ってきた
+  JSON を描画します。
+- 画像プレビューのオブジェクトURLは、差し替え前に `selectFile` 内で revoke して
+  います。
+- クリップボードへのコピーは共有の `copyTimeoutRef` を使い、「コピーしました!」を
+  1.5秒だけ表示します。タイマーを1つ使い回しているため、個別コピーと全コピーの
+  表示は互いに打ち消し合います(意図した挙動です)。
+- **色に関するユーティリティには必ず `dark:` の指定を対にしてください。** 読みづら
+  いダークモードを修正するためだけのコミットが履歴に2つあります。ダークモードは
+  `prefers-color-scheme` によるもので、トグルも `class` 戦略も使っていません。body
+  には既に `bg-white dark:bg-gray-950` が指定されています。
+- プレビューの `<img>` は素のタグで、`// eslint-disable-next-line @next/next/no-img-element`
+  をインラインで付けています。ここでは blob URL を `next/image` に渡せないためです。
 
-## Secrets
+## シークレット
 
-`ANTHROPIC_API_KEY` is read only inside the route handler, never exposed to the
-client, and `.env*` is gitignored except `.env.example`. Never add it to a
-`NEXT_PUBLIC_*` variable or call the Anthropic SDK from a client component.
+`ANTHROPIC_API_KEY` はルートハンドラの内部でのみ読み込まれ、クライアントには一切
+公開されません。`.env*` は `.env.example` を除いて gitignore されています。この値を
+`NEXT_PUBLIC_*` の変数に入れたり、クライアントコンポーネントから Anthropic SDK を
+呼び出したりしないでください。
 
-## Known drift
+## 実態とのズレ
 
-`README.md` still describes the app's earlier incarnation (a screenshot-only
-*analyzer*) and points at `src/app/api/analyze/route.ts` and
-`src/components/AnalyzerForm.tsx`, neither of which exists. Trust this file and
-the source over the README.
+`README.md` は、このアプリの以前の姿(スクリーンショット専用の*分析*ツール)のまま
+です。`src/app/api/analyze/route.ts` と `src/components/AnalyzerForm.tsx` を参照して
+いますが、どちらも存在しません。README よりも、このファイルとソースコードを信頼して
+ください。
