@@ -35,15 +35,26 @@ npx remotion render src/index.ts ShortVideo out/short.mp4 --props=src/props.json
 
 プレビューしたいときは `npm run studio` でブラウザ画面が開きます。
 
-### 書き出しは `--crf` を付ける
+### 書き出しは `--crf=25` を付ける
 
-デフォルトのままだと縦動画1本で11.6Mbps・60MB超になり、受け渡しで詰まる。
-**`--crf=23` を付けると1/2〜1/3のサイズになり、見た目の差はほぼない**
+デフォルトのままだと縦動画1本で11.6Mbps・63MBになり、受け渡しで詰まる。
+**`--crf=25` を付けると1/3以下になり、見た目の差はほぼない**
 (YouTubeはアップロード後にどのみち再エンコードする)。
 
 ```bash
-npx remotion render src/index.ts RankingVideo out/xxx.mp4 --props=src/props_xxx.json --codec=h264 --crf=23
+npx remotion render src/index.ts RankingVideo out/xxx.mp4 --props=src/props_xxx.json --codec=h264 --crf=25
 ```
+
+45.8秒・1080x1920での実測(w2d7_am_news2):
+
+| 設定 | サイズ | ビットレート |
+|---|---|---|
+| 指定なし(デフォルト) | 63.3 MiB | 11.6 Mbps |
+| `--crf=23` | 31.1 MiB | 5.7 Mbps |
+| **`--crf=25`** | **23.4 MiB** | 4.3 Mbps |
+
+チャットでファイルを受け渡す場合は30 MiBが上限のため、**45秒前後なら `--crf=25`** が目安。
+尺が長い回ではさらに上げる。
 
 大きく書き出してから別途圧縮すると2回エンコードすることになり、そのほうが劣化する。
 **サイズを落としたいときは、あとで圧縮せず最初から `--crf` で調整すること。**
