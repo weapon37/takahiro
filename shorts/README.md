@@ -35,6 +35,19 @@ npx remotion render src/index.ts ShortVideo out/short.mp4 --props=src/props.json
 
 プレビューしたいときは `npm run studio` でブラウザ画面が開きます。
 
+### 書き出しは `--crf` を付ける
+
+デフォルトのままだと縦動画1本で11.6Mbps・60MB超になり、受け渡しで詰まる。
+**`--crf=23` を付けると1/2〜1/3のサイズになり、見た目の差はほぼない**
+(YouTubeはアップロード後にどのみち再エンコードする)。
+
+```bash
+npx remotion render src/index.ts RankingVideo out/xxx.mp4 --props=src/props_xxx.json --codec=h264 --crf=23
+```
+
+大きく書き出してから別途圧縮すると2回エンコードすることになり、そのほうが劣化する。
+**サイズを落としたいときは、あとで圧縮せず最初から `--crf` で調整すること。**
+
 ## 🏆ランキング型テンプレ(「仕事が消えるAI帳」ブランド仕様)
 
 明るい文具系デザインの縦型ランキング動画(カウントダウン構成)を生成します。
