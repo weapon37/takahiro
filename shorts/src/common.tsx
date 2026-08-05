@@ -13,8 +13,8 @@ import {useBrand} from './brand';
 // マスコット(ブランドで切り替わる)。テンプレ側はこれだけを使う
 export const Mascot: React.FC<{size?: number; tilt?: number}> = ({size, tilt}) => {
   const brand = useBrand();
-  return brand.mascot === 'house' ? (
-    <HouseChar size={size} tilt={tilt} />
+  return brand.mascot === 'hermit' ? (
+    <HermitCrabChar size={size} tilt={tilt} />
   ) : (
     <EraserChar size={size} tilt={tilt} />
   );
@@ -88,107 +88,159 @@ export const EraserChar: React.FC<{size?: number; tilt?: number}> = ({
   );
 };
 
-// お家キャラ(CSS描画・引っ越し/住宅チャンネル用)
-// 三角屋根=spark、壁=白+inkの輪郭、ドア=primary。消しゴムキャラと同じ寸法比なので
-// テンプレ側の配置座標をそのまま使い回せる。
-export const HouseChar: React.FC<{size?: number; tilt?: number}> = ({
+// ヤドカリキャラ(CSS描画・引っ越し/住宅チャンネル用)
+// 「家そのものを背負って引っ越す」=このチャンネルの主題をそのまま形にしたもの。
+// 背中の家: 屋根=spark / 壁=白+inkの輪郭 / 窓=primary。本体: 白い顔+ハサミ+脚=primary。
+// 消しゴムキャラと同じ寸法比(w × w*1.45)なので、テンプレ側の配置座標をそのまま使い回せる。
+export const HermitCrabChar: React.FC<{size?: number; tilt?: number}> = ({
   size = 260,
-  tilt = -12,
+  tilt = -6,
 }) => {
   const BRAND = useBrand();
   const w = size;
   const h = size * 1.45;
-  const bw = size * 0.045; // 輪郭線の太さ(消しゴムキャラと共通)
-  const roofH = h * 0.36;
+  const bw = size * 0.05; // 輪郭線の太さ
+  const houseW = w * 0.78; // 背負っている家の幅
+  const roofH = h * 0.26;
   return (
     <div style={{width: w, height: h, position: 'relative', transform: `rotate(${tilt}deg)`}}>
-      {/* 屋根の輪郭(外側の三角) */}
+      {/* 背中の家: 屋根の輪郭(外側の三角) */}
       <div
         style={{
           position: 'absolute',
-          left: 0,
+          left: w * 0.05,
           top: 0,
           width: 0,
           height: 0,
-          borderLeft: `${w * 0.5}px solid transparent`,
-          borderRight: `${w * 0.5}px solid transparent`,
+          borderLeft: `${houseW * 0.5}px solid transparent`,
+          borderRight: `${houseW * 0.5}px solid transparent`,
           borderBottom: `${roofH}px solid ${BRAND.ink}`,
         }}
       />
-      {/* 屋根の面(内側の三角) */}
+      {/* 背中の家: 屋根の面(内側の三角) */}
       <div
         style={{
           position: 'absolute',
-          left: bw * 1.7,
+          left: w * 0.05 + bw * 1.7,
           top: bw * 1.7,
           width: 0,
           height: 0,
-          borderLeft: `${w * 0.5 - bw * 1.7}px solid transparent`,
-          borderRight: `${w * 0.5 - bw * 1.7}px solid transparent`,
+          borderLeft: `${houseW * 0.5 - bw * 1.7}px solid transparent`,
+          borderRight: `${houseW * 0.5 - bw * 1.7}px solid transparent`,
           borderBottom: `${roofH - bw * 1.7}px solid ${BRAND.spark}`,
         }}
       />
-      {/* 壁(屋根に少し重ねる) */}
+      {/* 背中の家: 壁 */}
       <div
         style={{
           position: 'absolute',
-          left: w * 0.09,
-          right: w * 0.09,
+          left: w * 0.14,
           top: roofH - bw,
-          bottom: 0,
+          width: houseW * 0.74,
+          height: h * 0.3,
           backgroundColor: '#ffffff',
           border: `${bw}px solid ${BRAND.ink}`,
-          borderRadius: size * 0.09,
-          overflow: 'hidden',
+          borderRadius: size * 0.06,
         }}
       >
-        {/* ドア */}
+        {/* 窓(家であることの記号) */}
         <div
           style={{
             position: 'absolute',
             left: '50%',
-            bottom: 0,
-            width: w * 0.26,
-            height: h * 0.22,
-            marginLeft: -w * 0.13,
+            top: '26%',
+            marginLeft: -w * 0.09,
+            width: w * 0.18,
+            height: w * 0.18,
             backgroundColor: BRAND.primary,
-            borderRadius: `${size * 0.13}px ${size * 0.13}px 0 0`,
+            border: `${bw * 0.8}px solid ${BRAND.ink}`,
+            borderRadius: size * 0.03,
           }}
         />
       </div>
-      {/* 目 */}
+      {/* 本体の顔(家の右下から出る) */}
       <div
         style={{
           position: 'absolute',
-          left: w * 0.26,
-          top: h * 0.52,
-          width: w * 0.09,
-          height: w * 0.09,
-          borderRadius: '50%',
-          backgroundColor: BRAND.ink,
+          left: w * 0.46,
+          top: h * 0.55,
+          width: w * 0.48,
+          height: w * 0.44,
+          borderRadius: '46% 50% 50% 46%',
+          backgroundColor: '#ffffff',
+          border: `${bw}px solid ${BRAND.ink}`,
+        }}
+      >
+        <div
+          style={{
+            position: 'absolute',
+            left: w * 0.1,
+            top: w * 0.14,
+            width: w * 0.075,
+            height: w * 0.075,
+            borderRadius: '50%',
+            backgroundColor: BRAND.ink,
+          }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            left: w * 0.27,
+            top: w * 0.14,
+            width: w * 0.075,
+            height: w * 0.075,
+            borderRadius: '50%',
+            backgroundColor: BRAND.ink,
+          }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            left: w * 0.16,
+            top: w * 0.25,
+            width: w * 0.13,
+            height: w * 0.065,
+            borderBottom: `${bw * 0.7}px solid ${BRAND.ink}`,
+            borderRadius: '0 0 50% 50%',
+          }}
+        />
+      </div>
+      {/* ハサミ(前に突き出す) */}
+      <div
+        style={{
+          position: 'absolute',
+          left: w * 0.2,
+          top: h * 0.66,
+          width: w * 0.26,
+          height: w * 0.22,
+          borderRadius: '60% 20% 50% 60%',
+          backgroundColor: BRAND.primary,
+          border: `${bw}px solid ${BRAND.ink}`,
         }}
       />
+      {/* 脚(2本) */}
       <div
         style={{
           position: 'absolute',
-          right: w * 0.26,
-          top: h * 0.52,
-          width: w * 0.09,
-          height: w * 0.09,
-          borderRadius: '50%',
-          backgroundColor: BRAND.ink,
-        }}
-      />
-      {/* 口 */}
-      <div
-        style={{
-          position: 'absolute',
-          left: w * 0.41,
-          top: h * 0.59,
-          width: w * 0.18,
-          height: w * 0.09,
-          borderBottom: `${size * 0.035}px solid ${BRAND.ink}`,
+          left: w * 0.56,
+          top: h * 0.9,
+          width: w * 0.13,
+          height: w * 0.12,
           borderRadius: '0 0 50% 50%',
+          backgroundColor: BRAND.primary,
+          border: `${bw * 0.9}px solid ${BRAND.ink}`,
+        }}
+      />
+      <div
+        style={{
+          position: 'absolute',
+          left: w * 0.78,
+          top: h * 0.88,
+          width: w * 0.13,
+          height: w * 0.12,
+          borderRadius: '0 0 50% 50%',
+          backgroundColor: BRAND.primary,
+          border: `${bw * 0.9}px solid ${BRAND.ink}`,
         }}
       />
     </div>

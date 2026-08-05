@@ -6,7 +6,7 @@
 // 未指定なら "ai"(既定)。
 import React from 'react';
 
-export type Mascot = 'eraser' | 'house';
+export type Mascot = 'eraser' | 'hermit';
 
 export type Brand = {
   primary: string; // 主役の面。順位札・パネル・箇条書きの番号
@@ -32,6 +32,7 @@ export const BRANDS = {
     wipeCrumbs: true,
   },
   // 引っ越し・住宅系(部屋探し/内見)— 深緑×テラコッタ×生成り。不動産・インテリアの定番トーン
+  // マスコットは家を背負ったヤドカリ(消しゴムキャラとシルエットを完全に分けるため)
   home: {
     primary: '#2F7A63', // 深いグリーン。順位札・枠
     accent: '#F6D48C', // サンド。マーカー強調・背景帯
@@ -39,8 +40,8 @@ export const BRANDS = {
     ink: '#24463C', // 深緑インク。本文・アウトライン
     base: '#FAF5EC', // 生成りの壁色。紙背景
     erase: '#B9B3A8', // 温かみのあるグレー
-    mascot: 'house',
-    wipeCrumbs: false, // お家キャラは「消す」キャラではないのでカスを出さない
+    mascot: 'hermit',
+    wipeCrumbs: false, // ヤドカリは「消す」キャラではないのでカスを出さない
   },
 } as const satisfies Record<string, Brand>;
 
