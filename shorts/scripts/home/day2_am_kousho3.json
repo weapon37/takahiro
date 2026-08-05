@@ -1,0 +1,68 @@
+{
+  "template": "RankingVideo",
+  "brand": "home",
+  "title": "初期費用を下げる「聞き方」BEST3",
+  "caption": "初期費用は、聞き方ひとつで変わることがあります。言いにくい人向けの聞き方をBEST3で。必ず下がるわけではないので、ダメ元で確認するくらいがちょうどいいです。\n※交渉の可否は物件・時期・貸主によって異なります。一般的な確認方法の紹介です\n#部屋探し #初期費用 #賃貸 #一人暮らし #引っ越し",
+  "account": "内見メモ帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "初期費用は、聞き方ひとつで変わることがあります。ベスト3。",
+      "telop": "初期費用の聞き方 **BEST3**"
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "フリーレント",
+      "narration": "第3位、フリーレントが付けられないか聞く。",
+      "telop": "「家賃の開始日は\n動きますか」"
+    },
+    {
+      "role": "body",
+      "narration": "空室の期間が長い部屋ほど、相談の余地があることがあります。",
+      "telop": "空室が長い部屋ほど**余地**がある"
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "オプション費用",
+      "narration": "第2位、消臭や抗菌などのオプション。",
+      "telop": "「これは任意ですか」"
+    },
+    {
+      "role": "body",
+      "narration": "必須なのか、任意なのか。これは聞いていい質問です。",
+      "telop": "必須か任意かは**聞いていい**"
+    },
+    {
+      "role": "save",
+      "narration": "1位の前に、保存を。不動産屋に行く前に見返すやつです。",
+      "telop": "お店に行く前に見返す用に\n**保存**"
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "時期をずらす",
+      "narration": "第1位、そもそも時期をずらす。",
+      "telop": "1月〜3月を外す"
+    },
+    {
+      "role": "body",
+      "narration": "1月から3月は、部屋を探す人がいちばん多い時期。交渉の余地はいちばん小さくなります。",
+      "telop": "繁忙期は**交渉の余地**が消える"
+    },
+    {
+      "role": "cta",
+      "narration": "実際に聞いてみてどうだったか、コメントで教えてください。",
+      "telop": "聞いた結果を\n**コメント**で"
+    }
+  ],
+  "bgm": "bgm/tomorrows_light.mp3",
+  "bgClips": [
+    "bg/home_money.mp4",
+    "bg/home_contract.mp4",
+    "bg/home_empty_room.mp4",
+    "bg/home_building.mp4",
+    "bg/home_house_key.mp4"
+  ]
+}

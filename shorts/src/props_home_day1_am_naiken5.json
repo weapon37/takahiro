@@ -1,0 +1,253 @@
+{
+  "account": "内見メモ帳",
+  "brand": "home",
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "内見で見る **BEST5**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/home_empty_room.mp4",
+        "bg/home_apartment_tour.mp4",
+        "bg/home_living_room.mp4",
+        "bg/home_kitchen.mp4",
+        "bg/home_balcony_view.mp4",
+        "bg/home_neighborhood.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_home_day1_am_naiken5/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 145
+    },
+    {
+      "role": "rank",
+      "rank": 5,
+      "headline": "コンセント",
+      "telop": "数と位置を数える",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/home_empty_room.mp4",
+        "bg/home_apartment_tour.mp4",
+        "bg/home_living_room.mp4",
+        "bg/home_kitchen.mp4",
+        "bg/home_balcony_view.mp4",
+        "bg/home_neighborhood.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_home_day1_am_naiken5/02.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 73
+    },
+    {
+      "role": "body",
+      "telop": "家具の配置が**ここで決まる**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/home_empty_room.mp4",
+        "bg/home_apartment_tour.mp4",
+        "bg/home_living_room.mp4",
+        "bg/home_kitchen.mp4",
+        "bg/home_balcony_view.mp4",
+        "bg/home_neighborhood.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_home_day1_am_naiken5/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 109
+    },
+    {
+      "role": "rank",
+      "rank": 4,
+      "headline": "スマホの電波",
+      "telop": "部屋の奥で確認",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/home_empty_room.mp4",
+        "bg/home_apartment_tour.mp4",
+        "bg/home_living_room.mp4",
+        "bg/home_kitchen.mp4",
+        "bg/home_balcony_view.mp4",
+        "bg/home_neighborhood.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_home_day1_am_naiken5/04.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 66
+    },
+    {
+      "role": "body",
+      "telop": "奥と風呂場が**圏外**の物件も",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/home_empty_room.mp4",
+        "bg/home_apartment_tour.mp4",
+        "bg/home_living_room.mp4",
+        "bg/home_kitchen.mp4",
+        "bg/home_balcony_view.mp4",
+        "bg/home_neighborhood.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_home_day1_am_naiken5/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 141
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "収納の奥行き",
+      "telop": "メジャーで測る",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/home_empty_room.mp4",
+        "bg/home_apartment_tour.mp4",
+        "bg/home_living_room.mp4",
+        "bg/home_kitchen.mp4",
+        "bg/home_balcony_view.mp4",
+        "bg/home_neighborhood.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_home_day1_am_naiken5/06.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 80
+    },
+    {
+      "role": "body",
+      "telop": "ふとんが**入るか**で分かれる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/home_empty_room.mp4",
+        "bg/home_apartment_tour.mp4",
+        "bg/home_living_room.mp4",
+        "bg/home_kitchen.mp4",
+        "bg/home_balcony_view.mp4",
+        "bg/home_neighborhood.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_home_day1_am_naiken5/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 123
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "窓を閉めた音",
+      "telop": "10秒だまってみる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/home_empty_room.mp4",
+        "bg/home_apartment_tour.mp4",
+        "bg/home_living_room.mp4",
+        "bg/home_kitchen.mp4",
+        "bg/home_balcony_view.mp4",
+        "bg/home_neighborhood.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_home_day1_am_naiken5/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 80
+    },
+    {
+      "role": "body",
+      "telop": "線路と幹線道路は\n**閉めて**分かる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/home_empty_room.mp4",
+        "bg/home_apartment_tour.mp4",
+        "bg/home_living_room.mp4",
+        "bg/home_kitchen.mp4",
+        "bg/home_balcony_view.mp4",
+        "bg/home_neighborhood.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_home_day1_am_naiken5/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 147
+    },
+    {
+      "role": "save",
+      "telop": "内見の日に見返す用に\n**保存**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/home_empty_room.mp4",
+        "bg/home_apartment_tour.mp4",
+        "bg/home_living_room.mp4",
+        "bg/home_kitchen.mp4",
+        "bg/home_balcony_view.mp4",
+        "bg/home_neighborhood.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_home_day1_am_naiken5/10.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 145
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "時間帯を変える",
+      "telop": "夜にもう一度行く",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/home_empty_room.mp4",
+        "bg/home_apartment_tour.mp4",
+        "bg/home_living_room.mp4",
+        "bg/home_kitchen.mp4",
+        "bg/home_balcony_view.mp4",
+        "bg/home_neighborhood.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_home_day1_am_naiken5/11.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 102
+    },
+    {
+      "role": "body",
+      "telop": "昼と夜で**別の部屋**になる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/home_empty_room.mp4",
+        "bg/home_apartment_tour.mp4",
+        "bg/home_living_room.mp4",
+        "bg/home_kitchen.mp4",
+        "bg/home_balcony_view.mp4",
+        "bg/home_neighborhood.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_home_day1_am_naiken5/12.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 152
+    },
+    {
+      "role": "cta",
+      "telop": "あなたの失敗談を\n**コメント**で",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/home_empty_room.mp4",
+        "bg/home_apartment_tour.mp4",
+        "bg/home_living_room.mp4",
+        "bg/home_kitchen.mp4",
+        "bg/home_balcony_view.mp4",
+        "bg/home_neighborhood.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_home_day1_am_naiken5/13.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 135
+    }
+  ]
+}

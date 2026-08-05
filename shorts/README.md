@@ -79,7 +79,42 @@ npx remotion render src/index.ts StoryVideo out/story.mp4 --props=src/props_stor
 - 💬のlineシーンは `"keyword": "メモ"` で合言葉指定
 - 💬体験談は実体験ベースで書くこと(盛らない)。ナレーションは肉声推奨
 
-## Week 1 台本一覧(scripts/)
+## 2チャンネル運用(ブランドの切り替え)
+
+テンプレ(🏆⚡💬)は**全チャンネル共通**。見た目の違いは `src/brand.ts` のブランド定義だけで切り替わる。
+
+| ブランドキー | チャンネル | 配色 | マスコット |
+|------|------|------|------|
+| `ai`(既定) | 仕事が消えるAI帳 | 青×黄×オレンジ(明るい文具系) | 消しゴムキャラ |
+| `home` | 内見メモ帳(引っ越し・住宅) | 深緑×テラコッタ×生成り | お家キャラ |
+
+台本JSONに1行足すだけで切り替わる:
+
+```json
+{ "template": "RankingVideo", "brand": "home", "account": "内見メモ帳", ... }
+```
+
+台本の置き場所でファイルの名前空間が分かれる(音声・props・出力が衝突しない):
+
+| 台本 | slug | 音声 | props | 出力 |
+|------|------|------|------|------|
+| `scripts/xxx.json` | `xxx` | `public/audio_xxx` | `src/props_xxx.json` | `out/xxx.mp4` |
+| `scripts/home/xxx.json` | `home_xxx` | `public/audio_home_xxx` | `src/props_home_xxx.json` | `out/home_xxx.mp4` |
+
+一括レンダリングはチャンネル単位で絞れる:
+
+```bash
+GOOGLE_TTS_API_KEY=xxxx node tools/render_all.mjs           # 全チャンネル
+GOOGLE_TTS_API_KEY=xxxx node tools/render_all.mjs home      # 内見メモ帳だけ
+GOOGLE_TTS_API_KEY=xxxx node tools/render_all.mjs home_day1_am_naiken5  # 1本だけ
+```
+
+**チャンネルを増やすとき**は `src/brand.ts` の `BRANDS` に6色+マスコットを足し、
+`scripts/<新キー>/` に台本を置くだけ。テンプレ側の改修は不要。
+新しいマスコットが要るときだけ `src/common.tsx` にCSS描画の部品を足して
+`Mascot` の分岐に追加する。
+
+## Week 1 台本一覧① 仕事が消えるAI帳(scripts/)
 
 14本すべて台本JSON化済み。制作は3コマンド(音声→props→render)。
 
@@ -113,7 +148,71 @@ npx remotion render src/index.ts RankingVideo out/day1_am_best5.mp4 --props=src/
 - `_note` と `◯◯` がある台本は、**必ず実データに差し替えてから**音声生成すること
 - 公開前チェック: 実測値は本物か / PR表記 / AI開示フラグ / 「個人の結果です」注記
 
-## 背景クリップの標準プール(12ワード)
+## Week 1 台本一覧② 内見メモ帳(scripts/home/)
+
+引っ越し・住宅系。切り口は**部屋探し・内見の失敗回避**。14本すべて台本JSON化済み。
+
+| 台本 | 型 | 内容 | 備考 |
+|------|----|------|------|
+| scripts/home/day1_am_naiken5.json | 🏆 | 内見でここだけは見ろBEST5 | |
+| scripts/home/day1_pm_ekichika.json | ⚡ | 駅徒歩5分だけで選ぶと後悔する | |
+| scripts/home/day2_am_kousho3.json | 🏆 | 初期費用を下げる聞き方BEST3 | |
+| scripts/home/day2_pm_day0.json | 💬 | 部屋探しDay0宣言 | ⚠実体験に差し替え |
+| scripts/home/day3_am_setsubi5.json | 🏆 | 内見で見落とす設備BEST5 | |
+| scripts/home/day3_pm_ikkatsu.json | ⚡ | 一括見積もり、送る前にやること | |
+| scripts/home/day4_am_taikyo3.json | 🏆 | 退去費用でモメないBEST3 | |
+| scripts/home/day4_pm_naiken_ken.json | 💬 | 1日でまとめて内見した日 | ⚠実体験に差し替え |
+| scripts/home/day5_am_hiyou5.json | 🏆 | 初期費用の内訳BEST5 | |
+| scripts/home/day5_pm_zerozero.json | ⚡ | 敷金礼金ゼロが得か損か | |
+| scripts/home/day6_am_souon3.json | 🏆 | 騒音を内見で見抜くBEST3 | |
+| scripts/home/day6_pm_kimeta.json | 💬 | 決めた部屋と妥協したところ | ⚠実体験に差し替え |
+| scripts/home/day7_am_news.json | 🏆 | 週刊・部屋探しニュースTOP3 | ⚠毎週差し替え |
+| scripts/home/day7_pm_toriaezu.json | ⚡ | とりあえず不動産屋は損 | |
+
+制作は既存チャンネルと全く同じ3コマンド:
+
+```bash
+.venv/bin/python tools/make_voice_google.py scripts/home/day1_am_naiken5.json public/audio_home_day1_am_naiken5
+node tools/build_props_generic.mjs scripts/home/day1_am_naiken5.json audio_home_day1_am_naiken5 src/props_home_day1_am_naiken5.json
+npx remotion render src/index.ts RankingVideo out/home_day1_am_naiken5.mp4 --props=src/props_home_day1_am_naiken5.json --codec=h264
+```
+
+### このジャンル特有の注意(必ず守る)
+
+住宅・引っ越しは**お金と契約が絡む**ため、AI系より表現規制が厳しい:
+
+- **特定物件の斡旋に踏み込まない**(宅建業法の領域)。一般的な確認ポイントの情報提供に留める
+- **断定を避ける**(景表法)。「絶対に安くなる」「業界最安」はNG。「〜のことがあります」で書く
+- **交渉系は結果を保証しない**。「必ず下がる」ではなく「聞いてみる価値がある」
+- **制度・法令に触れるときは一次情報**(国交省・自治体・公正競争規約)を確認し、captionに出典を書く
+- **アフィリエイト(引っ越し見積もり比較など)を入れるならPR表記必須**
+- 💬体験談は**実体験ベースのみ**。金額・件数は本物だけを出す
+
+公開前チェック: 実測値は本物か / PR表記 / AI開示フラグ / 「個人の結果です」注記 / 断定表現が残っていないか
+
+## 背景クリップの標準プール② 内見メモ帳(12ワード)
+
+住宅チャンネルの背景は**この12本から選ぶ**:
+
+| ファイル | 検索ワード | 合う場面 |
+|------|------|------|
+| bg/home_empty_room.mp4 | empty apartment room | 内見・空室 |
+| bg/home_apartment_tour.mp4 | apartment interior | 部屋の中・間取り |
+| bg/home_living_room.mp4 | living room sunlight | 日当たり・暮らし |
+| bg/home_kitchen.mp4 | kitchen apartment | 設備・水回り |
+| bg/home_balcony_view.mp4 | balcony view | 眺望・階数 |
+| bg/home_building.mp4 | apartment building | 物件の外観・構造 |
+| bg/home_neighborhood.mp4 | residential street | 周辺環境・治安 |
+| bg/home_station_walk.mp4 | walking to station | 駅距離・通勤 |
+| bg/home_moving_boxes.mp4 | moving boxes | 引っ越し・荷造り |
+| bg/home_house_key.mp4 | house keys | 契約成立・鍵の受け渡し |
+| bg/home_contract.mp4 | signing contract | 契約書・特約・書類 |
+| bg/home_money.mp4 | calculator money | 初期費用・家賃・計算 |
+
+差し替えは既存チャンネルと同じ:
+`PEXELS_API_KEY=xxxx python3 tools/fetch_bg_pexels.py "ワード" home_ファイル名.mp4`
+
+## 背景クリップの標準プール① 仕事が消えるAI帳(12ワード)
 
 今後の背景は**この12ワードから各シーンの内容に合うものを選ぶ**(勝手に別ワードを増やさない):
 
@@ -144,7 +243,8 @@ AI→エーアイ、OCR→オーシーアール、freee→フリー。
 数字(60分・19秒など)はそのままでOK。
 
 **読み間違い対策辞書(tools/reading_dict.json)が音声生成時に自動適用される**
-(進捗→しんちょく、相殺→そうさい、一人→ひとり等の40語超)。
+(進捗→しんちょく、相殺→そうさい、一人→ひとり等の80語超)。
+住宅系の語(内見→ないけん、前家賃→まえやちん、貼り紙→はりがみ、瑕疵→かし等)も収録済み。
 台本のnarrationは漢字のまま書いてよい。テロップには影響しない。
 辞書に語を足すときはreading_dict.jsonに1行追加するだけ。
 「一日」はついたち/いちにちが文脈依存のため自動置換されない——台本側でひらがな指定を。

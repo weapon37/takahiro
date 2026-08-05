@@ -1,0 +1,93 @@
+{
+  "template": "RankingVideo",
+  "brand": "home",
+  "title": "内見でここだけは見ろBEST5【1位は誰も見てない】",
+  "caption": "内見で本当に見るべき5つ。1位は、ほとんどの人がやらないやつです。部屋探しの失敗を減らすチェックを毎日投稿しています。あなたの内見の失敗談もコメントで。\n※一般的な確認ポイントの紹介です。契約内容や設備は物件ごとに異なります\n#部屋探し #内見 #一人暮らし #賃貸 #引っ越し",
+  "account": "内見メモ帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "内見で本当に見るべき5つ。1位は、ほとんどの人がやりません。",
+      "telop": "内見で見る **BEST5**"
+    },
+    {
+      "role": "rank",
+      "rank": 5,
+      "headline": "コンセント",
+      "narration": "第5位、コンセントの数と位置。",
+      "telop": "数と位置を数える"
+    },
+    {
+      "role": "body",
+      "narration": "ここで家具とベッドの置き場所が、ほぼ決まります。",
+      "telop": "家具の配置が**ここで決まる**"
+    },
+    {
+      "role": "rank",
+      "rank": 4,
+      "headline": "スマホの電波",
+      "narration": "第4位、スマホの電波。",
+      "telop": "部屋の奥で確認"
+    },
+    {
+      "role": "body",
+      "narration": "部屋の奥と、お風呂場。ここだけ圏外になる物件があります。",
+      "telop": "奥と風呂場が**圏外**の物件も"
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "収納の奥行き",
+      "narration": "第3位、収納の奥行き。",
+      "telop": "メジャーで測る"
+    },
+    {
+      "role": "body",
+      "narration": "見た目より浅いことがあります。ふとんが入るかどうかが分かれ目。",
+      "telop": "ふとんが**入るか**で分かれる"
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "窓を閉めた音",
+      "narration": "第2位、窓を閉めたときの音。",
+      "telop": "10秒だまってみる"
+    },
+    {
+      "role": "body",
+      "narration": "全部閉めて、10秒だまる。線路と幹線道路の音は、ここで気づけます。",
+      "telop": "線路と幹線道路は\n**閉めて**分かる"
+    },
+    {
+      "role": "save",
+      "narration": "1位の前に、保存を。内見の日に見返すやつです。",
+      "telop": "内見の日に見返す用に\n**保存**"
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "時間帯を変える",
+      "narration": "第1位、時間帯を変えて、もう一度行く。",
+      "telop": "夜にもう一度行く"
+    },
+    {
+      "role": "body",
+      "narration": "昼は静かでも、夜は別の顔をしています。同じ部屋でも印象が変わります。",
+      "telop": "昼と夜で**別の部屋**になる"
+    },
+    {
+      "role": "cta",
+      "narration": "内見の失敗談、コメントで教えてください。次の人の役に立ちます。",
+      "telop": "あなたの失敗談を\n**コメント**で"
+    }
+  ],
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgClips": [
+    "bg/home_empty_room.mp4",
+    "bg/home_apartment_tour.mp4",
+    "bg/home_living_room.mp4",
+    "bg/home_kitchen.mp4",
+    "bg/home_balcony_view.mp4",
+    "bg/home_neighborhood.mp4"
+  ]
+}

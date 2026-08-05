@@ -1,0 +1,98 @@
+{
+  "template": "RankingVideo",
+  "brand": "home",
+  "title": "一人暮らしの初期費用、内訳BEST5【家賃の何ヶ月分？】",
+  "caption": "初期費用は「敷金と礼金だけ」ではありません。内訳をBEST5で。目安は家賃の4〜6ヶ月分と言われます。仲介手数料には法律で上限が決まっています。\n※金額はあくまで一般的な目安です。実際の内訳・金額は物件と契約内容によって異なります\n#一人暮らし #初期費用 #部屋探し #賃貸 #新生活",
+  "account": "内見メモ帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "初期費用は、敷金と礼金だけじゃありません。内訳ベスト5。",
+      "telop": "初期費用の内訳 **BEST5**",
+      "time": {
+        "label": "初期費用の目安",
+        "before": "2ヶ月分",
+        "after": "4〜6ヶ月"
+      }
+    },
+    {
+      "role": "rank",
+      "rank": 5,
+      "headline": "火災保険料",
+      "narration": "第5位、火災保険料。",
+      "telop": "だいたい2年ぶん"
+    },
+    {
+      "role": "body",
+      "narration": "多くの物件で加入が条件になっています。2年ぶんをまとめて払う形が多いです。",
+      "telop": "2年ぶん**まとめて**払う"
+    },
+    {
+      "role": "rank",
+      "rank": 4,
+      "headline": "鍵の交換費用",
+      "narration": "第4位、鍵の交換費用。",
+      "telop": "前の人の鍵を替える"
+    },
+    {
+      "role": "body",
+      "narration": "前に住んでいた人の鍵を使い続けないための費用です。",
+      "telop": "防犯のための**必要経費**"
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "前家賃",
+      "narration": "第3位、前家賃。",
+      "telop": "翌月ぶんを先に払う"
+    },
+    {
+      "role": "body",
+      "narration": "入居する月と、その次の月。2ヶ月ぶん動くことがあります。",
+      "telop": "2ヶ月ぶん**先に**動く"
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "仲介手数料",
+      "narration": "第2位、仲介手数料。",
+      "telop": "法律で上限がある"
+    },
+    {
+      "role": "body",
+      "narration": "住むための部屋を借りるときは、法律で上限が決まっています。言い値ではありません。",
+      "telop": "**上限**が決まっている"
+    },
+    {
+      "role": "save",
+      "narration": "1位の前に、保存を。見積もりが来たときに見返すやつです。",
+      "telop": "見積もりが来たら見返す用に\n**保存**"
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "敷金と礼金",
+      "narration": "第1位、敷金と礼金。",
+      "telop": "返るお金と返らないお金"
+    },
+    {
+      "role": "body",
+      "narration": "敷金は預けるお金で、条件によって返ってきます。礼金は返ってきません。ここが決定的に違います。",
+      "telop": "礼金は**返ってこない**"
+    },
+    {
+      "role": "cta",
+      "narration": "実際いくらかかったか、コメントで教えてください。相場の感覚がつかめます。",
+      "telop": "実際の金額を\n**コメント**で"
+    }
+  ],
+  "bgm": "bgm/tomorrows_light.mp3",
+  "bgClips": [
+    "bg/home_money.mp4",
+    "bg/home_contract.mp4",
+    "bg/home_house_key.mp4",
+    "bg/home_empty_room.mp4",
+    "bg/home_apartment_tour.mp4",
+    "bg/home_building.mp4"
+  ]
+}

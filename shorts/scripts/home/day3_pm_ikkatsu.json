@@ -1,0 +1,65 @@
+{
+  "template": "ContrarianVideo",
+  "brand": "home",
+  "title": "引っ越しの一括見積もり、送る前にやること",
+  "caption": "一括見積もりは便利ですが、送る順番を間違えると比較が雑になります。送信前に決めておく3つ。あなたは一括派？直接派？コメントで教えてください。\n※サービス内容や連絡方法は各社によって異なります\n#引っ越し #一括見積もり #部屋探し #新生活 #節約",
+  "account": "内見メモ帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "引っ越しの一括見積もり、送る前に決めることがあります。",
+      "telop": "送る前に**決める**ことがある"
+    },
+    {
+      "role": "body",
+      "narration": "条件が決まっていないまま送ると、各社バラバラの前提で金額が返ってきます。比べられません。",
+      "telop": "前提が違うと**比べられない**"
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "narration": "送る前に3つ。1、荷物の量と、希望の日にちを先に固定する。",
+      "telop": "荷物量と希望日を固定"
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "narration": "2、電話が苦手なら、メール連絡希望の欄を使う。",
+      "telop": "メール希望の欄を使う"
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "narration": "3、比べるのは2社から3社で十分。増やすほど、比較が雑になります。",
+      "telop": "2〜3社で十分"
+    },
+    {
+      "role": "body",
+      "narration": "同じ条件で並べて、はじめて金額の差に意味が出ます。",
+      "telop": "同じ条件で**並べる**"
+    },
+    {
+      "role": "flip",
+      "narration": "ただし、単身で荷物が少ないなら、単身パックを直接調べた方が早いこともあります。",
+      "telop": "荷物が少ないなら\n**直接**が早い"
+    },
+    {
+      "role": "vs",
+      "narration": "あなたは一括派、直接派。理由もセットでコメントで教えてください。",
+      "telop": "理由もセットで**コメント**へ",
+      "vs": {
+        "left": "一括派",
+        "right": "直接派"
+      }
+    }
+  ],
+  "bgm": "bgm/pawn.mp3",
+  "bgClips": [
+    "bg/home_moving_boxes.mp4",
+    "bg/home_money.mp4",
+    "bg/home_contract.mp4",
+    "bg/home_empty_room.mp4",
+    "bg/home_building.mp4",
+    "bg/home_station_walk.mp4"
+  ]
+}

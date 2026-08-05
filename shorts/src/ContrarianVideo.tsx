@@ -9,8 +9,8 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
-import {BRAND, fontFamily} from './brand';
-import {AccountLabel, CutBg, DotGrid, EraserChar, outline, parseTelop} from './common';
+import {BrandContext, fontFamily, resolveBrand, useBrand} from './brand';
+import {AccountLabel, CutBg, DotGrid, Mascot, outline, parseTelop} from './common';
 
 // ---------- ⚡逆張り型テンプレ(ネイビー基調・議論を誘発する構成) ----------
 // 構成: hook(言い切り) → body(根拠) → point(①②③) → flip(条件付きの例外) → vs(どっち派?)
@@ -30,15 +30,18 @@ export type ContraScene = {
 
 export type ContrarianVideoProps = {
   account: string;
+  brand?: string; // ブランドキー(src/brand.ts の BRANDS)。未指定は既定ブランド
   bgm: string;
   bgmVolume: number;
   scenes: ContraScene[];
 };
 
 // ネイビー紙背景(ダークトーン+役割で差し色)
-const NavyBg: React.FC<{role: ContraScene['role']; transparent?: boolean}> = ({role, transparent}) => (
+const NavyBg: React.FC<{role: ContraScene['role']; transparent?: boolean}> = ({role, transparent}) => {
+  const BRAND = useBrand();
+  return (
   <AbsoluteFill style={{backgroundColor: transparent ? 'transparent' : BRAND.ink}}>
-    <DotGrid dotColor="rgba(247,244,238,0.09)" />
+    <DotGrid dotColor={`${BRAND.base}18`} />
     {role === 'hook' && (
       <div
         style={{
@@ -66,10 +69,12 @@ const NavyBg: React.FC<{role: ContraScene['role']; transparent?: boolean}> = ({r
       />
     )}
   </AbsoluteFill>
-);
+  );
+};
 
 // テロップ(白文字+**強調**はオレンジ帯)
 const Telop: React.FC<{text: string; big?: boolean}> = ({text, big}) => {
+  const BRAND = useBrand();
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const appear = spring({frame: frame - 3, fps, config: {damping: 200}, durationInFrames: 12});
@@ -119,6 +124,7 @@ const Telop: React.FC<{text: string; big?: boolean}> = ({text, big}) => {
 
 // ①②③の番号バッジ(pointシーン)
 const NumBadge: React.FC<{num: number}> = ({num}) => {
+  const BRAND = useBrand();
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const pop = spring({frame: frame - 2, fps, config: {damping: 11, mass: 0.6}, durationInFrames: 16});
@@ -159,6 +165,7 @@ const NumBadge: React.FC<{num: number}> = ({num}) => {
 
 // 対決画面(vsシーン): 左右パネル+中央VS
 const VsPanel: React.FC<{vs: {left: string; right: string}}> = ({vs}) => {
+  const BRAND = useBrand();
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const slideL = spring({frame: frame - 2, fps, config: {damping: 16}, durationInFrames: 14});
@@ -225,7 +232,7 @@ const VsPanel: React.FC<{vs: {left: string; right: string}}> = ({vs}) => {
   );
 };
 
-// フックの打ち消し演出: 消しゴムが下から通り、**強調**語に取り消し線が走る
+// フックの打ち消し演出: マスコットが下から横切る
 const HookStrike: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
@@ -233,12 +240,13 @@ const HookStrike: React.FC = () => {
   const x = interpolate(slide, [0, 1], [-300, 800]);
   return (
     <div style={{position: 'absolute', left: x, top: 1420}}>
-      <EraserChar size={190} tilt={interpolate(slide, [0, 1], [-20, 6])} />
+      <Mascot size={190} tilt={interpolate(slide, [0, 1], [-20, 6])} />
     </div>
   );
 };
 
 const SceneView: React.FC<{scene: ContraScene; index: number}> = ({scene, index}) => {
+  const BRAND = useBrand();
   const clips = scene.bgClips ?? (scene.bgVideo ? [scene.bgVideo] : []);
   return (
     <AbsoluteFill style={{backgroundColor: BRAND.ink}}>
@@ -255,13 +263,17 @@ const SceneView: React.FC<{scene: ContraScene; index: number}> = ({scene, index}
 
 export const ContrarianVideo: React.FC<ContrarianVideoProps> = ({
   account,
+  brand,
   bgm,
   bgmVolume,
   scenes,
 }) => {
+  // 最上位だけは props からブランドを解決し、以下の部品へコンテキストで配る
+  const BRAND = resolveBrand(brand);
   const total = scenes.reduce((a, s) => a + s.durationInFrames, 0);
   let from = 0;
   return (
+    <BrandContext.Provider value={BRAND}>
     <AbsoluteFill style={{backgroundColor: BRAND.ink}}>
       {scenes.map((scene, i) => {
         const seq = (
@@ -288,5 +300,6 @@ export const ContrarianVideo: React.FC<ContrarianVideoProps> = ({
         />
       ) : null}
     </AbsoluteFill>
+    </BrandContext.Provider>
   );
 };

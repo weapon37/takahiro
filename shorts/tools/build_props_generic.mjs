@@ -2,6 +2,7 @@
 // 使い方:  node tools/build_props_generic.mjs <台本.json> <音声dir(public内)> <出力props.json>
 // 例:      node tools/build_props_generic.mjs script_contra.json audio_contra src/props_contra.json
 // 台本の各sentenceのフィールド(role, telop, num, vs, day, big, items, keyword...)はそのままpropsへ渡す。
+// 台本の "brand" (例 "home") もpropsへ引き継がれ、テンプレの配色とマスコットが切り替わる。
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -54,6 +55,8 @@ const scenes = script.sentences.map((s, idx) => {
 
 const props = {
   account: script.account ?? '',
+  // ブランド(色・マスコット): 台本の "brand" をそのままテンプレへ渡す。未指定は既定ブランド
+  brand: script.brand ?? undefined,
   // BGM: 台本の "bgm" 指定 > bgm_bright.wav(あれば) > 無音
   bgm:
     script.bgm ??

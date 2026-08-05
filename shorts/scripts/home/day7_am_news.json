@@ -1,0 +1,69 @@
+{
+  "template": "RankingVideo",
+  "brand": "home",
+  "_note": "⚠毎週ニュースを差し替えること。◯◯が残っている間は render_all.mjs が自動スキップする。出典が確認できる一次情報(国交省・自治体・各社リリース)だけを扱い、断定を避ける。captionに出典を必ず書く。",
+  "title": "週刊・部屋探しニュースTOP3",
+  "caption": "今週の部屋探し・住まいまわりのニュースを3つ。出典は◯◯。制度の内容は変わることがあるので、詳しくは必ず公式の発表をご確認ください。\n※一般的な情報の紹介です。適用条件は個別に異なります\n#部屋探し #賃貸 #住まい #ニュース #一人暮らし",
+  "account": "内見メモ帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "今週の、部屋探しまわりのニュース。トップ3。",
+      "telop": "今週のニュース **TOP3**"
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "◯◯",
+      "narration": "第3位、◯◯。",
+      "telop": "◯◯"
+    },
+    {
+      "role": "body",
+      "narration": "◯◯。詳しくは公式の発表を確認してください。",
+      "telop": "◯◯"
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "◯◯",
+      "narration": "第2位、◯◯。",
+      "telop": "◯◯"
+    },
+    {
+      "role": "body",
+      "narration": "◯◯。",
+      "telop": "◯◯"
+    },
+    {
+      "role": "save",
+      "narration": "1位の前に、保存を。あとで調べ直す用に。",
+      "telop": "あとで調べ直す用に\n**保存**"
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "◯◯",
+      "narration": "第1位、◯◯。",
+      "telop": "◯◯"
+    },
+    {
+      "role": "body",
+      "narration": "◯◯。",
+      "telop": "◯◯"
+    },
+    {
+      "role": "cta",
+      "narration": "気になったニュース、コメントで教えてください。来週まとめて扱います。",
+      "telop": "気になるニュースを\n**コメント**で"
+    }
+  ],
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgClips": [
+    "bg/home_building.mp4",
+    "bg/home_neighborhood.mp4",
+    "bg/home_contract.mp4",
+    "bg/home_money.mp4",
+    "bg/home_station_walk.mp4"
+  ]
+}

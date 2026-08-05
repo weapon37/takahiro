@@ -1,0 +1,68 @@
+{
+  "template": "RankingVideo",
+  "brand": "home",
+  "title": "騒音トラブルを内見で見抜くBEST3",
+  "caption": "住んでから気づく騒音を、内見の日に見抜く方法をBEST3で。1位は部屋の中ではなく、外を見ます。写真では絶対に分からないところです。\n※建物の状況は物件ごとに異なります。一般的な確認方法の紹介です\n#部屋探し #内見 #騒音 #賃貸 #一人暮らし",
+  "account": "内見メモ帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "住んでから気づく騒音を、内見の日に見抜く。ベスト3。",
+      "telop": "騒音を見抜く **BEST3**"
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "窓のつくり",
+      "narration": "第3位、窓のつくり。",
+      "telop": "サッシは何重か"
+    },
+    {
+      "role": "body",
+      "narration": "外の音がいちばん入ってくるのは窓です。二重になっているかどうかで、だいぶ違います。",
+      "telop": "外の音は**窓**から入る"
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "建物の構造",
+      "narration": "第2位、建物の構造。",
+      "telop": "木造か鉄骨か鉄筋か"
+    },
+    {
+      "role": "body",
+      "narration": "物件資料に必ず書いてあります。一般に、鉄筋コンクリートの方が音は伝わりにくいとされています。",
+      "telop": "資料の**構造欄**を見る"
+    },
+    {
+      "role": "save",
+      "narration": "1位の前に、保存を。内見のときにそのまま使えます。",
+      "telop": "内見でそのまま使える\n**保存**"
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "共用部を見る",
+      "narration": "第1位、部屋ではなく、共用部を見る。",
+      "telop": "掲示板とゴミ置き場"
+    },
+    {
+      "role": "body",
+      "narration": "掲示板の貼り紙と、ゴミ置き場。ここに、その建物で今起きていることが出ます。",
+      "telop": "建物の**今**がここに出る"
+    },
+    {
+      "role": "cta",
+      "narration": "騒音で失敗した話、コメントで教えてください。次の人の役に立ちます。",
+      "telop": "騒音の失敗談を\n**コメント**で"
+    }
+  ],
+  "bgm": "bgm/farm_country.mp3",
+  "bgClips": [
+    "bg/home_building.mp4",
+    "bg/home_balcony_view.mp4",
+    "bg/home_neighborhood.mp4",
+    "bg/home_empty_room.mp4",
+    "bg/home_apartment_tour.mp4"
+  ]
+}

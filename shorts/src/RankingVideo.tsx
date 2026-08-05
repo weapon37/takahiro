@@ -10,8 +10,8 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
-import {BRAND, fontFamily} from './brand';
-import {CutBg, EraserChar, outline, parseTelop} from './common';
+import {BrandContext, fontFamily, resolveBrand, useBrand} from './brand';
+import {CutBg, Mascot, outline, parseTelop} from './common';
 
 // ---------- 🏆ランキング型テンプレ(明るい文具系・ブランド4色) ----------
 // テロップ記法: **単語** → 黄色マーカー強調
@@ -33,6 +33,7 @@ export type RankScene = {
 
 export type RankingVideoProps = {
   account: string;
+  brand?: string; // ブランドキー(src/brand.ts の BRANDS)。未指定は既定ブランド
   bgm: string;
   bgmVolume: number;
   whoosh: string;
@@ -42,6 +43,7 @@ export type RankingVideoProps = {
 // ---------- 紙背景(オフホワイト+ドット方眼+役割ごとの差し色) ----------
 
 const PaperBg: React.FC<{role: RankScene['role']; transparent?: boolean}> = ({role, transparent}) => {
+  const BRAND = useBrand();
   const frame = useCurrentFrame();
   const drift = Math.sin(frame / 90) * 12;
   return (
@@ -102,13 +104,15 @@ const PaperBg: React.FC<{role: RankScene['role']; transparent?: boolean}> = ({ro
   );
 };
 
-// ---------- 消しゴムワイプ遷移(前の画面を消して登場) ----------
+// ---------- キャラワイプ遷移(前の画面を消して登場) ----------
+// 消しカス(wipeCrumbs)は消しゴムキャラのブランドのみ。他のマスコットでは出さない。
 
 const ERASE_FRAMES = 14;
 
 // linger=true: ワイプ後、キャラが画面右側に留まる(rankシーン用)
 // linger=false: 従来どおり右へ通り抜ける(saveシーンは中央に別キャラが出るため)
 const EraseWipe: React.FC<{linger?: boolean}> = ({linger = false}) => {
+  const BRAND = useBrand();
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const progress = spring({
@@ -130,7 +134,7 @@ const EraseWipe: React.FC<{linger?: boolean}> = ({linger = false}) => {
     <AbsoluteFill style={{pointerEvents: 'none'}}>
       {wiping ? (
         <>
-          {/* まだ消えていない部分を紙色で覆う(消しゴムの右側) */}
+          {/* まだ切り替わっていない部分を紙色で覆う(キャラの右側) */}
           <div
             style={{
               position: 'absolute',
@@ -141,8 +145,8 @@ const EraseWipe: React.FC<{linger?: boolean}> = ({linger = false}) => {
               backgroundColor: BRAND.base,
             }}
           />
-          {/* 消しカス */}
-          {Array.from({length: 10}).map((_, i) => (
+          {/* 消しカス(消しゴムキャラのブランドのみ) */}
+          {(BRAND.wipeCrumbs ? Array.from({length: 10}) : []).map((_, i) => (
             <div
               key={i}
               style={{
@@ -162,7 +166,7 @@ const EraseWipe: React.FC<{linger?: boolean}> = ({linger = false}) => {
       ) : null}
       {/* キャラ本体 */}
       <div style={{position: 'absolute', left: charX - 130, top: 900 + bob}}>
-        <EraserChar
+        <Mascot
           size={settled ? 200 : 260}
           tilt={interpolate(progress, [0, 1], [-24, settled ? 4 : 8])}
         />
@@ -174,6 +178,7 @@ const EraseWipe: React.FC<{linger?: boolean}> = ({linger = false}) => {
 // ---------- 順位札(青地×白文字・スプリング登場) ----------
 
 const RankBadge: React.FC<{rank: number}> = ({rank}) => {
+  const BRAND = useBrand();
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const pop = spring({
@@ -217,6 +222,7 @@ const RankBadge: React.FC<{rank: number}> = ({rank}) => {
 // ---------- 実測タイム(グレー打ち消し → オレンジ特大) ----------
 
 const TimeGap: React.FC<{time: NonNullable<RankScene['time']>}> = ({time}) => {
+  const BRAND = useBrand();
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const before = spring({frame: frame - 4, fps, config: {damping: 200}, durationInFrames: 10});
@@ -281,6 +287,7 @@ const TimeGap: React.FC<{time: NonNullable<RankScene['time']>}> = ({time}) => {
 // ---------- テロップ(**強調**=黄色マーカー) ----------
 
 const Telop: React.FC<{text: string; big?: boolean}> = ({text, big}) => {
+  const BRAND = useBrand();
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const appear = spring({
@@ -336,6 +343,7 @@ const Telop: React.FC<{text: string; big?: boolean}> = ({text, big}) => {
 // ---------- ツール名見出し(rankシーン) ----------
 
 const Headline: React.FC<{text: string}> = ({text}) => {
+  const BRAND = useBrand();
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const appear = spring({
@@ -380,6 +388,7 @@ const Headline: React.FC<{text: string}> = ({text}) => {
 // ---------- 保存誘導(saveシーン・キャラ登場) ----------
 
 const SaveCue: React.FC = () => {
+  const BRAND = useBrand();
   const frame = useCurrentFrame();
   const bounce = Math.abs(Math.sin(frame / 12)) * 26;
   return (
@@ -396,7 +405,7 @@ const SaveCue: React.FC = () => {
       }}
     >
       <div style={{transform: `translateY(${-bounce}px)`}}>
-        <EraserChar size={240} tilt={6} />
+        <Mascot size={240} tilt={6} />
       </div>
       <div
         style={{
@@ -420,6 +429,7 @@ const SaveCue: React.FC = () => {
 // ---------- 1シーン ----------
 
 const SceneView: React.FC<{scene: RankScene; index: number; whoosh: string}> = ({scene, index, whoosh}) => {
+  const BRAND = useBrand();
   const clips = scene.bgClips ?? (scene.bgVideo ? [scene.bgVideo] : []);
   return (
     <AbsoluteFill style={{backgroundColor: BRAND.base}}>
@@ -441,14 +451,18 @@ const SceneView: React.FC<{scene: RankScene; index: number; whoosh: string}> = (
 
 export const RankingVideo: React.FC<RankingVideoProps> = ({
   account,
+  brand,
   bgm,
   bgmVolume,
   whoosh,
   scenes,
 }) => {
+  // 最上位だけは props からブランドを解決し、以下の部品へコンテキストで配る
+  const BRAND = resolveBrand(brand);
   const total = scenes.reduce((a, s) => a + s.durationInFrames, 0);
   let from = 0;
   return (
+    <BrandContext.Provider value={BRAND}>
     <AbsoluteFill style={{backgroundColor: BRAND.base}}>
       {scenes.map((scene, i) => {
         const seq = (
@@ -493,5 +507,6 @@ export const RankingVideo: React.FC<RankingVideoProps> = ({
         />
       ) : null}
     </AbsoluteFill>
+    </BrandContext.Provider>
   );
 };

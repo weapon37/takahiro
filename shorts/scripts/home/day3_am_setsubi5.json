@@ -1,0 +1,93 @@
+{
+  "template": "RankingVideo",
+  "brand": "home",
+  "title": "内見で見落とす設備BEST5【1位は光熱費に直結】",
+  "caption": "内見でみんなが見落とす設備を5つ。1位は毎月の光熱費に直結します。写真だけでは絶対に分からないところなので、内見の日に必ず確認を。\n※設備・契約内容は物件ごとに異なります。詳細は必ず物件資料と契約書でご確認ください\n#部屋探し #内見 #一人暮らし #賃貸 #新生活",
+  "account": "内見メモ帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "内見で見落としがちな設備、ベスト5。1位は、毎月のお金に直結します。",
+      "telop": "見落とす設備 **BEST5**"
+    },
+    {
+      "role": "rank",
+      "rank": 5,
+      "headline": "洗濯機置き場",
+      "narration": "第5位、洗濯機置き場のサイズ。",
+      "telop": "防水パンを測る"
+    },
+    {
+      "role": "body",
+      "narration": "内側のサイズが小さいと、今使っている洗濯機が置けません。",
+      "telop": "今の洗濯機が**置けない**ことも"
+    },
+    {
+      "role": "rank",
+      "rank": 4,
+      "headline": "エアコンの年式",
+      "narration": "第4位、エアコンの年式。",
+      "telop": "本体のシールを見る"
+    },
+    {
+      "role": "body",
+      "narration": "古い機種は、同じ設定でも電気代が変わります。本体に年式のシールが貼ってあります。",
+      "telop": "年式で**電気代**が変わる"
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "玄関ドアの幅",
+      "narration": "第3位、玄関ドアの幅と、開く向き。",
+      "telop": "冷蔵庫が通るか"
+    },
+    {
+      "role": "body",
+      "narration": "冷蔵庫とベッドは、ここで詰まります。引っ越し当日に気づくと詰みます。",
+      "telop": "冷蔵庫は**ここで詰まる**"
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "アンペア数",
+      "narration": "第2位、ブレーカーのアンペア数。",
+      "telop": "分電盤を見る"
+    },
+    {
+      "role": "body",
+      "narration": "小さいと、エアコンと電子レンジを同時に使っただけで落ちます。",
+      "telop": "同時に使うと**落ちる**"
+    },
+    {
+      "role": "save",
+      "narration": "1位の前に、保存を。内見でそのまま使えます。",
+      "telop": "内見でそのまま使える\n**保存**"
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "ガスの種類",
+      "narration": "第1位、ガスの種類。",
+      "telop": "都市ガスかプロパンか"
+    },
+    {
+      "role": "body",
+      "narration": "都市ガスか、プロパンか。毎月のガス代が変わってきます。物件資料に必ず書いてあります。",
+      "telop": "毎月の**ガス代**が変わる"
+    },
+    {
+      "role": "cta",
+      "narration": "他にも見といた方がいい設備、コメントで教えてください。",
+      "telop": "他の見どころを\n**コメント**で"
+    }
+  ],
+  "bgm": "bgm/farm_country.mp3",
+  "bgClips": [
+    "bg/home_kitchen.mp4",
+    "bg/home_empty_room.mp4",
+    "bg/home_apartment_tour.mp4",
+    "bg/home_living_room.mp4",
+    "bg/home_money.mp4",
+    "bg/home_building.mp4"
+  ]
+}

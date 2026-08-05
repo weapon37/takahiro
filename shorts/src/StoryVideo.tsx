@@ -9,8 +9,8 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
-import {BRAND, fontFamily} from './brand';
-import {AccountLabel, CutBg, DotGrid, EraserChar, outline, parseTelop} from './common';
+import {BrandContext, fontFamily, resolveBrand, useBrand} from './brand';
+import {AccountLabel, CutBg, DotGrid, Mascot, outline, parseTelop} from './common';
 
 // ---------- 💬体験談型テンプレ(検証ノート風・進行形ドキュメンタリー) ----------
 // 構成: day(Day表示) → story(語り) → big(数字ドン) → rule(3か条) → line(LINE誘導)
@@ -32,6 +32,7 @@ export type StoryScene = {
 
 export type StoryVideoProps = {
   account: string;
+  brand?: string; // ブランドキー(src/brand.ts の BRANDS)。未指定は既定ブランド
   bgm: string;
   bgmVolume: number;
   scenes: StoryScene[];
@@ -39,6 +40,7 @@ export type StoryVideoProps = {
 
 // ノート風背景(横罫線+温かい紙色)
 const NoteBg: React.FC<{transparent?: boolean}> = ({transparent}) => {
+  const BRAND = useBrand();
   return (
     <AbsoluteFill style={{backgroundColor: transparent ? 'transparent' : BRAND.base}}>
       <DotGrid dotColor={`${BRAND.ink}10`} />
@@ -73,6 +75,7 @@ const NoteBg: React.FC<{transparent?: boolean}> = ({transparent}) => {
 
 // Dayスタンプ(役所の判子風・少し傾ける)
 const DayStamp: React.FC<{day: number}> = ({day}) => {
+  const BRAND = useBrand();
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const pop = spring({frame: frame - 4, fps, config: {damping: 9, mass: 0.5}, durationInFrames: 14});
@@ -108,6 +111,7 @@ const DayStamp: React.FC<{day: number}> = ({day}) => {
 
 // 数字ドン(収支など)
 const BigValue: React.FC<{big: {value: string; label: string}}> = ({big}) => {
+  const BRAND = useBrand();
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const appear = spring({frame: frame - 4, fps, config: {damping: 200}, durationInFrames: 10});
@@ -145,6 +149,7 @@ const BigValue: React.FC<{big: {value: string; label: string}}> = ({big}) => {
 
 // 3か条(1行ずつスタンプされる)
 const RuleList: React.FC<{items: string[]}> = ({items}) => {
+  const BRAND = useBrand();
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   return (
@@ -215,6 +220,7 @@ const RuleList: React.FC<{items: string[]}> = ({items}) => {
 
 // LINE誘導カード(合言葉つき)
 const LineCard: React.FC<{keyword: string}> = ({keyword}) => {
+  const BRAND = useBrand();
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const pop = spring({frame: frame - 6, fps, config: {damping: 12, mass: 0.7}, durationInFrames: 16});
@@ -267,6 +273,7 @@ const LineCard: React.FC<{keyword: string}> = ({keyword}) => {
 
 // テロップ(ネイビー文字+黄マーカー。storyは少し大きめ行間で「語り」感)
 const Telop: React.FC<{text: string; calm?: boolean}> = ({text, calm}) => {
+  const BRAND = useBrand();
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const appear = spring({frame: frame - 3, fps, config: {damping: 200}, durationInFrames: 14});
@@ -314,6 +321,7 @@ const Telop: React.FC<{text: string; calm?: boolean}> = ({text, calm}) => {
 };
 
 const SceneView: React.FC<{scene: StoryScene; index: number}> = ({scene, index}) => {
+  const BRAND = useBrand();
   const frame = useCurrentFrame();
   const bob = Math.sin(frame / 16) * 8;
   const clips = scene.bgClips ?? (scene.bgVideo ? [scene.bgVideo] : []);
@@ -326,19 +334,22 @@ const SceneView: React.FC<{scene: StoryScene; index: number}> = ({scene, index})
       {scene.role === 'rule' && scene.items ? <RuleList items={scene.items} /> : null}
       {scene.role === 'line' && scene.keyword ? <LineCard keyword={scene.keyword} /> : null}
       <Telop text={scene.telop} calm={scene.role === 'story'} />
-      {/* 相棒の消しゴムキャラ(左下で常に聞いている) */}
+      {/* 相棒のマスコット(左下で常に聞いている) */}
       <div style={{position: 'absolute', left: 60, top: 1600 + bob}}>
-        <EraserChar size={150} tilt={8} />
+        <Mascot size={150} tilt={8} />
       </div>
       <Audio src={staticFile(scene.audio)} />
     </AbsoluteFill>
   );
 };
 
-export const StoryVideo: React.FC<StoryVideoProps> = ({account, bgm, bgmVolume, scenes}) => {
+export const StoryVideo: React.FC<StoryVideoProps> = ({account, brand, bgm, bgmVolume, scenes}) => {
+  // 最上位だけは props からブランドを解決し、以下の部品へコンテキストで配る
+  const BRAND = resolveBrand(brand);
   const total = scenes.reduce((a, s) => a + s.durationInFrames, 0);
   let from = 0;
   return (
+    <BrandContext.Provider value={BRAND}>
     <AbsoluteFill style={{backgroundColor: BRAND.base}}>
       {scenes.map((scene, i) => {
         const seq = (
@@ -365,5 +376,6 @@ export const StoryVideo: React.FC<StoryVideoProps> = ({account, bgm, bgmVolume, 
         />
       ) : null}
     </AbsoluteFill>
+    </BrandContext.Provider>
   );
 };
