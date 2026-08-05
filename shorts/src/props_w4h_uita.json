@@ -1,0 +1,164 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_beach_cocktail.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "浮いた時間の**使い道3つ**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_morning.mp4",
+        "bg/sunrise_city.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4h_uita/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 108
+    },
+    {
+      "role": "hook",
+      "telop": "1位は**想像と違う**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_lotus.mp4",
+        "bg/nb_bokeh.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4h_uita/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 89
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "やらないことを決める",
+      "telop": "**やらないこと**を決める",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_pen_write.mp4",
+        "bg/nb_notes.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4h_uita/03.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 85
+    },
+    {
+      "role": "body",
+      "telop": "最初に**減らす**を選ぶ",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_messy.mp4",
+        "bg/own_desk_clean.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4h_uita/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 129
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "先送りの1件",
+      "telop": "先送りの**1件**を片づける",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4",
+        "bg/keiri3.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4h_uita/05.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 114
+    },
+    {
+      "role": "body",
+      "telop": "頭の中が**軽くなる**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_think.mp4",
+        "bg/own_coffee_pour.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4h_uita/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 146
+    },
+    {
+      "role": "save",
+      "telop": "1位は**何も足さない**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_lotus_field.mp4",
+        "bg/nb_plant.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4h_uita/07.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 114
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "何もしない",
+      "telop": "**何もしない**時間にする",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_deer_shrine.mp4",
+        "bg/own_heron.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4h_uita/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 77
+    },
+    {
+      "role": "body",
+      "telop": "すぐ埋めると**戻る**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_golf.mp4",
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4h_uita/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 133
+    },
+    {
+      "role": "cta",
+      "telop": "何に使ってる？↓\n**コメントで**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_sky.mp4",
+        "bg/own_sunflower.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4h_uita/10.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 95
+    }
+  ]
+}

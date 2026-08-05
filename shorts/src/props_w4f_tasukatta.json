@@ -1,0 +1,164 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "助かった作業**3つ**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_camera_rig.mp4",
+        "bg/own_lens_hands.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4f_tasukatta/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 139
+    },
+    {
+      "role": "hook",
+      "telop": "1位は**撮影じゃない**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_tripod.mp4",
+        "bg/own_camera.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4f_tasukatta/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 93
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "見積もり・提案文",
+      "telop": "**見積もり**と提案の文面",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4",
+        "bg/keiri2.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4f_tasukatta/03.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 93
+    },
+    {
+      "role": "body",
+      "telop": "ゼロから書くのが**直すだけ**に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/nb_keys.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4f_tasukatta/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 116
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "撮影プランの叩き台",
+      "telop": "撮影プランの**叩き台**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_lens_adjust.mp4",
+        "bg/nb_board.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4f_tasukatta/05.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 93
+    },
+    {
+      "role": "body",
+      "telop": "10個出させて**選ぶ**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_think.mp4",
+        "bg/own_pen_write.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4f_tasukatta/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 171
+    },
+    {
+      "role": "save",
+      "telop": "1位は**撮ったあと**の話",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_timelapse.mp4",
+        "bg/nb_notes.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4f_tasukatta/07.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 125
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "撮った後の言葉",
+      "telop": "撮った後の**言葉づくり**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_phone_tap.mp4",
+        "bg/nb_social.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4f_tasukatta/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 93
+    },
+    {
+      "role": "body",
+      "telop": "写真より**言葉**で止まってた",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_meal.mp4",
+        "bg/jp_home_read.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4f_tasukatta/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 177
+    },
+    {
+      "role": "cta",
+      "telop": "消えた作業は？↓\n**コメントで**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_sky.mp4",
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4f_tasukatta/10.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 112
+    }
+  ]
+}

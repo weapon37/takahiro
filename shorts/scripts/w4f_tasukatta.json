@@ -1,0 +1,106 @@
+{
+  "template": "RankingVideo",
+  "_note": "Week4-5(8/15 朝7:00)。元カメラマンの署名回①。差別化の核。◆実体験ベースで書くこと。盛らない。◆実測値は入れていない。◆フックは2シーンに分割済み。◆背景は自作のカメラ素材(own_camera系)を主役にする。",
+  "title": "元カメラマンが、AIで一番助かった作業BEST3",
+  "caption": "撮る仕事を続けながらAIを使ってきて、いちばん助かった作業3つ。1位は撮影そのものではありません。カメラを持つ時間は減っていません。減ったのは、その前後の時間でした。あなたの仕事で消えた作業は？\n※個人の見解です\n#AI活用 #カメラマン #フリーランス #仕事術 #撮影",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "撮る仕事をしながらエーアイを使って、助かった作業3つ。",
+      "telop": "助かった作業**3つ**",
+      "bg": [
+        "own_camera_rig",
+        "own_lens_hands"
+      ]
+    },
+    {
+      "role": "hook",
+      "narration": "1位は、撮影そのものではありません。",
+      "telop": "1位は**撮影じゃない**",
+      "bg": [
+        "own_tripod",
+        "own_camera"
+      ]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "見積もり・提案文",
+      "narration": "第3位、見積もりと提案の文面。",
+      "telop": "**見積もり**と提案の文面",
+      "bg": [
+        "own_docs_stack",
+        "keiri2"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "毎回ゼロから書いていたものが、直すだけになりました。",
+      "telop": "ゼロから書くのが**直すだけ**に",
+      "bg": [
+        "own_typing",
+        "nb_keys"
+      ]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "撮影プランの叩き台",
+      "narration": "第2位、撮影プランの叩き台。",
+      "telop": "撮影プランの**叩き台**",
+      "bg": [
+        "own_lens_adjust",
+        "nb_board"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "案を10個出させて、そこから選ぶ。ゼロから考える時間が消えます。",
+      "telop": "10個出させて**選ぶ**",
+      "bg": [
+        "nb_think",
+        "own_pen_write"
+      ]
+    },
+    {
+      "role": "save",
+      "narration": "1位は、撮ったあとの話です。保存推奨。",
+      "telop": "1位は**撮ったあと**の話",
+      "bg": [
+        "own_desk_timelapse",
+        "nb_notes"
+      ]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "撮った後の言葉",
+      "narration": "第1位、撮ったあとの言葉づくり。",
+      "telop": "撮った後の**言葉づくり**",
+      "bg": [
+        "own_phone_tap",
+        "nb_social"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "納品時の説明も、投稿の文章も。写真より言葉で止まっていました。",
+      "telop": "写真より**言葉**で止まってた",
+      "bg": [
+        "own_meal",
+        "jp_home_read"
+      ]
+    },
+    {
+      "role": "cta",
+      "narration": "あなたの仕事で消えた作業は。コメントで。",
+      "telop": "消えた作業は？↓\n**コメントで**",
+      "bg": [
+        "nb_sky",
+        "own_suburb_sky"
+      ]
+    }
+  ],
+  "bgm": "bgm/for_our_friends.mp3"
+}

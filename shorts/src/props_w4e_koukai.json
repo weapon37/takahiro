@@ -1,0 +1,164 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_ensolarado.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "後悔した**共通点は3つ**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/coins_stack.mp4",
+        "bg/nb_cash.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4e_koukai/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 129
+    },
+    {
+      "role": "hook",
+      "telop": "1位は**ほぼ全員**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_savings.mp4",
+        "bg/own_docs_stack.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4e_koukai/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 85
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "無料枠を残したまま",
+      "telop": "**無料枠**を使い切る前に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_chart.mp4",
+        "bg/graph_screen.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4e_koukai/03.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 108
+    },
+    {
+      "role": "body",
+      "telop": "足りてから**払う**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_phone_tap.mp4",
+        "bg/nb_digital.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4e_koukai/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 125
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "使う場面が未定",
+      "telop": "使う**場面**が未定だった",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_think.mp4",
+        "bg/own_desk_messy.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4e_koukai/05.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 100
+    },
+    {
+      "role": "body",
+      "telop": "先に**使い道**を決める",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_pen_write.mp4",
+        "bg/nb_notes.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4e_koukai/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 139
+    },
+    {
+      "role": "save",
+      "telop": "1位は**今日から直せる**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_morning.mp4",
+        "bg/own_coffee_cup.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4e_koukai/07.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 106
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "やめる日が未定",
+      "telop": "**やめる日**を決めてない",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_clock.mp4",
+        "bg/calendar.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4e_koukai/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 89
+    },
+    {
+      "role": "body",
+      "telop": "1か月後に**見直す**と決める",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_clock.mp4",
+        "bg/own_desk_clean.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4e_koukai/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 162
+    },
+    {
+      "role": "cta",
+      "telop": "当てはまったのは？↓\n**コメントで**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_sky.mp4",
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4e_koukai/10.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 100
+    }
+  ]
+}

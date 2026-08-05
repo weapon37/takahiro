@@ -1,0 +1,106 @@
+{
+  "template": "RankingVideo",
+  "_note": "Week4-4(8/14 夜21:00)。誠実路線(w3bの続き)。◆特定ツールを名指しで否定しないこと。共通点=使い方の問題として構成した。◆実測値なし。◆フックは2シーンに分割済み。",
+  "title": "課金して後悔したAIツールの共通点BEST3",
+  "caption": "月額を払ったのに使わなくなった。その共通点は3つです。1位に当てはまるなら、いま契約しているものを見直してください。ツールが悪いのではなく、始め方の問題です。あなたはどれに当てはまる？\n※個人の見解です ※各サービスの料金・無料枠は変わることがあります\n#AI活用 #サブスク #節約 #仕事術 #ChatGPT",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "課金して後悔したエーアイ。共通点は3つです。",
+      "telop": "後悔した**共通点は3つ**",
+      "bg": [
+        "coins_stack",
+        "nb_cash"
+      ]
+    },
+    {
+      "role": "hook",
+      "narration": "1位は、ほぼ全員がやっています。",
+      "telop": "1位は**ほぼ全員**",
+      "bg": [
+        "nb_savings",
+        "own_docs_stack"
+      ]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "無料枠を残したまま",
+      "narration": "第3位、無料の枠を使い切る前に払った。",
+      "telop": "**無料枠**を使い切る前に",
+      "bg": [
+        "nb_chart",
+        "graph_screen"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "足りないと感じてから払うほうが、確実に損しません。",
+      "telop": "足りてから**払う**",
+      "bg": [
+        "own_phone_tap",
+        "nb_digital"
+      ]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "使う場面が未定",
+      "narration": "第2位、使う場面が決まっていなかった。",
+      "telop": "使う**場面**が未定だった",
+      "bg": [
+        "nb_think",
+        "own_desk_messy"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "何に使うかを先に決める。順番が逆だと続きません。",
+      "telop": "先に**使い道**を決める",
+      "bg": [
+        "own_pen_write",
+        "nb_notes"
+      ]
+    },
+    {
+      "role": "save",
+      "narration": "1位は今日から直せます。保存推奨。",
+      "telop": "1位は**今日から直せる**",
+      "bg": [
+        "nb_morning",
+        "own_coffee_cup"
+      ]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "やめる日が未定",
+      "narration": "第1位、やめる日を決めていない。",
+      "telop": "**やめる日**を決めてない",
+      "bg": [
+        "nb_clock",
+        "calendar"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "1か月後に見直す、と決めるだけ。それだけで無駄が止まります。",
+      "telop": "1か月後に**見直す**と決める",
+      "bg": [
+        "own_clock",
+        "own_desk_clean"
+      ]
+    },
+    {
+      "role": "cta",
+      "narration": "あなたはどれに当てはまりましたか。コメントで。",
+      "telop": "当てはまったのは？↓\n**コメントで**",
+      "bg": [
+        "nb_sky",
+        "own_suburb_sky"
+      ]
+    }
+  ],
+  "bgm": "bgm/dova_ensolarado.mp3"
+}

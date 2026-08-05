@@ -1,0 +1,135 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/pawn.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "使うと考えなくなる？**逆です**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_think.mp4",
+        "bg/own_desk_messy.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4j_kangaeru/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 131
+    },
+    {
+      "role": "body",
+      "telop": "減るのは**作業**、残るのは**判断**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4",
+        "bg/own_pen_write.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4j_kangaeru/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 108
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "判断は**任せられない**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_keys.mp4",
+        "bg/nb_code.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4j_kangaeru/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 139
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "判断の**割合**が増える",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_chart.mp4",
+        "bg/graph_screen.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4j_kangaeru/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 118
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "考える時間は**増える**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_clock.mp4",
+        "bg/nb_clock.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4j_kangaeru/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 108
+    },
+    {
+      "role": "body",
+      "telop": "楽になるのとは**違う**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_rain.mp4",
+        "bg/own_rain_road.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4j_kangaeru/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 135
+    },
+    {
+      "role": "flip",
+      "telop": "**何を選ぶか**で勝負する",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_lens_adjust.mp4",
+        "bg/own_lens_hands.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4j_kangaeru/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 129
+    },
+    {
+      "role": "vs",
+      "vs": {
+        "left": "考えなくなる",
+        "right": "増える"
+      },
+      "telop": "考えなくなる？**増える**？",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_sky.mp4",
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4j_kangaeru/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 179
+    }
+  ]
+}
