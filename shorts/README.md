@@ -135,7 +135,57 @@ npx remotion render src/index.ts RankingVideo out/day1_am_best5.mp4 --props=src/
 - render の コンポジション名は台本の `"template"` フィールドに合わせる
   (RankingVideo / ContrarianVideo / StoryVideo)
 - `_note` と `◯◯` がある台本は、**必ず実データに差し替えてから**音声生成すること
-- 公開前チェック: 実測値は本物か / PR表記 / AI開示フラグ / 「個人の結果です」注記
+- 公開前チェック: 実測値は本物か / PR表記 / AI開示の扱い / 「個人の結果です」注記
+  (AI開示は `week3_publish.md` のメモを参照。一律「はい」にする必要はない)
+
+## Week 2 台本一覧(8/1〜8/7 投稿済み・14本)
+
+概要欄は `week2_publish.md`。1日2本(朝7:00 🏆 / 夜21:00 ⚡)の構成。
+
+| 台本 | 型 | 内容 | 尺 |
+|------|----|------|----|
+| scripts/w2d1_am_gazou.json | 🏆 | 画像生成AI BEST3【サムネ・素材が10分】 | 44.7s |
+| scripts/w2d1_pm_ubawareru.json | ⚡ | 「AIに仕事を奪われる」は半分ウソ | 36.4s |
+| scripts/w2d2_am_gijiroku.json | 🏆 | 議事録・文字起こしAI BEST3【会議が消える】 | 43.0s |
+| scripts/w2d2_pm_douga.json | 🏆 | 動画編集AI BEST3【元カメラマンが選ぶ】 | 42.5s |
+| scripts/w2d3_am_writer.json | 🏆 | 職業別BEST3【ライター編】 | 44.2s |
+| scripts/w2d3_pm_salon.json | ⚡ | 有料AIサロン、入る前に見てください | 38.9s |
+| scripts/w2d4_am_shiryo.json | 🏆 | 資料・スライド作成AI BEST3【1時間→10分】 | 37.7s |
+| scripts/w2d4_pm_marunage.json | ⚡ | AIに丸投げしてはいけない仕事3つ | 39.7s |
+| scripts/w2d5_am_designer.json | 🏆 | 職業別BEST3【デザイナー編】 | 40.4s |
+| scripts/w2d5_pm_shinjisugi.json | ⚡ | AIの回答、信じすぎると事故ります | 33.7s |
+| scripts/w2d6_am_muryo2.json | 🏆 | 全部0円！無料AIランキング【画像・動画編】 | 36.6s |
+| scripts/w2d6_pm_100man.json | ⚡ | 「AIで即月収100万」広告の裏側 | 37.3s |
+| scripts/w2d7_am_news2.json | 🗞️ | 今週のAIニュースTOP3 2026/8/2週 | 45.8s |
+| scripts/w2d7_pm_kasegenai.json | ⚡ | 「AI副業は稼げない」と言う人へ | 37.8s |
+
+> ⚠ `w2d7_am_news2` は8/7放送に合わせて中身を差し替え済み(旧版は7月下旬のニュース・65.6秒)。
+> **週刊ニュース枠は毎回、投稿週のニュースに書き直すこと。**
+
+## Week 3 台本一覧(8/8〜8/12 予約投稿済み・9本)
+
+概要欄は `week3_publish.md`、分析シートは `analytics/week3.md`。
+全9本が確定フォーマット(否定断定フック / フック直後に1位予告 / 全員対象 / 35〜40秒 /
+内容シンクロ1文2カット)で統一されている。
+
+| 台本 | 型 | 内容 | 尺 | 検証している軸 |
+|------|----|------|----|--------------|
+| scripts/w3a_heranai.json | 🏆 | AIを使っても仕事が減らない理由BEST3 | 37.2s | チャンネルの核(時間の使い方) |
+| scripts/w3b_muryo_de_juubun.json | 🏆 | AI、無料版で十分な人の特徴BEST3 | 39.0s | 有料をすすめない誠実路線 |
+| scripts/w3c_makasenai.json | 🏆 | 元カメラマンが、AIに任せない仕事BEST3 | 36.9s | 元カメラマンの署名回 |
+| scripts/w3d_benkyou.json | 🏆 | AIを勉強してから使う人が損してる理由BEST3 | 38.8s | 遠回りの否定 |
+| scripts/w3e_shiji.json | 🏆 | AIの指示、これを足すだけで変わるBEST3 | 36.9s | ツール非依存(腐らない) |
+| scripts/w3f_juppun.json | 🏆 | 1日10分でAIを使いこなす人の習慣BEST3 | 34.4s | 時間の使い方 |
+| scripts/w3g_isogashii.json | ⚡ | 「忙しくてAIを試す時間がない」人へ | 36.8s | **持論型の再検証①** |
+| scripts/w3h_okikae.json | ⚡ | AIに置き換わるのは「仕事」じゃありません | 37.2s | **持論型の再検証②** |
+| scripts/w3i_keiri_shokugyou.json | 🏆 | 経理職BEST3【実測あり】 | 36.6s | 職業別シリーズの再現性 |
+
+## Week 4(8/13〜)
+
+ラインナップは `week4_plan.md`。台本は未作成。
+
+> ⚠ `scripts/w4a`〜`w4g` の7本は**このチャンネルの発信軸とは無関係なテスト**。
+> Week4の本編には使わない。混同しないこと。
 
 ## 背景クリップの標準プール(12ワード)
 
