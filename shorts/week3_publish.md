@@ -5,6 +5,24 @@
 > LINE枠は全本共通。ブリッジ文だけ各回の内容に合わせている
 > (統一したい場合は w3c の「AIで浮いた時間の使い方は、まずここから。」を全本に使う)。
 
+## ツールURLの方針
+
+**ツール欄を入れた回(5本)**: w3b / w3d / w3e / w3g / w3i
+**入れていない回(4本)**: w3a / w3c / w3f / w3h
+― この4本は行動論・考え方の回で、動画内に指し示すツールが出てこない。
+特に w3a は3位が「ツールを増やす」、w3c は「AIに任せない仕事」なので、
+ツールを並べると本文のメッセージと矛盾する。
+
+使用するURL(Week2の公開キットと同一のものを流用):
+
+| ツール | URL |
+|---|---|
+| ChatGPT | https://chatgpt.com/ |
+| Google Gemini | https://gemini.google.com/ |
+| Claude | https://claude.ai/ |
+| freee請求書 | https://www.freee.co.jp/invoice/ |
+| Notta | https://www.notta.ai/ |
+
 ## 共通のLINE枠(コピペ元)
 
 ```text
@@ -55,6 +73,11 @@ AI、無料版で十分な人の特徴BEST3
 ※個人の見解です ※無料枠の内容は変わることがあります
 #AI活用 #ChatGPT #節約 #仕事術 #無料
 
+▼無料で使える主なAI
+🔹ChatGPT → https://chatgpt.com/
+🔹Google Gemini → https://gemini.google.com/
+🔹Claude → https://claude.ai/
+
 無料のままどこまでやれるか、ここで試せます。
 ━━━━━━━━━━
 ▼無料の手順書をLINEで配布中
@@ -103,6 +126,11 @@ AIを勉強してから使おう…が、いちばん損です。理由は3つ�
 ※個人の見解です
 #AI活用 #仕事術 #ChatGPT #時短 #生産性
 
+▼まず1つ頼んでみるならここから
+🔹ChatGPT → https://chatgpt.com/
+🔹Google Gemini → https://gemini.google.com/
+🔹Claude → https://claude.ai/
+
 読むより1回頼むほうが速い。その1回目をここから。
 ━━━━━━━━━━
 ▼無料の手順書をLINEで配布中
@@ -126,6 +154,11 @@ AIの指示、これを足すだけで変わるBEST3
 AIの指示に足すだけで結果が変わる3つ。1位は入れるだけで別物になります。良い例より悪い例のほうが、はっきり伝わります。あなたがよく足す一言は？
 ※個人の見解です
 #AI活用 #ChatGPT #プロンプト #仕事術 #時短
+
+▼今回の指示が使えるAI
+🔹ChatGPT → https://chatgpt.com/
+🔹Google Gemini → https://gemini.google.com/
+🔹Claude → https://claude.ai/
 
 そのまま使える指示の型も配ってます。
 ━━━━━━━━━━
@@ -174,6 +207,10 @@ https://lin.ee/TqvaRyA
 忙しいからAIを試せない…その順番だと一生試せません。試す時間がないのではなく、試さないから時間がない。最初の1回だけ10分ください。あなたはどっち？
 ※個人の見解です
 #AI活用 #時短 #仕事術 #生産性 #ChatGPT
+
+▼10分で試すならここから(登録は無料)
+🔹ChatGPT → https://chatgpt.com/
+🔹Google Gemini → https://gemini.google.com/
 
 その最初の10分は、ここから始めるのがいちばん速いです。
 ━━━━━━━━━━
@@ -243,6 +280,7 @@ https://lin.ee/TqvaRyA
 
 - [ ] w3i の実測値(36分10秒→3分10秒)は既存の実測データ。新しい数字は足さない
 - [ ] w3b / w3i は無料枠・仕様の注記が入っているか
-- [ ] ツールとの間にPR関係があればPR表記を追加(現状は表記なしの前提)
+- [ ] ツールとの間にPR関係・アフィリエイト契約があればPR表記を追加(現状は表記なしの前提)
+- [ ] 掲載URLが公式ドメインか(freee請求書のみWeek3で新規追加。他はWeek2から流用)
 - [ ] AI生成の開示フラグ(ナレーションが合成音声のため)
 - [ ] LINEのURL `https://lin.ee/TqvaRyA` が現行のものか
