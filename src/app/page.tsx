@@ -1,3 +1,4 @@
+import Link from "next/link";
 import PostGeneratorForm from "@/components/PostGeneratorForm";
 
 export default function Home() {
@@ -11,6 +12,12 @@ export default function Home() {
           バズったX(旧Twitter)投稿のテキストやスクリーンショットを入れると、
           AIがその「型」を分析し、同じ構成・フックを使った新しい投稿を何パターンも自動生成します。
         </p>
+        <Link
+          href="/video"
+          className="text-sm text-blue-600 underline dark:text-blue-400"
+        >
+          ショート動画プレビューを開く
+        </Link>
       </div>
       <PostGeneratorForm />
     </main>
