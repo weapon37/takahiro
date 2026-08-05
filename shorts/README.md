@@ -143,6 +143,11 @@ npx remotion render src/index.ts RankingVideo out/day1_am_best5.mp4 --props=src/
 AI→エーアイ、OCR→オーシーアール、freee→フリー。
 数字(60分・19秒など)はそのままでOK。
 
+**製品名・サービス名は、ナレーションだけカタカナ。テロップと見出し札(`headline`)は
+英語表記のまま書く。** 画面に「アストラ」と出すより `OpenAI Astra` のほうが情報として
+正確で、既存回(`ChatGPT` / `Notta` / `freee請求書`)とも揃う。
+例: narration「アストラを公表」/ headline「OpenAI Astra」
+
 **読み間違い対策辞書(tools/reading_dict.json)が音声生成時に自動適用される**
 (進捗→しんちょく、相殺→そうさい、一人→ひとり等の40語超)。
 台本のnarrationは漢字のまま書いてよい。テロップには影響しない。
