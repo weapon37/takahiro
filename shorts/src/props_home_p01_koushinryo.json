@@ -1,0 +1,132 @@
+{
+  "account": "住まいの言い方帳",
+  "brand": "home",
+  "bgm": "bgm/pawn.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "判子を押す前に\n**この一言**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/home_contract.mp4",
+        "bg/home_money.mp4",
+        "bg/home_building.mp4",
+        "bg/home_apartment_tour.mp4",
+        "bg/home_neighborhood.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_home_p01_koushinryo/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 143
+    },
+    {
+      "role": "said",
+      "said": "更新料は\n家賃1ヶ月分です",
+      "telop": "だいたい**こう来る**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/home_contract.mp4",
+        "bg/home_money.mp4",
+        "bg/home_building.mp4",
+        "bg/home_apartment_tour.mp4",
+        "bg/home_neighborhood.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_home_p01_koushinryo/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 147
+    },
+    {
+      "role": "phrase",
+      "phrase": "更新後の賃料、\n相談できますか",
+      "telop": "そのまま言えばいい",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/home_contract.mp4",
+        "bg/home_money.mp4",
+        "bg/home_building.mp4",
+        "bg/home_apartment_tour.mp4",
+        "bg/home_neighborhood.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_home_p01_koushinryo/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 138
+    },
+    {
+      "role": "why",
+      "telop": "法律に**減額を請求できる**\n定めがある",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/home_contract.mp4",
+        "bg/home_money.mp4",
+        "bg/home_building.mp4",
+        "bg/home_apartment_tour.mp4",
+        "bg/home_neighborhood.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_home_p01_koushinryo/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 283
+    },
+    {
+      "role": "back",
+      "said": "規定ですので",
+      "phrase": "相場と比べて\n相談したいです",
+      "telop": "引き下がらなくていい",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/home_contract.mp4",
+        "bg/home_money.mp4",
+        "bg/home_building.mp4",
+        "bg/home_apartment_tour.mp4",
+        "bg/home_neighborhood.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_home_p01_koushinryo/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 198
+    },
+    {
+      "role": "save",
+      "telop": "通知が来た日に見返す用に\n**保存**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/home_contract.mp4",
+        "bg/home_money.mp4",
+        "bg/home_building.mp4",
+        "bg/home_apartment_tour.mp4",
+        "bg/home_neighborhood.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_home_p01_koushinryo/06.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 92
+    },
+    {
+      "role": "cta",
+      "telop": "言ってみた**結果**を\nコメントで",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/home_contract.mp4",
+        "bg/home_money.mp4",
+        "bg/home_building.mp4",
+        "bg/home_apartment_tour.mp4",
+        "bg/home_neighborhood.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_home_p01_koushinryo/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 206
+    }
+  ]
+}

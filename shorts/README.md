@@ -86,16 +86,25 @@ npx remotion render src/index.ts StoryVideo out/story.mp4 --props=src/props_stor
 | ブランドキー | チャンネル | 配色 | マスコット |
 |------|------|------|------|
 | `ai`(既定) | 仕事が消えるAI帳 | 青×黄×オレンジ(明るい文具系) | 消しゴムキャラ |
-| `home` | 内見メモ帳(引っ越し・住宅) | 深緑×テラコッタ×生成り | 家を背負ったヤドカリ |
+| `home` | 住まいの言い方帳(引っ越し・住宅) | 深緑×テラコッタ×生成り | 家を背負ったヤドカリ |
 
 マスコットは**シルエットから別物にする**こと。色だけ変えても、サムネサイズだと
 同じキャラの色違いにしか見えない(消しゴムキャラ=縦長の角丸+点目2つ+にっこり口)。
 ヤドカリは「家そのものを背負って引っ越す」= このチャンネルの主題をそのまま形にしている。
 
+テンプレは4種。`template` フィールドでコンポジションが決まる。
+
+| 型 | コンポジション | 役割 |
+|---|---|---|
+| 📝 セリフ型 | `PhraseVideo` | **住まいチャンネルの主役。**その場で言う一言を渡す |
+| 🏆 ランキング型 | `RankingVideo` | 網羅・保存用のチェックリスト |
+| ⚡ 逆張り型 | `ContrarianVideo` | 常識の否定で議論を起こす |
+| 💬 体験談型 | `StoryVideo` | 信頼の担保。実費を全部公開する |
+
 台本JSONに1行足すだけで切り替わる:
 
 ```json
-{ "template": "RankingVideo", "brand": "home", "account": "内見メモ帳", ... }
+{ "template": "PhraseVideo", "brand": "home", "account": "住まいの言い方帳", ... }
 ```
 
 台本の置き場所でファイルの名前空間が分かれる(音声・props・出力が衝突しない):
@@ -109,7 +118,7 @@ npx remotion render src/index.ts StoryVideo out/story.mp4 --props=src/props_stor
 
 ```bash
 GOOGLE_TTS_API_KEY=xxxx node tools/render_all.mjs           # 全チャンネル
-GOOGLE_TTS_API_KEY=xxxx node tools/render_all.mjs home      # 内見メモ帳だけ
+GOOGLE_TTS_API_KEY=xxxx node tools/render_all.mjs home      # 住まいの言い方帳だけ
 GOOGLE_TTS_API_KEY=xxxx node tools/render_all.mjs home_day1_am_naiken5  # 1本だけ
 ```
 
@@ -148,13 +157,57 @@ npx remotion render src/index.ts RankingVideo out/day1_am_best5.mp4 --props=src/
 ```
 
 - render の コンポジション名は台本の `"template"` フィールドに合わせる
-  (RankingVideo / ContrarianVideo / StoryVideo)
+  (PhraseVideo / RankingVideo / ContrarianVideo / StoryVideo)
 - `_note` と `◯◯` がある台本は、**必ず実データに差し替えてから**音声生成すること
 - 公開前チェック: 実測値は本物か / PR表記 / AI開示フラグ / 「個人の結果です」注記
 
-## Week 1 台本一覧② 内見メモ帳(scripts/home/)
+## 引っ越し・住まいチャンネル「住まいの言い方帳」(scripts/home/)
 
-引っ越し・住宅系。切り口は**部屋探し・内見の失敗回避**。14本すべて台本JSON化済み。
+**制作前に必ず `scripts/home/CONCEPT.md` を読むこと。** チャンネルの設計はそこが正典で、
+コンセプト・ペルソナ・フェーズ設計・CTA設計・法令ガードレール・季節カレンダーが載っている。
+
+コンセプトは一言で**「不動産屋に聞きにくいことを、代わりに全部言語化する」**。
+視聴者が損をするのは情報不足ではなく「聞けない・断れない・言い返せない」から。
+だから渡すのは知識ではなく**そのまま言えるセリフ**。
+
+- 主戦場は**契約直前**と**退去立ち会い**(金額が動く × 締切が今日明日 × 取り返しがつかない)
+- 全台本に**宛名**(「契約前日の人へ」)と**発火条件**(「見積もりが届いたら」)を入れる
+- CTAは「コメントで」一律をやめ、フェーズごとにLINE(チェックリスト配布)へ接続する
+- **1本につき必ず「免罪符」か「セリフ」を1つ入れる。**知識の列挙だけの台本は書き直し
+
+### 📝セリフ型(PhraseVideo) — このチャンネルの主役
+
+相手のセリフとこちらのセリフをチャット風に対比し、その場で言う一言を渡す型。
+
+| role | 演出 |
+|------|------|
+| `hook` | 宛名+場面(大テロップ) |
+| `said` | 相手のセリフ(左の白い吹き出し・「言われがちなこと」) |
+| `phrase` | **こう言う。**大きな引用カード+「このまま言ってOK」バッジ |
+| `why` | なぜ効くか(根拠。法令に触れるなら出典をcaptionへ) |
+| `back` | 押し返されたときの返し(相手→自分の2段吹き出し) |
+| `save` | 保存誘導 |
+| `cta` | LINE誘導 |
+
+`said` と `phrase` の文字サイズは**行の文字数から自動調整**される(1文字だけ次行に
+落ちるのを防ぐため)。とはいえ**セリフは短く**書くこと——長いセリフは実際に言えない。
+目安は1行**12字以内**、全体で2行まで。
+
+```bash
+.venv/bin/python tools/make_voice_google.py scripts/home/p01_koushinryo.json public/audio_home_p01_koushinryo
+node tools/build_props_generic.mjs scripts/home/p01_koushinryo.json audio_home_p01_koushinryo src/props_home_p01_koushinryo.json
+npx remotion render src/index.ts PhraseVideo out/home_p01_koushinryo.mp4 --props=src/props_home_p01_koushinryo.json --codec=h264
+```
+
+### セリフ型の台本(p01〜)
+
+| 台本 | フェーズ | 渡すセリフ |
+|------|------|------|
+| p01_koushinryo.json | ①更新 | 「更新後の賃料、相談できますか」 |
+| p02_option.json | ④契約 | 「これは任意ですか」 |
+| p03_kansanki.json | ⑤実務 | 「日にちをおまかせにしたら変わりますか」(閑散期限定) |
+
+### Week 1 台本(day1〜day7)
 
 | 台本 | 型 | 内容 | 備考 |
 |------|----|------|------|
@@ -194,7 +247,7 @@ npx remotion render src/index.ts RankingVideo out/home_day1_am_naiken5.mp4 --pro
 
 公開前チェック: 実測値は本物か / PR表記 / AI開示フラグ / 「個人の結果です」注記 / 断定表現が残っていないか
 
-## 背景クリップの標準プール② 内見メモ帳(12ワード)
+## 背景クリップの標準プール② 住まいの言い方帳(12ワード)
 
 住宅チャンネルの背景は**この12本から選ぶ**:
 

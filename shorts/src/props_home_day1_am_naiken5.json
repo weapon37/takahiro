@@ -1,5 +1,5 @@
 {
-  "account": "内見メモ帳",
+  "account": "住まいの言い方帳",
   "brand": "home",
   "bgm": "bgm/for_our_friends.mp3",
   "bgmVolume": 0.1,
@@ -7,7 +7,7 @@
   "scenes": [
     {
       "role": "hook",
-      "telop": "内見で見る **BEST5**",
+      "telop": "内見に行く人へ\n**BEST5**",
       "bgVideo": null,
       "bgClips": [
         "bg/home_empty_room.mp4",
@@ -21,7 +21,7 @@
       "audio": "audio_home_day1_am_naiken5/01.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 145
+      "durationInFrames": 129
     },
     {
       "role": "rank",
@@ -41,7 +41,7 @@
       "audio": "audio_home_day1_am_naiken5/02.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 73
+      "durationInFrames": 76
     },
     {
       "role": "body",
@@ -59,7 +59,7 @@
       "audio": "audio_home_day1_am_naiken5/03.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 109
+      "durationInFrames": 112
     },
     {
       "role": "rank",
@@ -79,7 +79,7 @@
       "audio": "audio_home_day1_am_naiken5/04.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 66
+      "durationInFrames": 59
     },
     {
       "role": "body",
@@ -117,7 +117,7 @@
       "audio": "audio_home_day1_am_naiken5/06.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 80
+      "durationInFrames": 75
     },
     {
       "role": "body",
@@ -135,7 +135,7 @@
       "audio": "audio_home_day1_am_naiken5/07.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 123
+      "durationInFrames": 126
     },
     {
       "role": "rank",
@@ -155,7 +155,7 @@
       "audio": "audio_home_day1_am_naiken5/08.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 80
+      "durationInFrames": 75
     },
     {
       "role": "body",
@@ -191,7 +191,7 @@
       "audio": "audio_home_day1_am_naiken5/10.wav",
       "eraseIn": true,
       "playWhoosh": false,
-      "durationInFrames": 145
+      "durationInFrames": 124
     },
     {
       "role": "rank",
@@ -211,7 +211,7 @@
       "audio": "audio_home_day1_am_naiken5/11.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 102
+      "durationInFrames": 111
     },
     {
       "role": "body",
@@ -229,11 +229,11 @@
       "audio": "audio_home_day1_am_naiken5/12.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 152
+      "durationInFrames": 160
     },
     {
       "role": "cta",
-      "telop": "あなたの失敗談を\n**コメント**で",
+      "telop": "内見チェックリストは\n**LINE**で",
       "bgVideo": null,
       "bgClips": [
         "bg/home_empty_room.mp4",
@@ -247,7 +247,7 @@
       "audio": "audio_home_day1_am_naiken5/13.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 135
+      "durationInFrames": 169
     }
   ]
 }
