@@ -156,7 +156,7 @@ npx remotion render src/index.ts RankingVideo out/day1_am_best5.mp4 --props=src/
 | scripts/w2d5_pm_shinjisugi.json | ⚡ | AIの回答、信じすぎると事故ります | 33.7s |
 | scripts/w2d6_am_muryo2.json | 🏆 | 全部0円！無料AIランキング【画像・動画編】 | 36.6s |
 | scripts/w2d6_pm_100man.json | ⚡ | 「AIで即月収100万」広告の裏側 | 37.3s |
-| scripts/w2d7_am_news2.json | 🗞️ | 今週のAIニュースTOP3 2026/8/2週 | 45.8s |
+| scripts/w2d7_am_news2.json | 🗞️ | 今週のAIニュースTOP3 2026/8/2週 | 43.6s |
 | scripts/w2d7_pm_kasegenai.json | ⚡ | 「AI副業は稼げない」と言う人へ | 37.8s |
 
 > ⚠ `w2d7_am_news2` は8/7放送に合わせて中身を差し替え済み(旧版は7月下旬のニュース・65.6秒)。
@@ -187,29 +187,57 @@ npx remotion render src/index.ts RankingVideo out/day1_am_best5.mp4 --props=src/
 > ⚠ `scripts/w4a`〜`w4g` の7本は**このチャンネルの発信軸とは無関係なテスト**。
 > Week4の本編には使わない。混同しないこと。
 
-## 背景クリップの標準プール(12ワード)
+## 背景クリップの選び方
 
-今後の背景は**この12ワードから各シーンの内容に合うものを選ぶ**(勝手に別ワードを増やさない):
+**背景は `tools/bg_sync_map.md` の語彙表(テーマ → クリップ名)から選ぶ。**
+検索ワードのリストから選ぶ運用ではない。
 
-| ファイル | 検索ワード | 合う場面 |
-|------|------|------|
-| bg/city_night.mp4 | city night | 夜・都会・⚡の緊張感 |
-| bg/typing_laptop.mp4 | typing laptop | 作業・ツール操作全般 |
-| bg/business_walking.mp4 | business people walking | 仕事・通勤・ニュース |
-| bg/office_window.mp4 | office window | オフィス・落ち着いた説明 |
-| bg/coins_stack.mp4 | coins stack | お金・課金・収支 |
-| bg/sunrise_city.mp4 | sunrise city | 始まり・💬の宣言 |
-| bg/subway_commute.mp4 | subway commute | 通勤・忙しさ |
-| bg/handshake.mp4 | handshake | 営業・商談・信頼 |
-| bg/calendar.mp4 | calendar | 予定・時間・時短 |
-| bg/coffee_desk.mp4 | coffee desk | デスク・日常・💬 |
-| bg/graph_screen.mp4 | graph screen | データ・実測・分析 |
-| bg/portrait.mp4 | portrait | 人物・当事者感 |
+現在の構成比(実測):
 
-- 台本には `"bgClips": ["bg/typing_laptop.mp4", ...]` で5〜6本選んで指定
-- 差し替え(取り直し)は `.venv/bin/python tools/fetch_bg_pexels.py "ワード" ファイル名.mp4`
-  (6秒未満のクリップは自動で除外される)
-- 旧クリップ(keiri*/sumaho*/note*)は後方互換のため残置。新規台本では使わない
+| | own_*(自作) | jp_*(日本のストック) | nb_*(その他ストック) |
+|---|---|---|---|
+| Week2 | 9 | 11 | 408 |
+| Week3 | **79** | 8 | 16 |
+
+**自作素材(own_*)が主役で、Pexelsは補助**という比重に移っている。
+自作では撮れない引きの絵(渋谷スクランブル・スカイライン・電車など)は `jp_*` を使い、
+tech寄り・抽象的な絵は `nb_*` で補う。撮影が必要な素材は `tools/shot_list.md` を参照。
+
+### 新しくPexelsから取るとき
+
+```bash
+.venv/bin/python tools/fetch_bg_pexels.py "検索ワード" ファイル名.mp4
+```
+
+- 6秒未満のクリップは自動で除外される
+- 日本の映像が欲しいときは `Tokyo` / `Japan` / `asian` を添える(`locale=ja-JP` は付与済み)
+- **取得したら `bg_sync_map.md` の語彙表に、クリップ名と一緒に検索ワードを必ず記録する。**
+  記録がないと、同じ系統の絵を後から足せなくなる
+
+### 旧プール(後方互換・新規では使わない)
+
+以下は初期に定めた「標準プール12ワード」。**Week3では104カット中1カットしか使われておらず、
+実質運用されていない。** 既存台本の互換のために残置。
+
+| ファイル | 検索ワード |
+|------|------|
+| bg/city_night.mp4 | city night |
+| bg/typing_laptop.mp4 | typing laptop |
+| bg/business_walking.mp4 | business people walking |
+| bg/office_window.mp4 | office window |
+| bg/coins_stack.mp4 | coins stack |
+| bg/sunrise_city.mp4 | sunrise city |
+| bg/subway_commute.mp4 | subway commute |
+| bg/handshake.mp4 | handshake |
+| bg/calendar.mp4 | calendar |
+| bg/coffee_desk.mp4 | coffee desk |
+| bg/graph_screen.mp4 | graph screen |
+| bg/portrait.mp4 | portrait |
+
+さらに古い keiri* / sumaho* / note* も残置。新規台本では使わない。
+
+`fetch_bg_pexels.py` の既定 `QUERIES`(Tokyo street night ほか5語)は
+旧 `ShortVideo` の一括モード専用。現在の制作フローでは呼ばない。
 
 ## ナレーションの読み方の注意(Google TTS)
 
