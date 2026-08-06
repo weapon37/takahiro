@@ -64,7 +64,7 @@
       "audio": "audio_w4i_asai/04.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 164
+      "durationInFrames": 156
     },
     {
       "role": "rank",
@@ -81,7 +81,7 @@
       "audio": "audio_w4i_asai/05.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 114
+      "durationInFrames": 106
     },
     {
       "role": "body",
@@ -96,7 +96,7 @@
       "audio": "audio_w4i_asai/06.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 110
+      "durationInFrames": 112
     },
     {
       "role": "save",
@@ -128,7 +128,7 @@
       "audio": "audio_w4i_asai/08.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 81
+      "durationInFrames": 85
     },
     {
       "role": "body",
@@ -143,7 +143,7 @@
       "audio": "audio_w4i_asai/09.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 173
+      "durationInFrames": 166
     },
     {
       "role": "cta",
@@ -158,7 +158,7 @@
       "audio": "audio_w4i_asai/10.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 93
+      "durationInFrames": 100
     }
   ]
 }
