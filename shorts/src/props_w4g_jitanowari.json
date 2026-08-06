@@ -17,7 +17,7 @@
       "audio": "audio_w4g_jitanowari/01.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 112
+      "durationInFrames": 108
     },
     {
       "role": "body",
@@ -32,7 +32,7 @@
       "audio": "audio_w4g_jitanowari/02.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 123
+      "durationInFrames": 129
     },
     {
       "role": "point",
@@ -48,7 +48,7 @@
       "audio": "audio_w4g_jitanowari/03.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 148
+      "durationInFrames": 116
     },
     {
       "role": "point",
@@ -64,7 +64,7 @@
       "audio": "audio_w4g_jitanowari/04.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 116
+      "durationInFrames": 131
     },
     {
       "role": "point",
@@ -80,11 +80,11 @@
       "audio": "audio_w4g_jitanowari/05.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 100
+      "durationInFrames": 108
     },
     {
       "role": "body",
-      "telop": "使い道を**決めてから**短くする",
+      "telop": "浮いた分を**仕事に返さない**",
       "bgVideo": null,
       "bgClips": [
         "bg/own_desk_clean.mp4",
@@ -95,11 +95,11 @@
       "audio": "audio_w4g_jitanowari/06.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 129
+      "durationInFrames": 137
     },
     {
       "role": "flip",
-      "telop": "先に**書く**",
+      "telop": "早く終わったら**早く終わる**",
       "bgVideo": null,
       "bgClips": [
         "bg/own_coffee_pour.mp4",
@@ -110,15 +110,15 @@
       "audio": "audio_w4g_jitanowari/07.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 158
+      "durationInFrames": 112
     },
     {
       "role": "vs",
       "vs": {
         "left": "埋める",
-        "right": "決める"
+        "right": "空ける"
       },
-      "telop": "埋める？**決める**？",
+      "telop": "埋める？**空ける**？",
       "bgVideo": null,
       "bgClips": [
         "bg/nb_sky.mp4",
@@ -129,7 +129,7 @@
       "audio": "audio_w4g_jitanowari/08.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 154
+      "durationInFrames": 152
     }
   ]
 }
