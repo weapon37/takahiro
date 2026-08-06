@@ -32,7 +32,7 @@
       "audio": "audio_w4d_kikeba/02.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 129
+      "durationInFrames": 131
     },
     {
       "role": "point",
@@ -64,7 +64,7 @@
       "audio": "audio_w4d_kikeba/04.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 120
+      "durationInFrames": 114
     },
     {
       "role": "point",
@@ -80,7 +80,7 @@
       "audio": "audio_w4d_kikeba/05.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 114
+      "durationInFrames": 93
     },
     {
       "role": "body",
@@ -95,7 +95,7 @@
       "audio": "audio_w4d_kikeba/06.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 97
+      "durationInFrames": 93
     },
     {
       "role": "flip",
@@ -110,7 +110,7 @@
       "audio": "audio_w4d_kikeba/07.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 118
+      "durationInFrames": 121
     },
     {
       "role": "vs",
@@ -129,7 +129,7 @@
       "audio": "audio_w4d_kikeba/08.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 166
+      "durationInFrames": 143
     }
   ]
 }

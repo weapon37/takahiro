@@ -17,7 +17,7 @@
       "audio": "audio_w4g_jitanowari/01.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 112
+      "durationInFrames": 114
     },
     {
       "role": "body",
@@ -48,7 +48,7 @@
       "audio": "audio_w4g_jitanowari/03.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 123
+      "durationInFrames": 120
     },
     {
       "role": "point",
@@ -64,7 +64,7 @@
       "audio": "audio_w4g_jitanowari/04.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 120
+      "durationInFrames": 123
     },
     {
       "role": "point",
@@ -80,7 +80,7 @@
       "audio": "audio_w4g_jitanowari/05.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 116
+      "durationInFrames": 100
     },
     {
       "role": "body",
@@ -95,7 +95,7 @@
       "audio": "audio_w4g_jitanowari/06.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 143
+      "durationInFrames": 131
     },
     {
       "role": "flip",
@@ -110,7 +110,7 @@
       "audio": "audio_w4g_jitanowari/07.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 158
+      "durationInFrames": 166
     },
     {
       "role": "vs",
@@ -129,7 +129,7 @@
       "audio": "audio_w4g_jitanowari/08.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 154
+      "durationInFrames": 125
     }
   ]
 }
