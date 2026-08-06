@@ -17,7 +17,7 @@
       "audio": "audio_w4j_kangaeru/01.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 135
+      "durationInFrames": 131
     },
     {
       "role": "body",
@@ -32,7 +32,7 @@
       "audio": "audio_w4j_kangaeru/02.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 112
+      "durationInFrames": 123
     },
     {
       "role": "point",
@@ -48,7 +48,7 @@
       "audio": "audio_w4j_kangaeru/03.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 139
+      "durationInFrames": 158
     },
     {
       "role": "point",
@@ -64,7 +64,7 @@
       "audio": "audio_w4j_kangaeru/04.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 116
+      "durationInFrames": 114
     },
     {
       "role": "point",
@@ -80,7 +80,7 @@
       "audio": "audio_w4j_kangaeru/05.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 104
+      "durationInFrames": 108
     },
     {
       "role": "body",
@@ -129,7 +129,7 @@
       "audio": "audio_w4j_kangaeru/08.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 154
+      "durationInFrames": 121
     }
   ]
 }
