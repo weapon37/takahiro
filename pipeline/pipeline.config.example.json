@@ -1,0 +1,65 @@
+{
+  "_comment_1": "★このファイルをコピーして pipeline.config.json という名前で保存し、steps の中身を自分のスクリプトに書き換えてください。",
+
+  "timezone": "Asia/Tokyo",
+  "buffer_days": 3,
+  "slots": ["07:00", "21:00"],
+  "max_per_run": 3,
+  "lead_minutes": 90,
+  "step_timeout_seconds": 3600,
+
+  "_comment_2": "ネタと台本の作り方。claude = AIで自動生成 / file = topics.txt の行を上から使う",
+  "idea_source": "claude",
+  "topics_file": "topics.txt",
+  "anthropic_model": "claude-opus-5",
+  "anthropic_effort": "medium",
+
+  "theme": "AIを活用した副業",
+  "audience": "30〜40代で、営業職や現場仕事など外に出て働くスタイルのため、まとまった副業の時間を取りづらい人",
+
+  "video_filename": "video.mp4",
+
+  "_comment_3": "★ここがいちばん大事。あなたの既存スクリプトを上から順に実行します。{ } の部分は自動で置き換わります。",
+  "_placeholders": [
+    "{script_file}        台本のテキストファイルのパス",
+    "{meta_file}          タイトル・説明文などをまとめたJSONのパス",
+    "{video_file}         出来上がった動画を保存してほしいパス",
+    "{title}              動画タイトル",
+    "{description}        概要欄の説明文",
+    "{tags}               タグ(カンマ区切り)",
+    "{hook}               冒頭の掴みの一言",
+    "{background_prompt}  背景素材用の英語プロンプト",
+    "{publish_at}         公開日時 (UTC / YouTube APIが求める形式)",
+    "{publish_at_local}   公開日時 (日本時間 / 表示用)",
+    "{work_dir}           この動画専用の作業フォルダ",
+    "{job_id}             この動画の識別子"
+  ],
+
+  "steps": [
+    {
+      "name": "動画を作って書き出す",
+      "cwd": "/Users/あなたのユーザー名/shorts",
+      "command": [
+        "python3",
+        "make_video.py",
+        "--script", "{script_file}",
+        "--title", "{title}",
+        "--background-prompt", "{background_prompt}",
+        "--out", "{video_file}"
+      ]
+    },
+    {
+      "name": "YouTubeへ予約投稿",
+      "cwd": "/Users/あなたのユーザー名/shorts",
+      "command": [
+        "python3",
+        "upload_youtube.py",
+        "--file", "{video_file}",
+        "--title", "{title}",
+        "--description", "{description}",
+        "--tags", "{tags}",
+        "--publish-at", "{publish_at}"
+      ]
+    }
+  ]
+}
