@@ -4,15 +4,19 @@
  * 書き込み先の Apps Script ウェブアプリは tools/receipt-total/Code.gs を参照。
  *
  * 必要な環境変数:
- *   SHEETS_WEBAPP_URL     デプロイしたウェブアプリの URL (.../exec)
- *   SHEETS_WEBAPP_SECRET  スクリプトプロパティ SHARED_SECRET と同じ文字列
+ *   SHEETS_WEBAPP_URL           デプロイしたウェブアプリの URL (.../exec)
+ *   SHEETS_WEBAPP_SECRET        スクリプトプロパティ SHARED_SECRET と同じ文字列
+ *   SHEETS_DEFAULT_SPREADSHEET  任意。--spreadsheet 省略時の書き込み先
  *
  * 使い方:
  *   # 現在値を確認する (書き込まない)
- *   node tools/receipt-total/write-total.mjs --spreadsheet <URL> --inspect
- *   node tools/receipt-total/write-total.mjs --spreadsheet <URL> --sheet 2026-08 --cell B12 --inspect
+ *   node tools/receipt-total/write-total.mjs --inspect
+ *   node tools/receipt-total/write-total.mjs --sheet 2026-08 --cell B12 --inspect
  *
  *   # 書き込む
+ *   node tools/receipt-total/write-total.mjs --sheet 2026-08 --cell B12 --value 12480
+ *
+ *   # 別のスプレッドシートを対象にする
  *   node tools/receipt-total/write-total.mjs --spreadsheet <URL> --sheet 2026-08 --cell B12 --value 12480
  *
  *   # 書き込まずに結果だけ見る
@@ -57,8 +61,13 @@ function formatYen(value) {
 async function main() {
   const args = parseArgs(process.argv.slice(2));
 
-  if (!args.spreadsheet) {
-    throw new Error('--spreadsheet (スプレッドシートの URL または ID) は必須です');
+  // タブが毎月増えるだけの台帳では書き込み先が変わらないため、既定値を環境変数に置ける。
+  const spreadsheet = args.spreadsheet || process.env.SHEETS_DEFAULT_SPREADSHEET;
+  if (!spreadsheet) {
+    throw new Error(
+      '書き込み先が不明です。--spreadsheet でスプレッドシートの URL か ID を指定するか、' +
+        '環境変数 SHEETS_DEFAULT_SPREADSHEET を設定してください'
+    );
   }
   if (!args.inspect) {
     if (!args.cell) {
@@ -75,7 +84,7 @@ async function main() {
   const payload = {
     secret,
     action: args.inspect ? 'inspect' : 'write',
-    spreadsheet: args.spreadsheet,
+    spreadsheet,
     sheet: args.sheet,
     cell: args.cell,
     dryRun: args.dryRun,

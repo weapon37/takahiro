@@ -57,10 +57,20 @@ SHEETS_WEBAPP_SECRET=手順 2 で生成した文字列
 
 この 2 つは認証情報なので、リポジトリにコミットせず環境側の環境変数として設定する。
 
+書き込み先が毎回同じスプレッドシート (タブだけが毎月増える台帳など) の場合は、既定値も登録しておく。
+そうすると実行時にシート名とセルだけ指定すれば済む。
+
+```
+SHEETS_DEFAULT_SPREADSHEET=https://docs.google.com/spreadsheets/d/.../edit
+```
+
+スマートフォンから URL を調べるときは、Google スプレッドシートアプリで対象ファイルを開き
+「⋮」→「共有とエクスポート」→「リンクをコピー」。共有設定を変更する必要はない。
+
 ### 5. 動作確認
 
 ```bash
-node tools/receipt-total/write-total.mjs --spreadsheet <スプレッドシートの URL> --inspect
+node tools/receipt-total/write-total.mjs --inspect
 ```
 
 シート一覧が表示されれば成功。
@@ -72,8 +82,7 @@ node tools/receipt-total/write-total.mjs --spreadsheet <スプレッドシート
 シートは毎月変わるため、書き込み前に当月のシート名を確認できる。
 
 ```bash
-node tools/receipt-total/write-total.mjs \
-  --spreadsheet <URL> --inspect
+node tools/receipt-total/write-total.mjs --inspect
 ```
 
 ```
@@ -84,15 +93,13 @@ node tools/receipt-total/write-total.mjs \
 セルまで指定すると、そのセルの現在値も返る。
 
 ```bash
-node tools/receipt-total/write-total.mjs \
-  --spreadsheet <URL> --sheet 2026-08 --cell B12 --inspect
+node tools/receipt-total/write-total.mjs --sheet 2026-08 --cell B12 --inspect
 ```
 
 ### 合計金額を書き込む
 
 ```bash
-node tools/receipt-total/write-total.mjs \
-  --spreadsheet <URL> --sheet 2026-08 --cell B12 --value 12480
+node tools/receipt-total/write-total.mjs --sheet 2026-08 --cell B12 --value 12480
 ```
 
 ```
@@ -113,7 +120,7 @@ node tools/receipt-total/write-total.mjs ... --dry-run
 
 | 引数 | 必須 | 説明 |
 | --- | --- | --- |
-| `--spreadsheet` | 必須 | スプレッドシートの URL または ID |
+| `--spreadsheet` | 任意 | スプレッドシートの URL または ID。省略時は `SHEETS_DEFAULT_SPREADSHEET` |
 | `--sheet` | 任意 | シート名。省略時は先頭シート |
 | `--cell` | 書き込み時は必須 | `B12` のような A1 形式。単一セルのみ |
 | `--value` | 書き込み時は必須 | 金額。`12,480` のようにカンマ入りでも可 |
