@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "receipt-expense-workflow": {
+      "source": "aktsmm/agent-skills",
+      "sourceType": "github",
+      "skillPath": "receipt-expense-workflow/SKILL.md",
+      "computedHash": "fdaa0951cef95d92237e59a14c88a2315e2c5fbddddcc221b323d863a33b00eb"
+    }
+  }
+}
