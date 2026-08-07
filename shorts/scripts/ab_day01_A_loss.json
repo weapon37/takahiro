@@ -1,0 +1,71 @@
+{
+  "title": "AIに投げると逆に損する仕事3選|1つでも当てはまったら危険",
+  "caption": "AIに投げたのに、逆に時間を失っている仕事を3つ話す。1つでも当てはまったら今日から自分でやろう。\n#AI活用 #業務効率化 #仕事術 #AI副業 #時短",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "title",
+      "narration": "毎日メールに一時間使っている人へ。",
+      "telop": "毎日メールに1時間の人へ",
+      "telop_style": "normal"
+    },
+    {
+      "role": "rank",
+      "narration": "その一、謝罪メール。エーアイに投げると逆に損する。",
+      "telop": "① 謝罪メール",
+      "telop_style": "normal"
+    },
+    {
+      "role": "body",
+      "narration": "言い回しを直す時間で、自分で書くより長くかかる。",
+      "telop": "直すほうが時間かかる",
+      "telop_style": "normal"
+    },
+    {
+      "role": "rank",
+      "narration": "その二、口頭で受けた依頼のメモ。",
+      "telop": "② 口頭依頼のメモ",
+      "telop_style": "normal"
+    },
+    {
+      "role": "body",
+      "narration": "前提を説明する手間のほうが大きい。",
+      "telop": "前提の説明がいちばん手間",
+      "telop_style": "normal"
+    },
+    {
+      "role": "rank",
+      "narration": "その三、数字の最終チェック。",
+      "telop": "③ 数字の最終チェック",
+      "telop_style": "normal"
+    },
+    {
+      "role": "body",
+      "narration": "合っているか確かめ直す、二度手間になる。",
+      "telop": "確かめ直しで二度手間",
+      "telop_style": "normal"
+    },
+    {
+      "role": "body",
+      "narration": "この三つを投げている人は、毎日三十分損している。",
+      "telop": "毎日30分の損",
+      "telop_style": "normal",
+      "bg_group": 5
+    },
+    {
+      "role": "body",
+      "narration": "渡すのは、手順が決まった作業だけでいい。",
+      "telop": "(渡すのは手順が決まった作業だけ)",
+      "telop_style": "paren",
+      "bg_group": 5
+    }
+  ],
+  "bg_queries": [
+    "office worker typing laptop",
+    "typing email keyboard closeup",
+    "business meeting taking notes",
+    "spreadsheet data on screen",
+    "person working late night laptop"
+  ],
+  "_note": "2週間ABテスト 1日目 / A案「損失型」/ 検証: 損失型か利益型か / 目標30秒・CTAなし"
+}

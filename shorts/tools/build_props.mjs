@@ -26,19 +26,25 @@ function wavDuration(file) {
 
 const script = JSON.parse(fs.readFileSync(path.join(HERE, 'script.json'), 'utf8'));
 
-// 話題ごとに背景の雰囲気を割り当てる(同じ話題は同じ背景で統一感を出す)
-const bgByRole = (i, role) => {
-  if (i <= 2) return 'bokeh';  // フック・導入(夜の街)
-  if (i <= 5) return 'neon';   // 特徴①(コンビニ)
-  if (i <= 8) return 'sale';   // 特徴②(セール)
-  if (i <= 11) return 'rise';  // 特徴③(貯金が増える)
-  return 'calm';               // CTA
+// 話題のまとまり(1〜5)を求める。rank が来るたびに次のグループへ進む。
+//   1 = フック・導入 / 2〜4 = 各項目 / 5 = CTA
+// 台本のシーン数が変わっても崩れないよう、決め打ちではなく role から導く。
+// 台本側で bg_group を書けば、その値を優先する。
+const roles = script.sentences.map((s) => s.role);
+const bgGroup = (idx) => {
+  const explicit = script.sentences[idx].bg_group;
+  if (explicit) return Math.min(Math.max(Number(explicit), 1), 5);
+  if (roles[idx] === 'cta') return 5;
+  const ranksSoFar = roles.slice(0, idx + 1).filter((r) => r === 'rank').length;
+  return Math.min(1 + ranksSoFar, 5);
 };
 
+// グループごとの自前背景(実写が無いときに使われる)
+const BG_MOOD = ['bokeh', 'neon', 'sale', 'rise', 'calm'];
+
 // 実写背景(public/bg/bg_01.mp4〜bg_05.mp4)があれば話題グループごとに使う
-const bgGroup = (i) => (i <= 2 ? 1 : i <= 5 ? 2 : i <= 8 ? 3 : i <= 11 ? 4 : 5);
-const bgVideoFor = (i) => {
-  const rel = `bg/bg_${String(bgGroup(i)).padStart(2, '0')}.mp4`;
+const bgVideoFor = (idx) => {
+  const rel = `bg/bg_${String(bgGroup(idx)).padStart(2, '0')}.mp4`;
   return fs.existsSync(path.join(HERE, 'public', rel)) ? rel : null;
 };
 
@@ -51,8 +57,8 @@ const scenes = script.sentences.map((s, idx) => {
     telop: s.telop,
     telopStyle: s.telop_style ?? 'normal',
     role: s.role,
-    bg: bgByRole(i, s.role),
-    bgVideo: bgVideoFor(i),
+    bg: BG_MOOD[bgGroup(idx) - 1],
+    bgVideo: bgVideoFor(idx),
     playWhoosh: s.role === 'rank',
     durationInFrames: Math.ceil(sec * FPS) + PAD_FRAMES,
   };

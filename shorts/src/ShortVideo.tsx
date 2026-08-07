@@ -2,8 +2,8 @@ import React from 'react';
 import {
   AbsoluteFill,
   Audio,
+  OffthreadVideo,
   Sequence,
-  Video,
   interpolate,
   random,
   spring,
@@ -243,8 +243,10 @@ const SceneView: React.FC<{scene: Scene; index: number; whoosh: string}> = ({
   return (
     <AbsoluteFill style={{backgroundColor: 'black'}}>
       <AbsoluteFill style={{transform: `scale(${scale})`}}>
+        {/* 背景は OffthreadVideo で描画する。ブラウザではなくRemotion側でデコードするため、
+            H.264が入っていないChromeでも背景が出る(レンダリング時の推奨コンポーネント) */}
         {scene.bgVideo ? (
-          <Video
+          <OffthreadVideo
             src={staticFile(scene.bgVideo)}
             muted
             loop
