@@ -6,7 +6,7 @@ import {fileURLToPath} from 'node:url';
 
 const HERE = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const FPS = 30;
-const PAD_FRAMES = 10; // 各シーン末尾の余白
+const PAD_FRAMES = 6; // 各シーン末尾の余白(他テンプレと合わせてテンポを詰める)
 
 // WAVファイルのヘッダーを読んで長さ(秒)を求める
 function wavDuration(file) {

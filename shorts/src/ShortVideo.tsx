@@ -11,9 +11,8 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
-// フォントはOSにインストール済みのものを使う(README参照)。
-// レンダリング前に public/fonts/ のTTFをシステムに入れておくこと。
-const fontFamily = "'Zen Maru Gothic', 'Zen Maru Gothic Black', 'IPAPGothic', sans-serif";
+import {BRAND, fontFamily} from './brand';
+import {EraserChar} from './common';
 
 export type Scene = {
   audio: string;
@@ -169,12 +168,16 @@ const BACKGROUNDS: Record<Scene['bg'], React.FC> = {
   calm: CalmBg,
 };
 
-// ---------- テロップ(黒フチ+フワッとフェードイン) ----------
+// ---------- テロップ(黒フチ+バウンスして飛び込む) ----------
 
 const Telop: React.FC<{text: string; style: Scene['telopStyle']}> = ({text, style}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const appear = spring({frame, fps, config: {damping: 200}, durationInFrames: 14});
+  // フェードは滑らかに、拡大は他テンプレの数字ポップと同じ弾ける動きにして
+  // テンポを出す(damping:200のフェードだけだと勢いが出ない)
+  const opacity = spring({frame, fps, config: {damping: 200}, durationInFrames: 10});
+  const pop = spring({frame, fps, config: {damping: 10, mass: 0.6}, durationInFrames: 14});
+  const scale = interpolate(pop, [0, 1], [0.75, 1]);
   const isParen = style === 'paren';
   const fontSize = isParen ? 54 : 78;
   const textStyle: React.CSSProperties = {
@@ -192,8 +195,8 @@ const Telop: React.FC<{text: string; style: Scene['telopStyle']}> = ({text, styl
         left: 60,
         right: 60,
         top: isParen ? 1280 : 1180,
-        opacity: appear,
-        transform: `translateY(${(1 - appear) * 40}px)`,
+        opacity,
+        transform: `scale(${scale})`,
       }}
     >
       <div style={{position: 'relative'}}>
@@ -232,6 +235,7 @@ const SceneView: React.FC<{scene: Scene; index: number; whoosh: string}> = ({
   whoosh,
 }) => {
   const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
   const Bg = BACKGROUNDS[scene.bg];
   // ゆっくりズーム(シーンごとに寄り/引きを交互に)
   const zoomIn = index % 2 === 0;
@@ -240,6 +244,12 @@ const SceneView: React.FC<{scene: Scene; index: number; whoosh: string}> = ({
     [0, scene.durationInFrames],
     zoomIn ? [1, 1.09] : [1.09, 1]
   );
+  // 消しゴムキャラは全シーン常駐(左下)。カットの頭でひょこっと跳ねて、
+  // 待ってる間はゆっくり揺れる。これでカットの切れ目にテンポが出る
+  const hop = spring({frame, fps, config: {damping: 9, mass: 0.6}, durationInFrames: 14});
+  const hopY = interpolate(hop, [0, 1], [46, 0]);
+  const idleTilt = Math.sin(frame / 20) * 4;
+  const eraserTilt = interpolate(hop, [0, 1], [16, 6]) + idleTilt;
   return (
     <AbsoluteFill style={{backgroundColor: 'black'}}>
       <AbsoluteFill style={{transform: `scale(${scale})`}}>
@@ -264,6 +274,10 @@ const SceneView: React.FC<{scene: Scene; index: number; whoosh: string}> = ({
         }}
       />
       <Telop text={scene.telop} style={scene.telopStyle} />
+      {/* 消しゴムキャラ(相棒。左下に常駐) */}
+      <div style={{position: 'absolute', left: 46, top: 1610 + hopY}}>
+        <EraserChar size={150} tilt={eraserTilt} />
+      </div>
       <Audio src={staticFile(scene.audio)} />
       {scene.playWhoosh ? <Audio src={staticFile(whoosh)} volume={0.3} /> : null}
     </AbsoluteFill>
@@ -292,24 +306,37 @@ export const ShortVideo: React.FC<ShortVideoProps> = ({
         from += scene.durationInFrames;
         return seq;
       })}
-      {/* アカウント名(常時・薄め。空文字なら非表示) */}
+      {/* アカウント名(常時表示。白地+ブランドの青フチで、暗い実写背景でも読める) */}
       {account ? (
-        <div
-          style={{
-            position: 'absolute',
-            top: 110,
-            left: 0,
-            right: 0,
-            textAlign: 'center',
-            fontFamily,
-            fontWeight: 700,
-            fontSize: 38,
-            letterSpacing: '0.12em',
-            color: 'rgba(255,255,255,0.5)',
-            textShadow: '0 2px 12px rgba(0,0,0,0.6)',
-          }}
-        >
-          {account}
+        <div style={{position: 'absolute', top: 110, left: 0, right: 0, textAlign: 'center'}}>
+          <div style={{position: 'relative', display: 'inline-block'}}>
+            <div
+              style={{
+                fontFamily,
+                fontWeight: 700,
+                fontSize: 38,
+                letterSpacing: '0.12em',
+                position: 'absolute',
+                inset: 0,
+                WebkitTextStroke: `10px ${BRAND.primary}`,
+                color: 'transparent',
+              }}
+            >
+              {account}
+            </div>
+            <div
+              style={{
+                fontFamily,
+                fontWeight: 700,
+                fontSize: 38,
+                letterSpacing: '0.12em',
+                position: 'relative',
+                color: '#ffffff',
+              }}
+            >
+              {account}
+            </div>
+          </div>
         </div>
       ) : null}
       {/* BGM(ループ+フェードイン/アウト) */}

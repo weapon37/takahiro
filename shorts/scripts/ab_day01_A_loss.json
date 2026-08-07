@@ -54,9 +54,9 @@
     },
     {
       "role": "body",
-      "narration": "渡すのは、手順が決まった作業だけでいい。",
-      "telop": "(渡すのは手順が決まった作業だけ)",
-      "telop_style": "paren",
+      "narration": "結局、時間を失うか取り返すかは、渡す作業の選び方ひとつです。",
+      "telop": "選び方ひとつで\n結果が変わる",
+      "telop_style": "normal",
       "bg_group": 5
     }
   ],
