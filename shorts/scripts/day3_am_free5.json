@@ -1,0 +1,83 @@
+{
+  "template": "RankingVideo",
+  "title": "無料AIツール最強ランキング【全部0円】",
+  "caption": "1円も払わずに仕事が変わる無料AIツールTOP5。1位の無料枠は正直おかしいレベル。どれから使うか迷ったら職種をコメントで、答えます。\n※ツールリンクは固定コメントへ\n#無料AI #AI活用 #AIツール #仕事術 #業務効率化",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "1円も払わずに仕事が変わる。無料エーアイ、最強ランキングです。",
+      "telop": "**全部0円**の最強AI"
+    },
+    {
+      "role": "rank",
+      "rank": 5,
+      "headline": "CapCut",
+      "narration": "第5位、キャップカット。",
+      "telop": "動画は無料で作る時代"
+    },
+    {
+      "role": "body",
+      "narration": "編集も字幕も、これひとつで終わります。",
+      "telop": "編集も字幕も**これ1つ**"
+    },
+    {
+      "role": "rank",
+      "rank": 4,
+      "headline": "Canva",
+      "narration": "第4位、キャンバ。",
+      "telop": "デザインはテンプレ"
+    },
+    {
+      "role": "body",
+      "narration": "デザインは、テンプレを選ぶだけの時代です。",
+      "telop": "**選ぶだけ**で完成"
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "Perplexity",
+      "narration": "第3位、パープレキシティ。",
+      "telop": "出典つき検索AI"
+    },
+    {
+      "role": "body",
+      "narration": "出典つきで答えてくれるから、調べ物の裏取りが一瞬。",
+      "telop": "裏取りが**一瞬**で終わる"
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "NotebookLM",
+      "narration": "第2位、ノートブック エルエム。",
+      "telop": "資料専属のAI"
+    },
+    {
+      "role": "body",
+      "narration": "資料を放り込むと、その資料だけから答えてくれます。",
+      "telop": "**その資料だけ**から答える"
+    },
+    {
+      "role": "save",
+      "narration": "1位の前に、保存。無料は正義です。",
+      "telop": "無料は正義。**保存**"
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "Gemini",
+      "narration": "第1位、ジェミニ。",
+      "telop": "無料枠が壊れてる"
+    },
+    {
+      "role": "body",
+      "narration": "無料枠でここまで使えるのは、正直おかしい。日常業務ならこれで足ります。",
+      "telop": "日常業務は**これで足りる**"
+    },
+    {
+      "role": "cta",
+      "narration": "どれから使うか迷ったら、職種をコメントで。答えます。",
+      "telop": "職種を**コメント**で\n→ おすすめ返します"
+    }
+  ]
+}
