@@ -116,6 +116,14 @@ node tools/receipt-total/write-total.mjs --sheet 2026-08 --cell B12 --value 1248
 node tools/receipt-total/write-total.mjs ... --dry-run
 ```
 
+### セルを空にする
+
+入力し直したい・別のセルと重複してしまったなどの理由でセルを空にしたいときに使う。
+
+```bash
+node tools/receipt-total/write-total.mjs --sheet 2026-08 --cell B12 --clear
+```
+
 ## 引数
 
 | 引数 | 必須 | 説明 |
@@ -126,6 +134,7 @@ node tools/receipt-total/write-total.mjs ... --dry-run
 | `--value` | 書き込み時は必須 | 金額。`12,480` のようにカンマ入りでも可 |
 | `--inspect` | 任意 | 書き込まず、シート一覧と現在値を返す |
 | `--dry-run` | 任意 | 書き込まず、書き込み結果の見込みを返す |
+| `--clear` | 任意 | `--value` の代わりに指定すると、そのセルを空にする |
 
 ## 注意点
 

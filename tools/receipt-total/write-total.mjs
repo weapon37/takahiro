@@ -19,6 +19,9 @@
  *   # 別のスプレッドシートを対象にする
  *   node tools/receipt-total/write-total.mjs --spreadsheet <URL> --sheet 2026-08 --cell B12 --value 12480
  *
+ *   # セルを空にする
+ *   node tools/receipt-total/write-total.mjs --sheet 2026-08 --cell B12 --clear
+ *
  *   # 書き込まずに結果だけ見る
  *   node tools/receipt-total/write-total.mjs ... --dry-run
  */
@@ -26,13 +29,15 @@
 const FLAGS_WITH_VALUE = new Set(['--spreadsheet', '--sheet', '--cell', '--value']);
 
 function parseArgs(argv) {
-  const args = { dryRun: false, inspect: false };
+  const args = { dryRun: false, inspect: false, clear: false };
   for (let i = 0; i < argv.length; i++) {
     const flag = argv[i];
     if (flag === '--dry-run') {
       args.dryRun = true;
     } else if (flag === '--inspect') {
       args.inspect = true;
+    } else if (flag === '--clear') {
+      args.clear = true;
     } else if (FLAGS_WITH_VALUE.has(flag)) {
       const value = argv[++i];
       if (value === undefined) {
@@ -73,23 +78,24 @@ async function main() {
     if (!args.cell) {
       throw new Error('--cell は必須です (確認だけなら --inspect)');
     }
-    if (args.value === undefined) {
-      throw new Error('--value は必須です (確認だけなら --inspect)');
+    if (!args.clear && args.value === undefined) {
+      throw new Error('--value は必須です (確認だけなら --inspect、空にするだけなら --clear)');
     }
   }
 
   const url = requireEnv('SHEETS_WEBAPP_URL');
   const secret = requireEnv('SHEETS_WEBAPP_SECRET');
 
+  const action = args.inspect ? 'inspect' : args.clear ? 'clear' : 'write';
   const payload = {
     secret,
-    action: args.inspect ? 'inspect' : 'write',
+    action,
     spreadsheet,
     sheet: args.sheet,
     cell: args.cell,
     dryRun: args.dryRun,
   };
-  if (!args.inspect) {
+  if (action === 'write') {
     const amount = Number(String(args.value).replace(/[,\s]/g, ''));
     if (!Number.isFinite(amount)) {
       throw new Error(`--value が数値ではありません: ${args.value}`);
@@ -138,6 +144,21 @@ async function main() {
 
   const target = `${result.spreadsheetName} / ${result.sheetName} / ${result.cell}`;
   const before = result.previousValue === null ? '(空)' : formatYen(result.previousValue);
+
+  if (result.action === 'clear') {
+    if (result.dryRun) {
+      console.log(`[dry-run] ${target}`);
+      console.log(`  ${before} → (空) (未実行)`);
+      return;
+    }
+    console.log(`空にしました: ${target}`);
+    console.log(`  ${before} → (空)`);
+    if (result.previousFormula) {
+      console.log(`  注意: 数式 ${result.previousFormula} を消去しました`);
+    }
+    return;
+  }
+
   const after = formatYen(result.writtenValue);
 
   if (result.dryRun) {

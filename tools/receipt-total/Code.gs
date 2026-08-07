@@ -8,10 +8,10 @@
  * リクエスト (POST, JSON):
  *   {
  *     "secret":      "共有シークレット",
- *     "action":      "write" | "inspect",   // 省略時は write
+ *     "action":      "write" | "inspect" | "clear",   // 省略時は write
  *     "spreadsheet": "スプレッドシートの URL または ID",
  *     "sheet":       "シート名",            // 省略時は先頭シート
- *     "cell":        "B12",                 // write では必須
+ *     "cell":        "B12",                 // write・clear では必須
  *     "value":       12480,                 // write では必須
  *     "dryRun":      false                  // true なら書き込まず結果だけ返す
  *   }
@@ -49,6 +49,9 @@ function doPost(e) {
     }
     if (action === 'write') {
       return jsonOutput_(write_(body));
+    }
+    if (action === 'clear') {
+      return jsonOutput_(clear_(body));
     }
     return jsonOutput_({ ok: false, error: '不明な action です: ' + action });
   } catch (error) {
@@ -131,6 +134,38 @@ function write_(body) {
     previousValue: previousValue === '' ? null : previousValue,
     previousFormula: previousFormula,
     writtenValue: value,
+  };
+}
+
+/** 指定セルを空にする。書き込み前の値も返すので、消してよかったか呼び出し側で判断できる。 */
+function clear_(body) {
+  if (body.cell === undefined || body.cell === null || body.cell === '') {
+    return { ok: false, error: 'cell が指定されていません' };
+  }
+
+  var spreadsheet = openSpreadsheet_(body.spreadsheet);
+  var sheet = resolveSheet_(spreadsheet, body.sheet);
+  var range = resolveCell_(sheet, body.cell);
+
+  var previousValue = range.getValue();
+  var previousFormula = range.getFormula() || null;
+  var dryRun = body.dryRun === true;
+
+  if (!dryRun) {
+    range.clearContent();
+    SpreadsheetApp.flush();
+  }
+
+  return {
+    ok: true,
+    action: 'clear',
+    dryRun: dryRun,
+    spreadsheetName: spreadsheet.getName(),
+    spreadsheetId: spreadsheet.getId(),
+    sheetName: sheet.getName(),
+    cell: range.getA1Notation(),
+    previousValue: previousValue === '' ? null : previousValue,
+    previousFormula: previousFormula,
   };
 }
 
