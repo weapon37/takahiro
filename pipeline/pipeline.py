@@ -26,7 +26,7 @@ import subprocess
 import sys
 import time
 import uuid
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Any, Iterator
 
@@ -36,13 +36,15 @@ except ImportError:  # pragma: no cover - Python 3.8 以下
     print("Python 3.9 以上が必要です。", file=sys.stderr)
     raise
 
+import experiment as experiment_mod
+
 SCRIPT_DIR = Path(__file__).resolve().parent
 DEFAULT_CONFIG_PATH = SCRIPT_DIR / "pipeline.config.json"
 
 DEFAULTS: dict[str, Any] = {
     "timezone": "Asia/Tokyo",
     "buffer_days": 3,
-    "slots": ["07:00", "21:00"],
+    "slots": ["07:00", "12:00", "21:00"],
     "max_per_run": 3,
     "lead_minutes": 90,
     "step_timeout_seconds": 3600,
@@ -55,6 +57,13 @@ DEFAULTS: dict[str, Any] = {
     "audience": "30〜40代で、営業職や現場仕事など外に出て働くスタイルのため、まとまった副業の時間を取りづらい人",
     "video_filename": "video.mp4",
     "steps": [],
+    # 2週間ABテスト。enabled が false のときは通常の台本生成だけが動く。
+    "experiment": {
+        "enabled": False,
+        "slot": "12:00",
+        "start_date": None,
+        "plan_file": "experiment.plan.json",
+    },
 }
 
 
@@ -125,6 +134,8 @@ def load_config(path: Path) -> dict[str, Any]:
 
     config = dict(DEFAULTS)
     config.update(user_config)
+    # experiment は入れ子なので、書かれた項目だけを上書きする
+    config["experiment"] = {**DEFAULTS["experiment"], **(user_config.get("experiment") or {})}
 
     if not config["slots"]:
         raise SystemExit("設定エラー: slots(1日の投稿枠)が空です。")
@@ -141,6 +152,31 @@ def load_config(path: Path) -> dict[str, Any]:
         raise SystemExit("設定エラー: buffer_days は 1 以上にしてください。")
     if int(config["max_per_run"]) < 1:
         raise SystemExit("設定エラー: max_per_run は 1 以上にしてください。")
+
+    exp = config["experiment"]
+    if exp.get("enabled"):
+        if exp.get("slot") not in config["slots"]:
+            raise SystemExit(
+                f'設定エラー: experiment.slot "{exp.get("slot")}" が slots に含まれていません。'
+                f"検証に使う投稿枠は slots にも入れてください (現在の slots: {', '.join(config['slots'])})。"
+            )
+        if not exp.get("start_date"):
+            raise SystemExit(
+                "設定エラー: experiment.start_date が空です。"
+                'ABテストを始める日を "YYYY-MM-DD" で指定してください。'
+            )
+        try:
+            date.fromisoformat(str(exp["start_date"]))
+        except ValueError as exc:
+            raise SystemExit(
+                f'設定エラー: experiment.start_date "{exp["start_date"]}" は '
+                f'"YYYY-MM-DD" の形で書いてください。'
+            ) from exc
+        if config.get("idea_source") == "file":
+            raise SystemExit(
+                '設定エラー: ABテスト中は idea_source を "claude" にしてください。'
+                "topics.txt のネタでは、案ごとの条件を台本へ反映できません。"
+            )
     return config
 
 
@@ -249,22 +285,62 @@ def next_free_slot(
 # --------------------------------------------------------------------------
 # ネタ決め・台本づくり
 # --------------------------------------------------------------------------
-IDEA_SCHEMA = {
-    "type": "object",
-    "properties": {
-        "title": {"type": "string", "description": "YouTubeショートのタイトル(全角30文字以内)"},
-        "description": {"type": "string", "description": "YouTubeの概要欄に入れる説明文"},
-        "tags": {"type": "array", "items": {"type": "string"}, "description": "ハッシュタグ用のキーワード5個"},
-        "hook": {"type": "string", "description": "冒頭2秒で言い切る掴みの一言"},
-        "script": {"type": "string", "description": "そのまま読み上げられる完成した台本(40〜55秒程度)"},
-        "background_prompt": {"type": "string", "description": "背景素材を作るための英語の画像生成プロンプト"},
-    },
-    "required": ["title", "description", "tags", "hook", "script", "background_prompt"],
-    "additionalProperties": False,
-}
+def build_idea_schema(script_hint: str) -> dict[str, Any]:
+    """台本の長さの指示だけを差し替えられるようにしたスキーマ。
+
+    ABテストでは尺そのものが検証対象になるため、既定の「40〜55秒」を
+    そのまま渡すと条件と矛盾してしまう。
+    """
+    return {
+        "type": "object",
+        "properties": {
+            "title": {"type": "string", "description": "YouTubeショートのタイトル(全角30文字以内)"},
+            "description": {"type": "string", "description": "YouTubeの概要欄に入れる説明文"},
+            "tags": {"type": "array", "items": {"type": "string"}, "description": "ハッシュタグ用のキーワード5個"},
+            "hook": {"type": "string", "description": "冒頭2秒で言い切る掴みの一言"},
+            "script": {"type": "string", "description": f"そのまま読み上げられる完成した台本({script_hint})"},
+            "background_prompt": {"type": "string", "description": "背景素材を作るための英語の画像生成プロンプト"},
+        },
+        "required": ["title", "description", "tags", "hook", "script", "background_prompt"],
+        "additionalProperties": False,
+    }
 
 
-def generate_idea_with_claude(config: dict[str, Any], used_titles: list[str], log: Logger) -> dict[str, Any]:
+def build_experiment_prompt(
+    config: dict[str, Any], assignment: dict[str, Any], avoid: str, same_pair_titles: list[str]
+) -> str:
+    """ABテストの1本ぶんのプロンプト。テーマを固定し、条件だけを変える。"""
+    conditions = "\n".join(experiment_mod.render_settings(assignment["settings"]))
+    if same_pair_titles:
+        pair_note = (
+            f"同じ組のもう1本はこのタイトルです。テーマは同じままでよいので、"
+            f"タイトルの文言だけは重複させないでください。\n"
+            + "\n".join(f"- {t}" for t in same_pair_titles)
+        )
+    else:
+        pair_note = "同じ組のもう1本はまだ作られていません。"
+
+    return (
+        f"あなたはYouTubeショート動画の構成作家です。\n\n"
+        f"ジャンル: {config['theme']}\n"
+        f"ターゲット: {config['audience']}\n\n"
+        f"これはABテストの検証動画です。テーマは固定で、下の条件だけを変えて2本を比べます。\n"
+        f"テーマ(必ずこの内容で作る): {assignment['topic']}\n"
+        f"検証している変数: {assignment['variable']}\n"
+        f"今回の案: {assignment['arm']}案「{assignment['arm_label']}」\n\n"
+        f"必ず守る条件:\n{conditions}\n"
+        f"- 具体的な行動やツール名を1つ以上入れる\n"
+        f"- 台本は音声読み上げ用なので、記号・見出し・箇条書きは使わず、話し言葉だけで書く\n\n"
+        f"重要: 検証している変数以外は、2本のあいだで差が出ないようにしてください。"
+        f"上の条件に書かれていない要素は、凝った演出を足さず標準的な作り方にしてください。\n\n"
+        f"{pair_note}\n\n"
+        f"参考: 以下は過去に使ったタイトルです。今回のテーマは固定なので従う必要はありませんが、"
+        f"同じ切り口の使い回しは避けてください。\n{avoid}"
+    )
+
+
+def _request_idea(config: dict[str, Any], prompt: str, script_hint: str, log: Logger) -> dict[str, Any]:
+    """組み立て済みのプロンプトを Claude に投げ、ネタと台本を受け取る。"""
     try:
         import anthropic
     except ImportError as exc:
@@ -277,8 +353,43 @@ def generate_idea_with_claude(config: dict[str, Any], used_titles: list[str], lo
             "ANTHROPIC_API_KEY が設定されていません。pipeline/.env に書くか、環境変数に設定してください。"
         )
 
+    client = anthropic.Anthropic()
+    response = client.messages.create(
+        model=config["anthropic_model"],
+        max_tokens=8000,
+        output_config={
+            "effort": config["anthropic_effort"],
+            "format": {"type": "json_schema", "schema": build_idea_schema(script_hint)},
+        },
+        messages=[{"role": "user", "content": prompt}],
+    )
+
+    if response.stop_reason == "refusal":
+        raise RuntimeError("生成が拒否されました。テーマや設定を見直してください。")
+
+    text = "".join(block.text for block in response.content if block.type == "text")
+    if not text.strip():
+        raise RuntimeError("生成結果が空でした。")
+    idea = json.loads(text)
+    log.info(f"ネタ生成完了: {idea['title']}")
+    return idea
+
+
+def generate_idea_with_claude(
+    config: dict[str, Any],
+    used_titles: list[str],
+    log: Logger,
+    assignment: dict[str, Any] | None = None,
+    same_pair_titles: list[str] | None = None,
+) -> dict[str, Any]:
     recent = used_titles[-100:]
     avoid = "\n".join(f"- {t}" for t in recent) if recent else "(まだありません)"
+
+    if assignment is not None:
+        prompt = build_experiment_prompt(config, assignment, avoid, same_pair_titles or [])
+        seconds = assignment["settings"].get("duration_seconds")
+        script_hint = f"{int(seconds)}秒で読み終わる長さ" if seconds else "40〜55秒程度"
+        return _request_idea(config, prompt, script_hint, log)
 
     prompt = (
         f"あなたはYouTubeショート動画の構成作家です。\n\n"
@@ -294,27 +405,7 @@ def generate_idea_with_claude(config: dict[str, Any], used_titles: list[str], lo
         f"重要: 以下は過去に使用済みのタイトルです。これらと同じ切り口・同じ内容は絶対に避け、"
         f"新しい角度のネタにしてください。\n{avoid}"
     )
-
-    client = anthropic.Anthropic()
-    response = client.messages.create(
-        model=config["anthropic_model"],
-        max_tokens=8000,
-        output_config={
-            "effort": config["anthropic_effort"],
-            "format": {"type": "json_schema", "schema": IDEA_SCHEMA},
-        },
-        messages=[{"role": "user", "content": prompt}],
-    )
-
-    if response.stop_reason == "refusal":
-        raise RuntimeError("生成が拒否されました。テーマや設定を見直してください。")
-
-    text = "".join(block.text for block in response.content if block.type == "text")
-    if not text.strip():
-        raise RuntimeError("生成結果が空でした。")
-    idea = json.loads(text)
-    log.info(f"ネタ生成完了: {idea['title']}")
-    return idea
+    return _request_idea(config, prompt, "40〜55秒程度", log)
 
 
 def generate_idea_from_file(base_dir: Path, config: dict[str, Any], used_titles: list[str], log: Logger) -> dict[str, Any]:
@@ -339,7 +430,19 @@ def generate_idea_from_file(base_dir: Path, config: dict[str, Any], used_titles:
     raise RuntimeError(f"{topics_path} に未使用のネタが残っていません。行を追加してください。")
 
 
-def make_dry_run_idea(index: int) -> dict[str, Any]:
+def make_dry_run_idea(index: int, assignment: dict[str, Any] | None = None) -> dict[str, Any]:
+    if assignment is not None:
+        return {
+            "title": f"【テスト】{assignment['day_number']}日目 {assignment['arm']}案 {assignment['arm_label']}",
+            "description": (
+                f"--dry-run のダミーです。検証: {assignment['variable']} / "
+                f"テーマ: {assignment['topic']}"
+            ),
+            "tags": ["テスト", "ABテスト"],
+            "hook": f"{assignment['arm_label']} のダミー掴みです。",
+            "script": "これはテスト用の台本です。実際のAI生成は行われていません。",
+            "background_prompt": "abstract blue gradient background, minimal",
+        }
     return {
         "title": f"【テスト】ダミーのネタ {index}",
         "description": "これは --dry-run で作られたテスト用のダミーデータです。",
@@ -453,8 +556,39 @@ def print_status(state: dict[str, Any], now: datetime, config: dict[str, Any], t
         log.info("  予約リスト:")
         for job in upcoming[:20]:
             local = datetime.fromisoformat(job["publish_at"].replace("Z", "+00:00")).astimezone(tz)
-            log.info(f"    {local.strftime('%m/%d %H:%M')}  {job.get('title', '')}")
+            mark = ""
+            info = job.get("experiment")
+            if info:
+                mark = f"[{info['day_number']}日目 {info['arm']}案] "
+            log.info(f"    {local.strftime('%m/%d %H:%M')}  {mark}{job.get('title', '')}")
     log.info("---------------------------")
+
+
+def print_experiment_status(
+    state: dict[str, Any], plan: dict[str, Any], config: dict[str, Any], now: datetime, log: Logger
+) -> None:
+    """ABテストが今どこまで進んでいるかを表示する。"""
+    settings = config["experiment"]
+    total = experiment_mod.plan_days(plan)
+    start = date.fromisoformat(settings["start_date"])
+    made = {}
+    for job in state["jobs"]:
+        info = job.get("experiment")
+        if info:
+            made[(info["pair_id"], info["arm"])] = job
+
+    recorded = sum(1 for job in made.values() if job.get("metrics"))
+    elapsed = (now.date() - start).days + 1
+
+    log.info("---- ABテストの進行 ----")
+    log.info(f"  計画          : {plan.get('name', '')}")
+    log.info(f"  検証枠        : 毎日 {settings['slot']}")
+    log.info(f"  期間          : {start} から {total} 日間")
+    today = f"{elapsed} 日目 / {total} 日" if 1 <= elapsed <= total else "期間外"
+    log.info(f"  今日          : {today}")
+    log.info(f"  作成済み      : {len(made)} / {total} 本")
+    log.info(f"  実測値の記録  : {recorded} / {total} 本")
+    log.info("------------------------")
 
 
 def main() -> int:
@@ -463,6 +597,19 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true", help="AI生成も外部コマンドも実行せず、動きだけ確認する")
     parser.add_argument("--status", action="store_true", help="現在のストック状況を表示するだけで終了する")
     parser.add_argument("--count", type=int, default=None, help="作る本数を手動で指定する(上限チェックより優先)")
+
+    exp_group = parser.add_argument_group("2週間ABテスト")
+    exp_group.add_argument("--experiment-plan", action="store_true", help="ABテストの日程表を表示して終了する")
+    exp_group.add_argument("--experiment-report", action="store_true", help="A案とB案の比較結果を表示して終了する")
+    exp_group.add_argument(
+        "--record", metavar="JOB_ID|YYYY-MM-DD", default=None,
+        help="公開後の実測値を記録する(対象は job_id か公開日)",
+    )
+    exp_group.add_argument("--views", type=int, default=None, help="--record と一緒に使う: 再生数")
+    exp_group.add_argument("--avg-view-seconds", type=float, default=None, help="--record と一緒に使う: 平均視聴時間(秒)")
+    exp_group.add_argument("--avg-view-pct", type=float, default=None, help="--record と一緒に使う: 平均再生率(%%)")
+    exp_group.add_argument("--retention-5s", type=float, default=None, help="--record と一緒に使う: 5秒維持率(%%)")
+    exp_group.add_argument("--end-retention", type=float, default=None, help="--record と一緒に使う: 終了地点維持率(%%)")
     args = parser.parse_args()
 
     config_path = args.config.expanduser().resolve()
@@ -480,8 +627,76 @@ def main() -> int:
     log.info("=" * 60)
     log.info(f"パイプライン開始 (dry-run={args.dry_run})")
 
+    # ABテストの計画は、検証が有効なときと明示的に呼ばれたときだけ読む
+    exp_settings = config["experiment"]
+    plan: dict[str, Any] | None = None
+    wants_experiment = args.experiment_plan or args.experiment_report or args.record is not None
+    if exp_settings.get("enabled") or wants_experiment:
+        try:
+            plan = experiment_mod.load_plan(base_dir / exp_settings["plan_file"])
+        except experiment_mod.PlanError as exc:
+            log.error(str(exc))
+            log.close()
+            return 1
+
+    if args.experiment_plan:
+        if not exp_settings.get("start_date"):
+            log.error("experiment.start_date が設定されていないため、日程表を作れません。")
+            log.close()
+            return 1
+        log.info(f"==== {plan.get('name', '')} の日程 (毎日 {exp_settings['slot']}) ====")
+        for day, number, pair, arm_key in experiment_mod.iter_schedule(plan, exp_settings):
+            arm = pair["arms"][arm_key]
+            log.info(
+                f"  {day}  {number:>2}日目  {arm_key}案 {arm['label']:<22} "
+                f"{pair['variable']} / {experiment_mod.describe_settings(arm['settings'])}"
+            )
+        log.info("=" * 34)
+        log.close()
+        return 0
+
+    if args.experiment_report:
+        for line in experiment_mod.build_report(plan, state["jobs"], exp_settings):
+            log.info(line)
+        log.close()
+        return 0
+
+    if args.record is not None:
+        metrics = {
+            "views": args.views,
+            "avg_view_seconds": args.avg_view_seconds,
+            "avg_view_pct": args.avg_view_pct,
+            "retention_5s": args.retention_5s,
+            "end_retention": args.end_retention,
+        }
+        metrics = {key: value for key, value in metrics.items() if value is not None}
+        if not metrics:
+            log.error(
+                "記録する数値が指定されていません。"
+                "--views / --avg-view-seconds / --avg-view-pct / --retention-5s / --end-retention "
+                "のどれかを付けてください。"
+            )
+            log.close()
+            return 1
+        try:
+            job = experiment_mod.find_job(state["jobs"], args.record)
+        except experiment_mod.PlanError as exc:
+            log.error(str(exc))
+            log.close()
+            return 1
+        experiment_mod.record_metrics(job, metrics, now)
+        save_state(state_path, state)
+        log.info(f"実測値を記録しました: {job.get('publish_at_local')} 「{job.get('title', '')}」")
+        for key, value in metrics.items():
+            label, unit = experiment_mod.METRIC_FIELDS[key]
+            log.info(f"  {label}: {value}{unit}")
+        log.close()
+        return 0
+
     if args.status:
         print_status(state, now, config, tz, log)
+        if plan is not None and exp_settings.get("start_date"):
+            print_experiment_status(state, plan, config, now, log)
         log.close()
         return 0
 
@@ -533,6 +748,19 @@ def main() -> int:
             publish_at_utc = to_utc_iso(publish_at)
             log.info(f"  割り当てた公開日時: {publish_at.strftime('%Y-%m-%d %H:%M')} ({config['timezone']})")
 
+            assignment = (
+                experiment_mod.assignment_for(publish_at, plan, exp_settings)
+                if plan is not None
+                else None
+            )
+            if assignment is not None:
+                log.info(
+                    f"  ABテスト: {assignment['day_number']}日目 / {assignment['arm']}案"
+                    f"「{assignment['arm_label']}」/ 検証: {assignment['variable']}"
+                )
+                log.info(f"  固定テーマ: {assignment['topic']}")
+                log.info(f"  条件: {experiment_mod.describe_settings(assignment['settings'])}")
+
             job_id = f"{publish_at.strftime('%Y%m%d-%H%M')}-{uuid.uuid4().hex[:6]}"
             work_dir = base_dir / "work" / job_id
             job: dict[str, Any] = {
@@ -543,12 +771,39 @@ def main() -> int:
                 "status": "failed",
                 "title": "",
             }
+            if assignment is not None:
+                job["experiment"] = {
+                    key: assignment[key]
+                    for key in ("plan_name", "pair_id", "variable", "topic", "arm", "arm_label", "day_number")
+                }
+                job["experiment"]["settings"] = assignment["settings"]
 
             steps_started = False
             try:
                 # --- 1. ネタ決め + 台本 ---
                 if args.dry_run:
-                    idea = make_dry_run_idea(index)
+                    idea = make_dry_run_idea(index, assignment)
+                elif assignment is not None:
+                    if config["idea_source"] == "file":
+                        raise RuntimeError(
+                            "ABテストの検証枠は topics.txt から作れません"
+                            "(案ごとの条件を台本へ反映できないため)。"
+                            'idea_source を "claude" にしてください。'
+                        )
+                    # 同じ組のもう1本とはテーマを共有するので、避けるタイトルからは除く
+                    same_pair = [
+                        j["title"]
+                        for j in state["jobs"]
+                        if j.get("title")
+                        and (j.get("experiment") or {}).get("pair_id") == assignment["pair_id"]
+                    ]
+                    idea = generate_idea_with_claude(
+                        config,
+                        [t for t in used_titles if t not in same_pair],
+                        log,
+                        assignment=assignment,
+                        same_pair_titles=same_pair,
+                    )
                 elif config["idea_source"] == "file":
                     idea = generate_idea_from_file(base_dir, config, used_titles, log)
                 else:
@@ -567,8 +822,11 @@ def main() -> int:
                 meta_file = work_dir / "meta.json"
                 video_file = work_dir / config["video_filename"]
                 script_file.write_text(idea["script"], encoding="utf-8")
+                meta: dict[str, Any] = {**idea, "publish_at": publish_at_utc}
+                if assignment is not None:
+                    meta["experiment"] = job["experiment"]
                 meta_file.write_text(
-                    json.dumps({**idea, "publish_at": publish_at_utc}, ensure_ascii=False, indent=2),
+                    json.dumps(meta, ensure_ascii=False, indent=2),
                     encoding="utf-8",
                 )
                 log.info(f"  台本を保存しました: {script_file}")

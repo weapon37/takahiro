@@ -4,3 +4,6 @@ pipeline.config.json
 state/
 logs/
 work/
+
+# Python が自動で作るキャッシュ
+__pycache__/

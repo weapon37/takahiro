@@ -1,0 +1,91 @@
+{
+  "_comment_1": "離脱率改善のための2週間ABテスト計画。1日1本(昼枠)ずつ、2日で1組を検証する。",
+  "_comment_2": "各 arm は baseline を1項目だけ上書きする。2項目以上ちがうと pipeline.py が起動時にエラーを出す。",
+
+  "name": "離脱率改善 2週間ABテスト",
+
+  "primary_metrics": ["retention_5s", "avg_view_pct"],
+  "win_threshold": {
+    "avg_view_pct": 8.0,
+    "retention_5s": 10.0
+  },
+  "min_views_for_judgement": 200,
+  "judge_after_hours": 48,
+
+  "_comment_3": "全ての検証動画に共通する土台。ここを変えると全組に影響するので、テスト中は触らない。",
+  "baseline": {
+    "duration_seconds": 30,
+    "item_count": 3,
+    "first_answer_by_seconds": 3,
+    "cta": "none",
+    "framing": "loss",
+    "amount_style": "none",
+    "audience_style": "task_based"
+  },
+
+  "pairs": [
+    {
+      "id": "p1-loss-vs-gain",
+      "variable": "損失型か利益型か",
+      "topic": "AIに任せる判断をまちがえると時間が増えてしまう仕事",
+      "arms": {
+        "A": { "label": "損失型", "settings": { "framing": "loss" } },
+        "B": { "label": "利益型", "settings": { "framing": "gain" } }
+      }
+    },
+    {
+      "id": "p2-duration",
+      "variable": "尺",
+      "topic": "無料のAIだけで毎日30分の作業時間を取り戻す方法",
+      "arms": {
+        "A": { "label": "29秒", "settings": { "duration_seconds": 29 } },
+        "B": { "label": "39秒", "settings": { "duration_seconds": 39 } }
+      }
+    },
+    {
+      "id": "p3-item-count",
+      "variable": "項目数",
+      "topic": "副業に使えるAIツール",
+      "arms": {
+        "A": { "label": "BEST3", "settings": { "item_count": 3 } },
+        "B": { "label": "BEST5", "settings": { "item_count": 5 } }
+      }
+    },
+    {
+      "id": "p4-answer-timing",
+      "variable": "答えを出す時刻",
+      "topic": "会社員がAIで最初に消すべき作業",
+      "arms": {
+        "A": { "label": "2秒で1つ目を提示", "settings": { "first_answer_by_seconds": 2 } },
+        "B": { "label": "6秒まで順位を引っ張る", "settings": { "first_answer_by_seconds": 6 } }
+      }
+    },
+    {
+      "id": "p5-amount",
+      "variable": "金額の有無",
+      "topic": "ChatGPTの有料版が必要になる人と、無料版で十分な人のちがい",
+      "arms": {
+        "A": { "label": "金額なし", "settings": { "amount_style": "none" } },
+        "B": { "label": "月3,000円と明示", "settings": { "amount_style": "explicit_yen" } }
+      }
+    },
+    {
+      "id": "p6-audience",
+      "variable": "対象者の表現",
+      "topic": "提案書や見積書づくりにかかる時間をAIで減らす方法",
+      "arms": {
+        "A": { "label": "職種名で指定", "settings": { "audience_style": "job_title" } },
+        "B": { "label": "作業場面で指定", "settings": { "audience_style": "task_based" } }
+      }
+    },
+    {
+      "id": "p7-cta",
+      "variable": "CTA",
+      "topic": "AIに丸投げしてはいけない仕事の見分け方",
+      "arms": {
+        "A": { "label": "結論直後に終了", "settings": { "cta": "none" } },
+        "B": { "label": "最後に2秒のコメントCTA", "settings": { "cta": "comment_2s" } }
+      }
+    }
+  ]
+}
