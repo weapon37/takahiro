@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { POST_TYPES, POST_TYPE_IDS, getPostTypeById } from "@/lib/post-types";
+import { TARGET_AUDIENCE, GENRE } from "@/lib/audience";
+import { buildAnthropicClient } from "@/lib/anthropic-client";
 
 export const runtime = "nodejs";
 
@@ -19,14 +21,6 @@ const DEFAULT_COUNT = 10;
 const GENERATION_TOOL_NAME = "submit_generation";
 
 type ImageMediaType = "image/png" | "image/jpeg" | "image/webp" | "image/gif";
-
-function buildAnthropicClient(): Anthropic {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) {
-    throw new Error("ANTHROPIC_API_KEY が設定されていません。");
-  }
-  return new Anthropic({ apiKey });
-}
 
 function clampCount(raw: FormDataEntryValue | null): number {
   const n = Number(raw);
@@ -115,11 +109,6 @@ export async function POST(request: Request) {
   const typeList = POST_TYPES.map(
     (t) => `- ${t.id}: ${t.label} — ${t.description}`,
   ).join("\n");
-
-  const TARGET_AUDIENCE =
-    "30〜40代で、営業職や現場仕事など外に出て働くスタイルのため、まとまった副業の時間を取りづらい人";
-  const GENRE =
-    "AIを活用した副業(AIツールを使って隙間時間・移動時間でもできる副業、AIで作業を効率化して副業の時間を生み出す方法など)";
 
   const sharedInstructions =
     `1. 型リストの中から最も当てはまる型(detected_type_id)を1つ選んでください。\n` +
