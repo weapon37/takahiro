@@ -3,7 +3,12 @@
 import { useCallback, useState } from "react";
 import { POST_TYPES } from "@/lib/post-types";
 import { PURPOSE_LABELS } from "@/lib/types";
-import { MIN_WEEKS, MAX_WEEKS } from "@/lib/plan-constants";
+import {
+  MIN_WEEKS,
+  MAX_WEEKS,
+  MIN_POSTS_PER_DAY,
+  MAX_POSTS_PER_DAY,
+} from "@/lib/plan-constants";
 import type { PlanTheme, QueueItem, QueueStatus } from "@/lib/types";
 
 const STATUS_LABELS: Record<QueueStatus, string> = {
@@ -47,6 +52,7 @@ export default function PlanDashboard({
 }: PlanDashboardProps) {
   const [startDate, setStartDate] = useState(todayStr());
   const [weeks, setWeeks] = useState(2);
+  const [postsPerDay, setPostsPerDay] = useState(1);
   const [isGenerating, setIsGenerating] = useState(false);
   const [genError, setGenError] = useState<string | null>(null);
   const [genSummary, setGenSummary] = useState<string | null>(null);
@@ -89,12 +95,12 @@ export default function PlanDashboard({
       const res = await fetch("/api/plan/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ startDate, weeks }),
+        body: JSON.stringify({ startDate, weeks, postsPerDay }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "計画の生成に失敗しました。");
       setGenSummary(
-        `「${data.longTermTheme}」というテーマで${data.weeks}週間分を生成しました。新規追加 ${data.dailyDrafts.inserted}件 / 既存のため保持 ${data.dailyDrafts.skipped}件`,
+        `「${data.longTermTheme}」というテーマで${data.weeks}週間・1日${data.postsPerDay}投稿分を生成しました。新規追加 ${data.dailyDrafts.inserted}件 / 既存のため保持 ${data.dailyDrafts.skipped}件`,
       );
       await loadList();
     } catch (err) {
@@ -174,6 +180,23 @@ export default function PlanDashboard({
               )}
             </select>
           </label>
+          <label className="flex flex-col gap-1 text-sm text-gray-600 dark:text-gray-300">
+            1日の投稿数
+            <select
+              value={postsPerDay}
+              onChange={(e) => setPostsPerDay(Number(e.target.value))}
+              className="rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-blue-500 dark:focus:border-blue-400"
+            >
+              {Array.from(
+                { length: MAX_POSTS_PER_DAY - MIN_POSTS_PER_DAY + 1 },
+                (_, i) => MIN_POSTS_PER_DAY + i,
+              ).map((n) => (
+                <option key={n} value={n}>
+                  {n}投稿
+                </option>
+              ))}
+            </select>
+          </label>
           <button
             type="button"
             onClick={handleGenerate}
@@ -195,6 +218,7 @@ export default function PlanDashboard({
         )}
         <p className="text-xs text-gray-500 dark:text-gray-400">
           すでに下書き・承認済みの日は上書きされません。新しい期間だけ追加したいときは開始日をずらして生成してください。
+          1日の投稿数を2以上にすると、承認した投稿は同じ日にまとめて自動投稿されます(時間を分けて投稿するには別途対応が必要です)。
         </p>
       </div>
 
@@ -269,6 +293,9 @@ export default function PlanDashboard({
               <div className="flex flex-wrap items-center gap-2 text-xs">
                 <span className="font-semibold text-gray-800 dark:text-gray-100">
                   {item.scheduledDate}
+                </span>
+                <span className="rounded-full bg-gray-100 dark:bg-gray-800 px-2 py-0.5 text-gray-600 dark:text-gray-300">
+                  {item.slot}本目
                 </span>
                 <span className="rounded-full bg-gray-100 dark:bg-gray-800 px-2 py-0.5 text-gray-600 dark:text-gray-300">
                   {typeLabel(item.typeId)}

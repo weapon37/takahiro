@@ -2,12 +2,18 @@ import { buildAnthropicClient } from "@/lib/anthropic-client";
 import { TARGET_AUDIENCE, GENRE } from "@/lib/audience";
 import { POST_TYPES, POST_TYPE_IDS } from "@/lib/post-types";
 import { PURPOSE_IDS, PURPOSE_LABELS, type PostPurpose } from "@/lib/types";
-import { MIN_WEEKS, MAX_WEEKS } from "@/lib/plan-constants";
+import {
+  MIN_WEEKS,
+  MAX_WEEKS,
+  MIN_POSTS_PER_DAY,
+  MAX_POSTS_PER_DAY,
+} from "@/lib/plan-constants";
 
-export { MIN_WEEKS, MAX_WEEKS };
+export { MIN_WEEKS, MAX_WEEKS, MIN_POSTS_PER_DAY, MAX_POSTS_PER_DAY };
 
 interface DailyDraft {
   dayOffset: number;
+  slot: number;
   typeId: string;
   purpose: PostPurpose;
   content: string;
@@ -28,9 +34,17 @@ export interface GeneratedPlan {
 
 const GENERATE_PLAN_TOOL = "submit_content_plan";
 
-export async function generatePlan(weeks: number): Promise<GeneratedPlan> {
+export async function generatePlan(
+  weeks: number,
+  postsPerDay: number = 1,
+): Promise<GeneratedPlan> {
   const clampedWeeks = Math.min(MAX_WEEKS, Math.max(MIN_WEEKS, Math.round(weeks)));
+  const clampedPostsPerDay = Math.min(
+    MAX_POSTS_PER_DAY,
+    Math.max(MIN_POSTS_PER_DAY, Math.round(postsPerDay)),
+  );
   const totalDays = clampedWeeks * 7;
+  const totalDrafts = totalDays * clampedPostsPerDay;
   const client = buildAnthropicClient();
 
   const typeList = POST_TYPES.map(
@@ -49,16 +63,20 @@ export async function generatePlan(weeks: number): Promise<GeneratedPlan> {
     `以下を作成してください。\n` +
     `1. long_term_theme: 今後${clampedWeeks}週間全体を貫く長期テーマと、long_term_rationale にその狙いの説明。\n` +
     `2. weekly_themes: 週ごと(week_index は 0〜${clampedWeeks - 1})の中期テーマ。長期テーマを分解し、週ごとに違う切り口にすること。\n` +
-    `3. daily_drafts: 全${totalDays}日分(day_offset は 0〜${totalDays - 1}、1日1投稿)の投稿下書き。\n` +
+    `3. daily_drafts: 全${totalDays}日分 × 1日${clampedPostsPerDay}投稿、合計${totalDrafts}件の投稿下書き。\n` +
+    `   - day_offset は 0〜${totalDays - 1}、slot は 1〜${clampedPostsPerDay}(同じ日の何本目の投稿か)を指定してください。\n` +
     `   - type_id は以下の型リストから選択してください。\n${typeList}\n\n` +
     `   - purpose は以下のリストから選択してください。value/engagement/relatability/story系が中心になるようにし、proof(実績・成果)は偶に留めてください。\n${purposeList}\n\n` +
     `   - 1週間の中で type_id・purpose に変化をつけ、同じ型が連続しすぎないようにしてください。\n` +
+    (clampedPostsPerDay > 1
+      ? `   - 同じ日の複数投稿(同じday_offsetでslotが違うもの)は、type_id・purpose・切り口を必ず変えて、内容が重複しないようにしてください。\n`
+      : "") +
     `   - content はそのままX投稿として使える完成形の日本語文章(300字以内、説明や見出しなし)にしてください。\n` +
     `   - 元の投稿の丸写しではなく、ターゲット・ジャンルに沿ったオリジナルの内容にしてください。`;
 
   const message = await client.messages.create({
     model: process.env.ANTHROPIC_MODEL || "claude-sonnet-4-6",
-    max_tokens: 8192,
+    max_tokens: 16000,
     system:
       "あなたはSNSマーケティングの専門家で、フォロワー獲得のための中長期投稿計画を立てます。必ず submit_content_plan ツールを呼び出して結果を返してください。",
     messages: [{ role: "user", content: instructionText }],
@@ -87,17 +105,18 @@ export async function generatePlan(weeks: number): Promise<GeneratedPlan> {
             },
             daily_drafts: {
               type: "array",
-              minItems: totalDays,
-              maxItems: totalDays,
+              minItems: totalDrafts,
+              maxItems: totalDrafts,
               items: {
                 type: "object",
                 properties: {
                   day_offset: { type: "integer" },
+                  slot: { type: "integer" },
                   type_id: { type: "string", enum: POST_TYPE_IDS },
                   purpose: { type: "string", enum: PURPOSE_IDS },
                   content: { type: "string" },
                 },
-                required: ["day_offset", "type_id", "purpose", "content"],
+                required: ["day_offset", "slot", "type_id", "purpose", "content"],
               },
             },
           },
@@ -126,6 +145,7 @@ export async function generatePlan(weeks: number): Promise<GeneratedPlan> {
     weekly_themes: { week_index: number; theme: string; rationale: string }[];
     daily_drafts: {
       day_offset: number;
+      slot: number;
       type_id: string;
       purpose: PostPurpose;
       content: string;
@@ -142,6 +162,7 @@ export async function generatePlan(weeks: number): Promise<GeneratedPlan> {
     })),
     dailyDrafts: input.daily_drafts.map((d) => ({
       dayOffset: d.day_offset,
+      slot: d.slot,
       typeId: d.type_id,
       purpose: d.purpose,
       content: d.content,

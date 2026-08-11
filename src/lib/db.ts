@@ -56,7 +56,8 @@ export async function ensureSchema(): Promise<void> {
   await query(`
     CREATE TABLE IF NOT EXISTS post_queue (
       id SERIAL PRIMARY KEY,
-      scheduled_date DATE NOT NULL UNIQUE,
+      scheduled_date DATE NOT NULL,
+      slot INTEGER NOT NULL DEFAULT 1,
       type_id TEXT NOT NULL,
       purpose TEXT NOT NULL DEFAULT 'value',
       content TEXT NOT NULL,
@@ -66,6 +67,17 @@ export async function ensureSchema(): Promise<void> {
       created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
       updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
     )
+  `);
+  // 旧スキーマ(1日1投稿)からの移行: scheduled_date単体のUNIQUE制約を
+  // (scheduled_date, slot)の複合UNIQUE制約に置き換える
+  await query(`ALTER TABLE post_queue ADD COLUMN IF NOT EXISTS slot INTEGER NOT NULL DEFAULT 1`);
+  await query(`ALTER TABLE post_queue DROP CONSTRAINT IF EXISTS post_queue_scheduled_date_key`);
+  await query(`
+    DO $$
+    BEGIN
+      ALTER TABLE post_queue ADD CONSTRAINT post_queue_date_slot_key UNIQUE (scheduled_date, slot);
+    EXCEPTION WHEN duplicate_object THEN NULL;
+    END $$;
   `);
   await query(
     `CREATE INDEX IF NOT EXISTS idx_post_queue_date ON post_queue(scheduled_date)`,
@@ -132,6 +144,7 @@ export async function listThemes(from: string, to: string): Promise<PlanTheme[]>
 interface QueueRow {
   id: number;
   scheduled_date: string;
+  slot: number;
   type_id: string;
   purpose: string;
   content: string;
@@ -144,15 +157,16 @@ interface QueueRow {
 
 export async function listQueueItems(from: string, to: string): Promise<QueueItem[]> {
   const rows = await query<QueueRow>(
-    `SELECT id, scheduled_date::text, type_id, purpose, content, status, x_post_id, error_message, created_at, updated_at
+    `SELECT id, scheduled_date::text, slot, type_id, purpose, content, status, x_post_id, error_message, created_at, updated_at
      FROM post_queue
      WHERE scheduled_date BETWEEN $1 AND $2
-     ORDER BY scheduled_date ASC`,
+     ORDER BY scheduled_date ASC, slot ASC`,
     [from, to],
   );
   return rows.map((r) => ({
     id: r.id,
     scheduledDate: r.scheduled_date,
+    slot: r.slot,
     typeId: r.type_id,
     purpose: r.purpose as QueueItem["purpose"],
     content: r.content,

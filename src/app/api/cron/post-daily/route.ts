@@ -7,12 +7,13 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 // 万一クーロンが数日止まっていた場合に備え、直近の未投稿分もまとめて拾うが、
-// 大量投稿を避けるため一度に処理する件数には上限を設ける。
-const MAX_CATCH_UP = 3;
+// 大量投稿を避けるため一度に処理する件数には上限を設ける(1日最大3投稿 × 3日分)。
+const MAX_CATCH_UP = 9;
 
 interface QueueRow {
   id: number;
   scheduled_date: string;
+  slot: number;
   content: string;
 }
 
@@ -51,10 +52,10 @@ export async function GET(request: Request) {
 
   const today = todayJST();
   const rows = await query<QueueRow>(
-    `SELECT id, scheduled_date::text, content
+    `SELECT id, scheduled_date::text, slot, content
      FROM post_queue
      WHERE status = 'approved' AND scheduled_date <= $1
-     ORDER BY scheduled_date ASC
+     ORDER BY scheduled_date ASC, slot ASC
      LIMIT $2`,
     [today, MAX_CATCH_UP],
   );

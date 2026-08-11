@@ -1,6 +1,12 @@
 import { NextResponse } from "next/server";
 import { query, isDatabaseConfigured } from "@/lib/db";
-import { generatePlan, MIN_WEEKS, MAX_WEEKS } from "@/lib/plan-generator";
+import {
+  generatePlan,
+  MIN_WEEKS,
+  MAX_WEEKS,
+  MIN_POSTS_PER_DAY,
+  MAX_POSTS_PER_DAY,
+} from "@/lib/plan-generator";
 import { todayJST, addDays, isValidDateString } from "@/lib/date";
 import { buildAnthropicClient } from "@/lib/anthropic-client";
 
@@ -27,7 +33,7 @@ export async function POST(request: Request) {
     );
   }
 
-  let body: { startDate?: unknown; weeks?: unknown };
+  let body: { startDate?: unknown; weeks?: unknown; postsPerDay?: unknown };
   try {
     body = await request.json();
   } catch {
@@ -42,10 +48,14 @@ export async function POST(request: Request) {
   const weeks = Number.isFinite(weeksRaw)
     ? Math.min(MAX_WEEKS, Math.max(MIN_WEEKS, Math.round(weeksRaw)))
     : 2;
+  const postsPerDayRaw = Number(body.postsPerDay);
+  const postsPerDay = Number.isFinite(postsPerDayRaw)
+    ? Math.min(MAX_POSTS_PER_DAY, Math.max(MIN_POSTS_PER_DAY, Math.round(postsPerDayRaw)))
+    : 1;
 
   let plan;
   try {
-    plan = await generatePlan(weeks);
+    plan = await generatePlan(weeks, postsPerDay);
   } catch (error) {
     return NextResponse.json(
       { error: error instanceof Error ? error.message : "計画の生成に失敗しました。" },
@@ -77,11 +87,11 @@ export async function POST(request: Request) {
   for (const draft of plan.dailyDrafts) {
     const scheduledDate = addDays(startDate, draft.dayOffset);
     const rows = await query<{ id: number }>(
-      `INSERT INTO post_queue (scheduled_date, type_id, purpose, content, status)
-       VALUES ($1, $2, $3, $4, 'draft')
-       ON CONFLICT (scheduled_date) DO NOTHING
+      `INSERT INTO post_queue (scheduled_date, slot, type_id, purpose, content, status)
+       VALUES ($1, $2, $3, $4, $5, 'draft')
+       ON CONFLICT (scheduled_date, slot) DO NOTHING
        RETURNING id`,
-      [scheduledDate, draft.typeId, draft.purpose, draft.content],
+      [scheduledDate, draft.slot, draft.typeId, draft.purpose, draft.content],
     );
     if (rows.length > 0) inserted += 1;
     else skipped += 1;
@@ -91,6 +101,7 @@ export async function POST(request: Request) {
     startDate,
     endDate: periodEnd,
     weeks,
+    postsPerDay,
     longTermTheme: plan.longTermTheme,
     longTermRationale: plan.longTermRationale,
     weeklyThemesCount: plan.weeklyThemes.length,

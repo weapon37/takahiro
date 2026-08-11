@@ -36,6 +36,7 @@ export interface PlanTheme {
 export interface QueueItem {
   id: number;
   scheduledDate: string;
+  slot: number;
   typeId: string;
   purpose: PostPurpose;
   content: string;
