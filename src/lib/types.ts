@@ -46,6 +46,19 @@ export interface QueueItem {
   updatedAt: string;
 }
 
+export interface PostSnapshot {
+  id: number;
+  xPostId: string;
+  content: string;
+  postedAt: string;
+  impressions: number | null;
+  likes: number | null;
+  reposts: number | null;
+  replies: number | null;
+  quotes: number | null;
+  fetchedAt: string;
+}
+
 export interface MetricEntry {
   id: number;
   recordedDate: string;

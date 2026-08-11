@@ -28,3 +28,35 @@ export async function postTweet(text: string): Promise<{ id: string }> {
   const result = await client.v2.tweet(text);
   return { id: result.data.id };
 }
+
+export interface FetchedPost {
+  id: string;
+  content: string;
+  postedAt: string;
+  impressions: number | null;
+  likes: number | null;
+  reposts: number | null;
+  replies: number | null;
+  quotes: number | null;
+}
+
+export async function fetchOwnRecentPosts(maxResults = 20): Promise<FetchedPost[]> {
+  const client = buildClient();
+  const me = await client.v2.me();
+  const timeline = await client.v2.userTimeline(me.data.id, {
+    max_results: Math.min(100, Math.max(5, maxResults)),
+    exclude: ["retweets", "replies"],
+    "tweet.fields": ["public_metrics", "created_at"],
+  });
+
+  return timeline.tweets.map((tweet) => ({
+    id: tweet.id,
+    content: tweet.text,
+    postedAt: tweet.created_at ?? new Date().toISOString(),
+    impressions: tweet.public_metrics?.impression_count ?? null,
+    likes: tweet.public_metrics?.like_count ?? null,
+    reposts: tweet.public_metrics?.retweet_count ?? null,
+    replies: tweet.public_metrics?.reply_count ?? null,
+    quotes: tweet.public_metrics?.quote_count ?? null,
+  }));
+}
