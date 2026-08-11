@@ -43,6 +43,9 @@ export default function RootLayout({
           <Link href="/settings" className="hover:text-gray-900 dark:hover:text-white">
             設定
           </Link>
+          <Link href="/marathon" className="hover:text-gray-900 dark:hover:text-white">
+            マラソンコース
+          </Link>
         </nav>
         {children}
       </body>
