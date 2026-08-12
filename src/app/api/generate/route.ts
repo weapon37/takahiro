@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { POST_TYPES, POST_TYPE_IDS, getPostTypeById } from "@/lib/post-types";
+import { DEFAULT_PERSONA, MAX_PERSONA_FIELD_LENGTH } from "@/lib/personas";
 
 export const runtime = "nodejs";
 
@@ -34,6 +35,25 @@ function clampCount(raw: FormDataEntryValue | null): number {
   return Math.min(MAX_COUNT, Math.max(MIN_COUNT, Math.round(n)));
 }
 
+/**
+ * ターゲット・ジャンルの自由入力を取り出す。
+ * 未指定や空文字のときは既定のペルソナにフォールバックする。
+ */
+function readPersonaField(
+  raw: FormDataEntryValue | null,
+  fallback: string,
+): string | { error: string } {
+  if (typeof raw !== "string") return fallback;
+  const trimmed = raw.trim();
+  if (trimmed.length === 0) return fallback;
+  if (trimmed.length > MAX_PERSONA_FIELD_LENGTH) {
+    return {
+      error: `ターゲット・ジャンルは${MAX_PERSONA_FIELD_LENGTH}文字以下で入力してください。`,
+    };
+  }
+  return trimmed;
+}
+
 export async function POST(request: Request) {
   let formData: FormData;
   try {
@@ -54,6 +74,23 @@ export async function POST(request: Request) {
   }
 
   const count = clampCount(formData.get("count"));
+
+  const audienceResult = readPersonaField(
+    formData.get("audience"),
+    DEFAULT_PERSONA.audience,
+  );
+  if (typeof audienceResult !== "string") {
+    return NextResponse.json({ error: audienceResult.error }, { status: 400 });
+  }
+  const genreResult = readPersonaField(
+    formData.get("genre"),
+    DEFAULT_PERSONA.genre,
+  );
+  if (typeof genreResult !== "string") {
+    return NextResponse.json({ error: genreResult.error }, { status: 400 });
+  }
+  const targetAudience = audienceResult;
+  const genre = genreResult;
 
   let imageBase64: string | null = null;
   let imageMediaType: ImageMediaType | null = null;
@@ -116,22 +153,22 @@ export async function POST(request: Request) {
     (t) => `- ${t.id}: ${t.label} — ${t.description}`,
   ).join("\n");
 
-  const TARGET_AUDIENCE =
-    "30〜40代で、営業職や現場仕事など外に出て働くスタイルのため、まとまった副業の時間を取りづらい人";
-  const GENRE =
-    "AIを活用した副業(AIツールを使って隙間時間・移動時間でもできる副業、AIで作業を効率化して副業の時間を生み出す方法など)";
-
   const sharedInstructions =
     `1. 型リストの中から最も当てはまる型(detected_type_id)を1つ選んでください。\n` +
     `2. なぜこの投稿がバズったのか、viral_factors に2〜4個の箇条書きで挙げ、reasoning で説明してください。\n` +
     `3. この投稿と同じ「型」「構成」「フック(惹きの作り方)」「文体・テンポ」を踏襲した新しいX投稿を、ちょうど${count}個 generated_posts に作成してください。\n` +
     `   - 内容(トピック・具体例)は、元の投稿のテーマに関わらず、必ず以下のターゲット・ジャンルに合わせて作成してください。\n` +
-    `     - ターゲット: ${TARGET_AUDIENCE}\n` +
-    `     - ジャンル: ${GENRE}\n` +
+    `     - ターゲット: ${targetAudience}\n` +
+    `     - ジャンル: ${genre}\n` +
     `   - このターゲットが「これは自分のことだ」と感じる悩み・あるある・言葉選びを使い、上記ジャンルの内容に落とし込んでください。\n` +
     `   - 元の投稿の文章をそのまま使ったり、単語を少し変えただけの言い換えにすることは禁止です。型だけを再利用したオリジナルの投稿にしてください。\n` +
     `   - それぞれ独立して、そのままX(旧Twitter)にコピペして投稿できる完成形の日本語の文章にしてください(説明や見出しを付けない)。\n` +
-    `   - 1投稿はX投稿として読みやすい長さ(目安300字以内)にしてください。\n\n` +
+    `   - 1投稿はX投稿として読みやすい長さ(目安300字以内)にしてください。\n` +
+    `   - ${count}個が互いに似通わないよう、切り口・具体例・扱うトピックを分散させてください。\n\n` +
+    `次の表現は、景品表示法・薬機法に触れるおそれがあるため使わないでください:\n` +
+    `   - 「必ず」「絶対に」「誰でも」など、成果や効果を断定・保証する表現\n` +
+    `   - 食品・サプリメント・器具について、疾病の治療や予防、身体の機能の改善を示す表現\n` +
+    `   - 医学的・科学的な裏付けのない数値や断定的な健康効果の主張\n\n` +
     `型リスト:\n${typeList}`;
 
   const instructionText =

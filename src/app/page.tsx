@@ -10,6 +10,7 @@ export default function Home() {
         <p className="text-gray-600 dark:text-gray-300">
           バズったX(旧Twitter)投稿のテキストやスクリーンショットを入れると、
           AIがその「型」を分析し、同じ構成・フックを使った新しい投稿を何パターンも自動生成します。
+          ターゲットとジャンルは自由に設定でき、結果はCSVで書き出して予約投稿に回せます。
         </p>
       </div>
       <PostGeneratorForm />

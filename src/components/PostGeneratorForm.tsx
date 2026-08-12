@@ -1,9 +1,28 @@
 "use client";
 
-import { useRef, useState, type DragEvent } from "react";
+import {
+  useRef,
+  useState,
+  useSyncExternalStore,
+  type DragEvent,
+} from "react";
 import type { PostTypeDefinition } from "@/lib/post-types";
+import {
+  MAX_PERSONA_FIELD_LENGTH,
+  PERSONA_PRESETS,
+  getPersonaById,
+} from "@/lib/personas";
+import {
+  getPersonaServerSnapshot,
+  getPersonaSnapshot,
+  setPersona,
+  subscribeToPersona,
+} from "@/lib/persona-store";
+import { buildPostsCsv, downloadCsv } from "@/lib/csv";
 
 type InputMode = "text" | "image";
+
+const CUSTOM_PERSONA_ID = "custom";
 
 interface GenerationResult {
   detectedType: PostTypeDefinition;
@@ -23,6 +42,13 @@ export default function PostGeneratorForm() {
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [count, setCount] = useState(10);
+  const persona = useSyncExternalStore(
+    subscribeToPersona,
+    getPersonaSnapshot,
+    getPersonaServerSnapshot,
+  );
+  const { presetId, audience, genre } = persona;
+  const [isPersonaOpen, setIsPersonaOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<GenerationResult | null>(null);
@@ -30,6 +56,24 @@ export default function PostGeneratorForm() {
   const [copiedAll, setCopiedAll] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const copyTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  function applyPreset(id: string) {
+    const preset = getPersonaById(id);
+    setPersona(
+      preset
+        ? { presetId: id, audience: preset.audience, genre: preset.genre }
+        : { ...persona, presetId: id },
+    );
+  }
+
+  // 本文を直接編集したらプリセットから外れたものとして扱う。
+  function editAudience(value: string) {
+    setPersona({ ...persona, audience: value, presetId: CUSTOM_PERSONA_ID });
+  }
+
+  function editGenre(value: string) {
+    setPersona({ ...persona, genre: value, presetId: CUSTOM_PERSONA_ID });
+  }
 
   function switchMode(next: InputMode) {
     setMode(next);
@@ -61,6 +105,8 @@ export default function PostGeneratorForm() {
       const formData = new FormData();
       formData.append("mode", mode);
       formData.append("count", String(count));
+      formData.append("audience", audience);
+      formData.append("genre", genre);
       if (mode === "text") {
         formData.append("text", pastedText);
       } else if (file) {
@@ -102,11 +148,111 @@ export default function PostGeneratorForm() {
     flashCopied(setCopiedAll);
   }
 
+  function exportCsv() {
+    if (!result) return;
+    const csv = buildPostsCsv(result.posts, result.detectedType.label);
+    const stamp = new Date().toISOString().slice(0, 10);
+    downloadCsv(csv, `posts-${stamp}.csv`);
+  }
+
   const canSubmit =
-    !isLoading && (mode === "text" ? pastedText.trim().length > 0 : !!file);
+    !isLoading &&
+    audience.trim().length > 0 &&
+    genre.trim().length > 0 &&
+    audience.length <= MAX_PERSONA_FIELD_LENGTH &&
+    genre.length <= MAX_PERSONA_FIELD_LENGTH &&
+    (mode === "text" ? pastedText.trim().length > 0 : !!file);
+
+  const activePresetLabel =
+    getPersonaById(presetId)?.label ?? "カスタム(自由入力)";
 
   return (
     <div className="flex w-full max-w-2xl flex-col gap-6">
+      {/* ターゲット・ジャンル設定 */}
+      <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
+        <button
+          type="button"
+          onClick={() => setIsPersonaOpen((v) => !v)}
+          className="flex w-full items-center justify-between gap-4 px-4 py-3 text-left"
+        >
+          <span className="min-w-0">
+            <span className="block text-xs text-gray-500 dark:text-gray-400">
+              投稿するジャンル
+            </span>
+            <span className="block truncate text-sm font-medium text-gray-900 dark:text-gray-100">
+              {activePresetLabel}
+            </span>
+          </span>
+          <span className="shrink-0 text-sm text-blue-600 dark:text-blue-400">
+            {isPersonaOpen ? "閉じる" : "変更"}
+          </span>
+        </button>
+
+        {isPersonaOpen && (
+          <div className="flex flex-col gap-4 border-t border-gray-200 dark:border-gray-700 p-4">
+            <div className="flex flex-col gap-1.5">
+              <label
+                htmlFor="persona-preset"
+                className="text-sm font-medium text-gray-700 dark:text-gray-200"
+              >
+                プリセット
+              </label>
+              <select
+                id="persona-preset"
+                value={presetId}
+                onChange={(e) => applyPreset(e.target.value)}
+                className="rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-blue-500 dark:focus:border-blue-400"
+              >
+                {PERSONA_PRESETS.map((preset) => (
+                  <option key={preset.id} value={preset.id}>
+                    {preset.label}
+                  </option>
+                ))}
+                <option value={CUSTOM_PERSONA_ID}>カスタム(自由入力)</option>
+              </select>
+            </div>
+
+            <div className="flex flex-col gap-1.5">
+              <label
+                htmlFor="persona-audience"
+                className="text-sm font-medium text-gray-700 dark:text-gray-200"
+              >
+                ターゲット(誰に向けて書くか)
+              </label>
+              <textarea
+                id="persona-audience"
+                value={audience}
+                onChange={(e) => editAudience(e.target.value)}
+                rows={3}
+                maxLength={MAX_PERSONA_FIELD_LENGTH}
+                className="w-full resize-none rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 p-3 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 outline-none focus:border-blue-500 dark:focus:border-blue-400"
+              />
+            </div>
+
+            <div className="flex flex-col gap-1.5">
+              <label
+                htmlFor="persona-genre"
+                className="text-sm font-medium text-gray-700 dark:text-gray-200"
+              >
+                ジャンル(何について書くか)
+              </label>
+              <textarea
+                id="persona-genre"
+                value={genre}
+                onChange={(e) => editGenre(e.target.value)}
+                rows={3}
+                maxLength={MAX_PERSONA_FIELD_LENGTH}
+                className="w-full resize-none rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 p-3 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 outline-none focus:border-blue-500 dark:focus:border-blue-400"
+              />
+            </div>
+
+            <p className="text-xs text-gray-500 dark:text-gray-400">
+              ここで設定した内容はこのブラウザに保存され、次回も引き継がれます。
+            </p>
+          </div>
+        )}
+      </div>
+
       {/* モード切替タブ */}
       <div className="flex gap-2 rounded-lg bg-gray-100 dark:bg-gray-800 p-1">
         <button
@@ -251,13 +397,22 @@ export default function PostGeneratorForm() {
             <h3 className="font-semibold text-gray-800 dark:text-gray-100">
               量産された投稿 ({result.posts.length}個)
             </h3>
-            <button
-              type="button"
-              onClick={copyAll}
-              className="rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-1.5 text-sm font-medium text-gray-700 dark:text-gray-200 transition-colors hover:bg-gray-50 dark:hover:bg-gray-700"
-            >
-              {copiedAll ? "コピーしました!" : "全てコピー"}
-            </button>
+            <div className="flex gap-2">
+              <button
+                type="button"
+                onClick={copyAll}
+                className="rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-1.5 text-sm font-medium text-gray-700 dark:text-gray-200 transition-colors hover:bg-gray-50 dark:hover:bg-gray-700"
+              >
+                {copiedAll ? "コピーしました!" : "全てコピー"}
+              </button>
+              <button
+                type="button"
+                onClick={exportCsv}
+                className="rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-1.5 text-sm font-medium text-gray-700 dark:text-gray-200 transition-colors hover:bg-gray-50 dark:hover:bg-gray-700"
+              >
+                CSVで書き出す
+              </button>
+            </div>
           </div>
 
           {/* 投稿カード一覧 */}
