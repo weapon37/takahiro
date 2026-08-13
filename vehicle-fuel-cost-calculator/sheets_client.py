@@ -69,6 +69,19 @@ def get_sheet_titles(sheets_service, spreadsheet_id: str):
     return {s["properties"]["title"] for s in meta.get("sheets", [])}
 
 
+def get_sheet_id(sheets_service, spreadsheet_id: str, sheet_name: str) -> int:
+    """書式設定などに必要な数値のシートIDを取得する"""
+    try:
+        meta = sheets_service.spreadsheets().get(spreadsheetId=spreadsheet_id).execute()
+    except HttpError as e:
+        raise ConfigError(f"シート情報の取得に失敗しました: {e}") from e
+    for sheet in meta.get("sheets", []):
+        props = sheet["properties"]
+        if props["title"] == sheet_name:
+            return props["sheetId"]
+    raise ConfigError(f"シート '{sheet_name}' が見つかりません。")
+
+
 def ensure_sheet_exists(sheets_service, spreadsheet_id: str, sheet_name: str):
     if sheet_name in get_sheet_titles(sheets_service, spreadsheet_id):
         return
