@@ -125,6 +125,8 @@ python ocr_driving_log.py --images log.jpg --sheet 2026.8 --apply
 - `sheet` は書き込み先のシート名(例: `2026.8`)。シートが存在しなければ自動作成されます
 - 1〜31日の全行にヘッダーと数式スケルトンを用意し、`entries`に含まれる日だけ実データを上書きします。含まれない日は既存の内容を保持します
 
+実際に記録した月次データは `data/` に置いています(例: `data/driving_log_2026-08.json`)。`sample_data/` は動作確認用のサンプルです。
+
 ```bash
 python update_driving_log.py --data sample_data/driving_log.json
 ```

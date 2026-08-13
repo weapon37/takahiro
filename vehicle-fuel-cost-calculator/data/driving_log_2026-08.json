@@ -1,0 +1,9 @@
+{
+  "sheet": "2026.8",
+  "entries": [
+    {"day": 3, "end_km": 25160, "distance_km": 20, "driver": "A", "note": ""},
+    {"day": 5, "end_km": 25175, "distance_km": 15, "driver": "AB", "note": ""},
+    {"day": 7, "end_km": 25188, "distance_km": 13, "driver": "A", "note": ""},
+    {"day": 9, "end_km": 25201, "distance_km": 13, "driver": "A", "note": ""}
+  ]
+}
