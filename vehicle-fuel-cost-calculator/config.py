@@ -41,5 +41,4 @@ def load_config():
     return {
         "service_account_file": get_setting("GOOGLE_SERVICE_ACCOUNT_FILE", required=True),
         "spreadsheet_id": get_setting("SPREADSHEET_ID", required=True),
-        "fuel_sheet_name": get_setting("FUEL_SHEET_NAME", default="ガソリン代按分"),
     }

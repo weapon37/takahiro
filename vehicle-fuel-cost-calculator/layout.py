@@ -1,14 +1,16 @@
-"""スプレッドシートのレイアウト定義(運行表シート・ガソリン代按分シート共通)
+"""スプレッドシートのレイアウト定義
 
-列位置をここで一元管理する。列数を変える場合は関連する列文字も
+1つのタブ(シート)に「運行表」と「ガソリン代按分」の両方を持たせる構成。
+シートは月ごとに1枚(例: "2026.8")。
+列位置・行位置をここで一元管理する。変更する場合は関連する列文字も
 あわせて修正すること(自動計算はしていない)。
 """
 
-# --- 運行表シート (例: "2026.8") ---
+# --- 運行表セクション (シート上部) ---
 HEADER_ROW = 1
 DATA_START_ROW = 2
 MAX_DAYS = 31
-TOTAL_ROW = DATA_START_ROW + MAX_DAYS  # 33行目に月間合計を書き込む
+TOTAL_ROW = DATA_START_ROW + MAX_DAYS  # 33行目に月間合計
 
 DRIVING_LOG_HEADERS = [
     "日", "終了距離数(km)", "移動距離(km)", "運転手(A/B/AB)", "備考",
@@ -24,21 +26,19 @@ COL_NOTE = "E"
 COL_A_DISTANCE = "F"
 COL_B_DISTANCE = "G"
 
-# --- ガソリン代按分シート ---
-FUEL_HEADER_ROW = 1
-FUEL_DATA_START_ROW = 2
-MAX_RECEIPTS = 10  # 変更する場合はB〜K以降の列文字も合わせて修正すること
+# --- ガソリン代按分セクション (同じシートの運行表の下) ---
+# B列に項目名、C列に金額・数式を配置する
+FUEL_SECTION_ROW = TOTAL_ROW + 2                            # 35 見出し
+MAX_RECEIPTS = 10
+RECEIPT_START_ROW = FUEL_SECTION_ROW + 1                    # 36 領収書1
+RECEIPT_END_ROW = RECEIPT_START_ROW + MAX_RECEIPTS - 1      # 45 領収書10
+FUEL_TOTAL_ROW = RECEIPT_END_ROW + 1                        # 46 合計金額
+FUEL_A_DIST_ROW = FUEL_TOTAL_ROW + 1                        # 47 A距離
+FUEL_B_DIST_ROW = FUEL_TOTAL_ROW + 2                        # 48 B距離
+FUEL_A_SHARE_ROW = FUEL_TOTAL_ROW + 3                       # 49 A負担額
+FUEL_B_SHARE_ROW = FUEL_TOTAL_ROW + 4                       # 50 B負担額
 
-FUEL_HEADERS = (
-    ["対象月"]
-    + [f"領収書{i}" for i in range(1, MAX_RECEIPTS + 1)]
-    + ["合計金額", "A距離(km)", "B距離(km)", "A負担額", "B負担額"]
-)
+COL_FUEL_LABEL = "B"
+COL_FUEL_VALUE = "C"
 
-# A=対象月 B〜K=領収書1〜10 L=合計金額 M=A距離 N=B距離 O=A負担額 P=B負担額
-COL_MONTH = "A"
-COL_FUEL_TOTAL = "L"
-COL_FUEL_A_DIST = "M"
-COL_FUEL_B_DIST = "N"
-COL_FUEL_A_SHARE = "O"
-COL_FUEL_B_SHARE = "P"
+FUEL_SECTION_TITLE = "■ ガソリン代按分"

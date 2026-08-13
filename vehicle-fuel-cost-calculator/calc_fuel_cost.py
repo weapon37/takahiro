@@ -5,8 +5,8 @@
     python calc_fuel_cost.py --receipts 5427,3293,4011 --month 2026.8
     python calc_fuel_cost.py --receipts-file sample_data/receipts.json --month 2026.8
 
-対象月(--month)の運行表シートが既に存在し、A距離・B距離の合計が
-書き込まれている必要がある(先に update_driving_log.py を実行しておくこと)。
+ガソリン代按分は運行表と同じタブ(--month で指定したシート)の下部に書き込む。
+対象シートが既に存在している必要がある(先に update_driving_log.py を実行しておくこと)。
 """
 import argparse
 import csv
@@ -16,16 +16,14 @@ from pathlib import Path
 
 from config import ConfigError, load_config
 from layout import (
-    COL_A_DISTANCE, COL_B_DISTANCE, COL_FUEL_A_DIST, COL_FUEL_A_SHARE,
-    COL_FUEL_B_DIST, COL_FUEL_B_SHARE, COL_FUEL_TOTAL, COL_MONTH,
-    FUEL_DATA_START_ROW, FUEL_HEADER_ROW, FUEL_HEADERS, MAX_RECEIPTS, TOTAL_ROW,
+    COL_A_DISTANCE, COL_B_DISTANCE, COL_DAY, COL_FUEL_LABEL, COL_FUEL_VALUE,
+    FUEL_A_DIST_ROW, FUEL_A_SHARE_ROW, FUEL_B_DIST_ROW, FUEL_B_SHARE_ROW,
+    FUEL_SECTION_ROW, FUEL_SECTION_TITLE, FUEL_TOTAL_ROW, MAX_RECEIPTS,
+    RECEIPT_END_ROW, RECEIPT_START_ROW, TOTAL_ROW,
 )
 from sheets_client import (
-    build_services, ensure_sheet_exists, get_sheet_titles, read_values,
-    verify_spreadsheet_access, write_values,
+    build_services, get_sheet_titles, verify_spreadsheet_access, write_values,
 )
-
-RECEIPT_COLS = [chr(ord("B") + i) for i in range(MAX_RECEIPTS)]
 
 
 def parse_amount(value):
@@ -59,22 +57,46 @@ def load_receipts_file(path: Path):
     raise ConfigError(f"対応していないファイル形式です: {path.suffix} (JSONまたはCSVを指定してください)")
 
 
-def find_or_append_row(sheets_service, spreadsheet_id, sheet_name, month):
-    existing = read_values(
+def write_fuel_section(sheets_service, spreadsheet_id, sheet_name, receipts):
+    """運行表と同じシートの下部にガソリン代按分セクションを書き込む"""
+    write_values(
         sheets_service, spreadsheet_id,
-        f"'{sheet_name}'!{COL_MONTH}{FUEL_DATA_START_ROW}:{COL_MONTH}",
+        f"'{sheet_name}'!{COL_DAY}{FUEL_SECTION_ROW}",
+        [[FUEL_SECTION_TITLE]], raw=True,
     )
-    for i, row in enumerate(existing):
-        if row and row[0] == month:
-            return FUEL_DATA_START_ROW + i
-    return FUEL_DATA_START_ROW + len(existing)
+
+    receipt_rows = []
+    for i in range(MAX_RECEIPTS):
+        amount = receipts[i] if i < len(receipts) else ""
+        receipt_rows.append([f"領収書{i + 1}", amount])
+    write_values(
+        sheets_service, spreadsheet_id,
+        f"'{sheet_name}'!{COL_FUEL_LABEL}{RECEIPT_START_ROW}:{COL_FUEL_VALUE}{RECEIPT_END_ROW}",
+        receipt_rows, raw=True,
+    )
+
+    a_dist = f"{COL_FUEL_VALUE}{FUEL_A_DIST_ROW}"
+    b_dist = f"{COL_FUEL_VALUE}{FUEL_B_DIST_ROW}"
+    total = f"{COL_FUEL_VALUE}{FUEL_TOTAL_ROW}"
+    summary_rows = [
+        ["合計金額", f"=SUM({COL_FUEL_VALUE}{RECEIPT_START_ROW}:{COL_FUEL_VALUE}{RECEIPT_END_ROW})"],
+        ["A距離(km)", f"={COL_A_DISTANCE}{TOTAL_ROW}"],
+        ["B距離(km)", f"={COL_B_DISTANCE}{TOTAL_ROW}"],
+        ["A負担額", f"=IF(({a_dist}+{b_dist})=0, 0, {total}*{a_dist}/({a_dist}+{b_dist}))"],
+        ["B負担額", f"=IF(({a_dist}+{b_dist})=0, 0, {total}*{b_dist}/({a_dist}+{b_dist}))"],
+    ]
+    write_values(
+        sheets_service, spreadsheet_id,
+        f"'{sheet_name}'!{COL_FUEL_LABEL}{FUEL_TOTAL_ROW}:{COL_FUEL_VALUE}{FUEL_B_SHARE_ROW}",
+        summary_rows,
+    )
 
 
 def main():
     parser = argparse.ArgumentParser(description="ガソリン代を距離按分し、スプレッドシートに反映します")
     parser.add_argument("--receipts", help="領収書金額をカンマ区切りで指定 (例: 5427,3293,4011)")
     parser.add_argument("--receipts-file", help="領収書金額を記載したJSON/CSVファイル")
-    parser.add_argument("--month", required=True, help="対象月・運行表シート名 (例: 2026.8)")
+    parser.add_argument("--month", required=True, help="対象月・シート名 (例: 2026.8)")
     args = parser.parse_args()
 
     if not args.receipts and not args.receipts_file:
@@ -96,64 +118,26 @@ def main():
             raise ConfigError("領収書金額が1件も指定されていません。")
         if len(receipts) > MAX_RECEIPTS:
             raise ConfigError(
-                f"1回のガソリン代按分では領収書は最大{MAX_RECEIPTS}件までです"
-                f"({len(receipts)}件指定されました)。"
+                f"領収書は最大{MAX_RECEIPTS}件までです({len(receipts)}件指定されました)。"
             )
 
         sheets_service, drive_service = build_services(config["service_account_file"])
         spreadsheet_id = config["spreadsheet_id"]
         verify_spreadsheet_access(drive_service, spreadsheet_id)
 
-        driving_log_titles = get_sheet_titles(sheets_service, spreadsheet_id)
-        if args.month not in driving_log_titles:
+        if args.month not in get_sheet_titles(sheets_service, spreadsheet_id):
             raise ConfigError(
-                f"運行表シート '{args.month}' が見つかりません。"
+                f"シート '{args.month}' が見つかりません。"
                 f"先に update_driving_log.py で '{args.month}' シートを作成してください。"
             )
 
-        fuel_sheet = config["fuel_sheet_name"]
-        ensure_sheet_exists(sheets_service, spreadsheet_id, fuel_sheet)
+        write_fuel_section(sheets_service, spreadsheet_id, args.month, receipts)
 
-        write_values(
-            sheets_service, spreadsheet_id,
-            f"'{fuel_sheet}'!{COL_MONTH}{FUEL_HEADER_ROW}:{COL_FUEL_B_SHARE}{FUEL_HEADER_ROW}",
-            [FUEL_HEADERS],
+        print(f"'{args.month}' シートに {len(receipts)}件の領収書データを反映しました。")
+        print(
+            f"ガソリン代按分は{FUEL_SECTION_ROW}行目以降です "
+            f"(A負担額: {COL_FUEL_VALUE}{FUEL_A_SHARE_ROW}, B負担額: {COL_FUEL_VALUE}{FUEL_B_SHARE_ROW})"
         )
-
-        row = find_or_append_row(sheets_service, spreadsheet_id, fuel_sheet, args.month)
-
-        receipt_row = [""] * MAX_RECEIPTS
-        for i, amount in enumerate(receipts):
-            receipt_row[i] = amount
-
-        last_receipt_col = RECEIPT_COLS[-1]
-        total_formula = f"=SUM(B{row}:{last_receipt_col}{row})"
-        a_dist_formula = f"='{args.month}'!{COL_A_DISTANCE}{TOTAL_ROW}"
-        b_dist_formula = f"='{args.month}'!{COL_B_DISTANCE}{TOTAL_ROW}"
-        a_share_formula = (
-            f"=IF(({COL_FUEL_A_DIST}{row}+{COL_FUEL_B_DIST}{row})=0, 0, "
-            f"{COL_FUEL_TOTAL}{row}*{COL_FUEL_A_DIST}{row}/"
-            f"({COL_FUEL_A_DIST}{row}+{COL_FUEL_B_DIST}{row}))"
-        )
-        b_share_formula = (
-            f"=IF(({COL_FUEL_A_DIST}{row}+{COL_FUEL_B_DIST}{row})=0, 0, "
-            f"{COL_FUEL_TOTAL}{row}*{COL_FUEL_B_DIST}{row}/"
-            f"({COL_FUEL_A_DIST}{row}+{COL_FUEL_B_DIST}{row}))"
-        )
-
-        row_values = (
-            [args.month]
-            + receipt_row
-            + [total_formula, a_dist_formula, b_dist_formula, a_share_formula, b_share_formula]
-        )
-        write_values(
-            sheets_service, spreadsheet_id,
-            f"'{fuel_sheet}'!{COL_MONTH}{row}:{COL_FUEL_B_SHARE}{row}",
-            [row_values],
-        )
-
-        print(f"'{fuel_sheet}' シートの{row}行目に {len(receipts)}件の領収書データを反映しました。")
-        print(f"対象月: {args.month} / 領収書合計(数式): {total_formula}")
 
     except ConfigError as e:
         print(f"エラー: {e}", file=sys.stderr)

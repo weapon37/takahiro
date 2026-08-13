@@ -1,7 +1,6 @@
 {
   "GOOGLE_SERVICE_ACCOUNT_FILE": "./service-account.json",
   "SPREADSHEET_ID": "",
-  "FUEL_SHEET_NAME": "ガソリン代按分",
   "ANTHROPIC_API_KEY": "",
   "ANTHROPIC_MODEL": "claude-sonnet-5"
 }
