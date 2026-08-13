@@ -1,0 +1,164 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_ensolarado.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "今週は**この3本**だけ",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_scramble_day.mp4",
+        "bg/jp_skyline_day.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4_news_0808/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 118
+    },
+    {
+      "role": "hook",
+      "telop": "1位は**無料利用者**に直結",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_phone_tap.mp4",
+        "bg/nb_digital.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4_news_0808/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 112
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "Google DeepMind",
+      "telop": "**トップ交代**でGemini刷新",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_office_tower.mp4",
+        "bg/nb_building.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4_news_0808/03.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 116
+    },
+    {
+      "role": "body",
+      "telop": "**Geminiの立て直し**が狙い",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_digital.mp4",
+        "bg/nb_think.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4_news_0808/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 75
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "ChatGPT Business",
+      "telop": "**上位プラン**が追加",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_clean.mp4",
+        "bg/handshake.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4_news_0808/05.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 156
+    },
+    {
+      "role": "body",
+      "telop": "チーム機能が**さらに強化**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_team.mp4",
+        "bg/own_typing.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4_news_0808/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 93
+    },
+    {
+      "role": "save",
+      "telop": "1位は**仕事に直結**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_pen_write.mp4",
+        "bg/nb_notes.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4_news_0808/07.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 127
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "ChatGPTに広告表示",
+      "telop": "無料版に**広告表示**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_phone.mp4",
+        "bg/jp_commuters.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4_news_0808/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 166
+    },
+    {
+      "role": "body",
+      "telop": "有料プランは**対象外**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/own_camera_rig.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4_news_0808/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 181
+    },
+    {
+      "role": "cta",
+      "telop": "深掘りリクエストは↓\n**毎週金曜7時**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_sky.mp4",
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4_news_0808/10.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 106
+    }
+  ]
+}
