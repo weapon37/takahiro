@@ -109,6 +109,51 @@ def build_formula_rows():
     return rows
 
 
+def write_driving_log(sheets_service, spreadsheet_id, sheet_name, entries):
+    """検証済みentries(validate_entryの戻り値のリスト)を運行表シートに書き込む"""
+    ensure_sheet_exists(sheets_service, spreadsheet_id, sheet_name)
+
+    write_values(
+        sheets_service, spreadsheet_id,
+        f"'{sheet_name}'!{COL_DAY}{HEADER_ROW}:{COL_B_DISTANCE}{HEADER_ROW}",
+        [DRIVING_LOG_HEADERS],
+    )
+
+    day_values = [[d] for d in range(1, MAX_DAYS + 1)]
+    write_values(
+        sheets_service, spreadsheet_id,
+        f"'{sheet_name}'!{COL_DAY}{DATA_START_ROW}:{COL_DAY}{DATA_START_ROW + MAX_DAYS - 1}",
+        day_values, raw=True,
+    )
+
+    write_values(
+        sheets_service, spreadsheet_id,
+        f"'{sheet_name}'!{COL_A_DISTANCE}{DATA_START_ROW}:{COL_B_DISTANCE}{DATA_START_ROW + MAX_DAYS - 1}",
+        build_formula_rows(),
+    )
+
+    for entry in entries:
+        row = DATA_START_ROW + entry["day"] - 1
+        write_values(
+            sheets_service, spreadsheet_id,
+            f"'{sheet_name}'!{COL_END_KM}{row}:{COL_NOTE}{row}",
+            [[entry["end_km"], entry["distance_km"], entry["driver"], entry["note"]]],
+            raw=True,
+        )
+
+    write_values(
+        sheets_service, spreadsheet_id,
+        f"'{sheet_name}'!{COL_DAY}{TOTAL_ROW}:{COL_B_DISTANCE}{TOTAL_ROW}",
+        [[
+            "合計", "",
+            f"=SUM({COL_DISTANCE}{DATA_START_ROW}:{COL_DISTANCE}{TOTAL_ROW - 1})",
+            "", "",
+            f"=SUM({COL_A_DISTANCE}{DATA_START_ROW}:{COL_A_DISTANCE}{TOTAL_ROW - 1})",
+            f"=SUM({COL_B_DISTANCE}{DATA_START_ROW}:{COL_B_DISTANCE}{TOTAL_ROW - 1})",
+        ]],
+    )
+
+
 def main():
     parser = argparse.ArgumentParser(description="車両運行表をスプレッドシートに反映します")
     parser.add_argument("--data", required=True, help="運行表データ(JSONまたはCSV)")
@@ -138,47 +183,7 @@ def main():
         sheets_service, drive_service = build_services(config["service_account_file"])
         spreadsheet_id = config["spreadsheet_id"]
         verify_spreadsheet_access(drive_service, spreadsheet_id)
-        ensure_sheet_exists(sheets_service, spreadsheet_id, sheet_name)
-
-        write_values(
-            sheets_service, spreadsheet_id,
-            f"'{sheet_name}'!{COL_DAY}{HEADER_ROW}:{COL_B_DISTANCE}{HEADER_ROW}",
-            [DRIVING_LOG_HEADERS],
-        )
-
-        day_values = [[d] for d in range(1, MAX_DAYS + 1)]
-        write_values(
-            sheets_service, spreadsheet_id,
-            f"'{sheet_name}'!{COL_DAY}{DATA_START_ROW}:{COL_DAY}{DATA_START_ROW + MAX_DAYS - 1}",
-            day_values, raw=True,
-        )
-
-        write_values(
-            sheets_service, spreadsheet_id,
-            f"'{sheet_name}'!{COL_A_DISTANCE}{DATA_START_ROW}:{COL_B_DISTANCE}{DATA_START_ROW + MAX_DAYS - 1}",
-            build_formula_rows(),
-        )
-
-        for entry in entries:
-            row = DATA_START_ROW + entry["day"] - 1
-            write_values(
-                sheets_service, spreadsheet_id,
-                f"'{sheet_name}'!{COL_END_KM}{row}:{COL_NOTE}{row}",
-                [[entry["end_km"], entry["distance_km"], entry["driver"], entry["note"]]],
-                raw=True,
-            )
-
-        write_values(
-            sheets_service, spreadsheet_id,
-            f"'{sheet_name}'!{COL_DAY}{TOTAL_ROW}:{COL_B_DISTANCE}{TOTAL_ROW}",
-            [[
-                "合計", "",
-                f"=SUM({COL_DISTANCE}{DATA_START_ROW}:{COL_DISTANCE}{TOTAL_ROW - 1})",
-                "", "",
-                f"=SUM({COL_A_DISTANCE}{DATA_START_ROW}:{COL_A_DISTANCE}{TOTAL_ROW - 1})",
-                f"=SUM({COL_B_DISTANCE}{DATA_START_ROW}:{COL_B_DISTANCE}{TOTAL_ROW - 1})",
-            ]],
-        )
+        write_driving_log(sheets_service, spreadsheet_id, sheet_name, entries)
 
         print(f"'{sheet_name}' シートに {len(entries)} 件の運行データを書き込みました。")
         print(

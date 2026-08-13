@@ -4,6 +4,7 @@
 
 ## できること
 
+- `ocr_driving_log.py` — 運行表を撮影した画像をClaude Vision(Anthropic API)で読み取り、`update_driving_log.py`用のJSONに変換(または直接スプレッドシートに反映)
 - `update_driving_log.py` — 日別の運行データ(終了距離数・移動距離・運転手・備考)をスプレッドシートに書き込み、運転手ごとの移動距離(A距離/B距離)をIF数式として、月間合計をSUM数式として自動計算
 - `calc_fuel_cost.py` — ガソリン代領収書の金額を距離比で按分し、対象月の運行表シートを参照する数式としてスプレッドシートに書き込み
 
@@ -52,6 +53,14 @@
 https://docs.google.com/spreadsheets/d/【ここがスプレッドシートID】/edit
 ```
 
+### 1-6. (OCRを使う場合)Anthropic APIキーを取得
+
+運行表の画像を読み取る `ocr_driving_log.py` を使う場合のみ必要です。
+
+1. [console.anthropic.com](https://console.anthropic.com/) にログイン(なければアカウント作成)
+2. 「API Keys」から新しいキーを発行
+3. 発行されたキーを控えておく(後述の `.env` に設定)
+
 ---
 
 ## 2. セットアップ
@@ -71,6 +80,7 @@ cp .env.example .env
 GOOGLE_SERVICE_ACCOUNT_FILE=./service-account.json
 SPREADSHEET_ID=<1-5で確認したスプレッドシートID>
 FUEL_SHEET_NAME=ガソリン代按分
+ANTHROPIC_API_KEY=<1-6で発行したキー(OCRを使わない場合は空でよい)>
 ```
 
 (`.env` の代わりに `config.json.example` をコピーした `config.json` でも同様に設定できます。)
@@ -78,6 +88,24 @@ FUEL_SHEET_NAME=ガソリン代按分
 ---
 
 ## 3. 使い方
+
+### 3-0. (任意)運行表の画像をOCRで読み取る
+
+紙の運行表を撮影した画像から、日別データをJSONとして取り出せます。
+
+```bash
+python ocr_driving_log.py --images log1.jpg log2.jpg --sheet 2026.8 --output driving_log.json
+```
+
+- 画像は複数枚渡せます(月をまたぐ複数ページの写真など)。同じ日が複数画像に写っていた場合は後の画像を優先します
+- 判読できなかったセルや値が不正な行は書き込み対象から除外され、標準エラー出力に一覧表示されます。表示された内容は画像を見ながら手動で確認し、必要であれば出力JSONに追記してください
+- 出力される `driving_log.json` は3-1の `update_driving_log.py --data` にそのまま渡せます
+
+内容の確認を挟まず直接スプレッドシートに反映したい場合は `--apply` を付けます(要確認扱いになった項目は書き込まれません)。
+
+```bash
+python ocr_driving_log.py --images log.jpg --sheet 2026.8 --apply
+```
 
 ### 3-1. 運行表データを書き込む
 
@@ -167,7 +195,5 @@ python calc_fuel_cost.py --receipts-file sample_data/receipts.json --month 2026.
 - **アクセス権がない(403)** → 1-4の共有設定でサービスアカウントを編集者として追加したか確認
 - **運行表シートが見つからない** → 先に `update_driving_log.py` で対象月のシートを作成したか確認
 - **金額・距離が数値でない** → データファイルの該当項目を確認(エラーメッセージに何件目のどの項目かが表示されます)
-
-## 6. 今後の拡張(未実装)
-
-運行表画像からのOCR読み取りは未実装です。まずは手入力・CSV/JSONでのスプレッドシート反映を実装しています。OCRを追加する場合は、画像からテキストを抽出した結果を `driving_log.json` と同じ形式に変換し、`update_driving_log.py --data` に渡す構成を想定しています。
+- **`ocr_driving_log.py` で「設定 'ANTHROPIC_API_KEY' が見つかりません」** → 1-6の手順でAPIキーを発行し、`.env`(または`config.json`)に設定
+- **`ocr_driving_log.py` で「読み取り結果をJSONとして解釈できませんでした」** → 画像が不鮮明・表の形式が想定と大きく異なる可能性があります。応答内容がエラーメッセージに表示されるので内容を確認してください

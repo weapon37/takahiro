@@ -23,19 +23,23 @@ def _load_config_file():
         raise ConfigError(f"config.jsonの読み込みに失敗しました: {e}") from e
 
 
+_FILE_CONFIG = _load_config_file()
+
+
+def get_setting(key, default=None, required=False):
+    """個別の設定値を .env / config.json / 環境変数から取得する"""
+    value = _FILE_CONFIG.get(key) or os.environ.get(key) or default
+    if required and not value:
+        raise ConfigError(
+            f"設定 '{key}' が見つかりません。.env または config.json に設定してください。"
+        )
+    return value
+
+
 def load_config():
-    file_config = _load_config_file()
-
-    def get(key, default=None, required=False):
-        value = file_config.get(key) or os.environ.get(key) or default
-        if required and not value:
-            raise ConfigError(
-                f"設定 '{key}' が見つかりません。.env または config.json に設定してください。"
-            )
-        return value
-
+    """Google Sheets連携に必要な設定一式を取得する"""
     return {
-        "service_account_file": get("GOOGLE_SERVICE_ACCOUNT_FILE", required=True),
-        "spreadsheet_id": get("SPREADSHEET_ID", required=True),
-        "fuel_sheet_name": get("FUEL_SHEET_NAME", default="ガソリン代按分"),
+        "service_account_file": get_setting("GOOGLE_SERVICE_ACCOUNT_FILE", required=True),
+        "spreadsheet_id": get_setting("SPREADSHEET_ID", required=True),
+        "fuel_sheet_name": get_setting("FUEL_SHEET_NAME", default="ガソリン代按分"),
     }
