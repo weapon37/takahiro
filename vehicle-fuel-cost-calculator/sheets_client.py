@@ -108,6 +108,29 @@ def write_values(sheets_service, spreadsheet_id: str, range_name: str, values, r
         raise ConfigError(f"シートへの書き込みに失敗しました ({range_name}): {e}") from e
 
 
+def batch_write_values(sheets_service, spreadsheet_id: str, blocks):
+    """複数の範囲をまとめて書き込む
+
+    blocks は (range_name, values, raw) のリスト。
+    raw の値ごとに1リクエストへまとめるため、範囲がいくつあってもAPI呼び出しは最大2回で済む。
+    """
+    by_option = {"RAW": [], "USER_ENTERED": []}
+    for range_name, values, raw in blocks:
+        option = "RAW" if raw else "USER_ENTERED"
+        by_option[option].append({"range": range_name, "values": values})
+
+    for option, data in by_option.items():
+        if not data:
+            continue
+        try:
+            sheets_service.spreadsheets().values().batchUpdate(
+                spreadsheetId=spreadsheet_id,
+                body={"valueInputOption": option, "data": data},
+            ).execute()
+        except HttpError as e:
+            raise ConfigError(f"シートへの一括書き込みに失敗しました: {e}") from e
+
+
 def read_values(sheets_service, spreadsheet_id: str, range_name: str):
     try:
         result = (

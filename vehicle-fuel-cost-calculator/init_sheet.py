@@ -3,6 +3,8 @@
 
 使い方:
     python init_sheet.py --month 2026.8
+    python init_sheet.py --month 2026.9 2026.10        # 複数まとめて
+    python init_sheet.py --month 2026.9 --count 12     # 2026.9〜2027.8を一括作成
 
 既存の同名タブがある場合は中身を上書きするため、実データが入っている場合は注意すること。
 """
@@ -18,8 +20,8 @@ from layout import (
     RECEIPT_END_ROW, RECEIPT_START_ROW, TOTAL_ROW,
 )
 from sheets_client import (
-    build_services, ensure_sheet_exists, get_sheet_id, verify_spreadsheet_access,
-    write_values,
+    batch_write_values, build_services, ensure_sheet_exists, get_sheet_id,
+    verify_spreadsheet_access,
 )
 
 HEADER_BG = {"red": 0.85, "green": 0.85, "blue": 0.85}
@@ -228,29 +230,79 @@ def build_format_requests(sheet_id):
     return requests
 
 
+def parse_month(text):
+    """'2026.8' を (2026, 8) に変換する"""
+    parts = text.split(".")
+    if len(parts) != 2:
+        raise ConfigError(f"月の指定は「YYYY.M」の形式にしてください (値: {text})")
+    try:
+        year, month = int(parts[0]), int(parts[1])
+    except ValueError:
+        raise ConfigError(f"月の指定は「YYYY.M」の形式にしてください (値: {text})")
+    if not (1 <= month <= 12):
+        raise ConfigError(f"月は1〜12の範囲で指定してください (値: {text})")
+    return year, month
+
+
+def expand_months(start_months, count):
+    """開始月リストと連番数から、作成する月名のリストを組み立てる"""
+    if count is None:
+        return list(start_months)
+    if len(start_months) != 1:
+        raise ConfigError("--count を使う場合、--month には開始月を1つだけ指定してください。")
+    year, month = parse_month(start_months[0])
+    months = []
+    for _ in range(count):
+        months.append(f"{year}.{month}")
+        month += 1
+        if month > 12:
+            year, month = year + 1, 1
+    return months
+
+
 def main():
     parser = argparse.ArgumentParser(description="月次タブのテンプレートを作成します")
-    parser.add_argument("--month", required=True, help="作成するタブ名 (例: 2026.8)")
+    parser.add_argument(
+        "--month", required=True, nargs="+",
+        help="作成するタブ名 (例: 2026.8)。複数指定可。--count と併用する場合は開始月を1つだけ指定",
+    )
+    parser.add_argument(
+        "--count", type=int,
+        help="開始月から連続する月数(例: --month 2026.9 --count 12 で2026.9〜2027.8を作成)",
+    )
     args = parser.parse_args()
 
     try:
+        if args.count is not None and args.count < 1:
+            raise ConfigError("--count は1以上を指定してください。")
+
+        months = expand_months(args.month, args.count)
+        for m in months:
+            parse_month(m)  # 形式チェック
+
         config = load_config()
         sheets_service, drive_service = build_services(config["service_account_file"])
         spreadsheet_id = config["spreadsheet_id"]
         verify_spreadsheet_access(drive_service, spreadsheet_id)
 
-        ensure_sheet_exists(sheets_service, spreadsheet_id, args.month)
+        for month in months:
+            ensure_sheet_exists(sheets_service, spreadsheet_id, month)
 
-        for range_name, values, raw in build_content(args.month):
-            write_values(sheets_service, spreadsheet_id, range_name, values, raw=raw)
+        blocks = []
+        for month in months:
+            blocks.extend(build_content(month))
+        batch_write_values(sheets_service, spreadsheet_id, blocks)
 
-        sheet_id = get_sheet_id(sheets_service, spreadsheet_id, args.month)
+        requests = []
+        for month in months:
+            requests.extend(
+                build_format_requests(get_sheet_id(sheets_service, spreadsheet_id, month))
+            )
         sheets_service.spreadsheets().batchUpdate(
-            spreadsheetId=spreadsheet_id,
-            body={"requests": build_format_requests(sheet_id)},
+            spreadsheetId=spreadsheet_id, body={"requests": requests},
         ).execute()
 
-        print(f"タブ '{args.month}' にテンプレートを作成しました。")
+        print(f"{len(months)}件のタブにテンプレートを作成しました: {', '.join(months)}")
 
     except ConfigError as e:
         print(f"エラー: {e}", file=sys.stderr)
