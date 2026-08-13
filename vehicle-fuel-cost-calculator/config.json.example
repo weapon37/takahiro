@@ -1,0 +1,5 @@
+{
+  "GOOGLE_SERVICE_ACCOUNT_FILE": "./service-account.json",
+  "SPREADSHEET_ID": "",
+  "FUEL_SHEET_NAME": "ガソリン代按分"
+}
