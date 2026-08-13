@@ -1,0 +1,106 @@
+{
+  "template": "RankingVideo",
+  "_note": "Week4差し替え枠(旧#10 w4j_kangaeru)。持論型(w3g/w3h)が維持率40%未満だったため事前ルールに従いランキング型へ差し替え。職業別シリーズ第11弾・カスタマーサポート編。確定フォーマット。◆実測値は入れていない。◆この業界はAIとの相性が最も直接的なため、1位はChatGPT(返信文の下書き)。◆フック2分割済み。◆8/17 21:00投稿予定。既存予約(w4j_kangaeru)がある場合は差し替えること。",
+  "title": "職業別・入れるべきAI BEST3【カスタマーサポート編】",
+  "caption": "問い合わせ対応をしてる人だけ見てください。入れるべきAIは3つです。1位は返信文の下書きがすぐ出るもの。ゼロから文章を考える時間が、まるごと減ります。あなたの職種も、コメントで教えてください。\n※個人の見解です\n#カスタマーサポート #問い合わせ対応 #AI活用 #仕事術 #職業別AI",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "問い合わせ対応をしてる人だけ、見てください。入れるべきエーアイは3つ。",
+      "telop": "問い合わせ対応は**この3つ**",
+      "bg": [
+        "own_desk_clean",
+        "nb_digital"
+      ]
+    },
+    {
+      "role": "hook",
+      "narration": "1位は、返信の下書きがすぐ出ます。",
+      "telop": "1位は**返信の下書き**がすぐ出る",
+      "bg": [
+        "own_typing",
+        "nb_keys"
+      ]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "Notta",
+      "narration": "第3位、ノッタ。電話対応の記録係。",
+      "telop": "電話対応の**記録係**",
+      "bg": [
+        "nb_team",
+        "handshake"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "言った言わないが、ログで残ります。",
+      "telop": "**言った言わない**がログに",
+      "bg": [
+        "own_docs_stack",
+        "nb_notes"
+      ]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "NotebookLM",
+      "narration": "第2位、ノートブック エルエム。",
+      "telop": "マニュアルを**読ませておく**",
+      "bg": [
+        "nb_books",
+        "jp_laptop_f1"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "マニュアルやよくある質問を読ませておくと、答えがすぐ出てきます。",
+      "telop": "答えが**すぐ出る**",
+      "bg": [
+        "own_desk_messy",
+        "nb_think"
+      ]
+    },
+    {
+      "role": "save",
+      "narration": "1位は毎日使います。保存推奨。",
+      "telop": "1位は**毎日使う**",
+      "bg": [
+        "own_phone_tap",
+        "nb_social"
+      ]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "ChatGPT",
+      "narration": "第1位、チャットジーピーティー。",
+      "telop": "返信文の**下書き**担当",
+      "bg": [
+        "nb_digital",
+        "nb_code"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "ゼロから文章を考える時間が、まるごと減ります。",
+      "telop": "ゼロから考える時間が**減る**",
+      "bg": [
+        "own_typing",
+        "nb_particles"
+      ]
+    },
+    {
+      "role": "cta",
+      "narration": "あなたの職種も、コメントで。順番に作ります。",
+      "telop": "あなたの職種は？↓\n**コメントで**",
+      "bg": [
+        "nb_sky",
+        "own_suburb_sky"
+      ]
+    }
+  ],
+  "bgm": "bgm/for_our_friends.mp3"
+}

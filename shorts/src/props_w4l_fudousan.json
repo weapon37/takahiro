@@ -1,0 +1,164 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_beach_cocktail.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "不動産の仕事は**この3つ**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_office_tower.mp4",
+        "bg/own_docs_stack.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4l_fudousan/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 164
+    },
+    {
+      "role": "hook",
+      "telop": "1位は**分厚い書類**がすぐ読める",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_books.mp4",
+        "bg/own_desk_messy.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4l_fudousan/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 89
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "Canva",
+      "telop": "チラシと**資料**担当",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_art.mp4",
+        "bg/nb_bokeh.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4l_fudousan/03.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 108
+    },
+    {
+      "role": "body",
+      "telop": "テンプレに**流し込むだけ**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_camera_rig.mp4",
+        "bg/nb_particles.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4l_fudousan/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 121
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "ChatGPT",
+      "telop": "物件説明文と**メール**担当",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/nb_gadgets.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4l_fudousan/05.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 87
+    },
+    {
+      "role": "body",
+      "telop": "下書きが**速くなる**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_keys.mp4",
+        "bg/own_phone_tap.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4l_fudousan/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 156
+    },
+    {
+      "role": "save",
+      "telop": "1位は**契約前の確認**に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_pen_write.mp4",
+        "bg/nb_notes.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4l_fudousan/07.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 148
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "NotebookLM",
+      "telop": "重説・契約書を**読ませておく**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_board.mp4",
+        "bg/jp_laptop_m1.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4l_fudousan/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 87
+    },
+    {
+      "role": "body",
+      "telop": "条件を**すぐ確認**できる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4",
+        "bg/nb_think.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4l_fudousan/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 173
+    },
+    {
+      "role": "cta",
+      "telop": "あなたの職種は？↓\n**コメントで**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_sky.mp4",
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4l_fudousan/10.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 137
+    }
+  ]
+}
