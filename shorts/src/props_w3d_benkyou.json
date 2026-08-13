@@ -1,0 +1,129 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_beach_cocktail.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "勉強してから、が**いちばん損**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4",
+        "bg/nb_think.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3d_benkyou/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 241
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "覚える量が多い",
+      "telop": "学ぶ前に終わらない",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3d_benkyou/02.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 83
+    },
+    {
+      "role": "body",
+      "telop": "毎月変わるので**追いつかない**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_chart.mp4",
+        "bg/own_phone_tap.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3d_benkyou/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 104
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "使わないと分からない",
+      "telop": "触らないと分からない",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3d_benkyou/04.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 116
+    },
+    {
+      "role": "save",
+      "telop": "1位は**保存**推奨",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_pen_write.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3d_benkyou/05.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 171
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "完璧を待つ",
+      "telop": "**完璧**を待ってしまう",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_think.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3d_benkyou/06.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 133
+    },
+    {
+      "role": "body",
+      "telop": "使いながら覚える方が**速い**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/own_coffee_pour.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3d_benkyou/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 162
+    },
+    {
+      "role": "cta",
+      "telop": "勉強派？いきなり派？↓\n**コメント**で",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_crossing_night.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3d_benkyou/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 154
+    }
+  ]
+}

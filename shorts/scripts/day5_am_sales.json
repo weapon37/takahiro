@@ -1,0 +1,88 @@
+{
+  "template": "RankingVideo",
+  "title": "職業別・入れるべきAI BEST3【営業編】",
+  "caption": "営業職の人だけ見てください。入れるべきAIは3つだけ。商談後の報告書30分→5分、1日の書き物90分→20分。明日は事務編。あなたの職種もコメントで、順番に作ります。\n※ツールリンクは固定コメントへ ※リンクにはプロモーションを含みます\n#営業 #AI活用 #仕事術 #業務効率化 #職業別AI",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "営業職の人だけ、見てください。入れるべきエーアイは、3つだけです。",
+      "telop": "**営業のあなた**へ"
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "Notta",
+      "narration": "第3位、ノッタ。",
+      "telop": "商談を自動で議事録"
+    },
+    {
+      "role": "body",
+      "narration": "商談を録音して、自動で議事録。あの件どうなってたっけ、が消えます。",
+      "telop": "「あの件何だっけ」が**消える**"
+    },
+    {
+      "role": "body",
+      "narration": "実測、商談後の報告書づくりが、30分から5分。",
+      "telop": "報告書が**すぐ終わる**",
+      "time": {
+        "before": "30分",
+        "after": "5分",
+        "label": "商談後の報告書"
+      }
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "NotebookLM",
+      "narration": "第2位、ノートブック エルエム。",
+      "telop": "商談前の予習AI"
+    },
+    {
+      "role": "body",
+      "narration": "相手企業の資料を入れておくと、商談前の予習が10分で終わる。よく調べてますね、って言われるやつです。",
+      "telop": "「**よく調べてますね**」\nと言われるやつ"
+    },
+    {
+      "role": "save",
+      "narration": "1位は、営業チームに共有する用に、保存を。",
+      "telop": "チーム共有用に**保存**"
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "ChatGPT",
+      "narration": "第1位、チャットジーピーティー。",
+      "telop": "書き物ぜんぶの相棒"
+    },
+    {
+      "role": "body",
+      "narration": "提案書の骨子も、切り返しトークの壁打ちも、お礼メールも。",
+      "telop": "提案書も**壁打ち**もメールも"
+    },
+    {
+      "role": "body",
+      "narration": "実測、1日の書き物ぜんぶで、90分が20分。",
+      "telop": "書き物が**3分の1**以下に",
+      "time": {
+        "before": "90分",
+        "after": "20分",
+        "label": "1日の書き物ぜんぶ"
+      }
+    },
+    {
+      "role": "cta",
+      "narration": "明日は事務編。あなたの職種も、コメントで。順番に作ります。",
+      "telop": "次回**事務編**\n職種リクエストは↓"
+    }
+  ],
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgClips": [
+    "bg/handshake.mp4",
+    "bg/business_walking.mp4",
+    "bg/subway_commute.mp4",
+    "bg/office_window.mp4",
+    "bg/typing_laptop.mp4",
+    "bg/portrait.mp4"
+  ]
+}

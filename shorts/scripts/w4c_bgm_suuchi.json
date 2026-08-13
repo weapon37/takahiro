@@ -1,0 +1,62 @@
+{
+  "template": "ContrarianVideo",
+  "_note": "テスト版・新テーマA 3本目。BGM選定をS/N比実測に切り替えた実話(tools/bgm_list.mdの実測手法そのもの)。",
+  "title": "BGM選びを「耳」から「数字」に変えた話",
+  "caption": "音にはこだわってきたつもりでしたが、動画のBGM選びは感覚だけでは失敗しました。今はナレーションと重ねて信号対雑音比を測って選んでいます。\n※実際の制作過程の記録です\n#AI活用 #動画制作 #BGM #仕事術 #音響",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "動画のBGM選び、耳の感覚だけで選んだら失敗しました。",
+      "telop": "**耳の感覚だけ**では失敗した",
+      "bg": ["own_desk_messy"]
+    },
+    {
+      "role": "body",
+      "narration": "良さそうなBGMでも、ナレーションの声とぶつかって聞き取りにくくなることがあります。",
+      "telop": "**声とぶつかって**聞き取りにくい",
+      "bg": ["own_typing"]
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "narration": "そこで実際のナレーションに重ねて、信号対雑音比を測るようにしました。",
+      "telop": "**信号対雑音比**を測る",
+      "bg": ["own_desk_timelapse"]
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "narration": "数値が高い曲は聞き取りやすく、低い曲は声とかぶって聞きづらいと分かりました。",
+      "telop": "数値が低いと**声とかぶる**",
+      "bg": ["own_docs_stack"]
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "narration": "感覚では良さそうに聞こえた曲が、数値では低かったこともありました。",
+      "telop": "**感覚と数値**がズレることも",
+      "bg": ["own_pen_write"]
+    },
+    {
+      "role": "body",
+      "narration": "今はBGMを選ぶとき、必ず数値で確認してから使うようにしています。",
+      "telop": "必ず**数値で確認**してから使う",
+      "bg": ["own_coffee_cup"]
+    },
+    {
+      "role": "flip",
+      "narration": "耳が良ければ済む話じゃない。測れば、もっと外さなくなります。",
+      "telop": "**測れば**外さなくなる",
+      "bg": ["own_camera"]
+    },
+    {
+      "role": "vs",
+      "narration": "あなたはBGM、感覚で選ぶ派ですか。数値で選ぶ派ですか。",
+      "telop": "あなたはどっち？↓\n**コメント**で",
+      "vs": {"left": "感覚", "right": "数値"},
+      "bg": ["jp_skyline", "own_street"]
+    }
+  ],
+  "bgm": "bgm/for_our_friends.mp3"
+}

@@ -1,0 +1,88 @@
+{
+  "template": "ContrarianVideo",
+  "title": "「AIに仕事を奪われる」は半分ウソ",
+  "caption": "AIに仕事を奪われる、って怖がる前に。消えるのは「作業」で、残るのは「判断」。奪われる側と使う側を分けるのは1つだけ。あなたの仕事、どっち側？理由もコメントで。\n※個人の見解です\n#AI活用 #仕事術 #AIに仕事を奪われる #キャリア #働き方",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "エーアイに仕事を奪われる。これ、半分はウソです。",
+      "telop": "「奪われる」は**半分ウソ**"
+    },
+    {
+      "role": "body",
+      "narration": "消えるのは、仕事まるごとじゃない。中の、単純作業だけです。",
+      "telop": "消えるのは**作業**だけ"
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "narration": "消える作業。1、決まった型のある書き物。",
+      "telop": "型のある書き物"
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "narration": "2、集めて、まとめるだけの調べ物。",
+      "telop": "集めてまとめる調べ物"
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "narration": "3、転記や、計算のくり返し。",
+      "telop": "転記・計算のくり返し"
+    },
+    {
+      "role": "body",
+      "narration": "でも、どれをやるか決める、最後に責任を持つ。ここは残ります。むしろ価値が上がる。",
+      "telop": "**判断と責任**は残る"
+    },
+    {
+      "role": "flip",
+      "narration": "奪われる側と、使う側を分けるのは1つ。作業を手放して、判断に時間を使えるかどうかです。",
+      "telop": "作業を手放し**判断に使う**"
+    },
+    {
+      "role": "vs",
+      "narration": "あなたの仕事は、どっち側ですか。理由もセットで、コメントで。",
+      "telop": "あなたは**どっち側**？",
+      "vs": {
+        "left": "奪われる",
+        "right": "使いこなす"
+      }
+    }
+  ],
+  "bgm": "bgm/pawn.mp3",
+  "bgClips": [
+    "bg/nb_cash.mp4",
+    "bg/nb_chart.mp4",
+    "bg/nb_clock.mp4",
+    "bg/nb_code.mp4",
+    "bg/nb_coffee.mp4",
+    "bg/nb_desk.mp4",
+    "bg/nb_digital.mp4",
+    "bg/nb_gadgets.mp4",
+    "bg/nb_keys.mp4",
+    "bg/nb_morning.mp4",
+    "bg/nb_night.mp4",
+    "bg/nb_notes.mp4",
+    "bg/nb_particles.mp4",
+    "bg/nb_phone.mp4",
+    "bg/nb_plant.mp4",
+    "bg/nb_rain.mp4",
+    "bg/nb_savings.mp4",
+    "bg/nb_sky.mp4",
+    "bg/nb_social.mp4",
+    "bg/nb_team.mp4",
+    "bg/nb_think.mp4",
+    "bg/nb_train.mp4",
+    "bg/nb_walk.mp4",
+    "bg/nb_art.mp4",
+    "bg/nb_board.mp4",
+    "bg/nb_bokeh.mp4",
+    "bg/nb_books.mp4",
+    "bg/nb_building.mp4",
+    "bg/nb_cafe.mp4",
+    "bg/nb_camera.mp4"
+  ]
+}

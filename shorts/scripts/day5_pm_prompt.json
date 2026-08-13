@@ -1,0 +1,69 @@
+{
+  "template": "ContrarianVideo",
+  "title": "プロンプト集を買うのは無意味な理由",
+  "caption": "有料のプロンプト集、買わなくていいです。AIの進化が速すぎて買った瞬間から古くなる。他人の1000個より自分の10個。作り方の型は動画内で。買ったことある派？作る派？コメントで。\n#プロンプト #ChatGPT #AI活用 #情報商材 #仕事術",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "有料のプロンプト集、買わなくていいです。",
+      "telop": "**買わなくていい**です"
+    },
+    {
+      "role": "body",
+      "narration": "エーアイの進化は速すぎる。プロンプト集は、買った瞬間から古くなります。",
+      "telop": "買った瞬間から**古くなる**"
+    },
+    {
+      "role": "body",
+      "narration": "半年前の魔法の呪文、今はもう、普通に聞くだけで同じ答えが出ます。",
+      "telop": "呪文は**もう要らない**"
+    },
+    {
+      "role": "body",
+      "narration": "本当に効くのは、あなたの業務に合わせたやつ。他人の1000個より、自分の10個です。",
+      "telop": "他人の1000個より\n**自分の10個**"
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "narration": "作り方は簡単。1、役割を書く。",
+      "telop": "役割を書く"
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "narration": "2、目的と条件を書く。",
+      "telop": "目的と条件を書く"
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "narration": "3、出力形式を指定する。この型だけで、プロンプト集は要らない。",
+      "telop": "出力形式を指定する"
+    },
+    {
+      "role": "flip",
+      "narration": "ただし例外も。特定業界の実例集なら、価値はあります。呪文を買うな、事例を買え。",
+      "telop": "呪文を買うな\n**事例を買え**"
+    },
+    {
+      "role": "vs",
+      "narration": "プロンプト集、買ったことある派？自分で作る派？正直にコメントで。",
+      "telop": "正直に**コメント**で",
+      "vs": {
+        "left": "買った派",
+        "right": "作る派"
+      }
+    }
+  ],
+  "bgm": "bgm/pawn.mp3",
+  "bgClips": [
+    "bg/typing_laptop.mp4",
+    "bg/graph_screen.mp4",
+    "bg/coffee_desk.mp4",
+    "bg/portrait.mp4",
+    "bg/office_window.mp4",
+    "bg/city_night.mp4"
+  ]
+}

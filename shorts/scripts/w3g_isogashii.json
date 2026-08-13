@@ -1,0 +1,89 @@
+{
+  "template": "ContrarianVideo",
+  "_note": "Week3-5。持論型の再検証その1。22.2%の失敗原因(対象を絞りすぎ)を回避し、全員に当てはまるテーマにする。否定断定フック・35〜40秒。143%を出した『ChatGPT課金、実は要らない人の特徴』と同じく『自分は当てはまる?』が発動する作り。",
+  "title": "「忙しくてAIを試す時間がない」人へ",
+  "caption": "忙しいからAIを試せない…その順番だと一生試せません。試す時間がないのではなく、試さないから時間がない。最初の1回だけ10分ください。あなたはどっち？\n※個人の見解です\n#AI活用 #時短 #仕事術 #生産性 #ChatGPT",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "忙しくてエーアイを試す時間がない。それ、順番が逆です。",
+      "telop": "その順番だと**一生試せない**",
+      "bg": [
+        "jp_commuters",
+        "own_desk_messy"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "試す時間がないんじゃなくて、試してないから時間がないんです。",
+      "telop": "試さないから**時間がない**",
+      "bg": [
+        "own_clock",
+        "nb_think"
+      ]
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "narration": "1、忙しい人ほど、同じ作業を繰り返しています。",
+      "telop": "同じ作業の繰り返し",
+      "bg": [
+        "jp_laptop_m1",
+        "own_typing"
+      ]
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "narration": "2、繰り返す作業ほど、任せたときに効きます。",
+      "telop": "繰り返しほど効果が出る",
+      "bg": [
+        "own_docs_stack",
+        "nb_code"
+      ]
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "narration": "3、でも忙しいので、試す前に一日が終わる。",
+      "telop": "試す前に一日が終わる",
+      "bg": [
+        "own_clock_zoom",
+        "nb_night"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "ここから抜けるには、最初の1回だけ、時間を作るしかありません。",
+      "telop": "最初の**1回**だけ時間を作る",
+      "bg": [
+        "own_desk_clean",
+        "nb_morning"
+      ]
+    },
+    {
+      "role": "flip",
+      "narration": "おすすめは10分だけ。毎日やってる作業を、1つ頼んでみる。",
+      "telop": "**10分**で1つだけ頼む",
+      "bg": [
+        "own_phone_tap",
+        "own_coffee_pour"
+      ]
+    },
+    {
+      "role": "vs",
+      "narration": "あなたはどっちですか。後回しか、10分作るか。コメントで。",
+      "telop": "あなたはどっち？↓\n**コメント**で",
+      "vs": {
+        "left": "後回し",
+        "right": "10分作る"
+      },
+      "bg": [
+        "jp_crosswalk_top",
+        "jp_skyline_day"
+      ]
+    }
+  ],
+  "bgm": "bgm/pawn.mp3"
+}

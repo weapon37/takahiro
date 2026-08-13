@@ -1,0 +1,128 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/pawn.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**3〜8秒**で離脱が続いた",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_messy.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4d_ridatsu_dani/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 179
+    },
+    {
+      "role": "body",
+      "telop": "グラフを見ても**原因不明**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4d_ridatsu_dani/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 148
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "**1位をすぐ見せていない**動画",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4d_ridatsu_dani/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 154
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "1位を**直後に予告**したら消えた",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_timelapse.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4d_ridatsu_dani/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 150
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "**感覚**が離脱を生んでいた",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_pen_write.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4d_ridatsu_dani/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 156
+    },
+    {
+      "role": "body",
+      "telop": "**フック直後に1位**で統一",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_coffee_cup.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4d_ridatsu_dani/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 171
+    },
+    {
+      "role": "flip",
+      "telop": "**グラフを見る**だけで直せる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_camera.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4d_ridatsu_dani/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 137
+    },
+    {
+      "role": "vs",
+      "telop": "あなたはどっち？↓\n**コメント**で",
+      "vs": {
+        "left": "感覚",
+        "right": "データ"
+      },
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_skyline.mp4",
+        "bg/own_street.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4d_ridatsu_dani/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 145
+    }
+  ]
+}

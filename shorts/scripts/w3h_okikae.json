@@ -1,0 +1,85 @@
+{
+  "template": "ContrarianVideo",
+  "_note": "Week3-6。持論型の再検証その2。全員対象・否定断定フック。『AIに仕事を奪われる』系だが、奪われる/奪われないの二元論ではなく『置き換わるのは作業であって仕事ではない』という角度で差別化。",
+  "title": "AIに置き換わるのは「仕事」じゃありません",
+  "caption": "AIに仕事を奪われる…の議論、前提がズレてます。置き換わるのは仕事ではなく作業。1つの仕事は作業の束で、AIが持っていけるのはその一部だけ。あなたの仕事、何割が作業ですか？\n※個人の見解です\n#AI活用 #仕事術 #キャリア #生産性 #ChatGPT",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "エーアイに仕事を奪われる。その話、前提がズレています。",
+      "telop": "奪われるのは**仕事じゃない**",
+      "bg": [
+        "jp_commuters",
+        "own_crossing_night"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "置き換わるのは、仕事ではなく、作業です。",
+      "telop": "置き換わるのは**作業**",
+      "bg": [
+        "own_typing",
+        "own_docs_stack"
+      ]
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "narration": "1、1つの仕事は、たくさんの作業の束です。",
+      "telop": "仕事は作業の束",
+      "bg": [
+        "own_docs_stack"
+      ]
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "narration": "2、エーアイが持っていけるのは、そのうちの一部だけ。",
+      "telop": "持っていくのは一部だけ",
+      "bg": [
+        "own_desk_timelapse"
+      ]
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "narration": "3、残るのは、決めることと、責任を取ることです。",
+      "telop": "残るのは**決めること**",
+      "bg": [
+        "own_pen_write"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "だから、奪われるかではなく、何割を渡せるかで考えたほうがいい。",
+      "telop": "何割**渡せるか**で考える",
+      "bg": [
+        "nb_chart",
+        "own_clock"
+      ]
+    },
+    {
+      "role": "flip",
+      "narration": "渡せる人ほど、自由になります。減るのは作業で、増えるのは時間です。",
+      "telop": "減るのは作業、増えるのは**時間**",
+      "bg": [
+        "own_desk_clean",
+        "own_coffee_cup"
+      ]
+    },
+    {
+      "role": "vs",
+      "narration": "あなたの仕事、何割が作業ですか。半分より多いか、少ないか。",
+      "telop": "作業は何割？↓\n**コメント**で",
+      "vs": {
+        "left": "半分以上",
+        "right": "半分未満"
+      },
+      "bg": [
+        "jp_skyline"
+      ]
+    }
+  ],
+  "bgm": "bgm/dova_ensolarado.mp3"
+}

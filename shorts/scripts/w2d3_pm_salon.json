@@ -1,0 +1,88 @@
+{
+  "template": "ContrarianVideo",
+  "title": "有料AIサロン、入る前に見てください",
+  "caption": "月額のAIサロン、入る前に60秒だけ。中身の大半は無料で追えます。ただし「強制力」と「人脈」を買うのはアリな人も。入るなら何を買うのか、はっきりさせてから。あなたは肯定派？否定派？\n※個人の見解です\n#AIサロン #情報商材 #AI活用 #お金の勉強 #自己投資",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "月額のエーアイサロン、入る前に、60秒だけ。",
+      "telop": "入る前に**60秒**"
+    },
+    {
+      "role": "body",
+      "narration": "まず知ってほしいのは、中身の大半は、無料で追えるということ。",
+      "telop": "中身の大半は**無料**で追える"
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "narration": "気をつける点、1。最新情報は、無料の発信の方が速いことがある。",
+      "telop": "最新情報は無料が速い時も"
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "narration": "2、質問しても、結局は自分で手を動かすしかない。",
+      "telop": "手を動かすのは自分"
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "narration": "3、盛り上がりが止まって、更新が減るサロンもある。",
+      "telop": "更新が止まる所もある"
+    },
+    {
+      "role": "body",
+      "narration": "じゃあ全部ダメかというと、そうでもない。",
+      "telop": "でも**アリな人**もいる"
+    },
+    {
+      "role": "flip",
+      "narration": "買う価値があるのは、情報じゃなくて、続ける強制力と、人脈。ここが欲しいなら、投資です。",
+      "telop": "買うのは**強制力と人脈**"
+    },
+    {
+      "role": "vs",
+      "narration": "あなたはサロン肯定派？否定派？入って良かった、後悔した、経験もコメントで。",
+      "telop": "あなたは**どっち**？",
+      "vs": {
+        "left": "入る派",
+        "right": "入らない派"
+      }
+    }
+  ],
+  "bgm": "bgm/pawn.mp3",
+  "bgClips": [
+    "bg/nb_cafe.mp4",
+    "bg/nb_camera.mp4",
+    "bg/nb_cash.mp4",
+    "bg/nb_chart.mp4",
+    "bg/nb_clock.mp4",
+    "bg/nb_code.mp4",
+    "bg/nb_coffee.mp4",
+    "bg/nb_desk.mp4",
+    "bg/nb_digital.mp4",
+    "bg/nb_gadgets.mp4",
+    "bg/nb_keys.mp4",
+    "bg/nb_morning.mp4",
+    "bg/nb_night.mp4",
+    "bg/nb_notes.mp4",
+    "bg/nb_particles.mp4",
+    "bg/nb_phone.mp4",
+    "bg/nb_plant.mp4",
+    "bg/nb_rain.mp4",
+    "bg/nb_savings.mp4",
+    "bg/nb_sky.mp4",
+    "bg/nb_social.mp4",
+    "bg/nb_team.mp4",
+    "bg/nb_think.mp4",
+    "bg/nb_train.mp4",
+    "bg/nb_walk.mp4",
+    "bg/nb_art.mp4",
+    "bg/nb_board.mp4",
+    "bg/nb_bokeh.mp4",
+    "bg/nb_books.mp4",
+    "bg/nb_building.mp4"
+  ]
+}

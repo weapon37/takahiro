@@ -1,0 +1,135 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/pawn.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "「稼げない」は**違う**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_cash.mp4",
+        "bg/nb_chart.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w2d7_pm_kasegenai/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 152
+    },
+    {
+      "role": "body",
+      "telop": "稼げないより**続けてない**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_street.mp4",
+        "bg/jp_dusk_road.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w2d7_pm_kasegenai/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 104
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "いきなり収益を狙う",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_savings.mp4",
+        "bg/nb_think.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w2d7_pm_kasegenai/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 128
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "人と比べてやめる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_phone.mp4",
+        "bg/nb_social.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w2d7_pm_kasegenai/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 102
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "最初の成果を飛ばす",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_clock.mp4",
+        "bg/nb_morning.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w2d7_pm_kasegenai/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 121
+    },
+    {
+      "role": "body",
+      "telop": "まず**時間**が返ってくる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_meal.mp4",
+        "bg/jp_home_read.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w2d7_pm_kasegenai/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 145
+    },
+    {
+      "role": "flip",
+      "telop": "順番は**時短→発信→収益**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_desk_m1.mp4",
+        "bg/nb_social.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w2d7_pm_kasegenai/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 182
+    },
+    {
+      "role": "vs",
+      "telop": "今どの段階？**コメント**へ",
+      "vs": {
+        "left": "時短・発信",
+        "right": "収益"
+      },
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_skyline.mp4",
+        "bg/jp_shibuya_air.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w2d7_pm_kasegenai/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 200
+    }
+  ]
+}

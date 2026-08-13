@@ -1,0 +1,106 @@
+{
+  "template": "RankingVideo",
+  "_note": "Week4-11(8/18 朝7:00)。元カメラマンの署名回②。ツール紹介型にして、署名性とランキング型の相性を確かめる。◆Week2のw2d2_pm_douga(動画編集AI BEST3)と重複しないよう、写真の後処理を軸にした。CapCutは2位に留め、1位は商用利用の安心を理由にAdobe Firefly。◆実測値なし。◆フックは2シーンに分割済み。",
+  "title": "元カメラマンが選ぶ、写真・動画AI BEST3",
+  "caption": "撮る側の目で選んだ写真・動画AI 3つ。見た目がすごいものではなく、仕事で使えるものを基準にしました。1位は商用利用の安心が理由です。素材の権利は仕事だと最優先になります。あなたが使ってるものは？\n※個人の見解です ※各サービスの規約・料金は変わることがあります\n#AI活用 #写真 #動画編集 #カメラマン #Adobe",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "撮る側の目で選んだ、写真と動画のエーアイ3つ。",
+      "telop": "撮る側が選ぶ**AI3つ**",
+      "bg": [
+        "own_camera_rig",
+        "own_lens_hands"
+      ]
+    },
+    {
+      "role": "hook",
+      "narration": "1位は、商用利用の安心が理由です。",
+      "telop": "1位は**商用利用**が理由",
+      "bg": [
+        "own_tripod",
+        "own_camera"
+      ]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "Canva",
+      "narration": "第3位、キャンバ。書き出しとサムネ担当。",
+      "telop": "書き出しと**サムネ**担当",
+      "bg": [
+        "nb_art",
+        "nb_bokeh"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "サイズ違いを一気に作れます。作り直さなくていい。",
+      "telop": "サイズ違いを**一気に**",
+      "bg": [
+        "own_phone_tap",
+        "nb_social"
+      ]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "CapCut",
+      "narration": "第2位、キャップカット。字幕と尺の調整担当。",
+      "telop": "字幕と**尺**の調整",
+      "bg": [
+        "nb_digital",
+        "nb_gadgets"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "字幕は自動で出ます。手打ちしていた時間がまるごと消えます。",
+      "telop": "手打ちの時間が**消える**",
+      "bg": [
+        "own_typing",
+        "nb_keys"
+      ]
+    },
+    {
+      "role": "save",
+      "narration": "1位は仕事で使うなら必須です。保存推奨。",
+      "telop": "1位は**仕事なら必須**",
+      "bg": [
+        "own_docs_stack",
+        "nb_notes"
+      ]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "Adobe Firefly",
+      "narration": "第1位、アドビ ファイアフライ。",
+      "telop": "**商用利用**が安心",
+      "bg": [
+        "nb_board",
+        "own_lens_adjust"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "不要なものを消す、画角を広げる。学習データの出どころがはっきりしています。",
+      "telop": "出どころが**はっきり**",
+      "bg": [
+        "own_desk_timelapse",
+        "nb_particles"
+      ]
+    },
+    {
+      "role": "cta",
+      "narration": "あなたが使ってるものは。コメントで。",
+      "telop": "使ってるものは？↓\n**コメントで**",
+      "bg": [
+        "nb_sky",
+        "own_suburb_sky"
+      ]
+    }
+  ],
+  "bgm": "bgm/dova_beach_cocktail.mp3"
+}

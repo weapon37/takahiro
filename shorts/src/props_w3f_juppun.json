@@ -1,0 +1,129 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_chocomint.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "1日**10分**で使いこなす人",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_clock.mp4",
+        "bg/own_clock_zoom.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3f_juppun/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 227
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "時間を決める",
+      "telop": "朝の10分と決める",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_morning.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3f_juppun/02.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 93
+    },
+    {
+      "role": "body",
+      "telop": "空いた時に、では**続かない**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_messy.mp4",
+        "bg/own_coffee_pour.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3f_juppun/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 75
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "指示を使い回す",
+      "telop": "毎回ゼロから書かない",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_pen_write.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3f_juppun/04.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 104
+    },
+    {
+      "role": "save",
+      "telop": "1位は**保存**推奨",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_notes.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3f_juppun/05.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 133
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "用途を1つに絞る",
+      "telop": "**1つ**だけに使う",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3f_juppun/06.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 110
+    },
+    {
+      "role": "body",
+      "telop": "あれもこれもが**続かない原因**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_stone_steps_wide.mp4",
+        "bg/own_steps_climbing.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3f_juppun/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 166
+    },
+    {
+      "role": "cta",
+      "telop": "毎日の用途は↓\n**コメント**で",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_coffee_cup.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3f_juppun/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 125
+    }
+  ]
+}

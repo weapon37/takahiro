@@ -1,0 +1,129 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_ensolarado.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "足すだけで**別物**になる3つ",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/own_phone_tap.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3e_shiji/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 233
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "誰に向けてか",
+      "telop": "読む人を先に決める",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_pen_write.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3e_shiji/02.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 112
+    },
+    {
+      "role": "body",
+      "telop": "相手で**言葉が変わる**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_commuters.mp4",
+        "bg/own_typing.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3e_shiji/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 95
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "長さを決める",
+      "telop": "何文字か伝える",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3e_shiji/04.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 97
+    },
+    {
+      "role": "save",
+      "telop": "1位は**保存**推奨",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_clock.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3e_shiji/05.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 179
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "ダメな例を渡す",
+      "telop": "**ダメな例**を先に見せる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_messy.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3e_shiji/06.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 123
+    },
+    {
+      "role": "body",
+      "telop": "良い例より**悪い例**が効く",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_think.mp4",
+        "bg/own_typing.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3e_shiji/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 123
+    },
+    {
+      "role": "cta",
+      "telop": "よく足す一言は↓\n**コメント**で",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3e_shiji/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 145
+    }
+  ]
+}

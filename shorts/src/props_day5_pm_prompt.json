@@ -1,0 +1,177 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/pawn.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**買わなくていい**です",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4",
+        "bg/office_window.mp4",
+        "bg/city_night.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day5_pm_prompt/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 75
+    },
+    {
+      "role": "body",
+      "telop": "買った瞬間から**古くなる**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4",
+        "bg/office_window.mp4",
+        "bg/city_night.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day5_pm_prompt/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 157
+    },
+    {
+      "role": "body",
+      "telop": "呪文は**もう要らない**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4",
+        "bg/office_window.mp4",
+        "bg/city_night.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day5_pm_prompt/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 152
+    },
+    {
+      "role": "body",
+      "telop": "他人の1000個より\n**自分の10個**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4",
+        "bg/office_window.mp4",
+        "bg/city_night.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day5_pm_prompt/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 170
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "役割を書く",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4",
+        "bg/office_window.mp4",
+        "bg/city_night.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day5_pm_prompt/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 90
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "目的と条件を書く",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4",
+        "bg/office_window.mp4",
+        "bg/city_night.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day5_pm_prompt/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 68
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "出力形式を指定する",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4",
+        "bg/office_window.mp4",
+        "bg/city_night.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day5_pm_prompt/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 145
+    },
+    {
+      "role": "flip",
+      "telop": "呪文を買うな\n**事例を買え**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4",
+        "bg/office_window.mp4",
+        "bg/city_night.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day5_pm_prompt/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 205
+    },
+    {
+      "role": "vs",
+      "telop": "正直に**コメント**で",
+      "vs": {
+        "left": "買った派",
+        "right": "作る派"
+      },
+      "bgVideo": null,
+      "bgClips": [
+        "bg/typing_laptop.mp4",
+        "bg/graph_screen.mp4",
+        "bg/coffee_desk.mp4",
+        "bg/portrait.mp4",
+        "bg/office_window.mp4",
+        "bg/city_night.mp4"
+      ],
+      "bgWash": 0,
+      "audio": "audio_day5_pm_prompt/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 159
+    }
+  ]
+}

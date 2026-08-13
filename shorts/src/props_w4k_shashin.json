@@ -1,0 +1,164 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_beach_cocktail.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "撮る側が選ぶ**AI3つ**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_camera_rig.mp4",
+        "bg/own_lens_hands.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4k_shashin/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 123
+    },
+    {
+      "role": "hook",
+      "telop": "1位は**商用利用**が理由",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_tripod.mp4",
+        "bg/own_camera.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4k_shashin/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 104
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "Canva",
+      "telop": "書き出しと**サムネ**担当",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_art.mp4",
+        "bg/nb_bokeh.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4k_shashin/03.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 108
+    },
+    {
+      "role": "body",
+      "telop": "サイズ違いを**一気に**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_phone_tap.mp4",
+        "bg/nb_social.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4k_shashin/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 121
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "CapCut",
+      "telop": "字幕と**尺**の調整",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_digital.mp4",
+        "bg/nb_gadgets.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4k_shashin/05.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 146
+    },
+    {
+      "role": "body",
+      "telop": "手打ちの時間が**消える**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/nb_keys.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4k_shashin/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 156
+    },
+    {
+      "role": "save",
+      "telop": "1位は**仕事なら必須**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4",
+        "bg/nb_notes.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4k_shashin/07.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 133
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "Adobe Firefly",
+      "telop": "**商用利用**が安心",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_board.mp4",
+        "bg/own_lens_adjust.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4k_shashin/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 73
+    },
+    {
+      "role": "body",
+      "telop": "出どころが**はっきり**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_timelapse.mp4",
+        "bg/nb_particles.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4k_shashin/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 166
+    },
+    {
+      "role": "cta",
+      "telop": "使ってるものは？↓\n**コメントで**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_sky.mp4",
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4k_shashin/10.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 89
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "template": "RankingVideo",
+  "_note": "週刊定番枠。2026/7/27週の実ニュースで作成(裏取り済: Arctera State of AI Governance 2026 =78%/19%、EU DMAのAndroid開放命令=2027年7月まで、Nvidia-OpenAIの2500億ドル保証=WSJ報道・交渉中)。公開は7/31(金)想定のため『日曜』表現は使わない。次週は各newsを差し替えること。出典は固定コメントへ。",
+  "title": "今週のAIニュースTOP3【仕事に関係あるやつだけ】2026/7/5週",
+  "caption": "今週のAIニュース、仕事に関係あるものだけ3本。①AIの管理体制が追いついていない ②スマホでAIを選べる時代へ ③AI投資が桁違いの規模に。気になる1本はコメントで、深掘り版を作ります。\n※出典リンクは固定コメントへ ※Nvidiaの件は報道時点で交渉中です\n#AIニュース #AI活用 #仕事術 #最新AI #週刊",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "今週のエーアイニュース、仕事に関係ある3本だけ。",
+      "telop": "今週は**この3本**だけでOK",
+      "bg": [
+        "nb_digital",
+        "jp_skyline"
+      ]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "管理が追いつかない",
+      "narration": "第3位、エーアイの管理が、追いついていません。",
+      "telop": "リスク増を見込む組織 **78%**",
+      "bg": [
+        "nb_board"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "リスクが増えると答えた組織は78パーセント。でも証明できるのは、5社に1社未満です。",
+      "telop": "でも証明できるのは**5社に1社未満**",
+      "bg": [
+        "nb_notes",
+        "own_clock"
+      ]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "スマホでAIを選べる",
+      "narration": "第2位、イーユーがグーグルに、アンドロイドの開放を命令。",
+      "telop": "EUが**Android開放**を命令",
+      "bg": [
+        "nb_phone"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "2027年までに、他社のエーアイもスマホで使えます。",
+      "telop": "**2027年7月**まで／他社AIも使える",
+      "bg": [
+        "sumaho2",
+        "jp_laptop_m1"
+      ]
+    },
+    {
+      "role": "save",
+      "narration": "1位は保存推奨です。",
+      "telop": "1位は**働き方に直結**",
+      "bg": [
+        "nb_savings"
+      ]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "投資が桁違いに",
+      "narration": "第1位、エヌビディアが、2500億ドル規模の保証を検討。",
+      "telop": "NVIDIAが**2500億ドル**保証を検討",
+      "bg": [
+        "nb_chart"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "交渉中ですが、エーアイはもう、電力と土地の話。来週も実測で追います。",
+      "telop": "AIは**電力と土地**の話へ ※交渉中",
+      "bg": [
+        "jp_dusk_road",
+        "own_suburb_sky"
+      ]
+    },
+    {
+      "role": "cta",
+      "narration": "気になる1本はコメントで。来週も、この枠で。",
+      "telop": "深掘りリクエストは↓\n**毎週この枠**で",
+      "bg": [
+        "own_coffee_pour"
+      ]
+    }
+  ],
+  "bgm": "bgm/dova_ensolarado.mp3",
+  "bgClips": [
+    "bg/city_night.mp4",
+    "bg/sunrise_city.mp4",
+    "bg/business_walking.mp4",
+    "bg/graph_screen.mp4",
+    "bg/subway_commute.mp4",
+    "bg/office_window.mp4"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "template": "ContrarianVideo",
+  "_note": "テスト版・新テーマA(現役カメラマンがAIで仕事を変えていく記録)1本目。TTS発音修正の実話(3つ→みっつ, 320ms→160ms実測)。narrationは辞書自動置換で意味が壊れないよう、対象語を直接引用せず現象を描写する形にした。",
+  "title": "AIナレーション、最初のつまずきは「発音」でした",
+  "caption": "元カメラマンとして、今も自分でカメラを回しながら動画を作っています。AIナレーションを使い始めて最初にぶつかった壁は発音でした。波形を見て初めて理由が分かりました。\n※実際の制作過程の記録です\n#AI活用 #動画制作 #AIナレーション #TTS #仕事術",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "動画にAIナレーションを使い始めて、最初につまずいたのは発音でした。",
+      "telop": "最初のつまずきは**発音**でした",
+      "bg": ["own_typing", "own_desk_messy"]
+    },
+    {
+      "role": "body",
+      "narration": "数字のあとに「つ」が続く言葉を、AIが不自然に区切って読むことがあったんです。",
+      "telop": "**不自然に区切って**読むことが",
+      "bg": ["own_typing"]
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "narration": "波形で確認すると、区切って読んだときは無音が0.32秒もありました。",
+      "telop": "無音が**0.32秒**もあった",
+      "bg": ["own_desk_timelapse"]
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "narration": "区切らない読み方に直すと、無音は0.16秒まで縮みました。",
+      "telop": "直すと**0.16秒**まで縮んだ",
+      "bg": ["own_docs_stack"]
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "narration": "同じ漢字でも、読み方が文脈で変わる言葉は単純な置き換えでは直せません。",
+      "telop": "**文脈**で読み方が変わる言葉も",
+      "bg": ["own_pen_write"]
+    },
+    {
+      "role": "body",
+      "narration": "結局、読み間違えやすい言葉を1つずつ辞書に登録して、耳で確認しながら直しています。",
+      "telop": "**1つずつ**辞書に登録して直す",
+      "bg": ["own_typing", "own_desk_clean"]
+    },
+    {
+      "role": "flip",
+      "narration": "AIは万能じゃない。聞いて直す工程は、今も人の仕事です。",
+      "telop": "**聞いて直す**のは人の仕事",
+      "bg": ["own_camera"]
+    },
+    {
+      "role": "vs",
+      "narration": "あなたはAIの声、そのまま使いますか。聞き直して直しますか。",
+      "telop": "あなたはどっち？↓\n**コメント**で",
+      "vs": {"left": "そのまま", "right": "聞き直す"},
+      "bg": ["jp_skyline", "own_street"]
+    }
+  ],
+  "bgm": "bgm/dova_beach_cocktail.mp3"
+}

@@ -1,0 +1,164 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_beach_cocktail.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "人事・採用は**この3つ**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_commuters.mp4",
+        "bg/jp_office_tower.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4a_jinji/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 145
+    },
+    {
+      "role": "hook",
+      "telop": "1位は**書き物がぜんぶ**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_board.mp4",
+        "bg/own_pen_write.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4a_jinji/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 100
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "Notta",
+      "telop": "面接の**記録係**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_team.mp4",
+        "bg/handshake.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4a_jinji/03.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 114
+    },
+    {
+      "role": "body",
+      "telop": "評価の**ブレ**が減る",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_notes.mp4",
+        "bg/own_docs_stack.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4a_jinji/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 112
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "NotebookLM",
+      "telop": "書類を**読ませておく**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_books.mp4",
+        "bg/jp_laptop_m1.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4a_jinji/05.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 73
+    },
+    {
+      "role": "body",
+      "telop": "条件に合うか**聞ける**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_messy.mp4",
+        "bg/nb_chart.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4a_jinji/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 146
+    },
+    {
+      "role": "save",
+      "telop": "1位は**チームで共有**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_phone_tap.mp4",
+        "bg/nb_social.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4a_jinji/07.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 131
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "ChatGPT",
+      "telop": "書き物が**ぜんぶ速く**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_gadgets.mp4",
+        "bg/nb_digital.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4a_jinji/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 72
+    },
+    {
+      "role": "body",
+      "telop": "求人票も**スカウト文**も",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/jp_desk_m1.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4a_jinji/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 164
+    },
+    {
+      "role": "cta",
+      "telop": "あなたの職種は？↓\n**コメントで**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_sky.mp4",
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4a_jinji/10.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 123
+    }
+  ]
+}

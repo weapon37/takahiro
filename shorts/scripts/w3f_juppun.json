@@ -1,0 +1,64 @@
+{
+  "template": "RankingVideo",
+  "_note": "Week3-4。確定フォーマット。チャンネルの核『時間の使い方』軸。石段素材で「続ける」を象徴させる。",
+  "title": "1日10分でAIを使いこなす人の習慣BEST3",
+  "caption": "1日10分しか使わないのに成果を出してる人の習慣3つ。1位は今日からできます。あれもこれも、が続かない原因です。あなたが毎日使ってる用途は？\n※個人の見解です\n#AI活用 #習慣 #時短 #仕事術 #ChatGPT",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "1日10分しか使わないのに、成果を出してる人がいます。習慣は3つ。1位は今日からできます。",
+      "telop": "1日**10分**で使いこなす人",
+      "bg": ["own_clock", "own_clock_zoom"]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "時間を決める",
+      "narration": "第3位、使う時間を決めている。",
+      "telop": "朝の10分と決める",
+      "bg": ["nb_morning"]
+    },
+    {
+      "role": "body",
+      "narration": "空いた時に使う、では続きません。",
+      "telop": "空いた時に、では**続かない**",
+      "bg": ["own_desk_messy", "own_coffee_pour"]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "指示を使い回す",
+      "narration": "第2位、同じ指示を、使い回している。",
+      "telop": "毎回ゼロから書かない",
+      "bg": ["own_pen_write"]
+    },
+    {
+      "role": "save",
+      "narration": "うまくいった指示は、メモに残す。1位は保存推奨です。",
+      "telop": "1位は**保存**推奨",
+      "bg": ["nb_notes"]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "用途を1つに絞る",
+      "narration": "第1位、用途を、1つに絞っている。",
+      "telop": "**1つ**だけに使う",
+      "bg": ["own_typing"]
+    },
+    {
+      "role": "body",
+      "narration": "あれもこれも、が続かない原因です。まず1つ、決めてください。",
+      "telop": "あれもこれもが**続かない原因**",
+      "bg": ["own_stone_steps_wide", "own_steps_climbing"]
+    },
+    {
+      "role": "cta",
+      "narration": "あなたが毎日使ってる用途は何ですか。コメントで。",
+      "telop": "毎日の用途は↓\n**コメント**で",
+      "bg": ["own_coffee_cup"]
+    }
+  ],
+  "bgm": "bgm/dova_chocomint.mp3"
+}

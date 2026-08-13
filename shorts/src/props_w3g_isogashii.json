@@ -1,0 +1,135 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/pawn.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "その順番だと**一生試せない**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_commuters.mp4",
+        "bg/own_desk_messy.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3g_isogashii/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 141
+    },
+    {
+      "role": "body",
+      "telop": "試さないから**時間がない**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_clock.mp4",
+        "bg/nb_think.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3g_isogashii/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 131
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "同じ作業の繰り返し",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_laptop_m1.mp4",
+        "bg/own_typing.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3g_isogashii/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 137
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "繰り返しほど効果が出る",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4",
+        "bg/nb_code.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3g_isogashii/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 118
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "試す前に一日が終わる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_clock_zoom.mp4",
+        "bg/nb_night.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3g_isogashii/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 116
+    },
+    {
+      "role": "body",
+      "telop": "最初の**1回**だけ時間を作る",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_clean.mp4",
+        "bg/nb_morning.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3g_isogashii/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 148
+    },
+    {
+      "role": "flip",
+      "telop": "**10分**で1つだけ頼む",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_phone_tap.mp4",
+        "bg/own_coffee_pour.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3g_isogashii/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 154
+    },
+    {
+      "role": "vs",
+      "telop": "あなたはどっち？↓\n**コメント**で",
+      "vs": {
+        "left": "後回し",
+        "right": "10分作る"
+      },
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_crosswalk_top.mp4",
+        "bg/jp_skyline_day.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w3g_isogashii/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 160
+    }
+  ]
+}

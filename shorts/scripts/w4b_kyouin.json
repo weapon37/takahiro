@@ -1,0 +1,106 @@
+{
+  "template": "RankingVideo",
+  "_note": "Week4-8(8/16 夜21:00)。職業別シリーズ第9弾・教員講師編。確定フォーマット。◆実測値は作らない。◆生徒の個人情報をAIに入れない注意を本編(1位のbody)と概要欄の両方に入れている。教育分野は配慮が要るため、成績評価そのものにAIを使う話には踏み込まず、準備業務に限定した。◆見出し札は英語表記、ナレーションはカタカナ。",
+  "title": "職業別・入れるべきAI BEST3【教員・講師編】",
+  "caption": "教える仕事の人だけ見てください。準備の時間がまるごと変わります。1位は教材の下書きから小テストまで任せられるもの。授業そのものではなく、準備を軽くする使い方です。あなたの職種も、コメントで教えてください。\n※個人の見解です ※生徒・受講者の個人情報はAIに入れないでください\n#教員 #講師 #AI活用 #教材作成 #職業別AI",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "教える仕事の人だけ、見てください。入れるべきエーアイは3つ。",
+      "telop": "教える仕事は**この3つ**",
+      "bg": [
+        "nb_books",
+        "jp_home_read"
+      ]
+    },
+    {
+      "role": "hook",
+      "narration": "1位は、準備の時間がまるごと変わります。",
+      "telop": "1位は**準備がまるごと**",
+      "bg": [
+        "nb_morning",
+        "own_pen_write"
+      ]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "Canva",
+      "narration": "第3位、キャンバ。配布物と資料の見た目担当。",
+      "telop": "配布物の**見た目**担当",
+      "bg": [
+        "nb_art",
+        "nb_bokeh"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "テンプレに流し込むだけ。作り直しが速い。",
+      "telop": "**作り直し**が速い",
+      "bg": [
+        "nb_notes",
+        "own_desk_clean"
+      ]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "NotebookLM",
+      "narration": "第2位、ノートブック エルエム。",
+      "telop": "要点と**確認問題**が出る",
+      "bg": [
+        "nb_board",
+        "jp_laptop_f1"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "教科書や資料を読ませると、要点と確認問題が出てきます。",
+      "telop": "資料を**読ませるだけ**",
+      "bg": [
+        "own_docs_stack",
+        "nb_think"
+      ]
+    },
+    {
+      "role": "save",
+      "narration": "1位は準備の相棒です。保存推奨。",
+      "telop": "1位は**準備の相棒**",
+      "bg": [
+        "own_phone_tap",
+        "nb_plant"
+      ]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "ChatGPT",
+      "narration": "第1位、チャットジーピーティー。",
+      "telop": "下書きから**小テスト**まで",
+      "bg": [
+        "nb_gadgets",
+        "nb_digital"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "教材の下書き、小テスト、おたよりまで。ただし生徒の個人情報は入れないこと。",
+      "telop": "個人情報は**入れない**",
+      "bg": [
+        "own_typing",
+        "nb_keys"
+      ]
+    },
+    {
+      "role": "cta",
+      "narration": "あなたの職種も、コメントで。順番に作ります。",
+      "telop": "あなたの職種は？↓\n**コメントで**",
+      "bg": [
+        "nb_sky",
+        "own_suburb_sky"
+      ]
+    }
+  ],
+  "bgm": "bgm/dova_ensolarado.mp3"
+}

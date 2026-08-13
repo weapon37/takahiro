@@ -1,0 +1,88 @@
+{
+  "template": "ContrarianVideo",
+  "title": "AIに丸投げしてはいけない仕事3つ",
+  "caption": "AIは便利。でも「丸投げ」で事故る仕事が3つあります。ここだけは自分の目を通して。使いこなす人ほど、任せる所と任せない所を分けてます。あなたはやらかしたことある？コメントで。\n※個人の見解です\n#AI活用 #仕事術 #ChatGPT #ハルシネーション #リスク管理",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "エーアイに丸投げすると、事故る仕事が、3つあります。",
+      "telop": "丸投げNG、**3つ**"
+    },
+    {
+      "role": "body",
+      "narration": "便利だからこそ、任せていい所と、ダメな所を分けるのが大事です。",
+      "telop": "任せる所を**分ける**"
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "narration": "1、数字と事実の、最終確認。エーアイは平気で、それっぽい嘘をつきます。",
+      "telop": "数字・事実の最終確認"
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "narration": "2、人の心が動く文章の、最後の判断。ここは人間の感覚がいる。",
+      "telop": "心が動く文章の判断"
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "narration": "3、機密情報を、そのまま入れること。情報の扱いには、注意を。",
+      "telop": "機密をそのまま入れる"
+    },
+    {
+      "role": "body",
+      "narration": "この3つを丸投げすると、信頼を一発で失うこともある。",
+      "telop": "信頼を**一発**で失う"
+    },
+    {
+      "role": "flip",
+      "narration": "正解は、丸投げじゃなくて、下書きは任せて、仕上げは自分。この順番です。",
+      "telop": "下書きAI、**仕上げは自分**"
+    },
+    {
+      "role": "vs",
+      "narration": "丸投げでやらかしたこと、ありますか。逆に、任せて助かったことも。コメントで。",
+      "telop": "あなたは**どっち派**？",
+      "vs": {
+        "left": "丸投げ派",
+        "right": "仕上げ派"
+      }
+    }
+  ],
+  "bgm": "bgm/pawn.mp3",
+  "bgClips": [
+    "bg/nb_particles.mp4",
+    "bg/nb_phone.mp4",
+    "bg/nb_plant.mp4",
+    "bg/nb_rain.mp4",
+    "bg/nb_savings.mp4",
+    "bg/nb_sky.mp4",
+    "bg/nb_social.mp4",
+    "bg/nb_team.mp4",
+    "bg/nb_think.mp4",
+    "bg/nb_train.mp4",
+    "bg/nb_walk.mp4",
+    "bg/nb_art.mp4",
+    "bg/nb_board.mp4",
+    "bg/nb_bokeh.mp4",
+    "bg/nb_books.mp4",
+    "bg/nb_building.mp4",
+    "bg/nb_cafe.mp4",
+    "bg/nb_camera.mp4",
+    "bg/nb_cash.mp4",
+    "bg/nb_chart.mp4",
+    "bg/nb_clock.mp4",
+    "bg/nb_code.mp4",
+    "bg/nb_coffee.mp4",
+    "bg/nb_desk.mp4",
+    "bg/nb_digital.mp4",
+    "bg/nb_gadgets.mp4",
+    "bg/nb_keys.mp4",
+    "bg/nb_morning.mp4",
+    "bg/nb_night.mp4",
+    "bg/nb_notes.mp4"
+  ]
+}

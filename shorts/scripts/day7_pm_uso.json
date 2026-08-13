@@ -1,0 +1,69 @@
+{
+  "template": "ContrarianVideo",
+  "title": "「AIで楽して稼ぐ」は嘘です",
+  "caption": "「AIで楽して月100万」あれ、嘘です。ああいう発信の収益源はAIじゃなくてあなた。稼ぐより先に、まず時間が返ってくるのが本当のところ。楽して稼げる系に課金したことある人、匿名で供養しましょう。\n※個人の見解です\n#AI副業 #副業詐欺 #情報商材 #AI活用 #お金の勉強",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "エーアイで楽して月100万。あれ、嘘です。",
+      "telop": "あれ、**嘘**です"
+    },
+    {
+      "role": "body",
+      "narration": "仕組みを言います。ああいう発信の収益源は、エーアイじゃなくて、あなたです。",
+      "telop": "収益源は**あなた**"
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "narration": "1、高額講座の受講料。",
+      "telop": "高額講座"
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "narration": "2、ツールの紹介料。",
+      "telop": "ツールの紹介料"
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "narration": "3、コンサル契約。夢を見せるほど、儲かる構造です。",
+      "telop": "コンサル契約"
+    },
+    {
+      "role": "body",
+      "narration": "検証中の身として言えます。楽じゃない。でも、手作業が減るのは本当でした。",
+      "telop": "楽じゃない。でも\n**手作業は減る**"
+    },
+    {
+      "role": "flip",
+      "narration": "順番はこうです。時短で時間を作る。その時間で、小さく実践する。収益は、いちばん最後。",
+      "telop": "時間→実践→**収益は最後**"
+    },
+    {
+      "role": "body",
+      "narration": "楽して稼げる、と、ちゃんとやれば変わる、は全然違う。このチャンネルは、後者だけやります。",
+      "telop": "ここは**後者だけ**やります"
+    },
+    {
+      "role": "vs",
+      "narration": "楽して稼げる系に課金したこと、ある？匿名でコメントへ。供養しましょう。",
+      "telop": "匿名で**供養**しましょう",
+      "vs": {
+        "left": "ある派",
+        "right": "ない派"
+      }
+    }
+  ],
+  "bgm": "bgm/pawn.mp3",
+  "bgClips": [
+    "bg/coins_stack.mp4",
+    "bg/city_night.mp4",
+    "bg/portrait.mp4",
+    "bg/graph_screen.mp4",
+    "bg/subway_commute.mp4",
+    "bg/business_walking.mp4"
+  ]
+}

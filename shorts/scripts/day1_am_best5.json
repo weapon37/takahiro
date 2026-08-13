@@ -1,0 +1,92 @@
+{
+  "template": "RankingVideo",
+  "title": "副業に使えるAIツールBEST5【結局これ】",
+  "caption": "副業で本当に使うAIツールを実測で選んだTOP5。1位は意外なやつです。使い方の実演は毎日このチャンネルで。検証してほしいツールはコメントで。\n※ツールリンクは固定コメントへ ※リンクにはプロモーションを含みます\n#AI活用 #副業 #AIツール #仕事術 #ChatGPT",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "副業で本当に使うエーアイツール、ベスト5。1位は、意外なやつです。",
+      "telop": "副業AI **BEST5**"
+    },
+    {
+      "role": "rank",
+      "rank": 5,
+      "headline": "CapCut",
+      "narration": "第5位、キャップカット。",
+      "telop": "動画編集が無料"
+    },
+    {
+      "role": "body",
+      "narration": "字幕は自動。動画編集は、もう無料でできます。",
+      "telop": "字幕は**自動**で付く"
+    },
+    {
+      "role": "rank",
+      "rank": 4,
+      "headline": "Canva",
+      "narration": "第4位、キャンバ。",
+      "telop": "デザイン知識ゼロでOK"
+    },
+    {
+      "role": "body",
+      "narration": "サムネも資料も、テンプレで10分です。",
+      "telop": "サムネも資料も**10分**"
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "Notion AI",
+      "narration": "第3位、ノーション エーアイ。",
+      "telop": "副業の頭脳倉庫"
+    },
+    {
+      "role": "body",
+      "narration": "調べたことが、勝手に整理されていきます。",
+      "telop": "メモが**勝手に整理**される"
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "Claude",
+      "narration": "第2位、クロード。",
+      "telop": "長文と資料に強い"
+    },
+    {
+      "role": "body",
+      "narration": "長い文章と資料づくりは、こっちが得意な場面も多い。",
+      "telop": "長文は**こっち**"
+    },
+    {
+      "role": "save",
+      "narration": "1位の前に、保存を。あとで絶対、見返したくなるので。",
+      "telop": "見返す用に**保存**"
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "ChatGPT",
+      "narration": "第1位、チャットジーピーティー。",
+      "telop": "結局これが起点"
+    },
+    {
+      "role": "body",
+      "narration": "無料版でも、副業の8割は回ります。",
+      "telop": "無料でも**8割回る**"
+    },
+    {
+      "role": "cta",
+      "narration": "使い方の実演は、毎日このチャンネルで。検証してほしいツールは、コメントで。",
+      "telop": "検証リクエストは\n**コメント**で"
+    }
+  ],
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgClips": [
+    "bg/typing_laptop.mp4",
+    "bg/coffee_desk.mp4",
+    "bg/graph_screen.mp4",
+    "bg/city_night.mp4",
+    "bg/calendar.mp4",
+    "bg/office_window.mp4"
+  ]
+}

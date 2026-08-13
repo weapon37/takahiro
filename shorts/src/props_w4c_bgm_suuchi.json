@@ -1,0 +1,128 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**耳の感覚だけ**では失敗した",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_messy.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4c_bgm_suuchi/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 154
+    },
+    {
+      "role": "body",
+      "telop": "**声とぶつかって**聞き取りにくい",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4c_bgm_suuchi/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 175
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "**信号対雑音比**を測る",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_timelapse.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4c_bgm_suuchi/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 169
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "数値が低いと**声とかぶる**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4c_bgm_suuchi/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 179
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "**感覚と数値**がズレることも",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_pen_write.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4c_bgm_suuchi/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 160
+    },
+    {
+      "role": "body",
+      "telop": "必ず**数値で確認**してから使う",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_coffee_cup.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4c_bgm_suuchi/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 171
+    },
+    {
+      "role": "flip",
+      "telop": "**測れば**外さなくなる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_camera.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4c_bgm_suuchi/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 135
+    },
+    {
+      "role": "vs",
+      "telop": "あなたはどっち？↓\n**コメント**で",
+      "vs": {
+        "left": "感覚",
+        "right": "数値"
+      },
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_skyline.mp4",
+        "bg/own_street.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4c_bgm_suuchi/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 171
+    }
+  ]
+}

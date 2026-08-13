@@ -1,0 +1,130 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_beach_cocktail.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "最初のつまずきは**発音**でした",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/own_desk_messy.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4a_yomichigai/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 162
+    },
+    {
+      "role": "body",
+      "telop": "**不自然に区切って**読むことが",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4a_yomichigai/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 179
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "無音が**0.32秒**もあった",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_timelapse.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4a_yomichigai/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 164
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "直すと**0.16秒**まで縮んだ",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4a_yomichigai/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 164
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "**文脈**で読み方が変わる言葉も",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_pen_write.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4a_yomichigai/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 179
+    },
+    {
+      "role": "body",
+      "telop": "**1つずつ**辞書に登録して直す",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/own_desk_clean.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4a_yomichigai/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 204
+    },
+    {
+      "role": "flip",
+      "telop": "**聞いて直す**のは人の仕事",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_camera.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4a_yomichigai/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 154
+    },
+    {
+      "role": "vs",
+      "telop": "あなたはどっち？↓\n**コメント**で",
+      "vs": {
+        "left": "そのまま",
+        "right": "聞き直す"
+      },
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_skyline.mp4",
+        "bg/own_street.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4a_yomichigai/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 154
+    }
+  ]
+}
