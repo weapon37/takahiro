@@ -8,11 +8,12 @@
  * リクエスト (POST, JSON):
  *   {
  *     "secret":      "共有シークレット",
- *     "action":      "write" | "inspect" | "clear",   // 省略時は write
+ *     "action":      "write" | "inspect" | "clear" | "createSheet", // 省略時は write
  *     "spreadsheet": "スプレッドシートの URL または ID",
- *     "sheet":       "シート名",            // 省略時は先頭シート
+ *     "sheet":       "シート名",            // 省略時は先頭シート。createSheet では新規シート名（必須）
  *     "cell":        "B12",                 // write・clear では必須
  *     "value":       12480,                 // write では必須
+ *     "template":    "原本（改）",           // createSheet 専用。省略時は "原本（改）"
  *     "dryRun":      false                  // true なら書き込まず結果だけ返す
  *   }
  */
@@ -52,6 +53,9 @@ function doPost(e) {
     }
     if (action === 'clear') {
       return jsonOutput_(clear_(body));
+    }
+    if (action === 'createSheet') {
+      return jsonOutput_(createSheet_(body));
     }
     return jsonOutput_({ ok: false, error: '不明な action です: ' + action });
   } catch (error) {
@@ -166,6 +170,64 @@ function clear_(body) {
     cell: range.getA1Notation(),
     previousValue: previousValue === '' ? null : previousValue,
     previousFormula: previousFormula,
+  };
+}
+
+/**
+ * テンプレートシートを複製して、新しい月のシートを作る。
+ * 複製したシートはテンプレートのすぐ右隣に置く。毎月これを繰り返すと、
+ * 常にテンプレートの右隣が最新月になる（このスプレッドシートの並び順の慣習に合わせている）。
+ */
+function createSheet_(body) {
+  if (body.sheet === undefined || body.sheet === null || body.sheet === '') {
+    return { ok: false, error: 'sheet (新規シート名) が指定されていません' };
+  }
+
+  var spreadsheet = openSpreadsheet_(body.spreadsheet);
+  var newName = String(body.sheet).trim();
+  var templateName = body.template ? String(body.template).trim() : '原本（改）';
+
+  if (spreadsheet.getSheetByName(newName)) {
+    return { ok: false, error: 'シートが既に存在します: ' + newName };
+  }
+  var template = spreadsheet.getSheetByName(templateName);
+  if (!template) {
+    var available = spreadsheet.getSheets().map(function (s) {
+      return s.getName();
+    });
+    return {
+      ok: false,
+      error: 'テンプレートシートが見つかりません: ' + templateName + ' / 利用可能なシート: ' + available.join(', '),
+    };
+  }
+
+  var dryRun = body.dryRun === true;
+  if (dryRun) {
+    return {
+      ok: true,
+      action: 'createSheet',
+      dryRun: true,
+      spreadsheetName: spreadsheet.getName(),
+      spreadsheetId: spreadsheet.getId(),
+      sheetName: newName,
+      templateSheet: template.getName(),
+    };
+  }
+
+  var newSheet = template.copyTo(spreadsheet);
+  newSheet.setName(newName);
+  spreadsheet.setActiveSheet(newSheet);
+  spreadsheet.moveActiveSheet(template.getIndex() + 1);
+  SpreadsheetApp.flush();
+
+  return {
+    ok: true,
+    action: 'createSheet',
+    dryRun: false,
+    spreadsheetName: spreadsheet.getName(),
+    spreadsheetId: spreadsheet.getId(),
+    sheetName: newSheet.getName(),
+    templateSheet: template.getName(),
   };
 }
 

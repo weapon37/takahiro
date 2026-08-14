@@ -22,14 +22,18 @@
  *   # セルを空にする
  *   node tools/receipt-total/write-total.mjs --sheet 2026-08 --cell B12 --clear
  *
+ *   # 月のシートをテンプレートから作る (既定テンプレート: 原本（改）)
+ *   node tools/receipt-total/write-total.mjs --sheet 2026-09 --create-sheet
+ *   node tools/receipt-total/write-total.mjs --sheet 2026-09 --create-sheet --template 原本（改）
+ *
  *   # 書き込まずに結果だけ見る
  *   node tools/receipt-total/write-total.mjs ... --dry-run
  */
 
-const FLAGS_WITH_VALUE = new Set(['--spreadsheet', '--sheet', '--cell', '--value']);
+const FLAGS_WITH_VALUE = new Set(['--spreadsheet', '--sheet', '--cell', '--value', '--template']);
 
 function parseArgs(argv) {
-  const args = { dryRun: false, inspect: false, clear: false };
+  const args = { dryRun: false, inspect: false, clear: false, createSheet: false };
   for (let i = 0; i < argv.length; i++) {
     const flag = argv[i];
     if (flag === '--dry-run') {
@@ -38,6 +42,8 @@ function parseArgs(argv) {
       args.inspect = true;
     } else if (flag === '--clear') {
       args.clear = true;
+    } else if (flag === '--create-sheet') {
+      args.createSheet = true;
     } else if (FLAGS_WITH_VALUE.has(flag)) {
       const value = argv[++i];
       if (value === undefined) {
@@ -74,7 +80,7 @@ async function main() {
         '環境変数 SHEETS_DEFAULT_SPREADSHEET を設定してください'
     );
   }
-  if (!args.inspect) {
+  if (!args.inspect && !args.createSheet) {
     if (!args.cell) {
       throw new Error('--cell は必須です (確認だけなら --inspect)');
     }
@@ -82,11 +88,14 @@ async function main() {
       throw new Error('--value は必須です (確認だけなら --inspect、空にするだけなら --clear)');
     }
   }
+  if (args.createSheet && !args.sheet) {
+    throw new Error('--create-sheet には --sheet で新しいシート名の指定が必須です');
+  }
 
   const url = requireEnv('SHEETS_WEBAPP_URL');
   const secret = requireEnv('SHEETS_WEBAPP_SECRET');
 
-  const action = args.inspect ? 'inspect' : args.clear ? 'clear' : 'write';
+  const action = args.inspect ? 'inspect' : args.createSheet ? 'createSheet' : args.clear ? 'clear' : 'write';
   const payload = {
     secret,
     action,
@@ -101,6 +110,9 @@ async function main() {
       throw new Error(`--value が数値ではありません: ${args.value}`);
     }
     payload.value = amount;
+  }
+  if (action === 'createSheet' && args.template) {
+    payload.template = args.template;
   }
 
   // Apps Script の /exec は googleusercontent へリダイレクトするため redirect: follow が要る。
@@ -139,6 +151,15 @@ async function main() {
         console.log(`${result.cell} の数式: ${result.currentFormula}`);
       }
     }
+    return;
+  }
+
+  if (result.action === 'createSheet') {
+    if (result.dryRun) {
+      console.log(`[dry-run] ${result.spreadsheetName} にシート「${result.sheetName}」を作成 (テンプレート: ${result.templateSheet}) (未実行)`);
+      return;
+    }
+    console.log(`シートを作成しました: ${result.spreadsheetName} / ${result.sheetName} (テンプレート: ${result.templateSheet})`);
     return;
   }
 

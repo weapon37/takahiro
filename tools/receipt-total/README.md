@@ -124,6 +124,23 @@ node tools/receipt-total/write-total.mjs ... --dry-run
 node tools/receipt-total/write-total.mjs --sheet 2026-08 --cell B12 --clear
 ```
 
+### 月のシートをテンプレートから作る
+
+テンプレートシート（既定では「原本（改）」）を複製して、新しい月のシートを作る。
+複製したシートはテンプレートのすぐ右隣に置かれるため、複数月分を古い月から順番に実行すると、
+常にテンプレートの右隣が最新月になる（このスプレッドシートの並び順の慣習に合わせている）。
+
+```bash
+node tools/receipt-total/write-total.mjs --sheet 2026-09 --create-sheet
+node tools/receipt-total/write-total.mjs --sheet 2026-10 --create-sheet
+```
+
+テンプレート名を変えたい場合は `--template` を指定する。
+
+```bash
+node tools/receipt-total/write-total.mjs --sheet 2026-09 --create-sheet --template 原本
+```
+
 ## 引数
 
 | 引数 | 必須 | 説明 |
@@ -135,6 +152,8 @@ node tools/receipt-total/write-total.mjs --sheet 2026-08 --cell B12 --clear
 | `--inspect` | 任意 | 書き込まず、シート一覧と現在値を返す |
 | `--dry-run` | 任意 | 書き込まず、書き込み結果の見込みを返す |
 | `--clear` | 任意 | `--value` の代わりに指定すると、そのセルを空にする |
+| `--create-sheet` | 任意 | 指定すると、`--sheet` の名前でテンプレートシートを複製して新規作成する |
+| `--template` | 任意 | `--create-sheet` 専用。複製元シート名。省略時は「原本（改）」 |
 
 ## 注意点
 
