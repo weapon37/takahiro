@@ -1,0 +1,76 @@
+{
+  "template": "RankingVideo",
+  "_note": "8/20枠テスト版(旧・議事録/文字起こしAI BEST3の再投稿枠を差し替え)。w4n_prompt_mailと同じ『実際のプロンプト文言をテロップで見せる』軸のテスト2本目。◆時間の実測値は入れていない(実測していないため)。◆ランキング根拠は『会議直後に使う頻度』で1位を決定事項抽出にした。◆フック2分割済み。◆8/20の空き枠(旧・議事録AI BEST3)に投入。",
+  "title": "汚い会議メモを片付けるプロンプトBEST3",
+  "caption": "会議メモが汚くて困った人へ。使えるプロンプトは3つだけです。1位は殴り書きのメモから、決まったことだけを残せます。そのまま声に出して読むだけでコピペできます。欲しいプロンプトがあれば、コメントで教えてください。\n※個人の見解です\n#AI活用 #ChatGPT #プロンプト #仕事術 #議事録",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "会議メモが汚くて困った人へ。使えるプロンプトは3つ。",
+      "telop": "汚いメモは**この3つ**で",
+      "bg": ["own_pen_write", "nb_notes"]
+    },
+    {
+      "role": "hook",
+      "narration": "1位は、殴り書きのメモも、すぐ片付きます。",
+      "telop": "1位は**殴り書き**もすぐ片付く",
+      "bg": ["own_pen_write", "nb_think"]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "要約",
+      "narration": "第3位、要約。長いメモを短くまとめます。",
+      "telop": "長いメモを**短く**まとめる",
+      "bg": ["own_docs_stack", "nb_notes"]
+    },
+    {
+      "role": "body",
+      "narration": "「箇条書きで3行にまとめて」と入力するだけです。",
+      "telop": "「箇条書きで**3行**に」",
+      "bg": ["own_typing", "nb_desk"]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "ToDo抽出",
+      "narration": "第2位、ToDo抽出。次にやることだけ取り出します。",
+      "telop": "次の**やること**だけ抜く",
+      "bg": ["own_typing", "nb_particles"]
+    },
+    {
+      "role": "body",
+      "narration": "「次にやることだけリストにして」と入力するだけです。",
+      "telop": "「やることだけ**リストに**」",
+      "bg": ["own_pen_write", "nb_keys"]
+    },
+    {
+      "role": "save",
+      "narration": "1位は、会議の直後に一番使えます。保存推奨。",
+      "telop": "1位は**会議の直後**に",
+      "bg": ["own_docs_stack", "nb_think"]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "決定事項",
+      "narration": "第1位、決定事項の抽出。何が決まったかだけ残します。",
+      "telop": "**決まったこと**だけ残す",
+      "bg": ["jp_desk_m1", "nb_code"]
+    },
+    {
+      "role": "body",
+      "narration": "「決まったことだけ書き出して」と入力するだけです。",
+      "telop": "「決まったことだけ**書き出して**」",
+      "bg": ["own_typing", "nb_desk"]
+    },
+    {
+      "role": "cta",
+      "narration": "他に欲しいプロンプトも、コメントで。順番に作ります。",
+      "telop": "欲しいプロンプトは？↓\n**コメントで**",
+      "bg": ["nb_sky", "own_suburb_sky"]
+    }
+  ],
+  "bgm": "bgm/for_our_friends.mp3"
+}
