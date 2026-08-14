@@ -35,7 +35,7 @@
       "role": "rank",
       "rank": 2,
       "headline": "ToDo抽出",
-      "narration": "第2位、ToDo抽出。次にやることだけ取り出します。",
+      "narration": "第2位、トゥードゥー抽出。次にやることだけ取り出します。",
       "telop": "次の**やること**だけ抜く",
       "bg": ["own_typing", "nb_particles"]
     },
