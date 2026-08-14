@@ -40,6 +40,9 @@ export default function RootLayout({
           <Link href="/metrics" className="hover:text-gray-900 dark:hover:text-white">
             実績記録
           </Link>
+          <Link href="/analytics" className="hover:text-gray-900 dark:hover:text-white">
+            分析
+          </Link>
           <Link href="/settings" className="hover:text-gray-900 dark:hover:text-white">
             設定
           </Link>

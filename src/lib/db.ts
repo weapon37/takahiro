@@ -1,5 +1,5 @@
 import { Pool, type QueryResultRow } from "pg";
-import type { PlanTheme, QueueItem, MetricEntry } from "@/lib/types";
+import type { PlanTheme, QueueItem, MetricEntry, PostSnapshot } from "@/lib/types";
 
 export type {
   QueueStatus,
@@ -8,6 +8,7 @@ export type {
   PlanTheme,
   QueueItem,
   MetricEntry,
+  PostSnapshot,
 } from "@/lib/types";
 
 let pool: Pool | null = null;
@@ -84,6 +85,24 @@ export async function ensureSchema(): Promise<void> {
       created_at TIMESTAMPTZ NOT NULL DEFAULT now()
     )
   `);
+
+  await query(`
+    CREATE TABLE IF NOT EXISTS post_snapshots (
+      id SERIAL PRIMARY KEY,
+      x_post_id TEXT NOT NULL UNIQUE,
+      content TEXT NOT NULL,
+      posted_at TIMESTAMPTZ NOT NULL,
+      impressions INTEGER,
+      likes INTEGER,
+      reposts INTEGER,
+      replies INTEGER,
+      quotes INTEGER,
+      fetched_at TIMESTAMPTZ NOT NULL DEFAULT now()
+    )
+  `);
+  await query(
+    `CREATE INDEX IF NOT EXISTS idx_post_snapshots_posted_at ON post_snapshots(posted_at)`,
+  );
 }
 
 export async function checkDatabaseConnection(): Promise<
@@ -174,6 +193,79 @@ interface MetricRow {
   follower_count: number | null;
   notes: string | null;
   created_at: string;
+}
+
+interface SnapshotRow {
+  id: number;
+  x_post_id: string;
+  content: string;
+  posted_at: string;
+  impressions: number | null;
+  likes: number | null;
+  reposts: number | null;
+  replies: number | null;
+  quotes: number | null;
+  fetched_at: string;
+}
+
+function toPostSnapshot(r: SnapshotRow): PostSnapshot {
+  return {
+    id: r.id,
+    xPostId: r.x_post_id,
+    content: r.content,
+    postedAt: r.posted_at,
+    impressions: r.impressions,
+    likes: r.likes,
+    reposts: r.reposts,
+    replies: r.replies,
+    quotes: r.quotes,
+    fetchedAt: r.fetched_at,
+  };
+}
+
+export async function upsertPostSnapshot(input: {
+  xPostId: string;
+  content: string;
+  postedAt: string;
+  impressions: number | null;
+  likes: number | null;
+  reposts: number | null;
+  replies: number | null;
+  quotes: number | null;
+}): Promise<void> {
+  await query(
+    `INSERT INTO post_snapshots (x_post_id, content, posted_at, impressions, likes, reposts, replies, quotes, fetched_at)
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, now())
+     ON CONFLICT (x_post_id) DO UPDATE SET
+       content = EXCLUDED.content,
+       impressions = EXCLUDED.impressions,
+       likes = EXCLUDED.likes,
+       reposts = EXCLUDED.reposts,
+       replies = EXCLUDED.replies,
+       quotes = EXCLUDED.quotes,
+       fetched_at = now()`,
+    [
+      input.xPostId,
+      input.content,
+      input.postedAt,
+      input.impressions,
+      input.likes,
+      input.reposts,
+      input.replies,
+      input.quotes,
+    ],
+  );
+}
+
+export async function listPostSnapshots(limit = 50): Promise<PostSnapshot[]> {
+  const rows = await query<SnapshotRow>(
+    `SELECT id, x_post_id, content, posted_at, impressions, likes, reposts, replies, quotes, fetched_at
+     FROM post_snapshots
+     ORDER BY posted_at DESC
+     LIMIT $1`,
+    [limit],
+  );
+  return rows.map(toPostSnapshot);
 }
 
 export async function listMetrics(): Promise<MetricEntry[]> {
