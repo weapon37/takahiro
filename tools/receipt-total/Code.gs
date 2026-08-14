@@ -190,7 +190,9 @@ function createSheet_(body) {
   if (spreadsheet.getSheetByName(newName)) {
     return { ok: false, error: 'シートが既に存在します: ' + newName };
   }
-  var template = spreadsheet.getSheetByName(templateName);
+  // シート名の前後に空白が入っていることがある (例: " 原本（改）") ため、
+  // 完全一致で見つからなければ前後の空白を無視して探す。
+  var template = spreadsheet.getSheetByName(templateName) || findSheetTrimmed_(spreadsheet, templateName);
   if (!template) {
     var available = spreadsheet.getSheets().map(function (s) {
       return s.getName();
@@ -244,6 +246,18 @@ function openSpreadsheet_(spreadsheetRef) {
   } catch (error) {
     throw new Error('スプレッドシートを開けませんでした (' + ref + '): ' + error.message);
   }
+}
+
+/** 前後の空白を無視してシート名を探す。見つからなければ null。 */
+function findSheetTrimmed_(spreadsheet, name) {
+  var target = String(name).trim();
+  var sheets = spreadsheet.getSheets();
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].getName().trim() === target) {
+      return sheets[i];
+    }
+  }
+  return null;
 }
 
 function resolveSheet_(spreadsheet, sheetName) {
