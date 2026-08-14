@@ -17,11 +17,11 @@
       "audio": "audio_w4n_prompt_mail/01.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 171
+      "durationInFrames": 189
     },
     {
       "role": "hook",
-      "telop": "1位は**断りの返信**も迷わず",
+      "telop": "1位は**断りの返信**が角なく",
       "bgVideo": null,
       "bgClips": [
         "bg/own_phone_tap.mp4",
@@ -32,13 +32,13 @@
       "audio": "audio_w4n_prompt_mail/02.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 139
+      "durationInFrames": 154
     },
     {
       "role": "rank",
       "rank": 3,
       "headline": "お詫び",
-      "telop": "きつくならない**言い方**",
+      "telop": "「対応が遅れて**申し訳ありません**」",
       "bgVideo": null,
       "bgClips": [
         "bg/own_docs_stack.mp4",
@@ -49,28 +49,28 @@
       "audio": "audio_w4n_prompt_mail/03.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 152
+      "durationInFrames": 135
     },
     {
       "role": "body",
-      "telop": "「対応が遅れ**申し訳ありません**」",
+      "telop": "→**角が立たない**文になる",
       "bgVideo": null,
       "bgClips": [
-        "bg/own_typing.mp4",
-        "bg/nb_keys.mp4"
+        "bg/nb_keys.mp4",
+        "bg/own_desk_clean.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
       "audio": "audio_w4n_prompt_mail/04.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 108
+      "durationInFrames": 100
     },
     {
       "role": "rank",
       "rank": 2,
       "headline": "催促",
-      "telop": "相手を立てながら**急かせる**",
+      "telop": "「お忙しいところ**恐れ入ります**」",
       "bgVideo": null,
       "bgClips": [
         "bg/own_phone_tap.mp4",
@@ -81,14 +81,14 @@
       "audio": "audio_w4n_prompt_mail/05.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 137
+      "durationInFrames": 104
     },
     {
       "role": "body",
-      "telop": "「お忙しいところ**恐れ入ります**」",
+      "telop": "→**相手を立てたまま**急かせる",
       "bgVideo": null,
       "bgClips": [
-        "bg/own_typing.mp4",
+        "bg/jp_commuters.mp4",
         "bg/nb_desk.mp4"
       ],
       "bgSync": true,
@@ -96,7 +96,7 @@
       "audio": "audio_w4n_prompt_mail/06.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 121
+      "durationInFrames": 85
     },
     {
       "role": "save",
@@ -111,13 +111,13 @@
       "audio": "audio_w4n_prompt_mail/07.wav",
       "eraseIn": true,
       "playWhoosh": false,
-      "durationInFrames": 150
+      "durationInFrames": 146
     },
     {
       "role": "rank",
       "rank": 1,
       "headline": "断り",
-      "telop": "一番**書きにくい**メール",
+      "telop": "「今回は**見送らせていただきます**」",
       "bgVideo": null,
       "bgClips": [
         "bg/jp_desk_m1.mp4",
@@ -128,37 +128,37 @@
       "audio": "audio_w4n_prompt_mail/08.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 139
+      "durationInFrames": 91
     },
     {
       "role": "body",
-      "telop": "「見送らせて**いただきます**」",
+      "telop": "→**しこりが残らない**断り方",
       "bgVideo": null,
       "bgClips": [
-        "bg/own_docs_stack.mp4",
-        "bg/nb_think.mp4"
+        "bg/own_coffee_cup.mp4",
+        "bg/nb_sky.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
       "audio": "audio_w4n_prompt_mail/09.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 110
+      "durationInFrames": 73
     },
     {
       "role": "cta",
-      "telop": "欲しいプロンプトは？↓\n**コメントで**",
+      "telop": "職種をコメント→\n**その職種の回を作ります**",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_sky.mp4",
-        "bg/own_suburb_sky.mp4"
+        "bg/own_suburb_sky.mp4",
+        "bg/jp_skyline_day.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
       "audio": "audio_w4n_prompt_mail/10.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 114
+      "durationInFrames": 152
     }
   ]
 }
