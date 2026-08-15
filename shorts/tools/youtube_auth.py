@@ -126,6 +126,29 @@ def main():
     save_refresh_token(payload["refresh_token"])
     print("\n完了。.youtube_token.json に保存しました(パーミッション600)。")
     print("このファイルは .gitignore 済みです。絶対にコミットしないでください。")
+
+    # ⚠ どのチャンネルで認証したかを必ず表示する。
+    # ブランドアカウントがある場合、個人チャンネルを選んでしまう事故が起きるため。
+    try:
+        from youtube_api import api_get, get_access_token
+        ch = api_get("channels", {"part": "snippet", "mine": "true"}, get_access_token())
+        items = ch.get("items", [])
+        if items:
+            sn = items[0]["snippet"]
+            print("\n" + "=" * 46)
+            print(f"認証したチャンネル: 【{sn.get('title','?')}】")
+            print(f"チャンネルID: {items[0]['id']}")
+            print("=" * 46)
+            print("⚠ これが投稿したいチャンネルと違う場合は、やり直してください:")
+            print("   1) rm .youtube_token.json")
+            print("   2) https://myaccount.google.com/connections でこのアプリのアクセスを削除")
+            print("   3) python3 tools/youtube_auth.py を再実行し、")
+            print("      アカウント選択画面で目的のチャンネルを選ぶ")
+        else:
+            print("\n⚠ チャンネル情報を取得できませんでした。")
+    except Exception as e:
+        print(f"\n⚠ チャンネル名の確認に失敗しました: {e}")
+
     print("\n動作確認: python3 tools/youtube_stock.py")
     return 0
 

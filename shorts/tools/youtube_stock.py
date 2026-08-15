@@ -188,6 +188,14 @@ def main():
         print(count)
     else:
         jst = datetime.timezone(datetime.timedelta(hours=9))
+        # どのチャンネルを見ているかを毎回出す(別チャンネルで認証する事故の防止)
+        try:
+            ch = api_get("channels", {"part": "snippet", "mine": "true"}, token)
+            items = ch.get("items", [])
+            if items:
+                print(f"\nチャンネル: 【{items[0]['snippet'].get('title','?')}】")
+        except YouTubeError:
+            pass
         print(f"\n予約済み: {count}本\n")
         for s in scheduled:
             local = s["at"].astimezone(jst).strftime("%m/%d %H:%M")
