@@ -102,6 +102,27 @@ python3 tools/youtube_upload.py scripts/<名前>.json --at "2026-08-21 07:00" --
 python3 tools/youtube_upload.py scripts/<名前>.json --at "2026-08-21 07:00"
 ```
 
+### 毎日の残数チェック(launchd)
+
+Macに登録すると、**毎朝9時に残数を確認し、2本以下なら通知**が出る。
+足りているときは通知しない(毎日鳴ると無視するようになるため)。
+トークン失効やAPI障害で失敗したときは、黙って止まらないよう必ず通知する。
+
+```bash
+cd ~/takahiro/shorts
+bash tools/install_stock_check.sh          # 毎朝9:00で登録
+bash tools/install_stock_check.sh 21 30    # 時刻を変える場合
+bash tools/install_stock_check.sh --uninstall
+```
+
+- 手動実行: `bash tools/stock_check.sh`
+- ログ: `.stock_check.log`(毎回追記。git管理外)
+- ⚠ Macがスリープ・電源オフの時刻は実行されず、次に起きたときに実行される
+- ⚠ 初回は通知の許可が必要なことがある(システム設定 → 通知 → スクリプトエディタ)
+
+**これで自動になるのは「残数の見張り」だけ。** 台本を書く工程とQAの目視は
+判断が要るため自動化していない(下表のとおり)。
+
 ### ⚠ APIクォータ: 1日6本まで
 
 `videos.insert` は1本1,600ユニット、1日の枠は10,000。**6本で9,600に達する。**

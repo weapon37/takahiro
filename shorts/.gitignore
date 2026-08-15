@@ -10,3 +10,8 @@ client_secret.json
 # Python
 __pycache__/
 *.pyc
+
+# 残数チェックのログ
+.stock_check.log
+.stock_check.out
+.stock_check.err
