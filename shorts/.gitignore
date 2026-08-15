@@ -2,3 +2,11 @@ node_modules
 out
 .env
 .venv
+
+# YouTube API の認証情報(絶対にコミットしない)
+client_secret.json
+.youtube_token.json
+
+# Python
+__pycache__/
+*.pyc
