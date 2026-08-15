@@ -163,6 +163,16 @@ def main():
     }
 
     size_mb = os.path.getsize(video_path) / 1024 / 1024
+
+    # 空ファイルや途中で切れたファイルを本番投稿してしまう事故を防ぐ。
+    # このチャンネルの動画は15〜20MB程度なので、1MB未満は明らかに異常。
+    # (--dry-run はダミーファイルでの動作確認に使うため対象外)
+    if not dry_run and size_mb < 1.0:
+        print(f"エラー: 動画が小さすぎます({size_mb:.2f}MB)。", file=sys.stderr)
+        print("  ダミーファイルが残っているか、書き出しが途中で失敗しています。", file=sys.stderr)
+        print(f"  {video_path} を確認してください。", file=sys.stderr)
+        return 1
+
     print(f"ファイル : {video_path} ({size_mb:.1f}MB)")
     print(f"タイトル : {title}")
     print(f"公開設定 : " + (f"予約 {at_value}(日本時間)" if at_value else "下書き(非公開)"))
