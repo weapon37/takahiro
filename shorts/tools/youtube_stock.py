@@ -86,6 +86,35 @@ def collect_video_ids(token, debug=False):
     return uniq
 
 
+def dump_all(token):
+    """取得できた全動画の状態フィールドを並べる(予約日時がどこに入るかの調査用)。"""
+    video_ids = collect_video_ids(token, debug=True)
+    print(f"\n=== {len(video_ids)}件の状態 ===")
+    for i in range(0, len(video_ids), 50):
+        chunk = video_ids[i:i + 50]
+        vids = api_get(
+            "videos",
+            {"part": "status,snippet,contentDetails", "id": ",".join(chunk)},
+            token,
+        )
+        for v in vids.get("items", []):
+            st = v["status"]
+            sn = v["snippet"]
+            print(
+                f"{st.get('privacyStatus','?'):9} "
+                f"upload={st.get('uploadStatus','?'):10} "
+                f"publishAt={st.get('publishAt','-'):22} "
+                f"publishedAt={sn.get('publishedAt','-'):22} "
+                f"{sn.get('title','')[:26]}"
+            )
+    print("\n※ statusに入っている全キー(1件目):")
+    if video_ids:
+        one = api_get("videos", {"part": "status", "id": video_ids[0]}, token)
+        items = one.get("items", [])
+        if items:
+            print("  ", sorted(items[0]["status"].keys()))
+
+
 def fetch_scheduled(token, debug=False):
     """予約公開(private + 未来のpublishAt)の動画を集める。"""
     video_ids = collect_video_ids(token, debug=debug)
@@ -137,6 +166,14 @@ def fetch_scheduled(token, debug=False):
 def main():
     quiet = "--quiet" in sys.argv
     debug = "--debug" in sys.argv
+
+    if "--dump" in sys.argv:
+        try:
+            dump_all(get_access_token())
+        except YouTubeError as e:
+            print(f"エラー: {e}", file=sys.stderr)
+            return 1
+        return 0
 
     try:
         token = get_access_token()
