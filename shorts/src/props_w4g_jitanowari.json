@@ -1,0 +1,135 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_ensolarado.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**時短できた**で終わると",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_clock.mp4",
+        "bg/nb_clock.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4g_jitanowari/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 114
+    },
+    {
+      "role": "body",
+      "telop": "すぐ**別の作業**で埋める",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_messy.mp4",
+        "bg/own_docs_stack.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4g_jitanowari/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 129
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "時短は**手段**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_notes.mp4",
+        "bg/own_pen_write.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4g_jitanowari/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 169
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "空いた分だけ**仕事が増える**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_think.mp4",
+        "bg/subway_commute.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4g_jitanowari/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 125
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "忙しさは**戻る**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_commuters.mp4",
+        "bg/nb_rain.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4g_jitanowari/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 125
+    },
+    {
+      "role": "body",
+      "telop": "浮いた分を**仕事に返さない**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_clean.mp4",
+        "bg/nb_morning.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4g_jitanowari/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 141
+    },
+    {
+      "role": "flip",
+      "telop": "早く終わったら**早く終わる**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_coffee_pour.mp4",
+        "bg/own_lotus.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4g_jitanowari/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 104
+    },
+    {
+      "role": "vs",
+      "vs": {
+        "left": "埋める",
+        "right": "空ける"
+      },
+      "telop": "埋める？**空ける**？",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_sky.mp4",
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4g_jitanowari/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 97
+    }
+  ]
+}

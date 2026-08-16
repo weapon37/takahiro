@@ -1,0 +1,144 @@
+{
+  "account": "転職サポート帳(仮)",
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**日曜の夜**、また憂鬱に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_rain.mp4",
+        "bg/own_desk_messy.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_pivot_tenshoku_test1/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 146
+    },
+    {
+      "role": "body",
+      "telop": "求人が**多すぎて**選べない",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_phone_tap.mp4",
+        "bg/nb_think.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_pivot_tenshoku_test1/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 131
+    },
+    {
+      "role": "body",
+      "telop": "対策も**独学**で不安",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4",
+        "bg/nb_rain.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_pivot_tenshoku_test1/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 156
+    },
+    {
+      "role": "body",
+      "telop": "**一人で抱えなくて**いい",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_morning.mp4",
+        "bg/nb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_pivot_tenshoku_test1/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 89
+    },
+    {
+      "role": "body",
+      "telop": "書類も面接も**無料で伴走**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/handshake.mp4",
+        "bg/own_desk_clean.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_pivot_tenshoku_test1/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 156
+    },
+    {
+      "role": "rank",
+      "headline": "テストエージェント",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "telop": "**テストエージェント**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_office_tower.mp4",
+        "bg/nb_digital.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_pivot_tenshoku_test1/06.wav",
+      "durationInFrames": 114
+    },
+    {
+      "role": "body",
+      "telop": "**非公開求人**にも会える",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_building.mp4",
+        "bg/jp_skyline.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_pivot_tenshoku_test1/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 106
+    },
+    {
+      "role": "body",
+      "telop": "まずは**話を聞くだけ**でOK",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_phone_tap.mp4",
+        "bg/nb_keys.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_pivot_tenshoku_test1/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 145
+    },
+    {
+      "role": "cta",
+      "telop": "詳しくは**概要欄**から",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_sky.mp4",
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_pivot_tenshoku_test1/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 137
+    }
+  ]
+}

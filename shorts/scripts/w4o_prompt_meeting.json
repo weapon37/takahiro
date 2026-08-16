@@ -1,0 +1,76 @@
+{
+  "template": "RankingVideo",
+  "_note": "8/20枠テスト版(旧・議事録AI BEST3の再投稿枠を差し替え)。reference_01/02の分析を反映した第2版。w4n_prompt_mailと同じ改訂方針。◆v1からの変更点: (1)[ラベル→証拠]の2段ユニットを正しく実装。rankカードにプロンプト文言を置き、直後のbodyで結果を見せる。(2)テロップを主語と結論で分割。(3)CTAに具体的な見返りを結びつけた。(4)背景の舞台を毎回変えた。(5)_watch語(取り出し/書き出し)を避ける言い回しに変更。◆ToDoの読みは辞書でトゥードゥーに変換される(narrationにも明記)。画面表示はToDo抽出のまま英字を維持。◆時間の実測値は入れていない。◆フック2分割済み。",
+  "title": "汚い会議メモを片付けるプロンプトBEST3",
+  "caption": "会議メモが汚くて困った人へ。使えるプロンプトは3つだけです。1位は殴り書きのメモが、そのまま議事録の形になります。そのままコピペで使えます。あなたの職種をコメントで教えてください。その職種で使えるプロンプトの回を作ります。\n※個人の見解です\n#AI活用 #ChatGPT #プロンプト #仕事術 #議事録",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "会議メモが汚くて困った人へ。使えるプロンプトは3つ。",
+      "telop": "汚いメモは**この3つ**で",
+      "bg": ["own_pen_write", "nb_notes"]
+    },
+    {
+      "role": "hook",
+      "narration": "1位は、殴り書きのメモが、そのまま議事録の形になります。",
+      "telop": "1位は**殴り書き**が議事録に",
+      "bg": ["own_desk_messy", "nb_think"]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "要約",
+      "narration": "第3位、要約。この一言です。",
+      "telop": "「箇条書きで**3行**にまとめて」",
+      "bg": ["own_docs_stack", "nb_notes"]
+    },
+    {
+      "role": "body",
+      "narration": "長いメモが、3行になります。",
+      "telop": "→長いメモが**3行**になる",
+      "bg": ["own_desk_clean", "nb_particles"]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "ToDo抽出",
+      "narration": "第2位、ToDo抽出。この一言です。",
+      "telop": "「やることだけ**リストにして**」",
+      "bg": ["own_typing", "nb_keys"]
+    },
+    {
+      "role": "body",
+      "narration": "次の動きだけが、残ります。",
+      "telop": "→**次の動き**だけ残る",
+      "bg": ["jp_commuters", "nb_desk"]
+    },
+    {
+      "role": "save",
+      "narration": "1位は、会議の直後に一番使えます。保存推奨。",
+      "telop": "1位は**会議の直後**に",
+      "bg": ["own_pen_write", "nb_think"]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "決定事項",
+      "narration": "第1位、決定事項。この一言です。",
+      "telop": "「決まったことだけ**書いて**」",
+      "bg": ["jp_desk_m1", "nb_code"]
+    },
+    {
+      "role": "body",
+      "narration": "そのまま、議事録の形になります。",
+      "telop": "→**議事録**の形になる",
+      "bg": ["own_coffee_cup", "nb_board"]
+    },
+    {
+      "role": "cta",
+      "narration": "あなたの職種をコメントで。その職種で使えるプロンプトを作ります。",
+      "telop": "職種をコメント→\n**その職種の回を作ります**",
+      "bg": ["own_suburb_sky", "jp_skyline_day"]
+    }
+  ],
+  "bgm": "bgm/for_our_friends.mp3"
+}

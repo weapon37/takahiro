@@ -1,0 +1,106 @@
+{
+  "template": "RankingVideo",
+  "_note": "Week4-9(8/17 朝7:00)。ツール非依存(腐らない軸)。w3e『AIの指示、これを足すだけで変わる』の続編。◆w3eは最初に足す言葉、この回は答えが浅かったときに足す言葉。重複しないよう明確に分けている(w3e=誰に向けて/長さ/悪い例)。◆実測を装う数字は使わない。◆フックは2シーンに分割済み。",
+  "title": "AIの答えが浅いときに足す一言BEST3",
+  "caption": "AIの答えが浅い、と感じたときに足す一言3つ。指示を書き直す必要はありません。返ってきた答えに一言返すだけです。1位は入れると答えの質が変わります。あなたがよく足す一言は？\n※個人の見解です\n#AI活用 #ChatGPT #プロンプト #仕事術 #時短",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "エーアイの答えが浅い。足す一言は3つです。",
+      "telop": "浅いときに足す**一言3つ**",
+      "bg": [
+        "nb_digital",
+        "nb_code"
+      ]
+    },
+    {
+      "role": "hook",
+      "narration": "1位は、答えの質が変わります。",
+      "telop": "1位は**質が変わる**",
+      "bg": [
+        "nb_board",
+        "own_typing"
+      ]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "具体例を3つ",
+      "narration": "第3位、具体例を3つ出して。",
+      "telop": "**具体例を3つ**出して",
+      "bg": [
+        "nb_notes",
+        "own_pen_write"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "抽象的なままだと使えません。例が出ると一気に実務になります。",
+      "telop": "例が出ると**実務**になる",
+      "bg": [
+        "jp_laptop_m1",
+        "nb_gadgets"
+      ]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "根拠を書いて",
+      "narration": "第2位、なぜそう言えるのか、根拠を書いて。",
+      "telop": "**根拠**を書いて",
+      "bg": [
+        "nb_books",
+        "nb_chart"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "根拠を出させると、あやしい部分が自分で見えます。",
+      "telop": "あやしい部分が**見える**",
+      "bg": [
+        "nb_think",
+        "graph_screen"
+      ]
+    },
+    {
+      "role": "save",
+      "narration": "1位は保存推奨です。",
+      "telop": "1位は**保存推奨**",
+      "bg": [
+        "own_phone_tap",
+        "nb_keys"
+      ]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "反対意見も出して",
+      "narration": "第1位、反対意見も出して。",
+      "telop": "**反対意見**も出して",
+      "bg": [
+        "nb_team",
+        "handshake"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "賛成だけ集めた答えは浅いままです。反対を並べると判断できます。",
+      "telop": "反対を並べると**判断できる**",
+      "bg": [
+        "own_desk_messy",
+        "nb_particles"
+      ]
+    },
+    {
+      "role": "cta",
+      "narration": "あなたがよく足す一言は。コメントで。",
+      "telop": "よく足す一言は？↓\n**コメントで**",
+      "bg": [
+        "nb_sky",
+        "own_suburb_sky"
+      ]
+    }
+  ],
+  "bgm": "bgm/for_our_friends.mp3"
+}

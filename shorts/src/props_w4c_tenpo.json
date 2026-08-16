@@ -1,0 +1,164 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "お店をやる人は**この3つ**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_mall_escalator.mp4",
+        "bg/jp_takeshita.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4c_tenpo/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 118
+    },
+    {
+      "role": "hook",
+      "telop": "1位は**スマホひとつ**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_phone_tap.mp4",
+        "bg/sumaho2.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4c_tenpo/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 81
+    },
+    {
+      "role": "rank",
+      "telop": "ポップと**チラシ**担当",
+      "rank": 3,
+      "headline": "Canva",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_art.mp4",
+        "bg/nb_cash.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4c_tenpo/03.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 97
+    },
+    {
+      "role": "body",
+      "telop": "**外注しなくていい**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_bokeh.mp4",
+        "bg/coins_stack.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4c_tenpo/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 148
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "Google Gemini",
+      "telop": "撮って**そのまま投稿文**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_gadgets.mp4",
+        "bg/jp_shibuya.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4c_tenpo/05.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 49
+    },
+    {
+      "role": "body",
+      "telop": "スマホで**完結**する",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_camera_rig.mp4",
+        "bg/nb_social.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4c_tenpo/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 145
+    },
+    {
+      "role": "save",
+      "telop": "1位は**毎日使う**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_notes.mp4",
+        "bg/own_pen_write.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4c_tenpo/07.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 97
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "ChatGPT",
+      "telop": "投稿文も**接客の言葉**も",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_digital.mp4",
+        "bg/nb_code.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4c_tenpo/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 93
+    },
+    {
+      "role": "body",
+      "telop": "クレーム対応の**文面**も",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/nb_think.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4c_tenpo/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 169
+    },
+    {
+      "role": "cta",
+      "telop": "あなたの職種は？↓\n**コメントで**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_sky.mp4",
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4c_tenpo/10.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 125
+    }
+  ]
+}

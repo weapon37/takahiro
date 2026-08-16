@@ -180,6 +180,27 @@ const VsPanel: React.FC<{vs: {left: string; right: string}}> = ({vs}) => {
   const slideL = spring({frame: frame - 2, fps, config: {damping: 16}, durationInFrames: 14});
   const slideR = spring({frame: frame - 6, fps, config: {damping: 16}, durationInFrames: 14});
   const vsPop = spring({frame: frame - 12, fps, config: {damping: 9, mass: 0.5}, durationInFrames: 16});
+  // パネルの内寸(枠12px×2 + padding18px×2 を引いた実際に文字が置ける幅)
+  const INNER = 400 - 24 - 36;
+  const MAX_SIZE = 72;
+  // 5文字以上は2行に折り返す。keep-allのままだと日本語は改行されず、
+  // 「聞いて終わり」のような6文字がパネルからはみ出していた。
+  const layout = (s: string) => {
+    if (s.includes('\n')) return s;
+    const ch = [...s];
+    if (ch.length <= 4) return s;
+    const half = Math.ceil(ch.length / 2);
+    return ch.slice(0, half).join('') + '\n' + ch.slice(half).join('');
+  };
+  const longestLine = (s: string) =>
+    Math.max(...s.split('\n').map((l) => [...l].length));
+  const leftText = layout(vs.left);
+  const rightText = layout(vs.right);
+  // 左右で同じ文字サイズに揃える(長いほうに合わせる)
+  const fontSize = Math.min(
+    MAX_SIZE,
+    Math.floor(INNER / Math.max(longestLine(leftText), longestLine(rightText)))
+  );
   const panel: React.CSSProperties = {
     position: 'absolute',
     top: 560,
@@ -192,7 +213,7 @@ const VsPanel: React.FC<{vs: {left: string; right: string}}> = ({vs}) => {
     justifyContent: 'center',
     fontFamily,
     fontWeight: 900,
-    fontSize: 72,
+    fontSize,
     color: '#ffffff',
     textAlign: 'center',
     lineHeight: 1.25,
@@ -210,7 +231,7 @@ const VsPanel: React.FC<{vs: {left: string; right: string}}> = ({vs}) => {
           transform: `translateX(${(1 - slideL) * -600}px)`,
         }}
       >
-        {vs.left}
+        {leftText}
       </div>
       <div
         style={{
@@ -220,7 +241,7 @@ const VsPanel: React.FC<{vs: {left: string; right: string}}> = ({vs}) => {
           transform: `translateX(${(1 - slideR) * 600}px)`,
         }}
       >
-        {vs.right}
+        {rightText}
       </div>
       <div
         style={{

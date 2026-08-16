@@ -1,0 +1,164 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "浅いときに足す**一言3つ**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_digital.mp4",
+        "bg/nb_code.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4i_asai/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 125
+    },
+    {
+      "role": "hook",
+      "telop": "1位は**質が変わる**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_board.mp4",
+        "bg/own_typing.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4i_asai/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 89
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "具体例を3つ",
+      "telop": "**具体例を3つ**出して",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_notes.mp4",
+        "bg/own_pen_write.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4i_asai/03.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 91
+    },
+    {
+      "role": "body",
+      "telop": "例が出ると**実務**になる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_laptop_m1.mp4",
+        "bg/nb_gadgets.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4i_asai/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 156
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "根拠を書いて",
+      "telop": "**根拠**を書いて",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_books.mp4",
+        "bg/nb_chart.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4i_asai/05.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 106
+    },
+    {
+      "role": "body",
+      "telop": "あやしい部分が**見える**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_think.mp4",
+        "bg/graph_screen.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4i_asai/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 112
+    },
+    {
+      "role": "save",
+      "telop": "1位は**保存推奨**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_phone_tap.mp4",
+        "bg/nb_keys.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4i_asai/07.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 70
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "反対意見も出して",
+      "telop": "**反対意見**も出して",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_team.mp4",
+        "bg/handshake.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4i_asai/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 85
+    },
+    {
+      "role": "body",
+      "telop": "反対を並べると**判断できる**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_messy.mp4",
+        "bg/nb_particles.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4i_asai/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 166
+    },
+    {
+      "role": "cta",
+      "telop": "よく足す一言は？↓\n**コメントで**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_sky.mp4",
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4i_asai/10.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 100
+    }
+  ]
+}

@@ -1,105 +1,157 @@
-# YouTube Analytics/Data API の初回認可(デバイスフロー)。
-#
-# 使い方:
-#   1. Google Cloud コンソールで以下を行う(1回だけ):
-#      - プロジェクトを作成
-#      - 「YouTube Analytics API」「YouTube Data API v3」を有効化
-#      - OAuth同意画面を作成(External / テストユーザーに自分のGoogleアカウントを追加)
-#      - 認証情報 → OAuthクライアントID作成 → アプリの種類は「TVとその他」を選択
-#      - 発行されたクライアントIDとシークレットを控える
-#   2. 環境変数にセットして実行:
-#        GOOGLE_OAUTH_CLIENT_ID=xxxx GOOGLE_OAUTH_CLIENT_SECRET=xxxx .venv/bin/python tools/youtube_auth.py
-#   3. 表示されるURLをブラウザで開き、表示されたコードを入力してログイン・許可する
-#   4. 許可が完了すると tools/.youtube_token.json にrefresh_tokenが保存される(以後は自動更新、再認可不要)
+"""YouTube API の初回認証(1回だけ実行する)。
+
+ブラウザで承認画面を開き、リフレッシュトークンを .youtube_token.json に保存する。
+以後 youtube_upload.py / youtube_stock.py はこのトークンを使うので、
+再認証は不要(取り消すか失効するまで)。
+
+使い方:
+    cd shorts
+    python3 tools/youtube_auth.py
+
+**この作業だけはブラウザ操作が必要なため、手元のMacで実行すること。**
+リモート環境では承認画面を開けない。
+"""
+
+import http.server
 import json
-import os
+import secrets
+import socketserver
 import sys
-import time
+import threading
+import urllib.error
 import urllib.parse
 import urllib.request
+import webbrowser
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-TOKEN_PATH = os.path.join(HERE, ".youtube_token.json")
+from youtube_api import (
+    AUTH_URL,
+    SCOPES,
+    TOKEN_URL,
+    YouTubeError,
+    load_client_secret,
+    save_refresh_token,
+)
 
-CLIENT_ID = os.environ.get("GOOGLE_OAUTH_CLIENT_ID")
-CLIENT_SECRET = os.environ.get("GOOGLE_OAUTH_CLIENT_SECRET")
+# デスクトップアプリのクライアントは、ループバック(localhost)ならポート自由
+PORT = 8765
+REDIRECT_URI = f"http://localhost:{PORT}"
 
-SCOPES = "https://www.googleapis.com/auth/yt-analytics.readonly https://www.googleapis.com/auth/youtube.readonly"
-
-DEVICE_CODE_URL = "https://oauth2.googleapis.com/device/code"
-TOKEN_URL = "https://oauth2.googleapis.com/token"
+_result = {}
 
 
-def post_form(url: str, params: dict) -> dict:
-    data = urllib.parse.urlencode(params).encode()
-    req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/x-www-form-urlencoded"})
-    try:
-        with urllib.request.urlopen(req) as res:
-            return json.load(res)
-    except urllib.error.HTTPError as e:
-        return json.load(e)
+class Handler(http.server.BaseHTTPRequestHandler):
+    def do_GET(self):
+        query = urllib.parse.urlparse(self.path).query
+        params = urllib.parse.parse_qs(query)
+        _result.update({k: v[0] for k, v in params.items()})
+
+        self.send_response(200)
+        self.send_header("Content-Type", "text/html; charset=utf-8")
+        self.end_headers()
+        if "code" in params:
+            msg = "認証できました。このタブを閉じてターミナルに戻ってください。"
+        else:
+            msg = f"認証に失敗しました: {params.get('error', ['不明'])[0]}"
+        self.wfile.write(f"<html><body><h2>{msg}</h2></body></html>".encode())
+
+    def log_message(self, *args):
+        pass  # アクセスログは出さない
 
 
 def main():
-    if not CLIENT_ID or not CLIENT_SECRET:
-        print("GOOGLE_OAUTH_CLIENT_ID / GOOGLE_OAUTH_CLIENT_SECRET を環境変数にセットしてください。", file=sys.stderr)
-        print("(Google Cloudコンソールで発行したOAuthクライアントID/シークレット)", file=sys.stderr)
-        sys.exit(1)
+    try:
+        client_id, client_secret = load_client_secret()
+    except YouTubeError as e:
+        print(f"エラー: {e}")
+        return 1
 
-    step1 = post_form(DEVICE_CODE_URL, {"client_id": CLIENT_ID, "scope": SCOPES})
-    if "device_code" not in step1:
-        print("デバイスコード取得に失敗しました:", step1, file=sys.stderr)
-        sys.exit(1)
+    state = secrets.token_urlsafe(16)
+    auth_url = AUTH_URL + "?" + urllib.parse.urlencode({
+        "client_id": client_id,
+        "redirect_uri": REDIRECT_URI,
+        "response_type": "code",
+        "scope": " ".join(SCOPES),
+        "access_type": "offline",   # リフレッシュトークンをもらうために必須
+        "prompt": "consent",        # 2回目以降も確実に refresh_token を返させる
+        "state": state,
+    })
 
-    print("\n=== ブラウザでこのURLを開いてください ===")
-    print(step1["verification_url"])
-    print(f"\nコードを入力: {step1['user_code']}\n")
-    print("ログインして許可すると、このまま自動で完了します...")
+    with socketserver.TCPServer(("localhost", PORT), Handler) as httpd:
+        httpd.timeout = 300
+        thread = threading.Thread(target=httpd.handle_request, daemon=True)
+        thread.start()
 
-    device_code = step1["device_code"]
-    interval = step1.get("interval", 5)
-    expires_in = step1.get("expires_in", 1800)
-    waited = 0
+        print("ブラウザで承認画面を開きます。")
+        print("開かない場合は、次のURLを手でブラウザに貼ってください:\n")
+        print(auth_url + "\n")
+        try:
+            webbrowser.open(auth_url)
+        except Exception:
+            pass
 
-    while waited < expires_in:
-        time.sleep(interval)
-        waited += interval
-        result = post_form(
-            TOKEN_URL,
-            {
-                "client_id": CLIENT_ID,
-                "client_secret": CLIENT_SECRET,
-                "device_code": device_code,
-                "grant_type": "urn:ietf:params:oauth:grant-type:device_code",
-            },
-        )
-        if "access_token" in result:
-            with open(TOKEN_PATH, "w", encoding="utf-8") as f:
-                json.dump(
-                    {
-                        "refresh_token": result["refresh_token"],
-                        "client_id": CLIENT_ID,
-                        "client_secret": CLIENT_SECRET,
-                    },
-                    f,
-                    ensure_ascii=False,
-                    indent=2,
-                )
-            print(f"認可完了。{TOKEN_PATH} に保存しました。")
-            print("以後は tools/youtube_report.py がこのファイルを自動で使います。")
-            return
-        error = result.get("error")
-        if error == "authorization_pending":
-            continue
-        if error == "slow_down":
-            interval += 5
-            continue
-        print("認可に失敗しました:", result, file=sys.stderr)
-        sys.exit(1)
+        print("承認を待っています(最大5分)...")
+        thread.join(timeout=300)
 
-    print("時間切れです。もう一度実行してください。", file=sys.stderr)
-    sys.exit(1)
+    if "code" not in _result:
+        print("エラー: 認証コードを受け取れませんでした。")
+        if "error" in _result:
+            print(f"  Googleからの応答: {_result['error']}")
+        return 1
+    if _result.get("state") != state:
+        print("エラー: stateが一致しません。中断します。")
+        return 1
+
+    # 認証コードをリフレッシュトークンに交換する
+    body = urllib.parse.urlencode({
+        "code": _result["code"],
+        "client_id": client_id,
+        "client_secret": client_secret,
+        "redirect_uri": REDIRECT_URI,
+        "grant_type": "authorization_code",
+    }).encode()
+    try:
+        with urllib.request.urlopen(urllib.request.Request(TOKEN_URL, data=body)) as res:
+            payload = json.load(res)
+    except urllib.error.HTTPError as e:
+        print(f"エラー: トークン交換に失敗({e.code})")
+        print(e.read().decode(errors="replace"))
+        return 1
+
+    if "refresh_token" not in payload:
+        print("エラー: refresh_token が返ってきませんでした。")
+        print("Google アカウントの『サードパーティ アプリとの連携』から")
+        print("このアプリのアクセスを削除して、もう一度実行してください。")
+        return 1
+
+    save_refresh_token(payload["refresh_token"])
+    print("\n完了。.youtube_token.json に保存しました(パーミッション600)。")
+    print("このファイルは .gitignore 済みです。絶対にコミットしないでください。")
+
+    # ⚠ どのチャンネルで認証したかを必ず表示する。
+    # ブランドアカウントがある場合、個人チャンネルを選んでしまう事故が起きるため。
+    try:
+        from youtube_api import api_get, get_access_token
+        ch = api_get("channels", {"part": "snippet", "mine": "true"}, get_access_token())
+        items = ch.get("items", [])
+        if items:
+            sn = items[0]["snippet"]
+            print("\n" + "=" * 46)
+            print(f"認証したチャンネル: 【{sn.get('title','?')}】")
+            print(f"チャンネルID: {items[0]['id']}")
+            print("=" * 46)
+            print("⚠ これが投稿したいチャンネルと違う場合は、やり直してください:")
+            print("   1) rm .youtube_token.json")
+            print("   2) https://myaccount.google.com/connections でこのアプリのアクセスを削除")
+            print("   3) python3 tools/youtube_auth.py を再実行し、")
+            print("      アカウント選択画面で目的のチャンネルを選ぶ")
+        else:
+            print("\n⚠ チャンネル情報を取得できませんでした。")
+    except Exception as e:
+        print(f"\n⚠ チャンネル名の確認に失敗しました: {e}")
+
+    print("\n動作確認: python3 tools/youtube_stock.py")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

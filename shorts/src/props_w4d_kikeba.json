@@ -1,0 +1,135 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/pawn.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**聞けばいい**で止まると",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_think.mp4",
+        "bg/own_desk_messy.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4d_kikeba/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 127
+    },
+    {
+      "role": "body",
+      "telop": "答えは出るが**自分の言葉**にならない",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_phone_tap.mp4",
+        "bg/nb_digital.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4d_kikeba/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 131
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "答えは**みんなの平均**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_commuters.mp4",
+        "bg/jp_crosswalk_top.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4d_kikeba/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 118
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "同じ質問に**同じ答え**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_code.mp4",
+        "bg/nb_keys.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4d_kikeba/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 139
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "使う人が増えるほど**差が消える**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_scramble_day.mp4",
+        "bg/nb_particles.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4d_kikeba/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 108
+    },
+    {
+      "role": "body",
+      "telop": "差がつくのは**もらった後**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_pen_write.mp4",
+        "bg/nb_notes.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4d_kikeba/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 93
+    },
+    {
+      "role": "flip",
+      "telop": "**1行だけ**書き足す",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/nb_morning.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4d_kikeba/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 123
+    },
+    {
+      "role": "vs",
+      "vs": {
+        "left": "聞いて終わり",
+        "right": "1行書く"
+      },
+      "telop": "聞いて終わり？**1行書く**？",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_sky.mp4",
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4d_kikeba/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 116
+    }
+  ]
+}

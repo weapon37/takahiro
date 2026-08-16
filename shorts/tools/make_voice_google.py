@@ -36,6 +36,20 @@ def apply_reading_dict(text: str) -> str:
     return text
 
 
+# 辞書を適用したあとの文に「読みが割れる語」が残っていたら警告する。
+# 誤読は音声を作り直すまで気づけないため、生成の時点で目に入るようにしておく。
+def warn_risky_readings(original: str, converted: str, label: str) -> None:
+    dict_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "reading_dict.json")
+    with open(dict_path, encoding="utf-8") as f:
+        watch = json.load(f).get("_watch", {}).get("words", [])
+    hit = [w for w in watch if w in converted]
+    if hit:
+        print(f"  \u26a0 {label}: 読みが割れる語が残っています {hit}")
+        print(f"    {original}")
+        print(f"    → {converted}")
+        print("    正しく読まれるなら無視してよい。誤読なら reading_dict.json の readings に追加する")
+
+
 def synthesize(text: str, api_key: str) -> bytes:
     url = f"https://texttospeech.googleapis.com/v1/text:synthesize?key={api_key}"
     body = {
@@ -68,6 +82,7 @@ def main():
     os.makedirs(OUTDIR, exist_ok=True)
     for i, s in enumerate(data["sentences"], start=1):
         text = apply_reading_dict(s["narration"])
+        warn_risky_readings(s["narration"], text, f"{i:02d}.wav")
         wav = synthesize(text, api_key)
         path = os.path.join(OUTDIR, f"{i:02d}.wav")
         with open(path, "wb") as f:

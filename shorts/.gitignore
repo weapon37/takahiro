@@ -2,5 +2,16 @@ node_modules
 out
 .env
 .venv
-tools/.youtube_token.json
-__pycache__
+
+# YouTube API の認証情報(絶対にコミットしない)
+client_secret.json
+.youtube_token.json
+
+# Python
+__pycache__/
+*.pyc
+
+# 残数チェックのログ
+.stock_check.log
+.stock_check.out
+.stock_check.err

@@ -1,0 +1,106 @@
+{
+  "template": "RankingVideo",
+  "_note": "Week4-7(8/16 朝7:00)。チャンネルの核。w3a『AIを使っても仕事が減らない理由』の1位=空いた時間を埋める、の裏返し。w3aが失敗の指摘、この回が実際の使い道。◆1位『何もしない時間にする』は逆張りだが、チャンネルの核メッセージと一致しているので外さない。◆フックは2シーンに分割済み。",
+  "title": "AIで浮いた時間、何に使うかBEST3",
+  "caption": "AIで時間が浮いた人へ。使い道を決めないと、また埋まります。実際に効いた使い方3つ。1位はたぶん想像と違います。何かを足すのではなく、空けたままにする話です。あなたは何に使ってますか。\n※個人の見解です\n#AI活用 #時短 #仕事術 #働き方 #生産性",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "エーアイで浮いた時間。使い道は3つです。",
+      "telop": "浮いた時間の**使い道3つ**",
+      "bg": [
+        "nb_morning",
+        "sunrise_city"
+      ]
+    },
+    {
+      "role": "hook",
+      "narration": "1位は、たぶん想像と違います。",
+      "telop": "1位は**想像と違う**",
+      "bg": [
+        "own_lotus",
+        "nb_bokeh"
+      ]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "やらないことを決める",
+      "narration": "第3位、やらないことを決める。",
+      "telop": "**やらないこと**を決める",
+      "bg": [
+        "own_pen_write",
+        "nb_notes"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "浮いた時間で最初にやるのは、減らす作業を選ぶことです。",
+      "telop": "最初に**減らす**を選ぶ",
+      "bg": [
+        "own_desk_messy",
+        "own_desk_clean"
+      ]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "先送りの1件",
+      "narration": "第2位、先送りしていた1件を片づける。",
+      "telop": "先送りの**1件**を片づける",
+      "bg": [
+        "own_docs_stack",
+        "keiri3"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "ずっと気になっていたものを1つ。頭の中が軽くなります。",
+      "telop": "頭の中が**軽くなる**",
+      "bg": [
+        "nb_think",
+        "own_coffee_pour"
+      ]
+    },
+    {
+      "role": "save",
+      "narration": "1位は、何かを足しません。保存推奨。",
+      "telop": "1位は**何も足さない**",
+      "bg": [
+        "own_lotus_field",
+        "nb_plant"
+      ]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "何もしない",
+      "narration": "第1位、何もしない時間にする。",
+      "telop": "**何もしない**時間にする",
+      "bg": [
+        "own_deer_shrine",
+        "own_heron"
+      ]
+    },
+    {
+      "role": "body",
+      "narration": "すぐ埋めると、忙しさだけが戻ります。空けたままにしてください。",
+      "telop": "すぐ埋めると**戻る**",
+      "bg": [
+        "own_golf",
+        "own_suburb_sky"
+      ]
+    },
+    {
+      "role": "cta",
+      "narration": "あなたは何に使ってますか。コメントで。",
+      "telop": "何に使ってる？↓\n**コメントで**",
+      "bg": [
+        "nb_sky",
+        "own_sunflower"
+      ]
+    }
+  ],
+  "bgm": "bgm/dova_beach_cocktail.mp3"
+}
