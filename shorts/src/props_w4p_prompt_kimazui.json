@@ -1,0 +1,164 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_beach_cocktail.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "気まずい一言は**この3つ**で",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_clean.mp4",
+        "bg/jp_commuters.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4p_prompt_kimazui/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 123
+    },
+    {
+      "role": "hook",
+      "telop": "1位は**反対意見**も対立せず",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_car_window.mp4",
+        "bg/nb_phone.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4p_prompt_kimazui/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 116
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "遅刻連絡",
+      "telop": "「電車遅延で**10分ほど遅れます**」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_train_window.mp4",
+        "bg/nb_clock.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4p_prompt_kimazui/03.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 166
+    },
+    {
+      "role": "body",
+      "telop": "→**誠実な印象**の文になる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/nb_digital.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4p_prompt_kimazui/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 141
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "値上げ相談",
+      "telop": "「原材料費の高騰により、**価格の見直し**をお願いしたく」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4",
+        "bg/nb_chart.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4p_prompt_kimazui/05.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 123
+    },
+    {
+      "role": "body",
+      "telop": "→**事情を先に**伝える言い方",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_messy.mp4",
+        "bg/nb_savings.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4p_prompt_kimazui/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 112
+    },
+    {
+      "role": "save",
+      "telop": "1位は**いちばん言い出しにくい**場面に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_coffee_cup.mp4",
+        "bg/nb_notes.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4p_prompt_kimazui/07.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 154
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "反対意見",
+      "telop": "「恐れ入りますが、**別の案**もご検討を」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_desk_m1.mp4",
+        "bg/nb_board.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4p_prompt_kimazui/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 123
+    },
+    {
+      "role": "body",
+      "telop": "→**対立せずに**意見を残せる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_street.mp4",
+        "bg/nb_walk.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4p_prompt_kimazui/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 89
+    },
+    {
+      "role": "cta",
+      "telop": "職種をコメント→\n**その職種の回を作ります**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_fuji_road.mp4",
+        "bg/nb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w4p_prompt_kimazui/10.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 145
+    }
+  ]
+}
