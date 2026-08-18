@@ -15,7 +15,7 @@
       "role": "hook",
       "narration": "1位は、返信前に一度冷静になれることです。",
       "telop": "1位は**一度冷静**になれる",
-      "bg": ["own_phone_tap", "nb_think"]
+      "bg": ["own_phone_tap", "nb_morning"]
     },
     {
       "role": "rank",
@@ -63,14 +63,15 @@
       "role": "body",
       "narration": "クレームや無理な要望にも、冷静なトーンの返信を一度下書きさせます。感情的に返して関係を壊さずに済みます。",
       "telop": "感情的に返して**壊さずに済む**",
-      "bg": ["own_typing", "nb_think"]
+      "bg": ["own_typing", "nb_night"]
     },
     {
       "role": "cta",
       "narration": "使ってるものは。コメントで。",
       "telop": "使ってるものは？↓\n**コメントで**",
-      "bg": ["nb_sky", "own_suburb_sky"]
+      "bg": ["own_canal", "jp_skyline"]
     }
   ],
-  "bgm": "bgm/paradise.mp3"
+  "bgm": "bgm/paradise.mp3",
+  "bgmVolume": 0.05
 }

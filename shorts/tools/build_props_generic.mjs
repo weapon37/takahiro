@@ -79,7 +79,7 @@ const props = {
     (fs.existsSync(path.join(HERE, 'public', 'bgm', 'bgm_bright.wav'))
       ? 'bgm/bgm_bright.wav'
       : ''),
-  bgmVolume: 0.1,
+  bgmVolume: script.bgmVolume ?? 0.1,
   whoosh: 'se/whoosh.wav',
   scenes,
 };

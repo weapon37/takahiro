@@ -63,13 +63,13 @@
       "role": "body",
       "narration": "スマホに喋った音声メモを、そのまま日報の形に整えます。現場で書く時間がいりません。",
       "telop": "現場で**書く時間**がいらない",
-      "bg": ["own_car_window", "nb_think"]
+      "bg": ["own_car_window", "nb_walk"]
     },
     {
       "role": "cta",
       "narration": "あなたの職種も、コメントで教えてください。",
       "telop": "あなたの職種は？↓\n**コメントで**",
-      "bg": ["nb_sky", "own_suburb_sky"]
+      "bg": ["own_fuji_road", "nb_morning"]
     }
   ],
   "bgm": "bgm/tomorrows_light.mp3"

@@ -13,7 +13,7 @@
     },
     {
       "role": "hook",
-      "narration": "1位は、答えの根拠まで示してくれることです。",
+      "narration": "1位は、根拠まで示してくれることです。",
       "telop": "1位は**根拠**まで示す",
       "bg": ["own_docs_stack", "nb_notes"]
     },
@@ -27,7 +27,7 @@
     },
     {
       "role": "body",
-      "narration": "テンプレートに文字を入れるだけです。デザインで悩む時間が消えます。",
+      "narration": "テンプレートに文字を入れるだけ。悩む時間が消えます。",
       "telop": "悩む時間が**消える**",
       "bg": ["own_typing", "nb_digital"]
     },
@@ -61,7 +61,7 @@
     },
     {
       "role": "body",
-      "narration": "社内規程を読み込ませておけば、質問にその場で、根拠のページ付きで答えます。",
+      "narration": "社内規程を読み込ませれば、その場で根拠付きに答えます。",
       "telop": "根拠の**ページ付き**で答える",
       "bg": ["own_desk_timelapse", "nb_particles"]
     },

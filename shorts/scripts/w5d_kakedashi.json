@@ -63,13 +63,13 @@
       "role": "body",
       "narration": "機材の疑問を、その場ですぐ聞けます。当時は先輩を捕まえるまで待つしかありませんでした。",
       "telop": "**その場**ですぐ聞ける",
-      "bg": ["own_typing", "nb_think"]
+      "bg": ["own_typing", "nb_night"]
     },
     {
       "role": "cta",
       "narration": "使ってるものは。コメントで。",
       "telop": "使ってるものは？↓\n**コメントで**",
-      "bg": ["nb_sky", "own_suburb_sky"]
+      "bg": ["own_countryside", "own_train_field"]
     }
   ],
   "bgm": "bgm/dova_asahi_lab.mp3"

@@ -63,13 +63,13 @@
       "role": "body",
       "narration": "厳しい評価にも、感情的にならない返信の下書きが出ます。お店の顔になる文章です。",
       "telop": "お店の**顔になる文章**",
-      "bg": ["own_coffee_pour", "nb_think"]
+      "bg": ["own_coffee_pour", "nb_rain"]
     },
     {
       "role": "cta",
       "narration": "あなたの職種も、コメントで教えてください。",
       "telop": "あなたの職種は？↓\n**コメントで**",
-      "bg": ["nb_sky", "own_suburb_sky"]
+      "bg": ["own_flowers_garden", "jp_skyline_day"]
     }
   ],
   "bgm": "bgm/dova_chocomint.mp3"
