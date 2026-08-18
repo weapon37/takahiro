@@ -136,7 +136,7 @@
       "bgVideo": null,
       "bgClips": [
         "bg/own_typing.mp4",
-        "bg/nb_think.mp4"
+        "bg/nb_night.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
@@ -150,8 +150,8 @@
       "telop": "使ってるものは？↓\n**コメントで**",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_sky.mp4",
-        "bg/own_suburb_sky.mp4"
+        "bg/own_countryside.mp4",
+        "bg/own_train_field.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,

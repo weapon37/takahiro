@@ -136,7 +136,7 @@
       "bgVideo": null,
       "bgClips": [
         "bg/own_coffee_pour.mp4",
-        "bg/nb_think.mp4"
+        "bg/nb_rain.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
@@ -150,8 +150,8 @@
       "telop": "あなたの職種は？↓\n**コメントで**",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_sky.mp4",
-        "bg/own_suburb_sky.mp4"
+        "bg/own_flowers_garden.mp4",
+        "bg/jp_skyline_day.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,

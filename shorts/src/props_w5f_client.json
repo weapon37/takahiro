@@ -1,7 +1,7 @@
 {
   "account": "仕事が消えるAI帳",
   "bgm": "bgm/paradise.mp3",
-  "bgmVolume": 0.1,
+  "bgmVolume": 0.05,
   "whoosh": "se/whoosh.wav",
   "scenes": [
     {
@@ -25,7 +25,7 @@
       "bgVideo": null,
       "bgClips": [
         "bg/own_phone_tap.mp4",
-        "bg/nb_think.mp4"
+        "bg/nb_morning.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
@@ -136,7 +136,7 @@
       "bgVideo": null,
       "bgClips": [
         "bg/own_typing.mp4",
-        "bg/nb_think.mp4"
+        "bg/nb_night.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
@@ -150,8 +150,8 @@
       "telop": "使ってるものは？↓\n**コメントで**",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_sky.mp4",
-        "bg/own_suburb_sky.mp4"
+        "bg/own_canal.mp4",
+        "bg/jp_skyline.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
