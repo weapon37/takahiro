@@ -1,0 +1,76 @@
+{
+  "template": "RankingVideo",
+  "_note": "8/19 21:00枠用の3本目(プロンプト型)。w4n(メール返信:お詫び/催促/断り)・w4o(会議メモ)と題材が重ならないよう、遅刻連絡/値上げ相談/反対意見の3つにした。同じ[プロンプト→結果]の2段ユニット構成。CTAも同じ(職種コメント→その職種の回を作る)。背景はw4n/w4oと同じ組み合わせを避けて選定。フックは2シーンに分割済み。実測値なし。",
+  "title": "気まずい一言が言いやすくなるプロンプトBEST3",
+  "caption": "職場の気まずい一言、言い出しにくい人へ。使えるプロンプトは3つだけです。1位は反対意見を、対立せずに伝えられます。そのままコピペで使えます。あなたの職種をコメントで教えてください。その職種で使えるプロンプトの回を作ります。\n※個人の見解です\n#AI活用 #ChatGPT #プロンプト #仕事術 #職場コミュニケーション",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "職場の気まずい一言、言いやすくなるプロンプト3つ。",
+      "telop": "気まずい一言は**この3つ**で",
+      "bg": ["own_desk_clean", "jp_commuters"]
+    },
+    {
+      "role": "hook",
+      "narration": "1位は、反対意見を対立せずに伝えられます。",
+      "telop": "1位は**反対意見**も対立せず",
+      "bg": ["own_car_window", "nb_phone"]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "遅刻連絡",
+      "narration": "第3位、遅刻の連絡。この一文を、そのまま入力します。",
+      "telop": "「電車遅延で**10分ほど遅れます**」",
+      "bg": ["jp_train_window", "nb_clock"]
+    },
+    {
+      "role": "body",
+      "narration": "状況を伝えたうえで、誠実な印象の一文に整います。",
+      "telop": "→**誠実な印象**の文になる",
+      "bg": ["own_typing", "nb_digital"]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "値上げ相談",
+      "narration": "第2位、値上げの相談。この一文です。",
+      "telop": "「原材料費の高騰により、**価格の見直し**をお願いしたく」",
+      "bg": ["own_docs_stack", "nb_chart"]
+    },
+    {
+      "role": "body",
+      "narration": "角を立てずに、事情を先に伝える言い方になります。",
+      "telop": "→**事情を先に**伝える言い方",
+      "bg": ["own_desk_messy", "nb_savings"]
+    },
+    {
+      "role": "save",
+      "narration": "1位は、いちばん言い出しにくい場面で効きます。保存推奨。",
+      "telop": "1位は**いちばん言い出しにくい**場面に",
+      "bg": ["own_coffee_cup", "nb_notes"]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "反対意見",
+      "narration": "第1位、反対意見。この一文です。",
+      "telop": "「大変恐縮ですが、**別の案**もご検討いただけますか」",
+      "bg": ["jp_desk_m1", "nb_board"]
+    },
+    {
+      "role": "body",
+      "narration": "対立せずに、自分の意見を残せます。",
+      "telop": "→**対立せずに**意見を残せる",
+      "bg": ["own_street", "nb_walk"]
+    },
+    {
+      "role": "cta",
+      "narration": "あなたの職種をコメントで。その職種で使えるプロンプトを作ります。",
+      "telop": "職種をコメント→\n**その職種の回を作ります**",
+      "bg": ["own_fuji_road", "nb_sky"]
+    }
+  ],
+  "bgm": "bgm/dova_beach_cocktail.mp3"
+}
