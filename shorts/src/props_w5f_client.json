@@ -1,7 +1,7 @@
 {
   "account": "仕事が消えるAI帳",
-  "bgm": "bgm/paradise.mp3",
-  "bgmVolume": 0.05,
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgmVolume": 0.1,
   "whoosh": "se/whoosh.wav",
   "scenes": [
     {
