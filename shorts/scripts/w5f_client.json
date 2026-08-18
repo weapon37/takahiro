@@ -72,6 +72,5 @@
       "bg": ["own_canal", "jp_skyline"]
     }
   ],
-  "bgm": "bgm/paradise.mp3",
-  "bgmVolume": 0.05
+  "bgm": "bgm/for_our_friends.mp3"
 }
