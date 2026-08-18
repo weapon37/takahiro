@@ -1,0 +1,164 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_chocomint.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "飲食・カフェは**この3つ**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_coffee_cup.mp4",
+        "bg/jp_cafe_f.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5b_inshoku/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 154
+    },
+    {
+      "role": "hook",
+      "telop": "1位は**返信文づくり**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/sumaho.mp4",
+        "bg/nb_phone.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5b_inshoku/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 110
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "Canva",
+      "telop": "メニューと**ポップ**担当",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_art.mp4",
+        "bg/own_meal.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5b_inshoku/03.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 139
+    },
+    {
+      "role": "body",
+      "telop": "下書きが**すぐできる**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/nb_digital.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5b_inshoku/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 200
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "DeepL",
+      "telop": "メニューの**多言語**対応",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_sushi.mp4",
+        "bg/nb_social.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5b_inshoku/05.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 148
+    },
+    {
+      "role": "body",
+      "telop": "そのまま**出せる**訳文",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_shibuya.mp4",
+        "bg/nb_walk.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5b_inshoku/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 112
+    },
+    {
+      "role": "save",
+      "telop": "1位は**レビュー対応**で助かる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_phone_tap.mp4",
+        "bg/nb_social.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5b_inshoku/07.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 125
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "ChatGPT",
+      "telop": "**返信文**をつくる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_digital.mp4",
+        "bg/coffee_desk.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5b_inshoku/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 93
+    },
+    {
+      "role": "body",
+      "telop": "お店の**顔になる文章**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_coffee_pour.mp4",
+        "bg/nb_think.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5b_inshoku/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 206
+    },
+    {
+      "role": "cta",
+      "telop": "あなたの職種は？↓\n**コメントで**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_sky.mp4",
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5b_inshoku/10.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 97
+    }
+  ]
+}

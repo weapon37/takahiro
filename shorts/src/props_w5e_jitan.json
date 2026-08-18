@@ -1,0 +1,164 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/calm_instrumental.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "編集の時間が**いちばん減った**3つ",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_timelapse.mp4",
+        "bg/nb_digital.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5e_jitan/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 129
+    },
+    {
+      "role": "hook",
+      "telop": "1位は**古い素材**が生き返る",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_camera_rig.mp4",
+        "bg/nb_particles.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5e_jitan/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 131
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "DaVinci Resolve",
+      "telop": "色味の**自動マッチング**担当",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_lens_adjust.mp4",
+        "bg/nb_bokeh.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5e_jitan/03.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 133
+    },
+    {
+      "role": "body",
+      "telop": "基準の1カットに**自動で合わせる**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_camera.mp4",
+        "bg/nb_art.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5e_jitan/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 141
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "Adobe Podcast",
+      "telop": "**ノイズ除去**担当",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/nb_digital.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5e_jitan/05.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 118
+    },
+    {
+      "role": "body",
+      "telop": "撮り直しが**減る**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_messy.mp4",
+        "bg/nb_think.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5e_jitan/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 173
+    },
+    {
+      "role": "save",
+      "telop": "1位は**古い素材**が変わる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_phone_tap.mp4",
+        "bg/nb_social.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5e_jitan/07.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 143
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "Topaz Video AI",
+      "telop": "**古い素材**が生き返る",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_digital.mp4",
+        "bg/own_desk_timelapse.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5e_jitan/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 98
+    },
+    {
+      "role": "body",
+      "telop": "**使える素材**に戻る",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_camera_rig.mp4",
+        "bg/nb_particles.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5e_jitan/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 214
+    },
+    {
+      "role": "cta",
+      "telop": "使ってるものは？↓\n**コメントで**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_sky.mp4",
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5e_jitan/10.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 81
+    }
+  ]
+}

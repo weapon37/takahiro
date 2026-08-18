@@ -1,0 +1,164 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/paradise.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "クライアント対応は**この3つ**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_clean.mp4",
+        "bg/nb_desk.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5f_client/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 131
+    },
+    {
+      "role": "hook",
+      "telop": "1位は**一度冷静**になれる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_phone_tap.mp4",
+        "bg/nb_think.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5f_client/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 129
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "Canva",
+      "telop": "納品案内と**請求書**担当",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_art.mp4",
+        "bg/own_docs_stack.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5f_client/03.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 166
+    },
+    {
+      "role": "body",
+      "telop": "作り直さなくて**済む**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/nb_digital.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5f_client/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 131
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "DeepL",
+      "telop": "海外クライアントとの**やりとり**担当",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_messy.mp4",
+        "bg/nb_social.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5f_client/05.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 145
+    },
+    {
+      "role": "body",
+      "telop": "そのまま**送れる文**になる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_phone.mp4",
+        "bg/nb_walk.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5f_client/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 110
+    },
+    {
+      "role": "save",
+      "telop": "1位は**関係を壊さない**ために効く",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_phone_tap.mp4",
+        "bg/nb_social.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5f_client/07.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 141
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "ChatGPT",
+      "telop": "**一度冷静**になれる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_digital.mp4",
+        "bg/own_desk_timelapse.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5f_client/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 73
+    },
+    {
+      "role": "body",
+      "telop": "感情的に返して**壊さずに済む**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/nb_think.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5f_client/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 285
+    },
+    {
+      "role": "cta",
+      "telop": "使ってるものは？↓\n**コメントで**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_sky.mp4",
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w5f_client/10.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 64
+    }
+  ]
+}
