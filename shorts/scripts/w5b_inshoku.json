@@ -1,0 +1,76 @@
+{
+  "template": "RankingVideo",
+  "_note": "Week5-3。職業別シリーズ(ベース)。飲食・カフェ編は未着手だったカテゴリ。1位はChatGPT=レビュー返信の下書き。フックは2シーンに分割済み。実測値なし。",
+  "title": "職業別・入れるべきAI BEST3【飲食・カフェ編】",
+  "caption": "飲食店やカフェをやってる人だけ見てください。入れるべきAIは3つです。1位はGoogleレビューへの返信文の下書き。厳しい評価にも、感情的にならずに返せます。あなたの職種も、コメントで教えてください。\n※個人の見解です ※各サービスの規約は変わることがあります\n#飲食店 #カフェ経営 #AI活用 #Googleレビュー #職業別AI",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "飲食店やカフェをやってる人だけ、見てください。入れるべきエーアイは3つ。",
+      "telop": "飲食・カフェは**この3つ**",
+      "bg": ["own_coffee_cup", "jp_cafe_f"]
+    },
+    {
+      "role": "hook",
+      "narration": "1位は、お客様への返信文をつくることです。",
+      "telop": "1位は**返信文づくり**",
+      "bg": ["sumaho", "nb_phone"]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "Canva",
+      "narration": "第3位、キャンバ。メニュー表やポップのデザイン担当。",
+      "telop": "メニューと**ポップ**担当",
+      "bg": ["nb_art", "own_meal"]
+    },
+    {
+      "role": "body",
+      "narration": "写真を入れて文字を置くだけです。印刷所に頼む前の下書きがすぐできます。",
+      "telop": "下書きが**すぐできる**",
+      "bg": ["own_typing", "nb_digital"]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "DeepL",
+      "narration": "第2位、ディープエル。メニューの多言語対応担当。",
+      "telop": "メニューの**多言語**対応",
+      "bg": ["jp_sushi", "nb_social"]
+    },
+    {
+      "role": "body",
+      "narration": "海外のお客様にも、そのまま出せる訳文になります。",
+      "telop": "そのまま**出せる**訳文",
+      "bg": ["jp_shibuya", "nb_walk"]
+    },
+    {
+      "role": "save",
+      "narration": "1位はレビュー対応で助かります。保存推奨。",
+      "telop": "1位は**レビュー対応**で助かる",
+      "bg": ["own_phone_tap", "nb_social"]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "ChatGPT",
+      "narration": "第1位、チャットジーピーティー。",
+      "telop": "**返信文**をつくる",
+      "bg": ["nb_digital", "coffee_desk"]
+    },
+    {
+      "role": "body",
+      "narration": "厳しい評価にも、感情的にならない返信の下書きが出ます。お店の顔になる文章です。",
+      "telop": "お店の**顔になる文章**",
+      "bg": ["own_coffee_pour", "nb_think"]
+    },
+    {
+      "role": "cta",
+      "narration": "あなたの職種も、コメントで教えてください。",
+      "telop": "あなたの職種は？↓\n**コメントで**",
+      "bg": ["nb_sky", "own_suburb_sky"]
+    }
+  ],
+  "bgm": "bgm/dova_chocomint.mp3"
+}

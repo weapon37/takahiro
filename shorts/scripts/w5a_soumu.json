@@ -1,0 +1,76 @@
+{
+  "template": "RankingVideo",
+  "_note": "Week5-1。職業別シリーズ(ベース)。総務編は未着手だったカテゴリ。1位はNotebookLM=社内規程の根拠付き回答。フックは2シーンに分割済み。実測値なし。",
+  "title": "職業別・入れるべきAI BEST3【総務編】",
+  "caption": "総務の仕事をしてる人だけ見てください。入れるべきAIは3つです。1位は社内規程を読み込ませて、根拠のページ付きで答えてくれるもの。同じ質問に何度も答えなくて済みます。あなたの職種も、コメントで教えてください。\n※個人の見解です ※各サービスの規約・料金は変わることがあります\n#総務 #バックオフィス #AI活用 #仕事術 #職業別AI",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "総務の仕事をしてる人だけ、見てください。入れるべきエーアイは3つ。",
+      "telop": "総務の仕事は**この3つ**",
+      "bg": ["own_desk_clean", "nb_board"]
+    },
+    {
+      "role": "hook",
+      "narration": "1位は、答えの根拠まで示してくれることです。",
+      "telop": "1位は**根拠**まで示す",
+      "bg": ["own_docs_stack", "nb_notes"]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "Canva",
+      "narration": "第3位、キャンバ。社内掲示物やお知らせのデザイン担当。",
+      "telop": "掲示物と**お知らせ**担当",
+      "bg": ["nb_art", "nb_board"]
+    },
+    {
+      "role": "body",
+      "narration": "テンプレートに文字を入れるだけです。デザインで悩む時間が消えます。",
+      "telop": "悩む時間が**消える**",
+      "bg": ["own_typing", "nb_digital"]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "ChatGPT",
+      "narration": "第2位、チャットジーピーティー。社内マニュアルやFAQの下書き担当。",
+      "telop": "マニュアルの**下書き**担当",
+      "bg": ["nb_books", "jp_laptop_f1"]
+    },
+    {
+      "role": "body",
+      "narration": "同じ質問に何度も答えなくて済みます。担当者の負担がまとめて減ります。",
+      "telop": "担当の負担が**まとめて減る**",
+      "bg": ["own_desk_messy", "nb_think"]
+    },
+    {
+      "role": "save",
+      "narration": "1位は総務なら必須です。保存推奨。",
+      "telop": "1位は**総務なら必須**",
+      "bg": ["own_phone_tap", "nb_social"]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "NotebookLM",
+      "narration": "第1位、ノートブックエルエム。",
+      "telop": "**根拠**まで示す",
+      "bg": ["nb_digital", "nb_code"]
+    },
+    {
+      "role": "body",
+      "narration": "社内規程を読み込ませておけば、質問にその場で、根拠のページ付きで答えます。",
+      "telop": "根拠の**ページ付き**で答える",
+      "bg": ["own_desk_timelapse", "nb_particles"]
+    },
+    {
+      "role": "cta",
+      "narration": "あなたの職種も、コメントで教えてください。",
+      "telop": "あなたの職種は？↓\n**コメントで**",
+      "bg": ["nb_sky", "own_suburb_sky"]
+    }
+  ],
+  "bgm": "bgm/dova_cafe_rain.mp3"
+}

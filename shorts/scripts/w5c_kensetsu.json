@@ -1,0 +1,76 @@
+{
+  "template": "RankingVideo",
+  "_note": "Week5-5。職業別シリーズ(ベース)。建設・現場編は未着手だったカテゴリ。1位はChatGPT=音声メモから日報。フックは2シーンに分割済み。実測値なし。",
+  "title": "職業別・入れるべきAI BEST3【建設・現場編】",
+  "caption": "建設・現場の仕事をしてる人だけ見てください。入れるべきAIは3つです。1位はスマホに喋った音声メモを、そのまま日報の形に整えてくれるもの。現場で書類を書く時間がいりません。あなたの職種も、コメントで教えてください。\n※個人の見解です\n#建設業 #現場仕事 #AI活用 #日報 #職業別AI",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "建設・現場の仕事をしてる人だけ、見てください。入れるべきエーアイは3つ。",
+      "telop": "現場の仕事は**この3つ**",
+      "bg": ["own_street", "nb_building"]
+    },
+    {
+      "role": "hook",
+      "narration": "1位は、現場で喋るだけで書類になることです。",
+      "telop": "1位は**喋るだけ**で書類に",
+      "bg": ["sumaho2", "nb_phone"]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "NotebookLM",
+      "narration": "第3位、ノートブックエルエム。仕様書や図面の検索担当。",
+      "telop": "仕様書・図面の**検索**担当",
+      "bg": ["nb_books", "nb_board"]
+    },
+    {
+      "role": "body",
+      "narration": "読み返す時間がなくても、聞けばすぐ出ます。",
+      "telop": "聞けば**すぐ出る**",
+      "bg": ["own_docs_stack", "nb_notes"]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "Canva",
+      "narration": "第2位、キャンバ。安全掲示物や工程表のデザイン担当。",
+      "telop": "安全掲示と**工程表**担当",
+      "bg": ["nb_art", "jp_office_tower"]
+    },
+    {
+      "role": "body",
+      "narration": "テンプレートがあるので、毎回ゼロから作らなくて済みます。",
+      "telop": "ゼロから**作らない**",
+      "bg": ["own_typing", "nb_digital"]
+    },
+    {
+      "role": "save",
+      "narration": "1位は日報が一番変わります。保存推奨。",
+      "telop": "1位は**日報**が変わる",
+      "bg": ["own_phone_tap", "nb_social"]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "ChatGPT",
+      "narration": "第1位、チャットジーピーティー。",
+      "telop": "**日報**を自動整形",
+      "bg": ["nb_digital", "own_street"]
+    },
+    {
+      "role": "body",
+      "narration": "スマホに喋った音声メモを、そのまま日報の形に整えます。現場で書く時間がいりません。",
+      "telop": "現場で**書く時間**がいらない",
+      "bg": ["own_car_window", "nb_think"]
+    },
+    {
+      "role": "cta",
+      "narration": "あなたの職種も、コメントで教えてください。",
+      "telop": "あなたの職種は？↓\n**コメントで**",
+      "bg": ["nb_sky", "own_suburb_sky"]
+    }
+  ],
+  "bgm": "bgm/tomorrows_light.mp3"
+}
