@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Mac の launchd で pipeline.py を6時間おきに自動実行するための設定ファイルです。
+
+  ★ 下の【ここを書き換える】と書いてある3箇所を、自分のパスに書き換えてから使ってください。
+     書き換え方と登録コマンドは pipeline/README.md の「6時間おきの自動実行」を見てください。
+-->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.shorts.pipeline</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <!-- 【ここを書き換える 1】 which python3 の結果を貼る -->
+        <string>/usr/bin/python3</string>
+        <!-- 【ここを書き換える 2】 pipeline.py のフルパスを貼る -->
+        <string>/Users/YOURNAME/shorts/pipeline/pipeline.py</string>
+    </array>
+
+    <!-- 6時間ごと(21600秒)に実行する -->
+    <key>StartInterval</key>
+    <integer>21600</integer>
+
+    <!-- 登録した直後にも1回実行する -->
+    <key>RunAtLoad</key>
+    <true/>
+
+    <!-- 【ここを書き換える 3】 pipeline フォルダのフルパスを貼る(3箇所とも) -->
+    <key>WorkingDirectory</key>
+    <string>/Users/YOURNAME/shorts/pipeline</string>
+
+    <key>StandardOutPath</key>
+    <string>/Users/YOURNAME/shorts/pipeline/logs/launchd.out.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/YOURNAME/shorts/pipeline/logs/launchd.err.log</string>
+
+    <key>ProcessType</key>
+    <string>Background</string>
+</dict>
+</plist>

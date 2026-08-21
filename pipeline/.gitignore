@@ -1,0 +1,6 @@
+# 自分の環境専用の設定・実行結果はGitに入れない
+pipeline.config.json
+.env
+state/
+logs/
+work/
