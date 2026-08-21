@@ -103,6 +103,18 @@ npx remotion render src/index.ts StoryVideo out/story.mp4 --props=src/props_stor
 - 💬のlineシーンは `"keyword": "メモ"` で合言葉指定
 - 💬体験談は実体験ベースで書くこと(盛らない)。ナレーションは肉声推奨
 
+## 企画資料(docs/)
+
+台本を書く前に読む資料。コードではないので、制作フローは変わりません。
+
+| 資料 | 内容 | 使いどころ |
+|------|------|-----------|
+| `docs/shorts_format_cheatsheet.md` | 売れるショートの型チート集(7型の秒数構成とフック文言) | 新しい台本の構成を決めるとき。③「実は」フック型がLINE誘導と相性◎ |
+| `docs/character_design_shuhei.md` | キャラクター設定「ダメ出しシューヘイ」(見た目・口調・演出方針) | キャラ路線の台本・ナレーションの口調を揃えるとき |
+| `docs/cta_variants.json` | 動画末尾CTAのA/Bテスト3案(A→B→C均等ローテーション) | 既存動画の末尾に1文足すとき。進行軸・尺・語り口は変えない |
+
+`docs/youtube_api_setup.md` は投稿API(OAuth)の手順書です。
+
 ## Week 1 台本一覧(scripts/)
 
 14本すべて台本JSON化済み。制作は3コマンド(音声→props→render)。
