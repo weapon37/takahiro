@@ -1,59 +1,59 @@
 {
   "account": "仕事が消えるAI帳",
-  "bgm": "bgm/dova_chocomint.mp3",
+  "bgm": "bgm/pawn.mp3",
   "bgmVolume": 0.1,
   "whoosh": "se/whoosh.wav",
   "scenes": [
     {
       "role": "hook",
-      "telop": "飲食・カフェは**この3つ**",
+      "telop": "ねぎらいと感謝は**この3つ**で",
       "bgVideo": null,
       "bgClips": [
-        "bg/own_coffee_cup.mp4",
-        "bg/jp_cafe_f.mp4"
+        "bg/own_desk_clean.mp4",
+        "bg/nb_notes.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
-      "audio": "audio_w5b_inshoku/01.wav",
+      "audio": "audio_w6a_negirai/01.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 154
+      "durationInFrames": 97
     },
     {
       "role": "hook",
-      "telop": "1位は**返信文づくり**",
+      "telop": "1位は**御礼**が心こもって見える",
       "bgVideo": null,
       "bgClips": [
-        "bg/sumaho.mp4",
-        "bg/nb_phone.mp4"
+        "bg/own_coffee_cup.mp4",
+        "bg/nb_morning.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
-      "audio": "audio_w5b_inshoku/02.wav",
+      "audio": "audio_w6a_negirai/02.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 112
+      "durationInFrames": 135
     },
     {
       "role": "rank",
       "rank": 3,
-      "headline": "Canva",
-      "telop": "メニューと**ポップ**担当",
+      "headline": "ねぎらい",
+      "telop": "「今月も**お疲れ様でした**」",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_art.mp4",
-        "bg/own_meal.mp4"
+        "bg/own_desk_messy.mp4",
+        "bg/nb_team.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
-      "audio": "audio_w5b_inshoku/03.wav",
+      "audio": "audio_w6a_negirai/03.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 146
+      "durationInFrames": 150
     },
     {
       "role": "body",
-      "telop": "下書きが**すぐできる**",
+      "telop": "→**伝わる一言**になる",
       "bgVideo": null,
       "bgClips": [
         "bg/own_typing.mp4",
@@ -61,104 +61,104 @@
       ],
       "bgSync": true,
       "bgWash": 0,
-      "audio": "audio_w5b_inshoku/04.wav",
+      "audio": "audio_w6a_negirai/04.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 177
+      "durationInFrames": 116
     },
     {
       "role": "rank",
       "rank": 2,
-      "headline": "DeepL",
-      "telop": "メニューの**多言語**対応",
+      "headline": "送別",
+      "telop": "「今まで**ありがとうございました**」",
       "bgVideo": null,
       "bgClips": [
-        "bg/jp_sushi.mp4",
-        "bg/nb_social.mp4"
+        "bg/own_flowers_garden.mp4",
+        "bg/nb_board.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
-      "audio": "audio_w5b_inshoku/05.wav",
+      "audio": "audio_w6a_negirai/05.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 129
+      "durationInFrames": 98
     },
     {
       "role": "body",
-      "telop": "そのまま**出せる**訳文",
+      "telop": "→**ちょうどいい**言葉になる",
       "bgVideo": null,
       "bgClips": [
-        "bg/jp_shibuya.mp4",
+        "bg/own_coffee_pour.mp4",
         "bg/nb_walk.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
-      "audio": "audio_w5b_inshoku/06.wav",
+      "audio": "audio_w6a_negirai/06.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 114
+      "durationInFrames": 89
     },
     {
       "role": "save",
-      "telop": "1位は**レビュー対応**で助かる",
+      "telop": "1位は**いちばん形に残る**場面に",
       "bgVideo": null,
       "bgClips": [
-        "bg/own_phone_tap.mp4",
-        "bg/nb_social.mp4"
+        "bg/own_pen_write.mp4",
+        "bg/nb_particles.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
-      "audio": "audio_w5b_inshoku/07.wav",
+      "audio": "audio_w6a_negirai/07.wav",
       "eraseIn": true,
       "playWhoosh": false,
-      "durationInFrames": 131
+      "durationInFrames": 156
     },
     {
       "role": "rank",
       "rank": 1,
-      "headline": "ChatGPT",
-      "telop": "**返信文**をつくる",
+      "headline": "御礼",
+      "telop": "「本日は**ありがとうございました**」",
       "bgVideo": null,
       "bgClips": [
-        "bg/nb_digital.mp4",
-        "bg/coffee_desk.mp4"
+        "bg/jp_desk_m1.mp4",
+        "bg/nb_code.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
-      "audio": "audio_w5b_inshoku/08.wav",
+      "audio": "audio_w6a_negirai/08.wav",
       "eraseIn": true,
       "playWhoosh": true,
-      "durationInFrames": 75
+      "durationInFrames": 104
     },
     {
       "role": "body",
-      "telop": "お店の**顔になる文章**",
+      "telop": "→**心がこもって**見える",
       "bgVideo": null,
       "bgClips": [
-        "bg/own_coffee_pour.mp4",
-        "bg/nb_rain.mp4"
+        "bg/own_street.mp4",
+        "bg/nb_clock.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
-      "audio": "audio_w5b_inshoku/09.wav",
+      "audio": "audio_w6a_negirai/09.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 200
+      "durationInFrames": 116
     },
     {
       "role": "cta",
-      "telop": "LINEで「飲食」→\n**使い方+コツ**をお届け",
+      "telop": "LINEで「ねぎらい」→\n**使い方+コツ**をお届け",
       "bgVideo": null,
       "bgClips": [
-        "bg/own_flowers_garden.mp4",
+        "bg/own_canal.mp4",
         "bg/jp_skyline_day.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
-      "audio": "audio_w5b_inshoku/10.wav",
+      "audio": "audio_w6a_negirai/10.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 108
+      "durationInFrames": 219
     }
   ]
 }
