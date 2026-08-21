@@ -1,0 +1,76 @@
+{
+  "template": "RankingVideo",
+  "_note": "Week6-1(プロンプト型4本目)。w4n(メール返信)・w4o(会議メモ)・w4p(気まずい一言)はいずれも気まずい/断る/整理する系でトーンが暗め。これだけポジティブなトーン(ねぎらい・送別・御礼)にして反応の違いを見る狙い。同じ[プロンプト→結果]の2段ユニット構成。CTAも同じ。背景はnb_think/nb_sky/own_suburb_skyを使わず新規の組み合わせ。フックは2シーンに分割済み。実測値なし。",
+  "title": "ねぎらい・感謝が伝わるプロンプトBEST3",
+  "caption": "お礼やねぎらい、うまく言葉にできない人へ。使えるプロンプトは3つだけです。1位はお客様への御礼が、型通りでも心がこもって見える文になります。そのままコピペで使えます。あなたの職種をコメントで教えてください。その職種で使えるプロンプトの回を作ります。\n※個人の見解です\n#AI活用 #ChatGPT #プロンプト #仕事術 #感謝",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "ねぎらいと感謝を伝えるプロンプト3つ。",
+      "telop": "ねぎらいと感謝は**この3つ**で",
+      "bg": ["own_desk_clean", "nb_notes"]
+    },
+    {
+      "role": "hook",
+      "narration": "1位は、お客様への御礼が心がこもって見えます。",
+      "telop": "1位は**御礼**が心こもって見える",
+      "bg": ["own_coffee_cup", "nb_morning"]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "ねぎらい",
+      "narration": "第3位、ねぎらい。この一文を、そのまま入力します。",
+      "telop": "「今月も**お疲れ様でした**」",
+      "bg": ["own_desk_messy", "nb_team"]
+    },
+    {
+      "role": "body",
+      "narration": "具体的な頑張りが添えられて、伝わる一言になります。",
+      "telop": "→**伝わる一言**になる",
+      "bg": ["own_typing", "nb_digital"]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "送別",
+      "narration": "第2位、送別。この一文です。",
+      "telop": "「今まで**ありがとうございました**」",
+      "bg": ["own_flowers_garden", "nb_board"]
+    },
+    {
+      "role": "body",
+      "narration": "重くなりすぎない、ちょうどいい言葉になります。",
+      "telop": "→**ちょうどいい**言葉になる",
+      "bg": ["own_coffee_pour", "nb_walk"]
+    },
+    {
+      "role": "save",
+      "narration": "1位は、いちばん形に残る場面で効きます。保存推奨。",
+      "telop": "1位は**いちばん形に残る**場面に",
+      "bg": ["own_pen_write", "nb_particles"]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "御礼",
+      "narration": "第1位、御礼。この一文です。",
+      "telop": "「本日は**ありがとうございました**」",
+      "bg": ["jp_desk_m1", "nb_code"]
+    },
+    {
+      "role": "body",
+      "narration": "型通りでも、心がこもって見える文になります。",
+      "telop": "→**心がこもって**見える",
+      "bg": ["own_street", "nb_clock"]
+    },
+    {
+      "role": "cta",
+      "narration": "あなたの職種をコメントで。その職種で使えるプロンプトを作ります。",
+      "telop": "職種をコメント→\n**その職種の回を作ります**",
+      "bg": ["own_canal", "jp_skyline_day"]
+    }
+  ],
+  "bgm": "bgm/pawn.mp3"
+}
