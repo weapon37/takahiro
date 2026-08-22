@@ -1,0 +1,98 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_beach_cocktail.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**褒めてから注意**は、もう古い",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_clean.mp4",
+        "bg/nb_think.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6b_1on1/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 112
+    },
+    {
+      "role": "hook",
+      "telop": "**遠回し**より**率直**な一言",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4",
+        "bg/nb_notes.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6b_1on1/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 212
+    },
+    {
+      "role": "body",
+      "telop": "関係を壊さない**言い方**が、実はある",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_phone_tap.mp4",
+        "bg/nb_night.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6b_1on1/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 229
+    },
+    {
+      "role": "body",
+      "telop": "**エーアイに一文**渡すだけでいい",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_digital.mp4",
+        "bg/own_typing.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6b_1on1/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 189
+    },
+    {
+      "role": "body",
+      "telop": "「今回の対応、**正直微妙でした**」→**追い詰めない**伝え方に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_desk_m1.mp4",
+        "bg/nb_code.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6b_1on1/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 248
+    },
+    {
+      "role": "cta",
+      "telop": "LINEで「面談」→\n**使い方+コツ**をお届け",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_fuji_road.mp4",
+        "bg/jp_skyline_day.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6b_1on1/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 150
+    }
+  ]
+}
