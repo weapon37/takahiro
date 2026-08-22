@@ -6,7 +6,7 @@
   "scenes": [
     {
       "role": "hook",
-      "telop": "**褒めてから注意**は、もう古い",
+      "telop": "**部下への一言**、AIに任せると失敗する",
       "bgVideo": null,
       "bgClips": [
         "bg/own_desk_clean.mp4",
@@ -17,11 +17,11 @@
       "audio": "audio_w6b_1on1/01.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 112
+      "durationInFrames": 131
     },
     {
       "role": "hook",
-      "telop": "**遠回し**より**率直**な一言",
+      "telop": "「**優しく伝えて**」だけでは、ぼやける",
       "bgVideo": null,
       "bgClips": [
         "bg/own_docs_stack.mp4",
@@ -32,7 +32,7 @@
       "audio": "audio_w6b_1on1/02.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 212
+      "durationInFrames": 262
     },
     {
       "role": "body",
@@ -47,7 +47,7 @@
       "audio": "audio_w6b_1on1/03.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 229
+      "durationInFrames": 223
     },
     {
       "role": "body",
@@ -62,7 +62,7 @@
       "audio": "audio_w6b_1on1/04.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 189
+      "durationInFrames": 166
     },
     {
       "role": "body",
@@ -77,7 +77,7 @@
       "audio": "audio_w6b_1on1/05.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 248
+      "durationInFrames": 246
     },
     {
       "role": "cta",
@@ -92,7 +92,7 @@
       "audio": "audio_w6b_1on1/06.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 150
+      "durationInFrames": 154
     }
   ]
 }
