@@ -17,7 +17,7 @@
       "audio": "audio_w6b_1on1/01.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 131
+      "durationInFrames": 146
     },
     {
       "role": "hook",
@@ -32,11 +32,11 @@
       "audio": "audio_w6b_1on1/02.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 262
+      "durationInFrames": 252
     },
     {
       "role": "body",
-      "telop": "関係を壊さない**言い方**が、実はある",
+      "telop": "関係を壊さない**言い方**が、\n実はある",
       "bgVideo": null,
       "bgClips": [
         "bg/own_phone_tap.mp4",
@@ -47,11 +47,11 @@
       "audio": "audio_w6b_1on1/03.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 223
+      "durationInFrames": 221
     },
     {
       "role": "body",
-      "telop": "**エーアイに一文**渡すだけでいい",
+      "telop": "**AIに一文**渡すだけでいい",
       "bgVideo": null,
       "bgClips": [
         "bg/nb_digital.mp4",
@@ -62,7 +62,7 @@
       "audio": "audio_w6b_1on1/04.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 166
+      "durationInFrames": 168
     },
     {
       "role": "body",
@@ -77,7 +77,7 @@
       "audio": "audio_w6b_1on1/05.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 246
+      "durationInFrames": 250
     },
     {
       "role": "cta",
