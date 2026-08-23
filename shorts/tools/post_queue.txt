@@ -2,3 +2,6 @@
 # out/<名前>.mp4 が置かれたら、watcherが次の空き枠へ自動で予約投稿し、
 # この行を消して次に進む。#で始まる行と空行は無視される。
 w6a_negirai
+w6b_1on1
+w6c_claim
+w6d_schedule
