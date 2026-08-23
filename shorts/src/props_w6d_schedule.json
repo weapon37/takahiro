@@ -38,7 +38,7 @@
       "role": "rank",
       "rank": 3,
       "headline": "日程調整依頼",
-      "telop": "「来週、**30分**お時間いただけますか」",
+      "telop": "「来週、**30分**いただけますか」",
       "bgVideo": null,
       "bgClips": [
         "bg/own_docs_stack.mp4",
@@ -70,7 +70,7 @@
       "role": "rank",
       "rank": 2,
       "headline": "リスケ",
-      "telop": "「大変恐縮ですが、**日程を変更**させてください」",
+      "telop": "「大変恐縮ですが、\n**日程を変更**させてください」",
       "bgVideo": null,
       "bgClips": [
         "bg/own_desk_messy.mp4",
@@ -117,7 +117,7 @@
       "role": "rank",
       "rank": 1,
       "headline": "リマインド",
-      "telop": "「明日の件、**よろしくお願いします**」",
+      "telop": "「明日、\n**よろしくお願いします**」",
       "bgVideo": null,
       "bgClips": [
         "bg/jp_desk_m1.mp4",
