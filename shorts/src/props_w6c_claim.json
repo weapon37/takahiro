@@ -1,0 +1,164 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_ensolarado.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "クレーム対応は**この3つ**で",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_clean.mp4",
+        "bg/nb_phone.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6c_claim/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 77
+    },
+    {
+      "role": "hook",
+      "telop": "1位は**謝罪メール**が冷静なトーンに",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/nb_night.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6c_claim/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 158
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "返金対応",
+      "telop": "「返金の**対応**をお願いします」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4",
+        "bg/nb_cash.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6c_claim/03.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 164
+    },
+    {
+      "role": "body",
+      "telop": "→**手続きの流れ**まで含む文になる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_messy.mp4",
+        "bg/nb_notes.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6c_claim/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 129
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "SNS辛口コメント",
+      "telop": "「全然**期待外れ**でした」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_phone.mp4",
+        "bg/own_coffee_cup.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6c_claim/05.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 141
+    },
+    {
+      "role": "body",
+      "telop": "→**事実だけ**を冷静に返せる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_street.mp4",
+        "bg/nb_walk.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6c_claim/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 108
+    },
+    {
+      "role": "save",
+      "telop": "1位は**一番気まずいメール**に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_pen_write.mp4",
+        "bg/nb_particles.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6c_claim/07.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 148
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "クレーム後の謝罪メール",
+      "telop": "「大変**ご迷惑**をおかけしました」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_desk_m1.mp4",
+        "bg/nb_rain.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6c_claim/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 123
+    },
+    {
+      "role": "body",
+      "telop": "→**誠意が伝わる**文章になる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/nb_digital.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6c_claim/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 108
+    },
+    {
+      "role": "cta",
+      "telop": "LINEで「クレーム」→\n**使い方+コツ**をお届け",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_canal.mp4",
+        "bg/jp_skyline.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6c_claim/10.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 169
+    }
+  ]
+}

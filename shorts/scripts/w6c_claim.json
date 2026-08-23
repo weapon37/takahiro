@@ -1,0 +1,76 @@
+{
+  "template": "RankingVideo",
+  "_note": "Week6-3。プロンプト型・BEST3形式(w6bの6ビート実験と比較するため、あえて従来型に戻す)。返金対応/SNS辛口コメント/クレーム後の謝罪メールの3つ。w4n(メール返信のお詫び/催促/断り)とは場面が別(w4nは自分から送る一言、こちらは相手からのクレームへの対応)。フックは2シーンに分割済み。実測値なし。",
+  "title": "クレーム対応で使えるプロンプトBEST3",
+  "caption": "クレーム対応、うまく言葉にできない人へ。使えるプロンプトは3つだけです。1位はクレーム後の謝罪メールが、型通りでも誠意が伝わる文章になります。使い方とコツを、LINEでまとめてお届けします。「クレーム」と送ってください。\n※個人の見解です\n#AI活用 #ChatGPT #プロンプト #仕事術 #クレーム対応",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "クレーム対応で使えるプロンプト3つ。",
+      "telop": "クレーム対応は**この3つ**で",
+      "bg": ["own_desk_clean", "nb_phone"]
+    },
+    {
+      "role": "hook",
+      "narration": "1位は、クレーム後の謝罪メールが、冷静なトーンに整うことです。",
+      "telop": "1位は**謝罪メール**が冷静なトーンに",
+      "bg": ["own_typing", "nb_night"]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "返金対応",
+      "narration": "第3位、返金対応。この一文を、そのまま入力します。",
+      "telop": "「返金の**対応**をお願いします」",
+      "bg": ["own_docs_stack", "nb_cash"]
+    },
+    {
+      "role": "body",
+      "narration": "手続きの流れまで含めた、丁寧な返信文になります。",
+      "telop": "→**手続きの流れ**まで含む文になる",
+      "bg": ["own_desk_messy", "nb_notes"]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "SNS辛口コメント",
+      "narration": "第2位、SNSの辛口コメント。この一文です。",
+      "telop": "「全然**期待外れ**でした」",
+      "bg": ["nb_phone", "own_coffee_cup"]
+    },
+    {
+      "role": "body",
+      "narration": "感情的にならず、事実だけを冷静に返せます。",
+      "telop": "→**事実だけ**を冷静に返せる",
+      "bg": ["own_street", "nb_walk"]
+    },
+    {
+      "role": "save",
+      "narration": "1位は、一番気まずいメールで効きます。保存推奨。",
+      "telop": "1位は**一番気まずいメール**に",
+      "bg": ["own_pen_write", "nb_particles"]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "クレーム後の謝罪メール",
+      "narration": "第1位、クレーム後の謝罪メール。この一文です。",
+      "telop": "「大変**ご迷惑**をおかけしました」",
+      "bg": ["jp_desk_m1", "nb_rain"]
+    },
+    {
+      "role": "body",
+      "narration": "型通りでも、誠意が伝わる文章に整います。",
+      "telop": "→**誠意が伝わる**文章になる",
+      "bg": ["own_typing", "nb_digital"]
+    },
+    {
+      "role": "cta",
+      "narration": "使い方とコツを、LINEでまとめてお届けします。「クレーム」と送ってください。",
+      "telop": "LINEで「クレーム」→\n**使い方+コツ**をお届け",
+      "bg": ["own_canal", "jp_skyline"]
+    }
+  ],
+  "bgm": "bgm/dova_ensolarado.mp3"
+}
