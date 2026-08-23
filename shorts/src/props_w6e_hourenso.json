@@ -1,0 +1,99 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_asahi_lab.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "上司への**報告**、AIに丸投げすると微妙に",
+      "kicker": "おすすめAIプロンプト",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/nb_morning.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6e_hourenso/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 192
+    },
+    {
+      "role": "hook",
+      "telop": "「**わかりやすく**」だけでは、当たり障りない",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_phone_tap.mp4",
+        "bg/nb_night.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6e_hourenso/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 300
+    },
+    {
+      "role": "body",
+      "telop": "悪い報告ほど、\n実は**順番**がある",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4",
+        "bg/nb_walk.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6e_hourenso/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 196
+    },
+    {
+      "role": "body",
+      "telop": "**AIに一文**渡すだけでいい",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_digital.mp4",
+        "bg/own_coffee_cup.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6e_hourenso/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 166
+    },
+    {
+      "role": "body",
+      "telop": "「工程で遅れが出ています」→\n**言い訳に聞こえない**報告に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_desk_m1.mp4",
+        "bg/nb_rain.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6e_hourenso/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 210
+    },
+    {
+      "role": "cta",
+      "telop": "LINEで「報連相」→\n**使い方+コツ**をお届け",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_fuji_road.mp4",
+        "bg/jp_skyline_day.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6e_hourenso/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 169
+    }
+  ]
+}
