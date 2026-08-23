@@ -10,6 +10,7 @@
       "narration": "資料作り、AIに丸投げすると当たり障りない文になる人が多いです。",
       "telop": "**資料作り**、AIに丸投げすると当たり障りなく",
       "kicker": "おすすめAIプロンプト",
+      "extraPad": 1,
       "bg": ["own_desk_messy", "nb_notes"]
     },
     {

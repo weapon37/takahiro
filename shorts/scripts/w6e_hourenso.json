@@ -10,6 +10,7 @@
       "narration": "上司への報告、AIに丸投げすると微妙な文になる人が多いです。",
       "telop": "上司への**報告**、AIに丸投げすると微妙に",
       "kicker": "おすすめAIプロンプト",
+      "extraPad": 1,
       "bg": ["own_typing", "nb_morning"]
     },
     {
