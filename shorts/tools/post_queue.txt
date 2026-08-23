@@ -5,3 +5,5 @@ w6a_negirai
 w6b_1on1
 w6c_claim
 w6d_schedule
+w6e_hourenso
+w6f_shiryou
