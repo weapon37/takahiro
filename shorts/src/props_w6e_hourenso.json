@@ -18,7 +18,7 @@
       "audio": "audio_w6e_hourenso/01.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 192
+      "durationInFrames": 196
     },
     {
       "role": "hook",
@@ -33,7 +33,7 @@
       "audio": "audio_w6e_hourenso/02.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 300
+      "durationInFrames": 225
     },
     {
       "role": "body",
@@ -48,7 +48,7 @@
       "audio": "audio_w6e_hourenso/03.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 196
+      "durationInFrames": 208
     },
     {
       "role": "body",
@@ -63,7 +63,7 @@
       "audio": "audio_w6e_hourenso/04.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 166
+      "durationInFrames": 168
     },
     {
       "role": "body",
@@ -78,7 +78,7 @@
       "audio": "audio_w6e_hourenso/05.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 210
+      "durationInFrames": 214
     },
     {
       "role": "cta",
@@ -93,7 +93,7 @@
       "audio": "audio_w6e_hourenso/06.wav",
       "eraseIn": false,
       "playWhoosh": false,
-      "durationInFrames": 169
+      "durationInFrames": 173
     }
   ]
 }
