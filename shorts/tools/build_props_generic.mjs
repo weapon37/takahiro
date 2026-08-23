@@ -52,10 +52,13 @@ const scenes = script.sentences.map((s, idx) => {
   const i = idx + 1;
   const audio = `${audioDir}/${String(i).padStart(2, '0')}.wav`;
   const sec = wavDuration(path.join(HERE, 'public', audio));
-  const {narration, telop_style, bg, ...fields} = s;
+  const {narration, telop_style, bg, extraPad, ...fields} = s;
   // 内容シンクロ背景: 文ごとの "bg"(短縮名可)or "bgClips" を優先。
   // 指定があれば bgSync=true(シーン内でその映像を順に表示=プール巡回しない)。
   const sceneBg = normalizeBg(bg) ?? s.bgClips;
+  // "extraPad"(秒): ナレーション終了後もそのカットを長く見せたいとき(テロップを読ませたい等)に
+  // 音声の長さに追加でホールドするフレーム数。既定0
+  const extraPadFrames = Math.round((extraPad ?? 0) * FPS);
   return {
     ...fields,
     // 背景動画: シーン個別指定 > 台本全体指定 > なし
@@ -67,7 +70,7 @@ const scenes = script.sentences.map((s, idx) => {
     // ランキング型(RankingVideo)用: rank/saveシーンは消しゴムワイプ+SE。他テンプレでは無視される
     eraseIn: s.role === 'rank' || s.role === 'save',
     playWhoosh: s.role === 'rank',
-    durationInFrames: Math.ceil(sec * FPS) + PAD_FRAMES,
+    durationInFrames: Math.ceil(sec * FPS) + PAD_FRAMES + extraPadFrames,
   };
 });
 
