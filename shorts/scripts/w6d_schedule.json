@@ -1,0 +1,76 @@
+{
+  "template": "RankingVideo",
+  "_note": "Week6-4。プロンプト型・BEST3形式。日程調整依頼/リスケ/リマインドの3つ。w6c(クレーム対応)と同じBEST3型で、w6b(6ビート型)との比較データにする。フックは2シーンに分割済み。実測値なし。",
+  "title": "日程調整で使えるプロンプトBEST3",
+  "caption": "日程調整、うまく言葉にできない人へ。使えるプロンプトは3つだけです。1位は前日のリマインドが、催促っぽくならない自然な文になります。使い方とコツを、LINEでまとめてお届けします。「日程調整」と送ってください。\n※個人の見解です\n#AI活用 #ChatGPT #プロンプト #仕事術 #日程調整",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "日程調整で使えるプロンプト3つ。",
+      "telop": "日程調整は**この3つ**で",
+      "bg": ["own_desk_clean", "nb_clock"]
+    },
+    {
+      "role": "hook",
+      "narration": "1位は、前日のリマインドが、催促っぽくならないことです。",
+      "telop": "1位は**リマインド**が催促っぽくならない",
+      "bg": ["own_phone_tap", "nb_morning"]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "日程調整依頼",
+      "narration": "第3位、日程調整の依頼。この一文を、そのまま入力します。",
+      "telop": "「来週、**30分**お時間いただけますか」",
+      "bg": ["own_docs_stack", "nb_chart"]
+    },
+    {
+      "role": "body",
+      "narration": "候補日を複数出すところまで、文章に含めてくれます。",
+      "telop": "→**候補日**まで含めてくれる",
+      "bg": ["own_typing", "nb_digital"]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "リスケ",
+      "narration": "第2位、リスケ。この一文です。",
+      "telop": "「大変恐縮ですが、**日程を変更**させてください」",
+      "bg": ["own_desk_messy", "nb_night"]
+    },
+    {
+      "role": "body",
+      "narration": "印象を悪くせずに、変更をお願いできます。",
+      "telop": "→**印象を悪くせず**にお願いできる",
+      "bg": ["own_street", "nb_walk"]
+    },
+    {
+      "role": "save",
+      "narration": "1位は、一番送りづらい連絡で効きます。保存推奨。",
+      "telop": "1位は**一番送りづらい連絡**に",
+      "bg": ["own_pen_write", "nb_notes"]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "リマインド",
+      "narration": "第1位、リマインド。この一文です。",
+      "telop": "「明日の件、**よろしくお願いします**」",
+      "bg": ["jp_desk_m1", "nb_phone"]
+    },
+    {
+      "role": "body",
+      "narration": "催促っぽくならない、自然な確認文になります。",
+      "telop": "→**催促っぽくならない**確認文になる",
+      "bg": ["own_coffee_cup", "nb_particles"]
+    },
+    {
+      "role": "cta",
+      "narration": "使い方とコツを、LINEでまとめてお届けします。「日程調整」と送ってください。",
+      "telop": "LINEで「日程調整」→\n**使い方+コツ**をお届け",
+      "bg": ["own_fuji_road", "jp_skyline_day"]
+    }
+  ],
+  "bgm": "bgm/for_our_friends.mp3"
+}
