@@ -1,0 +1,47 @@
+{
+  "template": "RankingVideo",
+  "_note": "Week6-6。プロンプト型・6ビート形式(w6b/w6eと同型)。資料・プレゼンの言い方。Week6のプロンプト型全振り最終本。実測値なし。",
+  "title": "資料作りのAIプロンプト",
+  "caption": "資料作り、うまく言葉にできない人へ。内容を絞りすぎると説得力がなくなる、実は書き方に型があります。使い方とコツを、LINEでまとめてお届けします。「資料」と送ってください。\n※個人の見解です\n#AI活用 #ChatGPT #プロンプト #仕事術 #資料作成",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "資料作り、AIに丸投げすると当たり障りない文になる人が多いです。",
+      "telop": "**資料作り**、AIに丸投げすると当たり障りなく",
+      "kicker": "おすすめAIプロンプト",
+      "bg": ["own_desk_messy", "nb_notes"]
+    },
+    {
+      "role": "hook",
+      "narration": "AIにプロンプトを渡すとき、多くの人は「きれいにまとめて」とだけ頼みます。それでは、薄い内容しか返ってきません。",
+      "telop": "「**きれいにまとめて**」だけでは、内容が薄い",
+      "bg": ["own_docs_stack", "nb_chart"]
+    },
+    {
+      "role": "body",
+      "narration": "とはいえ、内容を絞りすぎると説得力がなくなる。実は、そこにも書き方があります。",
+      "telop": "説得力を保つ**書き方**が、\n実はある",
+      "bg": ["own_pen_write", "nb_particles"]
+    },
+    {
+      "role": "body",
+      "narration": "実はこれ、構成から考えなくていいんです。エーアイに一文渡すだけで済みます。",
+      "telop": "**AIに一文**渡すだけでいい",
+      "bg": ["own_typing", "nb_digital"]
+    },
+    {
+      "role": "body",
+      "narration": "「新機能の導入を提案したい」。この一文を入力するだけで、上司に響く構成に変換してくれます。",
+      "telop": "「新機能の導入を提案したい」→\n**上司に響く**構成に",
+      "bg": ["jp_desk_m1", "nb_code"]
+    },
+    {
+      "role": "cta",
+      "narration": "使い方とコツを、LINEでまとめてお届けします。「資料」と送ってください。",
+      "telop": "LINEで「資料」→\n**使い方+コツ**をお届け",
+      "bg": ["own_canal", "jp_skyline"]
+    }
+  ],
+  "bgm": "bgm/calm_instrumental.mp3"
+}

@@ -1,0 +1,47 @@
+{
+  "template": "RankingVideo",
+  "_note": "Week6-5。プロンプト型・6ビート形式(w6bと同型)。上司への悪い報告・進捗共有の言い方。w6bの反応を見てBEST3型と比較する実験の一つ。実測値なし。",
+  "title": "報連相のAIプロンプト",
+  "caption": "上司への報告、うまく言葉にできない人へ。悪い報告ほど、実は言い方の型があります。使い方とコツを、LINEでまとめてお届けします。「報連相」と送ってください。\n※個人の見解です\n#AI活用 #ChatGPT #プロンプト #仕事術 #報連相",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "上司への報告、AIに丸投げすると微妙な文になる人が多いです。",
+      "telop": "上司への**報告**、AIに丸投げすると微妙に",
+      "kicker": "おすすめAIプロンプト",
+      "bg": ["own_typing", "nb_morning"]
+    },
+    {
+      "role": "hook",
+      "narration": "AIにプロンプトを渡すとき、多くの人は「わかりやすく報告して」とだけ頼みます。それでは、当たり障りのない文しか返ってきません。",
+      "telop": "「**わかりやすく**」だけでは、当たり障りない",
+      "bg": ["own_phone_tap", "nb_night"]
+    },
+    {
+      "role": "body",
+      "narration": "とはいえ、悪い報告ほど言葉を選びたくなる。実は、そこにも順番があります。",
+      "telop": "悪い報告ほど、\n実は**順番**がある",
+      "bg": ["own_docs_stack", "nb_walk"]
+    },
+    {
+      "role": "body",
+      "narration": "実はこれ、自分で考えなくていいんです。エーアイに一文渡すだけで済みます。",
+      "telop": "**AIに一文**渡すだけでいい",
+      "bg": ["nb_digital", "own_coffee_cup"]
+    },
+    {
+      "role": "body",
+      "narration": "「工程で遅れが出ています」。この一文を入力するだけで、言い訳に聞こえない報告文に変換してくれます。",
+      "telop": "「工程で遅れが出ています」→\n**言い訳に聞こえない**報告に",
+      "bg": ["jp_desk_m1", "nb_rain"]
+    },
+    {
+      "role": "cta",
+      "narration": "使い方とコツを、LINEでまとめてお届けします。「報連相」と送ってください。",
+      "telop": "LINEで「報連相」→\n**使い方+コツ**をお届け",
+      "bg": ["own_fuji_road", "jp_skyline_day"]
+    }
+  ],
+  "bgm": "bgm/dova_asahi_lab.mp3"
+}
