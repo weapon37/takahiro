@@ -9,6 +9,7 @@
       "role": "hook",
       "narration": "日程調整で使えるプロンプト3つ。",
       "telop": "日程調整は**この3つ**で",
+      "kicker": "おすすめAIプロンプト",
       "bg": ["own_desk_clean", "nb_clock"]
     },
     {

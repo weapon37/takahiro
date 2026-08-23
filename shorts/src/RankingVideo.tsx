@@ -29,6 +29,7 @@ export type RankScene = {
   audio: string;
   role: 'hook' | 'rank' | 'body' | 'save' | 'cta';
   telop: string;
+  kicker?: string; // 冒頭テロップの上に出す小さいラベル(例:"おすすめAIプロンプト")
   rank?: number; // role='rank' のとき順位札に出す数字
   headline?: string; // role='rank' のときのツール名(大きく表示)
   time?: {before: string; after: string; label?: string}; // 実測タイム(オレンジ特大)
@@ -415,6 +416,50 @@ const Telop: React.FC<{text: string; big?: boolean}> = ({text, big}) => {
   );
 };
 
+// ---------- 冒頭ラベル(hookシーンの主テロップの上に出す小さいタグ) ----------
+
+const KickerTag: React.FC<{text: string}> = ({text}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const appear = spring({
+    frame: frame - ERASE_FRAMES / 2,
+    fps,
+    config: {damping: 200},
+    durationInFrames: 12,
+  });
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        top: 660,
+        left: 0,
+        right: 0,
+        textAlign: 'center',
+        opacity: appear,
+        transform: `translateY(${(1 - appear) * 20}px)`,
+      }}
+    >
+      <span
+        style={{
+          display: 'inline-block',
+          fontFamily,
+          fontWeight: 900,
+          fontSize: 52,
+          color: '#ffffff',
+          backgroundColor: BRAND.primary,
+          border: `6px solid ${BRAND.ink}`,
+          borderRadius: 26,
+          padding: '12px 40px',
+          letterSpacing: '0.04em',
+          boxShadow: `0 8px 0 ${BRAND.ink}33`,
+        }}
+      >
+        {text}
+      </span>
+    </div>
+  );
+};
+
 // ---------- ツール名見出し(rankシーン) ----------
 
 // 見出しの文字サイズ: 全角1文字≒1em として、内枠に収まる最大サイズを返す。
@@ -542,6 +587,7 @@ const SceneView: React.FC<{scene: RankScene; index: number; startFrame: number; 
       ) : null}
       {scene.role === 'save' ? <SaveCue /> : null}
       {scene.saved ? <SavedBadge text={scene.saved} /> : null}
+      {scene.kicker ? <KickerTag text={scene.kicker} /> : null}
       <Telop text={scene.telop} big={scene.role === 'hook' && !scene.time} />
       {scene.eraseIn ? <EraseWipe linger={scene.role === 'rank'} /> : null}
       <Audio src={staticFile(scene.audio)} />

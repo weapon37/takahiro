@@ -7,6 +7,7 @@
     {
       "role": "hook",
       "telop": "日程調整は**この3つ**で",
+      "kicker": "おすすめAIプロンプト",
       "bgVideo": null,
       "bgClips": [
         "bg/own_desk_clean.mp4",
