@@ -1,0 +1,99 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/calm_instrumental.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**資料作り**、AIに丸投げすると当たり障りなく",
+      "kicker": "おすすめAIプロンプト",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_messy.mp4",
+        "bg/nb_notes.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6f_shiryou/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 196
+    },
+    {
+      "role": "hook",
+      "telop": "「**まとめて**」だけでは、\n内容が薄い",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4",
+        "bg/nb_chart.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6f_shiryou/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 250
+    },
+    {
+      "role": "body",
+      "telop": "説得力を保つ**書き方**が\n実はある",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_pen_write.mp4",
+        "bg/nb_particles.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6f_shiryou/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 202
+    },
+    {
+      "role": "body",
+      "telop": "**AIに一文**渡すだけでいい",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/nb_digital.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6f_shiryou/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 193
+    },
+    {
+      "role": "body",
+      "telop": "「新機能の導入を提案したい」→\n**上司に響く**構成に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_desk_m1.mp4",
+        "bg/nb_code.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6f_shiryou/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 241
+    },
+    {
+      "role": "cta",
+      "telop": "LINEで「資料」→\n**使い方+コツ**をお届け",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_canal.mp4",
+        "bg/jp_skyline.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w6f_shiryou/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 143
+    }
+  ]
+}
