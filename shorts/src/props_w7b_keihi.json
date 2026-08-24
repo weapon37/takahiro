@@ -1,0 +1,164 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/pawn.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**経費精算**、丸ごと消える",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri.mp4",
+        "bg/keiri2.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w7b_keihi/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 98
+    },
+    {
+      "role": "hook",
+      "telop": "1位は**科目分け**まで一気に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri3.mp4",
+        "bg/coins_stack.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w7b_keihi/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 138
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "交通費申請",
+      "telop": "「交通費の申請文を作って」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri4.mp4",
+        "bg/own_train_field.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w7b_keihi/03.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 161
+    },
+    {
+      "role": "body",
+      "telop": "→**申請用の文章**になる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri5.mp4",
+        "bg/own_docs_stack.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w7b_keihi/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 114
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "月末の経費一覧",
+      "telop": "「月末の経費一覧をまとめて」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri6.mp4",
+        "bg/calendar.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w7b_keihi/05.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 116
+    },
+    {
+      "role": "body",
+      "telop": "→**一覧表の形**にしてくれる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri7.mp4",
+        "bg/own_desk_messy.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w7b_keihi/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 123
+    },
+    {
+      "role": "save",
+      "telop": "1位は**領収書整理**に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_coffee_pour.mp4",
+        "bg/nb_particles.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w7b_keihi/07.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 161
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "領収書の仕分け",
+      "telop": "「この領収書を科目ごとに仕分けして」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri.mp4",
+        "bg/own_pen_write.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w7b_keihi/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 118
+    },
+    {
+      "role": "body",
+      "telop": "→**科目ごと**に整理してくれる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/keiri2.mp4",
+        "bg/nb_digital.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w7b_keihi/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 147
+    },
+    {
+      "role": "cta",
+      "telop": "LINEで「経費」→\n**使い方+コツ**をお届け",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_canal.mp4",
+        "bg/jp_skyline.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w7b_keihi/10.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 154
+    }
+  ]
+}
