@@ -1,0 +1,76 @@
+{
+  "template": "RankingVideo",
+  "_note": "Week7-3。プロンプト型・BEST3形式。「仕事が消える」軸。問い合わせ返信/定型文作成/催促メール。実測値なし。",
+  "title": "問い合わせ対応が消えるAIプロンプトBEST3",
+  "caption": "問い合わせへの返信、考える時間がかかりますよね。丸ごと消えるプロンプトが3つあります。1位は内容を渡すだけで丁寧な返信文になります。使い方とコツを、LINEでまとめてお届けします。「問い合わせ」と送ってください。\n※個人の見解です\n#AI活用 #ChatGPT #プロンプト #仕事術 #問い合わせ対応",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "問い合わせ対応、丸ごと消えるプロンプト3つ。",
+      "telop": "**問い合わせ対応**、丸ごと消える",
+      "bg": ["own_phone_tap", "sumaho"]
+    },
+    {
+      "role": "hook",
+      "narration": "1位は、内容を渡すだけで丁寧な返信文になることです。",
+      "telop": "1位は**内容だけ**で丁寧な返信に",
+      "bg": ["sumaho2", "nb_phone"]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "定型文作成",
+      "narration": "第3位、よくある質問への定型文。この一文を、そのまま入力します。",
+      "telop": "「よくある質問への定型文を作って」",
+      "bg": ["own_typing", "nb_notes"]
+    },
+    {
+      "role": "body",
+      "narration": "質問内容を渡すだけで、使い回せる定型文にしてくれます。",
+      "telop": "→**使い回せる定型文**になる",
+      "bg": ["jp_laptop_f1", "own_coffee_cup"]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "催促メール",
+      "narration": "第2位、催促メール。この一文です。",
+      "telop": "「催促メールを角が立たない文にして」",
+      "bg": ["own_desk_messy", "nb_night"]
+    },
+    {
+      "role": "body",
+      "narration": "きつい言い方になりがちな催促も、柔らかい文に整えてくれます。",
+      "telop": "→**柔らかい文**に整えてくれる",
+      "bg": ["nb_rain", "jp_skyline"]
+    },
+    {
+      "role": "save",
+      "narration": "1位は、一番時間を取られる新規の問い合わせに効きます。保存推奨。",
+      "telop": "1位は**新規の問い合わせ**に",
+      "bg": ["own_pen_write", "nb_particles"]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "問い合わせ返信",
+      "narration": "第1位、問い合わせへの返信。この一文です。",
+      "telop": "「この問い合わせに丁寧に返信して」",
+      "bg": ["jp_desk_m1", "nb_digital"]
+    },
+    {
+      "role": "body",
+      "narration": "内容をそのまま渡すだけで、丁寧な返信文になります。",
+      "telop": "→**丁寧な返信文**になる",
+      "bg": ["own_typing", "nb_code"]
+    },
+    {
+      "role": "cta",
+      "narration": "使い方とコツを、LINEでまとめてお届けします。「問い合わせ」と送ってください。",
+      "telop": "LINEで「問い合わせ」→\n**使い方+コツ**をお届け",
+      "bg": ["own_fuji_road", "jp_skyline_day"]
+    }
+  ],
+  "bgm": "bgm/dova_chocomint.mp3"
+}

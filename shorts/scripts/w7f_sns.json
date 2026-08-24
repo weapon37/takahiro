@@ -1,0 +1,76 @@
+{
+  "template": "RankingVideo",
+  "_note": "Week7-6。プロンプト型・BEST3形式。「仕事が消える」軸。告知文/見出しパターン/反応が伸びる言い回し。実測値なし。",
+  "title": "SNS投稿文が消えるAIプロンプトBEST3",
+  "caption": "SNSの投稿文、考える時間が消えますよね。丸ごと時短できるプロンプトが3つあります。1位は内容を伝えるだけで反応が伸びやすい言い回しにしてくれます。使い方とコツを、LINEでまとめてお届けします。「SNS」と送ってください。\n※個人の見解です\n#AI活用 #ChatGPT #プロンプト #仕事術 #SNS運用",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "SNS投稿文、考える時間が丸ごと消えるプロンプト3つ。",
+      "telop": "**SNS投稿文**、丸ごと消える",
+      "bg": ["nb_social", "sumaho3"]
+    },
+    {
+      "role": "hook",
+      "narration": "1位は、内容を伝えるだけで反応が伸びやすい言い回しにしてくれることです。",
+      "telop": "1位は**反応が伸びやすい**言い回しに",
+      "bg": ["sumaho4", "own_phone_tap"]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "告知文",
+      "narration": "第3位、告知文への変換。この一文を、そのまま入力します。",
+      "telop": "「この内容を告知文にして」",
+      "bg": ["nb_phone", "own_coffee_cup"]
+    },
+    {
+      "role": "body",
+      "narration": "伝えたい内容を渡すだけで、告知らしい文章にしてくれます。",
+      "telop": "→**告知らしい文章**になる",
+      "bg": ["jp_shibuya", "nb_night"]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "見出しパターン",
+      "narration": "第2位、複数パターンの見出し。この一文です。",
+      "telop": "「複数パターンの見出しを出して」",
+      "bg": ["jp_neon_rain", "own_typing"]
+    },
+    {
+      "role": "body",
+      "narration": "1つの内容から、何パターンも見出し案を出してくれます。",
+      "telop": "→**何パターン**も出してくれる",
+      "bg": ["nb_digital", "jp_skyline_day"]
+    },
+    {
+      "role": "save",
+      "narration": "1位は、一番悩む投稿文の言い回しに効きます。保存推奨。",
+      "telop": "1位は**投稿文の言い回し**に",
+      "bg": ["own_pen_write", "nb_particles"]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "反応が伸びる言い回し",
+      "narration": "第1位、反応が伸びる言い回し。この一文です。",
+      "telop": "「反応が伸びやすい言い回しにして」",
+      "bg": ["jp_desk_m1", "nb_code"]
+    },
+    {
+      "role": "body",
+      "narration": "普通の文章を渡すだけで、反応が伸びやすい言い回しに整えてくれます。",
+      "telop": "→**伸びやすい言い回し**に整う",
+      "bg": ["own_typing", "nb_digital"]
+    },
+    {
+      "role": "cta",
+      "narration": "使い方とコツを、LINEでまとめてお届けします。「SNS」と送ってください。",
+      "telop": "LINEで「SNS」→\n**使い方+コツ**をお届け",
+      "bg": ["own_fuji_road", "jp_skyline_day"]
+    }
+  ],
+  "bgm": "bgm/dova_beach_cocktail.mp3"
+}

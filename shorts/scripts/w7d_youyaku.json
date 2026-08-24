@@ -1,0 +1,76 @@
+{
+  "template": "RankingVideo",
+  "_note": "Week7-4。プロンプト型・BEST3形式。「仕事が消える」軸。資料の3行要約/箇条書き化/初心者向け補足。実測値なし。",
+  "title": "資料を読む時間が消えるAIプロンプトBEST3",
+  "caption": "長い資料、読むだけで時間が消えますよね。丸ごと時短できるプロンプトが3つあります。1位は資料を渡すだけで3行にまとめてくれます。使い方とコツを、LINEでまとめてお届けします。「要約」と送ってください。\n※個人の見解です\n#AI活用 #ChatGPT #プロンプト #仕事術 #資料要約",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "資料を読む時間、丸ごと消えるプロンプト3つ。",
+      "telop": "**資料を読む時間**、丸ごと消える",
+      "bg": ["nb_books", "own_docs_stack"]
+    },
+    {
+      "role": "hook",
+      "narration": "1位は、資料を渡すだけで3行にまとめてくれることです。",
+      "telop": "1位は**3行**にまとめてくれる",
+      "bg": ["jp_home_read", "nb_board"]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "箇条書き化",
+      "narration": "第3位、要点の箇条書き化。この一文を、そのまま入力します。",
+      "telop": "「要点だけ箇条書きにして」",
+      "bg": ["own_desk_clean", "nb_digital"]
+    },
+    {
+      "role": "body",
+      "narration": "長い文章を渡すだけで、要点だけの箇条書きにしてくれます。",
+      "telop": "→**要点だけ**の箇条書きに",
+      "bg": ["jp_laptop_f2", "own_pen_write"]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "初心者向け補足",
+      "narration": "第2位、初めて読む人向けの補足。この一文です。",
+      "telop": "「初めて読む人向けに説明を足して」",
+      "bg": ["nb_notes", "jp_skyline_day"]
+    },
+    {
+      "role": "body",
+      "narration": "専門用語だらけの資料も、分かりやすい説明を足してくれます。",
+      "telop": "→**分かりやすい説明**を足してくれる",
+      "bg": ["own_docs_stack", "nb_desk"]
+    },
+    {
+      "role": "save",
+      "narration": "1位は、一番後回しにしがちな長文資料に効きます。保存推奨。",
+      "telop": "1位は**長文資料**に",
+      "bg": ["own_pen_write", "nb_particles"]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "3行要約",
+      "narration": "第1位、資料の3行要約。この一文です。",
+      "telop": "「この資料を3行で要約して」",
+      "bg": ["jp_desk_m1", "nb_rain"]
+    },
+    {
+      "role": "body",
+      "narration": "長い資料を渡すだけで、3行の要約にしてくれます。",
+      "telop": "→**3行の要約**にしてくれる",
+      "bg": ["own_typing", "nb_digital"]
+    },
+    {
+      "role": "cta",
+      "narration": "使い方とコツを、LINEでまとめてお届けします。「要約」と送ってください。",
+      "telop": "LINEで「要約」→\n**使い方+コツ**をお届け",
+      "bg": ["own_fuji_road", "jp_skyline_day"]
+    }
+  ],
+  "bgm": "bgm/tomorrows_light.mp3"
+}
