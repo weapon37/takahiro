@@ -1,0 +1,164 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_ensolarado.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**日報を書く時間**、丸ごと消える",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/note.mp4",
+        "bg/own_desk_clean.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w7g_nippou/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 109
+    },
+    {
+      "role": "hook",
+      "telop": "1位は**上司向けの文体**に一気に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/note2.mp4",
+        "bg/own_typing.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w7g_nippou/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 154
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "日報化",
+      "telop": "「今日やったことを日報にして」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/note3.mp4",
+        "bg/nb_clock.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w7g_nippou/03.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 159
+    },
+    {
+      "role": "body",
+      "telop": "→**日報の形式**にしてくれる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_messy.mp4",
+        "bg/nb_notes.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w7g_nippou/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 109
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "予定の追記",
+      "telop": "「来週の予定も一緒にまとめて」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_train_window.mp4",
+        "bg/own_street.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w7g_nippou/05.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 120
+    },
+    {
+      "role": "body",
+      "telop": "→**来週の予定**まで一気に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_steps_climbing.mp4",
+        "bg/nb_digital.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w7g_nippou/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 127
+    },
+    {
+      "role": "save",
+      "telop": "1位は**日報作成そのもの**に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_train_field.mp4",
+        "bg/nb_particles.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w7g_nippou/07.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 174
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "上司向けの文体",
+      "telop": "「進捗を上司向けの文体にして」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_desk_m1.mp4",
+        "bg/nb_night.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w7g_nippou/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 145
+    },
+    {
+      "role": "body",
+      "telop": "→**上司向けの文体**に整う",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_car_window.mp4",
+        "bg/jp_skyline.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w7g_nippou/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 132
+    },
+    {
+      "role": "cta",
+      "telop": "LINEで「日報」→\n**使い方+コツ**をお届け",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_sunflower.mp4",
+        "bg/jp_skyline.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w7g_nippou/10.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 134
+    }
+  ]
+}
