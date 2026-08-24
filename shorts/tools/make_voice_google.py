@@ -50,14 +50,14 @@ def warn_risky_readings(original: str, converted: str, label: str) -> None:
         print("    正しく読まれるなら無視してよい。誤読なら reading_dict.json の readings に追加する")
 
 
-def synthesize(text: str, api_key: str) -> bytes:
+def synthesize(text: str, api_key: str, speaking_rate: float) -> bytes:
     url = f"https://texttospeech.googleapis.com/v1/text:synthesize?key={api_key}"
     body = {
         "input": {"text": text},
         "voice": {"languageCode": LANG, "name": VOICE},
         "audioConfig": {
             "audioEncoding": "LINEAR16",
-            "speakingRate": SPEAKING_RATE,
+            "speakingRate": speaking_rate,
             "sampleRateHertz": 24000,
         },
     }
@@ -79,11 +79,12 @@ def main():
         return 1
     with open(SCRIPT, encoding="utf-8") as f:
         data = json.load(f)
+    speaking_rate = data.get("speakingRate", SPEAKING_RATE)
     os.makedirs(OUTDIR, exist_ok=True)
     for i, s in enumerate(data["sentences"], start=1):
         text = apply_reading_dict(s["narration"])
         warn_risky_readings(s["narration"], text, f"{i:02d}.wav")
-        wav = synthesize(text, api_key)
+        wav = synthesize(text, api_key, speaking_rate)
         path = os.path.join(OUTDIR, f"{i:02d}.wav")
         with open(path, "wb") as f:
             f.write(wav)

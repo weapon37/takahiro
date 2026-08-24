@@ -4,18 +4,25 @@
   "title": "日報作成が消えるAIプロンプトBEST3",
   "caption": "日報や週報、書く時間が地味にかかりますよね。丸ごと時短できるプロンプトが3つあります。1位はやったことを渡すだけで上司向けの文体に整えてくれます。使い方とコツを、LINEでまとめてお届けします。「日報」と送ってください。\n※個人の見解です\n#AI活用 #ChatGPT #プロンプト #仕事術 #日報",
   "account": "仕事が消えるAI帳",
+  "speakingRate": 1.2,
   "sentences": [
     {
       "role": "hook",
       "narration": "日報を書く時間、丸ごと消えるプロンプト3つ。",
       "telop": "**日報を書く時間**、丸ごと消える",
-      "bg": ["note", "own_desk_clean"]
+      "bg": [
+        "note",
+        "own_desk_clean"
+      ]
     },
     {
       "role": "hook",
       "narration": "1位は、やったことを渡すだけで上司向けの文体に整えてくれることです。",
       "telop": "1位は**上司向けの文体**に一気に",
-      "bg": ["note2", "own_typing"]
+      "bg": [
+        "note2",
+        "own_typing"
+      ]
     },
     {
       "role": "rank",
@@ -23,13 +30,19 @@
       "headline": "日報化",
       "narration": "第3位、やったことの日報化。この一文を、そのまま入力します。",
       "telop": "「今日やったことを日報にして」",
-      "bg": ["note3", "nb_clock"]
+      "bg": [
+        "note3",
+        "nb_clock"
+      ]
     },
     {
       "role": "body",
       "narration": "箇条書きのメモを渡すだけで、日報の形式にしてくれます。",
       "telop": "→**日報の形式**にしてくれる",
-      "bg": ["own_desk_messy", "nb_notes"]
+      "bg": [
+        "own_desk_messy",
+        "nb_notes"
+      ]
     },
     {
       "role": "rank",
@@ -37,19 +50,28 @@
       "headline": "予定の追記",
       "narration": "第2位、来週の予定も追記。この一文です。",
       "telop": "「来週の予定も一緒にまとめて」",
-      "bg": ["jp_train_window", "own_street"]
+      "bg": [
+        "jp_train_window",
+        "own_street"
+      ]
     },
     {
       "role": "body",
       "narration": "今日の分と一緒に、来週の予定まで一気にまとめてくれます。",
       "telop": "→**来週の予定**まで一気に",
-      "bg": ["own_typing", "nb_digital"]
+      "bg": [
+        "own_steps_climbing",
+        "nb_digital"
+      ]
     },
     {
       "role": "save",
       "narration": "1位は、一番後回しにしがちな日報作成そのものに効きます。保存推奨。",
       "telop": "1位は**日報作成そのもの**に",
-      "bg": ["own_pen_write", "nb_particles"]
+      "bg": [
+        "own_train_field",
+        "nb_particles"
+      ]
     },
     {
       "role": "rank",
@@ -57,19 +79,28 @@
       "headline": "上司向けの文体",
       "narration": "第1位、上司向けの文体に整える。この一文です。",
       "telop": "「進捗を上司向けの文体にして」",
-      "bg": ["jp_desk_m1", "nb_night"]
+      "bg": [
+        "jp_desk_m1",
+        "nb_night"
+      ]
     },
     {
       "role": "body",
       "narration": "普段の言葉で書いたメモを、上司向けの文体に整えてくれます。",
       "telop": "→**上司向けの文体**に整う",
-      "bg": ["own_typing", "jp_skyline"]
+      "bg": [
+        "own_car_window",
+        "jp_skyline"
+      ]
     },
     {
       "role": "cta",
       "narration": "使い方とコツを、LINEでまとめてお届けします。「日報」と送ってください。",
       "telop": "LINEで「日報」→\n**使い方+コツ**をお届け",
-      "bg": ["own_fuji_road", "jp_skyline_day"]
+      "bg": [
+        "own_sunflower",
+        "jp_skyline"
+      ]
     }
   ],
   "bgm": "bgm/dova_ensolarado.mp3"

@@ -9,13 +9,19 @@
       "role": "hook",
       "narration": "情報収集、調べる時間が丸ごと消えるプロンプト3つ。",
       "telop": "**調べる時間**、丸ごと消える",
-      "bg": ["graph_screen", "nb_chart"]
+      "bg": [
+        "graph_screen",
+        "nb_chart"
+      ]
     },
     {
       "role": "hook",
       "narration": "1位は、調べた内容を渡すだけで報告用にまとめてくれることです。",
       "telop": "1位は**報告用**に一気にまとめる",
-      "bg": ["nb_digital", "own_typing"]
+      "bg": [
+        "nb_digital",
+        "own_typing"
+      ]
     },
     {
       "role": "rank",
@@ -23,13 +29,19 @@
       "headline": "現状整理",
       "narration": "第3位、現状の整理。この一文を、そのまま入力します。",
       "telop": "「このテーマの現状を整理して」",
-      "bg": ["jp_office_tower", "nb_books"]
+      "bg": [
+        "jp_office_tower",
+        "nb_books"
+      ]
     },
     {
       "role": "body",
       "narration": "断片的な情報を渡すだけで、現状を整理した文章にしてくれます。",
       "telop": "→**現状整理**の文章になる",
-      "bg": ["own_desk_messy", "nb_code"]
+      "bg": [
+        "own_desk_messy",
+        "nb_code"
+      ]
     },
     {
       "role": "rank",
@@ -37,19 +49,28 @@
       "headline": "比較表作成",
       "narration": "第2位、競合の比較表。この一文です。",
       "telop": "「競合の違いを比較表にして」",
-      "bg": ["nb_chart", "jp_skyline"]
+      "bg": [
+        "nb_board",
+        "jp_skyline"
+      ]
     },
     {
       "role": "body",
       "narration": "特徴を並べるだけで、見やすい比較表にしてくれます。",
       "telop": "→**見やすい比較表**にしてくれる",
-      "bg": ["graph_screen", "own_pen_write"]
+      "bg": [
+        "graph_screen",
+        "own_pen_write"
+      ]
     },
     {
       "role": "save",
       "narration": "1位は、一番時間がかかる報告書づくりに効きます。保存推奨。",
       "telop": "1位は**報告書づくり**に",
-      "bg": ["own_docs_stack", "nb_particles"]
+      "bg": [
+        "own_clock_zoom",
+        "nb_particles"
+      ]
     },
     {
       "role": "rank",
@@ -57,19 +78,28 @@
       "headline": "報告用にまとめる",
       "narration": "第1位、報告用にまとめる。この一文です。",
       "telop": "「調べた内容を報告用にまとめて」",
-      "bg": ["jp_desk_m1", "nb_night"]
+      "bg": [
+        "own_tripod",
+        "nb_night"
+      ]
     },
     {
       "role": "body",
       "narration": "調べたことをそのまま渡すだけで、報告書の形にしてくれます。",
       "telop": "→**報告書の形**にしてくれる",
-      "bg": ["own_typing", "nb_digital"]
+      "bg": [
+        "own_camera_rig",
+        "nb_digital"
+      ]
     },
     {
       "role": "cta",
       "narration": "使い方とコツを、LINEでまとめてお届けします。「リサーチ」と送ってください。",
       "telop": "LINEで「リサーチ」→\n**使い方+コツ**をお届け",
-      "bg": ["own_fuji_road", "jp_skyline_day"]
+      "bg": [
+        "own_lotus_field",
+        "jp_skyline_day"
+      ]
     }
   ],
   "bgm": "bgm/farm_country.mp3"

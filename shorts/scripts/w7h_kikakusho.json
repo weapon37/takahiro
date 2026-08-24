@@ -9,13 +9,19 @@
       "role": "hook",
       "narration": "企画書、ゼロから考える時間が丸ごと消えるプロンプト3つ。",
       "telop": "**企画書**、考える時間が丸ごと消える",
-      "bg": ["nb_board", "own_pen_write"]
+      "bg": [
+        "nb_board",
+        "own_pen_write"
+      ]
     },
     {
       "role": "hook",
       "narration": "1位は、アイデアを伝えるだけで企画書の骨子にしてくれることです。",
       "telop": "1位は**骨子**まで一気に作る",
-      "bg": ["nb_chart", "own_docs_stack"]
+      "bg": [
+        "nb_chart",
+        "own_docs_stack"
+      ]
     },
     {
       "role": "rank",
@@ -23,13 +29,19 @@
       "headline": "メリット整理",
       "narration": "第3位、メリットの整理。この一文を、そのまま入力します。",
       "telop": "「メリットを整理して」",
-      "bg": ["jp_office_tower", "nb_digital"]
+      "bg": [
+        "jp_office_tower",
+        "nb_digital"
+      ]
     },
     {
       "role": "body",
       "narration": "思いついたことを渡すだけで、メリットを整理してくれます。",
       "telop": "→**メリット**を整理してくれる",
-      "bg": ["own_typing", "nb_notes"]
+      "bg": [
+        "own_typing",
+        "nb_notes"
+      ]
     },
     {
       "role": "rank",
@@ -37,19 +49,28 @@
       "headline": "懸念点の先回り",
       "narration": "第2位、懸念点の先回り。この一文です。",
       "telop": "「懸念点も先回りで書いて」",
-      "bg": ["own_desk_messy", "nb_night"]
+      "bg": [
+        "own_lens_hands",
+        "nb_night"
+      ]
     },
     {
       "role": "body",
       "narration": "気づいていない懸念点まで、先回りで洗い出してくれます。",
       "telop": "→**懸念点**まで先回りで",
-      "bg": ["nb_rain", "jp_skyline"]
+      "bg": [
+        "nb_rain",
+        "jp_skyline"
+      ]
     },
     {
       "role": "save",
       "narration": "1位は、一番手が止まる企画書の書き出しに効きます。保存推奨。",
       "telop": "1位は**企画書の書き出し**に",
-      "bg": ["own_pen_write", "nb_particles"]
+      "bg": [
+        "own_sunflower2",
+        "nb_particles"
+      ]
     },
     {
       "role": "rank",
@@ -57,19 +78,28 @@
       "headline": "企画書の骨子",
       "narration": "第1位、企画書の骨子作り。この一文です。",
       "telop": "「このアイデアを企画書の骨子にして」",
-      "bg": ["jp_desk_m1", "nb_code"]
+      "bg": [
+        "own_camera_rig",
+        "nb_code"
+      ]
     },
     {
       "role": "body",
       "narration": "思いつきレベルのアイデアを、企画書の骨子の形にしてくれます。",
       "telop": "→**企画書の骨子**の形になる",
-      "bg": ["own_typing", "nb_digital"]
+      "bg": [
+        "jp_laptop_f2",
+        "nb_digital"
+      ]
     },
     {
       "role": "cta",
       "narration": "使い方とコツを、LINEでまとめてお届けします。「企画書」と送ってください。",
       "telop": "LINEで「企画書」→\n**使い方+コツ**をお届け",
-      "bg": ["own_fuji_road", "jp_skyline_day"]
+      "bg": [
+        "own_deer_shrine",
+        "jp_skyline_day"
+      ]
     }
   ],
   "bgm": "bgm/calm_instrumental.mp3"

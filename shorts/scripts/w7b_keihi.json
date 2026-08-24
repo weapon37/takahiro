@@ -4,18 +4,25 @@
   "title": "経費精算が消えるAIプロンプトBEST3",
   "caption": "経費精算、地味につらい作業ですよね。丸ごと消えるプロンプトが3つあります。1位は領収書の内容を渡すだけで科目分けまでしてくれます。使い方とコツを、LINEでまとめてお届けします。「経費」と送ってください。\n※個人の見解です\n#AI活用 #ChatGPT #プロンプト #仕事術 #経費精算",
   "account": "仕事が消えるAI帳",
+  "speakingRate": 1.2,
   "sentences": [
     {
       "role": "hook",
       "narration": "経費精算、丸ごと消えるプロンプト3つ。",
       "telop": "**経費精算**、丸ごと消える",
-      "bg": ["keiri", "keiri2"]
+      "bg": [
+        "keiri",
+        "keiri2"
+      ]
     },
     {
       "role": "hook",
       "narration": "1位は、領収書の内容を渡すだけで科目分けまでしてくれることです。",
       "telop": "1位は**科目分け**まで一気に",
-      "bg": ["keiri3", "coins_stack"]
+      "bg": [
+        "keiri3",
+        "coins_stack"
+      ]
     },
     {
       "role": "rank",
@@ -23,13 +30,19 @@
       "headline": "交通費申請",
       "narration": "第3位、交通費の申請文。この一文を、そのまま入力します。",
       "telop": "「交通費の申請文を作って」",
-      "bg": ["keiri4", "own_desk_messy"]
+      "bg": [
+        "keiri4",
+        "own_train_field"
+      ]
     },
     {
       "role": "body",
       "narration": "区間と金額を伝えるだけで、申請用の文章になります。",
       "telop": "→**申請用の文章**になる",
-      "bg": ["keiri5", "nb_notes"]
+      "bg": [
+        "keiri5",
+        "own_docs_stack"
+      ]
     },
     {
       "role": "rank",
@@ -37,19 +50,28 @@
       "headline": "月末の経費一覧",
       "narration": "第2位、月末の経費一覧。この一文です。",
       "telop": "「月末の経費一覧をまとめて」",
-      "bg": ["keiri6", "own_docs_stack"]
+      "bg": [
+        "keiri6",
+        "calendar"
+      ]
     },
     {
       "role": "body",
       "narration": "バラバラのメモを渡すだけで、一覧表の形にしてくれます。",
       "telop": "→**一覧表の形**にしてくれる",
-      "bg": ["keiri7", "nb_chart"]
+      "bg": [
+        "keiri7",
+        "own_desk_messy"
+      ]
     },
     {
       "role": "save",
       "narration": "1位は、一番後回しにしがちな領収書整理に効きます。保存推奨。",
       "telop": "1位は**領収書整理**に",
-      "bg": ["coins_stack", "nb_particles"]
+      "bg": [
+        "own_coffee_pour",
+        "nb_particles"
+      ]
     },
     {
       "role": "rank",
@@ -57,19 +79,28 @@
       "headline": "領収書の仕分け",
       "narration": "第1位、領収書の仕分け。この一文です。",
       "telop": "「この領収書を科目ごとに仕分けして」",
-      "bg": ["keiri", "jp_desk_m1"]
+      "bg": [
+        "keiri",
+        "own_pen_write"
+      ]
     },
     {
       "role": "body",
       "narration": "写真やメモの内容を渡すだけで、科目ごとに整理してくれます。",
       "telop": "→**科目ごと**に整理してくれる",
-      "bg": ["keiri2", "nb_digital"]
+      "bg": [
+        "keiri2",
+        "nb_digital"
+      ]
     },
     {
       "role": "cta",
       "narration": "使い方とコツを、LINEでまとめてお届けします。「経費」と送ってください。",
       "telop": "LINEで「経費」→\n**使い方+コツ**をお届け",
-      "bg": ["own_fuji_road", "jp_skyline_day"]
+      "bg": [
+        "own_canal",
+        "jp_skyline"
+      ]
     }
   ],
   "bgm": "bgm/pawn.mp3"

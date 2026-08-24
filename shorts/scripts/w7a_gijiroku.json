@@ -9,13 +9,19 @@
       "role": "hook",
       "narration": "議事録作成、丸ごと消えるプロンプト3つ。",
       "telop": "**議事録作成**、丸ごと消える",
-      "bg": ["own_desk_clean", "jp_laptop_m1"]
+      "bg": [
+        "own_desk_clean",
+        "jp_laptop_m1"
+      ]
     },
     {
       "role": "hook",
       "narration": "1位は、会話をそのまま渡すだけで議事録になることです。",
       "telop": "1位は**会話そのまま**で議事録に",
-      "bg": ["own_typing", "nb_notes"]
+      "bg": [
+        "own_docs_stack",
+        "nb_notes"
+      ]
     },
     {
       "role": "rank",
@@ -23,13 +29,19 @@
       "headline": "決定事項の抽出",
       "narration": "第3位、決定事項だけの抽出。この一文を、そのまま入力します。",
       "telop": "「決定事項だけ抜き出して」",
-      "bg": ["own_docs_stack", "nb_chart"]
+      "bg": [
+        "nb_chart",
+        "jp_office_tower"
+      ]
     },
     {
       "role": "body",
       "narration": "話が脱線した会議でも、結論だけを拾ってくれます。",
       "telop": "→**結論だけ**を拾ってくれる",
-      "bg": ["jp_office_tower", "own_pen_write"]
+      "bg": [
+        "own_pen_write",
+        "jp_laptop_f1"
+      ]
     },
     {
       "role": "rank",
@@ -37,19 +49,28 @@
       "headline": "ToDo整理",
       "narration": "第2位、ToDoの整理。この一文です。",
       "telop": "「次回までのToDoを整理して」",
-      "bg": ["calendar", "own_desk_messy"]
+      "bg": [
+        "calendar",
+        "own_desk_messy"
+      ]
     },
     {
       "role": "body",
       "narration": "誰が何をいつまでにやるか、一覧にしてくれます。",
       "telop": "→**誰が何をいつまで**か一覧に",
-      "bg": ["nb_notes", "jp_skyline_day"]
+      "bg": [
+        "own_train_field",
+        "jp_skyline_day"
+      ]
     },
     {
       "role": "save",
       "narration": "1位は、一番面倒な議事録作成そのものに効きます。保存推奨。",
       "telop": "1位は**議事録作成そのもの**に",
-      "bg": ["own_pen_write", "nb_particles"]
+      "bg": [
+        "own_pen_write",
+        "nb_particles"
+      ]
     },
     {
       "role": "rank",
@@ -57,19 +78,28 @@
       "headline": "議事録そのまま作成",
       "narration": "第1位、会話をそのまま議事録に。この一文です。",
       "telop": "「今日の会話をそのまま議事録にして」",
-      "bg": ["jp_desk_m1", "nb_night"]
+      "bg": [
+        "jp_desk_m1",
+        "nb_night"
+      ]
     },
     {
       "role": "body",
       "narration": "話し言葉のメモも、フォーマルな議事録の形に整えてくれます。",
       "telop": "→**フォーマルな形**に整えてくれる",
-      "bg": ["own_typing", "nb_digital"]
+      "bg": [
+        "own_desk_timelapse",
+        "nb_digital"
+      ]
     },
     {
       "role": "cta",
       "narration": "使い方とコツを、LINEでまとめてお届けします。「議事録」と送ってください。",
       "telop": "LINEで「議事録」→\n**使い方+コツ**をお届け",
-      "bg": ["own_fuji_road", "jp_skyline_day"]
+      "bg": [
+        "own_fuji_road",
+        "jp_skyline_day"
+      ]
     }
   ],
   "bgm": "bgm/dova_cafe_rain.mp3"
