@@ -1,0 +1,68 @@
+{
+  "template": "ContrarianVideo",
+  "_note": "Week8-8。持論(Before/After)×AIツール紹介。テーマ=面接質問リスト作成、起用ツール=Perplexity。実測値なし。",
+  "title": "面接の質問、まだ前日に考える？",
+  "caption": "面接の質問、経歴を読んで考えるの地味に重くないですか。パープレキシティに任せると、考える時間が選ぶ時間に変わります。使い方とコツを、LINEでまとめてお届けします。「面接」と送ってください。\n※個人の見解です\n#AI活用 #Perplexity #面接準備 #仕事術 #生産性",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "面接の質問、まだ前日に考えてますか。",
+      "telop": "**面接の質問**、まだ前日に考える？",
+      "bg": ["nb_team", "jp_desk_m1"]
+    },
+    {
+      "role": "body",
+      "narration": "経歴を読み込んで、質問を考えて、地味に準備が重いです。",
+      "telop": "経歴を読んで質問を考えるのは**地味に重い**",
+      "bg": ["nb_books", "own_docs_stack"]
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "narration": "1、パープレキシティに、候補者の経歴を伝えます。",
+      "telop": "**経歴**を伝えるだけ",
+      "bg": ["nb_think", "own_typing"]
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "narration": "2、経歴に沿った質問を、根拠つきで出してくれます。",
+      "telop": "**根拠つき**で質問が出る",
+      "bg": ["nb_notes", "nb_chart"]
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "narration": "3、深掘りの追加質問まで、その場で提案してくれます。",
+      "telop": "**深掘り質問**もその場で",
+      "bg": ["nb_board", "own_pen_write"]
+    },
+    {
+      "role": "body",
+      "narration": "考える時間が、選ぶ時間に変わります。",
+      "telop": "考える時間が**選ぶ時間**に",
+      "bg": ["own_coffee_pour", "nb_digital"]
+    },
+    {
+      "role": "flip",
+      "narration": "ただし、候補者の個人情報は、入力しないこと。",
+      "telop": "**個人情報**は入力しない",
+      "bg": ["jp_commuters", "own_street"]
+    },
+    {
+      "role": "vs",
+      "vs": {"left": "考える", "right": "選ぶ"},
+      "narration": "考えるか、選ぶだけか。コメントで教えてください。",
+      "telop": "考える？**選ぶ**？",
+      "bg": ["nb_sky", "own_suburb_sky"]
+    },
+    {
+      "role": "cta",
+      "narration": "使い方とコツを、LINEでまとめてお届けします。「面接」と送ってください。",
+      "telop": "LINEで「面接」→\n**使い方+コツ**をお届け",
+      "bg": ["own_fuji_road", "jp_skyline_day"]
+    }
+  ],
+  "bgm": "bgm/calm_instrumental.mp3"
+}

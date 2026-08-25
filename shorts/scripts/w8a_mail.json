@@ -1,0 +1,68 @@
+{
+  "template": "ContrarianVideo",
+  "_note": "Week8-1。持論(Before/After)×AIツール紹介。テーマ=メール返信文作成、起用ツール=Gemini(Gmail内蔵)。ランキング型ではなく1ツールに絞ったBefore/After構成で実演の説得力を狙う実験。vsの後にLINE導線のctaシーンを追加(テンプレ標準にはないが他roleと同じくtelop+audioだけで描画される)。実測値なし。",
+  "title": "メール返信、まだ自分で書いてる？",
+  "caption": "メールの返信、毎回イチから書いていませんか。ジェミニに任せると、書く時間が選ぶ時間に変わります。使い方とコツを、LINEでまとめてお届けします。「メール」と送ってください。\n※個人の見解です\n#AI活用 #Gemini #メール対応 #仕事術 #生産性",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "メールの返信、まだ自分で考えて書いてますか。",
+      "telop": "**メール返信**、まだ自分で書いてる？",
+      "bg": ["own_phone_tap", "jp_laptop_f1"]
+    },
+    {
+      "role": "body",
+      "narration": "似たような文面を、毎回イチから書いていませんか。",
+      "telop": "毎回**イチから**書く必要ない",
+      "bg": ["nb_digital", "own_desk_messy"]
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "narration": "1、受信メールを開いたまま、ジェミニに返信案を出させます。",
+      "telop": "**開いたまま**返信案を出せる",
+      "bg": ["nb_keys", "own_typing"]
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "narration": "2、丁寧に、とか、簡潔に、と伝えるだけでトーンが変わります。",
+      "telop": "**トーン**を指定するだけ",
+      "bg": ["nb_particles", "sumaho2"]
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "narration": "3、候補を複数出してもらって、選ぶだけで送れます。",
+      "telop": "**選ぶだけ**で送れる",
+      "bg": ["nb_notes", "own_pen_write"]
+    },
+    {
+      "role": "body",
+      "narration": "書く時間じゃなくて、選ぶ時間になります。",
+      "telop": "書く時間が**選ぶ時間**に",
+      "bg": ["own_coffee_cup", "nb_bokeh"]
+    },
+    {
+      "role": "flip",
+      "narration": "ただし、社外秘の内容が入るメールは、そのまま貼らないこと。",
+      "telop": "**社外秘**はそのまま貼らない",
+      "bg": ["nb_board", "own_docs_stack"]
+    },
+    {
+      "role": "vs",
+      "vs": {"left": "書く", "right": "選ぶ"},
+      "narration": "自分で書くか、選ぶだけか。コメントで教えてください。",
+      "telop": "書く？**選ぶ**？",
+      "bg": ["nb_sky", "own_suburb_sky"]
+    },
+    {
+      "role": "cta",
+      "narration": "使い方とコツを、LINEでまとめてお届けします。「メール」と送ってください。",
+      "telop": "LINEで「メール」→\n**使い方+コツ**をお届け",
+      "bg": ["own_fuji_road", "jp_skyline_day"]
+    }
+  ],
+  "bgm": "bgm/for_our_friends.mp3"
+}

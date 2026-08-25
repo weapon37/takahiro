@@ -1,0 +1,68 @@
+{
+  "template": "ContrarianVideo",
+  "_note": "Week8-3。持論(Before/After)×AIツール紹介。テーマ=Excel集計・関数作成、起用ツール=Copilot in Excel。実測値なし。",
+  "title": "その関数、まだ自分で調べてる？",
+  "caption": "エクセルの関数、毎回調べて打ち間違えていませんか。コパイロットに任せると、覚える時間が確認する時間に変わります。使い方とコツを、LINEでまとめてお届けします。「エクセル」と送ってください。\n※個人の見解です\n#AI活用 #Copilot #Excel #仕事術 #生産性",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "その関数、まだ自分で調べてますか。",
+      "telop": "**関数**、まだ自分で調べてる？",
+      "bg": ["nb_chart", "own_desk_messy"]
+    },
+    {
+      "role": "body",
+      "narration": "似た関数を探して、何度も打ち間違えて、地味に消耗します。",
+      "telop": "調べて**打ち間違えて**消耗する",
+      "bg": ["graph_screen", "nb_digital"]
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "narration": "1、コパイロットに、やりたいことを日本語で伝えます。",
+      "telop": "**日本語で**伝えるだけ",
+      "bg": ["nb_code", "own_typing"]
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "narration": "2、関数を作るだけでなく、意味も説明してくれます。",
+      "telop": "**意味**まで説明してくれる",
+      "bg": ["nb_keys", "note3"]
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "narration": "3、エラーが出ても、原因を教えてくれます。",
+      "telop": "**エラーの原因**も教えてくれる",
+      "bg": ["nb_notes", "own_pen_write"]
+    },
+    {
+      "role": "body",
+      "narration": "覚える時間が、確認する時間に変わります。",
+      "telop": "覚える時間が**確認する時間**に",
+      "bg": ["own_coffee_pour", "nb_bokeh"]
+    },
+    {
+      "role": "flip",
+      "narration": "ただし、出来上がった数式は、必ず自分の目で確認すること。",
+      "telop": "**必ず自分の目**で確認",
+      "bg": ["nb_board", "own_docs_stack"]
+    },
+    {
+      "role": "vs",
+      "vs": {"left": "暗記", "right": "確認"},
+      "narration": "暗記するか、確認するだけか。コメントで教えてください。",
+      "telop": "暗記？**確認**？",
+      "bg": ["nb_sky", "own_suburb_sky"]
+    },
+    {
+      "role": "cta",
+      "narration": "使い方とコツを、LINEでまとめてお届けします。「エクセル」と送ってください。",
+      "telop": "LINEで「エクセル」→\n**使い方+コツ**をお届け",
+      "bg": ["own_fuji_road", "jp_skyline_day"]
+    }
+  ],
+  "bgm": "bgm/pawn.mp3"
+}

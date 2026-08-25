@@ -1,0 +1,68 @@
+{
+  "template": "ContrarianVideo",
+  "_note": "Week8-2。持論(Before/After)×AIツール紹介。テーマ=会議アジェンダ作成、起用ツール=ChatGPT。実測値なし。",
+  "title": "会議の準備、まだ自分で組んでる？",
+  "caption": "会議前の準備、地味に時間がかかりますよね。チャットジーピーティーに任せると、準備の時間が確認の時間に変わります。使い方とコツを、LINEでまとめてお届けします。「会議」と送ってください。\n※個人の見解です\n#AI活用 #ChatGPT #会議効率化 #仕事術 #生産性",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "会議前の準備、まだ自分で組んでますか。",
+      "telop": "**会議準備**、まだ自分で組んでる？",
+      "bg": ["nb_team", "jp_office_tower"]
+    },
+    {
+      "role": "body",
+      "narration": "議題を考えて、時間配分もして、地味に時間がかかります。",
+      "telop": "議題も時間配分も**地味に重い**",
+      "bg": ["nb_clock", "own_desk_clean"]
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "narration": "1、チャットジーピーティーに、会議の目的だけ伝えます。",
+      "telop": "**目的だけ**伝える",
+      "bg": ["nb_think", "own_typing"]
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "narration": "2、参加者と時間を伝えると、進行案まで作ってくれます。",
+      "telop": "**進行案**まで作ってくれる",
+      "bg": ["nb_board", "calendar"]
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "narration": "3、想定される質問まで、先に出してくれます。",
+      "telop": "**想定質問**まで先出し",
+      "bg": ["nb_notes", "jp_desk_m1"]
+    },
+    {
+      "role": "body",
+      "narration": "準備の時間が、確認の時間に変わります。",
+      "telop": "準備の時間が**確認の時間**に",
+      "bg": ["own_pen_write", "nb_digital"]
+    },
+    {
+      "role": "flip",
+      "narration": "ただし、社外の機密情報が絡む議題は、入力しないこと。",
+      "telop": "**機密議題**は入力しない",
+      "bg": ["nb_night", "own_docs_stack"]
+    },
+    {
+      "role": "vs",
+      "vs": {"left": "組む", "right": "確認"},
+      "narration": "自分で組むか、確認するだけか。コメントで教えてください。",
+      "telop": "組む？**確認**？",
+      "bg": ["nb_sky", "own_suburb_sky"]
+    },
+    {
+      "role": "cta",
+      "narration": "使い方とコツを、LINEでまとめてお届けします。「会議」と送ってください。",
+      "telop": "LINEで「会議」→\n**使い方+コツ**をお届け",
+      "bg": ["own_fuji_road", "jp_skyline_day"]
+    }
+  ],
+  "bgm": "bgm/dova_ensolarado.mp3"
+}

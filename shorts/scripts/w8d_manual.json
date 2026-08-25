@@ -1,0 +1,68 @@
+{
+  "template": "ContrarianVideo",
+  "_note": "Week8-4。持論(Before/After)×AIツール紹介。テーマ=社内マニュアル作成、起用ツール=Notion AI。実測値なし。",
+  "title": "マニュアル作り、まだ1から書いてる？",
+  "caption": "マニュアル作り、1日仕事になっていませんか。ノーションエーアイに任せると、書く時間が話す時間に変わります。使い方とコツを、LINEでまとめてお届けします。「マニュアル」と送ってください。\n※個人の見解です\n#AI活用 #NotionAI #マニュアル作成 #仕事術 #生産性",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "マニュアル作り、まだ1から書いてますか。",
+      "telop": "**マニュアル作り**、まだ1から書いてる？",
+      "bg": ["nb_books", "own_desk_clean"]
+    },
+    {
+      "role": "body",
+      "narration": "手順を思い出して、文章にして、地味に1日仕事です。",
+      "telop": "手順を文章にするだけで**1日仕事**",
+      "bg": ["note", "nb_notes"]
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "narration": "1、ノーションエーアイに、作業の流れを話しかけます。",
+      "telop": "**話しかけるだけ**でいい",
+      "bg": ["own_typing", "jp_laptop_m1"]
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "narration": "2、箇条書きのメモからでも、文章に整えてくれます。",
+      "telop": "メモから**文章に整える**",
+      "bg": ["note4", "own_pen_write"]
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "narration": "3、見出しや目次も、自動でつけてくれます。",
+      "telop": "**見出しと目次**も自動",
+      "bg": ["nb_board", "note5"]
+    },
+    {
+      "role": "body",
+      "narration": "書く時間が、話す時間に変わります。",
+      "telop": "書く時間が**話す時間**に",
+      "bg": ["own_docs_stack", "nb_digital"]
+    },
+    {
+      "role": "flip",
+      "narration": "ただし、出来上がった内容は、必ず現場の言葉で確認すること。",
+      "telop": "**現場の言葉**で必ず確認",
+      "bg": ["jp_commuters", "own_street"]
+    },
+    {
+      "role": "vs",
+      "vs": {"left": "書く", "right": "話す"},
+      "narration": "書くか、話すだけか。コメントで教えてください。",
+      "telop": "書く？**話す**？",
+      "bg": ["nb_sky", "own_suburb_sky"]
+    },
+    {
+      "role": "cta",
+      "narration": "使い方とコツを、LINEでまとめてお届けします。「マニュアル」と送ってください。",
+      "telop": "LINEで「マニュアル」→\n**使い方+コツ**をお届け",
+      "bg": ["own_fuji_road", "jp_skyline_day"]
+    }
+  ],
+  "bgm": "bgm/dova_beach_cocktail.mp3"
+}

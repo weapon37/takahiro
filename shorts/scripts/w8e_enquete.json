@@ -1,0 +1,68 @@
+{
+  "template": "ContrarianVideo",
+  "_note": "Week8-5。持論(Before/After)×AIツール紹介。テーマ=アンケート設計・集計、起用ツール=ChatGPT+Googleフォーム。実測値なし。",
+  "title": "アンケート集計、まだ手打ち？",
+  "caption": "アンケートの集計、1つずつ見て表にまとめていませんか。チャットジーピーティーとグーグルフォームに任せると、集める時間が読む時間に変わります。使い方とコツを、LINEでまとめてお届けします。「アンケート」と送ってください。\n※個人の見解です\n#AI活用 #ChatGPT #アンケート #仕事術 #生産性",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "アンケートの集計、まだ手打ちでやってますか。",
+      "telop": "**アンケート集計**、まだ手打ち？",
+      "bg": ["nb_social", "own_phone_tap"]
+    },
+    {
+      "role": "body",
+      "narration": "回答を1つずつ見て、表にまとめて、地味に骨が折れます。",
+      "telop": "1つずつ見て表にするのは**骨が折れる**",
+      "bg": ["nb_notes", "own_docs_stack"]
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "narration": "1、チャットジーピーティーに、聞きたい目的を伝えます。",
+      "telop": "**目的**を伝えるだけ",
+      "bg": ["nb_think", "sumaho3"]
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "narration": "2、質問文まで、グーグルフォームの形で作ってくれます。",
+      "telop": "**質問文**まで作ってくれる",
+      "bg": ["note2", "nb_board"]
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "narration": "3、集まった回答も、要点だけまとめさせられます。",
+      "telop": "回答は**要点だけ**まとめさせる",
+      "bg": ["nb_chart", "own_pen_write"]
+    },
+    {
+      "role": "body",
+      "narration": "集める時間が、読む時間に変わります。",
+      "telop": "集める時間が**読む時間**に",
+      "bg": ["own_coffee_cup", "nb_bokeh"]
+    },
+    {
+      "role": "flip",
+      "narration": "ただし、個人が特定できる回答は、入力しないこと。",
+      "telop": "**個人特定**できる回答は入れない",
+      "bg": ["jp_train", "own_car_window"]
+    },
+    {
+      "role": "vs",
+      "vs": {"left": "集計", "right": "確認"},
+      "narration": "自分で集計するか、確認するだけか。コメントで教えてください。",
+      "telop": "集計？**確認**？",
+      "bg": ["nb_sky", "own_suburb_sky"]
+    },
+    {
+      "role": "cta",
+      "narration": "使い方とコツを、LINEでまとめてお届けします。「アンケート」と送ってください。",
+      "telop": "LINEで「アンケート」→\n**使い方+コツ**をお届け",
+      "bg": ["own_fuji_road", "jp_skyline_day"]
+    }
+  ],
+  "bgm": "bgm/dova_chocomint.mp3"
+}

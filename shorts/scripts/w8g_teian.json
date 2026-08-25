@@ -1,0 +1,68 @@
+{
+  "template": "ContrarianVideo",
+  "_note": "Week8-7。持論(Before/After)×AIツール紹介。テーマ=顧客向け提案書作成、起用ツール=Gamma。実測値なし。",
+  "title": "提案書、まだ1枚ずつ作ってる？",
+  "caption": "提案書の構成もデザインも、時間を取られていませんか。ガンマに任せると、作る時間が整える時間に変わります。使い方とコツを、LINEでまとめてお届けします。「提案書」と送ってください。\n※個人の見解です\n#AI活用 #Gamma #提案書作成 #仕事術 #生産性",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "提案書、まだスライド1枚ずつ作ってますか。",
+      "telop": "**提案書**、まだ1枚ずつ作ってる？",
+      "bg": ["nb_art", "own_desk_clean"]
+    },
+    {
+      "role": "body",
+      "narration": "構成を考えて、デザインも整えて、地味に時間を取られます。",
+      "telop": "構成もデザインも**時間を取られる**",
+      "bg": ["nb_camera", "own_camera"]
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "narration": "1、ガンマに、伝えたい内容を箇条書きで渡します。",
+      "telop": "**箇条書き**で渡すだけ",
+      "bg": ["nb_board", "own_pen_write"]
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "narration": "2、スライドの構成とデザインを、自動で組んでくれます。",
+      "telop": "**構成とデザイン**を自動で組む",
+      "bg": ["nb_art", "own_lens_adjust"]
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "narration": "3、色やトーンも、あとから一括で変えられます。",
+      "telop": "色もトーンも**一括で変えられる**",
+      "bg": ["nb_chart", "own_lens_hands"]
+    },
+    {
+      "role": "body",
+      "narration": "作る時間が、整える時間に変わります。",
+      "telop": "作る時間が**整える時間**に",
+      "bg": ["own_tripod", "nb_bokeh"]
+    },
+    {
+      "role": "flip",
+      "narration": "ただし、顧客の数字を入れる前に、必ず社外秘の設定を確認すること。",
+      "telop": "**社外秘の設定**は必ず確認",
+      "bg": ["jp_office_tower", "own_docs_stack"]
+    },
+    {
+      "role": "vs",
+      "vs": {"left": "作る", "right": "整える"},
+      "narration": "作るか、整えるだけか。コメントで教えてください。",
+      "telop": "作る？**整える**？",
+      "bg": ["nb_sky", "own_suburb_sky"]
+    },
+    {
+      "role": "cta",
+      "narration": "使い方とコツを、LINEでまとめてお届けします。「提案書」と送ってください。",
+      "telop": "LINEで「提案書」→\n**使い方+コツ**をお届け",
+      "bg": ["own_fuji_road", "jp_skyline_day"]
+    }
+  ],
+  "bgm": "bgm/dova_cafe_rain.mp3"
+}

@@ -1,0 +1,68 @@
+{
+  "template": "ContrarianVideo",
+  "_note": "Week8-6。持論(Before/After)×AIツール紹介。テーマ=FAQ作成、起用ツール=ChatGPT。LINEキーワードは「FAQ」(既存キーワードの「問い合わせ」との重複を避けるため)。実測値なし。",
+  "title": "同じ質問、何回も答えてる？",
+  "caption": "よくある質問、毎回同じことを説明していませんか。チャットジーピーティーに任せると、答える時間が貼る時間に変わります。使い方とコツを、LINEでまとめてお届けします。「FAQ」と送ってください。\n※個人の見解です\n#AI活用 #ChatGPT #FAQ作成 #仕事術 #生産性",
+  "account": "仕事が消えるAI帳",
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "同じ質問、何回も答えてませんか。",
+      "telop": "**同じ質問**、何回も答えてる？",
+      "bg": ["nb_phone", "own_phone_tap"]
+    },
+    {
+      "role": "body",
+      "narration": "毎回一から説明して、地味に同じことを繰り返します。",
+      "telop": "毎回**同じことの繰り返し**",
+      "bg": ["nb_notes", "note6"]
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "narration": "1、チャットジーピーティーに、よくある質問を並べて渡します。",
+      "telop": "**質問を並べて**渡すだけ",
+      "bg": ["nb_think", "own_typing"]
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "narration": "2、答え方まで、口調を揃えて作ってくれます。",
+      "telop": "**口調**まで揃えてくれる",
+      "bg": ["nb_board", "note7"]
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "narration": "3、新しい質問が来ても、似た答えからすぐ作れます。",
+      "telop": "**似た答え**からすぐ作れる",
+      "bg": ["nb_digital", "own_pen_write"]
+    },
+    {
+      "role": "body",
+      "narration": "答える時間が、貼る時間に変わります。",
+      "telop": "答える時間が**貼る時間**に",
+      "bg": ["own_desk_timelapse", "nb_particles"]
+    },
+    {
+      "role": "flip",
+      "narration": "ただし、貼る前に内容が正しいか、必ず確認すること。",
+      "telop": "**内容の正しさ**は必ず確認",
+      "bg": ["nb_night", "own_docs_stack"]
+    },
+    {
+      "role": "vs",
+      "vs": {"left": "説明", "right": "確認"},
+      "narration": "毎回説明するか、確認するだけか。コメントで教えてください。",
+      "telop": "説明？**確認**？",
+      "bg": ["nb_sky", "own_suburb_sky"]
+    },
+    {
+      "role": "cta",
+      "narration": "使い方とコツを、LINEでまとめてお届けします。「エフエーキュー」と送ってください。",
+      "telop": "LINEで「FAQ」→\n**使い方+コツ**をお届け",
+      "bg": ["own_fuji_road", "jp_skyline_day"]
+    }
+  ],
+  "bgm": "bgm/farm_country.mp3"
+}
