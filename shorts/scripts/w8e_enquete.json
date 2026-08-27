@@ -60,7 +60,7 @@
     {
       "role": "cta",
       "narration": "使い方とコツを、LINEでまとめてお届けします。「アンケート」と送ってください。",
-      "telop": "LINEで「アンケート」\n→**使い方+コツ**をお届け",
+      "telop": "「アンケート」→\n**使い方+コツ**をお届け",
       "bg": ["own_fuji_road", "jp_skyline_day"]
     }
   ],
