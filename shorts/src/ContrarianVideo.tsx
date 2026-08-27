@@ -283,7 +283,7 @@ const ToolLabel: React.FC<{text: string}> = ({text}) => (
   <div
     style={{
       position: 'absolute',
-      top: 180,
+      top: 198,
       left: 0,
       right: 0,
       textAlign: 'center',
@@ -293,13 +293,14 @@ const ToolLabel: React.FC<{text: string}> = ({text}) => (
       style={{
         display: 'inline-block',
         fontFamily,
-        fontWeight: 700,
-        fontSize: 32,
+        fontWeight: 800,
+        fontSize: 58,
+        whiteSpace: 'nowrap',
         color: '#ffffff',
-        background: 'rgba(0,0,0,0.45)',
-        borderRadius: 20,
-        padding: '5px 22px',
-        letterSpacing: '0.05em',
+        background: 'rgba(0,0,0,0.5)',
+        borderRadius: 26,
+        padding: '6px 30px',
+        letterSpacing: '0.04em',
       }}
     >
       {text}
