@@ -2,6 +2,7 @@
   "account": "仕事が消えるAI帳",
   "bgm": "bgm/calm_instrumental.mp3",
   "bgmVolume": 0.1,
+  "toolLabel": "Perplexity活用法",
   "whoosh": "se/whoosh.wav",
   "scenes": [
     {
@@ -136,8 +137,8 @@
       "telop": "LINEで「面接」→\n**使い方+コツ**をお届け",
       "bgVideo": null,
       "bgClips": [
-        "bg/own_fuji_road.mp4",
-        "bg/jp_skyline_day.mp4"
+        "bg/own_stone_steps_wide.mp4",
+        "bg/jp_office_tower.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,

@@ -2,6 +2,7 @@
   "account": "仕事が消えるAI帳",
   "bgm": "bgm/dova_chocomint.mp3",
   "bgmVolume": 0.1,
+  "toolLabel": "ChatGPT活用法",
   "whoosh": "se/whoosh.wav",
   "scenes": [
     {
@@ -136,8 +137,8 @@
       "telop": "「アンケート」→\n**使い方+コツ**をお届け",
       "bgVideo": null,
       "bgClips": [
-        "bg/own_fuji_road.mp4",
-        "bg/jp_skyline_day.mp4"
+        "bg/own_forest_trail.mp4",
+        "bg/jp_dusk_road.mp4"
       ],
       "bgSync": true,
       "bgWash": 0,
