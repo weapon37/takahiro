@@ -1,0 +1,150 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/farm_country.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**同じ質問**、何回も答えてる？",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_phone.mp4",
+        "bg/own_phone_tap.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8f_faq/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 91
+    },
+    {
+      "role": "body",
+      "telop": "毎回**同じことの繰り返し**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_notes.mp4",
+        "bg/note6.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8f_faq/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 131
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "**質問を並べて**渡すだけ",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_think.mp4",
+        "bg/own_typing.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8f_faq/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 164
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "**口調**まで揃えてくれる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_board.mp4",
+        "bg/note7.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8f_faq/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 118
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "**似た答え**からすぐ作れる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_digital.mp4",
+        "bg/own_pen_write.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8f_faq/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 166
+    },
+    {
+      "role": "body",
+      "telop": "答える時間が**貼る時間**に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_timelapse.mp4",
+        "bg/nb_particles.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8f_faq/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 91
+    },
+    {
+      "role": "flip",
+      "telop": "**内容の正しさ**は必ず確認",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_night.mp4",
+        "bg/own_docs_stack.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8f_faq/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 148
+    },
+    {
+      "role": "vs",
+      "vs": {
+        "left": "説明",
+        "right": "確認"
+      },
+      "telop": "説明？**確認**？",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_sky.mp4",
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8f_faq/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 148
+    },
+    {
+      "role": "cta",
+      "telop": "LINEで「FAQ」→\n**使い方+コツ**をお届け",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_fuji_road.mp4",
+        "bg/jp_skyline_day.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8f_faq/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 162
+    }
+  ]
+}

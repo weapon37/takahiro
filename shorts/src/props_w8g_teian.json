@@ -1,0 +1,150 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_cafe_rain.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**提案書**、まだ1枚ずつ作ってる？",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_art.mp4",
+        "bg/own_desk_clean.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8g_teian/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 98
+    },
+    {
+      "role": "body",
+      "telop": "構成もデザインも**時間を取られる**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_camera.mp4",
+        "bg/own_camera.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8g_teian/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 141
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "**箇条書き**で渡すだけ",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_board.mp4",
+        "bg/own_pen_write.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8g_teian/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 141
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "**構成とデザイン**を自動で組む",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_art.mp4",
+        "bg/own_lens_adjust.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8g_teian/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 121
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "色もトーンも**一括で変えられる**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_chart.mp4",
+        "bg/own_lens_hands.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8g_teian/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 116
+    },
+    {
+      "role": "body",
+      "telop": "作る時間が**整える時間**に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_tripod.mp4",
+        "bg/nb_bokeh.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8g_teian/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 102
+    },
+    {
+      "role": "flip",
+      "telop": "**社外秘の設定**は必ず確認",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_office_tower.mp4",
+        "bg/own_docs_stack.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8g_teian/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 177
+    },
+    {
+      "role": "vs",
+      "vs": {
+        "left": "作る",
+        "right": "整える"
+      },
+      "telop": "作る？**整える**？",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_sky.mp4",
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8g_teian/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 110
+    },
+    {
+      "role": "cta",
+      "telop": "LINEで「提案書」→\n**使い方+コツ**をお届け",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_fuji_road.mp4",
+        "bg/jp_skyline_day.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8g_teian/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 164
+    }
+  ]
+}

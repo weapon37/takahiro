@@ -1,0 +1,150 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_ensolarado.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**会議準備**、まだ自分で組んでる？",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_team.mp4",
+        "bg/jp_office_tower.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8b_kaigi/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 98
+    },
+    {
+      "role": "body",
+      "telop": "議題も時間配分も**地味に重い**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_clock.mp4",
+        "bg/own_desk_clean.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8b_kaigi/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 150
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "**目的だけ**伝える",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_think.mp4",
+        "bg/own_typing.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8b_kaigi/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 145
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "**進行案**まで作ってくれる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_board.mp4",
+        "bg/calendar.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8b_kaigi/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 166
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "**想定質問**まで先出し",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_notes.mp4",
+        "bg/jp_desk_m1.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8b_kaigi/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 118
+    },
+    {
+      "role": "body",
+      "telop": "準備の時間が**確認の時間**に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_pen_write.mp4",
+        "bg/nb_digital.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8b_kaigi/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 110
+    },
+    {
+      "role": "flip",
+      "telop": "**機密議題**は入力しない",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_night.mp4",
+        "bg/own_docs_stack.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8b_kaigi/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 150
+    },
+    {
+      "role": "vs",
+      "vs": {
+        "left": "組む",
+        "right": "確認"
+      },
+      "telop": "組む？**確認**？",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_sky.mp4",
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8b_kaigi/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 129
+    },
+    {
+      "role": "cta",
+      "telop": "LINEで「会議」→\n**使い方+コツ**をお届け",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_fuji_road.mp4",
+        "bg/jp_skyline_day.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8b_kaigi/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 154
+    }
+  ]
+}

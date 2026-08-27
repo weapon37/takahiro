@@ -1,0 +1,150 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/pawn.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**関数**、まだ自分で調べてる？",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_chart.mp4",
+        "bg/own_desk_messy.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8c_excel/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 85
+    },
+    {
+      "role": "body",
+      "telop": "調べて**打ち間違えて**消耗する",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/graph_screen.mp4",
+        "bg/nb_digital.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8c_excel/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 160
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "**日本語で**伝えるだけ",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_code.mp4",
+        "bg/own_typing.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8c_excel/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 139
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "**意味**まで説明してくれる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_keys.mp4",
+        "bg/note3.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8c_excel/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 148
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "**エラーの原因**も教えてくれる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_notes.mp4",
+        "bg/own_pen_write.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8c_excel/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 97
+    },
+    {
+      "role": "body",
+      "telop": "覚える時間が**確認する時間**に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_coffee_pour.mp4",
+        "bg/nb_bokeh.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8c_excel/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 89
+    },
+    {
+      "role": "flip",
+      "telop": "**必ず自分の目**で確認",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_board.mp4",
+        "bg/own_docs_stack.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8c_excel/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 152
+    },
+    {
+      "role": "vs",
+      "vs": {
+        "left": "暗記",
+        "right": "確認"
+      },
+      "telop": "暗記？**確認**？",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_sky.mp4",
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8c_excel/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 114
+    },
+    {
+      "role": "cta",
+      "telop": "LINEで「エクセル」→\n**使い方+コツ**をお届け",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_fuji_road.mp4",
+        "bg/jp_skyline_day.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8c_excel/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 158
+    }
+  ]
+}

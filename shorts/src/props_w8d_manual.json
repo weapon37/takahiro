@@ -1,0 +1,150 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_beach_cocktail.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**マニュアル作り**、まだ1から書いてる？",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_books.mp4",
+        "bg/own_desk_clean.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8d_manual/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 93
+    },
+    {
+      "role": "body",
+      "telop": "手順を文章にするだけで**1日仕事**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/note.mp4",
+        "bg/nb_notes.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8d_manual/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 145
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "**話しかけるだけ**でいい",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/jp_laptop_m1.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8d_manual/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 145
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "メモから**文章に整える**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/note4.mp4",
+        "bg/own_pen_write.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8d_manual/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 129
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "**見出しと目次**も自動",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_board.mp4",
+        "bg/note5.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8d_manual/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 102
+    },
+    {
+      "role": "body",
+      "telop": "書く時間が**話す時間**に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4",
+        "bg/nb_digital.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8d_manual/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 97
+    },
+    {
+      "role": "flip",
+      "telop": "**現場の言葉**で必ず確認",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_commuters.mp4",
+        "bg/own_street.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8d_manual/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 154
+    },
+    {
+      "role": "vs",
+      "vs": {
+        "left": "書く",
+        "right": "話す"
+      },
+      "telop": "書く？**話す**？",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_sky.mp4",
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8d_manual/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 104
+    },
+    {
+      "role": "cta",
+      "telop": "LINEで「マニュアル」\n→**使い方+コツ**をお届け",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_fuji_road.mp4",
+        "bg/jp_skyline_day.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8d_manual/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 148
+    }
+  ]
+}

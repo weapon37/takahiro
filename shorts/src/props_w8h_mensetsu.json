@@ -1,0 +1,150 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/calm_instrumental.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**面接の質問**、まだ前日に考える？",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_team.mp4",
+        "bg/jp_desk_m1.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8h_mensetsu/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 100
+    },
+    {
+      "role": "body",
+      "telop": "経歴を読んで質問を考えるのは**地味に重い**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_books.mp4",
+        "bg/own_docs_stack.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8h_mensetsu/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 141
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "**経歴**を伝えるだけ",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_think.mp4",
+        "bg/own_typing.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8h_mensetsu/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 145
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "**根拠つき**で質問が出る",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_notes.mp4",
+        "bg/nb_chart.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8h_mensetsu/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 148
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "**深掘り質問**もその場で",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_board.mp4",
+        "bg/own_pen_write.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8h_mensetsu/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 156
+    },
+    {
+      "role": "body",
+      "telop": "考える時間が**選ぶ時間**に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_coffee_pour.mp4",
+        "bg/nb_digital.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8h_mensetsu/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 91
+    },
+    {
+      "role": "flip",
+      "telop": "**個人情報**は入力しない",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_commuters.mp4",
+        "bg/own_street.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8h_mensetsu/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 129
+    },
+    {
+      "role": "vs",
+      "vs": {
+        "left": "考える",
+        "right": "選ぶ"
+      },
+      "telop": "考える？**選ぶ**？",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_sky.mp4",
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8h_mensetsu/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 127
+    },
+    {
+      "role": "cta",
+      "telop": "LINEで「面接」→\n**使い方+コツ**をお届け",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_fuji_road.mp4",
+        "bg/jp_skyline_day.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8h_mensetsu/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 156
+    }
+  ]
+}

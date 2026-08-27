@@ -1,0 +1,150 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_chocomint.mp3",
+  "bgmVolume": 0.1,
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**アンケート集計**、まだ手打ち？",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_social.mp4",
+        "bg/own_phone_tap.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8e_enquete/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 112
+    },
+    {
+      "role": "body",
+      "telop": "1つずつ見て表にするのは**骨が折れる**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_notes.mp4",
+        "bg/own_docs_stack.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8e_enquete/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 141
+    },
+    {
+      "role": "point",
+      "num": 1,
+      "telop": "**目的**を伝えるだけ",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_think.mp4",
+        "bg/sumaho3.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8e_enquete/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 139
+    },
+    {
+      "role": "point",
+      "num": 2,
+      "telop": "**質問文**まで作ってくれる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/note2.mp4",
+        "bg/nb_board.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8e_enquete/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 146
+    },
+    {
+      "role": "point",
+      "num": 3,
+      "telop": "回答は**要点だけ**まとめさせる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_chart.mp4",
+        "bg/own_pen_write.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8e_enquete/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 114
+    },
+    {
+      "role": "body",
+      "telop": "集める時間が**読む時間**に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_coffee_cup.mp4",
+        "bg/nb_bokeh.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8e_enquete/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 97
+    },
+    {
+      "role": "flip",
+      "telop": "**個人特定**できる回答は入れない",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_train.mp4",
+        "bg/own_car_window.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8e_enquete/07.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 133
+    },
+    {
+      "role": "vs",
+      "vs": {
+        "left": "集計",
+        "right": "確認"
+      },
+      "telop": "集計？**確認**？",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_sky.mp4",
+        "bg/own_suburb_sky.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8e_enquete/08.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 156
+    },
+    {
+      "role": "cta",
+      "telop": "LINEで「アンケート」\n→**使い方+コツ**をお届け",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_fuji_road.mp4",
+        "bg/jp_skyline_day.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w8e_enquete/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 152
+    }
+  ]
+}
