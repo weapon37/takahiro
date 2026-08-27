@@ -83,6 +83,7 @@ const props = {
       ? 'bgm/bgm_bright.wav'
       : ''),
   bgmVolume: script.bgmVolume ?? 0.1,
+  toolLabel: script.toolLabel ?? '',
   whoosh: 'se/whoosh.wav',
   scenes,
 };

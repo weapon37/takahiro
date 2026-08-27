@@ -4,6 +4,7 @@
   "title": "面接の質問、まだ前日に考える？",
   "caption": "面接の質問、経歴を読んで考えるの地味に重くないですか。パープレキシティに任せると、考える時間が選ぶ時間に変わります。使い方とコツを、LINEでまとめてお届けします。「面接」と送ってください。\n※個人の見解です\n#AI活用 #Perplexity #面接準備 #仕事術 #生産性",
   "account": "仕事が消えるAI帳",
+  "toolLabel": "Perplexity活用法",
   "sentences": [
     {
       "role": "hook",
@@ -61,7 +62,7 @@
       "role": "cta",
       "narration": "使い方とコツを、LINEでまとめてお届けします。「面接」と送ってください。",
       "telop": "LINEで「面接」→\n**使い方+コツ**をお届け",
-      "bg": ["own_fuji_road", "jp_skyline_day"]
+      "bg": ["own_stone_steps_wide", "jp_office_tower"]
     }
   ],
   "bgm": "bgm/calm_instrumental.mp3"

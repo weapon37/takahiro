@@ -4,6 +4,7 @@
   "title": "同じ質問、何回も答えてる？",
   "caption": "よくある質問、毎回同じことを説明していませんか。チャットジーピーティーに任せると、答える時間が貼る時間に変わります。使い方とコツを、LINEでまとめてお届けします。「FAQ」と送ってください。\n※個人の見解です\n#AI活用 #ChatGPT #FAQ作成 #仕事術 #生産性",
   "account": "仕事が消えるAI帳",
+  "toolLabel": "ChatGPT活用法",
   "sentences": [
     {
       "role": "hook",
@@ -61,7 +62,7 @@
       "role": "cta",
       "narration": "使い方とコツを、LINEでまとめてお届けします。「エフエーキュー」と送ってください。",
       "telop": "LINEで「FAQ」→\n**使い方+コツ**をお届け",
-      "bg": ["own_fuji_road", "jp_skyline_day"]
+      "bg": ["own_canal", "sunrise_city"]
     }
   ],
   "bgm": "bgm/farm_country.mp3"

@@ -4,6 +4,7 @@
   "title": "提案書、まだ1枚ずつ作ってる？",
   "caption": "提案書の構成もデザインも、時間を取られていませんか。ガンマに任せると、作る時間が整える時間に変わります。使い方とコツを、LINEでまとめてお届けします。「提案書」と送ってください。\n※個人の見解です\n#AI活用 #Gamma #提案書作成 #仕事術 #生産性",
   "account": "仕事が消えるAI帳",
+  "toolLabel": "Gamma活用法",
   "sentences": [
     {
       "role": "hook",
@@ -61,7 +62,7 @@
       "role": "cta",
       "narration": "使い方とコツを、LINEでまとめてお届けします。「提案書」と送ってください。",
       "telop": "LINEで「提案書」→\n**使い方+コツ**をお届け",
-      "bg": ["own_fuji_road", "jp_skyline_day"]
+      "bg": ["own_flowers_garden", "jp_shinjuku_neon"]
     }
   ],
   "bgm": "bgm/dova_cafe_rain.mp3"

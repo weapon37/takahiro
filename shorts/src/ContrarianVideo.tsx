@@ -43,6 +43,7 @@ export type ContrarianVideoProps = {
   account: string;
   bgm: string;
   bgmVolume: number;
+  toolLabel?: string; // 「〇〇活用法」など。point①(num=1)のシーンから最後まで常時表示
   scenes: ContraScene[];
 };
 
@@ -277,6 +278,35 @@ const HookStrike: React.FC = () => {
   );
 };
 
+// どのツールの話か常時わかるようにするラベル(point①以降、動画の最後まで表示)
+const ToolLabel: React.FC<{text: string}> = ({text}) => (
+  <div
+    style={{
+      position: 'absolute',
+      top: 180,
+      left: 0,
+      right: 0,
+      textAlign: 'center',
+    }}
+  >
+    <span
+      style={{
+        display: 'inline-block',
+        fontFamily,
+        fontWeight: 700,
+        fontSize: 32,
+        color: '#ffffff',
+        background: 'rgba(0,0,0,0.45)',
+        borderRadius: 20,
+        padding: '5px 22px',
+        letterSpacing: '0.05em',
+      }}
+    >
+      {text}
+    </span>
+  </div>
+);
+
 const SceneView: React.FC<{scene: ContraScene; index: number; startFrame: number}> = ({scene, startFrame}) => {
   const clips = scene.bgClips ?? (scene.bgVideo ? [scene.bgVideo] : []);
   return (
@@ -303,10 +333,19 @@ export const ContrarianVideo: React.FC<ContrarianVideoProps> = ({
   account,
   bgm,
   bgmVolume,
+  toolLabel,
   scenes,
 }) => {
   const total = scenes.reduce((a, s) => a + s.durationInFrames, 0);
   let from = 0;
+  const offsets = scenes.map((s) => {
+    const start = from;
+    from += s.durationInFrames;
+    return start;
+  });
+  from = 0;
+  const pointOneIdx = scenes.findIndex((s) => s.role === 'point' && s.num === 1);
+  const toolLabelFrom = pointOneIdx >= 0 ? offsets[pointOneIdx] : 0;
   return (
     <AbsoluteFill style={{backgroundColor: BRAND.ink}}>
       {scenes.map((scene, i) => {
@@ -319,6 +358,11 @@ export const ContrarianVideo: React.FC<ContrarianVideoProps> = ({
         return seq;
       })}
       <AccountLabel name={account} />
+      {toolLabel ? (
+        <Sequence from={toolLabelFrom} durationInFrames={total - toolLabelFrom}>
+          <ToolLabel text={toolLabel} />
+        </Sequence>
+      ) : null}
       {bgm ? (
         <Audio
           loop

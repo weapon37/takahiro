@@ -4,6 +4,7 @@
   "title": "会議の準備、まだ自分で組んでる？",
   "caption": "会議前の準備、地味に時間がかかりますよね。チャットジーピーティーに任せると、準備の時間が確認の時間に変わります。使い方とコツを、LINEでまとめてお届けします。「会議」と送ってください。\n※個人の見解です\n#AI活用 #ChatGPT #会議効率化 #仕事術 #生産性",
   "account": "仕事が消えるAI帳",
+  "toolLabel": "ChatGPT活用法",
   "sentences": [
     {
       "role": "hook",
@@ -61,7 +62,7 @@
       "role": "cta",
       "narration": "使い方とコツを、LINEでまとめてお届けします。「会議」と送ってください。",
       "telop": "LINEで「会議」→\n**使い方+コツ**をお届け",
-      "bg": ["own_fuji_road", "jp_skyline_day"]
+      "bg": ["own_sunflower", "jp_shibuya_air"]
     }
   ],
   "bgm": "bgm/dova_ensolarado.mp3"

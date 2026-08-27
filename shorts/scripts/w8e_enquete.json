@@ -4,6 +4,7 @@
   "title": "アンケート集計、まだ手打ち？",
   "caption": "アンケートの集計、1つずつ見て表にまとめていませんか。チャットジーピーティーとグーグルフォームに任せると、集める時間が読む時間に変わります。使い方とコツを、LINEでまとめてお届けします。「アンケート」と送ってください。\n※個人の見解です\n#AI活用 #ChatGPT #アンケート #仕事術 #生産性",
   "account": "仕事が消えるAI帳",
+  "toolLabel": "ChatGPT活用法",
   "sentences": [
     {
       "role": "hook",
@@ -61,7 +62,7 @@
       "role": "cta",
       "narration": "使い方とコツを、LINEでまとめてお届けします。「アンケート」と送ってください。",
       "telop": "「アンケート」→\n**使い方+コツ**をお届け",
-      "bg": ["own_fuji_road", "jp_skyline_day"]
+      "bg": ["own_forest_trail", "jp_dusk_road"]
     }
   ],
   "bgm": "bgm/dova_chocomint.mp3"

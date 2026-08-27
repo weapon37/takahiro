@@ -4,6 +4,7 @@
   "title": "マニュアル作り、まだ1から書いてる？",
   "caption": "マニュアル作り、1日仕事になっていませんか。ノーションエーアイに任せると、書く時間が話す時間に変わります。使い方とコツを、LINEでまとめてお届けします。「マニュアル」と送ってください。\n※個人の見解です\n#AI活用 #NotionAI #マニュアル作成 #仕事術 #生産性",
   "account": "仕事が消えるAI帳",
+  "toolLabel": "Notion AI活用法",
   "sentences": [
     {
       "role": "hook",
@@ -61,7 +62,7 @@
       "role": "cta",
       "narration": "使い方とコツを、LINEでまとめてお届けします。「マニュアル」と送ってください。",
       "telop": "「マニュアル」→\n**使い方+コツ**をお届け",
-      "bg": ["own_fuji_road", "jp_skyline_day"]
+      "bg": ["own_lotus_field", "jp_city_dusk"]
     }
   ],
   "bgm": "bgm/dova_beach_cocktail.mp3"

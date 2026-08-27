@@ -4,6 +4,7 @@
   "title": "その関数、まだ自分で調べてる？",
   "caption": "エクセルの関数、毎回調べて打ち間違えていませんか。コパイロットに任せると、覚える時間が確認する時間に変わります。使い方とコツを、LINEでまとめてお届けします。「エクセル」と送ってください。\n※個人の見解です\n#AI活用 #Copilot #Excel #仕事術 #生産性",
   "account": "仕事が消えるAI帳",
+  "toolLabel": "Copilot活用法",
   "sentences": [
     {
       "role": "hook",
@@ -61,7 +62,7 @@
       "role": "cta",
       "narration": "使い方とコツを、LINEでまとめてお届けします。「エクセル」と送ってください。",
       "telop": "LINEで「エクセル」→\n**使い方+コツ**をお届け",
-      "bg": ["own_fuji_road", "jp_skyline_day"]
+      "bg": ["own_countryside", "jp_skyline"]
     }
   ],
   "bgm": "bgm/pawn.mp3"
