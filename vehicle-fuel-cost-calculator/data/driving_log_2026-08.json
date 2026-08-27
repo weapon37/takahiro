@@ -13,7 +13,7 @@
     {"day": 21, "end_km": 25318, "distance_km": 3, "driver": "A", "note": ""},
     {"day": 22, "end_km": 25322, "distance_km": 4, "driver": "AB", "note": ""},
     {"day": 24, "end_km": 25338, "distance_km": 16, "driver": "A", "note": ""},
-    {"day": 27, "end_km": 25589, "distance_km": 251, "driver": "A", "note": ""},
+    {"day": 27, "end_km": 25589, "distance_km": 251, "driver": "A", "note": "出張(小山)"},
     {"day": 28, "end_km": 25591, "distance_km": 2, "driver": "A", "note": ""}
   ]
 }
