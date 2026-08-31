@@ -1,0 +1,77 @@
+{
+  "template": "RankingVideo",
+  "_note": "Week9-1。w7d_youyaku(資料要約・301views/day)の再挑戦。同一動画の重複を避けるため、「要約する」ではなく「資料に質問する/読まずに済ませる」という切り口に変更。BEST3型は維持(元が成功した構造のため)。LINEキーワードは「要約」ではなく「資料」に変更(旧動画のキーワードと分離)。",
+  "title": "資料、読まずに終わらせるAIプロンプトBEST3",
+  "caption": "資料、頭から読んでいませんか。読まずに終わらせるプロンプトが3つあります。1位は、会議で聞かれそうな質問まで先回りしてくれます。使い方とコツを、LINEでまとめてお届けします。「資料」と送ってください。\n※個人の見解です\n#AI活用 #ChatGPT #プロンプト #仕事術 #資料",
+  "account": "仕事が消えるAI帳",
+  "speakingRate": 1.15,
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "資料、頭から読むのは、もう終わりにしませんか。",
+      "telop": "**資料**、頭から読むのは終わり",
+      "bg": ["nb_books", "own_docs_stack"]
+    },
+    {
+      "role": "hook",
+      "narration": "1位は、会議で聞かれそうな質問まで、先に出してくれることです。",
+      "telop": "1位は**聞かれる質問**まで先回り",
+      "bg": ["nb_board", "jp_office_tower"]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "数字だけ抜き出し",
+      "narration": "第3位、数字だけの抜き出し。この一文を、そのまま入力します。",
+      "telop": "「この資料の数字だけ抜き出して」",
+      "bg": ["nb_chart", "own_desk_clean"]
+    },
+    {
+      "role": "body",
+      "narration": "売上や日付など、必要な数字だけを拾ってくれます。",
+      "telop": "→**必要な数字**だけ拾ってくれる",
+      "bg": ["nb_digital", "own_typing"]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "知りたい所だけ質問",
+      "narration": "第2位、知りたい部分だけの質問。この一文です。",
+      "telop": "「価格について書いてある部分だけ教えて」",
+      "bg": ["nb_notes", "jp_laptop_f1"]
+    },
+    {
+      "role": "body",
+      "narration": "資料全体を読まなくても、必要な部分だけ答えてくれます。",
+      "telop": "→**必要な部分**だけ答えてくれる",
+      "bg": ["own_pen_write", "nb_desk"]
+    },
+    {
+      "role": "save",
+      "narration": "1位は、一番後回しにしがちな会議準備に効きます。保存推奨。",
+      "telop": "1位は**会議準備**に",
+      "bg": ["own_forest_trail", "nb_particles"]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "質問を先読み",
+      "narration": "第1位、会議で聞かれる質問の先読み。この一文です。",
+      "telop": "「この資料から、\n会議の想定質問を3つ作って」",
+      "bg": ["own_desk_timelapse", "nb_rain"]
+    },
+    {
+      "role": "body",
+      "narration": "資料を読み込む代わりに、聞かれる側の準備が先にできます。",
+      "telop": "→**聞かれる準備**が先にできる",
+      "bg": ["jp_laptop_m1", "nb_digital"]
+    },
+    {
+      "role": "cta",
+      "narration": "使い方とコツを、LINEでまとめてお届けします。「資料」と送ってください。",
+      "telop": "LINEで「資料」→\n**使い方+コツ**をお届け",
+      "bg": ["own_sunflower2", "jp_city_dusk"]
+    }
+  ],
+  "bgm": "bgm/for_our_friends.mp3"
+}

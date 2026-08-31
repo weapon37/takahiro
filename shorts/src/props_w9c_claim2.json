@@ -1,0 +1,165 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_beach_cocktail.mp3",
+  "bgmVolume": 0.1,
+  "toolLabel": "",
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "クレーム対応、**謝るだけ**が正解とは限らない",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_clean.mp4",
+        "bg/nb_phone.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9c_claim2/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 103
+    },
+    {
+      "role": "hook",
+      "telop": "1位は**非がない指摘**にも角を立てず",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/nb_night.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9c_claim2/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 147
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "上司への報告文",
+      "telop": "「このクレームを、\n上司への報告文にして」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4",
+        "bg/nb_cash.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9c_claim2/03.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 193
+    },
+    {
+      "role": "body",
+      "telop": "→**経緯と要点**を整理した報告に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_messy.mp4",
+        "bg/nb_notes.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9c_claim2/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 133
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "再発防止策の返信",
+      "telop": "「再発防止策を含めた返信文にして」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_phone.mp4",
+        "bg/own_coffee_cup.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9c_claim2/05.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 151
+    },
+    {
+      "role": "body",
+      "telop": "→**対応の姿勢**まで伝わる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_street.mp4",
+        "bg/nb_walk.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9c_claim2/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 103
+    },
+    {
+      "role": "save",
+      "telop": "1位は**一番言い返しづらい**場面に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_pen_write.mp4",
+        "bg/nb_particles.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9c_claim2/07.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 144
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "事実を伝える訂正",
+      "telop": "「事実と違う指摘に、\n角を立てず訂正して」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_desk_m1.mp4",
+        "bg/nb_rain.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9c_claim2/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 147
+    },
+    {
+      "role": "body",
+      "telop": "→**事実だけ**を丁寧に伝えられる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/nb_digital.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9c_claim2/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 111
+    },
+    {
+      "role": "cta",
+      "telop": "LINEで「反論」→\n**使い方+コツ**をお届け",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_lotus_field.mp4",
+        "bg/jp_city_dusk.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9c_claim2/10.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 140
+    }
+  ]
+}

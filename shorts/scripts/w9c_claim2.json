@@ -1,0 +1,77 @@
+{
+  "template": "RankingVideo",
+  "_note": "Week9-3。w6c_claim(クレーム対応・142views/day)の再挑戦。同一動画の重複を避けるため、「謝罪」ではなく「非がない指摘への訂正・反論」の切り口に変更。BEST3型(元が成功した構造)を維持。LINEキーワードは「クレーム」ではなく「反論」に変更(旧動画のキーワードと分離)。",
+  "title": "クレーム対応、謝るだけじゃない伝え方BEST3",
+  "caption": "クレーム対応、謝るだけになっていませんか。事実を伝えるプロンプトも3つあります。1位は、こちらに非がない指摘にも、角を立てずに返信できます。使い方とコツを、LINEでまとめてお届けします。「反論」と送ってください。\n※個人の見解です\n#AI活用 #ChatGPT #プロンプト #仕事術 #クレーム対応",
+  "account": "仕事が消えるAI帳",
+  "speakingRate": 1.18,
+  "sentences": [
+    {
+      "role": "hook",
+      "narration": "クレーム対応、謝るだけが正解とは限りません。",
+      "telop": "クレーム対応、**謝るだけ**が正解とは限らない",
+      "bg": ["own_desk_clean", "nb_phone"]
+    },
+    {
+      "role": "hook",
+      "narration": "1位は、こちらに非がない指摘にも、角を立てずに返信できることです。",
+      "telop": "1位は**非がない指摘**にも角を立てず",
+      "bg": ["own_typing", "nb_night"]
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "上司への報告文",
+      "narration": "第3位、クレーム内容を上司に報告する文。この一文を、そのまま入力します。",
+      "telop": "「このクレームを、\n上司への報告文にして」",
+      "bg": ["own_docs_stack", "nb_cash"]
+    },
+    {
+      "role": "body",
+      "narration": "経緯と要点を整理した、簡潔な報告文になります。",
+      "telop": "→**経緯と要点**を整理した報告に",
+      "bg": ["own_desk_messy", "nb_notes"]
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "再発防止策の返信",
+      "narration": "第2位、再発防止策を求められた返信。この一文です。",
+      "telop": "「再発防止策を含めた返信文にして」",
+      "bg": ["nb_phone", "own_coffee_cup"]
+    },
+    {
+      "role": "body",
+      "narration": "対応の姿勢まで伝わる、誠実な返信になります。",
+      "telop": "→**対応の姿勢**まで伝わる",
+      "bg": ["own_street", "nb_walk"]
+    },
+    {
+      "role": "save",
+      "narration": "1位は、一番言い返しづらい場面で効きます。保存推奨。",
+      "telop": "1位は**一番言い返しづらい**場面に",
+      "bg": ["own_pen_write", "nb_particles"]
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "事実を伝える訂正",
+      "narration": "第1位、事実と違う指摘への訂正。この一文です。",
+      "telop": "「事実と違う指摘に、\n角を立てず訂正して」",
+      "bg": ["jp_desk_m1", "nb_rain"]
+    },
+    {
+      "role": "body",
+      "narration": "感情的にならず、事実だけを丁寧に伝えられます。",
+      "telop": "→**事実だけ**を丁寧に伝えられる",
+      "bg": ["own_typing", "nb_digital"]
+    },
+    {
+      "role": "cta",
+      "narration": "使い方とコツを、LINEでまとめてお届けします。「反論」と送ってください。",
+      "telop": "LINEで「反論」→\n**使い方+コツ**をお届け",
+      "bg": ["own_lotus_field", "jp_city_dusk"]
+    }
+  ],
+  "bgm": "bgm/dova_beach_cocktail.mp3"
+}

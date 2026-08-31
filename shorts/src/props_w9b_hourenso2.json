@@ -1,0 +1,100 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/pawn.mp3",
+  "bgmVolume": 0.1,
+  "toolLabel": "",
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "上司と**意見が違う**時、報連相が止まる",
+      "kicker": "おすすめAIプロンプト",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/nb_morning.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9b_hourenso2/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 155
+    },
+    {
+      "role": "hook",
+      "telop": "「承知しました」**だけ**では、あとで響く",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_phone_tap.mp4",
+        "bg/nb_night.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9b_hourenso2/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 273
+    },
+    {
+      "role": "body",
+      "telop": "反対意見ほど、\n実は**順番**がある",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4",
+        "bg/nb_walk.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9b_hourenso2/03.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 171
+    },
+    {
+      "role": "body",
+      "telop": "**AIに一文**渡すだけでいい",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_digital.mp4",
+        "bg/own_coffee_cup.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9b_hourenso2/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 181
+    },
+    {
+      "role": "body",
+      "telop": "「A案に賛成ですが、\nB案のリスクも気になっています」→\n**角が立たない**意見に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_desk_m1.mp4",
+        "bg/nb_rain.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9b_hourenso2/05.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 319
+    },
+    {
+      "role": "cta",
+      "telop": "LINEで「意見」→\n**使い方+コツ**をお届け",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_flowers_garden.mp4",
+        "bg/jp_shinjuku_neon.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9b_hourenso2/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 166
+    }
+  ]
+}

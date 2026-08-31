@@ -1,0 +1,165 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/for_our_friends.mp3",
+  "bgmVolume": 0.1,
+  "toolLabel": "",
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**資料**、頭から読むのは終わり",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_books.mp4",
+        "bg/own_docs_stack.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9a_youyaku2/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 105
+    },
+    {
+      "role": "hook",
+      "telop": "1位は**聞かれる質問**まで先回り",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_board.mp4",
+        "bg/jp_office_tower.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9a_youyaku2/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 138
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "数字だけ抜き出し",
+      "telop": "「この資料の数字だけ抜き出して」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_chart.mp4",
+        "bg/own_desk_clean.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9a_youyaku2/03.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 156
+    },
+    {
+      "role": "body",
+      "telop": "→**必要な数字**だけ拾ってくれる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_digital.mp4",
+        "bg/own_typing.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9a_youyaku2/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 127
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "知りたい所だけ質問",
+      "telop": "「価格について書いてある部分だけ教えて」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_notes.mp4",
+        "bg/jp_laptop_f1.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9a_youyaku2/05.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 131
+    },
+    {
+      "role": "body",
+      "telop": "→**必要な部分**だけ答えてくれる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_pen_write.mp4",
+        "bg/nb_desk.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9a_youyaku2/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 131
+    },
+    {
+      "role": "save",
+      "telop": "1位は**会議準備**に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_forest_trail.mp4",
+        "bg/nb_particles.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9a_youyaku2/07.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 164
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "質問を先読み",
+      "telop": "「この資料から、\n会議の想定質問を3つ作って」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_timelapse.mp4",
+        "bg/nb_rain.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9a_youyaku2/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 144
+    },
+    {
+      "role": "body",
+      "telop": "→**聞かれる準備**が先にできる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_laptop_m1.mp4",
+        "bg/nb_digital.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9a_youyaku2/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 129
+    },
+    {
+      "role": "cta",
+      "telop": "LINEで「資料」→\n**使い方+コツ**をお届け",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_sunflower2.mp4",
+        "bg/jp_city_dusk.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9a_youyaku2/10.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 144
+    }
+  ]
+}
