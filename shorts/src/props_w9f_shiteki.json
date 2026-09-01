@@ -1,0 +1,165 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_ensolarado.mp3",
+  "bgmVolume": 0.1,
+  "toolLabel": "",
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**後輩への注意**、きつく聞こえないか悩む",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_team.mp4",
+        "bg/own_desk_clean.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9f_shiteki/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 121
+    },
+    {
+      "role": "hook",
+      "telop": "1位は**関係が悪くならない**伝え方に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/nb_night.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9f_shiteki/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 158
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "ミスの指摘",
+      "telop": "「このミスの指摘を、\n責めない言い方にして」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4",
+        "bg/nb_desk.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9f_shiteki/03.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 154
+    },
+    {
+      "role": "body",
+      "telop": "→**事実だけ**を伝える冷静な指摘に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_pen_write.mp4",
+        "bg/nb_notes.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9f_shiteki/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 108
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "改善を促す一言",
+      "telop": "「改善してほしい点を、\n期待を込めた言い方にして」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_phone.mp4",
+        "bg/own_coffee_cup.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9f_shiteki/05.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 125
+    },
+    {
+      "role": "body",
+      "telop": "→否定でなく**期待**として伝わる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_street.mp4",
+        "bg/nb_walk.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9f_shiteki/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 100
+    },
+    {
+      "role": "save",
+      "telop": "1位は**繰り返しのミス**に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_forest_trail.mp4",
+        "bg/nb_particles.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9f_shiteki/07.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 166
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "関係を壊さない指摘",
+      "telop": "「指摘しつつ、\n関係が悪くならない伝え方にして」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_desk_m1.mp4",
+        "bg/nb_rain.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9f_shiteki/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 152
+    },
+    {
+      "role": "body",
+      "telop": "→伝えつつ**信頼関係**も保てる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/nb_digital.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9f_shiteki/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 112
+    },
+    {
+      "role": "cta",
+      "telop": "LINEで「指摘」→\n**使い方+コツ**をお届け",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_canal.mp4",
+        "bg/jp_city_dusk.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9f_shiteki/10.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 141
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/farm_country.mp3",
+  "bgmVolume": 0.1,
+  "toolLabel": "",
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**退職**、切り出す言葉が見つからない",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_clean.mp4",
+        "bg/nb_night.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9e_taishoku/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 87
+    },
+    {
+      "role": "hook",
+      "telop": "1位は**円満に伝わる**切り出し文に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/nb_rain.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9e_taishoku/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 136
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "相談の切り出し",
+      "telop": "「退職を考えていることを、\n相談する形で伝える文にして」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4",
+        "bg/nb_desk.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9e_taishoku/03.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 176
+    },
+    {
+      "role": "body",
+      "telop": "→**相談から**入れる言い方に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_pen_write.mp4",
+        "bg/nb_notes.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9e_taishoku/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 127
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "引き止めへの返答",
+      "telop": "「引き止められても、\n意思が変わらないことを伝える文にして」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_phone.mp4",
+        "bg/own_coffee_cup.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9e_taishoku/05.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 129
+    },
+    {
+      "role": "body",
+      "telop": "→強い言葉なしで**意思のかたさ**が伝わる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_street.mp4",
+        "bg/nb_walk.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9e_taishoku/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 112
+    },
+    {
+      "role": "save",
+      "telop": "1位は**最初の一言**に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_forest_trail.mp4",
+        "bg/nb_particles.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9e_taishoku/07.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 160
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "退職の切り出し文",
+      "telop": "「円満に退職を伝える切り出し文にして」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_desk_m1.mp4",
+        "bg/nb_morning.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9e_taishoku/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 144
+    },
+    {
+      "role": "body",
+      "telop": "→**感謝と意思**の両方が伝わる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/nb_digital.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9e_taishoku/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 112
+    },
+    {
+      "role": "cta",
+      "telop": "LINEで「退職」→\n**使い方+コツ**をお届け",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_fuji_road.mp4",
+        "bg/jp_dusk_road.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9e_taishoku/10.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 144
+    }
+  ]
+}

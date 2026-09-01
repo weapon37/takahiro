@@ -1,0 +1,165 @@
+{
+  "account": "仕事が消えるAI帳",
+  "bgm": "bgm/dova_cafe_rain.mp3",
+  "bgmVolume": 0.1,
+  "toolLabel": "",
+  "whoosh": "se/whoosh.wav",
+  "scenes": [
+    {
+      "role": "hook",
+      "telop": "**週報**、まとめるだけで時間が溶ける",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_clean.mp4",
+        "bg/nb_clock.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9d_shuhou/01.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 108
+    },
+    {
+      "role": "hook",
+      "telop": "1位は**メモを渡すだけ**で週報に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_docs_stack.mp4",
+        "bg/nb_notes.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9d_shuhou/02.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 158
+    },
+    {
+      "role": "rank",
+      "rank": 3,
+      "headline": "先週との比較",
+      "telop": "「先週と比べて、\n進捗が良い点と悪い点を整理して」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/nb_chart.mp4",
+        "bg/own_desk_messy.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9d_shuhou/03.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 156
+    },
+    {
+      "role": "body",
+      "telop": "→比べるだけで**成果が伝わる**",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_typing.mp4",
+        "bg/nb_digital.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9d_shuhou/04.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 97
+    },
+    {
+      "role": "rank",
+      "rank": 2,
+      "headline": "来週の予定整理",
+      "telop": "「来週の予定も箇条書きで整理して」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/calendar.mp4",
+        "bg/nb_board.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9d_shuhou/05.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 116
+    },
+    {
+      "role": "body",
+      "telop": "→**抜け漏れなく**動きが整理できる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_pen_write.mp4",
+        "bg/nb_desk.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9d_shuhou/06.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 108
+    },
+    {
+      "role": "save",
+      "telop": "1位は**週末の作業**に",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_forest_trail.mp4",
+        "bg/nb_particles.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9d_shuhou/07.wav",
+      "eraseIn": true,
+      "playWhoosh": false,
+      "durationInFrames": 177
+    },
+    {
+      "role": "rank",
+      "rank": 1,
+      "headline": "メモから週報化",
+      "telop": "「今週のメモをそのまま週報にして」",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_desk_timelapse.mp4",
+        "bg/nb_rain.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9d_shuhou/08.wav",
+      "eraseIn": true,
+      "playWhoosh": true,
+      "durationInFrames": 143
+    },
+    {
+      "role": "body",
+      "telop": "→**フォーマルな形**に整えてくれる",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/jp_laptop_m1.mp4",
+        "bg/nb_digital.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9d_shuhou/09.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 137
+    },
+    {
+      "role": "cta",
+      "telop": "LINEで「週報」→\n**使い方+コツ**をお届け",
+      "bgVideo": null,
+      "bgClips": [
+        "bg/own_suburb_sky.mp4",
+        "bg/jp_dusk_road.mp4"
+      ],
+      "bgSync": true,
+      "bgWash": 0,
+      "audio": "audio_w9d_shuhou/10.wav",
+      "eraseIn": false,
+      "playWhoosh": false,
+      "durationInFrames": 145
+    }
+  ]
+}
