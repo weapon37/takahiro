@@ -201,6 +201,11 @@ node tools/build_props_portfolio.mjs scripts/portfolio_master.json src/props_por
 # 2. 書き出し
 npx remotion render src/index.ts PortfolioVideo out/portfolio_master.mp4 --props=src/props_portfolio.json --codec=h264
 
+# HP埋め込み用に軽量化(70MB → 15MB程度。Remotion同梱のffmpegを使う)
+node_modules/@remotion/compositor-linux-x64-gnu/ffmpeg -i out/portfolio_master.mp4 \
+  -c:v libx264 -crf 25 -preset veryfast -pix_fmt yuv420p -movflags +faststart \
+  out/portfolio_master_web.mp4
+
 # ナレーションを付ける場合(音声を作ってから props を作り直す)
 .venv/bin/python tools/make_voice_google.py scripts/portfolio_master.json public/audio_portfolio
 node tools/build_props_portfolio.mjs scripts/portfolio_master.json src/props_portfolio.json audio_portfolio
