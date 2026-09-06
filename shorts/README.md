@@ -221,7 +221,9 @@ node tools/build_props_portfolio.mjs scripts/portfolio_master.json src/props_por
 - 見出し・テロップの `**単語**` はオレンジ強調(縦型テンプレの黄マーカーとは別)
 - 尺は各シーンの `sec`(秒)。音声を付けた場合はwavの実長が優先され、`sec` は下限として効く
 - 合計60秒を超えるとビルダーが警告を出す
-- 書体は Noto Sans JP(`public/fonts/NotoSansJP-*.ttf` を同梱・自動読み込み。システムへのインストール不要)
+- 書体は Noto Sans JP(`public/fonts/NotoSansJP-*.ttf`)。**初回だけシステムにインストールが必要**
+  (Mac/Windows はダブルクリックで「インストール」、Linux は
+  `cp public/fonts/*.ttf ~/.fonts/ && fc-cache -f`)
 - 色は `src/portfolio_brand.ts`(黒×白×朝焼けオレンジ)
 
 ### 台本

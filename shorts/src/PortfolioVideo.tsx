@@ -3,15 +3,12 @@ import {
   AbsoluteFill,
   Audio,
   Sequence,
-  continueRender,
-  delayRender,
   interpolate,
   spring,
   staticFile,
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
-import {loadFont} from '@remotion/fonts';
 import {CutBg, parseTelop} from './common';
 import {PF, pfFont} from './portfolio_brand';
 
@@ -21,24 +18,9 @@ import {PF, pfFont} from './portfolio_brand';
 //       → stat(数字) → quote(信条) → contact(連絡先)
 // テロップの **単語** はオレンジ強調になる(マーカーではなく文字色)。
 
-// 5MBのTTFを2つ読むため、既定の28秒だと同時レンダリング中にタイムアウトすることがある
-const fontHandle = delayRender('Noto Sans JP の読み込み', {timeoutInMilliseconds: 120000});
-Promise.all([
-  loadFont({
-    family: 'Noto Sans JP',
-    url: staticFile('fonts/NotoSansJP-Medium.ttf'),
-    weight: '500',
-    format: 'truetype',
-  }),
-  loadFont({
-    family: 'Noto Sans JP',
-    url: staticFile('fonts/NotoSansJP-Black.ttf'),
-    weight: '900',
-    format: 'truetype',
-  }),
-])
-  .then(() => continueRender(fontHandle))
-  .catch(() => continueRender(fontHandle)); // 失敗時はフォールバック書体で続行
+// 書体は Noto Sans JP。public/fonts/NotoSansJP-*.ttf をシステムにインストールして使う
+// (縦型テンプレの Zen Maru Gothic と同じ運用。@remotion/fonts での読み込みは
+//  5MB×2のTTFがレンダリング中にロード完了せずタイムアウトしたため使わない)
 
 export type PortfolioScene = {
   role: 'title' | 'caption' | 'works' | 'spec' | 'stat' | 'quote' | 'contact';
