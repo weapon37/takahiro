@@ -3,10 +3,12 @@ import {ShortVideo, ShortVideoProps} from './ShortVideo';
 import {RankingVideo, RankingVideoProps} from './RankingVideo';
 import {ContrarianVideo, ContrarianVideoProps} from './ContrarianVideo';
 import {StoryVideo, StoryVideoProps} from './StoryVideo';
+import {PortfolioVideo, PortfolioVideoProps} from './PortfolioVideo';
 import defaultProps from './props.json';
 import rankingProps from './props_ranking.json';
 import contraProps from './props_contra.json';
 import storyProps from './props_story.json';
+import portfolioProps from './props_portfolio.json';
 
 const FPS = 30;
 
@@ -54,6 +56,17 @@ export const RemotionRoot: React.FC = () => {
         height={1920}
         durationInFrames={300}
         defaultProps={storyProps as StoryVideoProps}
+        calculateMetadata={({props}) => ({durationInFrames: byTotal(props.scenes)})}
+      />
+      {/* 🎥営業用ポートフォリオだけ横型(1920x1080)。HP掲載・商談用 */}
+      <Composition
+        id="PortfolioVideo"
+        component={PortfolioVideo}
+        fps={FPS}
+        width={1920}
+        height={1080}
+        durationInFrames={300}
+        defaultProps={portfolioProps as PortfolioVideoProps}
         calculateMetadata={({props}) => ({durationInFrames: byTotal(props.scenes)})}
       />
     </>

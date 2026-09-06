@@ -1,0 +1,69 @@
+{
+  "title": "番組ごとの実績動画テンプレ(◯◯を埋めて使う)",
+  "template": "PortfolioVideo",
+  "account": "OUTDOOR MOVIE CAMERAMAN",
+  "subtitle": "MOUNTAIN / MARATHON / DRONE",
+  "_note": "⚠ ◯◯は必ず実データに差し替えること(推測で埋めない)。公開前チェック: ①番組名・放送局名を出してよいか(権利元・守秘義務の確認) ②使用する映像素材の使用許諾 ③数字は実測値か。差し替え後にファイル名を portfolio_<番組名ローマ字>.json にコピーして使う。",
+  "sentences": [
+    {
+      "role": "title",
+      "sec": 5,
+      "sub": "◯◯（放送局）  ◯◯年◯月放送",
+      "headline": "◯◯◯◯\n（番組名）",
+      "telop": "担当：◯◯（例：山岳ロケ撮影／並走撮影／ドローン空撮）",
+      "narration": "◯◯年◯月に放送された、◯◯の◯◯です。",
+      "bgClips": ["bg_wide/ridge_sunrise.mp4"]
+    },
+    {
+      "role": "caption",
+      "sec": 5,
+      "sub": "撮影内容",
+      "headline": "◯◯◯◯を、\n**◯◯で撮影**",
+      "telop": "◯◯（ロケ地・区間・標高など、事実のみ）",
+      "narration": "◯◯を◯◯で撮影しました。",
+      "bgClips": ["bg_wide/mountain_hike.mp4", "bg_wide/forest_trail.mp4"]
+    },
+    {
+      "role": "stat",
+      "sec": 4.5,
+      "sub": "撮影データ",
+      "stat": {"value": "◯◯", "label": "◯◯（例：撮影日数／登った標高差／並走距離）"},
+      "narration": "撮影は、◯◯でした。",
+      "bgClips": ["bg_wide/snow_mountain.mp4"]
+    },
+    {
+      "role": "spec",
+      "sec": 8,
+      "sub": "担当した範囲",
+      "specs": [
+        {"label": "◯◯", "desc": "◯◯（担当した工程。例：本編ロケ撮影・カメラ2台運用）"},
+        {"label": "◯◯", "desc": "◯◯（使用機材。例：業務用ビデオカメラ＋ジンバル）"},
+        {"label": "◯◯", "desc": "◯◯（現場条件。例：気温−◯℃／雨天／稜線の強風）"}
+      ],
+      "narration": "担当したのは、◯◯、◯◯、◯◯です。",
+      "bgClips": ["bg_wide/camera_operator.mp4"]
+    },
+    {
+      "role": "quote",
+      "sec": 5,
+      "quote": "◯◯◯◯◯◯\n**◯◯◯◯**",
+      "narration": "◯◯。",
+      "bgClips": ["bg_wide/ridge_sunrise.mp4"]
+    },
+    {
+      "role": "contact",
+      "sec": 5.5,
+      "contact": {
+        "name": "上杉 隆寛",
+        "role": "OUTDOOR MOVIE CAMERAMAN",
+        "url": "www.trailmotion.jp",
+        "mail": "info@tacchi-outdoor.com"
+      },
+      "telop": "撮影のご相談・お見積りはHPまたはメールから",
+      "narration": "撮影のご相談・お見積りは、ホームページまたはメールからお願いします。",
+      "bgClips": ["bg_wide/ridge_sunrise.mp4"]
+    }
+  ],
+  "bgm": "",
+  "bgmVolume": 0.1
+}

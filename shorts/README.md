@@ -187,3 +187,59 @@ YouTube Audio Library や DOVA-SYNDROME で選んだ曲を
 - 音声合成:Open JTalk + MMDAgent「メイ」(名古屋工業大学・CC BY 3.0)
   → 概要欄に「音声合成:Open JTalk/MMDAgent(名工大)」と記載してください
 - フォント:Zen Maru Gothic(SIL Open Font License)
+
+## 🎥営業用ポートフォリオ(横1920x1080・HP掲載/商談用)
+
+SNS用の縦型3テンプレとは別系統の**横型**テンプレ(`PortfolioVideo`)。
+撮影実績を紹介する営業用で、無音(テロップ主体)でも成立するよう作ってある
+(HP埋め込みはミュート自動再生になることが多いため)。
+
+```bash
+# 1. props生成(音声なし・尺は台本の "sec" で決まる)
+node tools/build_props_portfolio.mjs scripts/portfolio_master.json src/props_portfolio.json
+
+# 2. 書き出し
+npx remotion render src/index.ts PortfolioVideo out/portfolio_master.mp4 --props=src/props_portfolio.json --codec=h264
+
+# ナレーションを付ける場合(音声を作ってから props を作り直す)
+.venv/bin/python tools/make_voice_google.py scripts/portfolio_master.json public/audio_portfolio
+node tools/build_props_portfolio.mjs scripts/portfolio_master.json src/props_portfolio.json audio_portfolio
+```
+
+台本の各シーンは `role` で演出が切り替わる:
+
+| role | 演出 | 主なフィールド |
+|------|------|------|
+| `title` | 冒頭の名乗り(特大見出し) | `sub` / `headline` / `telop` |
+| `caption` | 領域紹介(大見出し+下部テロップ) | `sub` / `headline` / `telop` |
+| `works` | 実績リスト(1行ずつ立ち上がる) | `items` |
+| `spec` | 対応内容カード3枚(料金入り) | `specs: [{label, desc, price}]` |
+| `stat` | 数字ドン | `stat: {value, label}` |
+| `quote` | 信条を1文(中央) | `quote` |
+| `contact` | 締めの連絡先(中央) | `contact: {name, role, url, mail, tel, line}` |
+
+- 見出し・テロップの `**単語**` はオレンジ強調(縦型テンプレの黄マーカーとは別)
+- 尺は各シーンの `sec`(秒)。音声を付けた場合はwavの実長が優先され、`sec` は下限として効く
+- 合計60秒を超えるとビルダーが警告を出す
+- 書体は Noto Sans JP(`public/fonts/NotoSansJP-*.ttf` を同梱・自動読み込み。システムへのインストール不要)
+- 色は `src/portfolio_brand.ts`(黒×白×朝焼けオレンジ)
+
+### 台本
+
+| 台本 | 用途 |
+|------|------|
+| `scripts/portfolio_master.json` | 総合版(51秒)。実績・対応内容・料金・連絡先まで一本で見せる |
+| `scripts/portfolio_TEMPLATE.json` | 番組ごとの雛形(33秒)。`◯◯` を実データに差し替えて `portfolio_<番組名>.json` として使う |
+
+### 背景素材
+
+- `public/bg_wide/` … 横型用の**仮素材**(Pexels)。本人の撮影素材が届いたら差し替える前提
+- 取得: `PEXELS_API_KEY=xxxx python3 tools/fetch_bg_wide.py "trail running" trail_run.mp4`
+- 台本の `"bgClips": ["bg_wide/xxx.mp4", ...]` で2〜3本指定(約1.7秒ごとにカットが切り替わる)
+
+### 公開前チェック
+
+- 番組名・放送局名を出してよいか(権利元・守秘義務)
+- 使う映像素材の使用許諾(放送素材はそのまま使えないことが多い)
+- 数字は実測値か(`◯◯` が残っていないか)
+- 料金・連絡先が最新か

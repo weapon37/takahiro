@@ -1,0 +1,103 @@
+{
+  "title": "撮影実績ポートフォリオ(総合版・横1920x1080)",
+  "template": "PortfolioVideo",
+  "account": "OUTDOOR MOVIE CAMERAMAN",
+  "subtitle": "MOUNTAIN / MARATHON / DRONE",
+  "_note": "⚠ 本文の事実(番組名・料金・機材・連絡先)は本人HP https://www.trailmotion.jp/ の掲載内容に基づく。◯の入ったstatは実測値に差し替えてから書き出すこと。番組名の掲載可否(権利元・守秘義務)は公開前に要確認。背景は bg_wide/ の仮素材のため、本人の撮影素材に差し替える前提。",
+  "sentences": [
+    {
+      "role": "title",
+      "sec": 5,
+      "sub": "PORTFOLIO｜撮影実績",
+      "headline": "限界を超え、\nリアルを撮る",
+      "telop": "山岳・マラソン並走・ドローン撮影／上杉 隆寛",
+      "narration": "限界を超え、リアルを撮る。アウトドア専門の撮影カメラマン、うえすぎ たかひろです。",
+      "bgClips": ["bg_wide/ridge_sunrise.mp4", "bg_wide/mountain_hike.mp4"]
+    },
+    {
+      "role": "caption",
+      "sec": 5,
+      "sub": "FIELD 01  山岳ロケ",
+      "headline": "標高差も、悪天候も。\n**山に入って撮る**",
+      "telop": "登山・山岳ロケ撮影",
+      "narration": "ひとつめは、登山・山岳ロケの撮影。機材を背負って、撮影者自身が山に入ります。",
+      "bgClips": ["bg_wide/mountain_hike.mp4", "bg_wide/forest_trail.mp4", "bg_wide/snow_mountain.mp4"]
+    },
+    {
+      "role": "caption",
+      "sec": 5,
+      "sub": "FIELD 02  並走撮影",
+      "headline": "走りながら、\n**止めずに撮る**",
+      "telop": "マラソン・並走撮影（東京マラソン／24時間テレビマラソン／熊本城マラソン）",
+      "narration": "ふたつめは、マラソンの並走撮影。選手と同じスピードで走りながら、カメラを止めずに撮り続けます。",
+      "bgClips": ["bg_wide/marathon_runners.mp4", "bg_wide/trail_running.mp4"]
+    },
+    {
+      "role": "caption",
+      "sec": 5,
+      "sub": "FIELD 03  空撮",
+      "headline": "上から、\n**山の全景を撮る**",
+      "telop": "ドローン撮影／業務用ビデオカメラ・Canonレンズ・ショットガンマイク・ジンバル・ドローン",
+      "narration": "みっつめは、ドローンによる空撮。地上と空、両方の画をワンチームで用意できます。",
+      "bgClips": ["bg_wide/drone_mountain.mp4", "bg_wide/ridge_sunrise.mp4"]
+    },
+    {
+      "role": "works",
+      "sec": 8,
+      "sub": "主な撮影実績",
+      "items": [
+        "NHK「百低山」",
+        "BSフジ「百名山」",
+        "テレビ朝日「ザワつく・富士山企画」",
+        "東京マラソン／24時間テレビマラソン",
+        "熊本城マラソン",
+        "「逃走中」"
+      ],
+      "narration": "これまでの主な撮影実績です。エヌエイチケー、百低山。ビーエスフジ、百名山。テレビ朝日、ザワつくの富士山企画。東京マラソン、24時間テレビマラソン、熊本城マラソン、逃走中。",
+      "bgClips": ["bg_wide/camera_operator.mp4", "bg_wide/mountain_hike.mp4"]
+    },
+    {
+      "role": "spec",
+      "sec": 8,
+      "sub": "対応内容と料金",
+      "specs": [
+        {"label": "登山・山岳ロケ", "desc": "日帰り〜縦走の同行撮影。機材はすべて自分で背負って入山。", "price": "40,000円〜／日"},
+        {"label": "マラソン・並走", "desc": "選手と並走しながらの撮影。大会・ドキュメンタリー対応。", "price": "45,000円〜／日"},
+        {"label": "ドローン空撮", "desc": "山岳・フィールドでの空撮。地上撮影との組み合わせも可。", "price": "50,000円〜／日"}
+      ],
+      "narration": "対応内容と料金です。登山・山岳ロケは1日4万円から。マラソンの並走撮影は4万5千円から。ドローン空撮は5万円からお受けしています。",
+      "bgClips": ["bg_wide/forest_trail.mp4", "bg_wide/camera_operator.mp4"]
+    },
+    {
+      "role": "stat",
+      "sec": 4.5,
+      "sub": "実績",
+      "stat": {"value": "◯◯本", "label": "番組・大会での撮影本数（◯◯年〜）"},
+      "telop": "※ここは実測値に差し替えてください",
+      "narration": "これまでに、まるまる本の撮影に関わってきました。",
+      "bgClips": ["bg_wide/snow_mountain.mp4", "bg_wide/marathon_runners.mp4"]
+    },
+    {
+      "role": "quote",
+      "sec": 5,
+      "quote": "どんな極限状態でも、\n**絶対に撮影を止めない。**",
+      "narration": "どんな極限状態でも、絶対に撮影を止めない。それが、僕の仕事です。",
+      "bgClips": ["bg_wide/snow_mountain.mp4", "bg_wide/ridge_sunrise.mp4"]
+    },
+    {
+      "role": "contact",
+      "sec": 5.5,
+      "contact": {
+        "name": "上杉 隆寛",
+        "role": "OUTDOOR MOVIE CAMERAMAN",
+        "url": "www.trailmotion.jp",
+        "mail": "info@tacchi-outdoor.com"
+      },
+      "telop": "撮影のご相談・お見積りはHPまたはメールから",
+      "narration": "撮影のご相談・お見積りは、ホームページまたはメールからお願いします。",
+      "bgClips": ["bg_wide/ridge_sunrise.mp4"]
+    }
+  ],
+  "bgm": "",
+  "bgmVolume": 0.1
+}
