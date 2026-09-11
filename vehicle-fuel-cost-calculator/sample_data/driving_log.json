@@ -1,0 +1,12 @@
+{
+  "sheet": "2026.8",
+  "entries": [
+    {"day": 1, "end_km": 45228, "distance_km": 18, "driver": "A", "note": "通勤"},
+    {"day": 2, "end_km": 45228, "distance_km": 0, "driver": "A", "note": ""},
+    {"day": 3, "end_km": 45278, "distance_km": 50, "driver": "AB", "note": "買い物・実家"},
+    {"day": 4, "end_km": 45278, "distance_km": 0, "driver": "A", "note": ""},
+    {"day": 5, "end_km": 45303, "distance_km": 25, "driver": "B", "note": "通院"},
+    {"day": 6, "end_km": 45303, "distance_km": 0, "driver": "A", "note": ""},
+    {"day": 7, "end_km": 45358, "distance_km": 55, "driver": "AB", "note": "遠出"}
+  ]
+}
