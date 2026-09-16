@@ -4,6 +4,6 @@
     {"day": 6, "end_km": 25646, "distance_km": 18, "driver": "A", "note": ""},
     {"day": 10, "end_km": 25977, "distance_km": 331, "driver": "A", "note": "出張(山中湖・川崎鶴見)"},
     {"day": 11, "end_km": 25986, "distance_km": 9, "driver": "AB", "note": ""},
-    {"day": 16, "end_km": 26499, "distance_km": 513, "driver": "AB", "note": ""}
+    {"day": 16, "end_km": 26499, "distance_km": 513, "driver": "AB", "note": "帰郷(柏崎)"}
   ]
 }
