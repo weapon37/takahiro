@@ -6,6 +6,7 @@
     {"day": 11, "end_km": 25986, "distance_km": 9, "driver": "AB", "note": ""},
     {"day": 16, "end_km": 26499, "distance_km": 513, "driver": "AB", "note": "帰郷(柏崎)"},
     {"day": 20, "end_km": 26528, "distance_km": 29, "driver": "A", "note": ""},
-    {"day": 25, "end_km": 26566, "distance_km": 38, "driver": "AB", "note": ""}
+    {"day": 25, "end_km": 26566, "distance_km": 38, "driver": "AB", "note": ""},
+    {"day": 30, "end_km": 26629, "distance_km": 63, "driver": "A", "note": ""}
   ]
 }
