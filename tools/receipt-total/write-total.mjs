@@ -26,14 +26,28 @@
  *   node tools/receipt-total/write-total.mjs --sheet 2026-09 --create-sheet
  *   node tools/receipt-total/write-total.mjs --sheet 2026-09 --create-sheet --template 原本（改）
  *
+ *   # テンプレートを複製せず、空のシートを先頭に作る (集計シート用)
+ *   node tools/receipt-total/write-total.mjs --sheet 年間サマリー --create-sheet --blank
+ *
+ *   # 範囲にまとめて値・数式を書き込む (values-file は 2 次元配列の JSON ファイル)
+ *   node tools/receipt-total/write-total.mjs --sheet 年間サマリー --range A1:B2 --values-file ./values.json
+ *
  *   # 書き込まずに結果だけ見る
  *   node tools/receipt-total/write-total.mjs ... --dry-run
  */
 
-const FLAGS_WITH_VALUE = new Set(['--spreadsheet', '--sheet', '--cell', '--value', '--template']);
+const FLAGS_WITH_VALUE = new Set([
+  '--spreadsheet',
+  '--sheet',
+  '--cell',
+  '--value',
+  '--template',
+  '--range',
+  '--values-file',
+]);
 
 function parseArgs(argv) {
-  const args = { dryRun: false, inspect: false, clear: false, createSheet: false };
+  const args = { dryRun: false, inspect: false, clear: false, createSheet: false, blank: false };
   for (let i = 0; i < argv.length; i++) {
     const flag = argv[i];
     if (flag === '--dry-run') {
@@ -44,6 +58,8 @@ function parseArgs(argv) {
       args.clear = true;
     } else if (flag === '--create-sheet') {
       args.createSheet = true;
+    } else if (flag === '--blank') {
+      args.blank = true;
     } else if (FLAGS_WITH_VALUE.has(flag)) {
       const value = argv[++i];
       if (value === undefined) {
@@ -80,7 +96,8 @@ async function main() {
         '環境変数 SHEETS_DEFAULT_SPREADSHEET を設定してください'
     );
   }
-  if (!args.inspect && !args.createSheet) {
+  const isSetRange = Boolean(args.range);
+  if (!args.inspect && !args.createSheet && !isSetRange) {
     if (!args.cell) {
       throw new Error('--cell は必須です (確認だけなら --inspect)');
     }
@@ -91,11 +108,14 @@ async function main() {
   if (args.createSheet && !args.sheet) {
     throw new Error('--create-sheet には --sheet で新しいシート名の指定が必須です');
   }
+  if (isSetRange && !args.valuesFile) {
+    throw new Error('--range を使う場合は --values-file (2次元配列の JSON ファイル) が必須です');
+  }
 
   const url = requireEnv('SHEETS_WEBAPP_URL');
   const secret = requireEnv('SHEETS_WEBAPP_SECRET');
 
-  const action = args.inspect ? 'inspect' : args.createSheet ? 'createSheet' : args.clear ? 'clear' : 'write';
+  const action = args.inspect ? 'inspect' : args.createSheet ? 'createSheet' : isSetRange ? 'setRange' : args.clear ? 'clear' : 'write';
   const payload = {
     secret,
     action,
@@ -111,8 +131,23 @@ async function main() {
     }
     payload.value = amount;
   }
-  if (action === 'createSheet' && args.template) {
-    payload.template = args.template;
+  if (action === 'createSheet') {
+    if (args.template) {
+      payload.template = args.template;
+    }
+    if (args.blank) {
+      payload.blank = true;
+    }
+  }
+  if (action === 'setRange') {
+    payload.range = args.range;
+    const fs = await import('node:fs/promises');
+    const raw = await fs.readFile(args.valuesFile, 'utf8');
+    try {
+      payload.values = JSON.parse(raw);
+    } catch (error) {
+      throw new Error(`--values-file の内容が JSON として読めません: ${error.message}`);
+    }
   }
 
   // Apps Script の /exec は googleusercontent へリダイレクトするため redirect: follow が要る。
@@ -156,10 +191,19 @@ async function main() {
 
   if (result.action === 'createSheet') {
     if (result.dryRun) {
-      console.log(`[dry-run] ${result.spreadsheetName} にシート「${result.sheetName}」を作成 (テンプレート: ${result.templateSheet}) (未実行)`);
+      console.log(`[dry-run] ${result.spreadsheetName} にシート「${result.sheetName}」を作成 (テンプレート: ${result.templateSheet || '(空のシート)'}) (未実行)`);
       return;
     }
-    console.log(`シートを作成しました: ${result.spreadsheetName} / ${result.sheetName} (テンプレート: ${result.templateSheet})`);
+    console.log(`シートを作成しました: ${result.spreadsheetName} / ${result.sheetName} (テンプレート: ${result.templateSheet || '(空のシート)'})`);
+    return;
+  }
+
+  if (result.action === 'setRange') {
+    if (result.dryRun) {
+      console.log(`[dry-run] ${result.spreadsheetName} / ${result.sheetName} / ${result.range} に ${result.rows}行${result.columns}列 書き込み予定 (未実行)`);
+      return;
+    }
+    console.log(`書き込み完了: ${result.spreadsheetName} / ${result.sheetName} / ${result.range} (${result.rows}行${result.columns}列)`);
     return;
   }
 

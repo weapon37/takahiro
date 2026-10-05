@@ -8,12 +8,15 @@
  * リクエスト (POST, JSON):
  *   {
  *     "secret":      "共有シークレット",
- *     "action":      "write" | "inspect" | "clear" | "createSheet", // 省略時は write
+ *     "action":      "write" | "inspect" | "clear" | "createSheet" | "setRange", // 省略時は write
  *     "spreadsheet": "スプレッドシートの URL または ID",
  *     "sheet":       "シート名",            // 省略時は先頭シート。createSheet では新規シート名（必須）
  *     "cell":        "B12",                 // write・clear では必須
  *     "value":       12480,                 // write では必須
  *     "template":    "原本（改）",           // createSheet 専用。省略時は "原本（改）"
+ *     "blank":       false,                 // createSheet 専用。true なら複製せず空シートを作る
+ *     "range":       "A1:C3",               // setRange では必須
+ *     "values":      [["a","b"],["c","d"]], // setRange では必須。"=" で始まる文字列は数式として入る
  *     "dryRun":      false                  // true なら書き込まず結果だけ返す
  *   }
  */
@@ -56,6 +59,9 @@ function doPost(e) {
     }
     if (action === 'createSheet') {
       return jsonOutput_(createSheet_(body));
+    }
+    if (action === 'setRange') {
+      return jsonOutput_(setRange_(body));
     }
     return jsonOutput_({ ok: false, error: '不明な action です: ' + action });
   } catch (error) {
@@ -177,6 +183,7 @@ function clear_(body) {
  * テンプレートシートを複製して、新しい月のシートを作る。
  * 複製したシートはテンプレートのすぐ右隣に置く。毎月これを繰り返すと、
  * 常にテンプレートの右隣が最新月になる（このスプレッドシートの並び順の慣習に合わせている）。
+ * blank: true の場合はテンプレートを複製せず、空のシートを先頭に作る（サマリーシート用）。
  */
 function createSheet_(body) {
   if (body.sheet === undefined || body.sheet === null || body.sheet === '') {
@@ -185,11 +192,40 @@ function createSheet_(body) {
 
   var spreadsheet = openSpreadsheet_(body.spreadsheet);
   var newName = String(body.sheet).trim();
-  var templateName = body.template ? String(body.template).trim() : '原本（改）';
+  var blank = body.blank === true;
 
   if (spreadsheet.getSheetByName(newName)) {
     return { ok: false, error: 'シートが既に存在します: ' + newName };
   }
+
+  if (blank) {
+    var dryRunBlank = body.dryRun === true;
+    if (dryRunBlank) {
+      return {
+        ok: true,
+        action: 'createSheet',
+        dryRun: true,
+        spreadsheetName: spreadsheet.getName(),
+        spreadsheetId: spreadsheet.getId(),
+        sheetName: newName,
+        templateSheet: null,
+      };
+    }
+    var blankSheet = spreadsheet.insertSheet(newName, 0);
+    SpreadsheetApp.flush();
+    return {
+      ok: true,
+      action: 'createSheet',
+      dryRun: false,
+      spreadsheetName: spreadsheet.getName(),
+      spreadsheetId: spreadsheet.getId(),
+      sheetName: blankSheet.getName(),
+      templateSheet: null,
+    };
+  }
+
+  var templateName = body.template ? String(body.template).trim() : '原本（改）';
+
   // シート名の前後に空白が入っていることがある (例: " 原本（改）") ため、
   // 完全一致で見つからなければ前後の空白を無視して探す。
   var template = spreadsheet.getSheetByName(templateName) || findSheetTrimmed_(spreadsheet, templateName);
@@ -230,6 +266,61 @@ function createSheet_(body) {
     spreadsheetId: spreadsheet.getId(),
     sheetName: newSheet.getName(),
     templateSheet: template.getName(),
+  };
+}
+
+/**
+ * 指定した範囲に値・数式をまとめて書き込む。"=" で始まる文字列は数式として扱われる
+ * (Range.setValues の標準の挙動で、シートに手入力したときと同じ)。
+ */
+function setRange_(body) {
+  if (body.range === undefined || body.range === null || body.range === '') {
+    return { ok: false, error: 'range が指定されていません' };
+  }
+  if (!Array.isArray(body.values)) {
+    return { ok: false, error: 'values (2次元配列) が指定されていません' };
+  }
+
+  var spreadsheet = openSpreadsheet_(body.spreadsheet);
+  var sheet = resolveSheet_(spreadsheet, body.sheet);
+  var range;
+  try {
+    range = sheet.getRange(String(body.range).trim());
+  } catch (error) {
+    throw new Error('range の指定が不正です: ' + body.range);
+  }
+
+  if (range.getNumRows() !== body.values.length) {
+    return {
+      ok: false,
+      error: 'range の行数 (' + range.getNumRows() + ') と values の行数 (' + body.values.length + ') が一致しません',
+    };
+  }
+  for (var i = 0; i < body.values.length; i++) {
+    if (!Array.isArray(body.values[i]) || body.values[i].length !== range.getNumColumns()) {
+      return {
+        ok: false,
+        error: 'range の列数 (' + range.getNumColumns() + ') と values[' + i + '] の列数が一致しません',
+      };
+    }
+  }
+
+  var dryRun = body.dryRun === true;
+  if (!dryRun) {
+    range.setValues(body.values);
+    SpreadsheetApp.flush();
+  }
+
+  return {
+    ok: true,
+    action: 'setRange',
+    dryRun: dryRun,
+    spreadsheetName: spreadsheet.getName(),
+    spreadsheetId: spreadsheet.getId(),
+    sheetName: sheet.getName(),
+    range: range.getA1Notation(),
+    rows: body.values.length,
+    columns: range.getNumColumns(),
   };
 }
 

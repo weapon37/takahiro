@@ -141,6 +141,26 @@ node tools/receipt-total/write-total.mjs --sheet 2026-10 --create-sheet
 node tools/receipt-total/write-total.mjs --sheet 2026-09 --create-sheet --template 原本
 ```
 
+テンプレートを複製せず空のシートを作りたい場合（集計用シートなど）は `--blank` を付ける。
+作成したシートは先頭に追加される。
+
+```bash
+node tools/receipt-total/write-total.mjs --sheet 年間サマリー --create-sheet --blank
+```
+
+### 範囲にまとめて値・数式を書き込む
+
+集計シートのように複数セルに数式をまとめて入れたいときに使う。`--values-file` には
+2 次元配列（行ごとの配列の配列）の JSON ファイルを渡す。`"="` で始まる文字列はシートに
+手入力したときと同様に数式として扱われる。
+
+```bash
+cat > /tmp/values.json <<'EOF'
+[["項目", "1月"], ["食費", "='2026.1'!B39"]]
+EOF
+node tools/receipt-total/write-total.mjs --sheet 年間サマリー --range A1:B2 --values-file /tmp/values.json
+```
+
 ## 引数
 
 | 引数 | 必須 | 説明 |
@@ -154,6 +174,9 @@ node tools/receipt-total/write-total.mjs --sheet 2026-09 --create-sheet --templa
 | `--clear` | 任意 | `--value` の代わりに指定すると、そのセルを空にする |
 | `--create-sheet` | 任意 | 指定すると、`--sheet` の名前でテンプレートシートを複製して新規作成する |
 | `--template` | 任意 | `--create-sheet` 専用。複製元シート名。省略時は「原本（改）」 |
+| `--blank` | 任意 | `--create-sheet` 専用。テンプレートを複製せず空のシートを先頭に作る |
+| `--range` | 任意 | 指定すると `setRange` (範囲へのまとめ書き込み) になる。`A1:B2` のような範囲 |
+| `--values-file` | `--range` 使用時は必須 | 2 次元配列の JSON ファイルへのパス |
 
 ## 注意点
 
