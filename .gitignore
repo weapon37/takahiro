@@ -40,3 +40,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# daily ideas (他人の投稿を含むため公開リポジトリに入れない)
+/daily/
+/data/
