@@ -4,6 +4,7 @@
 標準ライブラリのみ。必要な環境変数:
   X_BEARER_TOKEN     X APIのBearer Token（直近検索用）
   ANTHROPIC_API_KEY  Anthropic APIキー
+  （どちらも、環境のネットワークシークレットで自動付与する場合は不要）
 任意:
   ANTHROPIC_MODEL    使うモデル（既定: claude-sonnet-5-5）
   DAILY_OUT_DIR      出力先（既定: daily）
@@ -53,9 +54,10 @@ def fail(today, reason):
 
 
 def fetch_posts(today):
+    # 環境変数があればそれを使う。なければ、環境側のネットワークシークレットが
+    # api.x.com 宛の通信に Authorization を自動で付ける前提で、ヘッダなしで送る。
     token = os.environ.get("X_BEARER_TOKEN")
-    if not token:
-        fail(today, "X_BEARER_TOKEN が設定されていない")
+    headers = {"Authorization": f"Bearer {token}"} if token else {}
     params = urllib.parse.urlencode({
         "query": QUERY,
         "max_results": FETCH_COUNT,
@@ -64,7 +66,7 @@ def fetch_posts(today):
     try:
         res = http_json(
             f"https://api.x.com/2/tweets/search/recent?{params}",
-            headers={"Authorization": f"Bearer {token}"},
+            headers=headers,
         )
     except urllib.error.HTTPError as e:
         detail = e.read().decode(errors="replace")[:300]
@@ -101,9 +103,9 @@ def read_used():
 
 
 def ask_claude(today, posts, used, feedback=""):
+    # Xと同様、環境変数がなければネットワークシークレットに任せる。
     key = os.environ.get("ANTHROPIC_API_KEY")
-    if not key:
-        fail(today, "ANTHROPIC_API_KEY が設定されていない")
+    key_header = {"x-api-key": key} if key else {}
     listing = "\n".join(
         f"[{i + 1}] {p['text'].replace(chr(10), ' ')[:280]}"
         for i, p in enumerate(posts))
@@ -132,7 +134,7 @@ def ask_claude(today, posts, used, feedback=""):
     try:
         res = http_json(
             "https://api.anthropic.com/v1/messages",
-            headers={"x-api-key": key, "anthropic-version": "2023-06-01",
+            headers={**key_header, "anthropic-version": "2023-06-01",
                      "content-type": "application/json"},
             body={"model": MODEL, "max_tokens": 2000,
                   "messages": [{"role": "user", "content": prompt}]},
