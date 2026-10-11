@@ -11,6 +11,10 @@
   USED_IDEAS_FILE    使用済みネタの記録（既定: data/used-ideas.md）
   SHOWN_URLS_FILE    一度ネタにした元投稿URLの記録（既定: data/shown-urls.txt）
 
+使い方:
+  python3 scripts/daily_ideas.py               # 検索→ネタ選び→保存まで（Anthropic APIを使う）
+  python3 scripts/daily_ideas.py --fetch-only  # 検索と除外のみ。結果をJSONで標準出力に出す
+
 出力は他人の投稿を含むため、公開リポジトリにコミットしない（.gitignore済み）。
 """
 import json
@@ -201,6 +205,10 @@ def render_ideas(today, ideas):
 def main():
     today = datetime.now(JST).strftime("%Y-%m-%d")
     posts = fetch_posts(today)
+    if "--fetch-only" in sys.argv:
+        # 検索と除外だけ行い、結果をJSONで出力する（ネタ選びは呼び出し側のClaudeが行う）。
+        print(json.dumps({"date": today, "posts": posts}, ensure_ascii=False, indent=1))
+        return
     used = read_used()
 
     feedback = ""
