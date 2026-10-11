@@ -9,6 +9,7 @@
   ANTHROPIC_MODEL    使うモデル（既定: claude-sonnet-5-5）
   DAILY_OUT_DIR      出力先（既定: daily）
   USED_IDEAS_FILE    使用済みネタの記録（既定: data/used-ideas.md）
+  SHOWN_URLS_FILE    一度ネタにした元投稿URLの記録（既定: data/shown-urls.txt）
 
 出力は他人の投稿を含むため、公開リポジトリにコミットしない（.gitignore済み）。
 """
@@ -30,6 +31,7 @@ JST = timezone(timedelta(hours=9))
 MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-5-5")
 OUT_DIR = os.environ.get("DAILY_OUT_DIR", "daily")
 USED_FILE = os.environ.get("USED_IDEAS_FILE", "data/used-ideas.md")
+SHOWN_FILE = os.environ.get("SHOWN_URLS_FILE", "data/shown-urls.txt")
 
 GOAL = "AI副業をしていて、その様子をX発信している読者からリプをもらう"
 AUDIENCE = "30〜40代の会社員・副業初心者"
@@ -51,6 +53,20 @@ def fail(today, reason):
         f.write(f"# {today}\n\n取得できなかった：{reason}\n")
     print(f"失敗: {reason}\n  → {path}")
     sys.exit(1)
+
+
+def read_shown():
+    if not os.path.exists(SHOWN_FILE):
+        return set()
+    with open(SHOWN_FILE, encoding="utf-8") as f:
+        return {line.strip() for line in f if line.strip()}
+
+
+def record_shown(urls):
+    os.makedirs(os.path.dirname(SHOWN_FILE) or ".", exist_ok=True)
+    with open(SHOWN_FILE, "a", encoding="utf-8") as f:
+        for u in urls:
+            f.write(u + "\n")
 
 
 def fetch_posts(today):
@@ -87,6 +103,10 @@ def fetch_posts(today):
         })
     if not posts:
         fail(today, "検索結果が0件だった")
+    shown = read_shown()
+    posts = [p for p in posts if p["url"] not in shown]
+    if not posts:
+        fail(today, "取得した投稿がすべて、すでにネタにした投稿だった")
     posts.sort(key=lambda p: -1 if p["reactions"] is None else p["reactions"],
                reverse=True)
     return posts[:TOP_N]
@@ -215,6 +235,7 @@ def main():
     else:
         fail(today, f"{TOTAL_MAX}字以内に収まるネタを3回試しても作れなかった")
 
+    record_shown([x["source_url"] for x in final])
     os.makedirs(OUT_DIR, exist_ok=True)
     ideas_path = os.path.join(OUT_DIR, f"{today}.md")
     with open(ideas_path, "w", encoding="utf-8") as f:
