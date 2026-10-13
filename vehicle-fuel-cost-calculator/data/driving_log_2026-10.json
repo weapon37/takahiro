@@ -2,6 +2,10 @@
   "sheet": "2026.10",
   "entries": [
     {"day": 1, "end_km": 26798, "distance_km": 169, "driver": "A", "note": "津田沼"},
-    {"day": 3, "end_km": 26804, "distance_km": 6, "driver": "A", "note": ""}
+    {"day": 3, "end_km": 26804, "distance_km": 6, "driver": "A", "note": ""},
+    {"day": 6, "end_km": 26815, "distance_km": 11, "driver": "A", "note": ""},
+    {"day": 7, "end_km": 26818, "distance_km": 3, "driver": "A", "note": ""},
+    {"day": 9, "end_km": 26825, "distance_km": 7, "driver": "A", "note": ""},
+    {"day": 12, "end_km": 26842, "distance_km": 17, "driver": "A", "note": ""}
   ]
 }
