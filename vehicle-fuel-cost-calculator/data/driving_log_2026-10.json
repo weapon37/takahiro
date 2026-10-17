@@ -8,6 +8,7 @@
     {"day": 9, "end_km": 26825, "distance_km": 7, "driver": "A", "note": ""},
     {"day": 12, "end_km": 26842, "distance_km": 17, "driver": "A", "note": ""},
     {"day": 13, "end_km": 26845, "distance_km": 3, "driver": "A", "note": ""},
-    {"day": 15, "end_km": 26870, "distance_km": 25, "driver": "A", "note": ""}
+    {"day": 15, "end_km": 26870, "distance_km": 25, "driver": "A", "note": ""},
+    {"day": 17, "end_km": 26896, "distance_km": 26, "driver": "A", "note": ""}
   ]
 }
