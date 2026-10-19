@@ -1,0 +1,15 @@
+{
+  "sheet": "2026.7",
+  "entries": [
+    {"day": 3, "end_km": 24185, "distance_km": 6, "driver": "AB", "note": "市内"},
+    {"day": 7, "end_km": 24206, "distance_km": 21, "driver": "A", "note": "新所"},
+    {"day": 11, "end_km": 24496, "distance_km": 290, "driver": "A", "note": ""},
+    {"day": 15, "end_km": 24725, "distance_km": 229, "driver": "A", "note": ""},
+    {"day": 20, "end_km": 25072, "distance_km": 347, "driver": "A", "note": ""},
+    {"day": 21, "end_km": 25083, "distance_km": 11, "driver": "AB", "note": "市内"},
+    {"day": 22, "end_km": 25106, "distance_km": 23, "driver": "A", "note": "所沢"},
+    {"day": 25, "end_km": 25125, "distance_km": 19, "driver": "A", "note": "新所"},
+    {"day": 27, "end_km": 25136, "distance_km": 11, "driver": "AB", "note": ""},
+    {"day": 28, "end_km": 25140, "distance_km": 4, "driver": "A", "note": "市内"}
+  ]
+}
