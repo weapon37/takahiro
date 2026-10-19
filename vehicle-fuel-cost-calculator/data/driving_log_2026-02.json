@@ -1,0 +1,20 @@
+{
+  "sheet": "2026.2",
+  "entries": [
+    {"day": 2, "end_km": 21204, "distance_km": 9, "driver": "A", "note": "市内"},
+    {"day": 3, "end_km": 21333, "distance_km": 129, "driver": "A", "note": "鶴見"},
+    {"day": 5, "end_km": 21345, "distance_km": 12, "driver": "A", "note": "市内"},
+    {"day": 7, "end_km": 21488, "distance_km": 143, "driver": "A", "note": "鶴見"},
+    {"day": 13, "end_km": 21529, "distance_km": 41, "driver": "A", "note": "所沢"},
+    {"day": 15, "end_km": 21653, "distance_km": 124, "driver": "A", "note": "羽田"},
+    {"day": 16, "end_km": 21684, "distance_km": 31, "driver": "A", "note": "入間"},
+    {"day": 17, "end_km": 21701, "distance_km": 17, "driver": "A", "note": "新所"},
+    {"day": 19, "end_km": 21730, "distance_km": 29, "driver": "A", "note": "飯能"},
+    {"day": 20, "end_km": 21736, "distance_km": 6, "driver": "AB", "note": ""},
+    {"day": 21, "end_km": 21756, "distance_km": 20, "driver": "A", "note": "新所"},
+    {"day": 22, "end_km": 21788, "distance_km": 32, "driver": "A", "note": "青梅"},
+    {"day": 23, "end_km": 21855, "distance_km": 67, "driver": "A", "note": ""},
+    {"day": 26, "end_km": 21884, "distance_km": 29, "driver": "A", "note": "飯能"},
+    {"day": 28, "end_km": 21924, "distance_km": 40, "driver": "A", "note": "所沢"}
+  ]
+}
