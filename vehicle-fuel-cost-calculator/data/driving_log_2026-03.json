@@ -7,7 +7,7 @@
     {"day": 6, "end_km": 22114, "distance_km": 43, "driver": "A", "note": "所沢"},
     {"day": 8, "end_km": 22123, "distance_km": 9, "driver": "AB", "note": "市内"},
     {"day": 10, "end_km": 22156, "distance_km": 33, "driver": "A", "note": "狭山湖"},
-    {"day": 16, "end_km": 22853, "distance_km": 697, "driver": "B", "note": "逗子"},
+    {"day": 16, "end_km": 22853, "distance_km": 697, "driver": "A", "note": "逗子"},
     {"day": 17, "end_km": 22856, "distance_km": 3, "driver": "A", "note": "市内"},
     {"day": 20, "end_km": 22998, "distance_km": 142, "driver": "A", "note": "伊勢原"},
     {"day": 22, "end_km": 23041, "distance_km": 43, "driver": "A", "note": ""},
