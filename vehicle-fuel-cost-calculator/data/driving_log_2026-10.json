@@ -12,6 +12,7 @@
     {"day": 17, "end_km": 26896, "distance_km": 26, "driver": "A", "note": ""},
     {"day": 18, "end_km": 26900, "distance_km": 4, "driver": "AB", "note": ""},
     {"day": 19, "end_km": 26904, "distance_km": 4, "driver": "AB", "note": ""},
-    {"day": 22, "end_km": 26998, "distance_km": 94, "driver": "A", "note": ""}
+    {"day": 22, "end_km": 26998, "distance_km": 94, "driver": "A", "note": ""},
+    {"day": 23, "end_km": 27091, "distance_km": 93, "driver": "A", "note": ""}
   ]
 }
