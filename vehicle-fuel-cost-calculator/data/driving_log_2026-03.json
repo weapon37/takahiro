@@ -1,0 +1,19 @@
+{
+  "sheet": "2026.3",
+  "entries": [
+    {"day": 1, "end_km": 21954, "distance_km": 30, "driver": "A", "note": "所沢"},
+    {"day": 2, "end_km": 21984, "distance_km": 30, "driver": "A", "note": "鶴見"},
+    {"day": 3, "end_km": 22071, "distance_km": 87, "driver": "A", "note": ""},
+    {"day": 6, "end_km": 22114, "distance_km": 43, "driver": "A", "note": "所沢"},
+    {"day": 8, "end_km": 22123, "distance_km": 9, "driver": "AB", "note": "市内"},
+    {"day": 10, "end_km": 22156, "distance_km": 33, "driver": "A", "note": "狭山湖"},
+    {"day": 16, "end_km": 22853, "distance_km": 697, "driver": "A", "note": "逗子"},
+    {"day": 17, "end_km": 22856, "distance_km": 3, "driver": "A", "note": "市内"},
+    {"day": 20, "end_km": 22998, "distance_km": 142, "driver": "A", "note": "伊勢原"},
+    {"day": 22, "end_km": 23041, "distance_km": 43, "driver": "A", "note": ""},
+    {"day": 25, "end_km": 23062, "distance_km": 21, "driver": "A", "note": "新所"},
+    {"day": 28, "end_km": 23099, "distance_km": 37, "driver": "AB", "note": ""},
+    {"day": 29, "end_km": 23126, "distance_km": 27, "driver": "A", "note": "新所"},
+    {"day": 30, "end_km": 23147, "distance_km": 21, "driver": "A", "note": "川越"}
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "sheet": "2026.6",
+  "entries": [
+    {"day": 6, "end_km": 24065, "distance_km": 31, "driver": "A", "note": "新所"},
+    {"day": 14, "end_km": 24122, "distance_km": 57, "driver": "A", "note": "飯能"},
+    {"day": 17, "end_km": 24134, "distance_km": 12, "driver": "A", "note": "市内"},
+    {"day": 18, "end_km": 24150, "distance_km": 16, "driver": "A", "note": "入間"},
+    {"day": 22, "end_km": 24157, "distance_km": 7, "driver": "A", "note": "市内"},
+    {"day": 26, "end_km": 24175, "distance_km": 18, "driver": "A", "note": "新所"},
+    {"day": 27, "end_km": 24179, "distance_km": 4, "driver": "A", "note": "市内"}
+  ]
+}
